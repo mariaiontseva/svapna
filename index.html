@@ -614,15 +614,22 @@
                 if (!indexResponse.ok) throw new Error('Failed to load search index');
                 searchIndex = await indexResponse.json();
                 
-                // Load full-text database
+                // Load full-text database (optimized version)
                 try {
-                    const fullTextResponse = await fetch('texts_compressed.json');
+                    const fullTextResponse = await fetch('texts_optimized.json');
                     if (fullTextResponse.ok) {
                         fullTextDatabase = await fullTextResponse.json();
-                        console.log('Full-text search enabled for', fullTextDatabase.length, 'texts');
+                        console.log('Optimized full-text search enabled for', fullTextDatabase.length, 'texts');
+                    } else {
+                        // Fallback to compressed version
+                        const fallbackResponse = await fetch('texts_compressed.json');
+                        if (fallbackResponse.ok) {
+                            fullTextDatabase = await fallbackResponse.json();
+                            console.log('Full-text search enabled for', fullTextDatabase.length, 'texts (fallback)');
+                        }
                     }
                 } catch (e) {
-                    console.warn('Full-text database not available');
+                    console.warn('Full-text database not available:', e);
                 }
                 
                 console.log('Data loaded:', {
