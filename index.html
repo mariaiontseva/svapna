@@ -487,11 +487,6 @@
                     <span class="stat-label">Total Matches</span>
                 </div>
             </div>
-            <div style="margin-top: 20px; padding: 12px; background: linear-gradient(135deg, #10b981 0%, #059669 100%); border-radius: 8px; text-align: center;">
-                <a href="https://web-production-7d2a2.up.railway.app" target="_blank" style="color: white; text-decoration: none; font-weight: 600;">
-                    🚀 Access Full 149MB Database Version on Railway →
-                </a>
-            </div>
         </div>
     </header>
 
@@ -711,12 +706,7 @@
             performSearch();
         }
         
-        function performSearch() {
-            if (!database) {
-                console.error('Database not loaded');
-                return;
-            }
-            
+        async function performSearch() {
             const searchTerm = document.getElementById('searchInput').value.toLowerCase().trim();
             
             if (!searchTerm) {
@@ -728,33 +718,67 @@
                 return;
             }
             
+            // Show loading state
+            document.getElementById('searchResults').innerHTML = 
+                '<div class="loading">Searching full 149MB database...</div>';
+            
             let results = [];
             let totalMatches = 0;
+            let dataSource = 'Railway (Full Database)';
             
-            // Use full-text search if available
-            if (fullTextDatabase) {
-                results = searchFullText(searchTerm);
-                totalMatches = results.reduce((sum, r) => sum + r.count, 0);
-            } else if (searchIndex && searchIndex[searchTerm]) {
-                // Fall back to precomputed results
-                results = searchIndex[searchTerm].results;
-                totalMatches = searchIndex[searchTerm].total_matches;
-            } else {
-                // Last resort: metadata search
-                results = database.texts.filter(text => {
-                    const nameMatch = text.display_name && text.display_name.toLowerCase().includes(searchTerm);
-                    const authorMatch = text.author && text.author.toLowerCase().includes(searchTerm);
-                    const traditionMatch = text.tradition && text.tradition.toLowerCase().includes(searchTerm);
-                    const categoryMatch = text.category && text.category.toLowerCase().includes(searchTerm);
-                    const subcategoryMatch = text.subcategory && text.subcategory.toLowerCase().includes(searchTerm);
-                    const periodMatch = text.period && text.period.toLowerCase().includes(searchTerm);
-                    
-                    return nameMatch || authorMatch || traditionMatch || categoryMatch || subcategoryMatch || periodMatch;
-                }).map(text => ({
-                    ...text,
-                    snippets: [],
-                    count: 0
-                }));
+            try {
+                // Try Railway API first for full database search
+                const response = await fetch('https://web-production-7d2a2.up.railway.app/search', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ search_term: searchTerm })
+                });
+                
+                if (response.ok) {
+                    const data = await response.json();
+                    results = data.results || [];
+                    totalMatches = data.total_matches || 0;
+                } else {
+                    throw new Error('Railway API unavailable');
+                }
+            } catch (error) {
+                // Fallback to local search if Railway is unavailable
+                console.log('Railway unavailable, using local search:', error);
+                dataSource = 'Local (Limited)';
+                
+                if (!database) {
+                    document.getElementById('searchResults').innerHTML = 
+                        '<div class="no-results">Database not loaded. Please wait...</div>';
+                    return;
+                }
+                
+                // Use full-text search if available
+                if (fullTextDatabase) {
+                    results = searchFullText(searchTerm);
+                    totalMatches = results.reduce((sum, r) => sum + r.count, 0);
+                } else if (searchIndex && searchIndex[searchTerm]) {
+                    // Fall back to precomputed results
+                    results = searchIndex[searchTerm].results;
+                    totalMatches = searchIndex[searchTerm].total_matches;
+                } else {
+                    // Last resort: metadata search
+                    results = database.texts.filter(text => {
+                        const nameMatch = text.display_name && text.display_name.toLowerCase().includes(searchTerm);
+                        const authorMatch = text.author && text.author.toLowerCase().includes(searchTerm);
+                        const traditionMatch = text.tradition && text.tradition.toLowerCase().includes(searchTerm);
+                        const categoryMatch = text.category && text.category.toLowerCase().includes(searchTerm);
+                        const subcategoryMatch = text.subcategory && text.subcategory.toLowerCase().includes(searchTerm);
+                        const periodMatch = text.period && text.period.toLowerCase().includes(searchTerm);
+                        
+                        return nameMatch || authorMatch || traditionMatch || categoryMatch || subcategoryMatch || periodMatch;
+                    }).map(text => ({
+                        ...text,
+                        snippets: [],
+                        count: 0
+                    }));
+                }
             }
             
             // Apply filters
@@ -780,6 +804,13 @@
             document.getElementById('results-count').textContent = results.length;
             document.getElementById('search-badge').textContent = results.length;
             document.getElementById('matches-count').textContent = filteredMatches || totalMatches || 0;
+            
+            // Add data source indicator
+            const sourceIndicator = dataSource === 'Railway (Full Database)' 
+                ? '<div style="padding: 8px; background: #10b981; color: white; border-radius: 6px; margin-bottom: 10px; text-align: center;">🚀 Results from full 149MB database</div>'
+                : '<div style="padding: 8px; background: #f59e0b; color: white; border-radius: 6px; margin-bottom: 10px; text-align: center;">⚠️ Limited local search (Railway unavailable)</div>';
+            
+            document.getElementById('searchResults').innerHTML = sourceIndicator;
             
             // Display results
             displayResults(results, searchTerm);
@@ -840,8 +871,10 @@
         
         function displayResults(results, searchTerm) {
             const isFullText = fullTextDatabase || (searchIndex && searchIndex[searchTerm]);
+            const resultsDiv = document.getElementById('searchResults');
             
-            let html = `<div class="search-info">
+            // Append to existing content (source indicator is already there)
+            let html = resultsDiv.innerHTML + `<div class="search-info">
                 Found ${results.length} texts containing "${searchTerm}"
                 ${fullTextDatabase ? '<br><small style="color: #10b981;">✓ Full-text search active across all ' + fullTextDatabase.length + ' texts</small>' : 
                   !isFullText ? '<br><small style="color: #64748b;">Showing metadata matches. Full-text data loading...</small>' : ''}
