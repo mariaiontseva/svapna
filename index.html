@@ -8,20 +8,25 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
         :root {
-            /* Light theme */
-            --bg-primary: #ffffff;
-            --bg-secondary: #f8f9fa;
-            --bg-tertiary: #f1f3f5;
-            --bg-card: #ffffff;
-            --border-primary: #dee2e6;
-            --border-secondary: #e9ecef;
-            --text-primary: #212529;
-            --text-secondary: #495057;
-            --text-tertiary: #6c757d;
-            --accent-primary: #4a9eff;
-            --accent-success: #059669;
-            --accent-warning: #f59e0b;
-            --accent-purple: #7c3aed;
+            /* Professional Color Scheme */
+            --primary: #1e40af;
+            --primary-light: #3b82f6;
+            --primary-dark: #1e3a8a;
+            --bg-main: #ffffff;
+            --bg-secondary: #f8fafc;
+            --bg-tertiary: #f1f5f9;
+            --border: #e2e8f0;
+            --border-light: #f1f5f9;
+            --text-primary: #0f172a;
+            --text-secondary: #475569;
+            --text-muted: #64748b;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+            --purple: #8b5cf6;
+            --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
         }
         
         * {
@@ -32,44 +37,43 @@
         
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: var(--bg-primary);
+            background: var(--bg-secondary);
             color: var(--text-primary);
             line-height: 1.6;
-            min-height: 100vh;
         }
         
         .container {
             max-width: 1400px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 0 20px;
         }
         
+        /* Header */
         header {
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-            padding: 30px 0;
-            border-bottom: 1px solid var(--border-primary);
-            margin-bottom: 30px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            padding: 40px 0;
+            box-shadow: var(--shadow-lg);
         }
         
         h1 {
-            font-size: 28px;
-            font-weight: 600;
-            color: var(--text-primary);
+            font-size: 32px;
+            font-weight: 700;
+            color: white;
             letter-spacing: -0.5px;
+            margin-bottom: 8px;
         }
         
         .subtitle {
-            color: var(--text-secondary);
-            font-size: 14px;
-            margin-top: 5px;
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 16px;
         }
         
         .stats-bar {
             display: flex;
-            gap: 30px;
-            margin-top: 20px;
-            padding-top: 20px;
-            border-top: 1px solid var(--border-primary);
+            gap: 40px;
+            margin-top: 30px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
         }
         
         .stat-item {
@@ -78,155 +82,167 @@
         }
         
         .stat-value {
-            font-size: 24px;
-            font-weight: 600;
-            color: var(--accent-primary);
+            font-size: 28px;
+            font-weight: 700;
+            color: white;
         }
         
         .stat-label {
-            font-size: 12px;
-            color: var(--text-tertiary);
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.8);
             text-transform: uppercase;
             letter-spacing: 0.5px;
+            font-weight: 500;
+            margin-top: 4px;
         }
         
-        .tabs-container {
-            margin-bottom: 30px;
+        /* Main Content */
+        .main-content {
+            padding: 30px 0;
         }
         
+        /* Tabs */
         .tabs-header {
             display: flex;
-            gap: 10px;
-            border-bottom: 1px solid var(--border-primary);
-            margin-bottom: 20px;
+            gap: 8px;
+            border-bottom: 2px solid var(--border);
+            margin-bottom: 30px;
+            background: white;
+            padding: 0 20px;
+            border-radius: 12px 12px 0 0;
         }
         
         .tab-button {
-            padding: 10px 20px;
+            padding: 16px 24px;
             background: transparent;
             color: var(--text-secondary);
             border: none;
-            border-bottom: 2px solid transparent;
+            border-bottom: 3px solid transparent;
             cursor: pointer;
-            font-size: 14px;
-            font-weight: 500;
+            font-size: 15px;
+            font-weight: 600;
             transition: all 0.2s;
-            margin-right: 5px;
-        }
-        
-        .tab-button.active {
-            color: var(--text-primary);
-            border-bottom-color: var(--accent-primary);
+            position: relative;
         }
         
         .tab-button:hover {
             color: var(--text-primary);
         }
         
+        .tab-button.active {
+            color: var(--primary);
+            border-bottom-color: var(--primary);
+        }
+        
         .tab-badge {
             display: inline-block;
-            margin-left: 6px;
-            background: var(--accent-primary);
+            margin-left: 8px;
+            background: var(--primary-light);
             color: white;
             border-radius: 12px;
             padding: 2px 8px;
-            font-size: 11px;
+            font-size: 12px;
             font-weight: 600;
-            min-width: 20px;
+            min-width: 24px;
             text-align: center;
-            vertical-align: middle;
         }
         
         .tab-content {
             display: none;
+            background: white;
+            border-radius: 0 0 12px 12px;
+            padding: 30px;
         }
         
         .tab-content.active {
             display: block;
         }
         
+        /* Search Section */
         .search-section {
             background: var(--bg-tertiary);
             border-radius: 12px;
-            padding: 25px;
+            padding: 30px;
             margin-bottom: 30px;
+            border: 1px solid var(--border);
         }
         
         .search-container {
             position: relative;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
         }
         
         .search-input {
             width: 100%;
-            padding: 12px 16px;
-            padding-right: 100px;
-            font-size: 15px;
-            border: 1px solid var(--border-secondary);
-            border-radius: 8px;
+            padding: 14px 120px 14px 20px;
+            font-size: 16px;
+            border: 2px solid var(--border);
+            border-radius: 10px;
             background: white;
-            color: var(--text-primary);
             transition: all 0.2s;
         }
         
         .search-input:focus {
             outline: none;
-            border-color: var(--accent-primary);
-            box-shadow: 0 0 0 3px rgba(74, 158, 255, 0.1);
+            border-color: var(--primary-light);
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
         }
         
         .search-button {
             position: absolute;
-            right: 5px;
+            right: 6px;
             top: 50%;
             transform: translateY(-50%);
-            background: var(--accent-primary);
+            background: var(--primary);
             color: white;
             border: none;
-            padding: 8px 20px;
-            border-radius: 6px;
+            padding: 10px 28px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 15px;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+        
+        .search-button:hover {
+            background: var(--primary-dark);
+            transform: translateY(-50%) scale(1.02);
+        }
+        
+        /* Quick Search Tags */
+        .shortcuts {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+        
+        .shortcut-btn {
+            padding: 8px 16px;
+            border: 2px solid var(--border);
+            background: white;
+            color: var(--text-secondary);
+            border-radius: 20px;
             cursor: pointer;
             font-size: 14px;
             font-weight: 500;
             transition: all 0.2s;
         }
         
-        .search-button:hover {
-            background: #3a8eef;
-        }
-        
-        /* Shortcuts / Quick tags */
-        .shortcuts {
-            display: flex;
-            gap: 8px;
-            flex-wrap: wrap;
-            margin-bottom: 20px;
-        }
-        
-        .shortcut-btn {
-            padding: 6px 12px;
-            background: var(--bg-secondary);
-            color: var(--text-secondary);
-            border: 1px solid var(--border-secondary);
-            border-radius: 6px;
-            font-size: 13px;
-            cursor: pointer;
-            transition: all 0.2s;
-            font-family: 'Noto Sans Devanagari', 'Inter', sans-serif;
-        }
-        
         .shortcut-btn:hover {
-            background: var(--bg-tertiary);
-            color: var(--accent-primary);
-            border-color: var(--accent-primary);
+            border-color: var(--primary-light);
+            color: var(--primary);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-sm);
         }
         
         .shortcut-btn.active {
-            background: var(--accent-primary);
+            background: var(--primary);
             color: white;
-            border-color: var(--accent-primary);
+            border-color: var(--primary);
         }
         
+        /* Filters */
         .filters {
             display: flex;
             gap: 12px;
@@ -234,159 +250,188 @@
         }
         
         .filter-select {
-            padding: 10px 14px;
-            background: white;
-            color: var(--text-primary);
-            border: 1px solid var(--border-secondary);
-            border-radius: 6px;
-            font-size: 14px;
-            cursor: pointer;
-            outline: none;
-        }
-        
-        .filter-select:focus {
-            border-color: var(--accent-primary);
-        }
-        
-        .results-container {
-            margin-top: 30px;
-        }
-        
-        .result-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-secondary);
+            padding: 10px 16px;
+            border: 2px solid var(--border);
             border-radius: 8px;
-            padding: 20px;
-            margin-bottom: 15px;
+            background: white;
+            font-size: 14px;
+            color: var(--text-primary);
+            cursor: pointer;
             transition: all 0.2s;
         }
         
+        .filter-select:focus {
+            outline: none;
+            border-color: var(--primary-light);
+        }
+        
+        /* Results */
+        .results-container {
+            margin-top: 20px;
+        }
+        
+        .search-info {
+            padding: 16px;
+            background: var(--bg-tertiary);
+            border-left: 4px solid var(--primary);
+            border-radius: 8px;
+            margin-bottom: 20px;
+            font-size: 15px;
+            color: var(--text-primary);
+        }
+        
+        .result-card {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 16px;
+            transition: all 0.2s;
+            box-shadow: var(--shadow-sm);
+        }
+        
         .result-card:hover {
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-            border-color: var(--border-primary);
+            box-shadow: var(--shadow-md);
+            transform: translateY(-2px);
+            border-color: var(--primary-light);
         }
         
         .result-header {
             display: flex;
             justify-content: space-between;
             align-items: start;
-            margin-bottom: 12px;
+            margin-bottom: 16px;
         }
         
         .result-title {
             font-size: 18px;
             font-weight: 600;
             color: var(--text-primary);
-            margin-bottom: 4px;
+            margin-bottom: 8px;
         }
         
         .result-meta {
             display: flex;
-            gap: 15px;
-            font-size: 13px;
-            color: var(--text-tertiary);
+            gap: 16px;
+            font-size: 14px;
+            color: var(--text-muted);
         }
         
         .tradition-badge {
-            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
-            color: #0369a1;
-            padding: 4px 10px;
-            border-radius: 12px;
-            font-size: 12px;
-            font-weight: 500;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            background: var(--bg-tertiary);
+            color: var(--text-secondary);
+            white-space: nowrap;
         }
         
+        .tradition-Vedic {
+            background: #fef3c7;
+            color: #92400e;
+        }
+        
+        .tradition-Kashmir {
+            background: #ddd6fe;
+            color: #5b21b6;
+        }
+        
+        .tradition-Buddhist {
+            background: #fed7aa;
+            color: #c2410c;
+        }
+        
+        .tradition-Jain {
+            background: #d1fae5;
+            color: #065f46;
+        }
+        
+        /* Snippets */
         .snippets {
-            margin-top: 15px;
-            padding-top: 15px;
-            border-top: 1px solid var(--border-secondary);
+            margin-top: 16px;
+            padding-top: 16px;
+            border-top: 1px solid var(--border-light);
         }
         
         .snippet-container {
-            position: relative;
             margin-bottom: 12px;
+            padding: 12px;
+            background: var(--bg-tertiary);
+            border-radius: 8px;
+            border-left: 3px solid var(--primary-light);
         }
         
         .snippet {
-            background: var(--bg-secondary);
-            padding: 12px;
-            padding-right: 80px;
-            border-radius: 6px;
             font-size: 14px;
             line-height: 1.6;
-            color: var(--text-secondary);
+            color: var(--text-primary);
             font-family: 'Noto Sans Devanagari', sans-serif;
         }
         
         .snippet mark {
-            background: rgba(255, 235, 59, 0.5);
+            background: #fef08a;
             color: var(--text-primary);
             padding: 2px 4px;
             border-radius: 3px;
-            font-weight: 500;
+            font-weight: 600;
         }
         
         .snippet-actions {
-            position: absolute;
-            top: 12px;
-            right: 12px;
+            margin-top: 8px;
         }
         
         .copy-snippet-btn {
-            background: white;
-            color: var(--text-secondary);
-            border: 1px solid var(--border-secondary);
-            padding: 4px 10px;
-            border-radius: 4px;
+            padding: 6px 14px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 6px;
             cursor: pointer;
-            font-size: 12px;
+            font-size: 13px;
+            font-weight: 500;
             transition: all 0.2s;
         }
         
         .copy-snippet-btn:hover {
-            background: var(--accent-primary);
-            color: white;
-            border-color: var(--accent-primary);
+            background: var(--primary-dark);
         }
         
-        .catalog-table {
-            width: 100%;
-            border-collapse: collapse;
+        /* Favorites */
+        .favorite-btn {
+            background: none;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+            color: var(--text-muted);
+            margin-left: 12px;
+            transition: all 0.2s;
         }
         
-        .catalog-table th {
-            background: var(--bg-tertiary);
-            padding: 12px;
-            text-align: left;
-            font-weight: 600;
-            color: var(--text-primary);
-            border-bottom: 2px solid var(--border-primary);
+        .favorite-btn:hover {
+            color: var(--warning);
+            transform: scale(1.2);
         }
         
-        .catalog-table td {
-            padding: 10px 12px;
-            border-bottom: 1px solid var(--border-secondary);
-            color: var(--text-secondary);
+        .favorite-btn.active {
+            color: var(--warning);
         }
         
-        .catalog-table tr:hover {
-            background: var(--bg-secondary);
-        }
-        
+        /* Loading */
         .loader {
             text-align: center;
             padding: 40px;
-            color: var(--text-secondary);
+            color: var(--text-muted);
         }
         
         .spinner {
-            border: 3px solid var(--border-secondary);
-            border-top: 3px solid var(--accent-primary);
+            border: 3px solid var(--border);
+            border-top: 3px solid var(--primary);
             border-radius: 50%;
             width: 40px;
             height: 40px;
             animation: spin 1s linear infinite;
-            margin: 0 auto 10px;
+            margin: 0 auto 16px;
         }
         
         @keyframes spin {
@@ -394,91 +439,28 @@
             100% { transform: rotate(360deg); }
         }
         
-        .search-info {
-            margin: 20px 0;
-            padding: 15px;
-            background: var(--bg-secondary);
-            border-radius: 8px;
-            border-left: 4px solid var(--accent-primary);
-        }
-        
         .no-results {
             text-align: center;
             padding: 40px;
-            color: var(--text-secondary);
+            color: var(--text-muted);
+            font-size: 16px;
         }
         
-        /* Tradition color coding */
-        .tradition-Kashmir { color: #7c3aed; }
-        .tradition-Bengal { color: #f59e0b; }
-        .tradition-SriVidya { color: #ec4899; }
-        .tradition-Vedic { color: #059669; }
-        .tradition-Buddhist { color: #3b82f6; }
-        .tradition-Yoga { color: #8b5cf6; }
-        
-        /* Visualization styles */
-        .viz-container {
-            background: var(--bg-card);
-            border: 1px solid var(--border-secondary);
-            border-radius: 8px;
-            padding: 20px;
-            margin-bottom: 20px;
-        }
-        
-        .viz-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            margin-top: 20px;
-        }
-        
+        /* Charts */
         .chart-container {
-            background: var(--bg-card);
-            border: 1px solid var(--border-secondary);
-            border-radius: 8px;
-            padding: 15px;
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 20px;
+            box-shadow: var(--shadow-sm);
         }
         
         .chart-title {
-            font-size: 16px;
+            font-size: 18px;
             font-weight: 600;
-            margin-bottom: 15px;
             color: var(--text-primary);
-        }
-        
-        /* Favorites styles */
-        .favorite-btn {
-            background: transparent;
-            border: none;
-            cursor: pointer;
-            font-size: 20px;
-            color: var(--text-tertiary);
-            transition: all 0.2s;
-            margin-left: 8px;
-        }
-        
-        .favorite-btn.active {
-            color: #f59e0b;
-        }
-        
-        .favorite-btn:hover {
-            transform: scale(1.1);
-        }
-        
-        .copy-list-btn {
-            background: var(--accent-primary);
-            color: white;
-            border: none;
-            padding: 8px 16px;
-            border-radius: 6px;
-            cursor: pointer;
-            font-size: 13px;
-            transition: all 0.2s;
-            margin-top: 10px;
-        }
-        
-        .copy-list-btn:hover {
-            background: #3a8eef;
+            margin-bottom: 20px;
         }
     </style>
 </head>
@@ -508,23 +490,20 @@
         </div>
     </header>
 
-    <div class="container">
+    <div class="container main-content">
         <div class="tabs-container">
             <div class="tabs-header">
-                <button class="tab-button active" onclick="switchTab(event, 'search')">
-                    Search Results
-                    <span class="tab-badge" id="search-badge">0</span>
+                <button class="tab-button active" onclick="switchTab('search')">
+                    Search Results<span class="tab-badge" id="search-badge">0</span>
                 </button>
-                <button class="tab-button" onclick="switchTab(event, 'catalog')">
-                    Texts Catalog
-                    <span class="tab-badge" id="catalog-badge">311</span>
+                <button class="tab-button" onclick="switchTab('catalog')">
+                    Texts Catalog<span class="tab-badge" id="catalog-badge">311</span>
                 </button>
-                <button class="tab-button" onclick="switchTab(event, 'visualization')">
+                <button class="tab-button" onclick="switchTab('visualization')">
                     Visualization
                 </button>
-                <button class="tab-button" onclick="switchTab(event, 'favorites')">
-                    Favorites
-                    <span class="tab-badge" id="favorites-badge">0</span>
+                <button class="tab-button" onclick="switchTab('favorites')">
+                    Favorites<span class="tab-badge" id="favorites-badge">0</span>
                 </button>
             </div>
             
@@ -533,7 +512,7 @@
                 <div class="search-section">
                     <div class="search-container">
                         <input type="text" class="search-input" id="searchInput" 
-                               placeholder="Enter Sanskrit term (e.g., svapna, nidrā, suṣupti)" 
+                               placeholder="Enter any Sanskrit term or text name..." 
                                value="svapna">
                         <button class="search-button" onclick="performSearch()">Search</button>
                     </div>
@@ -544,9 +523,9 @@
                         <button class="shortcut-btn" onclick="quickSearch('jāgrat')">jāgrat</button>
                         <button class="shortcut-btn" onclick="quickSearch('suṣupti')">suṣupti</button>
                         <button class="shortcut-btn" onclick="quickSearch('turīya')">turīya</button>
-                        <button class="shortcut-btn" onclick="quickSearch('svapnasvapna')">svapnasvapna</button>
-                        <button class="shortcut-btn" onclick="quickSearch('svapnajāgrat')">svapnajāgrat</button>
-                        <button class="shortcut-btn" onclick="quickSearch('svapnalabdha')">svapnalabdha</button>
+                        <button class="shortcut-btn" onclick="quickSearch('yoga')">yoga</button>
+                        <button class="shortcut-btn" onclick="quickSearch('tantra')">tantra</button>
+                        <button class="shortcut-btn" onclick="quickSearch('mantra')">mantra</button>
                     </div>
                     
                     <div class="filters">
@@ -576,47 +555,25 @@
                     <input type="text" class="search-input" id="catalogSearch" 
                            placeholder="Filter texts by name..." 
                            onkeyup="filterCatalog()">
-                    <button class="copy-list-btn" onclick="copyTextList()">Copy Text List</button>
                 </div>
-                <div id="catalogContent">
-                    <div class="loader">Loading catalog...</div>
-                </div>
+                <div id="catalogContent" class="results-container"></div>
             </div>
             
             <!-- Visualization Tab -->
             <div id="visualization-tab" class="tab-content">
-                <div class="viz-container">
-                    <h3 class="chart-title">SVAPNA Distribution Analysis</h3>
-                    <div class="viz-grid">
-                        <div class="chart-container">
-                            <h4 class="chart-title">Texts by Tradition</h4>
-                            <canvas id="traditionChart"></canvas>
-                        </div>
-                        <div class="chart-container">
-                            <h4 class="chart-title">Texts by Period</h4>
-                            <canvas id="periodChart"></canvas>
-                        </div>
-                        <div class="chart-container">
-                            <h4 class="chart-title">Top 10 Texts by Occurrences</h4>
-                            <canvas id="topTextsChart"></canvas>
-                        </div>
-                        <div class="chart-container">
-                            <h4 class="chart-title">Occurrence Density</h4>
-                            <canvas id="densityChart"></canvas>
-                        </div>
-                    </div>
+                <div class="chart-container">
+                    <h4 class="chart-title">Texts by Tradition</h4>
+                    <canvas id="traditionChart"></canvas>
+                </div>
+                <div class="chart-container">
+                    <h4 class="chart-title">Top 10 Texts by Occurrences</h4>
+                    <canvas id="topTextsChart"></canvas>
                 </div>
             </div>
             
             <!-- Favorites Tab -->
             <div id="favorites-tab" class="tab-content">
-                <div class="search-section">
-                    <h3>Your Favorite Texts</h3>
-                    <p style="color: var(--text-secondary); margin-top: 10px;">
-                        Click the star icon on any text to add it to your favorites.
-                    </p>
-                </div>
-                <div id="favoritesContent">
+                <div id="favoritesContent" class="results-container">
                     <div class="no-results">No favorites yet. Star texts from search results to add them here.</div>
                 </div>
             </div>
@@ -624,14 +581,26 @@
     </div>
 
     <script>
+        // Global variables
         let database = null;
         let searchIndex = null;
-        let currentTab = 'search';
         let currentResults = [];
         let favorites = JSON.parse(localStorage.getItem('svapna_favorites') || '[]');
         let charts = {};
         
-        // Load all data on page load
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            loadData();
+            
+            // Setup enter key for search
+            document.getElementById('searchInput').addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') {
+                    performSearch();
+                }
+            });
+        });
+        
+        // Load database and search index
         async function loadData() {
             try {
                 // Load main database
@@ -644,10 +613,13 @@
                 if (!indexResponse.ok) throw new Error('Failed to load search index');
                 searchIndex = await indexResponse.json();
                 
+                console.log('Data loaded:', {
+                    texts: database.stats.total_texts,
+                    searchTerms: Object.keys(searchIndex)
+                });
+                
                 // Update stats
-                document.getElementById('unique-sources').textContent = database.stats.unique_sources;
-                document.getElementById('total-texts').textContent = database.stats.total_texts;
-                document.getElementById('catalog-badge').textContent = database.stats.total_texts;
+                updateStats();
                 
                 // Populate filters
                 populateFilters();
@@ -655,19 +627,20 @@
                 // Update favorites badge
                 updateFavoritesBadge();
                 
-                // Load initial search results
+                // Load initial search
                 performSearch();
-                
-                console.log('Data loaded successfully:', {
-                    texts: database.stats.total_texts,
-                    searchTerms: Object.keys(searchIndex).length
-                });
                 
             } catch (error) {
                 console.error('Error loading data:', error);
                 document.getElementById('searchResults').innerHTML = 
-                    '<div class="no-results">Error loading database: ' + error.message + '</div>';
+                    `<div class="no-results">Error loading database: ${error.message}</div>`;
             }
+        }
+        
+        function updateStats() {
+            document.getElementById('unique-sources').textContent = database.stats.unique_sources;
+            document.getElementById('total-texts').textContent = database.stats.total_texts;
+            document.getElementById('catalog-badge').textContent = database.stats.total_texts;
         }
         
         function populateFilters() {
@@ -714,47 +687,43 @@
         }
         
         function performSearch() {
-            const searchTerm = document.getElementById('searchInput').value.toLowerCase().trim();
-            
             if (!database) {
-                console.error('Database not loaded yet');
-                document.getElementById('searchResults').innerHTML = 
-                    '<div class="no-results">Database is still loading, please wait...</div>';
+                console.error('Database not loaded');
                 return;
             }
+            
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase().trim();
             
             if (!searchTerm) {
                 document.getElementById('searchResults').innerHTML = 
                     '<div class="no-results">Please enter a search term</div>';
+                document.getElementById('results-count').textContent = '0';
+                document.getElementById('matches-count').textContent = '0';
+                document.getElementById('search-badge').textContent = '0';
                 return;
             }
             
             let results = [];
             let totalMatches = 0;
             
-            // Check if we have precomputed results for this term
+            // Check precomputed results first
             if (searchIndex && searchIndex[searchTerm]) {
                 results = searchIndex[searchTerm].results;
                 totalMatches = searchIndex[searchTerm].total_matches;
             } else {
-                // Full search through all texts for any term
+                // Search through all texts
                 results = database.texts.filter(text => {
-                    // Search in display name
-                    const nameMatch = text.display_name.toLowerCase().includes(searchTerm);
-                    // Search in author
+                    const nameMatch = text.display_name && text.display_name.toLowerCase().includes(searchTerm);
                     const authorMatch = text.author && text.author.toLowerCase().includes(searchTerm);
-                    // Search in tradition  
                     const traditionMatch = text.tradition && text.tradition.toLowerCase().includes(searchTerm);
-                    // Search in category/subcategory
-                    const categoryMatch = (text.category && text.category.toLowerCase().includes(searchTerm)) ||
-                                        (text.subcategory && text.subcategory.toLowerCase().includes(searchTerm));
-                    // Search in period
+                    const categoryMatch = text.category && text.category.toLowerCase().includes(searchTerm);
+                    const subcategoryMatch = text.subcategory && text.subcategory.toLowerCase().includes(searchTerm);
                     const periodMatch = text.period && text.period.toLowerCase().includes(searchTerm);
                     
-                    return nameMatch || authorMatch || traditionMatch || categoryMatch || periodMatch;
+                    return nameMatch || authorMatch || traditionMatch || categoryMatch || subcategoryMatch || periodMatch;
                 }).map(text => ({
-                    ...text, 
-                    snippets: [], 
+                    ...text,
+                    snippets: [],
                     count: 0
                 }));
             }
@@ -774,27 +743,28 @@
                 results = results.filter(r => r.author === authorFilter);
             }
             
-            // Store results for copy functions
+            // Store results globally
             currentResults = results;
             
             // Update counts
             const filteredMatches = results.reduce((sum, r) => sum + r.count, 0);
             document.getElementById('results-count').textContent = results.length;
             document.getElementById('search-badge').textContent = results.length;
-            document.getElementById('matches-count').textContent = filteredMatches;
+            document.getElementById('matches-count').textContent = filteredMatches || totalMatches || 0;
             
             // Display results
             displayResults(results, searchTerm);
         }
         
         function displayResults(results, searchTerm) {
+            const isFullText = searchIndex && searchIndex[searchTerm];
+            
             let html = `<div class="search-info">
-                Found ${results.length} texts ${searchIndex && searchIndex[searchTerm] ? 'with full-text matches for' : 'matching'} "${searchTerm}"
-                ${!searchIndex[searchTerm] ? 
-                    '<br><small style="color: #666; font-size: 12px;">Showing metadata matches. Full-text search with snippets available for: svapna, nidrā, jāgrat, suṣupti, turīya</small>' : ''}
+                Found ${results.length} texts ${isFullText ? 'containing' : 'matching'} "${searchTerm}"
+                ${!isFullText ? '<br><small style="color: #64748b;">Showing metadata matches. Full-text search with snippets available for: svapna, nidrā, jāgrat, suṣupti, turīya</small>' : ''}
             </div>`;
             
-            results.forEach((result, resultIdx) => {
+            results.forEach((result, idx) => {
                 const isFavorite = favorites.includes(result.filename);
                 const traditionClass = `tradition-${result.tradition.replace(/\s+/g, '')}`;
                 
@@ -819,13 +789,11 @@
                         </div>
                         ${result.snippets && result.snippets.length > 0 ? `
                             <div class="snippets">
-                                ${result.snippets.slice(0, 5).map((snippet, snippetIdx) => `
+                                ${result.snippets.slice(0, 3).map((snippet, sIdx) => `
                                     <div class="snippet-container">
-                                        <div class="snippet">
-                                            ${highlightTerm(snippet, searchTerm)}
-                                        </div>
+                                        <div class="snippet">${highlightTerm(snippet, searchTerm)}</div>
                                         <div class="snippet-actions">
-                                            <button class="copy-snippet-btn" onclick="copySnippet(${resultIdx}, ${snippetIdx})">Copy</button>
+                                            <button class="copy-snippet-btn" onclick="copySnippet(${idx}, ${sIdx})">Copy</button>
                                         </div>
                                     </div>
                                 `).join('')}
@@ -870,44 +838,31 @@
             }
             localStorage.setItem('svapna_favorites', JSON.stringify(favorites));
             updateFavoritesBadge();
-            
-            if (currentTab === 'favorites') {
-                displayFavorites();
-            }
         }
         
         function updateFavoritesBadge() {
             document.getElementById('favorites-badge').textContent = favorites.length;
         }
         
-        function switchTab(event, tab) {
-            currentTab = tab;
-            
-            // Update tab buttons
+        function switchTab(tabName) {
+            // Update active tab button
             document.querySelectorAll('.tab-button').forEach(btn => {
                 btn.classList.remove('active');
             });
-            event.currentTarget.classList.add('active');
+            event.target.classList.add('active');
             
-            // Update tab content
+            // Update active tab content
             document.querySelectorAll('.tab-content').forEach(content => {
                 content.classList.remove('active');
             });
+            document.getElementById(`${tabName}-tab`).classList.add('active');
             
-            if (tab === 'search') {
-                document.getElementById('search-tab').classList.add('active');
-                window.location.hash = '';
-            } else if (tab === 'catalog') {
-                document.getElementById('catalog-tab').classList.add('active');
-                window.location.hash = 'catalog';
+            // Load tab content
+            if (tabName === 'catalog') {
                 displayCatalog();
-            } else if (tab === 'visualization') {
-                document.getElementById('visualization-tab').classList.add('active');
-                window.location.hash = 'visualization';
-                displayVisualizations();
-            } else if (tab === 'favorites') {
-                document.getElementById('favorites-tab').classList.add('active');
-                window.location.hash = 'favorites';
+            } else if (tabName === 'visualization') {
+                createCharts();
+            } else if (tabName === 'favorites') {
                 displayFavorites();
             }
         }
@@ -915,245 +870,21 @@
         function displayCatalog() {
             if (!database) return;
             
-            let html = `
-                <table class="catalog-table">
-                    <thead>
-                        <tr>
-                            <th>#</th>
-                            <th>Text Name</th>
-                            <th>Tradition</th>
-                            <th>Author</th>
-                            <th>Period</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-            `;
-            
-            database.texts.forEach((text, index) => {
-                const traditionClass = `tradition-${text.tradition.replace(/\s+/g, '')}`;
-                html += `
-                    <tr>
-                        <td>${index + 1}</td>
-                        <td>${text.display_name}</td>
-                        <td class="${traditionClass}">${text.tradition}</td>
-                        <td>${text.author}</td>
-                        <td>${text.period}</td>
-                    </tr>
-                `;
-            });
-            
-            html += '</tbody></table>';
-            document.getElementById('catalogContent').innerHTML = html;
-        }
-        
-        function filterCatalog() {
-            const searchTerm = document.getElementById('catalogSearch').value.toLowerCase();
-            const rows = document.querySelectorAll('.catalog-table tbody tr');
-            
-            rows.forEach(row => {
-                const text = row.textContent.toLowerCase();
-                row.style.display = text.includes(searchTerm) ? '' : 'none';
-            });
-        }
-        
-        function copyTextList() {
-            const texts = database.texts.map(t => t.display_name).join('\n');
-            navigator.clipboard.writeText(texts).then(() => {
-                const btn = event.target;
-                const originalText = btn.textContent;
-                btn.textContent = 'Copied!';
-                setTimeout(() => btn.textContent = originalText, 2000);
-            });
-        }
-        
-        function displayVisualizations() {
-            if (!database || !searchIndex.svapna) return;
-            
-            const svapnaData = searchIndex.svapna.results;
-            
-            // Tradition distribution
-            const traditionCounts = {};
-            svapnaData.forEach(text => {
-                traditionCounts[text.tradition] = (traditionCounts[text.tradition] || 0) + 1;
-            });
-            
-            // Period distribution
-            const periodCounts = {};
-            svapnaData.forEach(text => {
-                const period = text.period || 'Unknown';
-                periodCounts[period] = (periodCounts[period] || 0) + 1;
-            });
-            
-            // Top texts by occurrences
-            const topTexts = svapnaData
-                .sort((a, b) => b.count - a.count)
-                .slice(0, 10);
-            
-            // Create charts
-            createTraditionChart(traditionCounts);
-            createPeriodChart(periodCounts);
-            createTopTextsChart(topTexts);
-            createDensityChart(svapnaData);
-        }
-        
-        function createTraditionChart(data) {
-            const ctx = document.getElementById('traditionChart').getContext('2d');
-            if (charts.tradition) charts.tradition.destroy();
-            
-            charts.tradition = new Chart(ctx, {
-                type: 'doughnut',
-                data: {
-                    labels: Object.keys(data),
-                    datasets: [{
-                        data: Object.values(data),
-                        backgroundColor: [
-                            '#7c3aed', '#f59e0b', '#ec4899', '#059669',
-                            '#3b82f6', '#8b5cf6', '#ef4444', '#10b981'
-                        ]
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    plugins: {
-                        legend: {
-                            position: 'bottom',
-                            labels: { font: { size: 11 } }
-                        }
-                    }
-                }
-            });
-        }
-        
-        function createPeriodChart(data) {
-            const ctx = document.getElementById('periodChart').getContext('2d');
-            if (charts.period) charts.period.destroy();
-            
-            const sortedData = Object.entries(data).sort((a, b) => b[1] - a[1]);
-            
-            charts.period = new Chart(ctx, {
-                type: 'bar',
-                data: {
-                    labels: sortedData.slice(0, 10).map(d => d[0]),
-                    datasets: [{
-                        label: 'Texts',
-                        data: sortedData.slice(0, 10).map(d => d[1]),
-                        backgroundColor: '#4a9eff'
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    plugins: {
-                        legend: { display: false }
-                    },
-                    scales: {
-                        x: {
-                            ticks: { font: { size: 10 } }
-                        }
-                    }
-                }
-            });
-        }
-        
-        function createTopTextsChart(data) {
-            const ctx = document.getElementById('topTextsChart').getContext('2d');
-            if (charts.topTexts) charts.topTexts.destroy();
-            
-            charts.topTexts = new Chart(ctx, {
-                type: 'horizontalBar',
-                data: {
-                    labels: data.map(d => d.display_name.substring(0, 30) + '...'),
-                    datasets: [{
-                        label: 'Occurrences',
-                        data: data.map(d => d.count),
-                        backgroundColor: '#059669'
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    plugins: {
-                        legend: { display: false }
-                    },
-                    scales: {
-                        x: {
-                            ticks: { font: { size: 10 } }
-                        },
-                        y: {
-                            ticks: { font: { size: 10 } }
-                        }
-                    }
-                }
-            });
-        }
-        
-        function createDensityChart(data) {
-            const ctx = document.getElementById('densityChart').getContext('2d');
-            if (charts.density) charts.density.destroy();
-            
-            // Group by occurrence ranges
-            const ranges = {
-                '1-5': 0,
-                '6-10': 0,
-                '11-20': 0,
-                '21-50': 0,
-                '50+': 0
-            };
-            
-            data.forEach(text => {
-                if (text.count <= 5) ranges['1-5']++;
-                else if (text.count <= 10) ranges['6-10']++;
-                else if (text.count <= 20) ranges['11-20']++;
-                else if (text.count <= 50) ranges['21-50']++;
-                else ranges['50+']++;
-            });
-            
-            charts.density = new Chart(ctx, {
-                type: 'pie',
-                data: {
-                    labels: Object.keys(ranges),
-                    datasets: [{
-                        data: Object.values(ranges),
-                        backgroundColor: [
-                            '#dbeafe', '#bfdbfe', '#93c5fd', '#60a5fa', '#3b82f6'
-                        ]
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    plugins: {
-                        legend: {
-                            position: 'bottom',
-                            labels: { font: { size: 11 } }
-                        },
-                        title: {
-                            display: true,
-                            text: 'Texts by Occurrence Count',
-                            font: { size: 12 }
-                        }
-                    }
-                }
-            });
-        }
-        
-        function displayFavorites() {
-            if (favorites.length === 0) {
-                document.getElementById('favoritesContent').innerHTML = 
-                    '<div class="no-results">No favorites yet. Star texts from search results to add them here.</div>';
-                return;
-            }
-            
-            const favoriteTexts = database.texts.filter(t => favorites.includes(t.filename));
-            
             let html = '<div class="results-container">';
-            favoriteTexts.forEach(text => {
+            database.texts.forEach(text => {
+                const isFavorite = favorites.includes(text.filename);
                 const traditionClass = `tradition-${text.tradition.replace(/\s+/g, '')}`;
+                
                 html += `
                     <div class="result-card">
                         <div class="result-header">
                             <div>
                                 <div class="result-title">
                                     ${text.display_name}
-                                    <button class="favorite-btn active" 
-                                            onclick="toggleFavorite('${text.filename}', this)">★</button>
+                                    <button class="favorite-btn ${isFavorite ? 'active' : ''}" 
+                                            onclick="toggleFavorite('${text.filename}', this)">
+                                        ${isFavorite ? '★' : '☆'}
+                                    </button>
                                 </div>
                                 <div class="result-meta">
                                     <span>Author: ${text.author}</span>
@@ -1167,20 +898,117 @@
             });
             html += '</div>';
             
-            document.getElementById('favoritesContent').innerHTML = html;
+            document.getElementById('catalogContent').innerHTML = html;
         }
         
-        // Handle Enter key in search
-        document.addEventListener('DOMContentLoaded', () => {
-            document.getElementById('searchInput').addEventListener('keypress', (e) => {
-                if (e.key === 'Enter') {
-                    performSearch();
+        function filterCatalog() {
+            const searchTerm = document.getElementById('catalogSearch').value.toLowerCase();
+            const cards = document.querySelectorAll('#catalogContent .result-card');
+            
+            cards.forEach(card => {
+                const title = card.querySelector('.result-title').textContent.toLowerCase();
+                card.style.display = title.includes(searchTerm) ? 'block' : 'none';
+            });
+        }
+        
+        function createCharts() {
+            if (!database || charts.tradition) return;
+            
+            // Tradition distribution
+            const traditionCounts = {};
+            database.texts.forEach(text => {
+                traditionCounts[text.tradition] = (traditionCounts[text.tradition] || 0) + 1;
+            });
+            
+            const ctx1 = document.getElementById('traditionChart').getContext('2d');
+            charts.tradition = new Chart(ctx1, {
+                type: 'doughnut',
+                data: {
+                    labels: Object.keys(traditionCounts),
+                    datasets: [{
+                        data: Object.values(traditionCounts),
+                        backgroundColor: [
+                            '#3b82f6', '#8b5cf6', '#10b981', '#f59e0b', 
+                            '#ef4444', '#06b6d4', '#f97316', '#84cc16'
+                        ]
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            position: 'right'
+                        }
+                    }
                 }
             });
             
-            // Load data
-            loadData();
-        });
+            // Top texts by occurrences
+            if (searchIndex && searchIndex.svapna) {
+                const topTexts = searchIndex.svapna.results
+                    .sort((a, b) => b.count - a.count)
+                    .slice(0, 10);
+                
+                const ctx2 = document.getElementById('topTextsChart').getContext('2d');
+                charts.topTexts = new Chart(ctx2, {
+                    type: 'bar',
+                    data: {
+                        labels: topTexts.map(t => t.display_name.substring(0, 30) + '...'),
+                        datasets: [{
+                            label: 'Occurrences',
+                            data: topTexts.map(t => t.count),
+                            backgroundColor: '#3b82f6'
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                });
+            }
+        }
+        
+        function displayFavorites() {
+            if (!database || favorites.length === 0) {
+                document.getElementById('favoritesContent').innerHTML = 
+                    '<div class="no-results">No favorites yet. Star texts from search results to add them here.</div>';
+                return;
+            }
+            
+            const favoriteTexts = database.texts.filter(t => favorites.includes(t.filename));
+            
+            let html = '';
+            favoriteTexts.forEach(text => {
+                const traditionClass = `tradition-${text.tradition.replace(/\s+/g, '')}`;
+                
+                html += `
+                    <div class="result-card">
+                        <div class="result-header">
+                            <div>
+                                <div class="result-title">
+                                    ${text.display_name}
+                                    <button class="favorite-btn active" 
+                                            onclick="toggleFavorite('${text.filename}', this); displayFavorites();">
+                                        ★
+                                    </button>
+                                </div>
+                                <div class="result-meta">
+                                    <span>Author: ${text.author}</span>
+                                    <span>Period: ${text.period}</span>
+                                </div>
+                            </div>
+                            <div class="tradition-badge ${traditionClass}">${text.tradition}</div>
+                        </div>
+                    </div>
+                `;
+            });
+            
+            document.getElementById('favoritesContent').innerHTML = html;
+        }
     </script>
 </body>
 </html>
