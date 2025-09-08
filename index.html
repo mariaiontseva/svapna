@@ -543,7 +543,7 @@
 
                 <div id="searchResults" class="results-container">
                     <div class="loader">
-                        <lottie-player src="sleepy-sheepton.lottie" background="transparent" speed="1" style="width: 150px; height: 150px; margin: 0 auto;" loop autoplay></lottie-player>
+                        <lottie-player src="./sleepy-sheepton.lottie" background="transparent" speed="1" style="width: 150px; height: 150px; margin: 0 auto;" loop autoplay></lottie-player>
                         <div>Loading database...</div>
                     </div>
                 </div>
@@ -602,6 +602,12 @@
             
             // Perform initial search for 'svapna' after a short delay to ensure data is loaded
             setTimeout(() => {
+                // Mark svapna chip as active
+                document.querySelectorAll('.shortcut-btn').forEach(btn => {
+                    if (btn.textContent === 'svapna') {
+                        btn.classList.add('active');
+                    }
+                });
                 performSearch();
             }, 500);
         });
@@ -725,7 +731,7 @@
             
             // Show loading state with Lottie animation
             document.getElementById('searchResults').innerHTML = 
-                '<div class="loading"><lottie-player src="sleepy-sheepton.lottie" background="transparent" speed="1" style="width: 150px; height: 150px; margin: 0 auto;" loop autoplay></lottie-player><div>Searching full 149MB database...</div></div>';
+                '<div class="loading"><lottie-player src="./sleepy-sheepton.lottie" background="transparent" speed="1" style="width: 150px; height: 150px; margin: 0 auto;" loop autoplay></lottie-player><div>Searching full 149MB database...</div></div>';
             
             let results = [];
             let totalMatches = 0;
