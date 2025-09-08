@@ -206,7 +206,7 @@
         
         .search-button:hover {
             background: var(--primary-dark);
-            transform: translateY(-50%) scale(1.02);
+            /* Removed hover movement */
         }
         
         /* Quick Search Tags */
@@ -232,7 +232,7 @@
         .shortcut-btn:hover {
             border-color: var(--primary-light);
             color: var(--primary);
-            transform: translateY(-2px);
+            /* Removed hover movement */
             box-shadow: var(--shadow-sm);
         }
         
@@ -292,7 +292,7 @@
         
         .result-card:hover {
             box-shadow: var(--shadow-md);
-            transform: translateY(-2px);
+            /* Removed hover movement */
             border-color: var(--primary-light);
         }
         
@@ -520,6 +520,7 @@
                     <div class="shortcuts">
                         <button class="shortcut-btn" onclick="quickSearch('svapna')">svapna</button>
                         <button class="shortcut-btn" onclick="quickSearch('svapnasvapna')">svapnasvapna</button>
+                        <button class="shortcut-btn" onclick="quickSearch('svapnayoga')">svapnayoga</button>
                         <button class="shortcut-btn" onclick="quickSearch('svapnajāgrat')">svapnajāgrat</button>
                         <button class="shortcut-btn" onclick="quickSearch('svapnalabdha')">svapnalabdha</button>
                         <button class="shortcut-btn" onclick="quickSearch('nidrā')">nidrā</button>
