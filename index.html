@@ -5,21 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Muktabodha SVAPNA Research Dashboard</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
         :root {
-            --bg-primary: #1a1a1a;
-            --bg-secondary: #2a2a2a;
-            --bg-tertiary: #333333;
-            --bg-card: #2a2a2a;
-            --border-primary: #404040;
-            --border-secondary: #333333;
-            --text-primary: #ffffff;
-            --text-secondary: #b0b0b0;
-            --text-tertiary: #808080;
-            --accent-primary: #4a9eff;
-            --accent-success: #10b981;
+            /* Light theme */
+            --bg-primary: #ffffff;
+            --bg-secondary: #f8f9fa;
+            --bg-tertiary: #f1f3f5;
+            --bg-card: #ffffff;
+            --border-primary: #dee2e6;
+            --border-secondary: #e9ecef;
+            --text-primary: #212529;
+            --text-secondary: #495057;
+            --text-tertiary: #6c757d;
+            --accent-primary: #0066cc;
+            --accent-success: #059669;
             --accent-warning: #f59e0b;
-            --accent-purple: #a78bfa;
+            --accent-purple: #7c3aed;
         }
         
         * {
@@ -43,7 +45,7 @@
         }
         
         header {
-            background: linear-gradient(135deg, #2a2a2a 0%, #1f1f1f 100%);
+            background: linear-gradient(135deg, #f1f3f5 0%, #e9ecef 100%);
             padding: 30px 0;
             border-bottom: 1px solid var(--border-primary);
             margin-bottom: 30px;
@@ -109,6 +111,7 @@
             font-size: 14px;
             font-weight: 500;
             transition: all 0.2s;
+            position: relative;
         }
         
         .tab-button.active {
@@ -118,6 +121,20 @@
         
         .tab-button:hover {
             color: var(--text-primary);
+        }
+        
+        .tab-badge {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            background: var(--accent-primary);
+            color: white;
+            border-radius: 10px;
+            padding: 2px 6px;
+            font-size: 11px;
+            font-weight: 600;
+            min-width: 18px;
+            text-align: center;
         }
         
         .tab-content {
@@ -146,7 +163,7 @@
             font-size: 15px;
             border: 1px solid var(--border-primary);
             border-radius: 8px;
-            background: var(--bg-secondary);
+            background: var(--bg-card);
             color: var(--text-primary);
             transition: all 0.2s;
         }
@@ -154,7 +171,7 @@
         .search-input:focus {
             outline: none;
             border-color: var(--accent-primary);
-            box-shadow: 0 0 0 3px rgba(74, 158, 255, 0.1);
+            box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.1);
         }
         
         .search-button {
@@ -173,7 +190,7 @@
         }
         
         .search-button:hover {
-            background: #3a8eef;
+            background: #0052a3;
         }
         
         .filters {
@@ -184,7 +201,7 @@
         
         .filter-select {
             padding: 8px 12px;
-            background: var(--bg-secondary);
+            background: var(--bg-card);
             color: var(--text-primary);
             border: 1px solid var(--border-primary);
             border-radius: 6px;
@@ -205,7 +222,7 @@
         }
         
         .result-card:hover {
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
             border-color: var(--border-primary);
         }
         
@@ -239,8 +256,8 @@
         }
         
         .tradition-badge {
-            background: linear-gradient(135deg, #1e3a5f 0%, #2a4a6f 100%);
-            color: #4a9eff;
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            color: #0369a1;
         }
         
         .snippets {
@@ -250,20 +267,22 @@
         }
         
         .snippet {
-            background: var(--bg-primary);
+            background: var(--bg-secondary);
             padding: 10px;
             border-radius: 6px;
             margin-bottom: 8px;
             font-size: 14px;
             line-height: 1.6;
             color: var(--text-secondary);
+            font-family: 'Noto Sans Devanagari', sans-serif;
         }
         
         .snippet mark {
-            background: rgba(74, 158, 255, 0.3);
+            background: rgba(255, 235, 59, 0.5);
             color: var(--text-primary);
             padding: 2px 4px;
             border-radius: 3px;
+            font-weight: 500;
         }
         
         .catalog-table {
@@ -287,7 +306,7 @@
         }
         
         .catalog-table tr:hover {
-            background: var(--bg-tertiary);
+            background: var(--bg-secondary);
         }
         
         .loader {
@@ -311,12 +330,91 @@
         }
         
         /* Tradition color coding */
-        .tradition-Kashmir { color: #a78bfa; }
+        .tradition-Kashmir { color: #7c3aed; }
         .tradition-Bengal { color: #f59e0b; }
         .tradition-SriVidya { color: #ec4899; }
-        .tradition-Vedic { color: #10b981; }
+        .tradition-Vedic { color: #059669; }
         .tradition-Buddhist { color: #3b82f6; }
         .tradition-Yoga { color: #8b5cf6; }
+        
+        /* Visualization styles */
+        .viz-container {
+            background: var(--bg-card);
+            border: 1px solid var(--border-secondary);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .viz-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .chart-container {
+            background: var(--bg-card);
+            border: 1px solid var(--border-secondary);
+            border-radius: 8px;
+            padding: 15px;
+        }
+        
+        .chart-title {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: var(--text-primary);
+        }
+        
+        /* Favorites styles */
+        .favorite-btn {
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            font-size: 20px;
+            color: var(--text-tertiary);
+            transition: all 0.2s;
+        }
+        
+        .favorite-btn.active {
+            color: #f59e0b;
+        }
+        
+        .favorite-btn:hover {
+            transform: scale(1.1);
+        }
+        
+        .copy-btn {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border-primary);
+            padding: 6px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 13px;
+            color: var(--text-secondary);
+            transition: all 0.2s;
+        }
+        
+        .copy-btn:hover {
+            background: var(--bg-secondary);
+            color: var(--text-primary);
+        }
+        
+        .translate-btn {
+            background: var(--accent-primary);
+            color: white;
+            border: none;
+            padding: 6px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 13px;
+            transition: all 0.2s;
+        }
+        
+        .translate-btn:hover {
+            background: #0052a3;
+        }
     </style>
 </head>
 <body>
@@ -348,10 +446,24 @@
     <div class="container">
         <div class="tabs-container">
             <div class="tabs-header">
-                <button class="tab-button active" onclick="switchTab('search')">Search Results</button>
-                <button class="tab-button" onclick="switchTab('catalog')">Texts Catalog</button>
+                <button class="tab-button active" onclick="switchTab('search')">
+                    Search Results
+                    <span class="tab-badge" id="search-badge">0</span>
+                </button>
+                <button class="tab-button" onclick="switchTab('catalog')">
+                    Texts Catalog
+                    <span class="tab-badge" id="catalog-badge">311</span>
+                </button>
+                <button class="tab-button" onclick="switchTab('visualization')">
+                    Visualization
+                </button>
+                <button class="tab-button" onclick="switchTab('favorites')">
+                    Favorites
+                    <span class="tab-badge" id="favorites-badge">0</span>
+                </button>
             </div>
             
+            <!-- Search Tab -->
             <div id="search-tab" class="tab-content active">
                 <div class="search-section">
                     <div class="search-container">
@@ -378,14 +490,54 @@
                 </div>
             </div>
             
+            <!-- Catalog Tab -->
             <div id="catalog-tab" class="tab-content">
                 <div class="search-section">
                     <input type="text" class="search-input" id="catalogSearch" 
                            placeholder="Filter texts by name..." 
                            onkeyup="filterCatalog()">
+                    <button class="copy-btn" style="margin-top: 10px" onclick="copyTextList()">Copy Text List</button>
                 </div>
                 <div id="catalogContent">
                     <div class="loader">Loading catalog...</div>
+                </div>
+            </div>
+            
+            <!-- Visualization Tab -->
+            <div id="visualization-tab" class="tab-content">
+                <div class="viz-container">
+                    <h3 class="chart-title">SVAPNA Distribution Analysis</h3>
+                    <div class="viz-grid">
+                        <div class="chart-container">
+                            <h4 class="chart-title">Texts by Tradition</h4>
+                            <canvas id="traditionChart"></canvas>
+                        </div>
+                        <div class="chart-container">
+                            <h4 class="chart-title">Texts by Period</h4>
+                            <canvas id="periodChart"></canvas>
+                        </div>
+                        <div class="chart-container">
+                            <h4 class="chart-title">Top 10 Texts by Occurrences</h4>
+                            <canvas id="topTextsChart"></canvas>
+                        </div>
+                        <div class="chart-container">
+                            <h4 class="chart-title">Occurrence Density</h4>
+                            <canvas id="densityChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Favorites Tab -->
+            <div id="favorites-tab" class="tab-content">
+                <div class="search-section">
+                    <h3>Your Favorite Texts</h3>
+                    <p style="color: var(--text-secondary); margin-top: 10px;">
+                        Click the star icon on any text to add it to your favorites.
+                    </p>
+                </div>
+                <div id="favoritesContent">
+                    <div class="no-results">No favorites yet. Star texts from search results to add them here.</div>
                 </div>
             </div>
         </div>
@@ -393,30 +545,46 @@
 
     <script>
         let database = null;
+        let searchIndex = null;
         let currentTab = 'search';
+        let favorites = JSON.parse(localStorage.getItem('svapna_favorites') || '[]');
+        let charts = {};
         
-        // Load database on page load
-        async function loadDatabase() {
+        // Load all data on page load
+        async function loadData() {
             try {
-                const response = await fetch('data.json');
-                database = await response.json();
+                // Load main database
+                const dbResponse = await fetch('data.json');
+                database = await dbResponse.json();
+                
+                // Load search index
+                const indexResponse = await fetch('search_index.json');
+                searchIndex = await indexResponse.json();
                 
                 // Update stats
                 document.getElementById('unique-sources').textContent = database.stats.unique_sources;
                 document.getElementById('total-texts').textContent = database.stats.total_texts;
+                document.getElementById('catalog-badge').textContent = database.stats.total_texts;
                 
                 // Populate filters
                 populateFilters();
                 
+                // Update favorites badge
+                updateFavoritesBadge();
+                
                 // Load initial search results
                 if (window.location.hash === '#catalog') {
                     switchTab('catalog');
+                } else if (window.location.hash === '#visualization') {
+                    switchTab('visualization');
+                } else if (window.location.hash === '#favorites') {
+                    switchTab('favorites');
                 } else {
-                    displaySvapnaResults();
+                    performSearch();
                 }
                 
             } catch (error) {
-                console.error('Error loading database:', error);
+                console.error('Error loading data:', error);
                 document.getElementById('searchResults').innerHTML = 
                     '<div class="no-results">Error loading database. Please refresh the page.</div>';
             }
@@ -451,66 +619,6 @@
             });
         }
         
-        function displaySvapnaResults() {
-            const results = database.svapna_results;
-            
-            // Apply filters
-            const traditionFilter = document.getElementById('traditionFilter').value;
-            const periodFilter = document.getElementById('periodFilter').value;
-            const authorFilter = document.getElementById('authorFilter').value;
-            
-            let filteredResults = results;
-            if (traditionFilter) {
-                filteredResults = filteredResults.filter(r => r.tradition === traditionFilter);
-            }
-            if (periodFilter) {
-                filteredResults = filteredResults.filter(r => r.period === periodFilter);
-            }
-            if (authorFilter) {
-                filteredResults = filteredResults.filter(r => r.author === authorFilter);
-            }
-            
-            // Update counts
-            document.getElementById('results-count').textContent = filteredResults.length;
-            const totalMatches = filteredResults.reduce((sum, r) => sum + r.count, 0);
-            document.getElementById('matches-count').textContent = totalMatches;
-            
-            // Display results
-            let html = `<div class="search-info">
-                Showing ${filteredResults.length} texts containing "svapna" 
-                (${totalMatches} total occurrences)
-            </div>`;
-            
-            filteredResults.forEach(result => {
-                const traditionClass = `tradition-${result.tradition.replace(/\s+/g, '')}`;
-                
-                html += `
-                    <div class="result-card">
-                        <div class="result-header">
-                            <div>
-                                <div class="result-title">${result.display_name}</div>
-                                <div class="result-meta">
-                                    <span>Author: ${result.author}</span>
-                                    <span>Period: ${result.period}</span>
-                                    <span>Occurrences: ${result.count}</span>
-                                </div>
-                            </div>
-                            <div class="tradition-badge ${traditionClass}">${result.tradition}</div>
-                        </div>
-                        ${result.snippets.length > 0 ? `
-                            <div class="snippets">
-                                ${result.snippets.map(snippet => 
-                                    `<div class="snippet">${highlightTerm(snippet, 'svapna')}</div>`
-                                ).join('')}
-                            </div>
-                        ` : ''}
-                    </div>
-                `;
-            });
-            
-            document.getElementById('searchResults').innerHTML = html;
-        }
-        
         function performSearch() {
             const searchTerm = document.getElementById('searchInput').value.toLowerCase().trim();
             
@@ -520,52 +628,128 @@
                 return;
             }
             
-            // For now, only show svapna results since we only have precomputed data for that
-            if (searchTerm === 'svapna') {
-                displaySvapnaResults();
+            let results = [];
+            let totalMatches = 0;
+            
+            // Check if we have precomputed results for this term
+            if (searchIndex && searchIndex[searchTerm]) {
+                results = searchIndex[searchTerm].results;
+                totalMatches = searchIndex[searchTerm].total_matches;
             } else {
-                // Search through all texts (basic search)
-                const results = database.texts.filter(text => 
+                // Fall back to metadata search
+                results = database.texts.filter(text => 
                     text.display_name.toLowerCase().includes(searchTerm) ||
                     text.tradition.toLowerCase().includes(searchTerm) ||
                     text.author.toLowerCase().includes(searchTerm)
-                );
-                
-                document.getElementById('results-count').textContent = results.length;
-                document.getElementById('matches-count').textContent = 0;
-                
-                let html = `<div class="search-info">
-                    Found ${results.length} texts matching "${searchTerm}" in metadata
-                    <br><small>Note: Full-text search is only available for "svapna"</small>
-                </div>`;
-                
-                results.forEach(result => {
-                    const traditionClass = `tradition-${result.tradition.replace(/\s+/g, '')}`;
-                    
-                    html += `
-                        <div class="result-card">
-                            <div class="result-header">
-                                <div>
-                                    <div class="result-title">${result.display_name}</div>
-                                    <div class="result-meta">
-                                        <span>Author: ${result.author}</span>
-                                        <span>Period: ${result.period}</span>
-                                    </div>
-                                </div>
-                                <div class="tradition-badge ${traditionClass}">${result.tradition}</div>
-                            </div>
-                        </div>
-                    `;
-                });
-                
-                document.getElementById('searchResults').innerHTML = html || 
-                    '<div class="no-results">No results found</div>';
+                ).map(text => ({...text, snippets: [], count: 0}));
             }
+            
+            // Apply filters
+            const traditionFilter = document.getElementById('traditionFilter').value;
+            const periodFilter = document.getElementById('periodFilter').value;
+            const authorFilter = document.getElementById('authorFilter').value;
+            
+            if (traditionFilter) {
+                results = results.filter(r => r.tradition === traditionFilter);
+            }
+            if (periodFilter) {
+                results = results.filter(r => r.period === periodFilter);
+            }
+            if (authorFilter) {
+                results = results.filter(r => r.author === authorFilter);
+            }
+            
+            // Update counts
+            document.getElementById('results-count').textContent = results.length;
+            document.getElementById('search-badge').textContent = results.length;
+            document.getElementById('matches-count').textContent = 
+                results.reduce((sum, r) => sum + r.count, 0);
+            
+            // Display results
+            displayResults(results, searchTerm);
+        }
+        
+        function displayResults(results, searchTerm) {
+            let html = `<div class="search-info">
+                Found ${results.length} texts ${searchIndex[searchTerm] ? 'containing' : 'matching'} "${searchTerm}"
+                ${!searchIndex[searchTerm] && searchTerm !== 'svapna' ? 
+                    '<br><small>Note: Full-text search available for: svapna, nidrā, jāgrat, suṣupti, turīya</small>' : ''}
+            </div>`;
+            
+            results.forEach(result => {
+                const isFavorite = favorites.includes(result.filename);
+                const traditionClass = `tradition-${result.tradition.replace(/\s+/g, '')}`;
+                
+                html += `
+                    <div class="result-card">
+                        <div class="result-header">
+                            <div>
+                                <div class="result-title">
+                                    ${result.display_name}
+                                    <button class="favorite-btn ${isFavorite ? 'active' : ''}" 
+                                            onclick="toggleFavorite('${result.filename}', this)">
+                                        ${isFavorite ? '★' : '☆'}
+                                    </button>
+                                </div>
+                                <div class="result-meta">
+                                    <span>Author: ${result.author}</span>
+                                    <span>Period: ${result.period}</span>
+                                    ${result.count > 0 ? `<span>Occurrences: ${result.count}</span>` : ''}
+                                </div>
+                            </div>
+                            <div class="tradition-badge ${traditionClass}">${result.tradition}</div>
+                        </div>
+                        ${result.snippets && result.snippets.length > 0 ? `
+                            <div class="snippets">
+                                ${result.snippets.slice(0, 5).map((snippet, idx) => `
+                                    <div class="snippet">
+                                        ${highlightTerm(snippet, searchTerm)}
+                                        <button class="copy-btn" onclick="copySnippet(this, '${snippet.replace(/'/g, "\\'")}')">Copy</button>
+                                    </div>
+                                `).join('')}
+                            </div>
+                        ` : ''}
+                    </div>
+                `;
+            });
+            
+            document.getElementById('searchResults').innerHTML = html || 
+                '<div class="no-results">No results found</div>';
         }
         
         function highlightTerm(text, term) {
             const regex = new RegExp(`(${term})`, 'gi');
             return text.replace(regex, '<mark>$1</mark>');
+        }
+        
+        function toggleFavorite(filename, btn) {
+            const index = favorites.indexOf(filename);
+            if (index > -1) {
+                favorites.splice(index, 1);
+                btn.classList.remove('active');
+                btn.textContent = '☆';
+            } else {
+                favorites.push(filename);
+                btn.classList.add('active');
+                btn.textContent = '★';
+            }
+            localStorage.setItem('svapna_favorites', JSON.stringify(favorites));
+            updateFavoritesBadge();
+            
+            if (currentTab === 'favorites') {
+                displayFavorites();
+            }
+        }
+        
+        function updateFavoritesBadge() {
+            document.getElementById('favorites-badge').textContent = favorites.length;
+        }
+        
+        function copySnippet(btn, text) {
+            navigator.clipboard.writeText(text.replace(/<[^>]*>/g, ''));
+            const originalText = btn.textContent;
+            btn.textContent = 'Copied!';
+            setTimeout(() => btn.textContent = originalText, 2000);
         }
         
         function switchTab(tab) {
@@ -589,6 +773,14 @@
                 document.getElementById('catalog-tab').classList.add('active');
                 window.location.hash = 'catalog';
                 displayCatalog();
+            } else if (tab === 'visualization') {
+                document.getElementById('visualization-tab').classList.add('active');
+                window.location.hash = 'visualization';
+                displayVisualizations();
+            } else if (tab === 'favorites') {
+                document.getElementById('favorites-tab').classList.add('active');
+                window.location.hash = 'favorites';
+                displayFavorites();
             }
         }
         
@@ -636,6 +828,216 @@
             });
         }
         
+        function copyTextList() {
+            const texts = database.texts.map(t => t.display_name).join('\n');
+            navigator.clipboard.writeText(texts);
+            alert('Text list copied to clipboard!');
+        }
+        
+        function displayVisualizations() {
+            if (!database || !searchIndex.svapna) return;
+            
+            const svapnaData = searchIndex.svapna.results;
+            
+            // Tradition distribution
+            const traditionCounts = {};
+            svapnaData.forEach(text => {
+                traditionCounts[text.tradition] = (traditionCounts[text.tradition] || 0) + 1;
+            });
+            
+            // Period distribution
+            const periodCounts = {};
+            svapnaData.forEach(text => {
+                const period = text.period || 'Unknown';
+                periodCounts[period] = (periodCounts[period] || 0) + 1;
+            });
+            
+            // Top texts by occurrences
+            const topTexts = svapnaData
+                .sort((a, b) => b.count - a.count)
+                .slice(0, 10);
+            
+            // Create charts
+            createTraditionChart(traditionCounts);
+            createPeriodChart(periodCounts);
+            createTopTextsChart(topTexts);
+            createDensityChart(svapnaData);
+        }
+        
+        function createTraditionChart(data) {
+            const ctx = document.getElementById('traditionChart').getContext('2d');
+            if (charts.tradition) charts.tradition.destroy();
+            
+            charts.tradition = new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: Object.keys(data),
+                    datasets: [{
+                        data: Object.values(data),
+                        backgroundColor: [
+                            '#7c3aed', '#f59e0b', '#ec4899', '#059669',
+                            '#3b82f6', '#8b5cf6', '#ef4444', '#10b981'
+                        ]
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                            labels: { font: { size: 11 } }
+                        }
+                    }
+                }
+            });
+        }
+        
+        function createPeriodChart(data) {
+            const ctx = document.getElementById('periodChart').getContext('2d');
+            if (charts.period) charts.period.destroy();
+            
+            const sortedData = Object.entries(data).sort((a, b) => b[1] - a[1]);
+            
+            charts.period = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: sortedData.slice(0, 10).map(d => d[0]),
+                    datasets: [{
+                        label: 'Texts',
+                        data: sortedData.slice(0, 10).map(d => d[1]),
+                        backgroundColor: '#0066cc'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: { display: false }
+                    },
+                    scales: {
+                        x: {
+                            ticks: { font: { size: 10 } }
+                        }
+                    }
+                }
+            });
+        }
+        
+        function createTopTextsChart(data) {
+            const ctx = document.getElementById('topTextsChart').getContext('2d');
+            if (charts.topTexts) charts.topTexts.destroy();
+            
+            charts.topTexts = new Chart(ctx, {
+                type: 'horizontalBar',
+                data: {
+                    labels: data.map(d => d.display_name.substring(0, 30) + '...'),
+                    datasets: [{
+                        label: 'Occurrences',
+                        data: data.map(d => d.count),
+                        backgroundColor: '#059669'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: { display: false }
+                    },
+                    scales: {
+                        x: {
+                            ticks: { font: { size: 10 } }
+                        },
+                        y: {
+                            ticks: { font: { size: 10 } }
+                        }
+                    }
+                }
+            });
+        }
+        
+        function createDensityChart(data) {
+            const ctx = document.getElementById('densityChart').getContext('2d');
+            if (charts.density) charts.density.destroy();
+            
+            // Group by occurrence ranges
+            const ranges = {
+                '1-5': 0,
+                '6-10': 0,
+                '11-20': 0,
+                '21-50': 0,
+                '50+': 0
+            };
+            
+            data.forEach(text => {
+                if (text.count <= 5) ranges['1-5']++;
+                else if (text.count <= 10) ranges['6-10']++;
+                else if (text.count <= 20) ranges['11-20']++;
+                else if (text.count <= 50) ranges['21-50']++;
+                else ranges['50+']++;
+            });
+            
+            charts.density = new Chart(ctx, {
+                type: 'pie',
+                data: {
+                    labels: Object.keys(ranges),
+                    datasets: [{
+                        data: Object.values(ranges),
+                        backgroundColor: [
+                            '#dbeafe', '#bfdbfe', '#93c5fd', '#60a5fa', '#3b82f6'
+                        ]
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                            labels: { font: { size: 11 } }
+                        },
+                        title: {
+                            display: true,
+                            text: 'Texts by Occurrence Count',
+                            font: { size: 12 }
+                        }
+                    }
+                }
+            });
+        }
+        
+        function displayFavorites() {
+            if (favorites.length === 0) {
+                document.getElementById('favoritesContent').innerHTML = 
+                    '<div class="no-results">No favorites yet. Star texts from search results to add them here.</div>';
+                return;
+            }
+            
+            const favoriteTexts = database.texts.filter(t => favorites.includes(t.filename));
+            
+            let html = '<div class="results-container">';
+            favoriteTexts.forEach(text => {
+                const traditionClass = `tradition-${text.tradition.replace(/\s+/g, '')}`;
+                html += `
+                    <div class="result-card">
+                        <div class="result-header">
+                            <div>
+                                <div class="result-title">
+                                    ${text.display_name}
+                                    <button class="favorite-btn active" 
+                                            onclick="toggleFavorite('${text.filename}', this)">★</button>
+                                </div>
+                                <div class="result-meta">
+                                    <span>Author: ${text.author}</span>
+                                    <span>Period: ${text.period}</span>
+                                </div>
+                            </div>
+                            <div class="tradition-badge ${traditionClass}">${text.tradition}</div>
+                        </div>
+                    </div>
+                `;
+            });
+            html += '</div>';
+            
+            document.getElementById('favoritesContent').innerHTML = html;
+        }
+        
         // Handle Enter key in search
         document.addEventListener('DOMContentLoaded', () => {
             document.getElementById('searchInput').addEventListener('keypress', (e) => {
@@ -644,8 +1046,8 @@
                 }
             });
             
-            // Load database
-            loadDatabase();
+            // Load data
+            loadData();
         });
     </script>
 </body>
