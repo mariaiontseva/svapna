@@ -584,6 +584,7 @@
         // Global variables
         let database = null;
         let searchIndex = null;
+        let fullTextDatabase = null;
         let currentResults = [];
         let favorites = JSON.parse(localStorage.getItem('svapna_favorites') || '[]');
         let charts = {};
@@ -613,9 +614,21 @@
                 if (!indexResponse.ok) throw new Error('Failed to load search index');
                 searchIndex = await indexResponse.json();
                 
+                // Load full-text database
+                try {
+                    const fullTextResponse = await fetch('texts_compressed.json');
+                    if (fullTextResponse.ok) {
+                        fullTextDatabase = await fullTextResponse.json();
+                        console.log('Full-text search enabled for', fullTextDatabase.length, 'texts');
+                    }
+                } catch (e) {
+                    console.warn('Full-text database not available');
+                }
+                
                 console.log('Data loaded:', {
                     texts: database.stats.total_texts,
-                    searchTerms: Object.keys(searchIndex)
+                    searchTerms: Object.keys(searchIndex),
+                    fullTextEnabled: !!fullTextDatabase
                 });
                 
                 // Update stats
@@ -706,12 +719,16 @@
             let results = [];
             let totalMatches = 0;
             
-            // Check precomputed results first
-            if (searchIndex && searchIndex[searchTerm]) {
+            // Use full-text search if available
+            if (fullTextDatabase) {
+                results = searchFullText(searchTerm);
+                totalMatches = results.reduce((sum, r) => sum + r.count, 0);
+            } else if (searchIndex && searchIndex[searchTerm]) {
+                // Fall back to precomputed results
                 results = searchIndex[searchTerm].results;
                 totalMatches = searchIndex[searchTerm].total_matches;
             } else {
-                // Search through all texts
+                // Last resort: metadata search
                 results = database.texts.filter(text => {
                     const nameMatch = text.display_name && text.display_name.toLowerCase().includes(searchTerm);
                     const authorMatch = text.author && text.author.toLowerCase().includes(searchTerm);
@@ -756,12 +773,66 @@
             displayResults(results, searchTerm);
         }
         
+        function searchFullText(searchTerm) {
+            const termLower = searchTerm.toLowerCase();
+            const results = [];
+            
+            for (const text of fullTextDatabase) {
+                const contentLower = (text.content || '').toLowerCase();
+                const nameLower = text.display_name.toLowerCase();
+                const authorLower = text.author.toLowerCase();
+                
+                // Count occurrences in content
+                const contentMatches = (contentLower.match(new RegExp(termLower, 'g')) || []).length;
+                const nameMatches = nameLower.includes(termLower) ? 1 : 0;
+                const authorMatches = authorLower.includes(termLower) ? 1 : 0;
+                
+                const totalCount = contentMatches + nameMatches + authorMatches;
+                
+                if (totalCount > 0) {
+                    // Extract snippets from content
+                    const snippets = [];
+                    if (contentMatches > 0) {
+                        let pos = 0;
+                        for (let i = 0; i < Math.min(5, contentMatches); i++) {
+                            pos = contentLower.indexOf(termLower, pos);
+                            if (pos === -1) break;
+                            
+                            const start = Math.max(0, pos - 80);
+                            const end = Math.min(text.content.length, pos + termLower.length + 80);
+                            let snippet = text.content.substring(start, end);
+                            
+                            snippet = snippet.replace(/\s+/g, ' ').trim();
+                            if (start > 0) snippet = '...' + snippet;
+                            if (end < text.content.length) snippet += '...';
+                            
+                            snippets.push(snippet);
+                            pos = pos + termLower.length;
+                        }
+                    }
+                    
+                    results.push({
+                        filename: text.filename,
+                        display_name: text.display_name,
+                        tradition: text.tradition,
+                        author: text.author,
+                        period: text.period || 'Unknown',
+                        count: totalCount,
+                        snippets: snippets
+                    });
+                }
+            }
+            
+            return results.sort((a, b) => b.count - a.count);
+        }
+        
         function displayResults(results, searchTerm) {
-            const isFullText = searchIndex && searchIndex[searchTerm];
+            const isFullText = fullTextDatabase || (searchIndex && searchIndex[searchTerm]);
             
             let html = `<div class="search-info">
-                Found ${results.length} texts ${isFullText ? 'containing' : 'matching'} "${searchTerm}"
-                ${!isFullText ? '<br><small style="color: #64748b;">Showing metadata matches. Full-text search with snippets available for: svapna, nidrā, jāgrat, suṣupti, turīya</small>' : ''}
+                Found ${results.length} texts containing "${searchTerm}"
+                ${fullTextDatabase ? '<br><small style="color: #10b981;">✓ Full-text search active across all ' + fullTextDatabase.length + ' texts</small>' : 
+                  !isFullText ? '<br><small style="color: #64748b;">Showing metadata matches. Full-text data loading...</small>' : ''}
             </div>`;
             
             results.forEach((result, idx) => {
