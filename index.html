@@ -7,19 +7,19 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-primary: #ffffff;
-            --bg-secondary: #f8f9fa;
-            --bg-tertiary: #f1f3f5;
-            --bg-card: #ffffff;
-            --border-primary: #dee2e6;
-            --border-secondary: #e9ecef;
-            --text-primary: #212529;
-            --text-secondary: #495057;
-            --text-tertiary: #6c757d;
-            --accent-primary: #0066cc;
-            --accent-success: #059669;
+            --bg-primary: #1a1a1a;
+            --bg-secondary: #2a2a2a;
+            --bg-tertiary: #333333;
+            --bg-card: #2a2a2a;
+            --border-primary: #404040;
+            --border-secondary: #333333;
+            --text-primary: #ffffff;
+            --text-secondary: #b0b0b0;
+            --text-tertiary: #808080;
+            --accent-primary: #4a9eff;
+            --accent-success: #10b981;
             --accent-warning: #f59e0b;
-            --accent-purple: #7c3aed;
+            --accent-purple: #a78bfa;
         }
         
         * {
@@ -43,7 +43,7 @@
         }
         
         header {
-            background: linear-gradient(135deg, #f1f3f5 0%, #e9ecef 100%);
+            background: linear-gradient(135deg, #2a2a2a 0%, #1f1f1f 100%);
             padding: 30px 0;
             border-bottom: 1px solid var(--border-primary);
             margin-bottom: 30px;
@@ -88,6 +88,46 @@
             letter-spacing: 0.5px;
         }
         
+        .tabs-container {
+            margin-bottom: 30px;
+        }
+        
+        .tabs-header {
+            display: flex;
+            gap: 10px;
+            border-bottom: 1px solid var(--border-primary);
+            margin-bottom: 20px;
+        }
+        
+        .tab-button {
+            padding: 10px 20px;
+            background: transparent;
+            color: var(--text-secondary);
+            border: none;
+            border-bottom: 2px solid transparent;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+        
+        .tab-button.active {
+            color: var(--text-primary);
+            border-bottom-color: var(--accent-primary);
+        }
+        
+        .tab-button:hover {
+            color: var(--text-primary);
+        }
+        
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
         .search-section {
             background: var(--bg-tertiary);
             border-radius: 12px;
@@ -106,14 +146,15 @@
             font-size: 15px;
             border: 1px solid var(--border-primary);
             border-radius: 8px;
-            background: var(--bg-card);
+            background: var(--bg-secondary);
+            color: var(--text-primary);
             transition: all 0.2s;
         }
         
         .search-input:focus {
             outline: none;
             border-color: var(--accent-primary);
-            box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.1);
+            box-shadow: 0 0 0 3px rgba(74, 158, 255, 0.1);
         }
         
         .search-button {
@@ -132,7 +173,22 @@
         }
         
         .search-button:hover {
-            background: #0052a3;
+            background: #3a8eef;
+        }
+        
+        .filters {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        
+        .filter-select {
+            padding: 8px 12px;
+            background: var(--bg-secondary);
+            color: var(--text-primary);
+            border: 1px solid var(--border-primary);
+            border-radius: 6px;
+            font-size: 13px;
         }
         
         .results-container {
@@ -149,7 +205,7 @@
         }
         
         .result-card:hover {
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
             border-color: var(--border-primary);
         }
         
@@ -183,8 +239,55 @@
         }
         
         .tradition-badge {
-            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
-            color: #0369a1;
+            background: linear-gradient(135deg, #1e3a5f 0%, #2a4a6f 100%);
+            color: #4a9eff;
+        }
+        
+        .snippets {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid var(--border-secondary);
+        }
+        
+        .snippet {
+            background: var(--bg-primary);
+            padding: 10px;
+            border-radius: 6px;
+            margin-bottom: 8px;
+            font-size: 14px;
+            line-height: 1.6;
+            color: var(--text-secondary);
+        }
+        
+        .snippet mark {
+            background: rgba(74, 158, 255, 0.3);
+            color: var(--text-primary);
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+        
+        .catalog-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .catalog-table th {
+            background: var(--bg-tertiary);
+            padding: 12px;
+            text-align: left;
+            font-weight: 600;
+            color: var(--text-primary);
+            border-bottom: 2px solid var(--border-primary);
+        }
+        
+        .catalog-table td {
+            padding: 10px 12px;
+            border-bottom: 1px solid var(--border-secondary);
+            color: var(--text-secondary);
+        }
+        
+        .catalog-table tr:hover {
+            background: var(--bg-tertiary);
         }
         
         .loader {
@@ -193,57 +296,27 @@
             color: var(--text-secondary);
         }
         
-        .info-section {
+        .search-info {
+            margin: 20px 0;
+            padding: 15px;
             background: var(--bg-secondary);
-            border-radius: 12px;
-            padding: 30px;
-            margin-top: 40px;
-        }
-        
-        .info-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
-            margin-top: 20px;
-        }
-        
-        .info-card {
-            background: var(--bg-card);
-            padding: 20px;
             border-radius: 8px;
-            border: 1px solid var(--border-secondary);
+            border-left: 4px solid var(--accent-primary);
         }
         
-        .info-card h3 {
-            font-size: 16px;
-            font-weight: 600;
-            margin-bottom: 10px;
-            color: var(--text-primary);
-        }
-        
-        .info-card p {
-            font-size: 14px;
-            color: var(--text-secondary);
-            line-height: 1.6;
-        }
-        
-        .footer {
-            margin-top: 60px;
-            padding: 30px 0;
-            border-top: 1px solid var(--border-primary);
+        .no-results {
             text-align: center;
-            color: var(--text-tertiary);
-            font-size: 14px;
+            padding: 40px;
+            color: var(--text-secondary);
         }
         
-        .footer a {
-            color: var(--accent-primary);
-            text-decoration: none;
-        }
-        
-        .footer a:hover {
-            text-decoration: underline;
-        }
+        /* Tradition color coding */
+        .tradition-Kashmir { color: #a78bfa; }
+        .tradition-Bengal { color: #f59e0b; }
+        .tradition-SriVidya { color: #ec4899; }
+        .tradition-Vedic { color: #10b981; }
+        .tradition-Buddhist { color: #3b82f6; }
+        .tradition-Yoga { color: #8b5cf6; }
     </style>
 </head>
 <body>
@@ -253,164 +326,326 @@
             <div class="subtitle">Sanskrit Text Analysis & Search Interface</div>
             <div class="stats-bar">
                 <div class="stat-item">
-                    <span class="stat-value">303</span>
+                    <span class="stat-value" id="unique-sources">303</span>
                     <span class="stat-label">Unique Sources</span>
                 </div>
                 <div class="stat-item">
-                    <span class="stat-value">311</span>
+                    <span class="stat-value" id="total-texts">311</span>
                     <span class="stat-label">Total Texts</span>
                 </div>
                 <div class="stat-item">
-                    <span class="stat-value">19</span>
-                    <span class="stat-label">Traditions</span>
+                    <span class="stat-value" id="results-count">0</span>
+                    <span class="stat-label">Search Results</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-value" id="matches-count">0</span>
+                    <span class="stat-label">Total Matches</span>
                 </div>
             </div>
         </div>
     </header>
 
     <div class="container">
-        <div class="search-section">
-            <div class="search-container">
-                <input type="text" class="search-input" id="searchInput" placeholder="Search for Sanskrit terms (e.g., svapna, yoga, tantra)..." value="svapna">
-                <button class="search-button" onclick="performSearch()">Search</button>
+        <div class="tabs-container">
+            <div class="tabs-header">
+                <button class="tab-button active" onclick="switchTab('search')">Search Results</button>
+                <button class="tab-button" onclick="switchTab('catalog')">Texts Catalog</button>
             </div>
-            <div id="searchInfo" style="font-size: 13px; color: var(--text-tertiary); margin-top: 8px;">
-                Press Enter to search or click the Search button
-            </div>
-        </div>
-
-        <div id="resultsContainer" class="results-container">
-            <div class="loader" id="loader" style="display: none;">
-                Searching through 303 Sanskrit texts...
-            </div>
-            <div id="results"></div>
-        </div>
-
-        <div class="info-section">
-            <h2 style="font-size: 20px; font-weight: 600; margin-bottom: 10px;">About the Collection</h2>
-            <p style="color: var(--text-secondary); margin-bottom: 20px;">
-                This dashboard provides access to a comprehensive collection of Sanskrit texts from the Muktabodha Digital Library, 
-                including tantric, philosophical, and religious manuscripts.
-            </p>
             
-            <div class="info-grid">
-                <div class="info-card">
-                    <h3>📚 Text Sources</h3>
-                    <p>303 unique manuscripts including texts from Kashmir Shaivism, Bengal Tantra, Sri Vidya, Vedic Upanishads, and more.</p>
+            <div id="search-tab" class="tab-content active">
+                <div class="search-section">
+                    <div class="search-container">
+                        <input type="text" class="search-input" id="searchInput" 
+                               placeholder="Search for Sanskrit terms (e.g., svapna, yoga, tantra)..." 
+                               value="svapna">
+                        <button class="search-button" onclick="performSearch()">Search</button>
+                    </div>
+                    <div class="filters">
+                        <select id="traditionFilter" class="filter-select" onchange="performSearch()">
+                            <option value="">All Traditions</option>
+                        </select>
+                        <select id="periodFilter" class="filter-select" onchange="performSearch()">
+                            <option value="">All Periods</option>
+                        </select>
+                        <select id="authorFilter" class="filter-select" onchange="performSearch()">
+                            <option value="">All Authors</option>
+                        </select>
+                    </div>
                 </div>
-                <div class="info-card">
-                    <h3>🔍 Search Features</h3>
-                    <p>Full-text search across all manuscripts with instant results and contextual snippets showing your search terms.</p>
-                </div>
-                <div class="info-card">
-                    <h3>🏛️ Traditions Covered</h3>
-                    <p>19 different traditions including Tantra, Shaiva Agama, Yoga, Buddhist Tantra, Vedanta, and Ritual texts.</p>
-                </div>
-                <div class="info-card">
-                    <h3>📖 Recent Additions</h3>
-                    <p>4 major Upanishads discussing svapna (dreams): Mandukya, Prasna, Brhadaranyaka, and Chandogya.</p>
+
+                <div id="searchResults" class="results-container">
+                    <div class="loader">Loading database...</div>
                 </div>
             </div>
-        </div>
-    </div>
-
-    <div class="footer">
-        <div class="container">
-            <p>
-                Muktabodha SVAPNA Research Dashboard | 
-                <a href="https://github.com/mariaiontseva/svapna" target="_blank">GitHub Repository</a> | 
-                Data from <a href="https://www.muktabodha.org/" target="_blank">Muktabodha Digital Library</a>
-            </p>
+            
+            <div id="catalog-tab" class="tab-content">
+                <div class="search-section">
+                    <input type="text" class="search-input" id="catalogSearch" 
+                           placeholder="Filter texts by name..." 
+                           onkeyup="filterCatalog()">
+                </div>
+                <div id="catalogContent">
+                    <div class="loader">Loading catalog...</div>
+                </div>
+            </div>
         </div>
     </div>
 
     <script>
-        // Sample data for demonstration
-        const sampleResults = [
-            {
-                title: "Svapnādhyāya",
-                tradition: "Kashmir Shaivism",
-                author: "Unknown",
-                period: "10th-11th century",
-                matches: 45,
-                description: "A treatise on dream yoga and consciousness states in the Kashmir Shaiva tradition."
-            },
-            {
-                title: "Mandukya Upanishad",
-                tradition: "Vedic - Upanishadic",
-                author: "Unknown",
-                period: "6th-5th century BCE",
-                matches: 12,
-                description: "Discusses four states of consciousness including svapna (dream state)."
-            },
-            {
-                title: "Yogavāsiṣṭha",
-                tradition: "Vedanta",
-                author: "Valmiki",
-                period: "10th-14th century",
-                matches: 89,
-                description: "Extensive philosophical text discussing the nature of reality, dreams, and consciousness."
+        let database = null;
+        let currentTab = 'search';
+        
+        // Load database on page load
+        async function loadDatabase() {
+            try {
+                const response = await fetch('data.json');
+                database = await response.json();
+                
+                // Update stats
+                document.getElementById('unique-sources').textContent = database.stats.unique_sources;
+                document.getElementById('total-texts').textContent = database.stats.total_texts;
+                
+                // Populate filters
+                populateFilters();
+                
+                // Load initial search results
+                if (window.location.hash === '#catalog') {
+                    switchTab('catalog');
+                } else {
+                    displaySvapnaResults();
+                }
+                
+            } catch (error) {
+                console.error('Error loading database:', error);
+                document.getElementById('searchResults').innerHTML = 
+                    '<div class="no-results">Error loading database. Please refresh the page.</div>';
             }
-        ];
-
-        function performSearch() {
-            const searchTerm = document.getElementById('searchInput').value.trim();
-            if (!searchTerm) return;
-            
-            const loader = document.getElementById('loader');
-            const results = document.getElementById('results');
-            
-            loader.style.display = 'block';
-            results.innerHTML = '';
-            
-            // Simulate search delay
-            setTimeout(() => {
-                loader.style.display = 'none';
-                displayResults(searchTerm);
-            }, 1000);
         }
-
-        function displayResults(searchTerm) {
-            const results = document.getElementById('results');
-            const searchInfo = document.getElementById('searchInfo');
+        
+        function populateFilters() {
+            // Tradition filter
+            const traditionFilter = document.getElementById('traditionFilter');
+            database.filters.traditions.forEach(tradition => {
+                const option = document.createElement('option');
+                option.value = tradition;
+                option.textContent = tradition;
+                traditionFilter.appendChild(option);
+            });
             
-            searchInfo.innerHTML = `Found ${sampleResults.length} texts containing "${searchTerm}"`;
+            // Period filter
+            const periodFilter = document.getElementById('periodFilter');
+            database.filters.periods.forEach(period => {
+                const option = document.createElement('option');
+                option.value = period;
+                option.textContent = period;
+                periodFilter.appendChild(option);
+            });
             
-            let html = '';
-            sampleResults.forEach(result => {
+            // Author filter
+            const authorFilter = document.getElementById('authorFilter');
+            database.filters.authors.forEach(author => {
+                const option = document.createElement('option');
+                option.value = author;
+                option.textContent = author;
+                authorFilter.appendChild(option);
+            });
+        }
+        
+        function displaySvapnaResults() {
+            const results = database.svapna_results;
+            
+            // Apply filters
+            const traditionFilter = document.getElementById('traditionFilter').value;
+            const periodFilter = document.getElementById('periodFilter').value;
+            const authorFilter = document.getElementById('authorFilter').value;
+            
+            let filteredResults = results;
+            if (traditionFilter) {
+                filteredResults = filteredResults.filter(r => r.tradition === traditionFilter);
+            }
+            if (periodFilter) {
+                filteredResults = filteredResults.filter(r => r.period === periodFilter);
+            }
+            if (authorFilter) {
+                filteredResults = filteredResults.filter(r => r.author === authorFilter);
+            }
+            
+            // Update counts
+            document.getElementById('results-count').textContent = filteredResults.length;
+            const totalMatches = filteredResults.reduce((sum, r) => sum + r.count, 0);
+            document.getElementById('matches-count').textContent = totalMatches;
+            
+            // Display results
+            let html = `<div class="search-info">
+                Showing ${filteredResults.length} texts containing "svapna" 
+                (${totalMatches} total occurrences)
+            </div>`;
+            
+            filteredResults.forEach(result => {
+                const traditionClass = `tradition-${result.tradition.replace(/\s+/g, '')}`;
+                
                 html += `
                     <div class="result-card">
                         <div class="result-header">
                             <div>
-                                <div class="result-title">${result.title}</div>
+                                <div class="result-title">${result.display_name}</div>
                                 <div class="result-meta">
                                     <span>Author: ${result.author}</span>
                                     <span>Period: ${result.period}</span>
-                                    <span>Matches: ${result.matches}</span>
+                                    <span>Occurrences: ${result.count}</span>
                                 </div>
                             </div>
-                            <div class="tradition-badge">${result.tradition}</div>
+                            <div class="tradition-badge ${traditionClass}">${result.tradition}</div>
                         </div>
-                        <p style="color: var(--text-secondary); font-size: 14px; line-height: 1.6;">
-                            ${result.description}
-                        </p>
+                        ${result.snippets.length > 0 ? `
+                            <div class="snippets">
+                                ${result.snippets.map(snippet => 
+                                    `<div class="snippet">${highlightTerm(snippet, 'svapna')}</div>`
+                                ).join('')}
+                            </div>
+                        ` : ''}
                     </div>
                 `;
             });
             
-            results.innerHTML = html;
+            document.getElementById('searchResults').innerHTML = html;
         }
-
-        // Handle Enter key
-        document.getElementById('searchInput').addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') {
-                performSearch();
+        
+        function performSearch() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase().trim();
+            
+            if (!searchTerm) {
+                document.getElementById('searchResults').innerHTML = 
+                    '<div class="no-results">Please enter a search term</div>';
+                return;
             }
-        });
-
-        // Perform initial search
-        window.addEventListener('load', () => {
-            performSearch();
+            
+            // For now, only show svapna results since we only have precomputed data for that
+            if (searchTerm === 'svapna') {
+                displaySvapnaResults();
+            } else {
+                // Search through all texts (basic search)
+                const results = database.texts.filter(text => 
+                    text.display_name.toLowerCase().includes(searchTerm) ||
+                    text.tradition.toLowerCase().includes(searchTerm) ||
+                    text.author.toLowerCase().includes(searchTerm)
+                );
+                
+                document.getElementById('results-count').textContent = results.length;
+                document.getElementById('matches-count').textContent = 0;
+                
+                let html = `<div class="search-info">
+                    Found ${results.length} texts matching "${searchTerm}" in metadata
+                    <br><small>Note: Full-text search is only available for "svapna"</small>
+                </div>`;
+                
+                results.forEach(result => {
+                    const traditionClass = `tradition-${result.tradition.replace(/\s+/g, '')}`;
+                    
+                    html += `
+                        <div class="result-card">
+                            <div class="result-header">
+                                <div>
+                                    <div class="result-title">${result.display_name}</div>
+                                    <div class="result-meta">
+                                        <span>Author: ${result.author}</span>
+                                        <span>Period: ${result.period}</span>
+                                    </div>
+                                </div>
+                                <div class="tradition-badge ${traditionClass}">${result.tradition}</div>
+                            </div>
+                        </div>
+                    `;
+                });
+                
+                document.getElementById('searchResults').innerHTML = html || 
+                    '<div class="no-results">No results found</div>';
+            }
+        }
+        
+        function highlightTerm(text, term) {
+            const regex = new RegExp(`(${term})`, 'gi');
+            return text.replace(regex, '<mark>$1</mark>');
+        }
+        
+        function switchTab(tab) {
+            currentTab = tab;
+            
+            // Update tab buttons
+            document.querySelectorAll('.tab-button').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+            
+            // Update tab content
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.classList.remove('active');
+            });
+            
+            if (tab === 'search') {
+                document.getElementById('search-tab').classList.add('active');
+                window.location.hash = '';
+            } else if (tab === 'catalog') {
+                document.getElementById('catalog-tab').classList.add('active');
+                window.location.hash = 'catalog';
+                displayCatalog();
+            }
+        }
+        
+        function displayCatalog() {
+            if (!database) return;
+            
+            let html = `
+                <table class="catalog-table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Text Name</th>
+                            <th>Tradition</th>
+                            <th>Author</th>
+                            <th>Period</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+            `;
+            
+            database.texts.forEach((text, index) => {
+                const traditionClass = `tradition-${text.tradition.replace(/\s+/g, '')}`;
+                html += `
+                    <tr>
+                        <td>${index + 1}</td>
+                        <td>${text.display_name}</td>
+                        <td class="${traditionClass}">${text.tradition}</td>
+                        <td>${text.author}</td>
+                        <td>${text.period}</td>
+                    </tr>
+                `;
+            });
+            
+            html += '</tbody></table>';
+            document.getElementById('catalogContent').innerHTML = html;
+        }
+        
+        function filterCatalog() {
+            const searchTerm = document.getElementById('catalogSearch').value.toLowerCase();
+            const rows = document.querySelectorAll('.catalog-table tbody tr');
+            
+            rows.forEach(row => {
+                const text = row.textContent.toLowerCase();
+                row.style.display = text.includes(searchTerm) ? '' : 'none';
+            });
+        }
+        
+        // Handle Enter key in search
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('searchInput').addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') {
+                    performSearch();
+                }
+            });
+            
+            // Load database
+            loadDatabase();
         });
     </script>
 </body>
