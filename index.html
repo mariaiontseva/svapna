@@ -102,7 +102,7 @@
         }
         
         .tab-button {
-            padding: 10px 20px;
+            padding: 10px 28px;
             background: transparent;
             color: var(--text-secondary);
             border: none;
@@ -112,6 +112,7 @@
             font-weight: 500;
             transition: all 0.2s;
             position: relative;
+            margin-right: 5px;
         }
         
         .tab-button.active {
@@ -125,8 +126,8 @@
         
         .tab-badge {
             position: absolute;
-            top: 5px;
-            right: 5px;
+            top: 2px;
+            right: -8px;
             background: var(--accent-primary);
             color: white;
             border-radius: 10px;
@@ -723,12 +724,26 @@
                 results = searchIndex[searchTerm].results;
                 totalMatches = searchIndex[searchTerm].total_matches;
             } else {
-                // Fall back to metadata search
-                results = database.texts.filter(text => 
-                    text.display_name.toLowerCase().includes(searchTerm) ||
-                    text.tradition.toLowerCase().includes(searchTerm) ||
-                    text.author.toLowerCase().includes(searchTerm)
-                ).map(text => ({...text, snippets: [], count: 0}));
+                // Full search through all texts for any term
+                results = database.texts.filter(text => {
+                    // Search in display name
+                    const nameMatch = text.display_name.toLowerCase().includes(searchTerm);
+                    // Search in author
+                    const authorMatch = text.author && text.author.toLowerCase().includes(searchTerm);
+                    // Search in tradition  
+                    const traditionMatch = text.tradition && text.tradition.toLowerCase().includes(searchTerm);
+                    // Search in category/subcategory
+                    const categoryMatch = (text.category && text.category.toLowerCase().includes(searchTerm)) ||
+                                        (text.subcategory && text.subcategory.toLowerCase().includes(searchTerm));
+                    // Search in period
+                    const periodMatch = text.period && text.period.toLowerCase().includes(searchTerm);
+                    
+                    return nameMatch || authorMatch || traditionMatch || categoryMatch || periodMatch;
+                }).map(text => ({
+                    ...text, 
+                    snippets: [], 
+                    count: 0
+                }));
             }
             
             // Apply filters
@@ -761,9 +776,9 @@
         
         function displayResults(results, searchTerm) {
             let html = `<div class="search-info">
-                Found ${results.length} texts ${searchIndex && searchIndex[searchTerm] ? 'containing' : 'matching'} "${searchTerm}"
-                ${!searchIndex[searchTerm] && searchTerm !== 'svapna' ? 
-                    '<br><small>Note: Full-text search available for: svapna, nidrā, jāgrat, suṣupti, turīya</small>' : ''}
+                Found ${results.length} texts ${searchIndex && searchIndex[searchTerm] ? 'with full-text matches for' : 'matching'} "${searchTerm}"
+                ${!searchIndex[searchTerm] ? 
+                    '<br><small style="color: #666; font-size: 12px;">Showing metadata matches. Full-text search with snippets available for: svapna, nidrā, jāgrat, suṣupti, turīya</small>' : ''}
             </div>`;
             
             results.forEach((result, resultIdx) => {
