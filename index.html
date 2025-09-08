@@ -594,7 +594,7 @@
             // For initial loading animation
             const container = document.getElementById('lottie-container');
             if (container) {
-                fetch('./sleepy-sheepton.lottie')
+                fetch('./sleepy-sheepton.json')
                     .then(response => response.json())
                     .then(animationData => {
                         lottie.loadAnimation({
@@ -757,7 +757,7 @@
             // Load search animation
             const searchContainer = document.getElementById('lottie-search');
             if (searchContainer) {
-                fetch('./sleepy-sheepton.lottie')
+                fetch('./sleepy-sheepton.json')
                     .then(response => response.json())
                     .then(animationData => {
                         lottie.loadAnimation({
