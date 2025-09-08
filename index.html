@@ -519,13 +519,11 @@
                     
                     <div class="shortcuts">
                         <button class="shortcut-btn" onclick="quickSearch('svapna')">svapna</button>
+                        <button class="shortcut-btn" onclick="quickSearch('svapnasvapna')">svapnasvapna</button>
+                        <button class="shortcut-btn" onclick="quickSearch('svapnajāgrat')">svapnajāgrat</button>
+                        <button class="shortcut-btn" onclick="quickSearch('svapnalabdha')">svapnalabdha</button>
                         <button class="shortcut-btn" onclick="quickSearch('nidrā')">nidrā</button>
-                        <button class="shortcut-btn" onclick="quickSearch('jāgrat')">jāgrat</button>
                         <button class="shortcut-btn" onclick="quickSearch('suṣupti')">suṣupti</button>
-                        <button class="shortcut-btn" onclick="quickSearch('turīya')">turīya</button>
-                        <button class="shortcut-btn" onclick="quickSearch('yoga')">yoga</button>
-                        <button class="shortcut-btn" onclick="quickSearch('tantra')">tantra</button>
-                        <button class="shortcut-btn" onclick="quickSearch('mantra')">mantra</button>
                     </div>
                     
                     <div class="filters">
@@ -805,12 +803,8 @@
             document.getElementById('search-badge').textContent = results.length;
             document.getElementById('matches-count').textContent = filteredMatches || totalMatches || 0;
             
-            // Add data source indicator
-            const sourceIndicator = dataSource === 'Railway (Full Database)' 
-                ? '<div style="padding: 8px; background: #10b981; color: white; border-radius: 6px; margin-bottom: 10px; text-align: center;">🚀 Results from full 149MB database</div>'
-                : '<div style="padding: 8px; background: #f59e0b; color: white; border-radius: 6px; margin-bottom: 10px; text-align: center;">⚠️ Limited local search (Railway unavailable)</div>';
-            
-            document.getElementById('searchResults').innerHTML = sourceIndicator;
+            // Clear previous results
+            document.getElementById('searchResults').innerHTML = '';
             
             // Display results
             displayResults(results, searchTerm);
@@ -873,11 +867,12 @@
             const isFullText = fullTextDatabase || (searchIndex && searchIndex[searchTerm]);
             const resultsDiv = document.getElementById('searchResults');
             
-            // Append to existing content (source indicator is already there)
+            // Get total occurrences
+            const totalOccurrences = results.reduce((sum, r) => sum + (r.count || 0), 0);
+            
+            // Append to existing content
             let html = resultsDiv.innerHTML + `<div class="search-info">
-                Found ${results.length} texts containing "${searchTerm}"
-                ${fullTextDatabase ? '<br><small style="color: #10b981;">✓ Full-text search active across all ' + fullTextDatabase.length + ' texts</small>' : 
-                  !isFullText ? '<br><small style="color: #64748b;">Showing metadata matches. Full-text data loading...</small>' : ''}
+                Found ${results.length} text${results.length !== 1 ? 's' : ''} containing "${searchTerm}" • ${totalOccurrences} occurrence${totalOccurrences !== 1 ? 's' : ''}
             </div>`;
             
             results.forEach((result, idx) => {
