@@ -55,12 +55,24 @@
             box-shadow: var(--shadow-lg);
         }
         
+        .header-title {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        #lottie-logo {
+            width: 50px;
+            height: 50px;
+        }
+        
         h1 {
             font-size: 32px;
             font-weight: 700;
             color: white;
             letter-spacing: -0.5px;
-            margin-bottom: 8px;
+            margin: 0;
         }
         
         .subtitle {
@@ -468,7 +480,10 @@
 <body>
     <header>
         <div class="container">
-            <h1>SVAPNA Research Dashboard</h1>
+            <div class="header-title">
+                <div id="lottie-logo"></div>
+                <h1>SVAPNA Research Dashboard</h1>
+            </div>
             <div class="subtitle">Sanskrit Text Analysis & Search Interface</div>
             <div class="stats-bar">
                 <div class="stat-item">
@@ -543,7 +558,6 @@
 
                 <div id="searchResults" class="results-container">
                     <div class="loader">
-                        <div id="lottie-container" style="width: 150px; height: 150px; margin: 0 auto;"></div>
                         <div>Loading database...</div>
                     </div>
                 </div>
@@ -589,23 +603,22 @@
         let favorites = JSON.parse(localStorage.getItem('svapna_favorites') || '[]');
         let charts = {};
         
-        // Load Lottie animation
+        // Load Lottie animation as logo
         function loadLottieAnimation() {
-            // For initial loading animation
-            const container = document.getElementById('lottie-container');
-            if (container) {
+            const logoContainer = document.getElementById('lottie-logo');
+            if (logoContainer) {
                 fetch('./sleepy-sheepton.json')
                     .then(response => response.json())
                     .then(animationData => {
                         lottie.loadAnimation({
-                            container: container,
+                            container: logoContainer,
                             renderer: 'svg',
                             loop: true,
                             autoplay: true,
                             animationData: animationData
                         });
                     })
-                    .catch(err => console.log('Error loading Lottie:', err));
+                    .catch(err => console.log('Error loading Lottie logo:', err));
             }
         }
         
@@ -752,24 +765,7 @@
             
             // Show loading state with Lottie animation
             document.getElementById('searchResults').innerHTML = 
-                '<div class="loading"><div id="lottie-search" style="width: 150px; height: 150px; margin: 0 auto;"></div><div>Searching full 149MB database...</div></div>';
-            
-            // Load search animation
-            const searchContainer = document.getElementById('lottie-search');
-            if (searchContainer) {
-                fetch('./sleepy-sheepton.json')
-                    .then(response => response.json())
-                    .then(animationData => {
-                        lottie.loadAnimation({
-                            container: searchContainer,
-                            renderer: 'svg',
-                            loop: true,
-                            autoplay: true,
-                            animationData: animationData
-                        });
-                    })
-                    .catch(err => console.log('Error loading search Lottie:', err));
-            }
+                '<div class="loading"><div>Searching full 149MB database...</div></div>';
             
             let results = [];
             let totalMatches = 0;
