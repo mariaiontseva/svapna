@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Muktabodha SVAPNA Research Dashboard</title>
+    <title>SVAPNA Research Dashboard</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
@@ -468,7 +468,7 @@
 <body>
     <header>
         <div class="container">
-            <h1>Muktabodha SVAPNA Research Dashboard</h1>
+            <h1>SVAPNA Research Dashboard</h1>
             <div class="subtitle">Sanskrit Text Analysis & Search Interface</div>
             <div class="stats-bar">
                 <div class="stat-item">
@@ -599,6 +599,11 @@
                     performSearch();
                 }
             });
+            
+            // Perform initial search for 'svapna' after a short delay to ensure data is loaded
+            setTimeout(() => {
+                performSearch();
+            }, 500);
         });
         
         // Load database and search index
