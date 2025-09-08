@@ -18,7 +18,7 @@
             --text-primary: #212529;
             --text-secondary: #495057;
             --text-tertiary: #6c757d;
-            --accent-primary: #0066cc;
+            --accent-primary: #4a9eff;
             --accent-success: #059669;
             --accent-warning: #f59e0b;
             --accent-purple: #7c3aed;
@@ -45,7 +45,7 @@
         }
         
         header {
-            background: linear-gradient(135deg, #f1f3f5 0%, #e9ecef 100%);
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
             padding: 30px 0;
             border-bottom: 1px solid var(--border-primary);
             margin-bottom: 30px;
@@ -159,11 +159,12 @@
         
         .search-input {
             width: 100%;
-            padding: 12px 45px 12px 15px;
+            padding: 12px 16px;
+            padding-right: 100px;
             font-size: 15px;
-            border: 1px solid var(--border-primary);
+            border: 1px solid var(--border-secondary);
             border-radius: 8px;
-            background: var(--bg-card);
+            background: white;
             color: var(--text-primary);
             transition: all 0.2s;
         }
@@ -171,7 +172,7 @@
         .search-input:focus {
             outline: none;
             border-color: var(--accent-primary);
-            box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.1);
+            box-shadow: 0 0 0 3px rgba(74, 158, 255, 0.1);
         }
         
         .search-button {
@@ -182,30 +183,69 @@
             background: var(--accent-primary);
             color: white;
             border: none;
-            padding: 8px 16px;
+            padding: 8px 20px;
             border-radius: 6px;
             cursor: pointer;
             font-size: 14px;
             font-weight: 500;
+            transition: all 0.2s;
         }
         
         .search-button:hover {
-            background: #0052a3;
+            background: #3a8eef;
+        }
+        
+        /* Shortcuts / Quick tags */
+        .shortcuts {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+        
+        .shortcut-btn {
+            padding: 6px 12px;
+            background: var(--bg-secondary);
+            color: var(--text-secondary);
+            border: 1px solid var(--border-secondary);
+            border-radius: 6px;
+            font-size: 13px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-family: 'Noto Sans Devanagari', 'Inter', sans-serif;
+        }
+        
+        .shortcut-btn:hover {
+            background: var(--bg-tertiary);
+            color: var(--accent-primary);
+            border-color: var(--accent-primary);
+        }
+        
+        .shortcut-btn.active {
+            background: var(--accent-primary);
+            color: white;
+            border-color: var(--accent-primary);
         }
         
         .filters {
             display: flex;
-            gap: 10px;
+            gap: 12px;
             flex-wrap: wrap;
         }
         
         .filter-select {
-            padding: 8px 12px;
-            background: var(--bg-card);
+            padding: 10px 14px;
+            background: white;
             color: var(--text-primary);
-            border: 1px solid var(--border-primary);
+            border: 1px solid var(--border-secondary);
             border-radius: 6px;
-            font-size: 13px;
+            font-size: 14px;
+            cursor: pointer;
+            outline: none;
+        }
+        
+        .filter-select:focus {
+            border-color: var(--accent-primary);
         }
         
         .results-container {
@@ -247,17 +287,13 @@
             color: var(--text-tertiary);
         }
         
-        .result-badge {
-            background: var(--bg-tertiary);
+        .tradition-badge {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            color: #0369a1;
             padding: 4px 10px;
             border-radius: 12px;
             font-size: 12px;
             font-weight: 500;
-        }
-        
-        .tradition-badge {
-            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
-            color: #0369a1;
         }
         
         .snippets {
@@ -266,11 +302,16 @@
             border-top: 1px solid var(--border-secondary);
         }
         
+        .snippet-container {
+            position: relative;
+            margin-bottom: 12px;
+        }
+        
         .snippet {
             background: var(--bg-secondary);
-            padding: 10px;
+            padding: 12px;
+            padding-right: 80px;
             border-radius: 6px;
-            margin-bottom: 8px;
             font-size: 14px;
             line-height: 1.6;
             color: var(--text-secondary);
@@ -283,6 +324,29 @@
             padding: 2px 4px;
             border-radius: 3px;
             font-weight: 500;
+        }
+        
+        .snippet-actions {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+        }
+        
+        .copy-snippet-btn {
+            background: white;
+            color: var(--text-secondary);
+            border: 1px solid var(--border-secondary);
+            padding: 4px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+            transition: all 0.2s;
+        }
+        
+        .copy-snippet-btn:hover {
+            background: var(--accent-primary);
+            color: white;
+            border-color: var(--accent-primary);
         }
         
         .catalog-table {
@@ -313,6 +377,21 @@
             text-align: center;
             padding: 40px;
             color: var(--text-secondary);
+        }
+        
+        .spinner {
+            border: 3px solid var(--border-secondary);
+            border-top: 3px solid var(--accent-primary);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 10px;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
         }
         
         .search-info {
@@ -375,6 +454,7 @@
             font-size: 20px;
             color: var(--text-tertiary);
             transition: all 0.2s;
+            margin-left: 8px;
         }
         
         .favorite-btn.active {
@@ -385,90 +465,20 @@
             transform: scale(1.1);
         }
         
-        .copy-btn {
-            background: var(--bg-tertiary);
-            border: 1px solid var(--border-primary);
-            padding: 6px 12px;
-            border-radius: 6px;
-            cursor: pointer;
-            font-size: 13px;
-            color: var(--text-secondary);
-            transition: all 0.2s;
-        }
-        
-        .copy-btn:hover {
-            background: var(--bg-secondary);
-            color: var(--text-primary);
-        }
-        
-        .translate-btn {
+        .copy-list-btn {
             background: var(--accent-primary);
             color: white;
             border: none;
-            padding: 6px 12px;
+            padding: 8px 16px;
             border-radius: 6px;
             cursor: pointer;
             font-size: 13px;
             transition: all 0.2s;
+            margin-top: 10px;
         }
         
-        .translate-btn:hover {
-            background: #0052a3;
-        }
-        
-        /* Shortcuts / Quick tags */
-        .shortcuts {
-            display: flex;
-            gap: 8px;
-            flex-wrap: wrap;
-            margin-bottom: 20px;
-        }
-        
-        .shortcut-btn {
-            padding: 6px 12px;
-            background: var(--bg-secondary);
-            color: var(--text-secondary);
-            border: 1px solid var(--border-secondary);
-            border-radius: 6px;
-            font-size: 13px;
-            cursor: pointer;
-            transition: all 0.2s;
-            font-weight: 500;
-        }
-        
-        .shortcut-btn:hover {
-            background: var(--accent-primary);
-            color: white;
-            border-color: var(--accent-primary);
-        }
-        
-        .shortcut-btn.active {
-            background: var(--accent-primary);
-            color: white;
-            border-color: var(--accent-primary);
-        }
-        
-        /* Better result card styles */
-        .result-actions {
-            display: flex;
-            gap: 8px;
-            margin-top: 12px;
-        }
-        
-        /* Loading spinner */
-        .spinner {
-            border: 3px solid var(--border-secondary);
-            border-top: 3px solid var(--accent-primary);
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            animation: spin 1s linear infinite;
-            margin: 0 auto 10px;
-        }
-        
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+        .copy-list-btn:hover {
+            background: #3a8eef;
         }
     </style>
 </head>
@@ -501,18 +511,18 @@
     <div class="container">
         <div class="tabs-container">
             <div class="tabs-header">
-                <button class="tab-button active" onclick="switchTab('search')">
+                <button class="tab-button active" onclick="switchTab(event, 'search')">
                     Search Results
                     <span class="tab-badge" id="search-badge">0</span>
                 </button>
-                <button class="tab-button" onclick="switchTab('catalog')">
+                <button class="tab-button" onclick="switchTab(event, 'catalog')">
                     Texts Catalog
                     <span class="tab-badge" id="catalog-badge">311</span>
                 </button>
-                <button class="tab-button" onclick="switchTab('visualization')">
+                <button class="tab-button" onclick="switchTab(event, 'visualization')">
                     Visualization
                 </button>
-                <button class="tab-button" onclick="switchTab('favorites')">
+                <button class="tab-button" onclick="switchTab(event, 'favorites')">
                     Favorites
                     <span class="tab-badge" id="favorites-badge">0</span>
                 </button>
@@ -523,7 +533,7 @@
                 <div class="search-section">
                     <div class="search-container">
                         <input type="text" class="search-input" id="searchInput" 
-                               placeholder="Search for Sanskrit terms (e.g., svapna, yoga, tantra)..." 
+                               placeholder="Enter Sanskrit term (e.g., svapna, nidrā, suṣupti)" 
                                value="svapna">
                         <button class="search-button" onclick="performSearch()">Search</button>
                     </div>
@@ -553,7 +563,10 @@
                 </div>
 
                 <div id="searchResults" class="results-container">
-                    <div class="loader">Loading database...</div>
+                    <div class="loader">
+                        <div class="spinner"></div>
+                        <div>Loading database...</div>
+                    </div>
                 </div>
             </div>
             
@@ -563,7 +576,7 @@
                     <input type="text" class="search-input" id="catalogSearch" 
                            placeholder="Filter texts by name..." 
                            onkeyup="filterCatalog()">
-                    <button class="copy-btn" style="margin-top: 10px" onclick="copyTextList()">Copy Text List</button>
+                    <button class="copy-list-btn" onclick="copyTextList()">Copy Text List</button>
                 </div>
                 <div id="catalogContent">
                     <div class="loader">Loading catalog...</div>
@@ -614,6 +627,7 @@
         let database = null;
         let searchIndex = null;
         let currentTab = 'search';
+        let currentResults = [];
         let favorites = JSON.parse(localStorage.getItem('svapna_favorites') || '[]');
         let charts = {};
         
@@ -640,15 +654,7 @@
                 updateFavoritesBadge();
                 
                 // Load initial search results
-                if (window.location.hash === '#catalog') {
-                    switchTab('catalog');
-                } else if (window.location.hash === '#visualization') {
-                    switchTab('visualization');
-                } else if (window.location.hash === '#favorites') {
-                    switchTab('favorites');
-                } else {
-                    performSearch();
-                }
+                performSearch();
                 
             } catch (error) {
                 console.error('Error loading data:', error);
@@ -684,6 +690,20 @@
                 option.textContent = author;
                 authorFilter.appendChild(option);
             });
+        }
+        
+        function quickSearch(term) {
+            document.getElementById('searchInput').value = term;
+            
+            // Update active button
+            document.querySelectorAll('.shortcut-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.textContent === term) {
+                    btn.classList.add('active');
+                }
+            });
+            
+            performSearch();
         }
         
         function performSearch() {
@@ -726,6 +746,9 @@
                 results = results.filter(r => r.author === authorFilter);
             }
             
+            // Store results for copy functions
+            currentResults = results;
+            
             // Update counts
             const filteredMatches = results.reduce((sum, r) => sum + r.count, 0);
             document.getElementById('results-count').textContent = results.length;
@@ -738,12 +761,12 @@
         
         function displayResults(results, searchTerm) {
             let html = `<div class="search-info">
-                Found ${results.length} texts ${searchIndex[searchTerm] ? 'containing' : 'matching'} "${searchTerm}"
+                Found ${results.length} texts ${searchIndex && searchIndex[searchTerm] ? 'containing' : 'matching'} "${searchTerm}"
                 ${!searchIndex[searchTerm] && searchTerm !== 'svapna' ? 
                     '<br><small>Note: Full-text search available for: svapna, nidrā, jāgrat, suṣupti, turīya</small>' : ''}
             </div>`;
             
-            results.forEach(result => {
+            results.forEach((result, resultIdx) => {
                 const isFavorite = favorites.includes(result.filename);
                 const traditionClass = `tradition-${result.tradition.replace(/\s+/g, '')}`;
                 
@@ -768,10 +791,14 @@
                         </div>
                         ${result.snippets && result.snippets.length > 0 ? `
                             <div class="snippets">
-                                ${result.snippets.slice(0, 5).map((snippet, idx) => `
-                                    <div class="snippet">
-                                        ${highlightTerm(snippet, searchTerm)}
-                                        <button class="copy-btn" onclick="copySnippet(this, '${snippet.replace(/'/g, "\\'")}')">Copy</button>
+                                ${result.snippets.slice(0, 5).map((snippet, snippetIdx) => `
+                                    <div class="snippet-container">
+                                        <div class="snippet">
+                                            ${highlightTerm(snippet, searchTerm)}
+                                        </div>
+                                        <div class="snippet-actions">
+                                            <button class="copy-snippet-btn" onclick="copySnippet(${resultIdx}, ${snippetIdx})">Copy</button>
+                                        </div>
                                     </div>
                                 `).join('')}
                             </div>
@@ -787,6 +814,19 @@
         function highlightTerm(text, term) {
             const regex = new RegExp(`(${term})`, 'gi');
             return text.replace(regex, '<mark>$1</mark>');
+        }
+        
+        function copySnippet(resultIdx, snippetIdx) {
+            const result = currentResults[resultIdx];
+            const snippet = result.snippets[snippetIdx];
+            const cleanText = snippet.replace(/<[^>]*>/g, '');
+            
+            navigator.clipboard.writeText(cleanText).then(() => {
+                const btn = event.target;
+                const originalText = btn.textContent;
+                btn.textContent = 'Copied!';
+                setTimeout(() => btn.textContent = originalText, 2000);
+            });
         }
         
         function toggleFavorite(filename, btn) {
@@ -812,42 +852,14 @@
             document.getElementById('favorites-badge').textContent = favorites.length;
         }
         
-        function copySnippet(btn, text) {
-            navigator.clipboard.writeText(text.replace(/<[^>]*>/g, ''));
-            const originalText = btn.textContent;
-            btn.textContent = 'Copied!';
-            setTimeout(() => btn.textContent = originalText, 2000);
-        }
-        
-        function quickSearch(term) {
-            document.getElementById('searchInput').value = term;
-            
-            // Update active button
-            document.querySelectorAll('.shortcut-btn').forEach(btn => {
-                btn.classList.remove('active');
-                if (btn.textContent === term) {
-                    btn.classList.add('active');
-                }
-            });
-            
-            performSearch();
-        }
-        
-        function switchTab(tab) {
+        function switchTab(event, tab) {
             currentTab = tab;
             
             // Update tab buttons
             document.querySelectorAll('.tab-button').forEach(btn => {
                 btn.classList.remove('active');
-                if (btn.textContent.toLowerCase().includes(tab)) {
-                    btn.classList.add('active');
-                }
             });
-            
-            // For programmatic tab switches without event
-            if (event && event.target) {
-                event.target.classList.add('active');
-            }
+            event.currentTarget.classList.add('active');
             
             // Update tab content
             document.querySelectorAll('.tab-content').forEach(content => {
@@ -918,8 +930,12 @@
         
         function copyTextList() {
             const texts = database.texts.map(t => t.display_name).join('\n');
-            navigator.clipboard.writeText(texts);
-            alert('Text list copied to clipboard!');
+            navigator.clipboard.writeText(texts).then(() => {
+                const btn = event.target;
+                const originalText = btn.textContent;
+                btn.textContent = 'Copied!';
+                setTimeout(() => btn.textContent = originalText, 2000);
+            });
         }
         
         function displayVisualizations() {
@@ -993,7 +1009,7 @@
                     datasets: [{
                         label: 'Texts',
                         data: sortedData.slice(0, 10).map(d => d[1]),
-                        backgroundColor: '#0066cc'
+                        backgroundColor: '#4a9eff'
                     }]
                 },
                 options: {
