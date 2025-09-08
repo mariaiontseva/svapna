@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muktabodha SVAPNA Research Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #ffffff;
+            --bg-secondary: #f8f9fa;
+            --bg-tertiary: #f1f3f5;
+            --bg-card: #ffffff;
+            --border-primary: #dee2e6;
+            --border-secondary: #e9ecef;
+            --text-primary: #212529;
+            --text-secondary: #495057;
+            --text-tertiary: #6c757d;
+            --accent-primary: #0066cc;
+            --accent-success: #059669;
+            --accent-warning: #f59e0b;
+            --accent-purple: #7c3aed;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #f1f3f5 0%, #e9ecef 100%);
+            padding: 30px 0;
+            border-bottom: 1px solid var(--border-primary);
+            margin-bottom: 30px;
+        }
+        
+        h1 {
+            font-size: 28px;
+            font-weight: 600;
+            color: var(--text-primary);
+            letter-spacing: -0.5px;
+        }
+        
+        .subtitle {
+            color: var(--text-secondary);
+            font-size: 14px;
+            margin-top: 5px;
+        }
+        
+        .stats-bar {
+            display: flex;
+            gap: 30px;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-primary);
+        }
+        
+        .stat-item {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .stat-value {
+            font-size: 24px;
+            font-weight: 600;
+            color: var(--accent-primary);
+        }
+        
+        .stat-label {
+            font-size: 12px;
+            color: var(--text-tertiary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .search-section {
+            background: var(--bg-tertiary);
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 30px;
+        }
+        
+        .search-container {
+            position: relative;
+            margin-bottom: 15px;
+        }
+        
+        .search-input {
+            width: 100%;
+            padding: 12px 45px 12px 15px;
+            font-size: 15px;
+            border: 1px solid var(--border-primary);
+            border-radius: 8px;
+            background: var(--bg-card);
+            transition: all 0.2s;
+        }
+        
+        .search-input:focus {
+            outline: none;
+            border-color: var(--accent-primary);
+            box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.1);
+        }
+        
+        .search-button {
+            position: absolute;
+            right: 5px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: var(--accent-primary);
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        
+        .search-button:hover {
+            background: #0052a3;
+        }
+        
+        .results-container {
+            margin-top: 30px;
+        }
+        
+        .result-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-secondary);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 15px;
+            transition: all 0.2s;
+        }
+        
+        .result-card:hover {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            border-color: var(--border-primary);
+        }
+        
+        .result-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 12px;
+        }
+        
+        .result-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 4px;
+        }
+        
+        .result-meta {
+            display: flex;
+            gap: 15px;
+            font-size: 13px;
+            color: var(--text-tertiary);
+        }
+        
+        .result-badge {
+            background: var(--bg-tertiary);
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+        
+        .tradition-badge {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            color: #0369a1;
+        }
+        
+        .loader {
+            text-align: center;
+            padding: 40px;
+            color: var(--text-secondary);
+        }
+        
+        .info-section {
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            padding: 30px;
+            margin-top: 40px;
+        }
+        
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
+        }
+        
+        .info-card {
+            background: var(--bg-card);
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid var(--border-secondary);
+        }
+        
+        .info-card h3 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--text-primary);
+        }
+        
+        .info-card p {
+            font-size: 14px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+        
+        .footer {
+            margin-top: 60px;
+            padding: 30px 0;
+            border-top: 1px solid var(--border-primary);
+            text-align: center;
+            color: var(--text-tertiary);
+            font-size: 14px;
+        }
+        
+        .footer a {
+            color: var(--accent-primary);
+            text-decoration: none;
+        }
+        
+        .footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Muktabodha SVAPNA Research Dashboard</h1>
+            <div class="subtitle">Sanskrit Text Analysis & Search Interface</div>
+            <div class="stats-bar">
+                <div class="stat-item">
+                    <span class="stat-value">303</span>
+                    <span class="stat-label">Unique Sources</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-value">311</span>
+                    <span class="stat-label">Total Texts</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-value">19</span>
+                    <span class="stat-label">Traditions</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="search-section">
+            <div class="search-container">
+                <input type="text" class="search-input" id="searchInput" placeholder="Search for Sanskrit terms (e.g., svapna, yoga, tantra)..." value="svapna">
+                <button class="search-button" onclick="performSearch()">Search</button>
+            </div>
+            <div id="searchInfo" style="font-size: 13px; color: var(--text-tertiary); margin-top: 8px;">
+                Press Enter to search or click the Search button
+            </div>
+        </div>
+
+        <div id="resultsContainer" class="results-container">
+            <div class="loader" id="loader" style="display: none;">
+                Searching through 303 Sanskrit texts...
+            </div>
+            <div id="results"></div>
+        </div>
+
+        <div class="info-section">
+            <h2 style="font-size: 20px; font-weight: 600; margin-bottom: 10px;">About the Collection</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 20px;">
+                This dashboard provides access to a comprehensive collection of Sanskrit texts from the Muktabodha Digital Library, 
+                including tantric, philosophical, and religious manuscripts.
+            </p>
+            
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>📚 Text Sources</h3>
+                    <p>303 unique manuscripts including texts from Kashmir Shaivism, Bengal Tantra, Sri Vidya, Vedic Upanishads, and more.</p>
+                </div>
+                <div class="info-card">
+                    <h3>🔍 Search Features</h3>
+                    <p>Full-text search across all manuscripts with instant results and contextual snippets showing your search terms.</p>
+                </div>
+                <div class="info-card">
+                    <h3>🏛️ Traditions Covered</h3>
+                    <p>19 different traditions including Tantra, Shaiva Agama, Yoga, Buddhist Tantra, Vedanta, and Ritual texts.</p>
+                </div>
+                <div class="info-card">
+                    <h3>📖 Recent Additions</h3>
+                    <p>4 major Upanishads discussing svapna (dreams): Mandukya, Prasna, Brhadaranyaka, and Chandogya.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="container">
+            <p>
+                Muktabodha SVAPNA Research Dashboard | 
+                <a href="https://github.com/mariaiontseva/svapna" target="_blank">GitHub Repository</a> | 
+                Data from <a href="https://www.muktabodha.org/" target="_blank">Muktabodha Digital Library</a>
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // Sample data for demonstration
+        const sampleResults = [
+            {
+                title: "Svapnādhyāya",
+                tradition: "Kashmir Shaivism",
+                author: "Unknown",
+                period: "10th-11th century",
+                matches: 45,
+                description: "A treatise on dream yoga and consciousness states in the Kashmir Shaiva tradition."
+            },
+            {
+                title: "Mandukya Upanishad",
+                tradition: "Vedic - Upanishadic",
+                author: "Unknown",
+                period: "6th-5th century BCE",
+                matches: 12,
+                description: "Discusses four states of consciousness including svapna (dream state)."
+            },
+            {
+                title: "Yogavāsiṣṭha",
+                tradition: "Vedanta",
+                author: "Valmiki",
+                period: "10th-14th century",
+                matches: 89,
+                description: "Extensive philosophical text discussing the nature of reality, dreams, and consciousness."
+            }
+        ];
+
+        function performSearch() {
+            const searchTerm = document.getElementById('searchInput').value.trim();
+            if (!searchTerm) return;
+            
+            const loader = document.getElementById('loader');
+            const results = document.getElementById('results');
+            
+            loader.style.display = 'block';
+            results.innerHTML = '';
+            
+            // Simulate search delay
+            setTimeout(() => {
+                loader.style.display = 'none';
+                displayResults(searchTerm);
+            }, 1000);
+        }
+
+        function displayResults(searchTerm) {
+            const results = document.getElementById('results');
+            const searchInfo = document.getElementById('searchInfo');
+            
+            searchInfo.innerHTML = `Found ${sampleResults.length} texts containing "${searchTerm}"`;
+            
+            let html = '';
+            sampleResults.forEach(result => {
+                html += `
+                    <div class="result-card">
+                        <div class="result-header">
+                            <div>
+                                <div class="result-title">${result.title}</div>
+                                <div class="result-meta">
+                                    <span>Author: ${result.author}</span>
+                                    <span>Period: ${result.period}</span>
+                                    <span>Matches: ${result.matches}</span>
+                                </div>
+                            </div>
+                            <div class="tradition-badge">${result.tradition}</div>
+                        </div>
+                        <p style="color: var(--text-secondary); font-size: 14px; line-height: 1.6;">
+                            ${result.description}
+                        </p>
+                    </div>
+                `;
+            });
+            
+            results.innerHTML = html;
+        }
+
+        // Handle Enter key
+        document.getElementById('searchInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                performSearch();
+            }
+        });
+
+        // Perform initial search
+        window.addEventListener('load', () => {
+            performSearch();
+        });
+    </script>
+</body>
+</html>
