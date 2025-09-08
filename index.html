@@ -415,6 +415,61 @@
         .translate-btn:hover {
             background: #0052a3;
         }
+        
+        /* Shortcuts / Quick tags */
+        .shortcuts {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+        
+        .shortcut-btn {
+            padding: 6px 12px;
+            background: var(--bg-secondary);
+            color: var(--text-secondary);
+            border: 1px solid var(--border-secondary);
+            border-radius: 6px;
+            font-size: 13px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-weight: 500;
+        }
+        
+        .shortcut-btn:hover {
+            background: var(--accent-primary);
+            color: white;
+            border-color: var(--accent-primary);
+        }
+        
+        .shortcut-btn.active {
+            background: var(--accent-primary);
+            color: white;
+            border-color: var(--accent-primary);
+        }
+        
+        /* Better result card styles */
+        .result-actions {
+            display: flex;
+            gap: 8px;
+            margin-top: 12px;
+        }
+        
+        /* Loading spinner */
+        .spinner {
+            border: 3px solid var(--border-secondary);
+            border-top: 3px solid var(--accent-primary);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 10px;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
     </style>
 </head>
 <body>
@@ -472,6 +527,18 @@
                                value="svapna">
                         <button class="search-button" onclick="performSearch()">Search</button>
                     </div>
+                    
+                    <div class="shortcuts">
+                        <button class="shortcut-btn" onclick="quickSearch('svapna')">svapna</button>
+                        <button class="shortcut-btn" onclick="quickSearch('nidrā')">nidrā</button>
+                        <button class="shortcut-btn" onclick="quickSearch('jāgrat')">jāgrat</button>
+                        <button class="shortcut-btn" onclick="quickSearch('suṣupti')">suṣupti</button>
+                        <button class="shortcut-btn" onclick="quickSearch('turīya')">turīya</button>
+                        <button class="shortcut-btn" onclick="quickSearch('svapnasvapna')">svapnasvapna</button>
+                        <button class="shortcut-btn" onclick="quickSearch('svapnajāgrat')">svapnajāgrat</button>
+                        <button class="shortcut-btn" onclick="quickSearch('svapnalabdha')">svapnalabdha</button>
+                    </div>
+                    
                     <div class="filters">
                         <select id="traditionFilter" class="filter-select" onchange="performSearch()">
                             <option value="">All Traditions</option>
@@ -660,10 +727,10 @@
             }
             
             // Update counts
+            const filteredMatches = results.reduce((sum, r) => sum + r.count, 0);
             document.getElementById('results-count').textContent = results.length;
             document.getElementById('search-badge').textContent = results.length;
-            document.getElementById('matches-count').textContent = 
-                results.reduce((sum, r) => sum + r.count, 0);
+            document.getElementById('matches-count').textContent = filteredMatches;
             
             // Display results
             displayResults(results, searchTerm);
@@ -752,14 +819,35 @@
             setTimeout(() => btn.textContent = originalText, 2000);
         }
         
+        function quickSearch(term) {
+            document.getElementById('searchInput').value = term;
+            
+            // Update active button
+            document.querySelectorAll('.shortcut-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.textContent === term) {
+                    btn.classList.add('active');
+                }
+            });
+            
+            performSearch();
+        }
+        
         function switchTab(tab) {
             currentTab = tab;
             
             // Update tab buttons
             document.querySelectorAll('.tab-button').forEach(btn => {
                 btn.classList.remove('active');
+                if (btn.textContent.toLowerCase().includes(tab)) {
+                    btn.classList.add('active');
+                }
             });
-            event.target.classList.add('active');
+            
+            // For programmatic tab switches without event
+            if (event && event.target) {
+                event.target.classList.add('active');
+            }
             
             // Update tab content
             document.querySelectorAll('.tab-content').forEach(content => {
