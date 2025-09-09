@@ -1,0 +1,386 @@
+{
+  "timestamp": "2025-09-09T02:29:29.261950",
+  "total_compounds": 7902,
+  "unique_compounds": 3193,
+  "top_compounds": {
+    "svapnaṃ": 500,
+    "jāgratsvapna": 398,
+    "svapnaḥ": 333,
+    "svapnasya": 113,
+    "duḥsvapna": 106,
+    "svapnakāle": 76,
+    "svapnalabdhe": 62,
+    "svapnapuraṃ": 43,
+    "svapnavat": 39,
+    "svapnasuṣuptiṣu": 26,
+    "jāgarasvapna": 25,
+    "dusvapna": 25,
+    "svapnastu": 25,
+    "duḥsvapnaṃ": 25,
+    "svapnasuṣuptyavasthāsu": 24,
+    "tatsvapna": 24,
+    "svapnavadeva": 22,
+    "svapnayoḥ": 20,
+    "svapnadarśane": 19,
+    "svapnadarśanam": 19,
+    "svapnau": 19,
+    "svapnasyāpi": 19,
+    "jagatsvapna": 19,
+    "jāgratsvapnasuṣuptyavasthāsu": 18,
+    "svapnaprapañcasya": 18,
+    "svapnapadaṃ": 17,
+    "svapnaśca": 17,
+    "susvapna": 17,
+    "jāgratsvapnasuṣuptiṣu": 16,
+    "svapnasamaye": 16,
+    "svapnasāmyaṃ": 16,
+    "svapnapure": 16,
+    "svapnavaditi": 16,
+    "dīrghasvapna": 15,
+    "svapnamāṇavakaṃ": 15,
+    "svapnadṛṣṭaṃ": 15,
+    "svapnanagare": 15,
+    "svapnamānavamantro": 14,
+    "svapnalabdhaṃ": 14,
+    "svapnanidarśane": 14,
+    "jāgratsvapnau": 14,
+    "svapnavibhramaḥ": 13,
+    "suṣuptisvapna": 13,
+    "svasvapna": 13,
+    "saṃkalpasvapna": 13,
+    "svapnapade": 13,
+    "jāgratsvapnayoḥ": 12,
+    "suṣuptasvapna": 12,
+    "svapnadraṣṭā": 12,
+    "svapnasyeva": 12
+  },
+  "jagrat_compounds": {
+    "jāgratsvapna": 398,
+    "jāgratsvapnasuṣuptyavasthāsu": 18,
+    "jāgratsvapnasuṣuptiṣu": 16,
+    "jāgratsvapnau": 14,
+    "jāgratsvapnayoḥ": 12
+  },
+  "susupti_compounds": {
+    "svapnasuṣuptiṣu": 26,
+    "jāgratsvapnasuṣuptiṣu": 16,
+    "suṣuptisvapna": 13
+  },
+  "yoga_compounds": {},
+  "negative_compounds": {
+    "duḥsvapna": 106,
+    "duḥsvapnaṃ": 25
+  },
+  "top_previous_words": {
+    "yathā": 68,
+    "iti": 39,
+    "jāgrat": 30,
+    "tathā": 26,
+    "eva": 21,
+    "evaṃ": 20,
+    "nanu": 18,
+    "atha": 16,
+    "dṛṣṭvā": 15,
+    "svapne": 15,
+    "tasya": 14,
+    "prāṇabuddhidehadharmādhikārato": 13,
+    "yaḥ": 12,
+    "ityarthaḥ": 12,
+    "tatra": 11,
+    "uvāca": 11,
+    "punaḥ": 11,
+    "śubhaṃ": 10,
+    "tataḥ": 10,
+    "jāgrati": 10,
+    "paśyati": 9,
+    "tadeva": 8,
+    "kathaṃ": 8,
+    "bhavet": 8,
+    "namaḥ": 8,
+    "rātrau": 8,
+    "kaṇṭhe": 8,
+    "īritaḥ": 7,
+    "bhāvaḥ": 7,
+    "svapnaḥ": 7
+  },
+  "top_next_words": {
+    "iti": 64,
+    "iva": 53,
+    "yathā": 42,
+    "eva": 39,
+    "manasā": 30,
+    "tathā": 20,
+    "nivedayet": 17,
+    "evaṃ": 15,
+    "striyā": 15,
+    "nāma": 15,
+    "tatra": 11,
+    "caiva": 10,
+    "kiṃ": 10,
+    "ucyate": 10,
+    "paśyati": 10,
+    "suṣupti": 9,
+    "ata": 9,
+    "kathaṃ": 9,
+    "suṣuptiśca": 9,
+    "jagat": 8,
+    "suṣuptaṃ": 8,
+    "ityarthaḥ": 8,
+    "bhāti": 8,
+    "svapna": 8,
+    "śubhaṃ": 7,
+    "svapne": 7,
+    "darśane": 7,
+    "prajāyate": 7,
+    "kutaḥ": 6,
+    "prapaśyati": 6
+  },
+  "top_trigrams": {
+    "prāṇabuddhidehadharmādhikārato svapna manasā": 11,
+    "dṛṣṭvā svapna nivedayet": 9,
+    "paśyati svapna śubhaṃ": 6,
+    "karṇikāyāṃ svapna liṅge": 5,
+    "īritaḥ svapna śambhunā": 5,
+    "uttarārdhe svapna nāma": 5,
+    "dṛṣṭvā svapna caiva": 4,
+    "sṛṣṭiḥ svapna matam": 4,
+    "jāgraccaturthī svapna ucyate": 4,
+    "tataḥ svapna ca": 4,
+    "hṛṣṭastasmai svapna nivedayet": 4,
+    "jāgrat svapna suṣuptiśca": 4,
+    "namaḥ svapna kathito": 4,
+    "pūrvaṃ svapna manasā": 3,
+    "maṃtraṃ svapna pravodhinyā": 3,
+    "sa svapna iti": 3,
+    "sūkṣmaṃ svapna suṣuptistu": 3,
+    "sampadaḥ svapna yauvanaṃ": 3,
+    "vijānāti svapna purākṛtam": 3,
+    "jāgrat svapna manasā": 3,
+    "tathā svapna darśane": 3,
+    "tatraiva svapna ca": 3,
+    "yathā svapna prajāyate": 3,
+    "kāṅkṣati svapna dhanavān": 3,
+    "strīdatte svapna ca": 3,
+    "sā svapna iti": 3,
+    "ghore svapna visargayuk": 3,
+    "kaṇṭhe svapna samāviśet": 3,
+    "turyādaśādhiṣṭhāyake svapna suṣupti": 3,
+    "kaṇṭhe svapna samādiśet": 3
+  },
+  "special_patterns": {
+    "jagrat_svapna_susupti": 82,
+    "dream_yoga": 35,
+    "siddhi_related": 78,
+    "lucid_awareness": 78
+  },
+  "pattern_examples": {
+    "jagrat_svapna_susupti": [
+      {
+        "text": "Deviirahasya",
+        "compound": "jāgratsvapnasuṣuptituryaparataścaitanyasākṣyapradaṃ",
+        "tradition": "Shakta"
+      },
+      {
+        "text": "Deviirahasya",
+        "compound": "jāgratsvapnasuṣuptibodhapavanaṃ",
+        "tradition": "Shakta"
+      },
+      {
+        "text": "Gandharvatantra",
+        "compound": "jāgratsvapnasuṣuptiṣu",
+        "tradition": "Tantra (General)"
+      },
+      {
+        "text": "Jnanarnavatantra",
+        "compound": "jāgratsvapnasuṣuptiśca",
+        "tradition": "Sri Vidya"
+      },
+      {
+        "text": "Lingadhaaranachandrika",
+        "compound": "jāgratsvapnasuṣuptiturīyaturīyātītāvasthānāṃ",
+        "tradition": "Stotra"
+      },
+      {
+        "text": "Pranatosini Dharmakanda",
+        "compound": "jāgratsvapnasuṣuptiñca",
+        "tradition": "Unknown"
+      },
+      {
+        "text": "Pranatosini Dharmakanda",
+        "compound": "jāgratsvapnasuṣuptimiti",
+        "tradition": "Unknown"
+      },
+      {
+        "text": "Reference Text 30504",
+        "compound": "jāgratsvapnasuṣuptituryaṃ",
+        "tradition": "Unknown"
+      },
+      {
+        "text": "Saambapa Ncaasikaa",
+        "compound": "brahmaviṣṇurudrajāgratsvapnasuṣuptibrahmamūlamāyāṇḍāditrayī",
+        "tradition": "Unknown"
+      },
+      {
+        "text": "Sivajivadasakam",
+        "compound": "jāgratsvapnasuṣuptibodhapavanaṃcaitanyasākṣyapradaṃ",
+        "tradition": "Unknown"
+      }
+    ],
+    "dream_yoga": [
+      {
+        "text": "Īśvarapratyabhijñāvivṛtivimarśinī (Part 2)",
+        "compound": "svapnasaṃkalpayogīcchādāviva",
+        "author": "Unknown"
+      },
+      {
+        "text": "Īśvarapratyabhijñāvivṛtivimarśinī (Part 2)",
+        "compound": "svapnayogadiśā",
+        "author": "Unknown"
+      },
+      {
+        "text": "Īśvarapratyabhijñāvivṛtivimarśinī (Part 2)",
+        "compound": "svapnasaṃkalpayogīcchādāviva",
+        "author": "Unknown"
+      },
+      {
+        "text": "Īśvarapratyabhijñāvivṛtivimarśinī (Part 2)",
+        "compound": "svapnayogadiśā",
+        "author": "Unknown"
+      },
+      {
+        "text": "Īśvarapratyabhijñāvivṛtivimarśinī (Part 3)",
+        "compound": "svapnasaṅkalpayoginirmāṇādāviva",
+        "author": "Unknown"
+      },
+      {
+        "text": "Īśvarapratyabhijñāvivṛtivimarśinī (Part 3)",
+        "compound": "svapnasaṅkalpayoginirmāṇādāviva",
+        "author": "Unknown"
+      },
+      {
+        "text": "Mrgendravrtt I",
+        "compound": "yaḥpunaḥsvapnamadamūrchāpravuddhasyayathāprastutasaṃskārivadehasaṃyogevavyajyate",
+        "author": "Unknown"
+      },
+      {
+        "text": "Mrgendravrtt I",
+        "compound": "svapnamadamūrchāpravuddhasyayathāprastutasaṃskārivadehasaṃyogevavyajyate",
+        "author": "Unknown"
+      },
+      {
+        "text": "Sriikarabhaashyacombined",
+        "compound": "svapnasṛṣṭimātropayogisatyasaṅkalpatvādyāvirbhāvastadānīṃ",
+        "author": "Unknown"
+      },
+      {
+        "text": "Sriikarabhaashyacombined",
+        "compound": "svapnasṛṣṭimātropayogisatyasaṅkalpatvādyāvirbhāvastadānīṃ",
+        "author": "Unknown"
+      }
+    ],
+    "siddhi_patterns": [
+      {
+        "text": "Kulavrtti",
+        "compound": "svapnalabdha",
+        "tradition": "Bengal Tantra"
+      },
+      {
+        "text": "Kulavrtti",
+        "compound": "svapnalabdha",
+        "tradition": "Bengal Tantra"
+      },
+      {
+        "text": "Mantra Candrika",
+        "compound": "stridatesvapnalavdhecasiddhādīnnaivaśodhayet",
+        "tradition": "Mantra Shastra"
+      },
+      {
+        "text": "Mantra Candrika",
+        "compound": "svapnalavdhecasiddhādīnnaivaśodhayet",
+        "tradition": "Mantra Shastra"
+      },
+      {
+        "text": "Nigamasaranirnaya",
+        "compound": "svapnalabdhamanorvidhiṃ",
+        "tradition": "Unknown"
+      },
+      {
+        "text": "Nigamasaranirnaya",
+        "compound": "svapnalabdhaṃ",
+        "tradition": "Unknown"
+      },
+      {
+        "text": "Nigamasaranirnaya",
+        "compound": "svapnalabdhamanorvidhiṃ",
+        "tradition": "Unknown"
+      },
+      {
+        "text": "Nigamasaranirnaya",
+        "compound": "svapnalabdhaṃ",
+        "tradition": "Unknown"
+      },
+      {
+        "text": "Sriikarabhaashyacombined",
+        "compound": "jāgratsvapnayordvaitasiddhiḥ",
+        "tradition": "Unknown"
+      },
+      {
+        "text": "Sriikarabhaashyacombined",
+        "compound": "svapnayordvaitasiddhiḥ",
+        "tradition": "Unknown"
+      }
+    ],
+    "lucid_patterns": [
+      {
+        "text": "Anandesvari Paddhati",
+        "compound": "svapnadaśādhiṣṭhāyakejñānaśakyātmakaviṣṭā",
+        "author": "Unknown"
+      },
+      {
+        "text": "Anandesvari Paddhati",
+        "compound": "śanāthātmakesvapnadaśādhiṣṭhāyakejñānaśa",
+        "author": "Unknown"
+      },
+      {
+        "text": "Anandesvari Paddhati",
+        "compound": "svapnadaśādhiṣṭhāyakejñānaśakyātmakaviṣṭā",
+        "author": "Unknown"
+      },
+      {
+        "text": "Anandesvari Paddhati",
+        "compound": "svapnadaśādhiṣṭhāyakejñānaśa",
+        "author": "Unknown"
+      },
+      {
+        "text": "Deviirahasya",
+        "compound": "jāgratsvapnasuṣuptibodhapavanaṃ",
+        "author": "Unknown"
+      },
+      {
+        "text": "Deviirahasya",
+        "compound": "svapnasuṣuptibodhapavanaṃ",
+        "author": "Unknown"
+      },
+      {
+        "text": "Ipv",
+        "compound": "svapnadvayātprabodhasamaye",
+        "author": "Unknown"
+      },
+      {
+        "text": "Ipv",
+        "compound": "svapnadvayātprabodhasamaye",
+        "author": "Unknown"
+      },
+      {
+        "text": "Ramarcanacandrika",
+        "compound": "nakaṃcanasvapnaṃpaśyatitatsuṣuptaṃsuṣuptasthānekībhūtaḥprajñānadghanevānaṃ",
+        "author": "Unknown"
+      },
+      {
+        "text": "Ramarcanacandrika",
+        "compound": "svapnaṃpaśyatitatsuṣuptaṃsuṣuptasthānekībhūtaḥprajñānadghanevānaṃ",
+        "author": "Unknown"
+      }
+    ]
+  }
+}

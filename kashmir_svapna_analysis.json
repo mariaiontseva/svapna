@@ -1,0 +1,1986 @@
+{
+  "timestamp": "2025-09-09T02:41:38.881159",
+  "total_texts": 307,
+  "kashmir_texts_count": 23,
+  "kashmir_texts": [
+    {
+      "text": "Bhogakarika",
+      "author": "Abhinavagupta",
+      "tradition": "Kashmir Shaivism",
+      "filename": "bhogakarikaHK.txt"
+    },
+    {
+      "text": "Cidgaganacandrika",
+      "author": "Unknown",
+      "tradition": "Kashmir Shaivism",
+      "filename": "cidgaganacandrika-HK.txt"
+    },
+    {
+      "text": "Ipv",
+      "author": "Unknown",
+      "tradition": "Kashmir Shaivism",
+      "filename": "IPV_HK.txt"
+    },
+    {
+      "text": "Maharthamanjari",
+      "author": "Unknown",
+      "tradition": "Kashmir Shaivism",
+      "filename": "maharthamanjariHK.txt"
+    },
+    {
+      "text": "Moksakarika",
+      "author": "Abhinavagupta",
+      "tradition": "Kashmir Shaivism",
+      "filename": "moksakarikaHK.txt"
+    },
+    {
+      "text": "Netratantra",
+      "author": "Unknown",
+      "tradition": "Kashmir Shaivism",
+      "filename": "netratantra_HK.txt"
+    },
+    {
+      "text": "Paraanandasutra",
+      "author": "Unknown",
+      "tradition": "Kashmir Shaivism",
+      "filename": "paraanandasutraHK.txt"
+    },
+    {
+      "text": "Paramoksanirasakarika",
+      "author": "Abhinavagupta",
+      "tradition": "Kashmir Shaivism",
+      "filename": "paramoksanirasakarikaHK.txt"
+    },
+    {
+      "text": "Paratrimsikavivarana",
+      "author": "Unknown",
+      "tradition": "Kashmir Shaivism",
+      "filename": "paratrimsikavivaranaHK.txt"
+    },
+    {
+      "text": "Pratyabhijnahrdaya",
+      "author": "Kshemaraja",
+      "tradition": "Kashmir Shaivism",
+      "filename": "pratyabhijnahrdayaHK.txt"
+    },
+    {
+      "text": "Sivadrsti",
+      "author": "Somananda",
+      "tradition": "Kashmir Shaivism",
+      "filename": "sivadrstiHK.txt"
+    },
+    {
+      "text": "Sivasutravrtti",
+      "author": "Vasugupta",
+      "tradition": "Kashmir Shaivism",
+      "filename": "SIVASUTRAVRTTI-HK.txt"
+    },
+    {
+      "text": "Spandakarikaramakantha",
+      "author": "Vasugupta",
+      "tradition": "Kashmir Shaivism",
+      "filename": "SpandakarikaRamakanthaHK.txt"
+    },
+    {
+      "text": "Svacchandatantra",
+      "author": "Unknown",
+      "tradition": "Kashmir Shaivism",
+      "filename": "SvacchandatantraHK.txt"
+    },
+    {
+      "text": "Tantrāloka (Chapters 1-14)",
+      "author": "Abhinavagupta",
+      "tradition": "Kashmir Shaivism",
+      "filename": "Tantraloka-1-14-HK.txt"
+    },
+    {
+      "text": "Tantrāloka (Chapters 15-37)",
+      "author": "Abhinavagupta",
+      "tradition": "Kashmir Shaivism",
+      "filename": "Tantraloka-15-37-HK.txt"
+    },
+    {
+      "text": "Tattvaprakasa",
+      "author": "Unknown",
+      "tradition": "Kashmir Shaivism",
+      "filename": "tattvaprakasaHK.txt"
+    },
+    {
+      "text": "Timirodghata",
+      "author": "Unknown",
+      "tradition": "Kashmir Shaivism",
+      "filename": "timirodghataHK.txt"
+    },
+    {
+      "text": "Īśvarapratyabhijñā Kaumudī",
+      "author": "Utpaladeva",
+      "tradition": "Kashmir Shaivism",
+      "filename": "iisvarapratyabhijnakaumudiHK.txt"
+    },
+    {
+      "text": "Īśvarapratyabhijñāvimarśinī Vyākhyā",
+      "author": "Unknown",
+      "tradition": "Kashmir Shaivism",
+      "filename": "isvarapratyabhijnavimarsinivyakhyaHK.txt"
+    }
+  ],
+  "statistics": {
+    "total_lucid_contexts": 181,
+    "total_magic_contexts": 271,
+    "total_yoga_contexts": 142,
+    "total_awareness_contexts": 909,
+    "kashmir_lucid": 23,
+    "kashmir_magic": 19
+  },
+  "lucid_examples": [
+    {
+      "text": "Ipv",
+      "author": "Unknown",
+      "tradition": "Kashmir Shaivism",
+      "compound": "svapnadarśane",
+      "before": "(line 19338 ):",
+      "after": "saṃvidaḥ, tathāpi tanmahimnaiva etena edaṃ bahiḥ",
+      "full_context": "(line 19338 ): svapnadarśane saṃvidaḥ, tathāpi tanmahimnaiva etena edaṃ bahiḥ"
+    },
+    {
+      "text": "Ipv",
+      "author": "Unknown",
+      "tradition": "Kashmir Shaivism",
+      "compound": "svapnasaṃvidaḥ",
+      "before": "(line 19351 ): saṃvidaḥ -",
+      "after": "| atrāpi",
+      "full_context": "(line 19351 ): saṃvidaḥ - svapnasaṃvidaḥ | atrāpi"
+    },
+    {
+      "text": "Ipv",
+      "author": "Unknown",
+      "tradition": "Kashmir Shaivism",
+      "compound": "svapnasaṃvida",
+      "before": "(line 19362 ): grahaṇamiṣṭam, ato'trāpi",
+      "after": "evaitaddarśane",
+      "full_context": "(line 19362 ): grahaṇamiṣṭam, ato'trāpi svapnasaṃvida evaitaddarśane"
+    },
+    {
+      "text": "Ipv",
+      "author": "Unknown",
+      "tradition": "Kashmir Shaivism",
+      "compound": "svapnadvayātprabodhasamaye",
+      "before": "(line 23299 ): kālāntare -",
+      "after": "| taduktaṃ śrīvaśiṣṭhena :-",
+      "full_context": "(line 23299 ): kālāntare - svapnadvayātprabodhasamaye | taduktaṃ śrīvaśiṣṭhena :-"
+    },
+    {
+      "text": "Maharthamanjari",
+      "author": "Unknown",
+      "tradition": "Kashmir Shaivism",
+      "compound": "svapnasuṣupta-",
+      "before": "(line 6041 ): jñānamicchetyādyaśeṣatrikānuprāṇanametajjāgrat",
+      "after": "",
+      "full_context": "(line 6041 ): jñānamicchetyādyaśeṣatrikānuprāṇanametajjāgratsvapnasuṣupta-"
+    },
+    {
+      "text": "Spandakarikaramakantha",
+      "author": "Vasugupta",
+      "tradition": "Kashmir Shaivism",
+      "compound": "svapnaḥ",
+      "before": "(line 354 ): indriyārthān gṛhṇan prasṛtaśaktiḥ puruṣaḥ parispandate |",
+      "after": "svāpāvasthā",
+      "full_context": "(line 354 ): indriyārthān gṛhṇan prasṛtaśaktiḥ puruṣaḥ parispandate | svapnaḥ svāpāvasthā"
+    },
+    {
+      "text": "Spandakarikaramakantha",
+      "author": "Vasugupta",
+      "tradition": "Kashmir Shaivism",
+      "compound": "svapnadaśāvyavahāramudbhāvayati",
+      "before": "(line 1013 ): jñānajñeyabhāvena avabhāsayan jāgara",
+      "after": "etadeva ca",
+      "full_context": "(line 1013 ): jñānajñeyabhāvena avabhāsayan jāgarasvapnadaśāvyavahāramudbhāvayati etadeva ca"
+    },
+    {
+      "text": "Spandakarikaramakantha",
+      "author": "Vasugupta",
+      "tradition": "Kashmir Shaivism",
+      "compound": "svapnayorjñānajñeyamayatvena",
+      "before": "(line 1026 ): prakāśata ityarthaḥ | nanu jāgara",
+      "after": "",
+      "full_context": "(line 1026 ): prakāśata ityarthaḥ | nanu jāgarasvapnayorjñānajñeyamayatvena"
+    },
+    {
+      "text": "Spandakarikaramakantha",
+      "author": "Vasugupta",
+      "tradition": "Kashmir Shaivism",
+      "compound": "svapnalakṣaṇaṃ",
+      "before": "(line 1748 ): jāgarā",
+      "after": "padadvayaṃ sargasvabhāvaṃ tatra hi jñānajñeyabhāvena",
+      "full_context": "(line 1748 ): jāgarāsvapnalakṣaṇaṃ padadvayaṃ sargasvabhāvaṃ tatra hi jñānajñeyabhāvena"
+    },
+    {
+      "text": "Tantrāloka (Chapters 1-14)",
+      "author": "Abhinavagupta",
+      "tradition": "Kashmir Shaivism",
+      "compound": "svapnaḥ",
+      "before": "(line 2992 ):",
+      "after": "vikalpaḥ, jāgrat jñānam, unmeṣaṇam īśvaradaśā, nimeṣaṇam",
+      "full_context": "(line 2992 ): svapnaḥ vikalpaḥ, jāgrat jñānam, unmeṣaṇam īśvaradaśā, nimeṣaṇam"
+    },
+    {
+      "text": "Tantrāloka (Chapters 1-14)",
+      "author": "Abhinavagupta",
+      "tradition": "Kashmir Shaivism",
+      "compound": "svapnaḥ",
+      "before": "(line 44385 ):",
+      "after": "| jñānakriyābhyāṃ hīnenaudāsīnyapracyāvātmanā",
+      "full_context": "(line 44385 ): svapnaḥ | jñānakriyābhyāṃ hīnenaudāsīnyapracyāvātmanā"
+    },
+    {
+      "text": "Tantrāloka (Chapters 1-14)",
+      "author": "Abhinavagupta",
+      "tradition": "Kashmir Shaivism",
+      "compound": "svapnaṃ",
+      "before": "(line 45393 ): vedye svātantryabhāg jñānaṃ",
+      "after": "vyāptitayā bhajet |",
+      "full_context": "(line 45393 ): vedye svātantryabhāg jñānaṃ svapnaṃ vyāptitayā bhajet |"
+    },
+    {
+      "text": "Tantrāloka (Chapters 1-14)",
+      "author": "Abhinavagupta",
+      "tradition": "Kashmir Shaivism",
+      "compound": "svapnaṃ",
+      "before": "(line 45397 ): evārthe svatantraṃ saṃyojanaviyojanakāri vaikalpikaṃ jñānameva",
+      "after": "",
+      "full_context": "(line 45397 ): evārthe svatantraṃ saṃyojanaviyojanakāri vaikalpikaṃ jñānameva svapnaṃ"
+    },
+    {
+      "text": "Tantrāloka (Chapters 1-14)",
+      "author": "Abhinavagupta",
+      "tradition": "Kashmir Shaivism",
+      "compound": "svapna",
+      "before": "(line 45984 ): jñānaśaktiḥ",
+      "after": "uktaḥ kriyāśaktistu jāgṛtiḥ |",
+      "full_context": "(line 45984 ): jñānaśaktiḥ svapna uktaḥ kriyāśaktistu jāgṛtiḥ |"
+    },
+    {
+      "text": "Tantrāloka (Chapters 15-37)",
+      "author": "Abhinavagupta",
+      "tradition": "Kashmir Shaivism",
+      "compound": "svapnasāmyaṃ",
+      "before": "(line 5966 ): bodhasāmye punaḥ",
+      "after": "syād guruśiṣyayoḥ || 15-484 ||",
+      "full_context": "(line 5966 ): bodhasāmye punaḥ svapnasāmyaṃ syād guruśiṣyayoḥ || 15-484 ||"
+    },
+    {
+      "text": "Tattvaprakasa",
+      "author": "Unknown",
+      "tradition": "Kashmir Shaivism",
+      "compound": "svapnajñānavaditi",
+      "before": "(line 1676 ): jāgrajjñānāni ca svākāravyatiriktārthaśūnyāni, jñānatvāt,",
+      "after": "",
+      "full_context": "(line 1676 ): jāgrajjñānāni ca svākāravyatiriktārthaśūnyāni, jñānatvāt, svapnajñānavaditi"
+    },
+    {
+      "text": "Īśvarapratyabhijñāvivṛtivimarśinī (Part 1)",
+      "author": "Unknown",
+      "tradition": "Kashmir Shaivism",
+      "compound": "svapnayoḥ",
+      "before": "(line 2757 ): iva dhavādīnām | nanu jāgrat",
+      "after": "stāṃ jñānakriye, suṣṭhusuptatāyāṃ",
+      "full_context": "(line 2757 ): iva dhavādīnām | nanu jāgratsvapnayoḥ stāṃ jñānakriye, suṣṭhusuptatāyāṃ"
+    },
+    {
+      "text": "Īśvarapratyabhijñāvivṛtivimarśinī (Part 2)",
+      "author": "Unknown",
+      "tradition": "Kashmir Shaivism",
+      "compound": "svapnabhuvi",
+      "before": "(line 401 ): tatprāṇabuddhyādisaṃvidapekṣayā asya nirbhāsayat",
+      "after": "vimṛśati",
+      "full_context": "(line 401 ): tatprāṇabuddhyādisaṃvidapekṣayā asya nirbhāsayat svapnabhuvi vimṛśati"
+    },
+    {
+      "text": "Īśvarapratyabhijñāvivṛtivimarśinī (Part 2)",
+      "author": "Unknown",
+      "tradition": "Kashmir Shaivism",
+      "compound": "svapnayogadiśā",
+      "before": "(line 4771 ):",
+      "after": "ābhāsavargo bodhasvātantryādullasitaḥ, uta",
+      "full_context": "(line 4771 ): svapnayogadiśā ābhāsavargo bodhasvātantryādullasitaḥ, uta"
+    },
+    {
+      "text": "Īśvarapratyabhijñāvivṛtivimarśinī (Part 2)",
+      "author": "Unknown",
+      "tradition": "Kashmir Shaivism",
+      "compound": "svapna",
+      "before": "(line 4862 ): paramārthataḥ saṃvidākāramātraṃ",
+      "after": "iva darpaṇasaṃkrāntadarpaṇa",
+      "full_context": "(line 4862 ): paramārthataḥ saṃvidākāramātraṃ svapna iva darpaṇasaṃkrāntadarpaṇa"
+    },
+    {
+      "text": "Īśvarapratyabhijñāvivṛtivimarśinī (Part 2)",
+      "author": "Unknown",
+      "tradition": "Kashmir Shaivism",
+      "compound": "svapnadvicandrādau",
+      "before": "(line 4864 ): upapadyate jñānagata ābhāsa iti ucyamāne,",
+      "after": "kiṃ",
+      "full_context": "(line 4864 ): upapadyate jñānagata ābhāsa iti ucyamāne, svapnadvicandrādau kiṃ"
+    },
+    {
+      "text": "Īśvarapratyabhijñāvivṛtivimarśinī (Part 3)",
+      "author": "Unknown",
+      "tradition": "Kashmir Shaivism",
+      "compound": "svapnasaṅkalpamāyendrajālaprāye",
+      "before": "(line 197 ): vyavahriyate |",
+      "after": "cetanasya ābhāsavarge",
+      "full_context": "(line 197 ): vyavahriyate | svapnasaṅkalpamāyendrajālaprāye cetanasya ābhāsavarge"
+    },
+    {
+      "text": "Īśvarapratyabhijñāvivṛtivimarśinī (Part 3)",
+      "author": "Unknown",
+      "tradition": "Kashmir Shaivism",
+      "compound": "svapnasaṅkalpayogi-nirmāṇādāviva",
+      "before": "(line 2574 ):",
+      "after": "| kevalaṃ saṃvidvijṛmbhāvaśādeva",
+      "full_context": "(line 2574 ): svapnasaṅkalpayogi-nirmāṇādāviva | kevalaṃ saṃvidvijṛmbhāvaśādeva"
+    },
+    {
+      "text": "Gandharvatantra",
+      "author": "Unknown",
+      "tradition": "Tantra (General)",
+      "compound": "svapnasuṣuptyādi",
+      "before": "(line 8364 ): jāgrat",
+      "after": "prapañcaṃ yatprakāśate |",
+      "full_context": "(line 8364 ): jāgratsvapnasuṣuptyādi prapañcaṃ yatprakāśate |"
+    },
+    {
+      "text": "Jayakhyasamhita",
+      "author": "Unknown",
+      "tradition": "Vaishnava Tantra",
+      "compound": "svapnaṃ",
+      "before": "(line 8089 ): prabhāte bodhayecchiṣyān",
+      "after": "pṛcchecchubhāśubham |",
+      "full_context": "(line 8089 ): prabhāte bodhayecchiṣyān svapnaṃ pṛcchecchubhāśubham |"
+    },
+    {
+      "text": "Jayakhyasamhita",
+      "author": "Unknown",
+      "tradition": "Vaishnava Tantra",
+      "compound": "svapnadarśane",
+      "before": "(line 13355 ): vāmāṅgaspandane caiva tathā duḥ",
+      "after": "|| 92 ||",
+      "full_context": "(line 13355 ): vāmāṅgaspandane caiva tathā duḥsvapnadarśane || 92 ||"
+    },
+    {
+      "text": "Kaalottaratantram",
+      "author": "Unknown",
+      "tradition": "Bengal Tantra",
+      "compound": "svapna",
+      "before": "(line 7284 ): vāmāt sa spandane caiva tathā du",
+      "after": "darśane |",
+      "full_context": "(line 7284 ): vāmāt sa spandane caiva tathā dusvapna darśane |"
+    },
+    {
+      "text": "Kaamikaagamauttarabhaaga",
+      "author": "Unknown",
+      "tradition": "Bengal Tantra",
+      "compound": "svapnavijñānaṃ",
+      "before": "(line 3879 ): taddvayaṃ",
+      "after": "nābhipreta mihāgame |",
+      "full_context": "(line 3879 ): taddvayaṃ svapnavijñānaṃ nābhipreta mihāgame |"
+    },
+    {
+      "text": "Maliniivijayottara",
+      "author": "Unknown",
+      "tradition": "Bengal Tantra",
+      "compound": "svapnajñānamanuttamam",
+      "before": "(line 4418 ): athānyatsaṃpravakṣyāmi",
+      "after": "|| 32 ||",
+      "full_context": "(line 4418 ): athānyatsaṃpravakṣyāmi svapnajñānamanuttamam || 32 ||"
+    },
+    {
+      "text": "Paramesvariitantra",
+      "author": "Unknown",
+      "tradition": "Tantra (General)",
+      "compound": "svapnagepi",
+      "before": "(line 2845 ): paśyate jñānayogena susupta",
+      "after": "vā |",
+      "full_context": "(line 2845 ): paśyate jñānayogena susupta svapnagepi vā |"
+    },
+    {
+      "text": "Siddhilaksmiadhivasanasthandila",
+      "author": "Unknown",
+      "tradition": "Vaishnava Tantra",
+      "compound": "svapna",
+      "before": "(line 1994 ): turyādaśādhiṣṭhāyake jāgrat",
+      "after": "suṣupti turyātītecchājñānakriyā",
+      "full_context": "(line 1994 ): turyādaśādhiṣṭhāyake jāgratsvapna suṣupti turyātītecchājñānakriyā"
+    },
+    {
+      "text": "Vedantasaravirasaivacintamani Uttarakhanda",
+      "author": "Unknown",
+      "tradition": "Bengal Tantra",
+      "compound": "svapnasuṣuptiṣusphuṭatarā",
+      "before": "(line 1042 ): jāgrat",
+      "after": "yā saṃvidujjṛṃbhate",
+      "full_context": "(line 1042 ): jāgratsvapnasuṣuptiṣusphuṭatarā yā saṃvidujjṛṃbhate"
+    },
+    {
+      "text": "Vedantasaravirasaivacintamani Uttarakhanda",
+      "author": "Unknown",
+      "tradition": "Bengal Tantra",
+      "compound": "svapnasuṣuptyādiprapaṃcaṃ",
+      "before": "(line 3248 ): jāgrat",
+      "after": "yatprakāśate ||",
+      "full_context": "(line 3248 ): jāgratsvapnasuṣuptyādiprapaṃcaṃ yatprakāśate ||"
+    },
+    {
+      "text": "Vedantasaravirasaivacintamani Uttarakhanda",
+      "author": "Unknown",
+      "tradition": "Bengal Tantra",
+      "compound": "svapnasuṣuptyādi",
+      "before": "(line 6315 ): jāgrat",
+      "after": "prapaṃcaṃ yatprakāśate ||",
+      "full_context": "(line 6315 ): jāgratsvapnasuṣuptyādi prapaṃcaṃ yatprakāśate ||"
+    },
+    {
+      "text": "Anandesvari Paddhati",
+      "author": "Unknown",
+      "tradition": "Ritual/Puja",
+      "compound": "svapnadaśādhiṣṭhāyakejñānaśakyātmakaviṣṭā",
+      "before": "(line 5652 ):",
+      "after": "",
+      "full_context": "(line 5652 ): svapnadaśādhiṣṭhāyakejñānaśakyātmakaviṣṭā"
+    },
+    {
+      "text": "Anandesvari Paddhati",
+      "author": "Unknown",
+      "tradition": "Ritual/Puja",
+      "compound": "svapnadaśādhiṣṭhāyakejñānaśa",
+      "before": "(line 6443 ): śanāthātmake",
+      "after": "",
+      "full_context": "(line 6443 ): śanāthātmakesvapnadaśādhiṣṭhāyakejñānaśa"
+    },
+    {
+      "text": "Basavapurana",
+      "author": "Unknown",
+      "tradition": "Purana",
+      "compound": "svapnasuṣuptyādi",
+      "before": "(line 1002 ): jāgrat",
+      "after": "viśvaṃ yatra prakāśate || 52 ||",
+      "full_context": "(line 1002 ): jāgratsvapnasuṣuptyādi viśvaṃ yatra prakāśate || 52 ||"
+    },
+    {
+      "text": "Bhagavadgiitaa Ramakantha",
+      "author": "Unknown",
+      "tradition": "Unknown",
+      "compound": "svapnabodhau",
+      "before": "(line 4803 ): tasya tādṛśasya, tathā yuktau yathākālabhāvitvāt nyāyyau",
+      "after": "",
+      "full_context": "(line 4803 ): tasya tādṛśasya, tathā yuktau yathākālabhāvitvāt nyāyyau svapnabodhau"
+    },
+    {
+      "text": "Bhagavadgitavirashaivabhashyam",
+      "author": "Unknown",
+      "tradition": "Purana",
+      "compound": "svapnajāgaraṇayorapi",
+      "before": "(line 5561 ): yuktasvapnāvabodhasya",
+      "after": "niyatapramāṇasyaiva yogaḥ",
+      "full_context": "(line 5561 ): yuktasvapnāvabodhasya svapnajāgaraṇayorapi niyatapramāṇasyaiva yogaḥ"
+    },
+    {
+      "text": "Deviirahasya",
+      "author": "Unknown",
+      "tradition": "Shakta",
+      "compound": "svapnasuṣuptituryaparataścaitanyasākṣyapradaṃ",
+      "before": "(line 3223 ): jāgrat",
+      "after": "[k: bodhapavanaṃ]",
+      "full_context": "(line 3223 ): jāgratsvapnasuṣuptituryaparataścaitanyasākṣyapradaṃ [k: bodhapavanaṃ]"
+    },
+    {
+      "text": "Deviirahasya",
+      "author": "Unknown",
+      "tradition": "Shakta",
+      "compound": "svapnasuṣuptibodhapavanaṃ",
+      "before": "(line 13882 ): jāgrat",
+      "after": "[g: turyaparataḥ] caitanyasākṣyapradaṃ",
+      "full_context": "(line 13882 ): jāgratsvapnasuṣuptibodhapavanaṃ [g: turyaparataḥ] caitanyasākṣyapradaṃ"
+    },
+    {
+      "text": "Dhvajarohanavarsavarddhanavidhi",
+      "author": "Unknown",
+      "tradition": "Ritual/Puja",
+      "compound": "svapna",
+      "before": "(line 1931 ): p. 89b) śrīcaryyānāthātmake turyyādaśādhiṣṭhāyake jāgrat",
+      "after": "suṣuptituryatītecchājñānakriyā śāntātīta paraṃbrahma svarūpaśakti śrīmahātripurasundarīdevī śrīpā 2 ||",
+      "full_context": "(line 1931 ): p. 89b) śrīcaryyānāthātmake turyyādaśādhiṣṭhāyake jāgratsvapna suṣuptituryatītecchājñānakriyā śāntātīta paraṃbrahma svarūpaśakti śrīmahātripurasundarīdevī śrīpā 2 ||"
+    },
+    {
+      "text": "Jnaanaratnaavalii",
+      "author": "Unknown",
+      "tradition": "Stotra",
+      "compound": "svapnakalpaprakāśataḥ",
+      "before": "(line 10535 ): abhinandyaśubhaṃ tatra",
+      "after": "||",
+      "full_context": "(line 10535 ): abhinandyaśubhaṃ tatra svapnakalpaprakāśataḥ ||"
+    },
+    {
+      "text": "Jnaanasankaliniitantram",
+      "author": "Unknown",
+      "tradition": "Shakta",
+      "compound": "svapnaṃ",
+      "before": "(line 236 ): vinā",
+      "after": "yathā nidrā brahmajñānaṃ taducyate || 59 ||",
+      "full_context": "(line 236 ): vinā svapnaṃ yathā nidrā brahmajñānaṃ taducyate || 59 ||"
+    },
+    {
+      "text": "Jnanasiddhyagama",
+      "author": "Unknown",
+      "tradition": "Saiva Agama",
+      "compound": "svapnamiti",
+      "before": "(line 2109 ): mūka",
+      "after": "niratiśayā nandamātmavijñānaṃ tatsaṃpradāya siddham |",
+      "full_context": "(line 2109 ): mūka svapnamiti niratiśayā nandamātmavijñānaṃ tatsaṃpradāya siddham |"
+    },
+    {
+      "text": "Kaivalyasara",
+      "author": "Unknown",
+      "tradition": "Vedanta",
+      "compound": "svapnasuṣuptyādiprapaṃcaṃ",
+      "before": "(line 1994 ): jāgrat",
+      "after": "yatprakāśate",
+      "full_context": "(line 1994 ): jāgratsvapnasuṣuptyādiprapaṃcaṃ yatprakāśate"
+    },
+    {
+      "text": "Kalpavrksa",
+      "author": "Unknown",
+      "tradition": "Ritual/Puja",
+      "compound": "svapnamāyādera",
+      "before": "(line 722 ): jñānaniṣṭhatvena suṣupti",
+      "after": "bhāva prāsaṅgikatvā",
+      "full_context": "(line 722 ): jñānaniṣṭhatvena suṣupti svapnamāyādera bhāva prāsaṅgikatvā"
+    },
+    {
+      "text": "Kriyasara",
+      "author": "Unknown",
+      "tradition": "Unknown",
+      "compound": "svapnassuṣuptistadanantaram",
+      "before": "(line 4481 ): prabodhaḥ prathamaḥ",
+      "after": "||",
+      "full_context": "(line 4481 ): prabodhaḥ prathamaḥ svapnassuṣuptistadanantaram ||"
+    },
+    {
+      "text": "Kulacuu.Daama.Nitantra",
+      "author": "Unknown",
+      "tradition": "Kaula",
+      "compound": "svapnaprabodhamantreṇa",
+      "before": "(line 834 ):",
+      "after": "bodhayet puravāsinīm |",
+      "full_context": "(line 834 ): svapnaprabodhamantreṇa bodhayet puravāsinīm |"
+    },
+    {
+      "text": "Laghuyv Combined",
+      "author": "Unknown",
+      "tradition": "Unknown",
+      "compound": "svapnanidrasyetyatra",
+      "before": "(line 10109 ): ajāgrat",
+      "after": "nidrāśabdena suṣuptirgṛhyate | acetanaṃ",
+      "full_context": "(line 10109 ): ajāgratsvapnanidrasyetyatra nidrāśabdena suṣuptirgṛhyate | acetanaṃ"
+    }
+  ],
+  "magic_examples": [
+    {
+      "text": "Cidgaganacandrika",
+      "author": "Unknown",
+      "tradition": "Kashmir Shaivism",
+      "compound": "svapnadṛṣṭamasadityasadvaco",
+      "before": "(line 619 ):",
+      "after": "divya eṣa yadiha pramāṇitaḥ |",
+      "full_context": "(line 619 ): svapnadṛṣṭamasadityasadvaco divya eṣa yadiha pramāṇitaḥ |"
+    },
+    {
+      "text": "Ipv",
+      "author": "Unknown",
+      "tradition": "Kashmir Shaivism",
+      "compound": "svapnarūpā,",
+      "before": "(line 23230 ): prasiddhaṃ vastu kathayati ata eva iti | iyam -",
+      "after": "na hi",
+      "full_context": "(line 23230 ): prasiddhaṃ vastu kathayati ata eva iti | iyam - svapnarūpā, na hi"
+    },
+    {
+      "text": "Ipv",
+      "author": "Unknown",
+      "tradition": "Kashmir Shaivism",
+      "compound": "svapnapadam",
+      "before": "(line 23272 ): ākṣepamātrasiddhe yatno yukta iti bhāvaḥ |",
+      "after": "iti vyācaṣṭe",
+      "full_context": "(line 23272 ): ākṣepamātrasiddhe yatno yukta iti bhāvaḥ | svapnapadam iti vyācaṣṭe"
+    },
+    {
+      "text": "Maharthamanjari",
+      "author": "Unknown",
+      "tradition": "Kashmir Shaivism",
+      "compound": "svapnasamayopalabdhā",
+      "before": "(line 80 ):",
+      "after": "sā sumukhī siddhayoginī devī |",
+      "full_context": "(line 80 ): svapnasamayopalabdhā sā sumukhī siddhayoginī devī |"
+    },
+    {
+      "text": "Maharthamanjari",
+      "author": "Unknown",
+      "tradition": "Kashmir Shaivism",
+      "compound": "svapnasamayopalabdhāṃ",
+      "before": "(line 7000 ): vṛttistantrakṛt tatprayojikāṃ",
+      "after": "",
+      "full_context": "(line 7000 ): vṛttistantrakṛt tatprayojikāṃ svapnasamayopalabdhāṃ"
+    },
+    {
+      "text": "Moksakarika",
+      "author": "Abhinavagupta",
+      "tradition": "Kashmir Shaivism",
+      "compound": "svapnadṛṣṭādivat",
+      "before": "(line 1283 ): tasmāt",
+      "after": "satyabrahmasiddhiḥ | atha satyam, tarhi",
+      "full_context": "(line 1283 ): tasmāt svapnadṛṣṭādivat satyabrahmasiddhiḥ | atha satyam, tarhi"
+    },
+    {
+      "text": "Paramoksanirasakarika",
+      "author": "Abhinavagupta",
+      "tradition": "Kashmir Shaivism",
+      "compound": "svapnavadavidyārūpatvaṃ",
+      "before": "(line 1006 ): vicārayitumaśakyatvādavastutvena",
+      "after": "svanirūpaṇākṣamatvaṃ",
+      "full_context": "(line 1006 ): vicārayitumaśakyatvādavastutvena svapnavadavidyārūpatvaṃ svanirūpaṇākṣamatvaṃ"
+    },
+    {
+      "text": "Pratyabhijnahrdaya",
+      "author": "Kshemaraja",
+      "tradition": "Kashmir Shaivism",
+      "compound": "svapna",
+      "before": "(line 718 ): prāṇāpāna-samāna-śaktidaśābhiḥ jāgrat",
+      "after": "[ātmā manasā",
+      "full_context": "(line 718 ): prāṇāpāna-samāna-śaktidaśābhiḥ jāgratsvapna [ātmā manasā"
+    },
+    {
+      "text": "Sivasutravrtti",
+      "author": "Vasugupta",
+      "tradition": "Kashmir Shaivism",
+      "compound": "svapnaḥ",
+      "before": "(line 117 ): vikāso'viśiṣṭavidyā",
+      "after": "4||ga",
+      "full_context": "(line 117 ): vikāso'viśiṣṭavidyāsvapnaḥ 4||ga"
+    },
+    {
+      "text": "Spandakarikaramakantha",
+      "author": "Vasugupta",
+      "tradition": "Kashmir Shaivism",
+      "compound": "svapnaḥ",
+      "before": "(line 354 ): indriyārthān gṛhṇan prasṛtaśaktiḥ puruṣaḥ parispandate |",
+      "after": "svāpāvasthā",
+      "full_context": "(line 354 ): indriyārthān gṛhṇan prasṛtaśaktiḥ puruṣaḥ parispandate | svapnaḥ svāpāvasthā"
+    },
+    {
+      "text": "Tantrāloka (Chapters 1-14)",
+      "author": "Abhinavagupta",
+      "tradition": "Kashmir Shaivism",
+      "compound": "svapna",
+      "before": "(line 45123 ): pratyekamiti parasparam, tena jāgrajjāgrajjāgrat",
+      "after": "ityādiprasiddhirna",
+      "full_context": "(line 45123 ): pratyekamiti parasparam, tena jāgrajjāgrajjāgratsvapna ityādiprasiddhirna"
+    },
+    {
+      "text": "Tantrāloka (Chapters 1-14)",
+      "author": "Abhinavagupta",
+      "tradition": "Kashmir Shaivism",
+      "compound": "svapnaṃ",
+      "before": "(line 45397 ): evārthe svatantraṃ saṃyojanaviyojanakāri vaikalpikaṃ jñānameva",
+      "after": "",
+      "full_context": "(line 45397 ): evārthe svatantraṃ saṃyojanaviyojanakāri vaikalpikaṃ jñānameva svapnaṃ"
+    },
+    {
+      "text": "Tantrāloka (Chapters 1-14)",
+      "author": "Abhinavagupta",
+      "tradition": "Kashmir Shaivism",
+      "compound": "svapna",
+      "before": "(line 45984 ): jñānaśaktiḥ",
+      "after": "uktaḥ kriyāśaktistu jāgṛtiḥ |",
+      "full_context": "(line 45984 ): jñānaśaktiḥ svapna uktaḥ kriyāśaktistu jāgṛtiḥ |"
+    },
+    {
+      "text": "Tantrāloka (Chapters 1-14)",
+      "author": "Abhinavagupta",
+      "tradition": "Kashmir Shaivism",
+      "compound": "svapnagocaraḥ",
+      "before": "(line 47800 ): yataḥ prāgdehamaraṇasiddhāntaḥ",
+      "after": "|",
+      "full_context": "(line 47800 ): yataḥ prāgdehamaraṇasiddhāntaḥ svapnagocaraḥ |"
+    },
+    {
+      "text": "Tattvaprakasa",
+      "author": "Unknown",
+      "tradition": "Kashmir Shaivism",
+      "compound": "svapnajñānānāṃ",
+      "before": "(line 1680 ): rūpāsiddhidharmyasiddhadṛṣṭāntatvādidoṣaprasaṅgaḥ | na ca",
+      "after": "",
+      "full_context": "(line 1680 ): rūpāsiddhidharmyasiddhadṛṣṭāntatvādidoṣaprasaṅgaḥ | na ca svapnajñānānāṃ"
+    },
+    {
+      "text": "Īśvarapratyabhijñāvimarśinī Vyākhyā",
+      "author": "Unknown",
+      "tradition": "Kashmir Shaivism",
+      "compound": "svapna",
+      "before": "(line 13279 ): duḥkhayogaṃ kartṛtāyāṃ nyagbhāva iti trayaṃ jāgrat",
+      "after": "",
+      "full_context": "(line 13279 ): duḥkhayogaṃ kartṛtāyāṃ nyagbhāva iti trayaṃ jāgratsvapna"
+    },
+    {
+      "text": "Īśvarapratyabhijñāvivṛtivimarśinī (Part 2)",
+      "author": "Unknown",
+      "tradition": "Kashmir Shaivism",
+      "compound": "svapnasaṃkalpayogīcchādāviva",
+      "before": "(line 1194 ): kevalaṃ svātantryaśaktireva pārameśvarī",
+      "after": "",
+      "full_context": "(line 1194 ): kevalaṃ svātantryaśaktireva pārameśvarī svapnasaṃkalpayogīcchādāviva"
+    },
+    {
+      "text": "Īśvarapratyabhijñāvivṛtivimarśinī (Part 2)",
+      "author": "Unknown",
+      "tradition": "Kashmir Shaivism",
+      "compound": "svapnadarpaṇādāvapi,",
+      "before": "(line 4592 ): viśvanirmāṇaśaktimān yathā tu",
+      "after": "",
+      "full_context": "(line 4592 ): viśvanirmāṇaśaktimān yathā tu svapnadarpaṇādāvapi,"
+    },
+    {
+      "text": "Īśvarapratyabhijñāvivṛtivimarśinī (Part 2)",
+      "author": "Unknown",
+      "tradition": "Kashmir Shaivism",
+      "compound": "svapnayogadiśā",
+      "before": "(line 4771 ):",
+      "after": "ābhāsavargo bodhasvātantryādullasitaḥ, uta",
+      "full_context": "(line 4771 ): svapnayogadiśā ābhāsavargo bodhasvātantryādullasitaḥ, uta"
+    },
+    {
+      "text": "Aryamanjusrimulakalpa (Volume 1)",
+      "author": "Unknown",
+      "tradition": "Buddhist Tantra",
+      "compound": "svapnadarśana*******(?)",
+      "before": "(line 759 ): avivaṃvādanasarvasvaparityāgataḥ siddhakṣetrasthānāsthāna",
+      "after": "",
+      "full_context": "(line 759 ): avivaṃvādanasarvasvaparityāgataḥ siddhakṣetrasthānāsthānasvapnadarśana*******(?)"
+    },
+    {
+      "text": "Aryamanjusrimulakalpa (Volume 1)",
+      "author": "Unknown",
+      "tradition": "Buddhist Tantra",
+      "compound": "svapnaṃ",
+      "before": "(line 2544 ): tatotthāya avilambitasiddhinimittaṃ",
+      "after": "dṛṣṭvā taṃ paṭaṃ likhāpayet na",
+      "full_context": "(line 2544 ): tatotthāya avilambitasiddhinimittaṃ svapnaṃ dṛṣṭvā taṃ paṭaṃ likhāpayet na"
+    },
+    {
+      "text": "Aryamanjusrimulakalpa (Volume 1)",
+      "author": "Unknown",
+      "tradition": "Buddhist Tantra",
+      "compound": "svapnanirdiṣṭāṃ",
+      "before": "(line 4290 ): saphalāṃ",
+      "after": "siddhistasya vidhīyate ||",
+      "full_context": "(line 4290 ): saphalāṃ svapnanirdiṣṭāṃ siddhistasya vidhīyate ||"
+    },
+    {
+      "text": "Aryamanjusrimulakalpa (Volume 1)",
+      "author": "Unknown",
+      "tradition": "Buddhist Tantra",
+      "compound": "svapnasandarśanakālanimittam",
+      "before": "(line 5192 ): mantrasādhanānukūlāni",
+      "after": "yena vidyāsādhakānuvarttinaḥ",
+      "full_context": "(line 5192 ): mantrasādhanānukūlāni svapnasandarśanakālanimittam yena vidyāsādhakānuvarttinaḥ"
+    },
+    {
+      "text": "Gandharvatantra",
+      "author": "Unknown",
+      "tradition": "Tantra (General)",
+      "compound": "svapnamānavamantraḥ",
+      "before": "(line 376 ):",
+      "after": "245",
+      "full_context": "(line 376 ): svapnamānavamantraḥ 245"
+    },
+    {
+      "text": "Gandharvatantra",
+      "author": "Unknown",
+      "tradition": "Tantra (General)",
+      "compound": "svapnasuṣuptiṣu",
+      "before": "(line 4900 ): svāhānto manurityukto mantraḥ [ita pūrva prāṇabuddhidahadharmādhikārajāgrat",
+      "after": "manasā vācā karmaṇā hastābhyāṃ padbhyāmudareṇa śiśnā ca yatsmṛta yadukta yatkṛta mā madīya sakala tvayi brahmaṇyarpitamastu svāhati svātmasamarpaṇamantraḥ | māmiti asminmanau vibhaktipratirūpakamavya",
+      "full_context": "(line 4900 ): svāhānto manurityukto mantraḥ [ita pūrva prāṇabuddhidahadharmādhikārajāgratsvapnasuṣuptiṣu manasā vācā karmaṇā hastābhyāṃ padbhyāmudareṇa śiśnā ca yatsmṛta yadukta yatkṛta mā madīya sakala tvayi brahmaṇyarpitamastu svāhati svātmasamarpaṇamantraḥ | māmiti asminmanau vibhaktipratirūpakamavya"
+    },
+    {
+      "text": "Gandharvatantra",
+      "author": "Unknown",
+      "tradition": "Tantra (General)",
+      "compound": "svapnakaṃ",
+      "before": "(line 5997 ): dṛṣṭvā duḥ",
+      "after": "caiva homāt siddhimavāpnuyāt |",
+      "full_context": "(line 5997 ): dṛṣṭvā duḥsvapnakaṃ caiva homāt siddhimavāpnuyāt |"
+    },
+    {
+      "text": "Guhyasamaajatantra",
+      "author": "Unknown",
+      "tradition": "Tantra (General)",
+      "compound": "svapnaṃ",
+      "before": "(line 3459 ): drakṣyate īdṛśaṃ",
+      "after": "kāyavākcittasiddhidam ||",
+      "full_context": "(line 3459 ): drakṣyate īdṛśaṃ svapnaṃ kāyavākcittasiddhidam ||"
+    },
+    {
+      "text": "Haharavatantra",
+      "author": "Unknown",
+      "tradition": "Tantra (General)",
+      "compound": "svapnaṃ",
+      "before": "(line 1626 ): śaktikṣobhaṃ śivadarśanaṃ śivārāvaṃ nānā",
+      "after": "rakṣahāni ukṣahāni",
+      "full_context": "(line 1626 ): śaktikṣobhaṃ śivadarśanaṃ śivārāvaṃ nānāsvapnaṃ rakṣahāni ukṣahāni"
+    },
+    {
+      "text": "Haharavatantra",
+      "author": "Unknown",
+      "tradition": "Tantra (General)",
+      "compound": "svapnaṃ",
+      "before": "(line 6338 ): śrutvā deva mukhāt",
+      "after": "phalasiddhirvidhānataḥ |",
+      "full_context": "(line 6338 ): śrutvā deva mukhāt svapnaṃ phalasiddhirvidhānataḥ |"
+    },
+    {
+      "text": "Jayakhyasamhita",
+      "author": "Unknown",
+      "tradition": "Vaishnava Tantra",
+      "compound": "svapnamantrarāṭ",
+      "before": "(line 8068 ): svāhā samanvito viṃśatyakṣaraḥ",
+      "after": "|| 201 ||",
+      "full_context": "(line 8068 ): svāhā samanvito viṃśatyakṣaraḥ svapnamantrarāṭ || 201 ||"
+    },
+    {
+      "text": "Kaalottaratantram",
+      "author": "Unknown",
+      "tradition": "Bengal Tantra",
+      "compound": "svapnasveṣu",
+      "before": "(line 15715 ):",
+      "after": "pravṛttāni indriyāni niyogataḥ ||",
+      "full_context": "(line 15715 ): svapnasveṣu pravṛttāni indriyāni niyogataḥ ||"
+    },
+    {
+      "text": "Kaamikaagamauttarabhaaga",
+      "author": "Unknown",
+      "tradition": "Bengal Tantra",
+      "compound": "svapnamāṇavakaṃ",
+      "before": "(line 4027 ):",
+      "after": "mantramanujñāya ca tānatha |",
+      "full_context": "(line 4027 ): svapnamāṇavakaṃ mantramanujñāya ca tānatha |"
+    },
+    {
+      "text": "Kalottaragama",
+      "author": "Unknown",
+      "tradition": "Bengal Tantra",
+      "compound": "svapnavātaṃ",
+      "before": "(line 11973 ): ākṣiptaṃ",
+      "after": "ca mantrarājena nāśanam |",
+      "full_context": "(line 11973 ): ākṣiptaṃ svapnavātaṃ ca mantrarājena nāśanam |"
+    },
+    {
+      "text": "Kubjikasamayanirvanadiksavidhi",
+      "author": "Unknown",
+      "tradition": "Bengal Tantra",
+      "compound": "svapnamaṃtra",
+      "before": "(line 1259 ): mantraṃ || oṃ hili 2 śūlapānaye 00 || oṃ siddhicāmuṇḍeśvarī 00 |",
+      "after": "||",
+      "full_context": "(line 1259 ): mantraṃ || oṃ hili 2 śūlapānaye 00 || oṃ siddhicāmuṇḍeśvarī 00 | svapnamaṃtra ||"
+    },
+    {
+      "text": "Kulamuktikallolini",
+      "author": "Unknown",
+      "tradition": "Bengal Tantra",
+      "compound": "svapnalabdhaṃ",
+      "before": "(line 783 ):",
+      "after": "striyādattaṃ saṃskāreṇaiva śudhyati ||",
+      "full_context": "(line 783 ): svapnalabdhaṃ striyādattaṃ saṃskāreṇaiva śudhyati ||"
+    },
+    {
+      "text": "Kulamuktikallolini",
+      "author": "Unknown",
+      "tradition": "Bengal Tantra",
+      "compound": "svapnalabdhaḥ",
+      "before": "(line 796 ):",
+      "after": "striyā datto dattaḥ kenāpya sādhitaḥ |",
+      "full_context": "(line 796 ): svapnalabdhaḥ striyā datto dattaḥ kenāpya sādhitaḥ |"
+    },
+    {
+      "text": "Kulavrtti",
+      "author": "Unknown",
+      "tradition": "Bengal Tantra",
+      "compound": "svapnalabdha",
+      "before": "(line 710 ):",
+      "after": "dhanenaiva dhanavāsa bhaved yadi |",
+      "full_context": "(line 710 ): svapnalabdha dhanenaiva dhanavāsa bhaved yadi |"
+    },
+    {
+      "text": "Kulavrtti",
+      "author": "Unknown",
+      "tradition": "Bengal Tantra",
+      "compound": "svapnalabdhe",
+      "before": "(line 4309 ):",
+      "after": "striyādatte siddhādī naiva śodhayet ||",
+      "full_context": "(line 4309 ): svapnalabdhe striyādatte siddhādī naiva śodhayet ||"
+    },
+    {
+      "text": "Kulavrtti",
+      "author": "Unknown",
+      "tradition": "Bengal Tantra",
+      "compound": "svapna",
+      "before": "(line 15021 ): matprasādān mahādevi vidyā",
+      "after": "pravodhinī |",
+      "full_context": "(line 15021 ): matprasādān mahādevi vidyā svapna pravodhinī |"
+    },
+    {
+      "text": "Kulārṇava Tantra",
+      "author": "Unknown",
+      "tradition": "Bengal Tantra",
+      "compound": "svapnalabdhadhanenaiva",
+      "before": "(line 387 ):",
+      "after": "dhanavān sa bhavettadā || 48 ||",
+      "full_context": "(line 387 ): svapnalabdhadhanenaiva dhanavān sa bhavettadā || 48 ||"
+    },
+    {
+      "text": "Kulārṇava Tantra",
+      "author": "Unknown",
+      "tradition": "Bengal Tantra",
+      "compound": "svapnalabdhe",
+      "before": "(line 3927 ): strīdatte",
+      "after": "ca siddhādīnnaiva śodhayet || 97 ||",
+      "full_context": "(line 3927 ): strīdatte svapnalabdhe ca siddhādīnnaiva śodhayet || 97 ||"
+    },
+    {
+      "text": "Maahesvaratantram",
+      "author": "Unknown",
+      "tradition": "Tantra (General)",
+      "compound": "svapnamāyīśituḥ",
+      "before": "(line 2962 ): yogamāyeti vikhyātā jāgrat",
+      "after": "|| 13-20 ||",
+      "full_context": "(line 2962 ): yogamāyeti vikhyātā jāgratsvapnamāyīśituḥ || 13-20 ||"
+    },
+    {
+      "text": "Maahesvaratantram",
+      "author": "Unknown",
+      "tradition": "Tantra (General)",
+      "compound": "svapnamakṣaraḥ",
+      "before": "(line 2967 ): yogamāyodbhavaṃ",
+      "after": "saṃdadarśa ha |",
+      "full_context": "(line 2967 ): yogamāyodbhavaṃ svapnamakṣaraḥ saṃdadarśa ha |"
+    },
+    {
+      "text": "Maahesvaratantram",
+      "author": "Unknown",
+      "tradition": "Tantra (General)",
+      "compound": "svapnalabdhagajākāra",
+      "before": "(line 3949 ):",
+      "after": "ātmānaṃ manute gajam |",
+      "full_context": "(line 3949 ): svapnalabdhagajākāra ātmānaṃ manute gajam |"
+    },
+    {
+      "text": "Maahesvaratantram",
+      "author": "Unknown",
+      "tradition": "Tantra (General)",
+      "compound": "svapnalabdharājyena",
+      "before": "(line 6777 ): na",
+      "after": "rājā [vivuśrutaḥ i0 pā0 |] kaścitsuviśrutaḥ || 33-45 ||",
+      "full_context": "(line 6777 ): na svapnalabdharājyena rājā [vivuśrutaḥ i0 pā0 |] kaścitsuviśrutaḥ || 33-45 ||"
+    },
+    {
+      "text": "Maahesvaratantram",
+      "author": "Unknown",
+      "tradition": "Tantra (General)",
+      "compound": "svapnalabdhamidaṃ",
+      "before": "(line 7092 ):",
+      "after": "sarvaṃ hitvā bimbaṃ nijaṃ śraya || 36-22 ||",
+      "full_context": "(line 7092 ): svapnalabdhamidaṃ sarvaṃ hitvā bimbaṃ nijaṃ śraya || 36-22 ||"
+    },
+    {
+      "text": "Merutantra",
+      "author": "Unknown",
+      "tradition": "Tantra (General)",
+      "compound": "svapnavināśini",
+      "before": "ika-ślaiṣmikasānnipātikasatatajvarasambhavaviṣajvaragraharkṣādi-sarvadoṣāntakāriṇi kāli sara sara gauri sara sara gauridhama dhama vidyāśālai tālamāle rudrarūpe paca paca vighnaṃ nāśaya pāpaṃ hara duḥ",
+      "after": "kamalāsane rajanīsandhye dundubhimāde mānasavege śaṅkhini cakriṇi vajriṇi gadini śūlini apamṛtyuvināśini viśveśvari drāviḍi draviḍakeśi paśupatidayite me duḥkhavimardini modarśavari kirātini mātaṅgi",
+      "full_context": "ika-ślaiṣmikasānnipātikasatatajvarasambhavaviṣajvaragraharkṣādi-sarvadoṣāntakāriṇi kāli sara sara gauri sara sara gauridhama dhama vidyāśālai tālamāle rudrarūpe paca paca vighnaṃ nāśaya pāpaṃ hara duḥsvapnavināśini kamalāsane rajanīsandhye dundubhimāde mānasavege śaṅkhini cakriṇi vajriṇi gadini śūlini apamṛtyuvināśini viśveśvari drāviḍi draviḍakeśi paśupatidayite me duḥkhavimardini modarśavari kirātini mātaṅgi"
+    },
+    {
+      "text": "Merutantra",
+      "author": "Unknown",
+      "tradition": "Tantra (General)",
+      "compound": "svapnalabdhaṃ",
+      "before": "(line 37507 ): evamukto haristatra",
+      "after": "manuṃ jagau || 952 ||",
+      "full_context": "(line 37507 ): evamukto haristatra svapnalabdhaṃ manuṃ jagau || 952 ||"
+    },
+    {
+      "text": "Mohacudottaram",
+      "author": "Unknown",
+      "tradition": "Bengal Tantra",
+      "compound": "svapnamantrañjapan",
+      "before": "(line 83 ): dhyātvā maheśvaraṃ devaṃ",
+      "after": "budhaḥ ||",
+      "full_context": "(line 83 ): dhyātvā maheśvaraṃ devaṃ svapnamantrañjapan budhaḥ ||"
+    },
+    {
+      "text": "Mohacudottaram",
+      "author": "Unknown",
+      "tradition": "Bengal Tantra",
+      "compound": "svapnamantraṃ",
+      "before": "(line 85 ):",
+      "after": "pravakṣyāmi sāmpratante śacīpate |",
+      "full_context": "(line 85 ): svapnamantraṃ pravakṣyāmi sāmpratante śacīpate |"
+    }
+  ],
+  "yoga_examples": [
+    {
+      "text": "Ipv",
+      "author": "Unknown",
+      "tradition": "Kashmir Shaivism",
+      "compound": "svapnatvam,",
+      "before": "(line 10641 ): kriyāpradhānatvāt | buddhipramātuḥ",
+      "after": "ābhāsarūpavedyagrahaṇāt,",
+      "full_context": "(line 10641 ): kriyāpradhānatvāt | buddhipramātuḥ svapnatvam, ābhāsarūpavedyagrahaṇāt,"
+    },
+    {
+      "text": "Ipv",
+      "author": "Unknown",
+      "tradition": "Kashmir Shaivism",
+      "compound": "svapnajāgraddaśayostu",
+      "before": "(line 23180 ):",
+      "after": "sphuṭavedyāvabhāsayoginyoḥ ko bhedaḥ ?",
+      "full_context": "(line 23180 ): svapnajāgraddaśayostu sphuṭavedyāvabhāsayoginyoḥ ko bhedaḥ ?"
+    },
+    {
+      "text": "Maharthamanjari",
+      "author": "Unknown",
+      "tradition": "Kashmir Shaivism",
+      "compound": "svapnasamayopalabdhā",
+      "before": "(line 80 ):",
+      "after": "sā sumukhī siddhayoginī devī |",
+      "full_context": "(line 80 ): svapnasamayopalabdhā sā sumukhī siddhayoginī devī |"
+    },
+    {
+      "text": "Maharthamanjari",
+      "author": "Unknown",
+      "tradition": "Kashmir Shaivism",
+      "compound": "svapnasauṣuptaturīyaparvaparipāṭim",
+      "before": "(line 5950 ):  yogī jāgara",
+      "after": "|",
+      "full_context": "(line 5950 ):  yogī jāgarasvapnasauṣuptaturīyaparvaparipāṭim |"
+    },
+    {
+      "text": "Sivadrsti",
+      "author": "Somananda",
+      "tradition": "Kashmir Shaivism",
+      "compound": "svapnajalasya",
+      "before": "(line 5533 ): bhrāntatvādvāstava",
+      "after": "pānādyarthakriyā bhrāntāpi syāt,",
+      "full_context": "(line 5533 ): bhrāntatvādvāstavasvapnajalasya pānādyarthakriyā bhrāntāpi syāt,"
+    },
+    {
+      "text": "Sivadrsti",
+      "author": "Somananda",
+      "tradition": "Kashmir Shaivism",
+      "compound": "svapnajalādervā",
+      "before": "(line 5535 ): cāhlādikā arthakriyā kūṭādeḥ",
+      "after": "",
+      "full_context": "(line 5535 ): cāhlādikā arthakriyā kūṭādeḥ svapnajalādervā"
+    },
+    {
+      "text": "Spandakarikaramakantha",
+      "author": "Vasugupta",
+      "tradition": "Kashmir Shaivism",
+      "compound": "svapnapadadvaye",
+      "before": "(line 1742 ): jagatkāryam - iti pratipattyabhāvarūpeṇa vartamānasya yogino jāgrat",
+      "after": "",
+      "full_context": "(line 1742 ): jagatkāryam - iti pratipattyabhāvarūpeṇa vartamānasya yogino jāgratsvapnapadadvaye"
+    },
+    {
+      "text": "Svacchandatantra",
+      "author": "Unknown",
+      "tradition": "Kashmir Shaivism",
+      "compound": "svapnavṛttistato",
+      "before": "(line 25152 ): plutakoṭisamāyogāt",
+      "after": "bhavet || 7-324 ||",
+      "full_context": "(line 25152 ): plutakoṭisamāyogāt svapnavṛttistato bhavet || 7-324 ||"
+    },
+    {
+      "text": "Tantrāloka (Chapters 1-14)",
+      "author": "Abhinavagupta",
+      "tradition": "Kashmir Shaivism",
+      "compound": "svapnaḥ",
+      "before": "(line 44385 ):",
+      "after": "| jñānakriyābhyāṃ hīnenaudāsīnyapracyāvātmanā",
+      "full_context": "(line 44385 ): svapnaḥ | jñānakriyābhyāṃ hīnenaudāsīnyapracyāvātmanā"
+    },
+    {
+      "text": "Tantrāloka (Chapters 1-14)",
+      "author": "Abhinavagupta",
+      "tradition": "Kashmir Shaivism",
+      "compound": "svapnaḥ",
+      "before": "(line 45418 ): nanvadhiṣṭhitikriyākaraṇaṃ",
+      "after": "-- ityuktaṃ",
+      "full_context": "(line 45418 ): nanvadhiṣṭhitikriyākaraṇaṃ svapnaḥ -- ityuktaṃ"
+    },
+    {
+      "text": "Tantrāloka (Chapters 1-14)",
+      "author": "Abhinavagupta",
+      "tradition": "Kashmir Shaivism",
+      "compound": "svapna",
+      "before": "(line 45984 ): jñānaśaktiḥ",
+      "after": "uktaḥ kriyāśaktistu jāgṛtiḥ |",
+      "full_context": "(line 45984 ): jñānaśaktiḥ svapna uktaḥ kriyāśaktistu jāgṛtiḥ |"
+    },
+    {
+      "text": "Tantrāloka (Chapters 15-37)",
+      "author": "Abhinavagupta",
+      "tradition": "Kashmir Shaivism",
+      "compound": "svapnadṛṣṭaye",
+      "before": "(line 11987 ): nopayogyatra tacchiṣyasaṃskriyā",
+      "after": "|| 21-14 ||",
+      "full_context": "(line 11987 ): nopayogyatra tacchiṣyasaṃskriyāsvapnadṛṣṭaye || 21-14 ||"
+    },
+    {
+      "text": "Īśvarapratyabhijñāvimarśinī Vyākhyā",
+      "author": "Unknown",
+      "tradition": "Kashmir Shaivism",
+      "compound": "svapna",
+      "before": "(line 6288 ): cittatve cārohatāṃ yogināṃ jāgrat",
+      "after": "suṣuptaturya tayā",
+      "full_context": "(line 6288 ): cittatve cārohatāṃ yogināṃ jāgratsvapna suṣuptaturya tayā"
+    },
+    {
+      "text": "Īśvarapratyabhijñāvimarśinī Vyākhyā",
+      "author": "Unknown",
+      "tradition": "Kashmir Shaivism",
+      "compound": "svapna",
+      "before": "(line 12686 ): jāgrat",
+      "after": "suṣuptaturya turyātītāvasthā pañcakanirūpaṇaṃ ca kriyate |",
+      "full_context": "(line 12686 ): jāgratsvapna suṣuptaturya turyātītāvasthā pañcakanirūpaṇaṃ ca kriyate |"
+    },
+    {
+      "text": "Īśvarapratyabhijñāvimarśinī Vyākhyā",
+      "author": "Unknown",
+      "tradition": "Kashmir Shaivism",
+      "compound": "svapnajāgraddaśayoranyonyaṃ",
+      "before": "(line 13186 ): nīlamityādi sphuṭavedyābhāsayoginyoḥ",
+      "after": "",
+      "full_context": "(line 13186 ): nīlamityādi sphuṭavedyābhāsayoginyoḥ svapnajāgraddaśayoranyonyaṃ"
+    },
+    {
+      "text": "Īśvarapratyabhijñāvimarśinī Vyākhyā",
+      "author": "Unknown",
+      "tradition": "Kashmir Shaivism",
+      "compound": "svapnapratiyogi",
+      "before": "(line 13226 ): svamukhe noktamācāryeṇa tadasthairya",
+      "after": "jāgradavasthā",
+      "full_context": "(line 13226 ): svamukhe noktamācāryeṇa tadasthairyasvapnapratiyogi jāgradavasthā"
+    },
+    {
+      "text": "Īśvarapratyabhijñāvimarśinī Vyākhyā",
+      "author": "Unknown",
+      "tradition": "Kashmir Shaivism",
+      "compound": "svapna",
+      "before": "(line 13279 ): duḥkhayogaṃ kartṛtāyāṃ nyagbhāva iti trayaṃ jāgrat",
+      "after": "",
+      "full_context": "(line 13279 ): duḥkhayogaṃ kartṛtāyāṃ nyagbhāva iti trayaṃ jāgratsvapna"
+    },
+    {
+      "text": "Īśvarapratyabhijñāvivṛtivimarśinī (Part 2)",
+      "author": "Unknown",
+      "tradition": "Kashmir Shaivism",
+      "compound": "svapnasaṃkalpayogīcchādāviva",
+      "before": "(line 1194 ): kevalaṃ svātantryaśaktireva pārameśvarī",
+      "after": "",
+      "full_context": "(line 1194 ): kevalaṃ svātantryaśaktireva pārameśvarī svapnasaṃkalpayogīcchādāviva"
+    },
+    {
+      "text": "Īśvarapratyabhijñāvivṛtivimarśinī (Part 2)",
+      "author": "Unknown",
+      "tradition": "Kashmir Shaivism",
+      "compound": "svapnayogadiśā",
+      "before": "(line 4771 ):",
+      "after": "ābhāsavargo bodhasvātantryādullasitaḥ, uta",
+      "full_context": "(line 4771 ): svapnayogadiśā ābhāsavargo bodhasvātantryādullasitaḥ, uta"
+    },
+    {
+      "text": "Īśvarapratyabhijñāvivṛtivimarśinī (Part 3)",
+      "author": "Unknown",
+      "tradition": "Kashmir Shaivism",
+      "compound": "svapnasaṅkalpayogi-nirmāṇādāviva",
+      "before": "(line 2574 ):",
+      "after": "| kevalaṃ saṃvidvijṛmbhāvaśādeva",
+      "full_context": "(line 2574 ): svapnasaṅkalpayogi-nirmāṇādāviva | kevalaṃ saṃvidvijṛmbhāvaśādeva"
+    },
+    {
+      "text": "Īśvarapratyabhijñāvivṛtivimarśinī (Part 3)",
+      "author": "Unknown",
+      "tradition": "Kashmir Shaivism",
+      "compound": "svapnajāgraddaśayoḥ",
+      "before": "(line 10367 ): yogāviśeṣe'pitu",
+      "after": "ko bhedaḥ ityāśaṅkya",
+      "full_context": "(line 10367 ): yogāviśeṣe'pitu svapnajāgraddaśayoḥ ko bhedaḥ ityāśaṅkya"
+    },
+    {
+      "text": "Agastya Samhita",
+      "author": "Unknown",
+      "tradition": "Vaishnava Tantra",
+      "compound": "svapnapratyayavatsudhīḥ",
+      "before": "(line 38 ): atoniyamamādṛtyakuryāddhyānamananyadhīḥ etaccarācaraṃviśvaṃ",
+      "after": "mithyādṛgvyatiriktaṃyaddṛśyatvā-",
+      "full_context": "(line 38 ): atoniyamamādṛtyakuryāddhyānamananyadhīḥ etaccarācaraṃviśvaṃsvapnapratyayavatsudhīḥ mithyādṛgvyatiriktaṃyaddṛśyatvā-"
+    },
+    {
+      "text": "Guhyasamaajatantra",
+      "author": "Unknown",
+      "tradition": "Tantra (General)",
+      "compound": "svapnasambhūtā",
+      "before": "(line 3527 ): traidhātukakriyā svapnopamā svapna sadṛśī",
+      "after": "| evameva bhagavantaḥ",
+      "full_context": "(line 3527 ): traidhātukakriyā svapnopamā svapna sadṛśī svapnasambhūtā | evameva bhagavantaḥ"
+    },
+    {
+      "text": "Kaalottaratantram",
+      "author": "Unknown",
+      "tradition": "Bengal Tantra",
+      "compound": "svapnasveṣu",
+      "before": "(line 15715 ):",
+      "after": "pravṛttāni indriyāni niyogataḥ ||",
+      "full_context": "(line 15715 ): svapnasveṣu pravṛttāni indriyāni niyogataḥ ||"
+    },
+    {
+      "text": "Kincittantra",
+      "author": "Unknown",
+      "tradition": "Tantra (General)",
+      "compound": "svapnadarśayati",
+      "before": "(line 250 ): || sarvasu",
+      "after": "|| yoginīmelakaṃ caiva svayameva prajāyate ||",
+      "full_context": "(line 250 ): || sarvasusvapnadarśayati || yoginīmelakaṃ caiva svayameva prajāyate ||"
+    },
+    {
+      "text": "Kincittantra",
+      "author": "Unknown",
+      "tradition": "Tantra (General)",
+      "compound": "svapna",
+      "before": "(line 253 ): sarvasu",
+      "after": "darśayati śivarūpaṃ paśyati || sarvayoginī devyādyāstadā",
+      "full_context": "(line 253 ): sarvasusvapna darśayati śivarūpaṃ paśyati || sarvayoginī devyādyāstadā"
+    },
+    {
+      "text": "Maahesvaratantram",
+      "author": "Unknown",
+      "tradition": "Tantra (General)",
+      "compound": "svapnamāyīśituḥ",
+      "before": "(line 2962 ): yogamāyeti vikhyātā jāgrat",
+      "after": "|| 13-20 ||",
+      "full_context": "(line 2962 ): yogamāyeti vikhyātā jāgratsvapnamāyīśituḥ || 13-20 ||"
+    },
+    {
+      "text": "Maahesvaratantram",
+      "author": "Unknown",
+      "tradition": "Tantra (General)",
+      "compound": "svapnamakṣaraḥ",
+      "before": "(line 2967 ): yogamāyodbhavaṃ",
+      "after": "saṃdadarśa ha |",
+      "full_context": "(line 2967 ): yogamāyodbhavaṃ svapnamakṣaraḥ saṃdadarśa ha |"
+    },
+    {
+      "text": "Paramesvariitantra",
+      "author": "Unknown",
+      "tradition": "Tantra (General)",
+      "compound": "svapnagepi",
+      "before": "(line 2845 ): paśyate jñānayogena susupta",
+      "after": "vā |",
+      "full_context": "(line 2845 ): paśyate jñānayogena susupta svapnagepi vā |"
+    },
+    {
+      "text": "Paramesvariitantra",
+      "author": "Unknown",
+      "tradition": "Tantra (General)",
+      "compound": "svapnayogena",
+      "before": "(line 2879 ): labhate",
+      "after": "ṣaṇmāsāni sa jīvati ||",
+      "full_context": "(line 2879 ): labhate svapnayogena ṣaṇmāsāni sa jīvati ||"
+    }
+  ],
+  "awareness_examples": [
+    {
+      "text": "Ipv",
+      "author": "Unknown",
+      "tradition": "Kashmir Shaivism",
+      "compound": "svapnasuṣuptaturyabhāvena,",
+      "before": "(line 10637 ): alaukikajāgrat",
+      "after": "tathā piṇḍasthāditayā -",
+      "full_context": "(line 10637 ): alaukikajāgratsvapnasuṣuptaturyabhāvena, tathā piṇḍasthāditayā -"
+    },
+    {
+      "text": "Ipv",
+      "author": "Unknown",
+      "tradition": "Kashmir Shaivism",
+      "compound": "svapnasuṣuptarūpā",
+      "before": "(line 22884 ): ṣ. ṣ.] saṃsāriṇāṃ parisphurati | seyaṃ jāgrat",
+      "after": "",
+      "full_context": "(line 22884 ): ṣ. ṣ.] saṃsāriṇāṃ parisphurati | seyaṃ jāgratsvapnasuṣuptarūpā"
+    },
+    {
+      "text": "Ipv",
+      "author": "Unknown",
+      "tradition": "Kashmir Shaivism",
+      "compound": "svapnamadhyepi",
+      "before": "(line 23295 ): vyavasthāpyante iti bhāvaḥ |",
+      "after": "jāgratsādhayati yatra iti |",
+      "full_context": "(line 23295 ): vyavasthāpyante iti bhāvaḥ | svapnamadhyepi jāgratsādhayati yatra iti |"
+    },
+    {
+      "text": "Ipv",
+      "author": "Unknown",
+      "tradition": "Kashmir Shaivism",
+      "compound": "svapnadvayātprabodhasamaye",
+      "before": "(line 23299 ): kālāntare -",
+      "after": "| taduktaṃ śrīvaśiṣṭhena :-",
+      "full_context": "(line 23299 ): kālāntare - svapnadvayātprabodhasamaye | taduktaṃ śrīvaśiṣṭhena :-"
+    },
+    {
+      "text": "Ipv",
+      "author": "Unknown",
+      "tradition": "Kashmir Shaivism",
+      "compound": "svapnatāmeti",
+      "before": "(line 23302 ):  tajjāgrat",
+      "after": "svapno jāgrattvameva ca ||",
+      "full_context": "(line 23302 ):  tajjāgratsvapnatāmeti svapno jāgrattvameva ca ||"
+    },
+    {
+      "text": "Ipv",
+      "author": "Unknown",
+      "tradition": "Kashmir Shaivism",
+      "compound": "svapnasuṣuptarūpe",
+      "before": "(line 23331 ): jāgrat",
+      "after": "| kutaḥ saṃbhavatītyapekṣāyāmāha yataḥ",
+      "full_context": "(line 23331 ): jāgratsvapnasuṣuptarūpe | kutaḥ saṃbhavatītyapekṣāyāmāha yataḥ"
+    },
+    {
+      "text": "Ipv",
+      "author": "Unknown",
+      "tradition": "Kashmir Shaivism",
+      "compound": "svapnasuṣupte",
+      "before": "(line 23351 ): jāgrat",
+      "after": "prāṇādiprādhānyaṃ kartṛtānyagbhāvaścāsti, -",
+      "full_context": "(line 23351 ): jāgratsvapnasuṣupte prāṇādiprādhānyaṃ kartṛtānyagbhāvaścāsti, -"
+    },
+    {
+      "text": "Ipv",
+      "author": "Unknown",
+      "tradition": "Kashmir Shaivism",
+      "compound": "svapna",
+      "before": "(line 23449 ): pareṇa - anyena jāgratā, vedyasaṃvedanāt -",
+      "after": "",
+      "full_context": "(line 23449 ): pareṇa - anyena jāgratā, vedyasaṃvedanāt - svapna"
+    },
+    {
+      "text": "Maharthamanjari",
+      "author": "Unknown",
+      "tradition": "Kashmir Shaivism",
+      "compound": "svapnajāgarāḥ",
+      "before": "(line 2256 ):  turyātītaṃ ca turyaṃ ca suṣupti",
+      "after": "|",
+      "full_context": "(line 2256 ):  turyātītaṃ ca turyaṃ ca suṣuptisvapnajāgarāḥ |"
+    },
+    {
+      "text": "Maharthamanjari",
+      "author": "Unknown",
+      "tradition": "Kashmir Shaivism",
+      "compound": "svapnaḥ",
+      "before": "(line 2925 ): vittirvediteti, sthulaṃ sūkṣmaṃ paramiti jāgrat",
+      "after": "suṣuptamityādinā",
+      "full_context": "(line 2925 ): vittirvediteti, sthulaṃ sūkṣmaṃ paramiti jāgrat svapnaḥ suṣuptamityādinā"
+    },
+    {
+      "text": "Maharthamanjari",
+      "author": "Unknown",
+      "tradition": "Kashmir Shaivism",
+      "compound": "svapnasuṣuptituryāvasthākrāntasya",
+      "before": "(line 3780 ): nāthabhūtā jāgrat",
+      "after": "viśvasya",
+      "full_context": "(line 3780 ): nāthabhūtā jāgratsvapnasuṣuptituryāvasthākrāntasya viśvasya"
+    },
+    {
+      "text": "Maharthamanjari",
+      "author": "Unknown",
+      "tradition": "Kashmir Shaivism",
+      "compound": "svapnasauṣuptaturīyaparvaparipāṭim",
+      "before": "(line 5950 ):  yogī jāgara",
+      "after": "|",
+      "full_context": "(line 5950 ):  yogī jāgarasvapnasauṣuptaturīyaparvaparipāṭim |"
+    },
+    {
+      "text": "Maharthamanjari",
+      "author": "Unknown",
+      "tradition": "Kashmir Shaivism",
+      "compound": "svapnaḥ,",
+      "before": "(line 5992 ): catasṛṣvavasthāsu jāgrajjāgrat, jāgrat",
+      "after": "jāgratsuṣuptam,",
+      "full_context": "(line 5992 ): catasṛṣvavasthāsu jāgrajjāgrat, jāgratsvapnaḥ, jāgratsuṣuptam,"
+    },
+    {
+      "text": "Maharthamanjari",
+      "author": "Unknown",
+      "tradition": "Kashmir Shaivism",
+      "compound": "svapnasya,",
+      "before": "(line 5999 ): iti",
+      "after": "uditaṃ vipulaṃ śāntaṃ suprasannamiti suṣuptasya | turīyasya",
+      "full_context": "(line 5999 ): iti svapnasya, uditaṃ vipulaṃ śāntaṃ suprasannamiti suṣuptasya | turīyasya"
+    },
+    {
+      "text": "Maharthamanjari",
+      "author": "Unknown",
+      "tradition": "Kashmir Shaivism",
+      "compound": "svapnasuṣupta-",
+      "before": "(line 6041 ): jñānamicchetyādyaśeṣatrikānuprāṇanametajjāgrat",
+      "after": "",
+      "full_context": "(line 6041 ): jñānamicchetyādyaśeṣatrikānuprāṇanametajjāgratsvapnasuṣupta-"
+    },
+    {
+      "text": "Paratrimsikavivarana",
+      "author": "Unknown",
+      "tradition": "Kashmir Shaivism",
+      "compound": "svapnaḥ",
+      "before": "(line 484 ): bhūtādiṣvapi pṛthivyādirūpatayā jāgrata uttaraṃ",
+      "after": "tataḥ suptaṃ",
+      "full_context": "(line 484 ): bhūtādiṣvapi pṛthivyādirūpatayā jāgrata uttaraṃ svapnaḥ tataḥ suptaṃ"
+    },
+    {
+      "text": "Paratrimsikavivarana",
+      "author": "Unknown",
+      "tradition": "Kashmir Shaivism",
+      "compound": "svapnagāścitratājuṣaḥ",
+      "before": "(line 5409 ): tasyāmeva pramātāraḥ",
+      "after": "|",
+      "full_context": "(line 5409 ): tasyāmeva pramātāraḥ svapnagāścitratājuṣaḥ |"
+    },
+    {
+      "text": "Pratyabhijnahrdaya",
+      "author": "Kshemaraja",
+      "tradition": "Kashmir Shaivism",
+      "compound": "svapna",
+      "before": "(line 718 ): prāṇāpāna-samāna-śaktidaśābhiḥ jāgrat",
+      "after": "[ātmā manasā",
+      "full_context": "(line 718 ): prāṇāpāna-samāna-śaktidaśābhiḥ jāgratsvapna [ātmā manasā"
+    },
+    {
+      "text": "Spandakarikaramakantha",
+      "author": "Vasugupta",
+      "tradition": "Kashmir Shaivism",
+      "compound": "svapnapadadvaye",
+      "before": "(line 1735 ): satataṃ laukikasyeva jāgrat",
+      "after": "|| 5 ||",
+      "full_context": "(line 1735 ): satataṃ laukikasyeva jāgratsvapnapadadvaye || 5 ||"
+    },
+    {
+      "text": "Spandakarikaramakantha",
+      "author": "Vasugupta",
+      "tradition": "Kashmir Shaivism",
+      "compound": "svapnapadadvaye",
+      "before": "(line 1742 ): jagatkāryam - iti pratipattyabhāvarūpeṇa vartamānasya yogino jāgrat",
+      "after": "",
+      "full_context": "(line 1742 ): jagatkāryam - iti pratipattyabhāvarūpeṇa vartamānasya yogino jāgratsvapnapadadvaye"
+    },
+    {
+      "text": "Svacchandatantra",
+      "author": "Unknown",
+      "tradition": "Kashmir Shaivism",
+      "compound": "svapnadarśanāya",
+      "before": "(line 7758 ): dīkṣyaviṣayasamucita",
+      "after": "||",
+      "full_context": "(line 7758 ): dīkṣyaviṣayasamucitasvapnadarśanāya ||"
+    },
+    {
+      "text": "Svacchandatantra",
+      "author": "Unknown",
+      "tradition": "Kashmir Shaivism",
+      "compound": "svapnapadocitā",
+      "before": "(line 12526 ): pūrṇānandaghanātmaiva, itarasya tu tattat",
+      "after": "||",
+      "full_context": "(line 12526 ): pūrṇānandaghanātmaiva, itarasya tu tattatsvapnapadocitā ||"
+    },
+    {
+      "text": "Svacchandatantra",
+      "author": "Unknown",
+      "tradition": "Kashmir Shaivism",
+      "compound": "svapnastho",
+      "before": "(line 22862 ): dakṣiṇe sattvajāgratsthaḥ",
+      "after": "vāmato rajaḥ || 7-150 ||",
+      "full_context": "(line 22862 ): dakṣiṇe sattvajāgratsthaḥ svapnastho vāmato rajaḥ || 7-150 ||"
+    },
+    {
+      "text": "Svacchandatantra",
+      "author": "Unknown",
+      "tradition": "Kashmir Shaivism",
+      "compound": "svapnau",
+      "before": "(line 24360 ): tathā māyayā nābhibhūyate | jāgrataḥ svapato'pi cāsya na jāgara",
+      "after": "",
+      "full_context": "(line 24360 ): tathā māyayā nābhibhūyate | jāgrataḥ svapato'pi cāsya na jāgarasvapnau"
+    },
+    {
+      "text": "Svacchandatantra",
+      "author": "Unknown",
+      "tradition": "Kashmir Shaivism",
+      "compound": "svapnasuṣuptaṃ",
+      "before": "(line 43120 ): jāgrat",
+      "after": "ca tisro'vasthāśca tadgatāḥ || 11-67 ||",
+      "full_context": "(line 43120 ): jāgratsvapnasuṣuptaṃ ca tisro'vasthāśca tadgatāḥ || 11-67 ||"
+    },
+    {
+      "text": "Tantrāloka (Chapters 1-14)",
+      "author": "Abhinavagupta",
+      "tradition": "Kashmir Shaivism",
+      "compound": "svapnasuṣuptānyatadatītāni",
+      "before": "(line 2761 ): jāgrat",
+      "after": "yānyapi |",
+      "full_context": "(line 2761 ): jāgratsvapnasuṣuptānyatadatītāni yānyapi |"
+    },
+    {
+      "text": "Tantrāloka (Chapters 1-14)",
+      "author": "Abhinavagupta",
+      "tradition": "Kashmir Shaivism",
+      "compound": "svapna",
+      "before": "(line 2774 ): anyatturyam, jāgrat",
+      "after": "ityanena avasthābheda uktaḥ | akalau iti",
+      "full_context": "(line 2774 ): anyatturyam, jāgratsvapna ityanena avasthābheda uktaḥ | akalau iti"
+    },
+    {
+      "text": "Tantrāloka (Chapters 1-14)",
+      "author": "Abhinavagupta",
+      "tradition": "Kashmir Shaivism",
+      "compound": "svapnaḥ",
+      "before": "(line 2992 ):",
+      "after": "vikalpaḥ, jāgrat jñānam, unmeṣaṇam īśvaradaśā, nimeṣaṇam",
+      "full_context": "(line 2992 ): svapnaḥ vikalpaḥ, jāgrat jñānam, unmeṣaṇam īśvaradaśā, nimeṣaṇam"
+    },
+    {
+      "text": "Tantrāloka (Chapters 1-14)",
+      "author": "Abhinavagupta",
+      "tradition": "Kashmir Shaivism",
+      "compound": "svapnasadmanaḥ",
+      "before": "(line 13580 ): anantacitrasadgarbhasaṃsāra",
+      "after": "|",
+      "full_context": "(line 13580 ): anantacitrasadgarbhasaṃsārasvapnasadmanaḥ |"
+    },
+    {
+      "text": "Tantrāloka (Chapters 1-14)",
+      "author": "Abhinavagupta",
+      "tradition": "Kashmir Shaivism",
+      "compound": "svapnasamaye",
+      "before": "(line 15858 ):",
+      "after": "kasṃmiścit śrute'pi vastuni viṣaye stryādāviva tādrūpyeṇa",
+      "full_context": "(line 15858 ): svapnasamaye kasṃmiścit śrute'pi vastuni viṣaye stryādāviva tādrūpyeṇa"
+    }
+  ],
+  "kashmir_lucid_examples": [
+    {
+      "text": "Ipv",
+      "author": "Unknown",
+      "tradition": "Kashmir Shaivism",
+      "compound": "svapnadarśane",
+      "before": "(line 19338 ):",
+      "after": "saṃvidaḥ, tathāpi tanmahimnaiva etena edaṃ bahiḥ",
+      "full_context": "(line 19338 ): svapnadarśane saṃvidaḥ, tathāpi tanmahimnaiva etena edaṃ bahiḥ"
+    },
+    {
+      "text": "Ipv",
+      "author": "Unknown",
+      "tradition": "Kashmir Shaivism",
+      "compound": "svapnasaṃvidaḥ",
+      "before": "(line 19351 ): saṃvidaḥ -",
+      "after": "| atrāpi",
+      "full_context": "(line 19351 ): saṃvidaḥ - svapnasaṃvidaḥ | atrāpi"
+    },
+    {
+      "text": "Ipv",
+      "author": "Unknown",
+      "tradition": "Kashmir Shaivism",
+      "compound": "svapnasaṃvida",
+      "before": "(line 19362 ): grahaṇamiṣṭam, ato'trāpi",
+      "after": "evaitaddarśane",
+      "full_context": "(line 19362 ): grahaṇamiṣṭam, ato'trāpi svapnasaṃvida evaitaddarśane"
+    },
+    {
+      "text": "Ipv",
+      "author": "Unknown",
+      "tradition": "Kashmir Shaivism",
+      "compound": "svapnadvayātprabodhasamaye",
+      "before": "(line 23299 ): kālāntare -",
+      "after": "| taduktaṃ śrīvaśiṣṭhena :-",
+      "full_context": "(line 23299 ): kālāntare - svapnadvayātprabodhasamaye | taduktaṃ śrīvaśiṣṭhena :-"
+    },
+    {
+      "text": "Maharthamanjari",
+      "author": "Unknown",
+      "tradition": "Kashmir Shaivism",
+      "compound": "svapnasuṣupta-",
+      "before": "(line 6041 ): jñānamicchetyādyaśeṣatrikānuprāṇanametajjāgrat",
+      "after": "",
+      "full_context": "(line 6041 ): jñānamicchetyādyaśeṣatrikānuprāṇanametajjāgratsvapnasuṣupta-"
+    },
+    {
+      "text": "Spandakarikaramakantha",
+      "author": "Vasugupta",
+      "tradition": "Kashmir Shaivism",
+      "compound": "svapnaḥ",
+      "before": "(line 354 ): indriyārthān gṛhṇan prasṛtaśaktiḥ puruṣaḥ parispandate |",
+      "after": "svāpāvasthā",
+      "full_context": "(line 354 ): indriyārthān gṛhṇan prasṛtaśaktiḥ puruṣaḥ parispandate | svapnaḥ svāpāvasthā"
+    },
+    {
+      "text": "Spandakarikaramakantha",
+      "author": "Vasugupta",
+      "tradition": "Kashmir Shaivism",
+      "compound": "svapnadaśāvyavahāramudbhāvayati",
+      "before": "(line 1013 ): jñānajñeyabhāvena avabhāsayan jāgara",
+      "after": "etadeva ca",
+      "full_context": "(line 1013 ): jñānajñeyabhāvena avabhāsayan jāgarasvapnadaśāvyavahāramudbhāvayati etadeva ca"
+    },
+    {
+      "text": "Spandakarikaramakantha",
+      "author": "Vasugupta",
+      "tradition": "Kashmir Shaivism",
+      "compound": "svapnayorjñānajñeyamayatvena",
+      "before": "(line 1026 ): prakāśata ityarthaḥ | nanu jāgara",
+      "after": "",
+      "full_context": "(line 1026 ): prakāśata ityarthaḥ | nanu jāgarasvapnayorjñānajñeyamayatvena"
+    },
+    {
+      "text": "Spandakarikaramakantha",
+      "author": "Vasugupta",
+      "tradition": "Kashmir Shaivism",
+      "compound": "svapnalakṣaṇaṃ",
+      "before": "(line 1748 ): jāgarā",
+      "after": "padadvayaṃ sargasvabhāvaṃ tatra hi jñānajñeyabhāvena",
+      "full_context": "(line 1748 ): jāgarāsvapnalakṣaṇaṃ padadvayaṃ sargasvabhāvaṃ tatra hi jñānajñeyabhāvena"
+    },
+    {
+      "text": "Tantrāloka (Chapters 1-14)",
+      "author": "Abhinavagupta",
+      "tradition": "Kashmir Shaivism",
+      "compound": "svapnaḥ",
+      "before": "(line 2992 ):",
+      "after": "vikalpaḥ, jāgrat jñānam, unmeṣaṇam īśvaradaśā, nimeṣaṇam",
+      "full_context": "(line 2992 ): svapnaḥ vikalpaḥ, jāgrat jñānam, unmeṣaṇam īśvaradaśā, nimeṣaṇam"
+    },
+    {
+      "text": "Tantrāloka (Chapters 1-14)",
+      "author": "Abhinavagupta",
+      "tradition": "Kashmir Shaivism",
+      "compound": "svapnaḥ",
+      "before": "(line 44385 ):",
+      "after": "| jñānakriyābhyāṃ hīnenaudāsīnyapracyāvātmanā",
+      "full_context": "(line 44385 ): svapnaḥ | jñānakriyābhyāṃ hīnenaudāsīnyapracyāvātmanā"
+    },
+    {
+      "text": "Tantrāloka (Chapters 1-14)",
+      "author": "Abhinavagupta",
+      "tradition": "Kashmir Shaivism",
+      "compound": "svapnaṃ",
+      "before": "(line 45393 ): vedye svātantryabhāg jñānaṃ",
+      "after": "vyāptitayā bhajet |",
+      "full_context": "(line 45393 ): vedye svātantryabhāg jñānaṃ svapnaṃ vyāptitayā bhajet |"
+    },
+    {
+      "text": "Tantrāloka (Chapters 1-14)",
+      "author": "Abhinavagupta",
+      "tradition": "Kashmir Shaivism",
+      "compound": "svapnaṃ",
+      "before": "(line 45397 ): evārthe svatantraṃ saṃyojanaviyojanakāri vaikalpikaṃ jñānameva",
+      "after": "",
+      "full_context": "(line 45397 ): evārthe svatantraṃ saṃyojanaviyojanakāri vaikalpikaṃ jñānameva svapnaṃ"
+    },
+    {
+      "text": "Tantrāloka (Chapters 1-14)",
+      "author": "Abhinavagupta",
+      "tradition": "Kashmir Shaivism",
+      "compound": "svapna",
+      "before": "(line 45984 ): jñānaśaktiḥ",
+      "after": "uktaḥ kriyāśaktistu jāgṛtiḥ |",
+      "full_context": "(line 45984 ): jñānaśaktiḥ svapna uktaḥ kriyāśaktistu jāgṛtiḥ |"
+    },
+    {
+      "text": "Tantrāloka (Chapters 15-37)",
+      "author": "Abhinavagupta",
+      "tradition": "Kashmir Shaivism",
+      "compound": "svapnasāmyaṃ",
+      "before": "(line 5966 ): bodhasāmye punaḥ",
+      "after": "syād guruśiṣyayoḥ || 15-484 ||",
+      "full_context": "(line 5966 ): bodhasāmye punaḥ svapnasāmyaṃ syād guruśiṣyayoḥ || 15-484 ||"
+    },
+    {
+      "text": "Tattvaprakasa",
+      "author": "Unknown",
+      "tradition": "Kashmir Shaivism",
+      "compound": "svapnajñānavaditi",
+      "before": "(line 1676 ): jāgrajjñānāni ca svākāravyatiriktārthaśūnyāni, jñānatvāt,",
+      "after": "",
+      "full_context": "(line 1676 ): jāgrajjñānāni ca svākāravyatiriktārthaśūnyāni, jñānatvāt, svapnajñānavaditi"
+    },
+    {
+      "text": "Īśvarapratyabhijñāvivṛtivimarśinī (Part 1)",
+      "author": "Unknown",
+      "tradition": "Kashmir Shaivism",
+      "compound": "svapnayoḥ",
+      "before": "(line 2757 ): iva dhavādīnām | nanu jāgrat",
+      "after": "stāṃ jñānakriye, suṣṭhusuptatāyāṃ",
+      "full_context": "(line 2757 ): iva dhavādīnām | nanu jāgratsvapnayoḥ stāṃ jñānakriye, suṣṭhusuptatāyāṃ"
+    },
+    {
+      "text": "Īśvarapratyabhijñāvivṛtivimarśinī (Part 2)",
+      "author": "Unknown",
+      "tradition": "Kashmir Shaivism",
+      "compound": "svapnabhuvi",
+      "before": "(line 401 ): tatprāṇabuddhyādisaṃvidapekṣayā asya nirbhāsayat",
+      "after": "vimṛśati",
+      "full_context": "(line 401 ): tatprāṇabuddhyādisaṃvidapekṣayā asya nirbhāsayat svapnabhuvi vimṛśati"
+    },
+    {
+      "text": "Īśvarapratyabhijñāvivṛtivimarśinī (Part 2)",
+      "author": "Unknown",
+      "tradition": "Kashmir Shaivism",
+      "compound": "svapnayogadiśā",
+      "before": "(line 4771 ):",
+      "after": "ābhāsavargo bodhasvātantryādullasitaḥ, uta",
+      "full_context": "(line 4771 ): svapnayogadiśā ābhāsavargo bodhasvātantryādullasitaḥ, uta"
+    },
+    {
+      "text": "Īśvarapratyabhijñāvivṛtivimarśinī (Part 2)",
+      "author": "Unknown",
+      "tradition": "Kashmir Shaivism",
+      "compound": "svapna",
+      "before": "(line 4862 ): paramārthataḥ saṃvidākāramātraṃ",
+      "after": "iva darpaṇasaṃkrāntadarpaṇa",
+      "full_context": "(line 4862 ): paramārthataḥ saṃvidākāramātraṃ svapna iva darpaṇasaṃkrāntadarpaṇa"
+    },
+    {
+      "text": "Īśvarapratyabhijñāvivṛtivimarśinī (Part 2)",
+      "author": "Unknown",
+      "tradition": "Kashmir Shaivism",
+      "compound": "svapnadvicandrādau",
+      "before": "(line 4864 ): upapadyate jñānagata ābhāsa iti ucyamāne,",
+      "after": "kiṃ",
+      "full_context": "(line 4864 ): upapadyate jñānagata ābhāsa iti ucyamāne, svapnadvicandrādau kiṃ"
+    },
+    {
+      "text": "Īśvarapratyabhijñāvivṛtivimarśinī (Part 3)",
+      "author": "Unknown",
+      "tradition": "Kashmir Shaivism",
+      "compound": "svapnasaṅkalpamāyendrajālaprāye",
+      "before": "(line 197 ): vyavahriyate |",
+      "after": "cetanasya ābhāsavarge",
+      "full_context": "(line 197 ): vyavahriyate | svapnasaṅkalpamāyendrajālaprāye cetanasya ābhāsavarge"
+    },
+    {
+      "text": "Īśvarapratyabhijñāvivṛtivimarśinī (Part 3)",
+      "author": "Unknown",
+      "tradition": "Kashmir Shaivism",
+      "compound": "svapnasaṅkalpayogi-nirmāṇādāviva",
+      "before": "(line 2574 ):",
+      "after": "| kevalaṃ saṃvidvijṛmbhāvaśādeva",
+      "full_context": "(line 2574 ): svapnasaṅkalpayogi-nirmāṇādāviva | kevalaṃ saṃvidvijṛmbhāvaśādeva"
+    }
+  ],
+  "kashmir_magic_examples": [
+    {
+      "text": "Cidgaganacandrika",
+      "author": "Unknown",
+      "tradition": "Kashmir Shaivism",
+      "compound": "svapnadṛṣṭamasadityasadvaco",
+      "before": "(line 619 ):",
+      "after": "divya eṣa yadiha pramāṇitaḥ |",
+      "full_context": "(line 619 ): svapnadṛṣṭamasadityasadvaco divya eṣa yadiha pramāṇitaḥ |"
+    },
+    {
+      "text": "Ipv",
+      "author": "Unknown",
+      "tradition": "Kashmir Shaivism",
+      "compound": "svapnarūpā,",
+      "before": "(line 23230 ): prasiddhaṃ vastu kathayati ata eva iti | iyam -",
+      "after": "na hi",
+      "full_context": "(line 23230 ): prasiddhaṃ vastu kathayati ata eva iti | iyam - svapnarūpā, na hi"
+    },
+    {
+      "text": "Ipv",
+      "author": "Unknown",
+      "tradition": "Kashmir Shaivism",
+      "compound": "svapnapadam",
+      "before": "(line 23272 ): ākṣepamātrasiddhe yatno yukta iti bhāvaḥ |",
+      "after": "iti vyācaṣṭe",
+      "full_context": "(line 23272 ): ākṣepamātrasiddhe yatno yukta iti bhāvaḥ | svapnapadam iti vyācaṣṭe"
+    },
+    {
+      "text": "Maharthamanjari",
+      "author": "Unknown",
+      "tradition": "Kashmir Shaivism",
+      "compound": "svapnasamayopalabdhā",
+      "before": "(line 80 ):",
+      "after": "sā sumukhī siddhayoginī devī |",
+      "full_context": "(line 80 ): svapnasamayopalabdhā sā sumukhī siddhayoginī devī |"
+    },
+    {
+      "text": "Maharthamanjari",
+      "author": "Unknown",
+      "tradition": "Kashmir Shaivism",
+      "compound": "svapnasamayopalabdhāṃ",
+      "before": "(line 7000 ): vṛttistantrakṛt tatprayojikāṃ",
+      "after": "",
+      "full_context": "(line 7000 ): vṛttistantrakṛt tatprayojikāṃ svapnasamayopalabdhāṃ"
+    },
+    {
+      "text": "Moksakarika",
+      "author": "Abhinavagupta",
+      "tradition": "Kashmir Shaivism",
+      "compound": "svapnadṛṣṭādivat",
+      "before": "(line 1283 ): tasmāt",
+      "after": "satyabrahmasiddhiḥ | atha satyam, tarhi",
+      "full_context": "(line 1283 ): tasmāt svapnadṛṣṭādivat satyabrahmasiddhiḥ | atha satyam, tarhi"
+    },
+    {
+      "text": "Paramoksanirasakarika",
+      "author": "Abhinavagupta",
+      "tradition": "Kashmir Shaivism",
+      "compound": "svapnavadavidyārūpatvaṃ",
+      "before": "(line 1006 ): vicārayitumaśakyatvādavastutvena",
+      "after": "svanirūpaṇākṣamatvaṃ",
+      "full_context": "(line 1006 ): vicārayitumaśakyatvādavastutvena svapnavadavidyārūpatvaṃ svanirūpaṇākṣamatvaṃ"
+    },
+    {
+      "text": "Pratyabhijnahrdaya",
+      "author": "Kshemaraja",
+      "tradition": "Kashmir Shaivism",
+      "compound": "svapna",
+      "before": "(line 718 ): prāṇāpāna-samāna-śaktidaśābhiḥ jāgrat",
+      "after": "[ātmā manasā",
+      "full_context": "(line 718 ): prāṇāpāna-samāna-śaktidaśābhiḥ jāgratsvapna [ātmā manasā"
+    },
+    {
+      "text": "Sivasutravrtti",
+      "author": "Vasugupta",
+      "tradition": "Kashmir Shaivism",
+      "compound": "svapnaḥ",
+      "before": "(line 117 ): vikāso'viśiṣṭavidyā",
+      "after": "4||ga",
+      "full_context": "(line 117 ): vikāso'viśiṣṭavidyāsvapnaḥ 4||ga"
+    },
+    {
+      "text": "Spandakarikaramakantha",
+      "author": "Vasugupta",
+      "tradition": "Kashmir Shaivism",
+      "compound": "svapnaḥ",
+      "before": "(line 354 ): indriyārthān gṛhṇan prasṛtaśaktiḥ puruṣaḥ parispandate |",
+      "after": "svāpāvasthā",
+      "full_context": "(line 354 ): indriyārthān gṛhṇan prasṛtaśaktiḥ puruṣaḥ parispandate | svapnaḥ svāpāvasthā"
+    },
+    {
+      "text": "Tantrāloka (Chapters 1-14)",
+      "author": "Abhinavagupta",
+      "tradition": "Kashmir Shaivism",
+      "compound": "svapna",
+      "before": "(line 45123 ): pratyekamiti parasparam, tena jāgrajjāgrajjāgrat",
+      "after": "ityādiprasiddhirna",
+      "full_context": "(line 45123 ): pratyekamiti parasparam, tena jāgrajjāgrajjāgratsvapna ityādiprasiddhirna"
+    },
+    {
+      "text": "Tantrāloka (Chapters 1-14)",
+      "author": "Abhinavagupta",
+      "tradition": "Kashmir Shaivism",
+      "compound": "svapnaṃ",
+      "before": "(line 45397 ): evārthe svatantraṃ saṃyojanaviyojanakāri vaikalpikaṃ jñānameva",
+      "after": "",
+      "full_context": "(line 45397 ): evārthe svatantraṃ saṃyojanaviyojanakāri vaikalpikaṃ jñānameva svapnaṃ"
+    },
+    {
+      "text": "Tantrāloka (Chapters 1-14)",
+      "author": "Abhinavagupta",
+      "tradition": "Kashmir Shaivism",
+      "compound": "svapna",
+      "before": "(line 45984 ): jñānaśaktiḥ",
+      "after": "uktaḥ kriyāśaktistu jāgṛtiḥ |",
+      "full_context": "(line 45984 ): jñānaśaktiḥ svapna uktaḥ kriyāśaktistu jāgṛtiḥ |"
+    },
+    {
+      "text": "Tantrāloka (Chapters 1-14)",
+      "author": "Abhinavagupta",
+      "tradition": "Kashmir Shaivism",
+      "compound": "svapnagocaraḥ",
+      "before": "(line 47800 ): yataḥ prāgdehamaraṇasiddhāntaḥ",
+      "after": "|",
+      "full_context": "(line 47800 ): yataḥ prāgdehamaraṇasiddhāntaḥ svapnagocaraḥ |"
+    },
+    {
+      "text": "Tattvaprakasa",
+      "author": "Unknown",
+      "tradition": "Kashmir Shaivism",
+      "compound": "svapnajñānānāṃ",
+      "before": "(line 1680 ): rūpāsiddhidharmyasiddhadṛṣṭāntatvādidoṣaprasaṅgaḥ | na ca",
+      "after": "",
+      "full_context": "(line 1680 ): rūpāsiddhidharmyasiddhadṛṣṭāntatvādidoṣaprasaṅgaḥ | na ca svapnajñānānāṃ"
+    },
+    {
+      "text": "Īśvarapratyabhijñāvimarśinī Vyākhyā",
+      "author": "Unknown",
+      "tradition": "Kashmir Shaivism",
+      "compound": "svapna",
+      "before": "(line 13279 ): duḥkhayogaṃ kartṛtāyāṃ nyagbhāva iti trayaṃ jāgrat",
+      "after": "",
+      "full_context": "(line 13279 ): duḥkhayogaṃ kartṛtāyāṃ nyagbhāva iti trayaṃ jāgratsvapna"
+    },
+    {
+      "text": "Īśvarapratyabhijñāvivṛtivimarśinī (Part 2)",
+      "author": "Unknown",
+      "tradition": "Kashmir Shaivism",
+      "compound": "svapnasaṃkalpayogīcchādāviva",
+      "before": "(line 1194 ): kevalaṃ svātantryaśaktireva pārameśvarī",
+      "after": "",
+      "full_context": "(line 1194 ): kevalaṃ svātantryaśaktireva pārameśvarī svapnasaṃkalpayogīcchādāviva"
+    },
+    {
+      "text": "Īśvarapratyabhijñāvivṛtivimarśinī (Part 2)",
+      "author": "Unknown",
+      "tradition": "Kashmir Shaivism",
+      "compound": "svapnadarpaṇādāvapi,",
+      "before": "(line 4592 ): viśvanirmāṇaśaktimān yathā tu",
+      "after": "",
+      "full_context": "(line 4592 ): viśvanirmāṇaśaktimān yathā tu svapnadarpaṇādāvapi,"
+    },
+    {
+      "text": "Īśvarapratyabhijñāvivṛtivimarśinī (Part 2)",
+      "author": "Unknown",
+      "tradition": "Kashmir Shaivism",
+      "compound": "svapnayogadiśā",
+      "before": "(line 4771 ):",
+      "after": "ābhāsavargo bodhasvātantryādullasitaḥ, uta",
+      "full_context": "(line 4771 ): svapnayogadiśā ābhāsavargo bodhasvātantryādullasitaḥ, uta"
+    }
+  ],
+  "traditions": {
+    "Yoga": 999,
+    "Unknown": 794,
+    "Kashmir Shaivism": 260,
+    "Vedanta": 214,
+    "Tantra (General)": 185,
+    "Saiva Agama": 170,
+    "Bengal Tantra": 161,
+    "Sri Vidya": 159,
+    "Nath Tradition": 116,
+    "Ritual/Puja": 103,
+    "Commentary": 80,
+    "Natya/Arts": 55,
+    "Vaishnava Tantra": 53,
+    "Shakta": 38,
+    "Stotra": 35,
+    "Buddhist Tantra": 33,
+    "Kaula": 31,
+    "Purana": 13,
+    "Mantra Shastra": 11
+  }
+}
