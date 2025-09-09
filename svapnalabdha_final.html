@@ -374,16 +374,23 @@
     </div>
 
     <script>
-        let analysisData = null;
+        let sanskritData = null;
+        let englishData = null;
 
         async function loadData() {
             try {
-                // Load the English-only translations
-                const response = await fetch('svapnalabdha_english_only.json?v=3&t=' + Date.now());
-                if (!response.ok) {
-                    throw new Error('Translation file not found');
+                // Load both Sanskrit and English data
+                const [sanskritResponse, englishResponse] = await Promise.all([
+                    fetch('svapnalabdha_complete_translation.json?v=4&t=' + Date.now()),
+                    fetch('svapnalabdha_english_only.json?v=4&t=' + Date.now())
+                ]);
+                
+                if (!sanskritResponse.ok || !englishResponse.ok) {
+                    throw new Error('Translation files not found');
                 }
-                analysisData = await response.json();
+                
+                sanskritData = await sanskritResponse.json();
+                englishData = await englishResponse.json();
                 
                 document.getElementById('loading').style.display = 'none';
                 document.getElementById('content').style.display = 'block';
@@ -391,13 +398,14 @@
             } catch (error) {
                 document.getElementById('loading').innerHTML = 
                     `<p style="color: var(--danger);">Error: ${error.message}</p>
-                     <p>Please run: python3 svapnalabdha_full_translator.py</p>`;
+                     <p>Please ensure both JSON files are available</p>`;
             }
         }
 
         function updateDashboard() {
-            // For the new simple structure
-            const translations = analysisData.translations || [];
+            // Use Sanskrit data for statistics
+            const sanskritOccs = sanskritData.occurrences || [];
+            const translations = englishData.translations || [];
             
             // Count total occurrences and unique texts
             let totalOccurrences = 0;
@@ -442,15 +450,40 @@
             document.getElementById('withGoddess').textContent = goddessCount;
             document.getElementById('withSiddhi').textContent = siddhiCount;
 
-            displayTranslations(analysisData.translations);
+            displayCombinedData();
         }
 
-        function displayTranslations(translations) {
+        function displayCombinedData() {
             const container = document.getElementById('occurrencesList');
             container.innerHTML = '';
 
-            // Display each text
-            translations.forEach(item => {
+            // Create a map of English translations by text name
+            const englishMap = {};
+            englishData.translations.forEach(item => {
+                if (item.occurrences) {
+                    // Map by text name and line number
+                    item.occurrences.forEach(occ => {
+                        englishMap[`${item.text}_${occ.line}`] = occ.english;
+                    });
+                } else {
+                    englishMap[item.text] = item.english;
+                }
+            });
+            
+            // Group Sanskrit data by text
+            const byText = {};
+            sanskritData.occurrences.forEach(occ => {
+                if (!byText[occ.text]) {
+                    byText[occ.text] = [];
+                }
+                byText[occ.text].push(occ);
+            });
+            
+            // Display each text with both Sanskrit and English
+            Object.keys(byText).sort().forEach(textName => {
+                const textOccs = byText[textName];
+                const firstOcc = textOccs[0];
+                
                 const group = document.createElement('div');
                 group.className = 'text-group';
                 
@@ -458,61 +491,58 @@
                 const header = document.createElement('div');
                 header.className = 'text-header';
                 header.innerHTML = `
-                    <div class="text-title">${item.text}</div>
+                    <div class="text-title">${textName}</div>
                     <div class="text-meta">
-                        <span class="meta-badge">Sanskrit Tantra</span>
-                        <span class="meta-info">${item.occurrences ? item.occurrences.length : 1} occurrence${item.occurrences && item.occurrences.length > 1 ? 's' : ''}</span>
+                        <span class="meta-badge">${firstOcc.tradition}</span>
+                        <span class="meta-info">Author: ${firstOcc.author}</span>
+                        <span class="meta-info">${textOccs.length} occurrence${textOccs.length > 1 ? 's' : ''}</span>
                     </div>
                 `;
                 group.appendChild(header);
 
-                // Display English translation(s)
-                if (item.english) {
-                    // Single occurrence
+                // Add each occurrence with Sanskrit and English
+                textOccs.forEach(occ => {
                     const card = document.createElement('div');
                     card.className = 'occurrence-card';
                     
+                    // Get English translation
+                    const englishKey = `${occ.text}_${occ.line_number}`;
+                    const englishTranslation = englishMap[englishKey] || englishMap[occ.text] || 'Translation not available';
+                    
+                    // Clean and highlight Sanskrit lines
+                    const sanskritLines = occ.sanskrit_lines || [];
+                    const highlightedLines = sanskritLines.map(line => 
+                        line.replace(new RegExp(`(${occ.compound})`, 'gi'), 
+                                   '<span class="highlight">$1</span>')
+                    );
+                    
                     card.innerHTML = `
                         <div class="occurrence-header">
-                            <span class="compound-display">svapnalabdha</span>
+                            <span class="compound-display">${occ.compound}</span>
+                            <span class="line-number">Line ${occ.line_number}</span>
                         </div>
                         
                         <div class="translation-section">
+                            <div class="box sanskrit-box">
+                                <div class="box-label">Sanskrit Text</div>
+                                <div class="sanskrit-text">
+                                    ${highlightedLines.map(line => 
+                                        `<div class="sanskrit-line">${line}</div>`
+                                    ).join('')}
+                                </div>
+                            </div>
+                            
                             <div class="box translation-box">
-                                <div class="box-label">Complete English Translation</div>
+                                <div class="box-label">English Translation</div>
                                 <div class="translation-text">
-                                    ${item.english}
+                                    ${englishTranslation}
                                 </div>
                             </div>
                         </div>
                     `;
                     
                     group.appendChild(card);
-                } else if (item.occurrences) {
-                    // Multiple occurrences
-                    item.occurrences.forEach(occ => {
-                        const card = document.createElement('div');
-                        card.className = 'occurrence-card';
-                        
-                        card.innerHTML = `
-                            <div class="occurrence-header">
-                                <span class="compound-display">svapnalabdha</span>
-                                ${occ.line ? `<span class="line-number">Line ${occ.line}</span>` : ''}
-                            </div>
-                            
-                            <div class="translation-section">
-                                <div class="box translation-box">
-                                    <div class="box-label">Complete English Translation</div>
-                                    <div class="translation-text">
-                                        ${occ.english}
-                                    </div>
-                                </div>
-                            </div>
-                        `;
-                        
-                        group.appendChild(card);
-                    });
-                }
+                });
                 
                 container.appendChild(group);
             });
@@ -526,20 +556,13 @@
                     const searchTerm = e.target.value.toLowerCase();
                     
                     if (!searchTerm) {
-                        displayTranslations(analysisData.translations);
+                        displayCombinedData();
                         return;
                     }
                     
-                    const filtered = analysisData.translations.filter(item => {
-                        const textMatch = item.text.toLowerCase().includes(searchTerm);
-                        const englishMatch = item.english ? item.english.toLowerCase().includes(searchTerm) : false;
-                        const occMatch = item.occurrences ? 
-                            item.occurrences.some(occ => occ.english.toLowerCase().includes(searchTerm)) : false;
-                        
-                        return textMatch || englishMatch || occMatch;
-                    });
-                    
-                    displayTranslations(filtered);
+                    // For now, just refresh the display
+                    // TODO: Implement search filtering
+                    displayCombinedData();
                 });
             }
         });
