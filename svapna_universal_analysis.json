@@ -1,0 +1,363 @@
+{
+  "timestamp": "2025-09-09T09:21:58.909423",
+  "total_occurrences": 3610,
+  "unique_base_forms": 2088,
+  "total_texts": 307,
+  "kashmir_texts": 23,
+  "kashmir_text_list": [
+    "Bhogakarika",
+    "Cidgaganacandrika",
+    "Ipv",
+    "Maharthamanjari",
+    "Moksakarika",
+    "Netratantra",
+    "Paraanandasutra",
+    "Paramoksanirasakarika",
+    "Paratrimsikavivarana",
+    "Pratyabhijnahrdaya",
+    "Sivadrsti",
+    "Sivasutravrtti",
+    "Spandakarikaramakantha",
+    "Svacchandatantra",
+    "Tantrāloka (Chapters 1-14)",
+    "Tantrāloka (Chapters 15-37)",
+    "Tattvaprakasa",
+    "Timirodghata",
+    "Īśvarapratyabhijñā Kaumudī",
+    "Īśvarapratyabhijñāvimarśinī Vyākhyā",
+    "Īśvarapratyabhijñāvivṛtivimarśinī (Part 1)",
+    "Īśvarapratyabhijñāvivṛtivimarśinī (Part 2)",
+    "Īśvarapratyabhijñāvivṛtivimarśinī (Part 3)"
+  ],
+  "top_compounds": {
+    "svapna": 684,
+    "duḥsvapna": 122,
+    "svapnakāle": 36,
+    "svapnalabdhe": 31,
+    "jāgratsvapna": 25,
+    "svapnapuraṃ": 21,
+    "svapnavat": 20,
+    "jāgratsvapnasuṣuptyavasthāsu": 18,
+    "jāgratsvapnasuṣuptiṣu": 16,
+    "susvapna": 14,
+    "jāgratsvapnau": 14,
+    "jāgratsvapnayoḥ": 12,
+    "svapnastu": 11,
+    "svapnavadeva": 11,
+    "jāgratsvapnaṃ": 9,
+    "jāgratsvapnasuṣupteṣu": 9,
+    "svapnaprapañcasya": 9,
+    "svapnapadaṃ": 8,
+    "svapnasamaye": 8,
+    "svapnasyāpi": 8,
+    "jāgratsvapnaḥ": 8,
+    "svapnavaditi": 8,
+    "jāgratsvapnapadadvaye": 8,
+    "svapnasāmyaṃ": 8,
+    "svapnapure": 8,
+    "svapnalabdhaṃ": 7,
+    "svapnamāṇavakaṃ": 7,
+    "svapnaśca": 7,
+    "svapnadṛṣṭaṃ": 7,
+    "svapnanidarśane": 7,
+    "svapnanagare": 7,
+    "svapnadarśanam": 6,
+    "svapnamānavamantroyaṃ": 6,
+    "svapnavibhramaḥ": 6,
+    "svapnasyeva": 6,
+    "svapnapade": 6,
+    "svapnaprapaṃcasya": 6,
+    "svapnadraṣṭā": 6,
+    "svapnamiva": 6,
+    "svapnapuruṣāḥ": 6,
+    "jāgratsvapnasuṣuptyādi": 5,
+    "svapnamānavamāśritya": 5,
+    "suṣuptisvapnajāgarāḥ": 5,
+    "svapnadaśādhiṣṭhāyake": 5,
+    "tadutthasvapnadarśanam": 5,
+    "svapnaprapañcadṛṣṭāntena": 5,
+    "svapnadṛṣṭāntena": 5,
+    "svapnavadbhāti": 5,
+    "svapnasaṃkalpayoriva": 5,
+    "svapnapattanam": 5
+  },
+  "top_previous_words": {
+    "):": 1112,
+    "|": 102,
+    "yathā": 59,
+    "tathā": 38,
+    "ca": 34,
+    "evaṃ": 34,
+    "-": 32,
+    "jāgrat": 29,
+    "tu": 27,
+    "na": 21,
+    "iti": 21,
+    "sa": 17,
+    "||": 16,
+    "atha": 16,
+    "dṛṣṭvā": 15,
+    "svapne": 15,
+    "nanu": 15,
+    "yaḥ": 12,
+    "tasya": 11,
+    "hi": 11,
+    "prāṇabuddhidehadharmādhikārato": 11,
+    "te": 10,
+    "vā": 9,
+    "punaḥ": 9,
+    "śubhaṃ": 8,
+    "rātrau": 8,
+    "paśyati": 8,
+    "kaṇṭhe": 8,
+    "jāgrati": 8,
+    "caiva": 7
+  },
+  "top_next_words": {
+    "(line": 368,
+    "|": 313,
+    "||": 267,
+    "iva": 51,
+    "iti": 50,
+    "ca": 48,
+    "na": 41,
+    "evaṃ": 38,
+    "-": 31,
+    "yathā": 28,
+    "tu": 26,
+    "tathā": 23,
+    "manasā": 20,
+    "hi": 17,
+    "nivedayet": 17,
+    "striyā": 14,
+    "nāma": 14,
+    "sa": 11,
+    "kiṃ": 9,
+    "suṣupti": 9,
+    "paśyati": 9,
+    "ucyate": 9,
+    "suṣuptiśca": 9,
+    "caiva": 8,
+    "vā": 8,
+    "jagat": 8,
+    "darśane": 7,
+    "prajāyate": 7,
+    "kathaṃ": 7,
+    "bhāti": 7
+  },
+  "patterns": {
+    "jagrat_svapna": 25,
+    "svapna_susupti": 0,
+    "dream_yoga": 1,
+    "lucid_markers": 55,
+    "kashmir_occurrences": 265
+  },
+  "kashmir_top_compounds": {
+    "svapna": 54,
+    "jāgratsvapna": 7,
+    "svapnapadaṃ": 5,
+    "svapnasamaye": 3,
+    "jāgratsvapnayoḥ": 3,
+    "duḥsvapna": 2,
+    "svapnakāle": 2,
+    "svapnavat": 2,
+    "jāgratsvapnasuṣuptarūpā": 2,
+    "jāgratsvapnaḥ": 2,
+    "svapnagocaraḥ": 2,
+    "svapnasuṣuptayoḥ": 2,
+    "svapnarogābhyāṃ": 2,
+    "svapnasaṃkalpādau": 2,
+    "jāgratsvapnapadadvaye": 2,
+    "jāgratsvapnayorapi": 2,
+    "tatsvapnapadamucyate": 2,
+    "svapnadarśane": 1,
+    "svapnasmṛtipratibhādāvasatyapyarthe": 1,
+    "svapnasaṃprathanakalpayośca": 1,
+    "svapnadṛṣṭamasadityasadvaco": 1,
+    "svapnam": 1,
+    "alaukikajāgratsvapnasuṣuptaturyabhāvena": 1,
+    "svapnatvam": 1,
+    "svapnacaurādyupadrutāḥ": 1,
+    "svapnajagataśca": 1,
+    "svapnadraṣṭrantarvartitvam": 1,
+    "svapnasaṃvidaḥ": 1,
+    "svapnasaṃvida": 1,
+    "suṣuptasvapnajāgraddaśābheda": 1
+  },
+  "examples": {
+    "kashmir": [
+      {
+        "compound": "duḥsvapna",
+        "text": "Netratantra",
+        "author": "Unknown",
+        "context": "): duḥsvapna ||"
+      },
+      {
+        "compound": "duḥsvapna",
+        "text": "Spandakarikaramakantha",
+        "author": "Vasugupta",
+        "context": "): duḥsvapna (line"
+      },
+      {
+        "compound": "svapna",
+        "text": "Ipv",
+        "author": "Unknown",
+        "context": "tāvat svapna smaraṇa"
+      },
+      {
+        "compound": "svapna",
+        "text": "Ipv",
+        "author": "Unknown",
+        "context": "svapne svapna iva"
+      },
+      {
+        "compound": "svapnadarśane",
+        "text": "Ipv",
+        "author": "Unknown",
+        "context": "): svapnadarśane saṃvidaḥ,"
+      },
+      {
+        "compound": "svapnakāle",
+        "text": "Ipv",
+        "author": "Unknown",
+        "context": "): svapnakāle iti"
+      },
+      {
+        "compound": "svapnakāle",
+        "text": "Tantrāloka (Chapters 1-14)",
+        "author": "Abhinavagupta",
+        "context": "evaṃ svapnakāle śrute"
+      },
+      {
+        "compound": "svapnasmṛtipratibhādāvasatyapyarthe",
+        "text": "Bhogakarika",
+        "author": "Abhinavagupta",
+        "context": "tadbalādeva svapnasmṛtipratibhādāvasatyapyarthe ullekho"
+      },
+      {
+        "compound": "svapnavat",
+        "text": "Tantrāloka (Chapters 15-37)",
+        "author": "Abhinavagupta",
+        "context": "tadvapurvāsanākramāt svapnavat janmāntare"
+      },
+      {
+        "compound": "svapnavat",
+        "text": "Īśvarapratyabhijñāvimarśinī Vyākhyā",
+        "author": "Unknown",
+        "context": "sthairyabhāvāt svapnavat evaṃ"
+      },
+      {
+        "compound": "jāgratsvapna",
+        "text": "Pratyabhijnahrdaya",
+        "author": "Kshemaraja",
+        "context": "prāṇāpāna-samāna-śaktidaśābhiḥ jāgratsvapna [ātmā"
+      },
+      {
+        "compound": "jāgratsvapna",
+        "text": "Tantrāloka (Chapters 1-14)",
+        "author": "Abhinavagupta",
+        "context": "anyatturyam, jāgratsvapna ityanena"
+      },
+      {
+        "compound": "svapnasaṃprathanakalpayośca",
+        "text": "Cidgaganacandrika",
+        "author": "Unknown",
+        "context": "bimbitaṃ svapnasaṃprathanakalpayośca yat"
+      },
+      {
+        "compound": "svapnadṛṣṭamasadityasadvaco",
+        "text": "Cidgaganacandrika",
+        "author": "Unknown",
+        "context": "): svapnadṛṣṭamasadityasadvaco divya"
+      },
+      {
+        "compound": "svapnapadaṃ",
+        "text": "Ipv",
+        "author": "Unknown",
+        "context": "sṛṣṭiḥ svapnapadaṃ matam"
+      },
+      {
+        "compound": "svapnapadaṃ",
+        "text": "Ipv",
+        "author": "Unknown",
+        "context": "): svapnapadaṃ svapnakāle"
+      },
+      {
+        "compound": "svapnam",
+        "text": "Tantrāloka (Chapters 15-37)",
+        "author": "Abhinavagupta",
+        "context": "śubhaṃ svapnam |"
+      },
+      {
+        "compound": "alaukikajāgratsvapnasuṣuptaturyabhāvena",
+        "text": "Ipv",
+        "author": "Unknown",
+        "context": "): alaukikajāgratsvapnasuṣuptaturyabhāvena tathā"
+      },
+      {
+        "compound": "svapnatvam",
+        "text": "Ipv",
+        "author": "Unknown",
+        "context": "buddhipramātuḥ svapnatvam ābhāsarūpavedyagrahaṇāt,"
+      },
+      {
+        "compound": "svapnacaurādyupadrutāḥ",
+        "text": "Ipv",
+        "author": "Unknown",
+        "context": "): svapnacaurādyupadrutāḥ |"
+      }
+    ],
+    "jagrat_svapna": [
+      {
+        "text": "Candrajnanagama",
+        "tradition": "Saiva Agama",
+        "context": "): jāgratsvapna suṣuptiśca"
+      },
+      {
+        "text": "Dhvajarohanavarsavarddhanavidhi",
+        "tradition": "Ritual/Puja",
+        "context": "turyyādaśādhiṣṭhāyake jāgratsvapna suṣuptituryatītecchājñānakriyā"
+      },
+      {
+        "text": "Dhvajarohanavarsavarddhanavidhi",
+        "tradition": "Ritual/Puja",
+        "context": "dehadharmmādhikāra jāgratsvapna suṣuptyavasthā"
+      },
+      {
+        "text": "Durgarcanasrti",
+        "tradition": "Shakta",
+        "context": "2 jāgratsvapna suṣuptyavasthāsvasmān"
+      },
+      {
+        "text": "Gautama Tantram",
+        "tradition": "Tantra (General)",
+        "context": "dehadharmmādhikārato jāgratsvapna suṣuptyavasthāsu"
+      },
+      {
+        "text": "Jnanasiddhyagama",
+        "tradition": "Saiva Agama",
+        "context": "): jāgratsvapna suṣuptiśca"
+      },
+      {
+        "text": "Jnanasiddhyagama",
+        "tradition": "Saiva Agama",
+        "context": "): jāgratsvapna suṣuptāśca"
+      },
+      {
+        "text": "Jnanasiddhyagama",
+        "tradition": "Saiva Agama",
+        "context": "): jāgratsvapna dvidhāvasthā"
+      },
+      {
+        "text": "Jnanasiddhyagama",
+        "tradition": "Saiva Agama",
+        "context": "brahmā jāgratsvapna sthito"
+      },
+      {
+        "text": "Kriyaasaaratattvaprakaasiniivyaakhyaa",
+        "tradition": "Unknown",
+        "context": "): jāgratsvapna suṣuptayaḥ"
+      }
+    ]
+  }
+}

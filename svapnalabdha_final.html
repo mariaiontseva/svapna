@@ -378,12 +378,18 @@
 
         async function loadData() {
             try {
-                const response = await fetch('svapnalabdha_full_translation.json');
+                const response = await fetch('svapnalabdha_complete_translation.json');
                 if (!response.ok) {
-                    throw new Error('Translation file not found');
+                    // Fallback to previous file
+                    const fallback = await fetch('svapnalabdha_full_translation.json');
+                    if (!fallback.ok) {
+                        throw new Error('Translation file not found');
+                    }
+                    analysisData = await fallback.json();
+                } else {
+                    analysisData = await response.json();
                 }
                 
-                analysisData = await response.json();
                 document.getElementById('loading').style.display = 'none';
                 document.getElementById('content').style.display = 'block';
                 updateDashboard();
@@ -451,16 +457,22 @@
                     const card = document.createElement('div');
                     card.className = 'occurrence-card';
                     
-                    // Highlight compound in Sanskrit lines
-                    const highlightedLines = occ.context_lines.map(line => 
+                    // Handle both old and new data formats
+                    const sanskritLines = occ.sanskrit_lines || occ.context_lines || [];
+                    const highlightedLines = sanskritLines.map(line => 
                         line.replace(new RegExp(`(${occ.compound})`, 'gi'), 
                                    '<span class="highlight">$1</span>')
                     );
                     
+                    // Use natural translation if available, otherwise fallback
+                    const translation = occ.natural_translation || occ.full_translation || 
+                                      (occ.word_by_word ? occ.word_by_word.join(' ') : '');
+                    
                     // Format translation for better readability
-                    const formattedTranslation = occ.full_translation
+                    const formattedTranslation = translation
                         .replace(/\[([^\]]+)\]/g, '<em>$1</em>')  // Italicize untranslated words
-                        .replace(/\|/g, '<br>');  // Line breaks at pipes
+                        .replace(/\|\|/g, '<br>')  // Line breaks at verse markers
+                        .replace(/\(verse \d+\)/g, match => `<span style="color: var(--text-muted); font-size: 0.9em;">${match}</span>`);
                     
                     card.innerHTML = `
                         <div class="occurrence-header">

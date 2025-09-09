@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Universal SVAPNA Dashboard - Aggregated Analysis</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: #333;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+        h1 {
+            color: white;
+            text-align: center;
+            margin-bottom: 10px;
+            font-size: 2.8rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        .subtitle {
+            color: rgba(255,255,255,0.95);
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 1.2rem;
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        .stat-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: transform 0.3s;
+        }
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+        .stat-value {
+            font-size: 2.5rem;
+            font-weight: bold;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .stat-label {
+            color: #666;
+            margin-top: 8px;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .dashboard {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+        .card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        .card h2 {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+            border-bottom: 2px solid #f0f0f0;
+            padding-bottom: 10px;
+        }
+        .compound-list {
+            max-height: 400px;
+            overflow-y: auto;
+        }
+        .compound-item {
+            padding: 12px 15px;
+            margin: 8px 0;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .compound-item:hover {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            transform: translateX(5px);
+        }
+        .compound-name {
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+        .compound-count {
+            background: rgba(255,255,255,0.3);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+        .kashmir-tag {
+            display: inline-block;
+            background: linear-gradient(135deg, #ff6b6b, #ffd93d);
+            color: white;
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            margin-left: 10px;
+        }
+        .chart-container {
+            position: relative;
+            height: 350px;
+            margin-top: 20px;
+        }
+        .patterns-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .pattern-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .pattern-value {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+        .pattern-label {
+            margin-top: 5px;
+            opacity: 0.9;
+            font-size: 0.9rem;
+        }
+        .example-item {
+            padding: 15px;
+            margin: 10px 0;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+        .example-text {
+            color: #764ba2;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        .example-context {
+            color: #555;
+            font-style: italic;
+            font-size: 1.05rem;
+            line-height: 1.5;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+        }
+        .modal-content {
+            background-color: white;
+            margin: 5% auto;
+            padding: 30px;
+            border-radius: 15px;
+            width: 80%;
+            max-width: 800px;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .close:hover {
+            color: #000;
+        }
+        #loading {
+            text-align: center;
+            color: white;
+            font-size: 1.5rem;
+            padding: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🕉️ Universal SVAPNA Dashboard</h1>
+        <p class="subtitle">Aggregated Analysis with Proper Sanskrit Forms</p>
+        
+        <div id="loading">Loading analysis data...</div>
+        
+        <div id="dashboard" style="display: none;">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-value" id="totalOccurrences">-</div>
+                    <div class="stat-label">Total Occurrences</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value" id="uniqueForms">-</div>
+                    <div class="stat-label">Unique Base Forms</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value" id="totalTexts">-</div>
+                    <div class="stat-label">Total Texts</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value" id="kashmirTexts">-</div>
+                    <div class="stat-label">Kashmir Texts</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value" id="kashmirOccurrences">-</div>
+                    <div class="stat-label">Kashmir Occurrences</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value" id="lucidMarkers">-</div>
+                    <div class="stat-label">Lucidity Markers</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>🔍 Pattern Analysis</h2>
+                <div class="patterns-grid">
+                    <div class="pattern-box">
+                        <div class="pattern-value" id="svapnaBase">-</div>
+                        <div class="pattern-label">Simple SVAPNA (all declensions)</div>
+                    </div>
+                    <div class="pattern-box">
+                        <div class="pattern-value" id="duhsvapna">-</div>
+                        <div class="pattern-label">DUḤSVAPNA (nightmares)</div>
+                    </div>
+                    <div class="pattern-box">
+                        <div class="pattern-value" id="jagratSvapna">-</div>
+                        <div class="pattern-label">JĀGRAT-SVAPNA (waking-dream)</div>
+                    </div>
+                    <div class="pattern-box">
+                        <div class="pattern-value" id="dreamYoga">-</div>
+                        <div class="pattern-label">YOGA Compounds</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dashboard">
+                <div class="card">
+                    <h2>📊 Top Aggregated Compounds</h2>
+                    <div id="topCompounds" class="compound-list"></div>
+                </div>
+                
+                <div class="card">
+                    <h2>🏔️ Kashmir Tradition Compounds</h2>
+                    <div id="kashmirCompounds" class="compound-list"></div>
+                </div>
+                
+                <div class="card">
+                    <h2>⬅️ Previous Word Context</h2>
+                    <div id="prevWords" class="compound-list"></div>
+                </div>
+                
+                <div class="card">
+                    <h2>➡️ Next Word Context</h2>
+                    <div id="nextWords" class="compound-list"></div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>📈 Frequency Distribution</h2>
+                <div class="chart-container">
+                    <canvas id="freqChart"></canvas>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>🏔️ Kashmir Tradition Examples</h2>
+                <div id="kashmirExamples"></div>
+            </div>
+
+            <div class="card">
+                <h2>🌟 Jāgrat-Svapna Examples</h2>
+                <div id="jagratExamples"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="detailModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="modalTitle">Compound Details</h2>
+            <div id="modalBody"></div>
+        </div>
+    </div>
+
+    <script>
+        let analysisData = null;
+        let chartInstance = null;
+
+        async function loadData() {
+            try {
+                const response = await fetch('svapna_universal_analysis.json');
+                if (!response.ok) {
+                    throw new Error('Analysis file not found');
+                }
+                
+                analysisData = await response.json();
+                document.getElementById('loading').style.display = 'none';
+                document.getElementById('dashboard').style.display = 'block';
+                updateDashboard();
+            } catch (error) {
+                document.getElementById('loading').innerHTML = 
+                    `<p style="color: #ff6b6b;">Error loading data: ${error.message}</p>
+                     <p>Please run: python3 svapna_universal_analyzer.py</p>`;
+            }
+        }
+
+        function updateDashboard() {
+            // Update statistics
+            document.getElementById('totalOccurrences').textContent = 
+                analysisData.total_occurrences?.toLocaleString() || '0';
+            document.getElementById('uniqueForms').textContent = 
+                analysisData.unique_base_forms || '0';
+            document.getElementById('totalTexts').textContent = 
+                analysisData.total_texts || '0';
+            document.getElementById('kashmirTexts').textContent = 
+                analysisData.kashmir_texts || '0';
+            document.getElementById('kashmirOccurrences').textContent = 
+                analysisData.patterns?.kashmir_occurrences || '0';
+            document.getElementById('lucidMarkers').textContent = 
+                analysisData.patterns?.lucid_markers || '0';
+
+            // Update pattern boxes
+            const svapnaCount = analysisData.top_compounds?.svapna || 0;
+            document.getElementById('svapnaBase').textContent = svapnaCount;
+            document.getElementById('duhsvapna').textContent = 
+                analysisData.top_compounds?.duḥsvapna || 0;
+            document.getElementById('jagratSvapna').textContent = 
+                analysisData.patterns?.jagrat_svapna || 0;
+            document.getElementById('dreamYoga').textContent = 
+                analysisData.patterns?.dream_yoga || 0;
+
+            // Top compounds
+            const topCompoundsDiv = document.getElementById('topCompounds');
+            topCompoundsDiv.innerHTML = '';
+            for (const [compound, count] of Object.entries(analysisData.top_compounds || {})) {
+                if (topCompoundsDiv.children.length >= 20) break;
+                const item = createCompoundItem(compound, count);
+                topCompoundsDiv.appendChild(item);
+            }
+
+            // Kashmir compounds
+            const kashmirDiv = document.getElementById('kashmirCompounds');
+            kashmirDiv.innerHTML = '';
+            for (const [compound, count] of Object.entries(analysisData.kashmir_top_compounds || {})) {
+                const item = createCompoundItem(compound, count, true);
+                kashmirDiv.appendChild(item);
+            }
+
+            // Previous words
+            const prevDiv = document.getElementById('prevWords');
+            prevDiv.innerHTML = '';
+            for (const [word, count] of Object.entries(analysisData.top_previous_words || {})) {
+                if (prevDiv.children.length >= 15) break;
+                const item = createCompoundItem(word, count);
+                prevDiv.appendChild(item);
+            }
+
+            // Next words
+            const nextDiv = document.getElementById('nextWords');
+            nextDiv.innerHTML = '';
+            for (const [word, count] of Object.entries(analysisData.top_next_words || {})) {
+                if (nextDiv.children.length >= 15) break;
+                const item = createCompoundItem(word, count);
+                nextDiv.appendChild(item);
+            }
+
+            // Kashmir examples
+            const kashmirExDiv = document.getElementById('kashmirExamples');
+            kashmirExDiv.innerHTML = '';
+            (analysisData.examples?.kashmir || []).forEach(ex => {
+                const item = document.createElement('div');
+                item.className = 'example-item';
+                item.innerHTML = `
+                    <div class="example-text">${ex.text} - ${ex.author}</div>
+                    <div class="example-context">${ex.context}</div>
+                `;
+                kashmirExDiv.appendChild(item);
+            });
+
+            // Jagrat-svapna examples
+            const jagratExDiv = document.getElementById('jagratExamples');
+            jagratExDiv.innerHTML = '';
+            (analysisData.examples?.jagrat_svapna || []).forEach(ex => {
+                const item = document.createElement('div');
+                item.className = 'example-item';
+                item.innerHTML = `
+                    <div class="example-text">${ex.text} (${ex.tradition})</div>
+                    <div class="example-context">${ex.context}</div>
+                `;
+                jagratExDiv.appendChild(item);
+            });
+
+            // Create chart
+            updateChart();
+        }
+
+        function createCompoundItem(compound, count, isKashmir = false) {
+            const item = document.createElement('div');
+            item.className = 'compound-item';
+            item.innerHTML = `
+                <span class="compound-name">
+                    ${compound}
+                    ${isKashmir ? '<span class="kashmir-tag">Kashmir</span>' : ''}
+                </span>
+                <span class="compound-count">${count}</span>
+            `;
+            item.onclick = () => showDetails(compound);
+            return item;
+        }
+
+        function updateChart() {
+            const ctx = document.getElementById('freqChart').getContext('2d');
+            
+            const labels = Object.keys(analysisData.top_compounds || {}).slice(0, 15);
+            const data = Object.values(analysisData.top_compounds || {}).slice(0, 15);
+            
+            if (chartInstance) {
+                chartInstance.destroy();
+            }
+            
+            chartInstance = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Occurrences',
+                        data: data,
+                        backgroundColor: 'rgba(102, 126, 234, 0.7)',
+                        borderColor: 'rgba(102, 126, 234, 1)',
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            display: false
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+        }
+
+        function showDetails(compound) {
+            const modal = document.getElementById('detailModal');
+            const modalTitle = document.getElementById('modalTitle');
+            const modalBody = document.getElementById('modalBody');
+            
+            modalTitle.textContent = `Details for: ${compound}`;
+            modalBody.innerHTML = `
+                <p>Analyzing compound: <strong>${compound}</strong></p>
+                <p>Total occurrences: ${analysisData.top_compounds[compound] || 0}</p>
+                <p>Kashmir occurrences: ${analysisData.kashmir_top_compounds[compound] || 0}</p>
+            `;
+            
+            modal.style.display = 'block';
+        }
+
+        // Modal close functionality
+        document.querySelector('.close').onclick = function() {
+            document.getElementById('detailModal').style.display = 'none';
+        }
+
+        window.onclick = function(event) {
+            const modal = document.getElementById('detailModal');
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
+
+        // Load data on page load
+        loadData();
+        
+        // Auto-refresh every 30 seconds
+        setInterval(loadData, 30000);
+    </script>
+</body>
+</html>
