@@ -381,8 +381,8 @@
             try {
                 // Load both Sanskrit and English data
                 const [sanskritResponse, englishResponse] = await Promise.all([
-                    fetch('svapnalabdha_complete_translation.json?v=4&t=' + Date.now()),
-                    fetch('svapnalabdha_english_only.json?v=4&t=' + Date.now())
+                    fetch('svapnalabdha_complete_translation.json?v=5&t=' + Date.now()),
+                    fetch('svapnalabdha_english_only.json?v=5&t=' + Date.now())
                 ]);
                 
                 if (!sanskritResponse.ok || !englishResponse.ok) {
@@ -461,11 +461,13 @@
             const englishMap = {};
             englishData.translations.forEach(item => {
                 if (item.occurrences) {
-                    // Map by text name and line number
+                    // Create a map for texts with multiple occurrences
+                    englishMap[item.text] = {};
                     item.occurrences.forEach(occ => {
-                        englishMap[`${item.text}_${occ.line}`] = occ.english;
+                        englishMap[item.text][occ.line] = occ.english;
                     });
                 } else {
+                    // Single translation for the whole text
                     englishMap[item.text] = item.english;
                 }
             });
@@ -506,8 +508,16 @@
                     card.className = 'occurrence-card';
                     
                     // Get English translation
-                    const englishKey = `${occ.text}_${occ.line_number}`;
-                    const englishTranslation = englishMap[englishKey] || englishMap[occ.text] || 'Translation not available';
+                    let englishTranslation = 'Translation not available';
+                    const textTranslations = englishMap[occ.text];
+                    
+                    if (typeof textTranslations === 'string') {
+                        // Single translation for the whole text
+                        englishTranslation = textTranslations;
+                    } else if (typeof textTranslations === 'object') {
+                        // Multiple translations by line number
+                        englishTranslation = textTranslations[occ.line_number] || 'Translation not available';
+                    }
                     
                     // Clean and highlight Sanskrit lines
                     const sanskritLines = occ.sanskrit_lines || [];
