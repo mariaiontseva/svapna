@@ -378,8 +378,8 @@
 
         async function loadData() {
             try {
-                // Force cache refresh with timestamp
-                const response = await fetch('svapnalabdha_complete_translation.json?t=' + Date.now());
+                // Force cache refresh with new timestamp
+                const response = await fetch('svapnalabdha_complete_translation.json?v=2&t=' + Date.now());
                 if (!response.ok) {
                     throw new Error('Translation file not found');
                 }
@@ -459,9 +459,8 @@
                                    '<span class="highlight">$1</span>')
                     );
                     
-                    // Use natural translation if available, otherwise fallback
-                    const translation = occ.natural_translation || occ.full_translation || 
-                                      (occ.word_by_word ? occ.word_by_word.join(' ') : '');
+                    // Use only natural translation - it has proper English
+                    const translation = occ.natural_translation || 'Translation not available';
                     
                     // Format translation for better readability
                     const formattedTranslation = translation
@@ -473,10 +472,6 @@
                         <div class="occurrence-header">
                             <span class="compound-display">${occ.compound}</span>
                             <span class="line-number">Line ${occ.line_number}</span>
-                        </div>
-                        
-                        <div class="grammatical-info">
-                            ${occ.meaning}
                         </div>
                         
                         <div class="translation-section">
