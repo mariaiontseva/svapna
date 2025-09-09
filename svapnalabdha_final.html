@@ -381,8 +381,8 @@
             try {
                 // Load both Sanskrit and English data
                 const [sanskritResponse, englishResponse] = await Promise.all([
-                    fetch('svapnalabdha_complete_translation.json?v=7&t=' + Date.now()),
-                    fetch('svapnalabdha_unique_translations.json?v=7&t=' + Date.now())
+                    fetch('svapnalabdha_complete_translation.json?v=8&t=' + Date.now()),
+                    fetch('svapnalabdha_accurate_translations.json?v=8&t=' + Date.now())
                 ]);
                 
                 if (!sanskritResponse.ok || !englishResponse.ok) {
