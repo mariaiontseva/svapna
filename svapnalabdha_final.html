@@ -378,8 +378,8 @@
 
         async function loadData() {
             try {
-                // Force cache refresh with new timestamp
-                const response = await fetch('svapnalabdha_complete_translation.json?v=2&t=' + Date.now());
+                // Load the English-only translations
+                const response = await fetch('svapnalabdha_english_only.json?v=3&t=' + Date.now());
                 if (!response.ok) {
                     throw new Error('Translation file not found');
                 }
@@ -396,112 +396,123 @@
         }
 
         function updateDashboard() {
-            // Update statistics
-            document.getElementById('totalOccurrences').textContent = 
-                analysisData.total_occurrences || 0;
-            document.getElementById('uniqueTexts').textContent = 
-                analysisData.unique_texts || 0;
-            document.getElementById('withMantra').textContent = 
-                analysisData.statistics?.with_mantra || 0;
-            document.getElementById('withPurification').textContent = 
-                analysisData.statistics?.with_purification || 0;
-            document.getElementById('withGoddess').textContent = 
-                analysisData.statistics?.with_goddess || 0;
-            document.getElementById('withSiddhi').textContent = 
-                analysisData.statistics?.with_siddhi || 0;
+            // For the new simple structure
+            const translations = analysisData.translations || [];
+            
+            // Count total occurrences and unique texts
+            let totalOccurrences = 0;
+            let uniqueTexts = translations.length;
+            
+            translations.forEach(item => {
+                if (item.occurrences) {
+                    totalOccurrences += item.occurrences.length;
+                } else {
+                    totalOccurrences += 1;
+                }
+            });
+            
+            document.getElementById('totalOccurrences').textContent = totalOccurrences;
+            document.getElementById('uniqueTexts').textContent = uniqueTexts;
+            
+            // Count different types from English text
+            let mantraCount = 0;
+            let purificationCount = 0;
+            let goddessCount = 0;
+            let siddhiCount = 0;
+            
+            translations.forEach(item => {
+                const checkText = (text) => {
+                    const lowerText = text.toLowerCase();
+                    if (lowerText.includes('mantra')) mantraCount++;
+                    if (lowerText.includes('purif') || lowerText.includes('consecrat')) purificationCount++;
+                    if (lowerText.includes('woman') || lowerText.includes('goddess') || lowerText.includes('feminine')) goddessCount++;
+                    if (lowerText.includes('accomplish') || lowerText.includes('power') || lowerText.includes('siddhi')) siddhiCount++;
+                };
+                
+                if (item.english) {
+                    checkText(item.english);
+                }
+                if (item.occurrences) {
+                    item.occurrences.forEach(occ => checkText(occ.english));
+                }
+            });
+            
+            document.getElementById('withMantra').textContent = mantraCount;
+            document.getElementById('withPurification').textContent = purificationCount;
+            document.getElementById('withGoddess').textContent = goddessCount;
+            document.getElementById('withSiddhi').textContent = siddhiCount;
 
-            displayOccurrences(analysisData.occurrences);
+            displayTranslations(analysisData.translations);
         }
 
-        function displayOccurrences(occurrences) {
+        function displayTranslations(translations) {
             const container = document.getElementById('occurrencesList');
             container.innerHTML = '';
 
-            // Group by text
-            const byText = {};
-            occurrences.forEach(occ => {
-                if (!byText[occ.text]) {
-                    byText[occ.text] = [];
-                }
-                byText[occ.text].push(occ);
-            });
-
-            // Display each text group
-            Object.keys(byText).sort().forEach(textName => {
+            // Display each text
+            translations.forEach(item => {
                 const group = document.createElement('div');
                 group.className = 'text-group';
-                
-                const textOccs = byText[textName];
-                const firstOcc = textOccs[0];
                 
                 // Text header
                 const header = document.createElement('div');
                 header.className = 'text-header';
                 header.innerHTML = `
-                    <div class="text-title">${textName}</div>
+                    <div class="text-title">${item.text}</div>
                     <div class="text-meta">
-                        <span class="meta-badge">${firstOcc.tradition}</span>
-                        <span class="meta-info">Author: ${firstOcc.author}</span>
-                        <span class="meta-info">${textOccs.length} occurrence${textOccs.length > 1 ? 's' : ''}</span>
+                        <span class="meta-badge">Sanskrit Tantra</span>
+                        <span class="meta-info">${item.occurrences ? item.occurrences.length : 1} occurrence${item.occurrences && item.occurrences.length > 1 ? 's' : ''}</span>
                     </div>
                 `;
                 group.appendChild(header);
 
-                // Add each occurrence
-                textOccs.forEach((occ, index) => {
+                // Display English translation(s)
+                if (item.english) {
+                    // Single occurrence
                     const card = document.createElement('div');
                     card.className = 'occurrence-card';
                     
-                    // Handle both old and new data formats
-                    const sanskritLines = occ.sanskrit_lines || occ.context_lines || [];
-                    const highlightedLines = sanskritLines.map(line => 
-                        line.replace(new RegExp(`(${occ.compound})`, 'gi'), 
-                                   '<span class="highlight">$1</span>')
-                    );
-                    
-                    // Use only natural translation - it has proper English
-                    const translation = occ.natural_translation || 'Translation not available';
-                    
-                    // Format translation for better readability
-                    const formattedTranslation = translation
-                        .replace(/\[([^\]]+)\]/g, '<em>$1</em>')  // Italicize untranslated words
-                        .replace(/\|\|/g, '<br>')  // Line breaks at verse markers
-                        .replace(/\(verse \d+\)/g, match => `<span style="color: var(--text-muted); font-size: 0.9em;">${match}</span>`);
-                    
                     card.innerHTML = `
                         <div class="occurrence-header">
-                            <span class="compound-display">${occ.compound}</span>
-                            <span class="line-number">Line ${occ.line_number}</span>
+                            <span class="compound-display">svapnalabdha</span>
                         </div>
                         
                         <div class="translation-section">
-                            <div class="box sanskrit-box">
-                                <div class="box-label">Sanskrit Text</div>
-                                <div class="sanskrit-text">
-                                    ${highlightedLines.map(line => 
-                                        `<div class="sanskrit-line">${line}</div>`
-                                    ).join('')}
-                                </div>
-                            </div>
-                            
                             <div class="box translation-box">
-                                <div class="box-label">English Translation</div>
+                                <div class="box-label">Complete English Translation</div>
                                 <div class="translation-text">
-                                    ${formattedTranslation}
-                                </div>
-                            </div>
-                            
-                            <div class="box interpretation-box">
-                                <div class="box-label">Contextual Interpretation</div>
-                                <div class="interpretation-text">
-                                    ${occ.interpretation}
+                                    ${item.english}
                                 </div>
                             </div>
                         </div>
                     `;
                     
                     group.appendChild(card);
-                });
+                } else if (item.occurrences) {
+                    // Multiple occurrences
+                    item.occurrences.forEach(occ => {
+                        const card = document.createElement('div');
+                        card.className = 'occurrence-card';
+                        
+                        card.innerHTML = `
+                            <div class="occurrence-header">
+                                <span class="compound-display">svapnalabdha</span>
+                                ${occ.line ? `<span class="line-number">Line ${occ.line}</span>` : ''}
+                            </div>
+                            
+                            <div class="translation-section">
+                                <div class="box translation-box">
+                                    <div class="box-label">Complete English Translation</div>
+                                    <div class="translation-text">
+                                        ${occ.english}
+                                    </div>
+                                </div>
+                            </div>
+                        `;
+                        
+                        group.appendChild(card);
+                    });
+                }
                 
                 container.appendChild(group);
             });
@@ -515,21 +526,20 @@
                     const searchTerm = e.target.value.toLowerCase();
                     
                     if (!searchTerm) {
-                        displayOccurrences(analysisData.occurrences);
+                        displayTranslations(analysisData.translations);
                         return;
                     }
                     
-                    const filtered = analysisData.occurrences.filter(occ => 
-                        occ.text.toLowerCase().includes(searchTerm) ||
-                        occ.tradition.toLowerCase().includes(searchTerm) ||
-                        occ.author.toLowerCase().includes(searchTerm) ||
-                        occ.full_context.toLowerCase().includes(searchTerm) ||
-                        occ.compound.toLowerCase().includes(searchTerm) ||
-                        occ.full_translation.toLowerCase().includes(searchTerm) ||
-                        occ.interpretation.toLowerCase().includes(searchTerm)
-                    );
+                    const filtered = analysisData.translations.filter(item => {
+                        const textMatch = item.text.toLowerCase().includes(searchTerm);
+                        const englishMatch = item.english ? item.english.toLowerCase().includes(searchTerm) : false;
+                        const occMatch = item.occurrences ? 
+                            item.occurrences.some(occ => occ.english.toLowerCase().includes(searchTerm)) : false;
+                        
+                        return textMatch || englishMatch || occMatch;
+                    });
                     
-                    displayOccurrences(filtered);
+                    displayTranslations(filtered);
                 });
             }
         });
