@@ -378,17 +378,12 @@
 
         async function loadData() {
             try {
-                const response = await fetch('svapnalabdha_complete_translation.json');
+                // Force cache refresh with timestamp
+                const response = await fetch('svapnalabdha_complete_translation.json?t=' + Date.now());
                 if (!response.ok) {
-                    // Fallback to previous file
-                    const fallback = await fetch('svapnalabdha_full_translation.json');
-                    if (!fallback.ok) {
-                        throw new Error('Translation file not found');
-                    }
-                    analysisData = await fallback.json();
-                } else {
-                    analysisData = await response.json();
+                    throw new Error('Translation file not found');
                 }
+                analysisData = await response.json();
                 
                 document.getElementById('loading').style.display = 'none';
                 document.getElementById('content').style.display = 'block';
