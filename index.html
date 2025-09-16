@@ -1224,9 +1224,17 @@
                 document.querySelector('.clear-filter-btn').style.display = 'inline-block';
             }
             
-            // Re-display filtered results
+            // Re-display filtered results using the original display function
             const searchTerm = document.getElementById('searchInput').value;
-            displayFilteredResults(searchTerm);
+            document.getElementById('searchResults').innerHTML = ''; // Clear first
+            displayResults(currentResults, searchTerm);
+            
+            // Update the search info to show filter
+            const searchInfo = document.querySelector('.search-info');
+            if (searchInfo && currentTextFilter) {
+                const filteredMatches = currentResults.reduce((sum, r) => sum + (r.count || 0), 0);
+                searchInfo.innerHTML = `Found ${currentResults.length} text${currentResults.length !== 1 ? 's' : ''} containing "${searchTerm}" in "${currentTextFilter}" • ${filteredMatches} occurrence${filteredMatches !== 1 ? 's' : ''}`;
+            }
         }
         
         function clearTextFilter() {
@@ -1236,70 +1244,8 @@
             document.querySelector('.clear-filter-btn').style.display = 'none';
             
             const searchTerm = document.getElementById('searchInput').value;
-            displayFilteredResults(searchTerm);
-        }
-        
-        function displayFilteredResults(searchTerm) {
-            // Update counts
-            const filteredMatches = currentResults.reduce((sum, r) => sum + r.count || 0, 0);
-            document.getElementById('results-count').textContent = currentResults.length;
-            document.getElementById('search-badge').textContent = currentResults.length;
-            document.getElementById('matches-count').textContent = filteredMatches;
-            
-            // Clear and redisplay results
-            const resultsDiv = document.getElementById('searchResults');
-            resultsDiv.innerHTML = `<div class="search-info">
-                Found ${currentResults.length} text${currentResults.length !== 1 ? 's' : ''} containing "${searchTerm}" 
-                ${currentTextFilter ? `in "${currentTextFilter}"` : ''} • 
-                ${filteredMatches} occurrence${filteredMatches !== 1 ? 's' : ''}
-            </div>`;
-            
-            // Re-render results
-            currentResults.forEach((result, idx) => {
-                const isFavorite = favorites.includes(result.filename);
-                resultsDiv.innerHTML += `
-                    <div class="result-card">
-                        <div class="result-header">
-                            <div>
-                                <div class="result-title">
-                                    ${result.display_name || result.text || 'Unknown'}
-                                    <button class="favorite-btn ${isFavorite ? 'active' : ''}" 
-                                            onclick="toggleFavorite('${result.filename}', this)">
-                                        ${isFavorite ? '★' : '☆'}
-                                    </button>
-                                </div>
-                                <div class="result-meta">
-                                    ${result.author ? `<span class="author">Author: ${result.author}</span>` : ''}
-                                    ${result.tradition ? `<span class="tradition">Tradition: ${result.tradition}</span>` : ''}
-                                </div>
-                            </div>
-                            <div class="result-count">
-                                ${result.count} occurrence${result.count !== 1 ? 's' : ''}
-                            </div>
-                        </div>
-                        ${result.snippets && result.snippets.length > 0 ? `
-                            <div class="snippets">
-                                <div class="snippets-header">Text Excerpts:</div>
-                                ${result.snippets.map((snippet, sIdx) => `
-                                    <div class="snippet">
-                                        <div class="snippet-text" id="snippet-text-${idx}-${sIdx}">
-                                            ${highlightTerm(snippet, searchTerm)}
-                                        </div>
-                                        <div class="snippet-actions">
-                                            <button class="more-context-btn" onclick="toggleMoreContext(${idx}, ${sIdx})">More Context</button>
-                                            <button class="copy-snippet-btn" onclick="copySnippet(${idx}, ${sIdx})">Copy</button>
-                                        </div>
-                                    </div>
-                                `).join('')}
-                            </div>
-                        ` : ''}
-                    </div>
-                `;
-            });
-            
-            if (currentResults.length === 0) {
-                resultsDiv.innerHTML += '<div class="no-results">No matching texts found</div>';
-            }
+            document.getElementById('searchResults').innerHTML = ''; // Clear first
+            displayResults(currentResults, searchTerm);
         }
         
         function toggleFavorite(filename, btn) {
