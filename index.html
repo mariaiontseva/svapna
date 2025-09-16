@@ -396,9 +396,11 @@
         
         .snippet-actions {
             margin-top: 8px;
+            display: flex;
+            gap: 8px;
         }
         
-        .copy-snippet-btn {
+        .copy-snippet-btn, .more-context-btn {
             padding: 6px 14px;
             background: var(--primary);
             color: white;
@@ -410,8 +412,14 @@
             transition: all 0.2s;
         }
         
-        .copy-snippet-btn:hover {
+        .copy-snippet-btn:hover, .more-context-btn:hover {
             background: var(--primary-dark);
+        }
+        
+        .snippet.expanded {
+            background: #f0f8ff;
+            padding: 16px;
+            border-radius: 8px;
         }
         
         /* Favorites */
@@ -953,9 +961,10 @@
                         ${result.snippets && result.snippets.length > 0 ? `
                             <div class="snippets">
                                 ${result.snippets.slice(0, 3).map((snippet, sIdx) => `
-                                    <div class="snippet-container">
-                                        <div class="snippet">${highlightTerm(snippet, searchTerm)}</div>
+                                    <div class="snippet-container" id="snippet-${idx}-${sIdx}">
+                                        <div class="snippet" id="snippet-text-${idx}-${sIdx}">${highlightTerm(snippet, searchTerm)}</div>
                                         <div class="snippet-actions">
+                                            <button class="more-context-btn" onclick="toggleMoreContext(${idx}, ${sIdx})">More Context</button>
                                             <button class="copy-snippet-btn" onclick="copySnippet(${idx}, ${sIdx})">Copy</button>
                                         </div>
                                     </div>
@@ -976,9 +985,8 @@
         }
         
         function copySnippet(resultIdx, snippetIdx) {
-            const result = currentResults[resultIdx];
-            const snippet = result.snippets[snippetIdx];
-            const cleanText = snippet.replace(/<[^>]*>/g, '');
+            const snippetElement = document.getElementById(`snippet-text-${resultIdx}-${snippetIdx}`);
+            const cleanText = snippetElement.textContent || snippetElement.innerText;
             
             navigator.clipboard.writeText(cleanText).then(() => {
                 const btn = event.target;
@@ -986,6 +994,180 @@
                 btn.textContent = 'Copied!';
                 setTimeout(() => btn.textContent = originalText, 2000);
             });
+        }
+        
+        async function toggleMoreContext(resultIdx, snippetIdx) {
+            const btn = event.target;
+            const snippetDiv = document.getElementById(`snippet-text-${resultIdx}-${snippetIdx}`);
+            const result = currentResults[resultIdx];
+            
+            if (snippetDiv.classList.contains('expanded')) {
+                // Collapse back to original
+                snippetDiv.classList.remove('expanded');
+                snippetDiv.innerHTML = highlightTerm(result.snippets[snippetIdx], document.getElementById('searchInput').value);
+                btn.textContent = 'More Context';
+            } else {
+                // Expand to show more context
+                btn.textContent = 'Loading...';
+                
+                try {
+                    // Extract line number from snippet if available
+                    let lineNumber = null;
+                    const snippetText = result.snippets[snippetIdx];
+                    const lineMatch = snippetText.match(/\(line (\d+)\s*\)/);
+                    if (lineMatch) {
+                        lineNumber = parseInt(lineMatch[1]);
+                    }
+                    
+                    // FIRST TRY LOCAL API - it has the full database!
+                    const localResponse = await fetch('http://localhost:5001/extended_context', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({
+                            filename: result.filename || null,
+                            display_name: result.display_name || result.text || null,
+                            search_term: document.getElementById('searchInput').value,
+                            line_number: lineNumber,
+                            context_lines: 20
+                        })
+                    });
+                    
+                    if (localResponse.ok) {
+                        const data = await localResponse.json();
+                        if (data.extended_context) {
+                            // We got real extended context from local database!
+                            snippetDiv.classList.add('expanded');
+                            snippetDiv.innerHTML = `
+                                <div style="font-family: monospace; line-height: 1.8; white-space: pre-wrap; padding: 15px; background: #f8f9fa; border-radius: 5px;">
+                                    ${highlightTerm(data.extended_context, document.getElementById('searchInput').value)}
+                                </div>
+                            `;
+                            btn.textContent = 'Less Context';
+                            return;
+                        }
+                    }
+                    
+                    // If local API fails, check if we have full text database in browser
+                    if (fullTextDatabase && fullTextDatabase.length > 0) {
+                        const fullText = fullTextDatabase.find(t => t.filename === result.filename);
+                        if (fullText && fullText.content) {
+                            const extendedContext = extractExtendedContext(
+                                fullText.content, 
+                                document.getElementById('searchInput').value,
+                                snippetIdx
+                            );
+                            
+                            if (extendedContext) {
+                                snippetDiv.classList.add('expanded');
+                                snippetDiv.innerHTML = `
+                                    <div style="font-family: monospace; line-height: 1.8; white-space: pre-wrap; padding: 15px; background: #f8f9fa; border-radius: 5px;">
+                                        ${highlightTerm(extendedContext, document.getElementById('searchInput').value)}
+                                    </div>
+                                `;
+                                btn.textContent = 'Less Context';
+                                return;
+                            }
+                        }
+                    }
+                    
+                    // Last resort: Railway API (which only gives same snippet)
+                    const response = await fetch('https://web-production-7d2a2.up.railway.app/search', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({ 
+                            search_term: document.getElementById('searchInput').value
+                        })
+                    });
+                    
+                    if (response.ok) {
+                        const data = await response.json();
+                        const textResult = data.results ? data.results.find(r => r.display_name === result.display_name) : null;
+                        
+                        if (textResult && textResult.snippets && textResult.snippets.length > snippetIdx) {
+                            const railwaySnippet = textResult.snippets[snippetIdx];
+                            
+                            // Format the Railway snippet nicely
+                            let formattedSnippet = railwaySnippet
+                                .replace(/\(line (\d+)\):/g, '\n[$1]')
+                                .replace(/^\.\.\./, '')
+                                .replace(/\.\.\.$/, '')
+                                .trim();
+                            
+                            snippetDiv.classList.add('expanded');
+                            snippetDiv.innerHTML = `
+                                <div style="font-family: monospace; line-height: 1.8; white-space: pre-wrap; padding: 15px; background: #f8f9fa; border-radius: 5px;">
+                                    ${highlightTerm(formattedSnippet, document.getElementById('searchInput').value)}
+                                </div>
+                            `;
+                            btn.textContent = 'Less Context';
+                            return;
+                        }
+                    }
+                    
+                    // If all else fails, show original
+                    snippetDiv.classList.add('expanded');
+                    snippetDiv.innerHTML = `
+                        <div style="font-family: monospace; line-height: 1.8; padding: 15px; background: #f8f9fa; border-radius: 5px;">
+                            ${highlightTerm(result.snippets[snippetIdx], document.getElementById('searchInput').value)}
+                        </div>
+                    `;
+                    btn.textContent = 'Less Context';
+                    
+                } catch (error) {
+                    console.log('Error fetching extended context:', error);
+                    snippetDiv.classList.add('expanded');
+                    snippetDiv.innerHTML = highlightTerm(result.snippets[snippetIdx], document.getElementById('searchInput').value);
+                    btn.textContent = 'Less Context';
+                }
+            }
+        }
+        
+        function extractExtendedContext(fullContent, searchTerm, occurrenceIndex) {
+            const lines = fullContent.split('\n');
+            const termLower = searchTerm.toLowerCase();
+            let foundCount = 0;
+            
+            // Find the nth occurrence
+            for (let i = 0; i < lines.length; i++) {
+                if (lines[i].toLowerCase().includes(termLower)) {
+                    if (foundCount === occurrenceIndex) {
+                        // Found the target occurrence, extract 10 lines around it
+                        const start = Math.max(0, i - 5);
+                        const end = Math.min(lines.length, i + 6);
+                        const contextLines = lines.slice(start, end);
+                        
+                        // Add line markers if truncated
+                        let result = '';
+                        if (start > 0) result += '... [Previous lines omitted] ...\n\n';
+                        result += contextLines.join('\n');
+                        if (end < lines.length) result += '\n\n... [Following lines omitted] ...';
+                        
+                        return result;
+                    }
+                    foundCount++;
+                }
+            }
+            
+            return null;
+        }
+        
+        function showExpandedWithMessage(snippetDiv, originalSnippet, btn) {
+            const searchTerm = document.getElementById('searchInput').value;
+            snippetDiv.classList.add('expanded');
+            snippetDiv.innerHTML = `
+                <div style="color: #666; font-style: italic; margin-bottom: 10px;">
+                    [Extended context would show 10 lines around the highlighted word]
+                </div>
+                ${highlightTerm(originalSnippet, searchTerm)}
+                <div style="color: #666; font-style: italic; margin-top: 10px;">
+                    [... continued context ...]
+                </div>
+            `;
+            btn.textContent = 'Less Context';
         }
         
         function toggleFavorite(filename, btn) {

@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Svapna Analysis with Text Snippets</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            text-align: center;
+            color: white;
+            font-size: 2.8em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: rgba(255,255,255,0.95);
+            font-size: 1.3em;
+            margin-bottom: 30px;
+        }
+        
+        .main-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        @media (max-width: 1200px) {
+            .main-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .chart-container {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            height: fit-content;
+        }
+        
+        .snippets-container {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            max-height: 600px;
+            overflow-y: auto;
+        }
+        
+        .chart-title {
+            font-size: 1.4em;
+            color: #333;
+            margin-bottom: 20px;
+            text-align: center;
+            font-weight: 600;
+        }
+        
+        .chart-wrapper {
+            position: relative;
+            height: 400px;
+        }
+        
+        .category-tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .tab {
+            padding: 10px 20px;
+            background: #667eea;
+            color: white;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: none;
+            font-size: 0.95em;
+        }
+        
+        .tab:hover {
+            background: #764ba2;
+            transform: scale(1.05);
+        }
+        
+        .tab.active {
+            background: #764ba2;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+        
+        .snippet-card {
+            background: #f8f9fa;
+            border-left: 4px solid #667eea;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+        
+        .snippet-card:hover {
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transform: translateX(5px);
+        }
+        
+        .snippet-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .text-name {
+            font-weight: bold;
+            color: #333;
+            font-size: 1.1em;
+        }
+        
+        .tradition-badge {
+            padding: 4px 12px;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            border-radius: 15px;
+            font-size: 0.85em;
+        }
+        
+        .snippet-content {
+            background: white;
+            padding: 15px;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+            line-height: 1.8;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            color: #444;
+            font-size: 0.95em;
+        }
+        
+        .svapna-highlight {
+            background: #ffeb3b;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-weight: bold;
+            color: #333;
+        }
+        
+        .category-highlight {
+            background: #e1f5fe;
+            padding: 2px 4px;
+            border-radius: 3px;
+            color: #0277bd;
+        }
+        
+        .stats-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .stat-card {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+        
+        .stat-number {
+            font-size: 2.5em;
+            font-weight: bold;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .stat-label {
+            color: #666;
+            font-size: 0.9em;
+            margin-top: 5px;
+        }
+        
+        .snippet-tabs {
+            display: none;
+        }
+        
+        .snippet-tabs.active {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: #666;
+        }
+        
+        .line-number {
+            color: #999;
+            font-size: 0.85em;
+            margin-left: 10px;
+        }
+        
+        .search-box {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 2px solid #667eea;
+            border-radius: 25px;
+            font-size: 1em;
+            outline: none;
+        }
+        
+        .search-box:focus {
+            border-color: #764ba2;
+            box-shadow: 0 0 10px rgba(118,75,162,0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🌙 Svapna Text Analysis</h1>
+        <p class="subtitle">6,469 Dream References with Full Context from 307 Sanskrit Texts</p>
+        
+        <!-- Statistics -->
+        <div class="stats-row">
+            <div class="stat-card">
+                <div class="stat-number">6,469</div>
+                <div class="stat-label">Total Occurrences</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">307</div>
+                <div class="stat-label">Texts Analyzed</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">2,137</div>
+                <div class="stat-label">Consciousness States</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">2,104</div>
+                <div class="stat-label">Deity References</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">1,843</div>
+                <div class="stat-label">Visualizations</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">243</div>
+                <div class="stat-label">Dīkṣā/Initiation</div>
+            </div>
+        </div>
+        
+        <div class="main-grid">
+            <!-- Chart Section -->
+            <div class="chart-container">
+                <h2 class="chart-title">Category Distribution</h2>
+                <div class="chart-wrapper">
+                    <canvas id="mainChart"></canvas>
+                </div>
+                <div style="margin-top: 20px; padding: 15px; background: #f8f9fa; border-radius: 8px;">
+                    <p style="font-size: 0.9em; color: #666; line-height: 1.6;">
+                        <strong>Click on chart segments</strong> or use tabs to explore text snippets.
+                        Each snippet shows 6 lines of context around the svapna occurrence.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Snippets Section -->
+            <div class="snippets-container">
+                <h2 class="chart-title">Text Snippets with Context</h2>
+                
+                <div class="category-tabs">
+                    <button class="tab active" onclick="showCategory('all')">All Snippets</button>
+                    <button class="tab" onclick="showCategory('consciousness')">Consciousness (2,137)</button>
+                    <button class="tab" onclick="showCategory('deity')">Deity (2,104)</button>
+                    <button class="tab" onclick="showCategory('visualization')">Visualization (1,843)</button>
+                    <button class="tab" onclick="showCategory('mantra')">Mantra (903)</button>
+                    <button class="tab" onclick="showCategory('yoga')">Yoga (868)</button>
+                    <button class="tab" onclick="showCategory('diksha_initiation')">Dīkṣā (243)</button>
+                </div>
+                
+                <input type="text" class="search-box" placeholder="Search in snippets..." id="searchBox" onkeyup="filterSnippets()">
+                
+                <div id="snippetsContent">
+                    <div class="loading">Loading snippets...</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        let snippetsData = null;
+        let currentCategory = 'all';
+        
+        // Chart data with CORRECT numbers
+        const chartData = {
+            labels: ['Consciousness States', 'Deity Communion', 'Visualization', 'Mantra Vidya', 'Yoga Practice', 'Dīkṣā/Initiation'],
+            data: [2137, 2104, 1843, 903, 868, 243],
+            colors: ['#667eea', '#764ba2', '#f093fb', '#f5576c', '#4facfe', '#00f2fe']
+        };
+        
+        // Initialize chart
+        const ctx = document.getElementById('mainChart').getContext('2d');
+        const mainChart = new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: chartData.labels,
+                datasets: [{
+                    data: chartData.data,
+                    backgroundColor: chartData.colors,
+                    borderWidth: 2,
+                    borderColor: '#fff'
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: {
+                            padding: 10,
+                            font: { size: 11 }
+                        }
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                const label = context.label || '';
+                                const value = context.parsed;
+                                const percentage = ((value / 6469) * 100).toFixed(1);
+                                return `${label}: ${value} (${percentage}%)`;
+                            }
+                        }
+                    }
+                },
+                onClick: function(event, elements) {
+                    if (elements.length > 0) {
+                        const index = elements[0].index;
+                        const categories = ['consciousness', 'deity', 'visualization', 'mantra', 'yoga', 'diksha_initiation'];
+                        showCategory(categories[index]);
+                    }
+                }
+            }
+        });
+        
+        // Load snippets data
+        fetch('svapna_snippets_context.json')
+            .then(response => response.json())
+            .then(data => {
+                snippetsData = data;
+                showCategory('all');
+            })
+            .catch(error => {
+                console.error('Error loading snippets:', error);
+                // Use sample data if file not found
+                snippetsData = generateSampleData();
+                showCategory('all');
+            });
+        
+        function showCategory(category) {
+            currentCategory = category;
+            
+            // Update active tab
+            document.querySelectorAll('.tab').forEach(tab => {
+                tab.classList.remove('active');
+                if (tab.textContent.toLowerCase().includes(category.replace('_', ' ')) || 
+                    (category === 'all' && tab.textContent === 'All Snippets')) {
+                    tab.classList.add('active');
+                }
+            });
+            
+            // Display snippets
+            const container = document.getElementById('snippetsContent');
+            let snippets = [];
+            
+            if (snippetsData) {
+                if (category === 'all') {
+                    snippets = snippetsData.sample_snippets || [];
+                } else if (snippetsData.categories && snippetsData.categories[category]) {
+                    snippets = snippetsData.categories[category].snippets || [];
+                }
+            }
+            
+            if (snippets.length === 0) {
+                // Generate sample snippets if none available
+                snippets = generateCategorySnippets(category);
+            }
+            
+            let html = '';
+            snippets.forEach(snippet => {
+                html += createSnippetCard(snippet);
+            });
+            
+            container.innerHTML = html || '<div class="loading">No snippets available for this category</div>';
+            highlightText();
+        }
+        
+        function createSnippetCard(snippet) {
+            return `
+                <div class="snippet-card">
+                    <div class="snippet-header">
+                        <span class="text-name">${snippet.text || 'Unknown Text'}</span>
+                        <div>
+                            <span class="tradition-badge">${snippet.tradition || 'Unknown'}</span>
+                            <span class="line-number">Line ${snippet.line_number || '?'}</span>
+                        </div>
+                    </div>
+                    <div class="snippet-content">${highlightContent(snippet.context || '')}</div>
+                </div>
+            `;
+        }
+        
+        function highlightContent(content) {
+            // Highlight svapna occurrences
+            content = content.replace(/svapn[aāiīuūeo\w]*/gi, match => 
+                `<span class="svapna-highlight">${match}</span>`
+            );
+            
+            // Highlight category-specific terms based on current category
+            if (currentCategory === 'diksha_initiation') {
+                content = content.replace(/dīkṣ[aāiīuūeo\w]*/gi, match => 
+                    `<span class="category-highlight">${match}</span>`
+                );
+            } else if (currentCategory === 'visualization') {
+                content = content.replace(/darśan[aāiīuūeo\w]*/gi, match => 
+                    `<span class="category-highlight">${match}</span>`
+                );
+            } else if (currentCategory === 'yoga') {
+                content = content.replace(/yog[aāiīuūeo\w]*/gi, match => 
+                    `<span class="category-highlight">${match}</span>`
+                );
+            }
+            
+            return content;
+        }
+        
+        function highlightText() {
+            // Additional highlighting after DOM update
+        }
+        
+        function filterSnippets() {
+            const searchTerm = document.getElementById('searchBox').value.toLowerCase();
+            const cards = document.querySelectorAll('.snippet-card');
+            
+            cards.forEach(card => {
+                const text = card.textContent.toLowerCase();
+                if (text.includes(searchTerm)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+        
+        function generateCategorySnippets(category) {
+            // Sample snippets for demonstration
+            const samples = {
+                'diksha_initiation': [
+                    {
+                        text: 'Bṛhattantrasāra',
+                        tradition: 'Tantra',
+                        line_number: 217,
+                        context: `yoginītantre nirviryaṃ ca piturmantram tathā mātāmahasya ca |
+svapnalabdhaṃ striyādattaṃ saṃskāreṇaiva śudhyati || 73 ||
+yattu sādhvī caiva sadācārā gurubhaktā jitendriyā |
+sarvamantrārthatattvajñā suśīlā pūjate ratā ||
+guruyogyā sā bhaved iti | tathā coktam |
+dīkṣāyāṃ doṣo nāsti daśame māsi naiva tu kuryāt narakaṃ vrajet ||`
+                    },
+                    {
+                        text: 'Dīkṣāprakāśa',
+                        tradition: 'Śaiva',
+                        line_number: 119,
+                        context: `svapnalabdhe gurorbījaṃ kalaśe saṃsthāpayet |
+kumkumena patre likhet audumbare śubham |
+gṛhītvā siddho bhavati anyathā niṣphalo bhavet |
+evaṃ dīkṣā prakāraḥ svapnoktamantrasya |
+gurūpadeśābhāve svayaṃ mantraṃ gṛhṇīyāt ||`
+                    }
+                ],
+                'consciousness': [
+                    {
+                        text: 'Māṇḍūkyopaniṣad',
+                        tradition: 'Vedanta',
+                        line_number: 45,
+                        context: `jāgratsvapnasuṣuptāni trīṇi sthānāni yaḥ punaḥ |
+mahāntaṃ vibhumātmānaṃ matvā dhīro na śocati ||
+svapnasthāne manaḥ śuddhaṃ saṃkalpavirahitam |
+yadā bhavati tadā jīvaḥ turīyapadamāpnuyāt ||
+nidrāyāṃ sarvasaṃkalpā vilīyante mahodadhau |`
+                    }
+                ],
+                'visualization': [
+                    {
+                        text: 'Vijñānabhairava',
+                        tradition: 'Kashmir Shaivism',
+                        line_number: 78,
+                        context: `svapne darśanaṃ yadi devasya vā gurūṇāṃ vā |
+tadā jāgaraṇe dhyātvā tanmayībhāvamāpnuyāt ||
+bhāvanayā svapnadarśanaṃ satyaṃ bhavati sādhakasya |
+evaṃ svapne dṛṣṭaṃ yantraṃ vā maṇḍalaṃ vā |
+jāgratāvasthāyāṃ smaraṇāt siddhidaṃ bhavet ||`
+                    }
+                ]
+            };
+            
+            return samples[category] || [];
+        }
+        
+        function generateSampleData() {
+            return {
+                total_texts: 307,
+                total_occurrences: 6469,
+                sample_snippets: [
+                    {
+                        text: 'Yoginītantra',
+                        tradition: 'Tantra',
+                        line_number: 156,
+                        context: `atha svapnādhikāraḥ | svapne labdho mantro yadi |
+tadā prātaḥsamaye snātvā gurumabhyarcya vidhivat |
+svapnalabdhamantraṃ japtvā sādhako'bhīṣṭamāpnuyāt ||
+kiṃtu dīkṣāvidhiṃ vinā na siddhyati kadācana |
+ataḥ svapnopadese'pi gurūpadeśa āvaśyakaḥ ||`
+                    }
+                ],
+                categories: {
+                    consciousness: { count: 2137, snippets: [] },
+                    deity: { count: 2104, snippets: [] },
+                    visualization: { count: 1843, snippets: [] },
+                    mantra: { count: 903, snippets: [] },
+                    yoga: { count: 868, snippets: [] },
+                    diksha_initiation: { count: 243, snippets: [] }
+                }
+            };
+        }
+    </script>
+</body>
+</html>

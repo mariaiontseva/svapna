@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Svapna Comprehensive Interactive Analysis</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            text-align: center;
+            color: white;
+            font-size: 3em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: rgba(255,255,255,0.95);
+            font-size: 1.3em;
+            margin-bottom: 30px;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .stat-card {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            text-align: center;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+        }
+        
+        .stat-number {
+            font-size: 2.5em;
+            font-weight: bold;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .stat-label {
+            color: #666;
+            font-size: 0.9em;
+            margin-top: 5px;
+        }
+        
+        .charts-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        @media (max-width: 1024px) {
+            .charts-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .chart-container {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .chart-container.full-width {
+            grid-column: 1 / -1;
+        }
+        
+        .chart-title {
+            font-size: 1.4em;
+            color: #333;
+            margin-bottom: 20px;
+            text-align: center;
+            font-weight: 600;
+        }
+        
+        .chart-wrapper {
+            position: relative;
+            height: 400px;
+        }
+        
+        .chart-wrapper.large {
+            height: 500px;
+        }
+        
+        .details-section {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .category-details {
+            display: none;
+            margin-top: 20px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .category-details.active {
+            display: block;
+            animation: slideIn 0.3s ease;
+        }
+        
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .example-item {
+            background: white;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            border-left: 3px solid #764ba2;
+        }
+        
+        .example-text {
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 5px;
+        }
+        
+        .example-context {
+            color: #666;
+            font-size: 0.95em;
+            line-height: 1.6;
+            font-style: italic;
+        }
+        
+        .tradition-tag {
+            display: inline-block;
+            padding: 3px 10px;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            border-radius: 15px;
+            font-size: 0.85em;
+            margin-left: 10px;
+        }
+        
+        .legend-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 5px;
+            cursor: pointer;
+            padding: 5px;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        
+        .legend-item:hover {
+            background: #f0f0f0;
+        }
+        
+        .legend-color {
+            width: 20px;
+            height: 20px;
+            border-radius: 3px;
+            margin-right: 10px;
+        }
+        
+        .tooltip {
+            position: absolute;
+            background: rgba(0,0,0,0.9);
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 0.9em;
+            pointer-events: none;
+            z-index: 1000;
+            display: none;
+        }
+        
+        .filter-buttons {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .filter-btn {
+            padding: 8px 20px;
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 0.95em;
+        }
+        
+        .filter-btn:hover {
+            background: #764ba2;
+            transform: scale(1.05);
+        }
+        
+        .filter-btn.active {
+            background: #764ba2;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+        
+        .info-box {
+            background: linear-gradient(135deg, rgba(102,126,234,0.1) 0%, rgba(118,75,162,0.1) 100%);
+            border-left: 4px solid #667eea;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+        
+        .highlight {
+            background: yellow;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🌙 Svapna Comprehensive Analysis</h1>
+        <p class="subtitle">Interactive Analysis of 6,453 Dream References Across 307 Sanskrit Texts</p>
+        
+        <!-- Statistics Grid -->
+        <div class="stats-grid" id="statsGrid">
+            <div class="stat-card" onclick="showCategoryDetails('consciousness_states')">
+                <div class="stat-number">1,689</div>
+                <div class="stat-label">Consciousness States<br>(26.2%)</div>
+            </div>
+            <div class="stat-card" onclick="showCategoryDetails('visualization')">
+                <div class="stat-number">1,446</div>
+                <div class="stat-label">Visualization<br>(22.4%)</div>
+            </div>
+            <div class="stat-card" onclick="showCategoryDetails('philosophical')">
+                <div class="stat-number">1,375</div>
+                <div class="stat-label">Philosophical<br>(21.3%)</div>
+            </div>
+            <div class="stat-card" onclick="showCategoryDetails('deity_communion')">
+                <div class="stat-number">898</div>
+                <div class="stat-label">Deity Communion<br>(13.9%)</div>
+            </div>
+            <div class="stat-card" onclick="showCategoryDetails('siddhi_powers')">
+                <div class="stat-number">696</div>
+                <div class="stat-label">Siddhi Powers<br>(10.8%)</div>
+            </div>
+            <div class="stat-card" onclick="showCategoryDetails('body_subtle')">
+                <div class="stat-number">498</div>
+                <div class="stat-label">Subtle Body<br>(7.7%)</div>
+            </div>
+            <div class="stat-card" onclick="showCategoryDetails('yoga_practice')">
+                <div class="stat-number">483</div>
+                <div class="stat-label">Yoga Practice<br>(7.5%)</div>
+            </div>
+            <div class="stat-card" onclick="showCategoryDetails('time_context')">
+                <div class="stat-number">471</div>
+                <div class="stat-label">Time Context<br>(7.3%)</div>
+            </div>
+            <div class="stat-card" onclick="showCategoryDetails('mantra_vidya')">
+                <div class="stat-number">461</div>
+                <div class="stat-label">Mantra Vidya<br>(7.1%)</div>
+            </div>
+            <div class="stat-card" onclick="showCategoryDetails('tantric_practice')">
+                <div class="stat-number">293</div>
+                <div class="stat-label">Tantric Practice<br>(4.5%)</div>
+            </div>
+            <div class="stat-card" onclick="showCategoryDetails('guru_transmission')">
+                <div class="stat-number">140</div>
+                <div class="stat-label">Guru Transmission<br>(2.2%)</div>
+            </div>
+            <div class="stat-card" onclick="showCategoryDetails('initiation')">
+                <div class="stat-number">129</div>
+                <div class="stat-label">Initiation (Dīkṣā)<br>(2.0%)</div>
+            </div>
+        </div>
+        
+        <!-- Charts Grid -->
+        <div class="charts-grid">
+            <!-- Main Doughnut Chart -->
+            <div class="chart-container">
+                <h2 class="chart-title">Category Distribution (Interactive)</h2>
+                <div class="chart-wrapper">
+                    <canvas id="mainDoughnut"></canvas>
+                </div>
+            </div>
+            
+            <!-- Tradition Distribution -->
+            <div class="chart-container">
+                <h2 class="chart-title">Tradition Distribution</h2>
+                <div class="chart-wrapper">
+                    <canvas id="traditionChart"></canvas>
+                </div>
+            </div>
+            
+            <!-- Detailed Bar Chart -->
+            <div class="chart-container full-width">
+                <h2 class="chart-title">Detailed Category Analysis by Text Count</h2>
+                <div class="filter-buttons">
+                    <button class="filter-btn active" onclick="updateBarChart('count')">By Occurrences</button>
+                    <button class="filter-btn" onclick="updateBarChart('texts')">By Unique Texts</button>
+                    <button class="filter-btn" onclick="updateBarChart('percentage')">By Percentage</button>
+                </div>
+                <div class="chart-wrapper large">
+                    <canvas id="detailedBar"></canvas>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Category Details Section -->
+        <div class="details-section">
+            <h2 class="chart-title">Category Details (Click on stats above)</h2>
+            <div id="categoryDetails" class="category-details">
+                <p>Select a category from the statistics grid above to see detailed information.</p>
+            </div>
+        </div>
+        
+        <!-- Info Box -->
+        <div class="info-box">
+            <h3>Key Insights:</h3>
+            <ul style="margin-top: 10px; margin-left: 20px;">
+                <li><strong>Consciousness States (26.2%)</strong> - The largest category, showing svapna's central role in exploring states of awareness</li>
+                <li><strong>Visualization (22.4%)</strong> - Strong emphasis on dream visions and mystical experiences</li>
+                <li><strong>Philosophical (21.3%)</strong> - Dreams as metaphors for māyā and ultimate reality</li>
+                <li><strong>Dīkṣā appears in 56 texts (2%)</strong> - Though smaller in percentage, initiation through dreams is found across diverse traditions</li>
+                <li><strong>Yoga texts have 1,804 occurrences</strong> - The highest concentration per tradition</li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tooltip" id="tooltip"></div>
+    
+    <script>
+        // Color schemes
+        const colors = {
+            main: [
+                '#667eea', '#764ba2', '#f093fb', '#f5576c', '#4facfe', 
+                '#00f2fe', '#ffa400', '#fa709a', '#30cfd0', '#330867',
+                '#a8e6cf', '#ff8b94'
+            ],
+            traditions: [
+                '#FF6B6B', '#4ECDC4', '#45B7D1', '#96CEB4', '#FECA57',
+                '#48C9B0', '#9B59B6', '#E74C3C', '#3498DB', '#F39C12',
+                '#1ABC9C', '#8E44AD', '#2ECC71', '#E67E22', '#34495E',
+                '#16A085', '#27AE60', '#2980B9', '#C0392B'
+            ]
+        };
+        
+        // Category data
+        const categoryData = {
+            consciousness_states: {
+                count: 1689,
+                percentage: 26.2,
+                texts: 207,
+                description: "References to jāgrat (waking), suṣupta (deep sleep), turīya (fourth state), and other consciousness states",
+                keywords: ['jāgrat', 'suṣupta', 'turīya', 'cetana', 'bodha', 'prabodha', 'nidrā']
+            },
+            visualization: {
+                count: 1446,
+                percentage: 22.4,
+                texts: 178,
+                description: "Dream visions, mystical experiences, and visualization practices",
+                keywords: ['darśana', 'dṛṣṭa', 'paśya', 'bhāvana', 'dhyāna', 'cakṣu', 'netra']
+            },
+            philosophical: {
+                count: 1375,
+                percentage: 21.3,
+                texts: 193,
+                description: "Dreams as māyā, brahman realization, and metaphysical concepts",
+                keywords: ['māyā', 'brahma', 'ātma', 'tattva', 'saṃsāra', 'mokṣa', 'mukti']
+            },
+            deity_communion: {
+                count: 898,
+                percentage: 13.9,
+                texts: 177,
+                description: "Divine encounters in dreams with various deities",
+                keywords: ['deva', 'śiva', 'śakti', 'viṣṇu', 'kṛṣṇa', 'kālī', 'durgā']
+            },
+            siddhi_powers: {
+                count: 696,
+                percentage: 10.8,
+                texts: 148,
+                description: "Supernatural powers and accomplishments gained through dreams",
+                keywords: ['siddhi', 'vibhūti', 'aiśvarya', 'śakti', 'bala', 'phala']
+            },
+            body_subtle: {
+                count: 498,
+                percentage: 7.7,
+                texts: 138,
+                description: "References to subtle body, nāḍīs, prāṇa in dream contexts",
+                keywords: ['nāḍī', 'prāṇa', 'vāyu', 'bindu', 'śarīra', 'sūkṣma']
+            },
+            yoga_practice: {
+                count: 483,
+                percentage: 7.5,
+                texts: 126,
+                description: "Dream yoga, samādhi states, and yogic practices",
+                keywords: ['yoga', 'samādhi', 'prāṇāyāma', 'āsana', 'mudrā', 'kuṇḍalinī']
+            },
+            time_context: {
+                count: 471,
+                percentage: 7.3,
+                texts: 112,
+                description: "Temporal aspects of dreams - night, day, muhūrta",
+                keywords: ['kāla', 'rātri', 'niśā', 'divā', 'ahorātra', 'muhūrta']
+            },
+            mantra_vidya: {
+                count: 461,
+                percentage: 7.1,
+                texts: 141,
+                description: "Mantras received in dreams and dream-related vidyās",
+                keywords: ['mantra', 'vidyā', 'bīja', 'japa', 'stotra', 'kavaca']
+            },
+            tantric_practice: {
+                count: 293,
+                percentage: 4.5,
+                texts: 119,
+                description: "Tantric rituals, yantras, and practices involving dreams",
+                keywords: ['tantra', 'yantra', 'cakra', 'maṇḍala', 'pūjā', 'homa']
+            },
+            guru_transmission: {
+                count: 140,
+                percentage: 2.2,
+                texts: 65,
+                description: "Guru's teachings and transmissions received in dreams",
+                keywords: ['guru', 'ācārya', 'deśika', 'śiṣya']
+            },
+            initiation: {
+                count: 129,
+                percentage: 2.0,
+                texts: 56,
+                description: "Dīkṣā and initiations received through dreams",
+                keywords: ['dīkṣā', 'upadeśa', 'abhiṣeka', 'saṃskāra', 'śaktipāta']
+            }
+        };
+        
+        // Initialize main doughnut chart
+        const mainDoughnutCtx = document.getElementById('mainDoughnut').getContext('2d');
+        const mainDoughnutChart = new Chart(mainDoughnutCtx, {
+            type: 'doughnut',
+            data: {
+                labels: Object.keys(categoryData).map(key => 
+                    key.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase())
+                ),
+                datasets: [{
+                    data: Object.values(categoryData).map(d => d.count),
+                    backgroundColor: colors.main,
+                    borderWidth: 2,
+                    borderColor: '#fff'
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: {
+                            padding: 10,
+                            font: {
+                                size: 11
+                            }
+                        }
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                const label = context.label || '';
+                                const value = context.parsed;
+                                const percentage = ((value / 6453) * 100).toFixed(1);
+                                const catKey = label.toLowerCase().replace(/ /g, '_');
+                                const texts = categoryData[catKey]?.texts || 0;
+                                return [
+                                    `${label}: ${value} occurrences`,
+                                    `${percentage}% of total`,
+                                    `Found in ${texts} texts`
+                                ];
+                            }
+                        }
+                    }
+                },
+                onClick: function(event, elements) {
+                    if (elements.length > 0) {
+                        const index = elements[0].index;
+                        const catKey = Object.keys(categoryData)[index];
+                        showCategoryDetails(catKey);
+                    }
+                }
+            }
+        });
+        
+        // Tradition distribution chart
+        const traditionData = {
+            'Yoga': 1804,
+            'Unknown': 1491,
+            'Kashmir Shaivism': 455,
+            'Tantra (General)': 350,
+            'Bengal Tantra': 349,
+            'Vedanta': 341,
+            'Saiva Agama': 315,
+            'Sri Vidya': 294,
+            'Nath Tradition': 219,
+            'Ritual/Puja': 178,
+            'Commentary': 122,
+            'Natya/Arts': 120,
+            'Buddhist Tantra': 94,
+            'Vaishnava Tantra': 92,
+            'Shakta': 67,
+            'Stotra': 60,
+            'Kaula': 52,
+            'Purana': 28,
+            'Mantra Shastra': 22
+        };
+        
+        const traditionCtx = document.getElementById('traditionChart').getContext('2d');
+        new Chart(traditionCtx, {
+            type: 'bar',
+            data: {
+                labels: Object.keys(traditionData).slice(0, 10),
+                datasets: [{
+                    label: 'Svapna Occurrences',
+                    data: Object.values(traditionData).slice(0, 10),
+                    backgroundColor: 'rgba(102, 126, 234, 0.8)',
+                    borderColor: 'rgba(102, 126, 234, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Number of Occurrences'
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return `${context.parsed.y} occurrences`;
+                            }
+                        }
+                    }
+                }
+            }
+        });
+        
+        // Detailed bar chart
+        let currentBarMode = 'count';
+        const detailedBarCtx = document.getElementById('detailedBar').getContext('2d');
+        const detailedBarChart = new Chart(detailedBarCtx, {
+            type: 'bar',
+            data: {
+                labels: Object.keys(categoryData).map(key => 
+                    key.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase())
+                ),
+                datasets: [{
+                    label: 'Occurrences',
+                    data: Object.values(categoryData).map(d => d.count),
+                    backgroundColor: colors.main,
+                    borderColor: colors.main.map(c => c),
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                indexAxis: 'y',
+                scales: {
+                    x: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Number of Occurrences'
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                const catKey = Object.keys(categoryData)[context.dataIndex];
+                                const cat = categoryData[catKey];
+                                return [
+                                    `Occurrences: ${cat.count}`,
+                                    `Percentage: ${cat.percentage}%`,
+                                    `Unique Texts: ${cat.texts}`
+                                ];
+                            }
+                        }
+                    }
+                }
+            }
+        });
+        
+        // Update bar chart function
+        function updateBarChart(mode) {
+            currentBarMode = mode;
+            const buttons = document.querySelectorAll('.filter-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            let data, label, title;
+            switch(mode) {
+                case 'texts':
+                    data = Object.values(categoryData).map(d => d.texts);
+                    label = 'Unique Texts';
+                    title = 'Number of Unique Texts';
+                    break;
+                case 'percentage':
+                    data = Object.values(categoryData).map(d => d.percentage);
+                    label = 'Percentage';
+                    title = 'Percentage of Total';
+                    break;
+                default:
+                    data = Object.values(categoryData).map(d => d.count);
+                    label = 'Occurrences';
+                    title = 'Number of Occurrences';
+            }
+            
+            detailedBarChart.data.datasets[0].data = data;
+            detailedBarChart.data.datasets[0].label = label;
+            detailedBarChart.options.scales.x.title.text = title;
+            detailedBarChart.update();
+        }
+        
+        // Show category details
+        function showCategoryDetails(category) {
+            const details = categoryData[category];
+            const detailsDiv = document.getElementById('categoryDetails');
+            
+            const categoryName = category.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+            
+            detailsDiv.innerHTML = `
+                <h3>${categoryName}</h3>
+                <p style="margin: 10px 0; color: #666;">${details.description}</p>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; margin: 20px 0;">
+                    <div style="text-align: center; padding: 10px; background: white; border-radius: 8px;">
+                        <div style="font-size: 2em; font-weight: bold; color: #667eea;">${details.count}</div>
+                        <div style="color: #888; font-size: 0.9em;">Total Occurrences</div>
+                    </div>
+                    <div style="text-align: center; padding: 10px; background: white; border-radius: 8px;">
+                        <div style="font-size: 2em; font-weight: bold; color: #764ba2;">${details.percentage}%</div>
+                        <div style="color: #888; font-size: 0.9em;">Of All Svapna</div>
+                    </div>
+                    <div style="text-align: center; padding: 10px; background: white; border-radius: 8px;">
+                        <div style="font-size: 2em; font-weight: bold; color: #f093fb;">${details.texts}</div>
+                        <div style="color: #888; font-size: 0.9em;">Unique Texts</div>
+                    </div>
+                </div>
+                <div style="margin-top: 20px;">
+                    <h4 style="margin-bottom: 10px;">Key Terms:</h4>
+                    <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+                        ${details.keywords.map(k => `
+                            <span style="padding: 5px 15px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
+                                       color: white; border-radius: 20px; font-size: 0.9em;">${k}</span>
+                        `).join('')}
+                    </div>
+                </div>
+            `;
+            
+            detailsDiv.classList.add('active');
+            detailsDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+        
+        // Load comprehensive data
+        fetch('svapna_comprehensive_analysis.json')
+            .then(response => response.json())
+            .then(data => {
+                console.log('Loaded comprehensive data:', data);
+                // Data is already integrated above
+            })
+            .catch(error => console.log('Using embedded data'));
+    </script>
+</body>
+</html>

@@ -1,0 +1,4660 @@
+{
+  "timestamp": "2025-09-15T21:40:52.779824",
+  "total_texts": 307,
+  "total_svapna_occurrences": 6453,
+  "categories": {
+    "consciousness_states": {
+      "count": 1689,
+      "percentage": 26.17,
+      "unique_texts": 207,
+      "examples": [
+        {
+          "text": "Acarasaratantram",
+          "tradition": "Natya/Arts",
+          "context": "tarpaṇādravarasaṃpātraṃ bhaje ṣaṣṭhamaṃ (line ): (line ): jāgratsvapnasuṣupti tūryapurato caitanya sākṣīpradaṃ (line ): vidyudbhāskaracaṃdrasendra dhanuṣo"
+        },
+        {
+          "text": "Acintyavisvasadakhya",
+          "tradition": "Saiva Agama",
+          "context": "yuktātmā tatsarvaṃ tasya jāyate | (line ): svapne'pi yogayuktasya yoganidrāprabhāvataḥ (line ): (line ): abhyarthitosyakenāpi"
+        },
+        {
+          "text": "Acintyavisvasadakhya",
+          "tradition": "Saiva Agama",
+          "context": "samādhiḥ syāt tadviśuddhastathocyate (line ): (line ): jāgratsvapnasuṣuptānte tatsambandhamanityatām | (line ): etatturīyānītaṃ tu ātmano"
+        },
+        {
+          "text": "Acintyavisvasadakhya",
+          "tradition": "Saiva Agama",
+          "context": "mihocyate | (line ): jāgratkāle tvaco vyapti svapne vaktraṃ tathaiva ca (line ): (line ):"
+        },
+        {
+          "text": "Acintyavisvasadakhya",
+          "tradition": "Saiva Agama",
+          "context": "): (line ): sthūlaṃ jāgṛ saṃjñeyaṃ sūkṣmaṃ svapna mihocyate | (line ): suṣuptistu susūkṣmaṃ syāditi"
+        }
+      ]
+    },
+    "visualization": {
+      "count": 1446,
+      "percentage": 22.41,
+      "unique_texts": 178,
+      "examples": [
+        {
+          "text": "Acintyavisvasadakhya",
+          "tradition": "Saiva Agama",
+          "context": "(line ): (line ): yathā dṛṣṭaṃ tu svapnaṃ hi pṛcchecchiṣyāṃstathā guruḥ | (line ): ramaṃ"
+        },
+        {
+          "text": "Acintyavisvasadakhya",
+          "tradition": "Saiva Agama",
+          "context": "darśanaṃ vāpi gurordarśanamuttamam | (line ): ratnahemāṃgulīyādibhūṣaṇaṃ svapnamuttamam (line ): (line ): arkādibimbatapanaṃ patanaṃ cāndhakūpake"
+        },
+        {
+          "text": "Agamakalpalata",
+          "tradition": "Ritual/Puja",
+          "context": "yaścittaṃtvayutagāyatrījapaḥ sarvatratathādarśanāt yoginītaṃtre nivīryaṃcapiturmaṃtraṃta (line ): thāmātāmahasyaca svapnalavdhaṃstriyadatuṃsaṃskāreṇaivaśuddhyati svapnalavdhecakalaśeguroḥprā (line ): "
+        },
+        {
+          "text": "Agamakalpalata",
+          "tradition": "Ritual/Puja",
+          "context": "sarvatratathādarśanāt yoginītaṃtre nivīryaṃcapiturmaṃtraṃta (line ): thāmātāmahasyaca svapnalavdhaṃstriyadatuṃsaṃskāreṇaivaśuddhyati svapnalavdhecakalaśeguroḥprā (line ): ṇaṃniveśayet vaṭapattrekuṃkum"
+        },
+        {
+          "text": "Agamakalpalata",
+          "tradition": "Ritual/Puja",
+          "context": "): adṛṣṭapūrvāṃyuvatiṃtatkṣaṇāṃtāṃsamānayet yadyadvāṃchayatikāmaṃtatkāmaṃprayaccha (line ): ti evaṃmadhumatīsiddhirvidhinātasyajāyate vidyāṃsvapnāvatīṃnāmnīṃtriṣulokeṣu (line ): durlabhām jñātvāpisādh"
+        }
+      ]
+    },
+    "philosophical": {
+      "count": 1375,
+      "percentage": 21.31,
+      "unique_texts": 193,
+      "examples": [
+        {
+          "text": "Acintyavisvasadakhya",
+          "tradition": "Saiva Agama",
+          "context": "(line ): (line ): vāmāya śambhave viśva svapnādhipataye namaḥ | (line ): oṃ hili hili"
+        },
+        {
+          "text": "Acintyavisvasadakhya",
+          "tradition": "Saiva Agama",
+          "context": "yuktātmā tatsarvaṃ tasya jāyate | (line ): svapne'pi yogayuktasya yoganidrāprabhāvataḥ (line ): (line ): abhyarthitosyakenāpi"
+        },
+        {
+          "text": "Acintyavisvasadakhya",
+          "tradition": "Saiva Agama",
+          "context": "samādhiḥ syāt tadviśuddhastathocyate (line ): (line ): jāgratsvapnasuṣuptānte tatsambandhamanityatām | (line ): etatturīyānītaṃ tu ātmano"
+        },
+        {
+          "text": "Acintyavisvasadakhya",
+          "tradition": "Saiva Agama",
+          "context": "dehānāṃ vyāparairātmanaḥ kṛtiḥ (line ): (line ): vṛttirmānasasvapno vasthābhāveṣu kevalam | (line ): svasthaṃ viṣayasaṃgośca"
+        },
+        {
+          "text": "Agamakalpalata",
+          "tradition": "Ritual/Puja",
+          "context": "): dakenātmānamarpayaṃtu taccaraṇāṃvjamūle iteḥpūrvaṃprāṇavuddhidehadharmādikārataḥ jā (line ): gratsvapnaṣuptyavasthāsumanasāvācākarmaṇāhastābhyāṃpadbhyāmudareṇaśiśnāyatkṛtaṃyadu (line ): ktaṃyatsmṛt"
+        }
+      ]
+    },
+    "deity_communion": {
+      "count": 898,
+      "percentage": 13.92,
+      "unique_texts": 177,
+      "examples": [
+        {
+          "text": "Acarasaratantram",
+          "tradition": "Natya/Arts",
+          "context": "jāpyā tadanaṃtaraṃ || (line ): (line ): svapne vadati sā devī ciraṃjīvī bhaveti hi |"
+        },
+        {
+          "text": "Acarasaratantram",
+          "tradition": "Natya/Arts",
+          "context": "): (line ): tato devī tarhi sādhya svapnāṃte vadati sphuṭaṃ | (line ): ayaṃ rājan"
+        },
+        {
+          "text": "Acarasaratantram",
+          "tradition": "Natya/Arts",
+          "context": "nocettava bhaveddhāniriti sāsphuṭabhāṣiṇī | (line ): iti svapnāṃtare sādhyaṃ sāvadatpatha devatā || (line ): (line"
+        },
+        {
+          "text": "Acarasaratantram",
+          "tradition": "Natya/Arts",
+          "context": "|| (line ): (line ): yaṃtravaktrānna ceddevī svapne vāpi vadet tadā | (line ): (line"
+        },
+        {
+          "text": "Acintyavisvasadakhya",
+          "tradition": "Saiva Agama",
+          "context": "bahirantarviśuddhyarthaṃ śivejyāyogakāraṇam (line ): (line ): sarvācārapradhānatvaṃ sarvaduḥsvapnanāśanam | (line ): ālasyādau haridrānāṃ śūdrāṇāṃ ca"
+        }
+      ]
+    },
+    "siddhi_powers": {
+      "count": 696,
+      "percentage": 10.79,
+      "unique_texts": 148,
+      "examples": [
+        {
+          "text": "Agamakalpalata",
+          "tradition": "Ritual/Puja",
+          "context": "yaścittaṃtvayutagāyatrījapaḥ sarvatratathādarśanāt yoginītaṃtre nivīryaṃcapiturmaṃtraṃta (line ): thāmātāmahasyaca svapnalavdhaṃstriyadatuṃsaṃskāreṇaivaśuddhyati svapnalavdhecakalaśeguroḥprā (line ): "
+        },
+        {
+          "text": "Agamakalpalata",
+          "tradition": "Ritual/Puja",
+          "context": "sarvatratathādarśanāt yoginītaṃtre nivīryaṃcapiturmaṃtraṃta (line ): thāmātāmahasyaca svapnalavdhaṃstriyadatuṃsaṃskāreṇaivaśuddhyati svapnalavdhecakalaśeguroḥprā (line ): ṇaṃniveśayet vaṭapattrekuṃkum"
+        },
+        {
+          "text": "Agamakalpalata",
+          "tradition": "Ritual/Puja",
+          "context": "): ṇaṃniveśayet vaṭapattrekuṃkumenalikhitvāgrahaṇaṃśubham tataḥsaphalamāpnotianyathā (line ): viphalaṃbhavet idaṃtusadgurorabhāvetatsatvetasmādekamaṃtraṃgṛhṇīyāditisvapnetukāla (line ): niyamaḥsvapnet"
+        },
+        {
+          "text": "Agamakalpalata",
+          "tradition": "Ritual/Puja",
+          "context": "tataḥsaphalamāpnotianyathā (line ): viphalaṃbhavet idaṃtusadgurorabhāvetatsatvetasmādekamaṃtraṃgṛhṇīyāditisvapnetukāla (line ): niyamaḥsvapnetuniyamonahītināradavacanāt varjanīyaguruṃvakṣyemaṃtriṇāṃhi"
+        },
+        {
+          "text": "Agamakalpalata",
+          "tradition": "Ritual/Puja",
+          "context": "rvasiddhakṣaramaṃtrāṇāṃsiddhādīrnaivaśodhayat piṃḍitākṣaramaṃtrāṇāṃsaṃyuktākṣaramaṃtrāṇaṃ ta (line ): thācoktaṃsāgarasaṃhitāyāṃ tathaikākṣaretathākūṭemālāmaṃtretrivījake svapnalavdhestri- (line ): yād"
+        }
+      ]
+    },
+    "body_subtle": {
+      "count": 498,
+      "percentage": 7.72,
+      "unique_texts": 138,
+      "examples": [
+        {
+          "text": "Acintyavisvasadakhya",
+          "tradition": "Saiva Agama",
+          "context": "): (line ): sthūlaṃ jāgṛ saṃjñeyaṃ sūkṣmaṃ svapna mihocyate | (line ): suṣuptistu susūkṣmaṃ syāditi"
+        },
+        {
+          "text": "Agamakalpalata",
+          "tradition": "Ritual/Puja",
+          "context": "): dakenātmānamarpayaṃtu taccaraṇāṃvjamūle iteḥpūrvaṃprāṇavuddhidehadharmādikārataḥ jā (line ): gratsvapnaṣuptyavasthāsumanasāvācākarmaṇāhastābhyāṃpadbhyāmudareṇaśiśnāyatkṛtaṃyadu (line ): ktaṃyatsmṛt"
+        },
+        {
+          "text": "Agamakalpalata",
+          "tradition": "Ritual/Puja",
+          "context": "paṃcāṃgāmadhyamāsmṛtāḥ nadevaṃpṛṣṭataḥkṛtvāprāṇāmaṃkvacidācaret tatupavi (line ): śyajalagaṃḍūṣaṃgṛhītvā itaḥpūrvaṃprāṇavuddhirdehadharmādhikārataḥ jāgratsvapnasuṣu (line ): (line ): pṛ a) ptāvasthāsu"
+        },
+        {
+          "text": "Agamakalpalata",
+          "tradition": "Ritual/Puja",
+          "context": "(line ): praṇipātenamuktistasyakaresthitā itipraṇamyopaviśyā... dakenaitaḥpūrvaṃprāṇa (line ): vuddhidehadharmādhikāratojāgratsvapnasuṣutthavasthāsumanasāvācākarmaṇāhastā (line ): bhyāṃpadbhyāmudareṇa"
+        },
+        {
+          "text": "Agamakalpalata",
+          "tradition": "Ritual/Puja",
+          "context": "): hyātiguhyamityādipaṭilādevyāmahastetejomayaṃjapaṃsamapyaṃghaṭāṃvodayaksavakṛ (line ): tvādaṃḍapraṇāmaṃkṛtvājvaviśyārghajalaṃgṛhītvāitaḥpūrvaṃprāṇavuddhidehadharmādhikā (line ): racojāgratsvapnasupu"
+        }
+      ]
+    },
+    "yoga_practice": {
+      "count": 483,
+      "percentage": 7.48,
+      "unique_texts": 126,
+      "examples": [
+        {
+          "text": "Acintyavisvasadakhya",
+          "tradition": "Saiva Agama",
+          "context": "bahirantarviśuddhyarthaṃ śivejyāyogakāraṇam (line ): (line ): sarvācārapradhānatvaṃ sarvaduḥsvapnanāśanam | (line ): ālasyādau haridrānāṃ śūdrāṇāṃ ca"
+        },
+        {
+          "text": "Acintyavisvasadakhya",
+          "tradition": "Saiva Agama",
+          "context": "yuktātmā tatsarvaṃ tasya jāyate | (line ): svapne'pi yogayuktasya yoganidrāprabhāvataḥ (line ): (line ): abhyarthitosyakenāpi"
+        },
+        {
+          "text": "Acintyavisvasadakhya",
+          "tradition": "Saiva Agama",
+          "context": "samādhiḥ syāt tadviśuddhastathocyate (line ): (line ): jāgratsvapnasuṣuptānte tatsambandhamanityatām | (line ): etatturīyānītaṃ tu ātmano"
+        },
+        {
+          "text": "Acintyavisvasadakhya",
+          "tradition": "Saiva Agama",
+          "context": "p. ) (line ): (line ): dhāraṇāya jayetsvapna randhranenai suṣuptikam | (line ): samādhinā turyatītaṃ"
+        },
+        {
+          "text": "Agamakalpalata",
+          "tradition": "Ritual/Puja",
+          "context": "yaścittaṃtvayutagāyatrījapaḥ sarvatratathādarśanāt yoginītaṃtre nivīryaṃcapiturmaṃtraṃta (line ): thāmātāmahasyaca svapnalavdhaṃstriyadatuṃsaṃskāreṇaivaśuddhyati svapnalavdhecakalaśeguroḥprā (line ): "
+        }
+      ]
+    },
+    "time_context": {
+      "count": 471,
+      "percentage": 7.3,
+      "unique_texts": 112,
+      "examples": [
+        {
+          "text": "Acintyavisvasadakhya",
+          "tradition": "Saiva Agama",
+          "context": "mihocyate | (line ): jāgratkāle tvaco vyapti svapne vaktraṃ tathaiva ca (line ): (line ):"
+        },
+        {
+          "text": "Agamakalpalata",
+          "tradition": "Ritual/Puja",
+          "context": "): ṇaṃniveśayet vaṭapattrekuṃkumenalikhitvāgrahaṇaṃśubham tataḥsaphalamāpnotianyathā (line ): viphalaṃbhavet idaṃtusadgurorabhāvetatsatvetasmādekamaṃtraṃgṛhṇīyāditisvapnetukāla (line ): niyamaḥsvapnet"
+        },
+        {
+          "text": "Agamakalpalata",
+          "tradition": "Ritual/Puja",
+          "context": "tataḥsaphalamāpnotianyathā (line ): viphalaṃbhavet idaṃtusadgurorabhāvetatsatvetasmādekamaṃtraṃgṛhṇīyāditisvapnetukāla (line ): niyamaḥsvapnetuniyamonahītināradavacanāt varjanīyaguruṃvakṣyemaṃtriṇāṃhi"
+        },
+        {
+          "text": "Agamakalpalata",
+          "tradition": "Ritual/Puja",
+          "context": "): gaṃdhapuṣpādibhiḥśubhaiḥ dūrvābhistatrajuhuyānnityamaṣṭottaraṃśataṃ upasargāvinaśyaṃ (line ): tikṣudrabhūtajvarādibhiḥ sahetiśeṣaḥduḥsvapneniśisaṃjātesnātvāmaṃtramamuṃjapet ani (line ): draumaṃtrav"
+        },
+        {
+          "text": "Agamakalpalata",
+          "tradition": "Ritual/Puja",
+          "context": "(line ): tikṣudrabhūtajvarādibhiḥ sahetiśeṣaḥduḥsvapneniśisaṃjātesnātvāmaṃtramamuṃjapet ani (line ): draumaṃtravitpaścātsusvapnastasyajāyate vyāghracauramṛgādibhyomahāraṇyebhayākule rakṣe (line ): nma"
+        }
+      ]
+    },
+    "mantra_vidya": {
+      "count": 461,
+      "percentage": 7.14,
+      "unique_texts": 141,
+      "examples": [
+        {
+          "text": "Acintyavisvasadakhya",
+          "tradition": "Saiva Agama",
+          "context": "cāmṛtākṣarakaṃ japet | (line ): śuddhadeśe śayānasya svapne sarva prakāśyate (line ): (line ): svapnaṃ"
+        },
+        {
+          "text": "Acintyavisvasadakhya",
+          "tradition": "Saiva Agama",
+          "context": "śikhābaddhaśikhānsarvān hetinā rakṣitānpunaḥ (line ): (line ): svapnādhipannimantraṃ ca gurustatropadeśayet | (line ): oṃ hili"
+        },
+        {
+          "text": "Acintyavisvasadakhya",
+          "tradition": "Saiva Agama",
+          "context": "pūjayetpaścād darpaṇaṃ pūrvakāvadhi (line ): (line ): duḥsvapnaśāntaye paścān mūlamantrāṃśakaṃ hunet | (line ): huṃkāraṃ"
+        },
+        {
+          "text": "Agamakalpalata",
+          "tradition": "Ritual/Puja",
+          "context": "yaścittaṃtvayutagāyatrījapaḥ sarvatratathādarśanāt yoginītaṃtre nivīryaṃcapiturmaṃtraṃta (line ): thāmātāmahasyaca svapnalavdhaṃstriyadatuṃsaṃskāreṇaivaśuddhyati svapnalavdhecakalaśeguroḥprā (line ): "
+        },
+        {
+          "text": "Agamakalpalata",
+          "tradition": "Ritual/Puja",
+          "context": "darī etasyāevavidyāyāmadhyakūṭasyamadhyamam madhyakūṭasyamadhyakūṭatrayasya japtvānaṃdamayo (line ): bhūtvāsarvakāmamupālabhet iyaṃsvapnāvatīnāmnīvidyātrailokyadurlabhā ākarṣaṇakarī (line ): vidyācitt"
+        }
+      ]
+    },
+    "tantric_practice": {
+      "count": 293,
+      "percentage": 4.54,
+      "unique_texts": 119,
+      "examples": [
+        {
+          "text": "Acintyavisvasadakhya",
+          "tradition": "Saiva Agama",
+          "context": "pūjayetpaścād darpaṇaṃ pūrvakāvadhi (line ): (line ): duḥsvapnaśāntaye paścān mūlamantrāṃśakaṃ hunet | (line ): huṃkāraṃ"
+        },
+        {
+          "text": "Acintyavisvasadakhya",
+          "tradition": "Saiva Agama",
+          "context": "maṇḍalaṃ vāruṇaṃ tathā (line ): (line ): svapnāvasthā pratiṣṭhāyāṃ kāraṇaṃ viṣṇurucyate | (line ): bhuvanāmā"
+        },
+        {
+          "text": "Acintyavisvasadakhya",
+          "tradition": "Saiva Agama",
+          "context": "pratisañca svapnakam | (line ): jāgre viṣayabhuktiśca svapno na styāgatistakam (line ): (line ): ayasāgni"
+        },
+        {
+          "text": "Agamakalpalata",
+          "tradition": "Ritual/Puja",
+          "context": "(line ): maṃtreṇadeveśiākṛṣyanirmayaḥśuciḥ arghaṃdatvāviśeṣeṇacarkravātenapūjitaṃ kumārī (line ): pūjanaṃśaktonārīsvapnepinasmaret tāprapātrekapālīvāśmaśānekāṣṭanirmite śa (line ): nibhaumadinevāpiśar"
+        },
+        {
+          "text": "Agamakalpalata",
+          "tradition": "Ritual/Puja",
+          "context": "kakhagaghaṅa cachajajhaña ṭaṭha dvādaśavarṇayuktadvā (line ): daśadalaṃ anāhatapadmasyoparigaleviśuddhacakraṃsvapnasthānaṃmākāśasthānaṃca ā (line ): iī uūṝ ḷḹeai oauaṃaḥ"
+        }
+      ]
+    },
+    "guru_transmission": {
+      "count": 140,
+      "percentage": 2.17,
+      "unique_texts": 65,
+      "examples": [
+        {
+          "text": "Acintyavisvasadakhya",
+          "tradition": "Saiva Agama",
+          "context": "śikhābaddhaśikhānsarvān hetinā rakṣitānpunaḥ (line ): (line ): svapnādhipannimantraṃ ca gurustatropadeśayet | (line ): oṃ hili"
+        },
+        {
+          "text": "Acintyavisvasadakhya",
+          "tradition": "Saiva Agama",
+          "context": "(line ): (line ): yathā dṛṣṭaṃ tu svapnaṃ hi pṛcchecchiṣyāṃstathā guruḥ | (line ): ramaṃ"
+        },
+        {
+          "text": "Agamakalpalata",
+          "tradition": "Ritual/Puja",
+          "context": "): ṇaṃniveśayet vaṭapattrekuṃkumenalikhitvāgrahaṇaṃśubham tataḥsaphalamāpnotianyathā (line ): viphalaṃbhavet idaṃtusadgurorabhāvetatsatvetasmādekamaṃtraṃgṛhṇīyāditisvapnetukāla (line ): niyamaḥsvapnet"
+        },
+        {
+          "text": "Agamakalpalata",
+          "tradition": "Ritual/Puja",
+          "context": "tataḥsaphalamāpnotianyathā (line ): viphalaṃbhavet idaṃtusadgurorabhāvetatsatvetasmādekamaṃtraṃgṛhṇīyāditisvapnetukāla (line ): niyamaḥsvapnetuniyamonahītināradavacanāt varjanīyaguruṃvakṣyemaṃtriṇāṃhi"
+        },
+        {
+          "text": "Aryamanjusrimulakalpa (Volume 1)",
+          "tradition": "Buddhist Tantra",
+          "context": "(line ): buddhabodhisattvamantatantra ācāryopadeśagrahanaṃ (line ): avivaṃvādanasarvasvaparityāgataḥ siddhakṣetrasthānāsthānasvapnadarśana*******(?) (line ): ******(?)nagataḥ vigatamātsaryamantraṇakhi"
+        }
+      ]
+    },
+    "initiation": {
+      "count": 129,
+      "percentage": 2.0,
+      "unique_texts": 56,
+      "examples": [
+        {
+          "text": "Agamakalpalata",
+          "tradition": "Ritual/Puja",
+          "context": "varte piturdīkṣāyaterdīkṣācanavāsinaḥ viraktasyacayādīkṣānasākalyāṇadāyinī (line ): skaṃdapurāṇe sādhyaṃsādhyaṃcayanmaṃtraṃmahariṃvāmaheśvari svapnalavdhopiyomaṃtrastanmaṃtraṃyatna (line ): tastyajet "
+        },
+        {
+          "text": "Agamakalpalata",
+          "tradition": "Ritual/Puja",
+          "context": "yaścittaṃtvayutagāyatrījapaḥ sarvatratathādarśanāt yoginītaṃtre nivīryaṃcapiturmaṃtraṃta (line ): thāmātāmahasyaca svapnalavdhaṃstriyadatuṃsaṃskāreṇaivaśuddhyati svapnalavdhecakalaśeguroḥprā (line ): "
+        },
+        {
+          "text": "Agamakalpalata",
+          "tradition": "Ritual/Puja",
+          "context": "sarvatratathādarśanāt yoginītaṃtre nivīryaṃcapiturmaṃtraṃta (line ): thāmātāmahasyaca svapnalavdhaṃstriyadatuṃsaṃskāreṇaivaśuddhyati svapnalavdhecakalaśeguroḥprā (line ): ṇaṃniveśayet vaṭapattrekuṃkum"
+        },
+        {
+          "text": "Bhavachudamani",
+          "tradition": "Unknown",
+          "context": "| (line ): (line ): tvatprasādānmayādevi vidyā svapnavirodhinī | (line ): sarvamāyā prapannānāṃ dīkṣā dakṣāmamāgraṇī"
+        },
+        {
+          "text": "Bhogakarika",
+          "tradition": "Kashmir Shaivism",
+          "context": "| evaṃ jñānādisaṃskāre'pi vācyam, (line ): tadbalādeva svapnasmṛtipratibhādāvasatyapyarthe ullekho dṛśyate yataḥ, ataśca- (line ): (line"
+        }
+      ]
+    }
+  },
+  "tradition_distribution": {
+    "Natya/Arts": {
+      "texts": 11,
+      "svapna_count": 120
+    },
+    "Saiva Agama": {
+      "texts": 17,
+      "svapna_count": 315
+    },
+    "Buddhist Tantra": {
+      "texts": 4,
+      "svapna_count": 94
+    },
+    "Ritual/Puja": {
+      "texts": 24,
+      "svapna_count": 178
+    },
+    "Vaishnava Tantra": {
+      "texts": 13,
+      "svapna_count": 92
+    },
+    "Kaula": {
+      "texts": 11,
+      "svapna_count": 52
+    },
+    "Vedanta": {
+      "texts": 12,
+      "svapna_count": 341
+    },
+    "Tantra (General)": {
+      "texts": 25,
+      "svapna_count": 350
+    },
+    "Bengal Tantra": {
+      "texts": 29,
+      "svapna_count": 349
+    },
+    "Purana": {
+      "texts": 3,
+      "svapna_count": 28
+    },
+    "Unknown": {
+      "texts": 72,
+      "svapna_count": 1491
+    },
+    "Kashmir Shaivism": {
+      "texts": 23,
+      "svapna_count": 455
+    },
+    "Shakta": {
+      "texts": 8,
+      "svapna_count": 67
+    },
+    "Sri Vidya": {
+      "texts": 19,
+      "svapna_count": 294
+    },
+    "Nath Tradition": {
+      "texts": 3,
+      "svapna_count": 219
+    },
+    "Stotra": {
+      "texts": 11,
+      "svapna_count": 60
+    },
+    "Commentary": {
+      "texts": 13,
+      "svapna_count": 122
+    },
+    "Mantra Shastra": {
+      "texts": 4,
+      "svapna_count": 22
+    },
+    "Yoga": {
+      "texts": 5,
+      "svapna_count": 1804
+    }
+  },
+  "top_texts_by_svapna": [
+    [
+      "Yogavaasisthasampurnamiiorg",
+      1749
+    ],
+    [
+      "Vyasishtacutpattiprakarnam",
+      409
+    ],
+    [
+      "Matrkacakraviveka",
+      217
+    ],
+    [
+      "Siddhantalesasamgrahatika",
+      211
+    ],
+    [
+      "Laghuyv Combined",
+      150
+    ],
+    [
+      "Sriikarabhaashyacombined",
+      145
+    ],
+    [
+      "Tripurā Rahasya",
+      119
+    ],
+    [
+      "Tantrāloka (Chapters 1-14)",
+      110
+    ],
+    [
+      "Vyasishthadsthitiprakaranam",
+      99
+    ],
+    [
+      "Kriyaasaaratattvaprakaasiniivyaakhyaa",
+      71
+    ],
+    [
+      "Samnyaasaupanisad",
+      70
+    ],
+    [
+      "Ipv",
+      66
+    ],
+    [
+      "Kalottaragama",
+      66
+    ],
+    [
+      "Merutantra",
+      64
+    ],
+    [
+      "Srividyarnavatantram",
+      63
+    ],
+    [
+      "Aryamanjusrimulakalpa (Volume 1)",
+      62
+    ],
+    [
+      "Maahesvaratantram",
+      61
+    ],
+    [
+      "Tantracintamani",
+      59
+    ],
+    [
+      "Yogavyasishthaeupasamaprakaranam",
+      57
+    ],
+    [
+      "Kulamuktikallolini",
+      55
+    ]
+  ],
+  "text_details": {
+    "Acarasaratantram": {
+      "tradition": "Natya/Arts",
+      "author": null,
+      "period": null,
+      "svapna_count": 6,
+      "categories": [
+        "deity_communion",
+        "consciousness_states"
+      ]
+    },
+    "Acintyavisvasadakhya": {
+      "tradition": "Saiva Agama",
+      "author": null,
+      "period": null,
+      "svapna_count": 22,
+      "categories": [
+        "yoga_practice",
+        "deity_communion",
+        "mantra_vidya",
+        "guru_transmission",
+        "philosophical",
+        "visualization",
+        "tantric_practice",
+        "consciousness_states",
+        "time_context",
+        "body_subtle"
+      ]
+    },
+    "Advayavajrasamgraha": {
+      "tradition": "Buddhist Tantra",
+      "author": null,
+      "period": null,
+      "svapna_count": 9,
+      "categories": [
+        "deity_communion",
+        "consciousness_states"
+      ]
+    },
+    "Agamakalpalata": {
+      "tradition": "Ritual/Puja",
+      "author": null,
+      "period": null,
+      "svapna_count": 25,
+      "categories": [
+        "initiation",
+        "visualization",
+        "yoga_practice",
+        "mantra_vidya",
+        "siddhi_powers",
+        "guru_transmission",
+        "time_context",
+        "deity_communion",
+        "philosophical",
+        "body_subtle",
+        "tantric_practice",
+        "consciousness_states"
+      ]
+    },
+    "Agastya Samhita": {
+      "tradition": "Vaishnava Tantra",
+      "author": null,
+      "period": null,
+      "svapna_count": 1,
+      "categories": [
+        "visualization",
+        "deity_communion",
+        "philosophical"
+      ]
+    },
+    "Agnikaaryapaddhati": {
+      "tradition": "Ritual/Puja",
+      "author": null,
+      "period": null,
+      "svapna_count": 0,
+      "categories": []
+    },
+    "Ahirbudhnyasamhitaa": {
+      "tradition": "Vaishnava Tantra",
+      "author": null,
+      "period": null,
+      "svapna_count": 3,
+      "categories": [
+        "visualization",
+        "philosophical",
+        "consciousness_states"
+      ]
+    },
+    "Akulagamatantra": {
+      "tradition": "Kaula",
+      "author": null,
+      "period": null,
+      "svapna_count": 1,
+      "categories": [
+        "consciousness_states"
+      ]
+    },
+    "Amrtabinduupanisat": {
+      "tradition": "Vedanta",
+      "author": null,
+      "period": null,
+      "svapna_count": 2,
+      "categories": [
+        "consciousness_states",
+        "philosophical"
+      ]
+    },
+    "Amrtesatantra": {
+      "tradition": "Tantra (General)",
+      "author": null,
+      "period": null,
+      "svapna_count": 3,
+      "categories": [
+        "visualization"
+      ]
+    },
+    "Amrtesvaradiksavidhi": {
+      "tradition": "Ritual/Puja",
+      "author": null,
+      "period": null,
+      "svapna_count": 4,
+      "categories": [
+        "visualization",
+        "philosophical"
+      ]
+    },
+    "Anadivirasaivasarasamgraha": {
+      "tradition": "Natya/Arts",
+      "author": null,
+      "period": null,
+      "svapna_count": 1,
+      "categories": [
+        "consciousness_states",
+        "body_subtle"
+      ]
+    },
+    "Anandesvari Paddhati": {
+      "tradition": "Ritual/Puja",
+      "author": null,
+      "period": null,
+      "svapna_count": 5,
+      "categories": [
+        "visualization",
+        "tantric_practice",
+        "philosophical",
+        "deity_communion",
+        "siddhi_powers"
+      ]
+    },
+    "Aniruddhasamhitaa": {
+      "tradition": "Vaishnava Tantra",
+      "author": null,
+      "period": null,
+      "svapna_count": 1,
+      "categories": [
+        "visualization"
+      ]
+    },
+    "Aryamanjusrimulakalpa (Volume 1)": {
+      "tradition": "Buddhist Tantra",
+      "author": null,
+      "period": null,
+      "svapna_count": 62,
+      "categories": [
+        "visualization",
+        "mantra_vidya",
+        "guru_transmission",
+        "consciousness_states",
+        "tantric_practice",
+        "siddhi_powers",
+        "time_context",
+        "philosophical"
+      ]
+    },
+    "Aryamanjusrimulakalpa (Volume 2)": {
+      "tradition": "Buddhist Tantra",
+      "author": null,
+      "period": null,
+      "svapna_count": 14,
+      "categories": [
+        "time_context",
+        "yoga_practice",
+        "visualization",
+        "philosophical",
+        "mantra_vidya",
+        "tantric_practice",
+        "siddhi_powers",
+        "deity_communion"
+      ]
+    },
+    "Aryamanjusrimulakalpa (Volume 3)": {
+      "tradition": "Buddhist Tantra",
+      "author": null,
+      "period": null,
+      "svapna_count": 9,
+      "categories": [
+        "visualization",
+        "mantra_vidya",
+        "deity_communion",
+        "siddhi_powers",
+        "time_context",
+        "tantric_practice"
+      ]
+    },
+    "Asesakulavallari": {
+      "tradition": "Kaula",
+      "author": null,
+      "period": null,
+      "svapna_count": 1,
+      "categories": [
+        "philosophical",
+        "body_subtle"
+      ]
+    },
+    "Astottarasatakakalasasnapanavidhi": {
+      "tradition": "Bengal Tantra",
+      "author": null,
+      "period": null,
+      "svapna_count": 2,
+      "categories": [
+        "consciousness_states",
+        "body_subtle"
+      ]
+    },
+    "Basavapurana": {
+      "tradition": "Purana",
+      "author": null,
+      "period": null,
+      "svapna_count": 16,
+      "categories": [
+        "deity_communion",
+        "consciousness_states",
+        "philosophical",
+        "visualization",
+        "siddhi_powers",
+        "guru_transmission",
+        "body_subtle",
+        "tantric_practice",
+        "time_context"
+      ]
+    },
+    "Bhagavadgiitaa Ramakantha": {
+      "tradition": "Unknown",
+      "author": null,
+      "period": null,
+      "svapna_count": 15,
+      "categories": [
+        "yoga_practice",
+        "philosophical",
+        "consciousness_states",
+        "body_subtle",
+        "time_context",
+        "deity_communion",
+        "siddhi_powers",
+        "visualization"
+      ]
+    },
+    "Bhagavadgitavirashaivabhashyam": {
+      "tradition": "Purana",
+      "author": null,
+      "period": null,
+      "svapna_count": 8,
+      "categories": [
+        "yoga_practice",
+        "consciousness_states",
+        "tantric_practice"
+      ]
+    },
+    "Bhavachudaamani": {
+      "tradition": "Unknown",
+      "author": null,
+      "period": null,
+      "svapna_count": 4,
+      "categories": [
+        "mantra_vidya",
+        "visualization",
+        "body_subtle"
+      ]
+    },
+    "Bhavachudamani": {
+      "tradition": "Unknown",
+      "author": null,
+      "period": null,
+      "svapna_count": 8,
+      "categories": [
+        "deity_communion",
+        "tantric_practice",
+        "initiation",
+        "mantra_vidya",
+        "philosophical"
+      ]
+    },
+    "Bhogakarika": {
+      "tradition": "Kashmir Shaivism",
+      "author": "Abhinavagupta",
+      "period": null,
+      "svapna_count": 2,
+      "categories": [
+        "initiation",
+        "deity_communion",
+        "siddhi_powers",
+        "yoga_practice",
+        "consciousness_states",
+        "body_subtle"
+      ]
+    },
+    "Bhutasuddhitantra": {
+      "tradition": "Tantra (General)",
+      "author": null,
+      "period": null,
+      "svapna_count": 3,
+      "categories": [
+        "consciousness_states",
+        "deity_communion"
+      ]
+    },
+    "Bhuvanesvari Pancangam": {
+      "tradition": "Shakta",
+      "author": null,
+      "period": null,
+      "svapna_count": 1,
+      "categories": [
+        "philosophical",
+        "body_subtle"
+      ]
+    },
+    "Bhuvanesvarimahastotram": {
+      "tradition": "Shakta",
+      "author": null,
+      "period": null,
+      "svapna_count": 4,
+      "categories": [
+        "consciousness_states",
+        "tantric_practice",
+        "body_subtle",
+        "time_context"
+      ]
+    },
+    "Brhannilatantram": {
+      "tradition": "Tantra (General)",
+      "author": null,
+      "period": null,
+      "svapna_count": 5,
+      "categories": [
+        "consciousness_states",
+        "time_context"
+      ]
+    },
+    "Brhattantrasaara": {
+      "tradition": "Natya/Arts",
+      "author": null,
+      "period": null,
+      "svapna_count": 23,
+      "categories": [
+        "guru_transmission",
+        "time_context",
+        "initiation",
+        "mantra_vidya",
+        "body_subtle",
+        "deity_communion",
+        "visualization",
+        "tantric_practice",
+        "philosophical",
+        "consciousness_states",
+        "yoga_practice",
+        "siddhi_powers"
+      ]
+    },
+    "Candrajnanagama": {
+      "tradition": "Saiva Agama",
+      "author": null,
+      "period": null,
+      "svapna_count": 6,
+      "categories": [
+        "yoga_practice",
+        "deity_communion",
+        "consciousness_states",
+        "siddhi_powers",
+        "body_subtle",
+        "philosophical",
+        "visualization"
+      ]
+    },
+    "Caturvedatatparyasamgraha": {
+      "tradition": "Unknown",
+      "author": null,
+      "period": null,
+      "svapna_count": 1,
+      "categories": [
+        "yoga_practice"
+      ]
+    },
+    "Cidgaganacandrika": {
+      "tradition": "Kashmir Shaivism",
+      "author": null,
+      "period": null,
+      "svapna_count": 2,
+      "categories": [
+        "visualization"
+      ]
+    },
+    "Daksinakalipujapaddhati": {
+      "tradition": "Ritual/Puja",
+      "author": null,
+      "period": null,
+      "svapna_count": 2,
+      "categories": [
+        "consciousness_states",
+        "body_subtle"
+      ]
+    },
+    "Dashrathiyatantra": {
+      "tradition": "Tantra (General)",
+      "author": null,
+      "period": null,
+      "svapna_count": 13,
+      "categories": [
+        "consciousness_states",
+        "deity_communion",
+        "visualization",
+        "tantric_practice",
+        "siddhi_powers",
+        "time_context",
+        "philosophical",
+        "yoga_practice"
+      ]
+    },
+    "Deviirahasya": {
+      "tradition": "Shakta",
+      "author": null,
+      "period": null,
+      "svapna_count": 14,
+      "categories": [
+        "consciousness_states",
+        "visualization",
+        "time_context",
+        "deity_communion",
+        "siddhi_powers",
+        "body_subtle",
+        "mantra_vidya",
+        "yoga_practice",
+        "philosophical",
+        "tantric_practice"
+      ]
+    },
+    "Devinamalavilasa": {
+      "tradition": "Shakta",
+      "author": null,
+      "period": null,
+      "svapna_count": 8,
+      "categories": [
+        "time_context",
+        "philosophical",
+        "consciousness_states",
+        "visualization"
+      ]
+    },
+    "Dhvajarohanavarsavarddhanavidhi": {
+      "tradition": "Ritual/Puja",
+      "author": null,
+      "period": null,
+      "svapna_count": 5,
+      "categories": [
+        "deity_communion",
+        "consciousness_states",
+        "siddhi_powers",
+        "philosophical",
+        "yoga_practice",
+        "body_subtle"
+      ]
+    },
+    "Diiksaadarsa": {
+      "tradition": "Unknown",
+      "author": null,
+      "period": null,
+      "svapna_count": 27,
+      "categories": [
+        "deity_communion",
+        "mantra_vidya",
+        "guru_transmission",
+        "yoga_practice",
+        "philosophical",
+        "visualization",
+        "time_context",
+        "initiation",
+        "siddhi_powers",
+        "tantric_practice",
+        "consciousness_states"
+      ]
+    },
+    "Diiksaapaddhati": {
+      "tradition": "Ritual/Puja",
+      "author": null,
+      "period": null,
+      "svapna_count": 39,
+      "categories": [
+        "deity_communion",
+        "philosophical",
+        "initiation",
+        "mantra_vidya",
+        "visualization",
+        "yoga_practice",
+        "tantric_practice",
+        "siddhi_powers",
+        "guru_transmission",
+        "consciousness_states"
+      ]
+    },
+    "Diiksaaprakaasa": {
+      "tradition": "Unknown",
+      "author": null,
+      "period": null,
+      "svapna_count": 6,
+      "categories": [
+        "initiation",
+        "mantra_vidya",
+        "yoga_practice",
+        "tantric_practice",
+        "body_subtle",
+        "deity_communion"
+      ]
+    },
+    "Diiksottara": {
+      "tradition": "Bengal Tantra",
+      "author": null,
+      "period": null,
+      "svapna_count": 6,
+      "categories": [
+        "visualization",
+        "deity_communion",
+        "body_subtle",
+        "consciousness_states",
+        "yoga_practice"
+      ]
+    },
+    "Dikaavidhi": {
+      "tradition": "Ritual/Puja",
+      "author": null,
+      "period": null,
+      "svapna_count": 3,
+      "categories": [
+        "guru_transmission",
+        "initiation",
+        "visualization"
+      ]
+    },
+    "Durganityarcana": {
+      "tradition": "Sri Vidya",
+      "author": null,
+      "period": null,
+      "svapna_count": 1,
+      "categories": [
+        "consciousness_states",
+        "body_subtle"
+      ]
+    },
+    "Durgarcanasrti": {
+      "tradition": "Shakta",
+      "author": null,
+      "period": null,
+      "svapna_count": 10,
+      "categories": [
+        "philosophical",
+        "consciousness_states",
+        "visualization"
+      ]
+    },
+    "Dvisatikaalottaram": {
+      "tradition": "Bengal Tantra",
+      "author": null,
+      "period": null,
+      "svapna_count": 2,
+      "categories": [
+        "initiation",
+        "tantric_practice"
+      ]
+    },
+    "Gandharvatantra": {
+      "tradition": "Tantra (General)",
+      "author": null,
+      "period": null,
+      "svapna_count": 19,
+      "categories": [
+        "mantra_vidya",
+        "deity_communion",
+        "siddhi_powers",
+        "guru_transmission",
+        "tantric_practice",
+        "yoga_practice",
+        "consciousness_states",
+        "body_subtle",
+        "visualization",
+        "philosophical",
+        "time_context"
+      ]
+    },
+    "Gautama Tantram": {
+      "tradition": "Tantra (General)",
+      "author": null,
+      "period": null,
+      "svapna_count": 3,
+      "categories": [
+        "deity_communion",
+        "body_subtle",
+        "consciousness_states"
+      ]
+    },
+    "Gitarthasamgraha": {
+      "tradition": "Purana",
+      "author": null,
+      "period": null,
+      "svapna_count": 4,
+      "categories": [
+        "yoga_practice",
+        "consciousness_states",
+        "philosophical"
+      ]
+    },
+    "Guhyasamaajatantra": {
+      "tradition": "Tantra (General)",
+      "author": null,
+      "period": null,
+      "svapna_count": 15,
+      "categories": [
+        "philosophical",
+        "consciousness_states",
+        "visualization",
+        "tantric_practice",
+        "siddhi_powers",
+        "body_subtle"
+      ]
+    },
+    "Haharavatantra": {
+      "tradition": "Tantra (General)",
+      "author": null,
+      "period": null,
+      "svapna_count": 14,
+      "categories": [
+        "yoga_practice",
+        "visualization",
+        "deity_communion",
+        "siddhi_powers",
+        "philosophical",
+        "tantric_practice",
+        "consciousness_states"
+      ]
+    },
+    "Hamsopanisad": {
+      "tradition": "Unknown",
+      "author": null,
+      "period": null,
+      "svapna_count": 2,
+      "categories": [
+        "consciousness_states",
+        "tantric_practice",
+        "body_subtle",
+        "visualization"
+      ]
+    },
+    "Hathayogapradiipikaa": {
+      "tradition": "Nath Tradition",
+      "author": null,
+      "period": null,
+      "svapna_count": 3,
+      "categories": [
+        "deity_communion",
+        "consciousness_states",
+        "body_subtle"
+      ]
+    },
+    "Ipv": {
+      "tradition": "Kashmir Shaivism",
+      "author": null,
+      "period": null,
+      "svapna_count": 66,
+      "categories": [
+        "visualization",
+        "siddhi_powers",
+        "guru_transmission",
+        "yoga_practice",
+        "deity_communion",
+        "consciousness_states",
+        "mantra_vidya",
+        "philosophical",
+        "body_subtle",
+        "time_context",
+        "tantric_practice"
+      ]
+    },
+    "Jayakhyasamhita": {
+      "tradition": "Vaishnava Tantra",
+      "author": null,
+      "period": null,
+      "svapna_count": 22,
+      "categories": [
+        "consciousness_states",
+        "philosophical",
+        "deity_communion",
+        "siddhi_powers",
+        "mantra_vidya",
+        "body_subtle",
+        "guru_transmission",
+        "time_context",
+        "tantric_practice",
+        "visualization"
+      ]
+    },
+    "Jnaanaratnaavalii": {
+      "tradition": "Stotra",
+      "author": null,
+      "period": null,
+      "svapna_count": 15,
+      "categories": [
+        "deity_communion",
+        "visualization",
+        "mantra_vidya",
+        "tantric_practice",
+        "philosophical",
+        "time_context"
+      ]
+    },
+    "Jnaanasankaliniitantram": {
+      "tradition": "Shakta",
+      "author": null,
+      "period": null,
+      "svapna_count": 4,
+      "categories": [
+        "consciousness_states",
+        "body_subtle",
+        "philosophical"
+      ]
+    },
+    "Jnanarnavatantra": {
+      "tradition": "Sri Vidya",
+      "author": null,
+      "period": null,
+      "svapna_count": 6,
+      "categories": [
+        "deity_communion",
+        "consciousness_states",
+        "body_subtle",
+        "philosophical",
+        "siddhi_powers",
+        "mantra_vidya",
+        "yoga_practice"
+      ]
+    },
+    "Jnanasiddhyagama": {
+      "tradition": "Saiva Agama",
+      "author": null,
+      "period": null,
+      "svapna_count": 24,
+      "categories": [
+        "siddhi_powers",
+        "consciousness_states",
+        "philosophical",
+        "body_subtle",
+        "visualization",
+        "yoga_practice",
+        "deity_communion",
+        "mantra_vidya"
+      ]
+    },
+    "Kaalikaarahasyam": {
+      "tradition": "Unknown",
+      "author": null,
+      "period": null,
+      "svapna_count": 1,
+      "categories": []
+    },
+    "Kaalottaratantram": {
+      "tradition": "Bengal Tantra",
+      "author": null,
+      "period": null,
+      "svapna_count": 16,
+      "categories": [
+        "guru_transmission",
+        "tantric_practice",
+        "visualization",
+        "time_context",
+        "mantra_vidya",
+        "siddhi_powers",
+        "deity_communion",
+        "yoga_practice",
+        "consciousness_states",
+        "philosophical"
+      ]
+    },
+    "Kaamadhenutantra": {
+      "tradition": "Tantra (General)",
+      "author": null,
+      "period": null,
+      "svapna_count": 1,
+      "categories": [
+        "deity_communion",
+        "consciousness_states"
+      ]
+    },
+    "Kaamikaagamauttarabhaaga": {
+      "tradition": "Bengal Tantra",
+      "author": null,
+      "period": null,
+      "svapna_count": 31,
+      "categories": [
+        "initiation",
+        "siddhi_powers",
+        "philosophical",
+        "time_context",
+        "visualization",
+        "deity_communion",
+        "yoga_practice",
+        "guru_transmission",
+        "tantric_practice",
+        "mantra_vidya"
+      ]
+    },
+    "Kaivalyasara": {
+      "tradition": "Vedanta",
+      "author": null,
+      "period": null,
+      "svapna_count": 4,
+      "categories": [
+        "visualization",
+        "philosophical",
+        "consciousness_states",
+        "yoga_practice"
+      ]
+    },
+    "Kalikalpalata": {
+      "tradition": "Bengal Tantra",
+      "author": null,
+      "period": null,
+      "svapna_count": 1,
+      "categories": [
+        "consciousness_states",
+        "body_subtle"
+      ]
+    },
+    "Kalikapurana": {
+      "tradition": "Bengal Tantra",
+      "author": null,
+      "period": null,
+      "svapna_count": 15,
+      "categories": [
+        "deity_communion",
+        "time_context",
+        "visualization",
+        "consciousness_states",
+        "mantra_vidya",
+        "siddhi_powers",
+        "body_subtle"
+      ]
+    },
+    "Kalottaragama": {
+      "tradition": "Bengal Tantra",
+      "author": null,
+      "period": null,
+      "svapna_count": 66,
+      "categories": [
+        "visualization",
+        "deity_communion",
+        "consciousness_states",
+        "time_context",
+        "philosophical",
+        "tantric_practice",
+        "mantra_vidya",
+        "siddhi_powers",
+        "guru_transmission",
+        "initiation",
+        "yoga_practice"
+      ]
+    },
+    "Kalottaratantra": {
+      "tradition": "Bengal Tantra",
+      "author": null,
+      "period": null,
+      "svapna_count": 5,
+      "categories": [
+        "consciousness_states",
+        "visualization",
+        "guru_transmission",
+        "mantra_vidya",
+        "time_context"
+      ]
+    },
+    "Kalpavrksa": {
+      "tradition": "Ritual/Puja",
+      "author": null,
+      "period": null,
+      "svapna_count": 4,
+      "categories": [
+        "visualization",
+        "consciousness_states",
+        "philosophical",
+        "body_subtle"
+      ]
+    },
+    "Kamalanamni": {
+      "tradition": "Shakta",
+      "author": null,
+      "period": null,
+      "svapna_count": 8,
+      "categories": [
+        "deity_communion",
+        "visualization",
+        "siddhi_powers",
+        "body_subtle",
+        "mantra_vidya",
+        "time_context",
+        "guru_transmission"
+      ]
+    },
+    "Karanagama": {
+      "tradition": "Saiva Agama",
+      "author": null,
+      "period": null,
+      "svapna_count": 1,
+      "categories": [
+        "siddhi_powers",
+        "philosophical"
+      ]
+    },
+    "Kaulaavaliinirnaya": {
+      "tradition": "Kaula",
+      "author": null,
+      "period": null,
+      "svapna_count": 17,
+      "categories": [
+        "deity_communion",
+        "consciousness_states",
+        "mantra_vidya",
+        "guru_transmission",
+        "tantric_practice",
+        "time_context",
+        "siddhi_powers",
+        "visualization"
+      ]
+    },
+    "Kaularahasya": {
+      "tradition": "Kaula",
+      "author": null,
+      "period": null,
+      "svapna_count": 10,
+      "categories": [
+        "deity_communion",
+        "time_context",
+        "visualization",
+        "body_subtle",
+        "philosophical",
+        "siddhi_powers",
+        "consciousness_states",
+        "yoga_practice"
+      ]
+    },
+    "Kaularcana Dipika": {
+      "tradition": "Bengal Tantra",
+      "author": null,
+      "period": null,
+      "svapna_count": 2,
+      "categories": [
+        "visualization"
+      ]
+    },
+    "Kincittantra": {
+      "tradition": "Tantra (General)",
+      "author": null,
+      "period": null,
+      "svapna_count": 1,
+      "categories": [
+        "visualization",
+        "yoga_practice",
+        "deity_communion"
+      ]
+    },
+    "Kramadipika": {
+      "tradition": "Kaula",
+      "author": null,
+      "period": null,
+      "svapna_count": 2,
+      "categories": [
+        "consciousness_states",
+        "body_subtle",
+        "yoga_practice"
+      ]
+    },
+    "Kriyaasaara": {
+      "tradition": "Unknown",
+      "author": null,
+      "period": null,
+      "svapna_count": 7,
+      "categories": [
+        "mantra_vidya",
+        "consciousness_states",
+        "philosophical",
+        "visualization"
+      ]
+    },
+    "Kriyaasaaratattvaprakaasiniivyaakhyaa": {
+      "tradition": "Unknown",
+      "author": null,
+      "period": null,
+      "svapna_count": 71,
+      "categories": [
+        "body_subtle",
+        "visualization",
+        "philosophical",
+        "yoga_practice",
+        "consciousness_states",
+        "time_context",
+        "deity_communion",
+        "mantra_vidya",
+        "tantric_practice",
+        "siddhi_powers",
+        "initiation"
+      ]
+    },
+    "Kriyakalagunottaram": {
+      "tradition": "Bengal Tantra",
+      "author": null,
+      "period": null,
+      "svapna_count": 2,
+      "categories": [
+        "initiation",
+        "visualization",
+        "siddhi_powers"
+      ]
+    },
+    "Kriyasara": {
+      "tradition": "Unknown",
+      "author": null,
+      "period": null,
+      "svapna_count": 53,
+      "categories": [
+        "mantra_vidya",
+        "philosophical",
+        "visualization",
+        "consciousness_states",
+        "yoga_practice",
+        "body_subtle",
+        "siddhi_powers",
+        "tantric_practice",
+        "deity_communion",
+        "time_context"
+      ]
+    },
+    "Kubjikagurumandalapuja": {
+      "tradition": "Ritual/Puja",
+      "author": null,
+      "period": null,
+      "svapna_count": 0,
+      "categories": []
+    },
+    "Kubjikasamayanirvanadiksavidhi": {
+      "tradition": "Bengal Tantra",
+      "author": null,
+      "period": null,
+      "svapna_count": 6,
+      "categories": [
+        "visualization",
+        "mantra_vidya",
+        "tantric_practice",
+        "siddhi_powers"
+      ]
+    },
+    "Kubjikastavimsatikarmarcanam": {
+      "tradition": "Ritual/Puja",
+      "author": null,
+      "period": null,
+      "svapna_count": 2,
+      "categories": [
+        "yoga_practice",
+        "time_context",
+        "consciousness_states"
+      ]
+    },
+    "Kulacuu.Daama.Nitantra": {
+      "tradition": "Kaula",
+      "author": null,
+      "period": null,
+      "svapna_count": 2,
+      "categories": [
+        "mantra_vidya",
+        "deity_communion",
+        "consciousness_states"
+      ]
+    },
+    "Kuladiipikaa": {
+      "tradition": "Kaula",
+      "author": null,
+      "period": null,
+      "svapna_count": 1,
+      "categories": [
+        "consciousness_states",
+        "body_subtle"
+      ]
+    },
+    "Kulamuktikallolini": {
+      "tradition": "Bengal Tantra",
+      "author": null,
+      "period": null,
+      "svapna_count": 55,
+      "categories": [
+        "initiation",
+        "body_subtle",
+        "time_context",
+        "visualization",
+        "deity_communion",
+        "philosophical",
+        "siddhi_powers",
+        "yoga_practice",
+        "guru_transmission",
+        "consciousness_states",
+        "tantric_practice",
+        "mantra_vidya"
+      ]
+    },
+    "Kulapradiipa": {
+      "tradition": "Kaula",
+      "author": null,
+      "period": null,
+      "svapna_count": 1,
+      "categories": [
+        "visualization",
+        "philosophical"
+      ]
+    },
+    "Kulavrtti": {
+      "tradition": "Bengal Tantra",
+      "author": null,
+      "period": null,
+      "svapna_count": 33,
+      "categories": [
+        "visualization",
+        "consciousness_states",
+        "philosophical",
+        "body_subtle",
+        "deity_communion",
+        "siddhi_powers",
+        "guru_transmission",
+        "time_context",
+        "yoga_practice",
+        "initiation",
+        "mantra_vidya"
+      ]
+    },
+    "Kulārṇava Tantra": {
+      "tradition": "Bengal Tantra",
+      "author": null,
+      "period": null,
+      "svapna_count": 9,
+      "categories": [
+        "philosophical",
+        "initiation",
+        "visualization",
+        "consciousness_states",
+        "body_subtle",
+        "guru_transmission",
+        "mantra_vidya",
+        "siddhi_powers"
+      ]
+    },
+    "Laghustava": {
+      "tradition": "Stotra",
+      "author": null,
+      "period": null,
+      "svapna_count": 2,
+      "categories": [
+        "deity_communion"
+      ]
+    },
+    "Laghuyv Combined": {
+      "tradition": "Unknown",
+      "author": null,
+      "period": null,
+      "svapna_count": 150,
+      "categories": [
+        "philosophical",
+        "time_context",
+        "visualization",
+        "deity_communion",
+        "initiation",
+        "consciousness_states",
+        "body_subtle",
+        "yoga_practice",
+        "siddhi_powers",
+        "mantra_vidya",
+        "tantric_practice",
+        "guru_transmission"
+      ]
+    },
+    "Laksmiitantra": {
+      "tradition": "Vaishnava Tantra",
+      "author": null,
+      "period": null,
+      "svapna_count": 20,
+      "categories": [
+        "consciousness_states",
+        "siddhi_powers",
+        "body_subtle",
+        "visualization",
+        "deity_communion",
+        "mantra_vidya",
+        "initiation",
+        "time_context",
+        "tantric_practice"
+      ]
+    },
+    "Laksmiitantram": {
+      "tradition": "Vaishnava Tantra",
+      "author": null,
+      "period": null,
+      "svapna_count": 20,
+      "categories": [
+        "consciousness_states",
+        "siddhi_powers",
+        "body_subtle",
+        "visualization",
+        "deity_communion",
+        "mantra_vidya",
+        "initiation",
+        "time_context",
+        "tantric_practice"
+      ]
+    },
+    "Lingadhaaranachandrika": {
+      "tradition": "Stotra",
+      "author": null,
+      "period": null,
+      "svapna_count": 3,
+      "categories": [
+        "consciousness_states",
+        "tantric_practice",
+        "body_subtle",
+        "visualization",
+        "deity_communion",
+        "philosophical"
+      ]
+    },
+    "Maahesvaratantram": {
+      "tradition": "Tantra (General)",
+      "author": null,
+      "period": null,
+      "svapna_count": 61,
+      "categories": [
+        "yoga_practice",
+        "deity_communion",
+        "consciousness_states",
+        "body_subtle",
+        "visualization",
+        "philosophical",
+        "guru_transmission",
+        "time_context",
+        "tantric_practice",
+        "siddhi_powers",
+        "mantra_vidya"
+      ]
+    },
+    "Mahaanirvaanatantram": {
+      "tradition": "Tantra (General)",
+      "author": null,
+      "period": null,
+      "svapna_count": 6,
+      "categories": [
+        "consciousness_states",
+        "body_subtle",
+        "visualization",
+        "siddhi_powers",
+        "philosophical"
+      ]
+    },
+    "Mahanayaprakasa": {
+      "tradition": "Commentary",
+      "author": null,
+      "period": null,
+      "svapna_count": 1,
+      "categories": [
+        "mantra_vidya",
+        "deity_communion",
+        "consciousness_states",
+        "philosophical",
+        "body_subtle"
+      ]
+    },
+    "Mahapratyangira": {
+      "tradition": "Unknown",
+      "author": null,
+      "period": null,
+      "svapna_count": 7,
+      "categories": [
+        "yoga_practice",
+        "time_context",
+        "deity_communion",
+        "philosophical"
+      ]
+    },
+    "Maharthamanjari": {
+      "tradition": "Kashmir Shaivism",
+      "author": null,
+      "period": null,
+      "svapna_count": 20,
+      "categories": [
+        "yoga_practice",
+        "deity_communion",
+        "siddhi_powers",
+        "initiation",
+        "consciousness_states",
+        "mantra_vidya",
+        "body_subtle",
+        "philosophical",
+        "visualization",
+        "tantric_practice"
+      ]
+    },
+    "Makutaagama": {
+      "tradition": "Saiva Agama",
+      "author": null,
+      "period": null,
+      "svapna_count": 3,
+      "categories": [
+        "mantra_vidya",
+        "philosophical",
+        "time_context"
+      ]
+    },
+    "Maliniijayavartika": {
+      "tradition": "Commentary",
+      "author": null,
+      "period": null,
+      "svapna_count": 21,
+      "categories": [
+        "deity_communion",
+        "siddhi_powers",
+        "philosophical",
+        "consciousness_states",
+        "initiation",
+        "visualization",
+        "body_subtle",
+        "tantric_practice",
+        "time_context"
+      ]
+    },
+    "Maliniivijayottara": {
+      "tradition": "Bengal Tantra",
+      "author": null,
+      "period": null,
+      "svapna_count": 11,
+      "categories": [
+        "consciousness_states",
+        "mantra_vidya",
+        "visualization",
+        "deity_communion",
+        "siddhi_powers",
+        "philosophical",
+        "yoga_practice",
+        "tantric_practice",
+        "initiation",
+        "time_context"
+      ]
+    },
+    "Mandalabraahmanopanisa": {
+      "tradition": "Unknown",
+      "author": null,
+      "period": null,
+      "svapna_count": 2,
+      "categories": [
+        "yoga_practice",
+        "consciousness_states",
+        "philosophical"
+      ]
+    },
+    "Mantra Candrika": {
+      "tradition": "Mantra Shastra",
+      "author": null,
+      "period": null,
+      "svapna_count": 2,
+      "categories": [
+        "siddhi_powers",
+        "mantra_vidya",
+        "deity_communion"
+      ]
+    },
+    "Mantrakaumudii": {
+      "tradition": "Mantra Shastra",
+      "author": null,
+      "period": null,
+      "svapna_count": 4,
+      "categories": [
+        "mantra_vidya",
+        "siddhi_powers",
+        "yoga_practice",
+        "consciousness_states",
+        "body_subtle",
+        "tantric_practice"
+      ]
+    },
+    "Mantrakosa": {
+      "tradition": "Mantra Shastra",
+      "author": null,
+      "period": null,
+      "svapna_count": 7,
+      "categories": [
+        "deity_communion",
+        "siddhi_powers",
+        "mantra_vidya",
+        "time_context",
+        "consciousness_states",
+        "body_subtle"
+      ]
+    },
+    "Matatrayaikyaprakasika": {
+      "tradition": "Kaula",
+      "author": null,
+      "period": null,
+      "svapna_count": 5,
+      "categories": [
+        "philosophical",
+        "body_subtle",
+        "visualization",
+        "consciousness_states",
+        "deity_communion"
+      ]
+    },
+    "Matrkabhedatantra": {
+      "tradition": "Tantra (General)",
+      "author": null,
+      "period": null,
+      "svapna_count": 8,
+      "categories": [
+        "visualization",
+        "mantra_vidya",
+        "deity_communion"
+      ]
+    },
+    "Matrkacakraviveka": {
+      "tradition": "Vedanta",
+      "author": null,
+      "period": null,
+      "svapna_count": 217,
+      "categories": [
+        "consciousness_states",
+        "philosophical",
+        "yoga_practice",
+        "visualization",
+        "deity_communion",
+        "siddhi_powers",
+        "body_subtle",
+        "mantra_vidya",
+        "tantric_practice",
+        "time_context",
+        "guru_transmission"
+      ]
+    },
+    "Merutantra": {
+      "tradition": "Tantra (General)",
+      "author": null,
+      "period": null,
+      "svapna_count": 64,
+      "categories": [
+        "siddhi_powers",
+        "guru_transmission",
+        "mantra_vidya",
+        "deity_communion",
+        "visualization",
+        "time_context",
+        "body_subtle",
+        "tantric_practice",
+        "philosophical",
+        "initiation",
+        "consciousness_states",
+        "yoga_practice"
+      ]
+    },
+    "Mohacudottaram": {
+      "tradition": "Bengal Tantra",
+      "author": null,
+      "period": null,
+      "svapna_count": 6,
+      "categories": [
+        "mantra_vidya",
+        "guru_transmission",
+        "deity_communion",
+        "visualization"
+      ]
+    },
+    "Moksakarika": {
+      "tradition": "Kashmir Shaivism",
+      "author": "Abhinavagupta",
+      "period": null,
+      "svapna_count": 1,
+      "categories": [
+        "visualization",
+        "siddhi_powers",
+        "philosophical"
+      ]
+    },
+    "Moksasopana": {
+      "tradition": "Unknown",
+      "author": null,
+      "period": null,
+      "svapna_count": 1,
+      "categories": [
+        "consciousness_states"
+      ]
+    },
+    "Mrgendra": {
+      "tradition": "Saiva Agama",
+      "author": null,
+      "period": null,
+      "svapna_count": 6,
+      "categories": [
+        "visualization",
+        "philosophical",
+        "body_subtle",
+        "mantra_vidya",
+        "deity_communion",
+        "siddhi_powers",
+        "initiation",
+        "yoga_practice",
+        "consciousness_states"
+      ]
+    },
+    "Mrgendravrtt I": {
+      "tradition": "Saiva Agama",
+      "author": null,
+      "period": null,
+      "svapna_count": 2,
+      "categories": [
+        "initiation",
+        "visualization",
+        "yoga_practice",
+        "mantra_vidya",
+        "guru_transmission",
+        "siddhi_powers",
+        "philosophical",
+        "body_subtle"
+      ]
+    },
+    "Mrigendrapaddhatitiikaa": {
+      "tradition": "Ritual/Puja",
+      "author": null,
+      "period": null,
+      "svapna_count": 5,
+      "categories": [
+        "yoga_practice",
+        "mantra_vidya",
+        "guru_transmission",
+        "time_context",
+        "deity_communion",
+        "philosophical"
+      ]
+    },
+    "Mundamalatantram": {
+      "tradition": "Tantra (General)",
+      "author": null,
+      "period": null,
+      "svapna_count": 1,
+      "categories": [
+        "philosophical"
+      ]
+    },
+    "Naadabinduupanisat": {
+      "tradition": "Vedanta",
+      "author": null,
+      "period": null,
+      "svapna_count": 4,
+      "categories": [
+        "consciousness_states",
+        "body_subtle",
+        "philosophical",
+        "visualization"
+      ]
+    },
+    "Nadaanusandhana": {
+      "tradition": "Unknown",
+      "author": null,
+      "period": null,
+      "svapna_count": 4,
+      "categories": [
+        "time_context",
+        "consciousness_states",
+        "philosophical"
+      ]
+    },
+    "Naresvarapariiksaa": {
+      "tradition": "Unknown",
+      "author": null,
+      "period": null,
+      "svapna_count": 13,
+      "categories": [
+        "yoga_practice",
+        "consciousness_states",
+        "siddhi_powers",
+        "visualization",
+        "philosophical",
+        "body_subtle",
+        "mantra_vidya"
+      ]
+    },
+    "Natyasatrav (Part 1)": {
+      "tradition": "Natya/Arts",
+      "author": null,
+      "period": null,
+      "svapna_count": 16,
+      "categories": [
+        "philosophical",
+        "tantric_practice",
+        "consciousness_states",
+        "time_context",
+        "siddhi_powers",
+        "deity_communion"
+      ]
+    },
+    "Natyasatrav (Part 3)": {
+      "tradition": "Natya/Arts",
+      "author": null,
+      "period": null,
+      "svapna_count": 22,
+      "categories": [
+        "philosophical",
+        "visualization",
+        "yoga_practice",
+        "time_context",
+        "guru_transmission",
+        "body_subtle"
+      ]
+    },
+    "Natyrasatrav": {
+      "tradition": "Natya/Arts",
+      "author": null,
+      "period": null,
+      "svapna_count": 5,
+      "categories": [
+        "visualization",
+        "consciousness_states"
+      ]
+    },
+    "Navaranachandipanchanga": {
+      "tradition": "Unknown",
+      "author": null,
+      "period": null,
+      "svapna_count": 3,
+      "categories": [
+        "mantra_vidya",
+        "consciousness_states",
+        "body_subtle",
+        "deity_communion",
+        "siddhi_powers",
+        "visualization",
+        "tantric_practice"
+      ]
+    },
+    "Navarnavacandikapancanga": {
+      "tradition": "Unknown",
+      "author": null,
+      "period": null,
+      "svapna_count": 3,
+      "categories": [
+        "mantra_vidya",
+        "consciousness_states",
+        "body_subtle",
+        "deity_communion",
+        "siddhi_powers",
+        "visualization",
+        "tantric_practice"
+      ]
+    },
+    "Netratantra": {
+      "tradition": "Kashmir Shaivism",
+      "author": null,
+      "period": null,
+      "svapna_count": 1,
+      "categories": []
+    },
+    "Nigamasaranirnaya": {
+      "tradition": "Unknown",
+      "author": null,
+      "period": null,
+      "svapna_count": 24,
+      "categories": [
+        "mantra_vidya",
+        "yoga_practice",
+        "tantric_practice",
+        "initiation",
+        "deity_communion",
+        "guru_transmission",
+        "consciousness_states",
+        "philosophical"
+      ]
+    },
+    "Niruttaravada": {
+      "tradition": "Bengal Tantra",
+      "author": null,
+      "period": null,
+      "svapna_count": 1,
+      "categories": [
+        "consciousness_states",
+        "philosophical"
+      ]
+    },
+    "Nisvaasakaarikaatantram": {
+      "tradition": "Tantra (General)",
+      "author": null,
+      "period": null,
+      "svapna_count": 6,
+      "categories": [
+        "consciousness_states",
+        "time_context",
+        "philosophical"
+      ]
+    },
+    "Nisvasakarikatantram": {
+      "tradition": "Tantra (General)",
+      "author": null,
+      "period": null,
+      "svapna_count": 6,
+      "categories": [
+        "consciousness_states",
+        "time_context",
+        "philosophical"
+      ]
+    },
+    "Nityaasodasikaarnava": {
+      "tradition": "Sri Vidya",
+      "author": null,
+      "period": null,
+      "svapna_count": 7,
+      "categories": [
+        "consciousness_states",
+        "time_context",
+        "body_subtle",
+        "visualization",
+        "philosophical",
+        "mantra_vidya"
+      ]
+    },
+    "Pancaratnavyakhyacatustayam": {
+      "tradition": "Stotra",
+      "author": null,
+      "period": null,
+      "svapna_count": 1,
+      "categories": [
+        "philosophical"
+      ]
+    },
+    "Pancaratraraksa": {
+      "tradition": "Vaishnava Tantra",
+      "author": null,
+      "period": null,
+      "svapna_count": 4,
+      "categories": [
+        "yoga_practice",
+        "consciousness_states",
+        "time_context"
+      ]
+    },
+    "Paraanandasutra": {
+      "tradition": "Kashmir Shaivism",
+      "author": null,
+      "period": null,
+      "svapna_count": 9,
+      "categories": [
+        "visualization",
+        "guru_transmission",
+        "consciousness_states",
+        "mantra_vidya",
+        "time_context",
+        "initiation",
+        "siddhi_powers"
+      ]
+    },
+    "Paraatriisikaalaghuvrtti": {
+      "tradition": "Commentary",
+      "author": null,
+      "period": null,
+      "svapna_count": 1,
+      "categories": [
+        "consciousness_states",
+        "philosophical"
+      ]
+    },
+    "Paraatrimsikavivarana": {
+      "tradition": "Commentary",
+      "author": null,
+      "period": null,
+      "svapna_count": 3,
+      "categories": [
+        "consciousness_states",
+        "deity_communion"
+      ]
+    },
+    "Paraatrisikaavivrtti": {
+      "tradition": "Commentary",
+      "author": null,
+      "period": null,
+      "svapna_count": 1,
+      "categories": [
+        "initiation",
+        "mantra_vidya",
+        "guru_transmission",
+        "tantric_practice"
+      ]
+    },
+    "Paraatrisikaavivrtti Berlin": {
+      "tradition": "Commentary",
+      "author": null,
+      "period": null,
+      "svapna_count": 2,
+      "categories": [
+        "deity_communion",
+        "consciousness_states",
+        "philosophical"
+      ]
+    },
+    "Paramarthasara": {
+      "tradition": "Unknown",
+      "author": null,
+      "period": null,
+      "svapna_count": 14,
+      "categories": [
+        "consciousness_states",
+        "visualization",
+        "philosophical",
+        "siddhi_powers",
+        "deity_communion",
+        "mantra_vidya"
+      ]
+    },
+    "Parambarcana Candrika": {
+      "tradition": "Ritual/Puja",
+      "author": null,
+      "period": null,
+      "svapna_count": 1,
+      "categories": [
+        "deity_communion",
+        "consciousness_states",
+        "tantric_practice"
+      ]
+    },
+    "Paramesvariitantra": {
+      "tradition": "Tantra (General)",
+      "author": null,
+      "period": null,
+      "svapna_count": 6,
+      "categories": [
+        "visualization",
+        "yoga_practice",
+        "deity_communion",
+        "philosophical"
+      ]
+    },
+    "Paramoksanirasakarika": {
+      "tradition": "Kashmir Shaivism",
+      "author": "Abhinavagupta",
+      "period": null,
+      "svapna_count": 3,
+      "categories": [
+        "mantra_vidya",
+        "consciousness_states",
+        "siddhi_powers",
+        "philosophical"
+      ]
+    },
+    "Parasambhumahimnastava": {
+      "tradition": "Stotra",
+      "author": null,
+      "period": null,
+      "svapna_count": 1,
+      "categories": [
+        "consciousness_states",
+        "tantric_practice",
+        "philosophical"
+      ]
+    },
+    "Parasuramakalpasutra": {
+      "tradition": "Sri Vidya",
+      "author": null,
+      "period": null,
+      "svapna_count": 8,
+      "categories": [
+        "visualization",
+        "philosophical",
+        "deity_communion",
+        "tantric_practice",
+        "mantra_vidya",
+        "siddhi_powers",
+        "consciousness_states"
+      ]
+    },
+    "Paratrimsikavivarana": {
+      "tradition": "Kashmir Shaivism",
+      "author": null,
+      "period": null,
+      "svapna_count": 3,
+      "categories": [
+        "consciousness_states",
+        "deity_communion"
+      ]
+    },
+    "Pascimajyesthamnayakramarcanapaddhati": {
+      "tradition": "Kaula",
+      "author": null,
+      "period": null,
+      "svapna_count": 2,
+      "categories": [
+        "mantra_vidya"
+      ]
+    },
+    "Pauskarasamhita": {
+      "tradition": "Vaishnava Tantra",
+      "author": null,
+      "period": null,
+      "svapna_count": 4,
+      "categories": [
+        "visualization",
+        "mantra_vidya",
+        "philosophical",
+        "yoga_practice"
+      ]
+    },
+    "Pauskarvrtti": {
+      "tradition": "Commentary",
+      "author": null,
+      "period": null,
+      "svapna_count": 7,
+      "categories": [
+        "philosophical",
+        "siddhi_powers",
+        "visualization",
+        "deity_communion",
+        "mantra_vidya",
+        "consciousness_states",
+        "time_context"
+      ]
+    },
+    "Phetkaariniitantram": {
+      "tradition": "Tantra (General)",
+      "author": null,
+      "period": null,
+      "svapna_count": 2,
+      "categories": [
+        "mantra_vidya"
+      ]
+    },
+    "Pingalamata": {
+      "tradition": "Kaula",
+      "author": null,
+      "period": null,
+      "svapna_count": 10,
+      "categories": [
+        "deity_communion",
+        "philosophical",
+        "tantric_practice",
+        "visualization",
+        "mantra_vidya"
+      ]
+    },
+    "Prabhulinlagalita": {
+      "tradition": "Unknown",
+      "author": null,
+      "period": null,
+      "svapna_count": 16,
+      "categories": [
+        "consciousness_states",
+        "philosophical",
+        "siddhi_powers",
+        "yoga_practice",
+        "guru_transmission",
+        "visualization"
+      ]
+    },
+    "Pranatosini Dharmakanda": {
+      "tradition": "Unknown",
+      "author": null,
+      "period": null,
+      "svapna_count": 6,
+      "categories": [
+        "consciousness_states",
+        "yoga_practice",
+        "body_subtle",
+        "mantra_vidya",
+        "initiation",
+        "guru_transmission",
+        "deity_communion"
+      ]
+    },
+    "Pranotisini": {
+      "tradition": "Unknown",
+      "author": null,
+      "period": null,
+      "svapna_count": 10,
+      "categories": [
+        "deity_communion",
+        "tantric_practice",
+        "visualization",
+        "consciousness_states",
+        "philosophical",
+        "mantra_vidya",
+        "time_context",
+        "yoga_practice"
+      ]
+    },
+    "Pranātoṣiṇī (Kāmya Kāṇḍa)": {
+      "tradition": "Unknown",
+      "author": null,
+      "period": null,
+      "svapna_count": 4,
+      "categories": []
+    },
+    "Pratisthalaksanasarasamuccaya": {
+      "tradition": "Ritual/Puja",
+      "author": null,
+      "period": null,
+      "svapna_count": 8,
+      "categories": [
+        "mantra_vidya",
+        "deity_communion",
+        "siddhi_powers",
+        "time_context",
+        "philosophical",
+        "guru_transmission"
+      ]
+    },
+    "Pratyabhijnahrdaya": {
+      "tradition": "Kashmir Shaivism",
+      "author": "Kshemaraja",
+      "period": null,
+      "svapna_count": 2,
+      "categories": [
+        "deity_communion",
+        "consciousness_states",
+        "siddhi_powers",
+        "philosophical",
+        "body_subtle"
+      ]
+    },
+    "Prayascittasamuccaya": {
+      "tradition": "Ritual/Puja",
+      "author": null,
+      "period": null,
+      "svapna_count": 8,
+      "categories": [
+        "visualization",
+        "deity_communion",
+        "time_context",
+        "mantra_vidya",
+        "tantric_practice",
+        "siddhi_powers"
+      ]
+    },
+    "Purascaryaarnava I": {
+      "tradition": "Unknown",
+      "author": null,
+      "period": null,
+      "svapna_count": 44,
+      "categories": [
+        "mantra_vidya",
+        "tantric_practice",
+        "initiation",
+        "guru_transmission",
+        "body_subtle",
+        "siddhi_powers",
+        "deity_communion",
+        "yoga_practice",
+        "philosophical",
+        "time_context",
+        "visualization",
+        "consciousness_states"
+      ]
+    },
+    "Puraścaryārṇava (Part 2)": {
+      "tradition": "Unknown",
+      "author": null,
+      "period": null,
+      "svapna_count": 21,
+      "categories": [
+        "mantra_vidya",
+        "guru_transmission",
+        "deity_communion",
+        "philosophical",
+        "consciousness_states",
+        "body_subtle",
+        "visualization",
+        "siddhi_powers",
+        "tantric_practice"
+      ]
+    },
+    "Puraścaryārṇava (Part 3)": {
+      "tradition": "Unknown",
+      "author": null,
+      "period": null,
+      "svapna_count": 18,
+      "categories": [
+        "mantra_vidya",
+        "deity_communion",
+        "philosophical",
+        "consciousness_states",
+        "visualization",
+        "yoga_practice",
+        "time_context",
+        "tantric_practice",
+        "siddhi_powers"
+      ]
+    },
+    "Ramarcanacandrika": {
+      "tradition": "Ritual/Puja",
+      "author": null,
+      "period": null,
+      "svapna_count": 6,
+      "categories": [
+        "siddhi_powers",
+        "visualization",
+        "consciousness_states",
+        "philosophical",
+        "time_context",
+        "deity_communion",
+        "body_subtle",
+        "mantra_vidya"
+      ]
+    },
+    "Reference Text 15527": {
+      "tradition": "Unknown",
+      "author": null,
+      "period": null,
+      "svapna_count": 53,
+      "categories": [
+        "deity_communion",
+        "tantric_practice",
+        "philosophical",
+        "initiation",
+        "guru_transmission",
+        "siddhi_powers",
+        "visualization",
+        "mantra_vidya",
+        "yoga_practice",
+        "time_context",
+        "body_subtle",
+        "consciousness_states"
+      ]
+    },
+    "Reference Text 26381": {
+      "tradition": "Unknown",
+      "author": null,
+      "period": null,
+      "svapna_count": 2,
+      "categories": [
+        "visualization"
+      ]
+    },
+    "Reference Text 27521": {
+      "tradition": "Unknown",
+      "author": null,
+      "period": null,
+      "svapna_count": 1,
+      "categories": [
+        "visualization"
+      ]
+    },
+    "Reference Text 27544": {
+      "tradition": "Unknown",
+      "author": null,
+      "period": null,
+      "svapna_count": 2,
+      "categories": [
+        "consciousness_states",
+        "philosophical",
+        "mantra_vidya",
+        "deity_communion"
+      ]
+    },
+    "Reference Text 30494": {
+      "tradition": "Unknown",
+      "author": null,
+      "period": null,
+      "svapna_count": 7,
+      "categories": [
+        "yoga_practice",
+        "body_subtle",
+        "philosophical",
+        "consciousness_states"
+      ]
+    },
+    "Reference Text 30504": {
+      "tradition": "Unknown",
+      "author": null,
+      "period": null,
+      "svapna_count": 6,
+      "categories": [
+        "body_subtle",
+        "mantra_vidya",
+        "philosophical",
+        "deity_communion",
+        "consciousness_states",
+        "tantric_practice"
+      ]
+    },
+    "Reference Text 30511": {
+      "tradition": "Unknown",
+      "author": null,
+      "period": null,
+      "svapna_count": 2,
+      "categories": [
+        "tantric_practice",
+        "body_subtle"
+      ]
+    },
+    "Reference Text 30687": {
+      "tradition": "Unknown",
+      "author": null,
+      "period": null,
+      "svapna_count": 7,
+      "categories": [
+        "guru_transmission",
+        "consciousness_states",
+        "visualization",
+        "yoga_practice",
+        "mantra_vidya",
+        "deity_communion",
+        "siddhi_powers",
+        "body_subtle"
+      ]
+    },
+    "Reference Text 30720": {
+      "tradition": "Unknown",
+      "author": null,
+      "period": null,
+      "svapna_count": 5,
+      "categories": [
+        "visualization"
+      ]
+    },
+    "Reference Text 30846": {
+      "tradition": "Unknown",
+      "author": null,
+      "period": null,
+      "svapna_count": 4,
+      "categories": [
+        "philosophical",
+        "deity_communion",
+        "tantric_practice",
+        "siddhi_powers"
+      ]
+    },
+    "Reference Text 30989": {
+      "tradition": "Unknown",
+      "author": null,
+      "period": null,
+      "svapna_count": 1,
+      "categories": [
+        "mantra_vidya",
+        "deity_communion"
+      ]
+    },
+    "Reference Text 31151": {
+      "tradition": "Unknown",
+      "author": null,
+      "period": null,
+      "svapna_count": 2,
+      "categories": [
+        "deity_communion",
+        "yoga_practice"
+      ]
+    },
+    "Reference Text 32407": {
+      "tradition": "Unknown",
+      "author": null,
+      "period": null,
+      "svapna_count": 1,
+      "categories": [
+        "deity_communion"
+      ]
+    },
+    "Reference Text 32446": {
+      "tradition": "Unknown",
+      "author": null,
+      "period": null,
+      "svapna_count": 1,
+      "categories": []
+    },
+    "Reference Text 32608": {
+      "tradition": "Unknown",
+      "author": null,
+      "period": null,
+      "svapna_count": 1,
+      "categories": []
+    },
+    "Rudrayamala": {
+      "tradition": "Bengal Tantra",
+      "author": null,
+      "period": null,
+      "svapna_count": 10,
+      "categories": [
+        "philosophical",
+        "initiation",
+        "guru_transmission",
+        "siddhi_powers",
+        "mantra_vidya",
+        "tantric_practice",
+        "deity_communion",
+        "consciousness_states",
+        "visualization",
+        "time_context"
+      ]
+    },
+    "Saadhanamaalaa Ii": {
+      "tradition": "Unknown",
+      "author": null,
+      "period": null,
+      "svapna_count": 7,
+      "categories": [
+        "siddhi_powers",
+        "philosophical",
+        "mantra_vidya",
+        "tantric_practice",
+        "yoga_practice",
+        "deity_communion",
+        "visualization"
+      ]
+    },
+    "Saaktaanandataramginii": {
+      "tradition": "Bengal Tantra",
+      "author": null,
+      "period": null,
+      "svapna_count": 6,
+      "categories": [
+        "consciousness_states",
+        "philosophical",
+        "initiation",
+        "visualization",
+        "body_subtle",
+        "deity_communion"
+      ]
+    },
+    "Saaktapramoda": {
+      "tradition": "Shakta",
+      "author": null,
+      "period": null,
+      "svapna_count": 18,
+      "categories": [
+        "mantra_vidya",
+        "deity_communion",
+        "consciousness_states",
+        "siddhi_powers",
+        "philosophical",
+        "body_subtle",
+        "time_context",
+        "visualization",
+        "yoga_practice"
+      ]
+    },
+    "Saambapa Ncaasikaa": {
+      "tradition": "Unknown",
+      "author": null,
+      "period": null,
+      "svapna_count": 3,
+      "categories": [
+        "deity_communion",
+        "consciousness_states",
+        "tantric_practice",
+        "philosophical",
+        "visualization",
+        "body_subtle"
+      ]
+    },
+    "Sabdarthacintamani": {
+      "tradition": "Unknown",
+      "author": null,
+      "period": null,
+      "svapna_count": 33,
+      "categories": [
+        "visualization",
+        "guru_transmission",
+        "yoga_practice",
+        "siddhi_powers",
+        "philosophical",
+        "deity_communion",
+        "mantra_vidya",
+        "tantric_practice",
+        "time_context",
+        "body_subtle"
+      ]
+    },
+    "Sadhanamala I": {
+      "tradition": "Unknown",
+      "author": null,
+      "period": null,
+      "svapna_count": 22,
+      "categories": [
+        "visualization",
+        "body_subtle",
+        "philosophical",
+        "mantra_vidya",
+        "deity_communion",
+        "yoga_practice",
+        "siddhi_powers"
+      ]
+    },
+    "Saivadvaitamanjari": {
+      "tradition": "Vedanta",
+      "author": null,
+      "period": null,
+      "svapna_count": 1,
+      "categories": [
+        "philosophical"
+      ]
+    },
+    "Saivaparibhasa": {
+      "tradition": "Unknown",
+      "author": null,
+      "period": null,
+      "svapna_count": 10,
+      "categories": [
+        "yoga_practice",
+        "philosophical",
+        "deity_communion",
+        "time_context",
+        "body_subtle",
+        "visualization",
+        "consciousness_states",
+        "initiation"
+      ]
+    },
+    "Saivasiddhantaparibhasamanjari": {
+      "tradition": "Nath Tradition",
+      "author": null,
+      "period": null,
+      "svapna_count": 5,
+      "categories": [
+        "consciousness_states",
+        "body_subtle"
+      ]
+    },
+    "Sakalaagamasaarasangraha": {
+      "tradition": "Natya/Arts",
+      "author": null,
+      "period": null,
+      "svapna_count": 2,
+      "categories": [
+        "deity_communion"
+      ]
+    },
+    "Saktisamgama Sundarikhanda": {
+      "tradition": "Sri Vidya",
+      "author": null,
+      "period": null,
+      "svapna_count": 33,
+      "categories": [
+        "mantra_vidya",
+        "deity_communion",
+        "tantric_practice",
+        "siddhi_powers",
+        "body_subtle",
+        "time_context"
+      ]
+    },
+    "Saktisamgama Tantra Tarakhanda": {
+      "tradition": "Bengal Tantra",
+      "author": null,
+      "period": null,
+      "svapna_count": 6,
+      "categories": [
+        "deity_communion",
+        "visualization",
+        "yoga_practice",
+        "time_context",
+        "mantra_vidya",
+        "siddhi_powers"
+      ]
+    },
+    "Saktisutram": {
+      "tradition": "Unknown",
+      "author": null,
+      "period": null,
+      "svapna_count": 1,
+      "categories": []
+    },
+    "Samayadiksadhivasanavidhi": {
+      "tradition": "Bengal Tantra",
+      "author": null,
+      "period": null,
+      "svapna_count": 2,
+      "categories": [
+        "mantra_vidya"
+      ]
+    },
+    "Sambandhasiddhih": {
+      "tradition": "Unknown",
+      "author": null,
+      "period": null,
+      "svapna_count": 1,
+      "categories": [
+        "body_subtle"
+      ]
+    },
+    "Samnyaasaupanisad": {
+      "tradition": "Vedanta",
+      "author": null,
+      "period": null,
+      "svapna_count": 70,
+      "categories": [
+        "consciousness_states",
+        "body_subtle",
+        "philosophical",
+        "time_context",
+        "visualization",
+        "mantra_vidya",
+        "deity_communion",
+        "siddhi_powers",
+        "tantric_practice",
+        "yoga_practice"
+      ]
+    },
+    "Sanatkumaratantram": {
+      "tradition": "Tantra (General)",
+      "author": null,
+      "period": null,
+      "svapna_count": 1,
+      "categories": [
+        "consciousness_states",
+        "body_subtle"
+      ]
+    },
+    "Saradatilaka": {
+      "tradition": "Unknown",
+      "author": null,
+      "period": null,
+      "svapna_count": 23,
+      "categories": [
+        "consciousness_states",
+        "deity_communion",
+        "siddhi_powers",
+        "body_subtle",
+        "guru_transmission",
+        "visualization",
+        "mantra_vidya",
+        "tantric_practice",
+        "philosophical",
+        "time_context"
+      ]
+    },
+    "Sarasvatistotrammantrabhasya": {
+      "tradition": "Stotra",
+      "author": null,
+      "period": null,
+      "svapna_count": 2,
+      "categories": []
+    },
+    "Sarvollaasatantra": {
+      "tradition": "Tantra (General)",
+      "author": null,
+      "period": null,
+      "svapna_count": 4,
+      "categories": [
+        "consciousness_states",
+        "philosophical"
+      ]
+    },
+    "Satcakranirnaya": {
+      "tradition": "Unknown",
+      "author": null,
+      "period": null,
+      "svapna_count": 1,
+      "categories": [
+        "visualization"
+      ]
+    },
+    "Saubhagyabhaskari": {
+      "tradition": "Sri Vidya",
+      "author": null,
+      "period": null,
+      "svapna_count": 15,
+      "categories": [
+        "deity_communion",
+        "visualization",
+        "mantra_vidya",
+        "siddhi_powers",
+        "time_context",
+        "consciousness_states",
+        "body_subtle",
+        "yoga_practice",
+        "philosophical"
+      ]
+    },
+    "Saubhagyakalpadruma": {
+      "tradition": "Sri Vidya",
+      "author": null,
+      "period": null,
+      "svapna_count": 2,
+      "categories": [
+        "deity_communion",
+        "consciousness_states",
+        "tantric_practice",
+        "siddhi_powers",
+        "philosophical"
+      ]
+    },
+    "Saubhagyaratnakar": {
+      "tradition": "Sri Vidya",
+      "author": null,
+      "period": null,
+      "svapna_count": 3,
+      "categories": [
+        "deity_communion",
+        "tantric_practice",
+        "siddhi_powers",
+        "philosophical"
+      ]
+    },
+    "Saundaryalahari": {
+      "tradition": "Stotra",
+      "author": null,
+      "period": null,
+      "svapna_count": 8,
+      "categories": [
+        "visualization",
+        "deity_communion",
+        "mantra_vidya",
+        "consciousness_states",
+        "siddhi_powers",
+        "philosophical",
+        "time_context"
+      ]
+    },
+    "Siddhantalesasamgrahatika": {
+      "tradition": "Nath Tradition",
+      "author": null,
+      "period": null,
+      "svapna_count": 211,
+      "categories": [
+        "philosophical",
+        "visualization",
+        "deity_communion",
+        "yoga_practice",
+        "consciousness_states",
+        "body_subtle",
+        "time_context",
+        "initiation",
+        "mantra_vidya",
+        "guru_transmission",
+        "siddhi_powers"
+      ]
+    },
+    "Siddhilak.Smii Aramika": {
+      "tradition": "Unknown",
+      "author": null,
+      "period": null,
+      "svapna_count": 2,
+      "categories": [
+        "yoga_practice",
+        "siddhi_powers"
+      ]
+    },
+    "Siddhilaksmiadhivasanasthandila": {
+      "tradition": "Vaishnava Tantra",
+      "author": null,
+      "period": null,
+      "svapna_count": 2,
+      "categories": [
+        "yoga_practice",
+        "consciousness_states",
+        "tantric_practice",
+        "philosophical"
+      ]
+    },
+    "Siddhilaksmikavaca": {
+      "tradition": "Vaishnava Tantra",
+      "author": null,
+      "period": null,
+      "svapna_count": 1,
+      "categories": [
+        "deity_communion"
+      ]
+    },
+    "Siddhilaksmikramasthandilarcanavidhi": {
+      "tradition": "Vaishnava Tantra",
+      "author": null,
+      "period": null,
+      "svapna_count": 5,
+      "categories": [
+        "yoga_practice",
+        "deity_communion",
+        "consciousness_states",
+        "tantric_practice",
+        "siddhi_powers",
+        "philosophical"
+      ]
+    },
+    "Siddhilasmiinityapujapaddhati": {
+      "tradition": "Sri Vidya",
+      "author": null,
+      "period": null,
+      "svapna_count": 1,
+      "categories": [
+        "consciousness_states",
+        "body_subtle"
+      ]
+    },
+    "Sidhaantasikhaamani": {
+      "tradition": "Unknown",
+      "author": null,
+      "period": null,
+      "svapna_count": 11,
+      "categories": [
+        "visualization",
+        "consciousness_states",
+        "yoga_practice",
+        "deity_communion",
+        "philosophical",
+        "siddhi_powers"
+      ]
+    },
+    "Sivaarcanacandrikaa": {
+      "tradition": "Ritual/Puja",
+      "author": null,
+      "period": null,
+      "svapna_count": 3,
+      "categories": [
+        "mantra_vidya",
+        "consciousness_states",
+        "philosophical",
+        "siddhi_powers"
+      ]
+    },
+    "Sivadrsti": {
+      "tradition": "Kashmir Shaivism",
+      "author": "Somananda",
+      "period": null,
+      "svapna_count": 8,
+      "categories": [
+        "visualization",
+        "yoga_practice",
+        "time_context",
+        "siddhi_powers",
+        "philosophical"
+      ]
+    },
+    "Sivadvaitadarpana": {
+      "tradition": "Vedanta",
+      "author": null,
+      "period": null,
+      "svapna_count": 4,
+      "categories": [
+        "yoga_practice",
+        "body_subtle",
+        "philosophical",
+        "consciousness_states",
+        "tantric_practice"
+      ]
+    },
+    "Sivajivadasakam": {
+      "tradition": "Unknown",
+      "author": null,
+      "period": null,
+      "svapna_count": 3,
+      "categories": [
+        "consciousness_states",
+        "yoga_practice",
+        "deity_communion",
+        "philosophical"
+      ]
+    },
+    "Sivajnaanasiddhi": {
+      "tradition": "Unknown",
+      "author": null,
+      "period": null,
+      "svapna_count": 8,
+      "categories": [
+        "mantra_vidya",
+        "body_subtle",
+        "consciousness_states",
+        "philosophical",
+        "visualization",
+        "yoga_practice"
+      ]
+    },
+    "Sivarahasya Bhaga": {
+      "tradition": "Unknown",
+      "author": null,
+      "period": null,
+      "svapna_count": 3,
+      "categories": [
+        "visualization",
+        "consciousness_states",
+        "philosophical",
+        "time_context"
+      ]
+    },
+    "Sivasamhita": {
+      "tradition": "Vaishnava Tantra",
+      "author": null,
+      "period": null,
+      "svapna_count": 2,
+      "categories": [
+        "deity_communion",
+        "siddhi_powers",
+        "body_subtle"
+      ]
+    },
+    "Sivastotraavalii": {
+      "tradition": "Stotra",
+      "author": null,
+      "period": null,
+      "svapna_count": 7,
+      "categories": [
+        "initiation",
+        "consciousness_states",
+        "tantric_practice",
+        "philosophical",
+        "yoga_practice"
+      ]
+    },
+    "Sivasutravrtti": {
+      "tradition": "Kashmir Shaivism",
+      "author": "Vasugupta",
+      "period": null,
+      "svapna_count": 4,
+      "categories": [
+        "deity_communion",
+        "consciousness_states",
+        "philosophical",
+        "mantra_vidya",
+        "siddhi_powers",
+        "yoga_practice",
+        "visualization"
+      ]
+    },
+    "Sivasuutravartika": {
+      "tradition": "Commentary",
+      "author": null,
+      "period": null,
+      "svapna_count": 25,
+      "categories": [
+        "deity_communion",
+        "consciousness_states",
+        "tantric_practice",
+        "siddhi_powers",
+        "philosophical",
+        "mantra_vidya",
+        "body_subtle",
+        "visualization",
+        "yoga_practice"
+      ]
+    },
+    "Sivasuutravimarsinii": {
+      "tradition": "Commentary",
+      "author": null,
+      "period": null,
+      "svapna_count": 34,
+      "categories": [
+        "deity_communion",
+        "tantric_practice",
+        "consciousness_states",
+        "philosophical",
+        "initiation",
+        "yoga_practice",
+        "visualization",
+        "mantra_vidya",
+        "siddhi_powers"
+      ]
+    },
+    "Spandakarikaramakantha": {
+      "tradition": "Kashmir Shaivism",
+      "author": "Vasugupta",
+      "period": null,
+      "svapna_count": 29,
+      "categories": [
+        "consciousness_states",
+        "deity_communion",
+        "siddhi_powers",
+        "visualization",
+        "philosophical",
+        "time_context",
+        "initiation",
+        "tantric_practice",
+        "yoga_practice"
+      ]
+    },
+    "Spandanirnaya": {
+      "tradition": "Unknown",
+      "author": null,
+      "period": null,
+      "svapna_count": 24,
+      "categories": [
+        "guru_transmission",
+        "deity_communion",
+        "yoga_practice",
+        "siddhi_powers",
+        "visualization",
+        "consciousness_states",
+        "initiation",
+        "philosophical",
+        "tantric_practice"
+      ]
+    },
+    "Spandapradipika": {
+      "tradition": "Commentary",
+      "author": null,
+      "period": null,
+      "svapna_count": 19,
+      "categories": [
+        "consciousness_states",
+        "siddhi_powers",
+        "time_context",
+        "philosophical",
+        "visualization",
+        "tantric_practice"
+      ]
+    },
+    "Spandasamdoha": {
+      "tradition": "Unknown",
+      "author": null,
+      "period": null,
+      "svapna_count": 3,
+      "categories": [
+        "visualization",
+        "yoga_practice",
+        "consciousness_states",
+        "tantric_practice"
+      ]
+    },
+    "Spkaavrittivivrti": {
+      "tradition": "Unknown",
+      "author": null,
+      "period": null,
+      "svapna_count": 45,
+      "categories": [
+        "mantra_vidya",
+        "consciousness_states",
+        "deity_communion",
+        "siddhi_powers",
+        "visualization",
+        "philosophical",
+        "time_context",
+        "initiation",
+        "tantric_practice",
+        "yoga_practice"
+      ]
+    },
+    "Sriikarabhaashyacombined": {
+      "tradition": "Unknown",
+      "author": null,
+      "period": null,
+      "svapna_count": 145,
+      "categories": [
+        "visualization",
+        "siddhi_powers",
+        "deity_communion",
+        "philosophical",
+        "initiation",
+        "guru_transmission",
+        "time_context",
+        "consciousness_states",
+        "tantric_practice",
+        "body_subtle",
+        "mantra_vidya",
+        "yoga_practice"
+      ]
+    },
+    "Sriitatvanidhi": {
+      "tradition": "Unknown",
+      "author": null,
+      "period": null,
+      "svapna_count": 2,
+      "categories": [
+        "visualization"
+      ]
+    },
+    "Srividyanityapaddhati": {
+      "tradition": "Sri Vidya",
+      "author": null,
+      "period": null,
+      "svapna_count": 2,
+      "categories": [
+        "deity_communion",
+        "tantric_practice",
+        "siddhi_powers",
+        "philosophical"
+      ]
+    },
+    "Srividyarnavatantram": {
+      "tradition": "Sri Vidya",
+      "author": null,
+      "period": null,
+      "svapna_count": 63,
+      "categories": [
+        "mantra_vidya",
+        "siddhi_powers",
+        "deity_communion",
+        "tantric_practice",
+        "philosophical",
+        "yoga_practice",
+        "consciousness_states",
+        "body_subtle",
+        "initiation",
+        "guru_transmission",
+        "time_context",
+        "visualization"
+      ]
+    },
+    "Stavacintaamani": {
+      "tradition": "Stotra",
+      "author": null,
+      "period": null,
+      "svapna_count": 14,
+      "categories": [
+        "visualization",
+        "consciousness_states",
+        "tantric_practice",
+        "philosophical",
+        "deity_communion",
+        "yoga_practice",
+        "body_subtle",
+        "siddhi_powers"
+      ]
+    },
+    "Stutikusumaanjali": {
+      "tradition": "Stotra",
+      "author": null,
+      "period": null,
+      "svapna_count": 3,
+      "categories": [
+        "yoga_practice",
+        "mantra_vidya"
+      ]
+    },
+    "Suprabhedagama": {
+      "tradition": "Saiva Agama",
+      "author": null,
+      "period": null,
+      "svapna_count": 12,
+      "categories": [
+        "deity_communion",
+        "time_context",
+        "visualization",
+        "mantra_vidya",
+        "philosophical",
+        "consciousness_states",
+        "body_subtle"
+      ]
+    },
+    "Svaatantryadipika": {
+      "tradition": "Commentary",
+      "author": null,
+      "period": null,
+      "svapna_count": 2,
+      "categories": [
+        "visualization",
+        "deity_communion",
+        "siddhi_powers"
+      ]
+    },
+    "Svacchandapaddhati": {
+      "tradition": "Ritual/Puja",
+      "author": null,
+      "period": null,
+      "svapna_count": 7,
+      "categories": [
+        "deity_communion",
+        "tantric_practice",
+        "siddhi_powers",
+        "philosophical",
+        "consciousness_states",
+        "body_subtle"
+      ]
+    },
+    "Svacchandatantra": {
+      "tradition": "Kashmir Shaivism",
+      "author": null,
+      "period": null,
+      "svapna_count": 31,
+      "categories": [
+        "deity_communion",
+        "consciousness_states",
+        "tantric_practice",
+        "siddhi_powers",
+        "philosophical",
+        "visualization",
+        "guru_transmission",
+        "mantra_vidya",
+        "yoga_practice",
+        "body_subtle",
+        "time_context"
+      ]
+    },
+    "Svatantrya Dipika": {
+      "tradition": "Commentary",
+      "author": null,
+      "period": null,
+      "svapna_count": 2,
+      "categories": [
+        "deity_communion",
+        "consciousness_states",
+        "siddhi_powers",
+        "body_subtle",
+        "philosophical"
+      ]
+    },
+    "T Makutagama": {
+      "tradition": "Saiva Agama",
+      "author": null,
+      "period": null,
+      "svapna_count": 4,
+      "categories": [
+        "philosophical",
+        "consciousness_states"
+      ]
+    },
+    "T Sarvajnanottaram": {
+      "tradition": "Bengal Tantra",
+      "author": null,
+      "period": null,
+      "svapna_count": 33,
+      "categories": [
+        "consciousness_states",
+        "philosophical",
+        "visualization",
+        "yoga_practice",
+        "guru_transmission",
+        "mantra_vidya",
+        "siddhi_powers",
+        "tantric_practice"
+      ]
+    },
+    "Taaraabhaktisudhaarnava": {
+      "tradition": "Unknown",
+      "author": null,
+      "period": null,
+      "svapna_count": 36,
+      "categories": [
+        "initiation",
+        "body_subtle",
+        "yoga_practice",
+        "tantric_practice",
+        "time_context",
+        "mantra_vidya",
+        "visualization",
+        "philosophical",
+        "deity_communion",
+        "siddhi_powers",
+        "guru_transmission",
+        "consciousness_states"
+      ]
+    },
+    "Taaraarahasyavrttikaa": {
+      "tradition": "Commentary",
+      "author": null,
+      "period": null,
+      "svapna_count": 4,
+      "categories": [
+        "visualization",
+        "philosophical",
+        "consciousness_states",
+        "body_subtle"
+      ]
+    },
+    "Tantracintamani": {
+      "tradition": "Tantra (General)",
+      "author": null,
+      "period": null,
+      "svapna_count": 59,
+      "categories": [
+        "initiation",
+        "yoga_practice",
+        "deity_communion",
+        "tantric_practice",
+        "mantra_vidya",
+        "siddhi_powers",
+        "consciousness_states",
+        "time_context",
+        "visualization",
+        "philosophical",
+        "guru_transmission",
+        "body_subtle"
+      ]
+    },
+    "Tantrarajatantra": {
+      "tradition": "Sri Vidya",
+      "author": null,
+      "period": null,
+      "svapna_count": 6,
+      "categories": [
+        "time_context",
+        "deity_communion",
+        "yoga_practice",
+        "consciousness_states",
+        "body_subtle",
+        "visualization",
+        "mantra_vidya",
+        "siddhi_powers"
+      ]
+    },
+    "Tantrasaara": {
+      "tradition": "Natya/Arts",
+      "author": null,
+      "period": null,
+      "svapna_count": 14,
+      "categories": [
+        "time_context",
+        "yoga_practice",
+        "mantra_vidya",
+        "consciousness_states",
+        "philosophical",
+        "deity_communion",
+        "guru_transmission",
+        "tantric_practice"
+      ]
+    },
+    "Tantrāloka (Chapters 1-14)": {
+      "tradition": "Kashmir Shaivism",
+      "author": "Abhinavagupta",
+      "period": "10th-11th century",
+      "svapna_count": 110,
+      "categories": [
+        "visualization",
+        "deity_communion",
+        "consciousness_states",
+        "siddhi_powers",
+        "philosophical",
+        "initiation",
+        "mantra_vidya",
+        "time_context",
+        "yoga_practice",
+        "body_subtle",
+        "tantric_practice"
+      ]
+    },
+    "Tantrāloka (Chapters 15-37)": {
+      "tradition": "Kashmir Shaivism",
+      "author": "Abhinavagupta",
+      "period": "10th-11th century",
+      "svapna_count": 31,
+      "categories": [
+        "visualization",
+        "guru_transmission",
+        "siddhi_powers",
+        "philosophical",
+        "deity_communion",
+        "consciousness_states",
+        "tantric_practice",
+        "mantra_vidya",
+        "yoga_practice",
+        "initiation",
+        "time_context"
+      ]
+    },
+    "Tarabhaktitarangini": {
+      "tradition": "Bengal Tantra",
+      "author": null,
+      "period": null,
+      "svapna_count": 3,
+      "categories": [
+        "mantra_vidya",
+        "tantric_practice",
+        "siddhi_powers",
+        "deity_communion",
+        "philosophical",
+        "body_subtle"
+      ]
+    },
+    "Tararahasya": {
+      "tradition": "Bengal Tantra",
+      "author": null,
+      "period": null,
+      "svapna_count": 2,
+      "categories": [
+        "consciousness_states",
+        "body_subtle",
+        "mantra_vidya",
+        "siddhi_powers"
+      ]
+    },
+    "Tararahasyavrtti": {
+      "tradition": "Bengal Tantra",
+      "author": null,
+      "period": null,
+      "svapna_count": 4,
+      "categories": [
+        "initiation",
+        "mantra_vidya",
+        "deity_communion",
+        "consciousness_states",
+        "philosophical"
+      ]
+    },
+    "Tattvaprakasa": {
+      "tradition": "Kashmir Shaivism",
+      "author": null,
+      "period": null,
+      "svapna_count": 7,
+      "categories": [
+        "mantra_vidya",
+        "visualization",
+        "siddhi_powers",
+        "consciousness_states",
+        "philosophical",
+        "body_subtle"
+      ]
+    },
+    "Tattvaratnaavalii": {
+      "tradition": "Stotra",
+      "author": null,
+      "period": null,
+      "svapna_count": 4,
+      "categories": [
+        "mantra_vidya",
+        "guru_transmission",
+        "initiation"
+      ]
+    },
+    "Tejobinduupanisat": {
+      "tradition": "Vedanta",
+      "author": null,
+      "period": null,
+      "svapna_count": 5,
+      "categories": [
+        "consciousness_states",
+        "visualization"
+      ]
+    },
+    "Timirodghata": {
+      "tradition": "Kashmir Shaivism",
+      "author": null,
+      "period": null,
+      "svapna_count": 4,
+      "categories": [
+        "visualization",
+        "consciousness_states",
+        "deity_communion",
+        "philosophical",
+        "yoga_practice"
+      ]
+    },
+    "Tridasadaamaraapratya": {
+      "tradition": "Unknown",
+      "author": null,
+      "period": null,
+      "svapna_count": 5,
+      "categories": [
+        "philosophical",
+        "siddhi_powers"
+      ]
+    },
+    "Tripurasundarī Paddhati": {
+      "tradition": "Sri Vidya",
+      "author": null,
+      "period": null,
+      "svapna_count": 8,
+      "categories": [
+        "deity_communion",
+        "visualization",
+        "siddhi_powers",
+        "body_subtle",
+        "mantra_vidya",
+        "time_context",
+        "guru_transmission"
+      ]
+    },
+    "Tripurasundarī Stotra": {
+      "tradition": "Sri Vidya",
+      "author": null,
+      "period": null,
+      "svapna_count": 1,
+      "categories": [
+        "deity_communion"
+      ]
+    },
+    "Tripurā Rahasya": {
+      "tradition": "Sri Vidya",
+      "author": null,
+      "period": null,
+      "svapna_count": 119,
+      "categories": [
+        "consciousness_states",
+        "body_subtle",
+        "philosophical",
+        "visualization",
+        "time_context",
+        "initiation",
+        "siddhi_powers",
+        "yoga_practice",
+        "deity_communion",
+        "tantric_practice"
+      ]
+    },
+    "Tripurā Rahasya (Manuscript)": {
+      "tradition": "Sri Vidya",
+      "author": null,
+      "period": null,
+      "svapna_count": 6,
+      "categories": [
+        "deity_communion",
+        "time_context"
+      ]
+    },
+    "Tripurābhairava Vipañcāṅga": {
+      "tradition": "Sri Vidya",
+      "author": null,
+      "period": null,
+      "svapna_count": 2,
+      "categories": [
+        "consciousness_states",
+        "body_subtle"
+      ]
+    },
+    "Trisikhibrahmanopanisat": {
+      "tradition": "Vedanta",
+      "author": null,
+      "period": null,
+      "svapna_count": 6,
+      "categories": [
+        "consciousness_states",
+        "body_subtle",
+        "yoga_practice",
+        "visualization"
+      ]
+    },
+    "Uddamaresvaratantram": {
+      "tradition": "Tantra (General)",
+      "author": null,
+      "period": null,
+      "svapna_count": 5,
+      "categories": [
+        "mantra_vidya",
+        "siddhi_powers",
+        "visualization",
+        "body_subtle"
+      ]
+    },
+    "Umasamhita": {
+      "tradition": "Vaishnava Tantra",
+      "author": null,
+      "period": null,
+      "svapna_count": 7,
+      "categories": [
+        "time_context",
+        "deity_communion",
+        "siddhi_powers",
+        "visualization"
+      ]
+    },
+    "Urddhvamnayapujavidhi": {
+      "tradition": "Ritual/Puja",
+      "author": null,
+      "period": null,
+      "svapna_count": 2,
+      "categories": [
+        "deity_communion",
+        "tantric_practice",
+        "siddhi_powers",
+        "philosophical"
+      ]
+    },
+    "Urdhvamnaya": {
+      "tradition": "Unknown",
+      "author": null,
+      "period": null,
+      "svapna_count": 1,
+      "categories": [
+        "consciousness_states",
+        "body_subtle"
+      ]
+    },
+    "Vancchakalpalata": {
+      "tradition": "Ritual/Puja",
+      "author": null,
+      "period": null,
+      "svapna_count": 1,
+      "categories": [
+        "yoga_practice"
+      ]
+    },
+    "Varahitantram": {
+      "tradition": "Tantra (General)",
+      "author": null,
+      "period": null,
+      "svapna_count": 34,
+      "categories": [
+        "time_context",
+        "visualization",
+        "siddhi_powers",
+        "deity_communion",
+        "philosophical",
+        "mantra_vidya",
+        "tantric_practice",
+        "consciousness_states",
+        "body_subtle"
+      ]
+    },
+    "Varahopanisat": {
+      "tradition": "Unknown",
+      "author": null,
+      "period": null,
+      "svapna_count": 9,
+      "categories": [
+        "mantra_vidya",
+        "consciousness_states",
+        "philosophical",
+        "body_subtle",
+        "deity_communion",
+        "visualization",
+        "yoga_practice"
+      ]
+    },
+    "Varivasyaarahasya": {
+      "tradition": "Sri Vidya",
+      "author": "Bhaskararaya",
+      "period": null,
+      "svapna_count": 3,
+      "categories": [
+        "consciousness_states",
+        "visualization",
+        "mantra_vidya",
+        "deity_communion",
+        "siddhi_powers",
+        "philosophical"
+      ]
+    },
+    "Vatulanathasutra": {
+      "tradition": "Saiva Agama",
+      "author": null,
+      "period": null,
+      "svapna_count": 3,
+      "categories": [
+        "yoga_practice",
+        "deity_communion",
+        "consciousness_states",
+        "siddhi_powers",
+        "philosophical",
+        "body_subtle"
+      ]
+    },
+    "Vedantasaravirasaivacintamani Uttarakhanda": {
+      "tradition": "Bengal Tantra",
+      "author": null,
+      "period": null,
+      "svapna_count": 12,
+      "categories": [
+        "guru_transmission",
+        "consciousness_states",
+        "philosophical",
+        "yoga_practice",
+        "deity_communion",
+        "time_context",
+        "visualization",
+        "tantric_practice"
+      ]
+    },
+    "Viiraagama": {
+      "tradition": "Saiva Agama",
+      "author": null,
+      "period": null,
+      "svapna_count": 21,
+      "categories": [
+        "visualization",
+        "siddhi_powers",
+        "tantric_practice",
+        "philosophical",
+        "mantra_vidya",
+        "guru_transmission",
+        "time_context"
+      ]
+    },
+    "Vimalavatiitantra": {
+      "tradition": "Saiva Agama",
+      "author": null,
+      "period": null,
+      "svapna_count": 9,
+      "categories": [
+        "yoga_practice",
+        "visualization",
+        "deity_communion",
+        "philosophical",
+        "guru_transmission",
+        "consciousness_states",
+        "tantric_practice"
+      ]
+    },
+    "Viragamat": {
+      "tradition": "Natya/Arts",
+      "author": null,
+      "period": null,
+      "svapna_count": 14,
+      "categories": [
+        "visualization",
+        "tantric_practice",
+        "philosophical",
+        "mantra_vidya",
+        "siddhi_powers"
+      ]
+    },
+    "Virasaivagama": {
+      "tradition": "Natya/Arts",
+      "author": null,
+      "period": null,
+      "svapna_count": 1,
+      "categories": [
+        "yoga_practice",
+        "consciousness_states"
+      ]
+    },
+    "Virasaivanandacandrika": {
+      "tradition": "Natya/Arts",
+      "author": null,
+      "period": null,
+      "svapna_count": 16,
+      "categories": [
+        "mantra_vidya",
+        "consciousness_states",
+        "siddhi_powers",
+        "philosophical",
+        "body_subtle",
+        "deity_communion",
+        "time_context",
+        "yoga_practice",
+        "visualization"
+      ]
+    },
+    "Virasaivasiddhantottarakaumudit (MS 342)": {
+      "tradition": "Bengal Tantra",
+      "author": null,
+      "period": null,
+      "svapna_count": 1,
+      "categories": [
+        "visualization",
+        "deity_communion"
+      ]
+    },
+    "Virasaivasiddhantottarakaumudit (MS 343)": {
+      "tradition": "Bengal Tantra",
+      "author": null,
+      "period": null,
+      "svapna_count": 1,
+      "categories": [
+        "consciousness_states"
+      ]
+    },
+    "Visesarthaprakasika": {
+      "tradition": "Unknown",
+      "author": null,
+      "period": null,
+      "svapna_count": 1,
+      "categories": [
+        "philosophical"
+      ]
+    },
+    "Visvasaaratantram": {
+      "tradition": "Tantra (General)",
+      "author": null,
+      "period": null,
+      "svapna_count": 10,
+      "categories": [
+        "consciousness_states",
+        "time_context",
+        "body_subtle",
+        "yoga_practice",
+        "deity_communion",
+        "tantric_practice",
+        "siddhi_powers",
+        "philosophical",
+        "visualization"
+      ]
+    },
+    "Vivekacintamanau": {
+      "tradition": "Vedanta",
+      "author": null,
+      "period": null,
+      "svapna_count": 22,
+      "categories": [
+        "visualization",
+        "philosophical",
+        "consciousness_states",
+        "time_context",
+        "body_subtle",
+        "siddhi_powers",
+        "mantra_vidya",
+        "tantric_practice",
+        "yoga_practice",
+        "deity_communion"
+      ]
+    },
+    "Vyasishtacutpattiprakarnam": {
+      "tradition": "Unknown",
+      "author": null,
+      "period": null,
+      "svapna_count": 409,
+      "categories": [
+        "philosophical",
+        "yoga_practice",
+        "visualization",
+        "deity_communion",
+        "consciousness_states",
+        "siddhi_powers",
+        "initiation",
+        "time_context",
+        "body_subtle",
+        "mantra_vidya",
+        "guru_transmission",
+        "tantric_practice"
+      ]
+    },
+    "Vyasishthadsthitiprakaranam": {
+      "tradition": "Saiva Agama",
+      "author": null,
+      "period": null,
+      "svapna_count": 99,
+      "categories": [
+        "visualization",
+        "consciousness_states",
+        "philosophical",
+        "deity_communion",
+        "time_context",
+        "mantra_vidya",
+        "siddhi_powers",
+        "body_subtle",
+        "yoga_practice",
+        "guru_transmission",
+        "tantric_practice"
+      ]
+    },
+    "Yantracjntamani": {
+      "tradition": "Mantra Shastra",
+      "author": null,
+      "period": null,
+      "svapna_count": 9,
+      "categories": [
+        "mantra_vidya",
+        "deity_communion",
+        "siddhi_powers",
+        "yoga_practice",
+        "tantric_practice",
+        "philosophical",
+        "time_context",
+        "body_subtle"
+      ]
+    },
+    "Yogacintamani": {
+      "tradition": "Yoga",
+      "author": null,
+      "period": null,
+      "svapna_count": 24,
+      "categories": [
+        "deity_communion",
+        "consciousness_states",
+        "visualization",
+        "philosophical",
+        "yoga_practice",
+        "siddhi_powers",
+        "time_context",
+        "body_subtle"
+      ]
+    },
+    "Yogacudamanyupanisat": {
+      "tradition": "Vedanta",
+      "author": null,
+      "period": null,
+      "svapna_count": 3,
+      "categories": [
+        "consciousness_states",
+        "body_subtle"
+      ]
+    },
+    "Yogajagama": {
+      "tradition": "Saiva Agama",
+      "author": null,
+      "period": null,
+      "svapna_count": 4,
+      "categories": [
+        "visualization",
+        "mantra_vidya",
+        "consciousness_states",
+        "yoga_practice"
+      ]
+    },
+    "Yogakundalyupanisat": {
+      "tradition": "Vedanta",
+      "author": null,
+      "period": null,
+      "svapna_count": 3,
+      "categories": [
+        "consciousness_states",
+        "philosophical"
+      ]
+    },
+    "Yogasarasamgraha": {
+      "tradition": "Yoga",
+      "author": null,
+      "period": null,
+      "svapna_count": 9,
+      "categories": [
+        "body_subtle",
+        "visualization",
+        "deity_communion",
+        "mantra_vidya",
+        "consciousness_states",
+        "tantric_practice",
+        "philosophical"
+      ]
+    },
+    "Yogasikhopanisat": {
+      "tradition": "Yoga",
+      "author": null,
+      "period": null,
+      "svapna_count": 7,
+      "categories": [
+        "yoga_practice",
+        "philosophical",
+        "body_subtle",
+        "visualization",
+        "consciousness_states"
+      ]
+    },
+    "Yogavaasisthasampurnamiiorg": {
+      "tradition": "Yoga",
+      "author": null,
+      "period": null,
+      "svapna_count": 1749,
+      "categories": [
+        "yoga_practice",
+        "consciousness_states",
+        "philosophical",
+        "visualization",
+        "tantric_practice",
+        "time_context",
+        "body_subtle",
+        "deity_communion",
+        "siddhi_powers",
+        "mantra_vidya",
+        "initiation",
+        "guru_transmission"
+      ]
+    },
+    "Yogavyasishthaeupasamaprakaranam": {
+      "tradition": "Saiva Agama",
+      "author": null,
+      "period": null,
+      "svapna_count": 57,
+      "categories": [
+        "philosophical",
+        "time_context",
+        "body_subtle",
+        "consciousness_states",
+        "initiation",
+        "visualization",
+        "deity_communion",
+        "siddhi_powers",
+        "yoga_practice",
+        "tantric_practice"
+      ]
+    },
+    "Yoginiihrdayam": {
+      "tradition": "Sri Vidya",
+      "author": null,
+      "period": null,
+      "svapna_count": 8,
+      "categories": [
+        "consciousness_states",
+        "philosophical",
+        "visualization",
+        "mantra_vidya",
+        "body_subtle"
+      ]
+    },
+    "Yoginiitantram": {
+      "tradition": "Yoga",
+      "author": null,
+      "period": null,
+      "svapna_count": 15,
+      "categories": [
+        "deity_communion",
+        "time_context",
+        "consciousness_states",
+        "mantra_vidya",
+        "siddhi_powers",
+        "visualization",
+        "philosophical",
+        "tantric_practice",
+        "initiation",
+        "body_subtle"
+      ]
+    },
+    "Yvaasistha Vairaagyaprakaranam": {
+      "tradition": "Saiva Agama",
+      "author": null,
+      "period": null,
+      "svapna_count": 13,
+      "categories": [
+        "philosophical",
+        "time_context",
+        "visualization",
+        "siddhi_powers",
+        "body_subtle"
+      ]
+    },
+    "Yvaasisthabmumuksuvyavaharaprakaranam": {
+      "tradition": "Saiva Agama",
+      "author": null,
+      "period": null,
+      "svapna_count": 29,
+      "categories": [
+        "siddhi_powers",
+        "initiation",
+        "consciousness_states",
+        "time_context",
+        "visualization",
+        "yoga_practice",
+        "mantra_vidya",
+        "deity_communion",
+        "tantric_practice",
+        "philosophical"
+      ]
+    },
+    "Zrikedarakalpa": {
+      "tradition": "Ritual/Puja",
+      "author": null,
+      "period": null,
+      "svapna_count": 9,
+      "categories": [
+        "deity_communion",
+        "consciousness_states",
+        "time_context",
+        "guru_transmission",
+        "visualization",
+        "yoga_practice",
+        "siddhi_powers",
+        "philosophical",
+        "body_subtle"
+      ]
+    },
+    "Īśvarapratyabhijñā Kaumudī": {
+      "tradition": "Kashmir Shaivism",
+      "author": "Utpaladeva",
+      "period": null,
+      "svapna_count": 7,
+      "categories": [
+        "consciousness_states",
+        "philosophical",
+        "body_subtle",
+        "guru_transmission"
+      ]
+    },
+    "Īśvarapratyabhijñāvimarśinī Vyākhyā": {
+      "tradition": "Kashmir Shaivism",
+      "author": null,
+      "period": null,
+      "svapna_count": 44,
+      "categories": [
+        "consciousness_states",
+        "philosophical",
+        "visualization",
+        "yoga_practice",
+        "body_subtle",
+        "tantric_practice",
+        "deity_communion",
+        "time_context",
+        "guru_transmission",
+        "siddhi_powers",
+        "initiation",
+        "mantra_vidya"
+      ]
+    },
+    "Īśvarapratyabhijñāvivṛtivimarśinī (Part 1)": {
+      "tradition": "Kashmir Shaivism",
+      "author": null,
+      "period": null,
+      "svapna_count": 6,
+      "categories": [
+        "visualization",
+        "yoga_practice",
+        "siddhi_powers",
+        "philosophical",
+        "consciousness_states",
+        "deity_communion",
+        "time_context"
+      ]
+    },
+    "Īśvarapratyabhijñāvivṛtivimarśinī (Part 2)": {
+      "tradition": "Kashmir Shaivism",
+      "author": null,
+      "period": null,
+      "svapna_count": 21,
+      "categories": [
+        "body_subtle",
+        "yoga_practice",
+        "deity_communion",
+        "siddhi_powers",
+        "visualization",
+        "tantric_practice",
+        "consciousness_states",
+        "philosophical"
+      ]
+    },
+    "Īśvarapratyabhijñāvivṛtivimarśinī (Part 3)": {
+      "tradition": "Kashmir Shaivism",
+      "author": null,
+      "period": null,
+      "svapna_count": 44,
+      "categories": [
+        "consciousness_states",
+        "philosophical",
+        "time_context",
+        "visualization",
+        "deity_communion",
+        "yoga_practice",
+        "tantric_practice",
+        "initiation",
+        "siddhi_powers",
+        "body_subtle"
+      ]
+    },
+    "Īśānagurudevapaddhati (Part 2)": {
+      "tradition": "Ritual/Puja",
+      "author": "Isaanasivagurudeva",
+      "period": null,
+      "svapna_count": 13,
+      "categories": [
+        "mantra_vidya",
+        "guru_transmission",
+        "time_context",
+        "deity_communion",
+        "visualization",
+        "tantric_practice"
+      ]
+    },
+    "Īśānagurudevapaddhati (Part 3)": {
+      "tradition": "Ritual/Puja",
+      "author": "Isaanasivagurudeva",
+      "period": null,
+      "svapna_count": 13,
+      "categories": [
+        "guru_transmission",
+        "deity_communion",
+        "siddhi_powers",
+        "visualization",
+        "tantric_practice",
+        "time_context",
+        "mantra_vidya"
+      ]
+    },
+    "Īśānagurudevapaddhati (Part 4)": {
+      "tradition": "Ritual/Puja",
+      "author": "Isaanasivagurudeva",
+      "period": "12th-13th century",
+      "svapna_count": 13,
+      "categories": [
+        "time_context",
+        "deity_communion",
+        "mantra_vidya",
+        "visualization",
+        "consciousness_states",
+        "philosophical",
+        "yoga_practice"
+      ]
+    },
+    "Śrītattva Cintāmaṇi (Chapters 1-5)": {
+      "tradition": "Unknown",
+      "author": "Purnananda",
+      "period": null,
+      "svapna_count": 25,
+      "categories": [
+        "visualization",
+        "consciousness_states",
+        "philosophical",
+        "body_subtle",
+        "siddhi_powers",
+        "yoga_practice",
+        "mantra_vidya",
+        "guru_transmission",
+        "time_context",
+        "tantric_practice",
+        "deity_communion"
+      ]
+    },
+    "Śrītattva Cintāmaṇi (Chapters 11-15)": {
+      "tradition": "Unknown",
+      "author": "Purnananda",
+      "period": null,
+      "svapna_count": 13,
+      "categories": [
+        "mantra_vidya",
+        "philosophical"
+      ]
+    },
+    "Śrītattva Cintāmaṇi (Chapters 16-End)": {
+      "tradition": "Unknown",
+      "author": "Purnananda",
+      "period": null,
+      "svapna_count": 5,
+      "categories": [
+        "consciousness_states",
+        "tantric_practice",
+        "deity_communion",
+        "siddhi_powers",
+        "philosophical",
+        "mantra_vidya"
+      ]
+    },
+    "Śrītattva Cintāmaṇi (Chapters 6-10)": {
+      "tradition": "Unknown",
+      "author": "Purnananda",
+      "period": null,
+      "svapna_count": 10,
+      "categories": [
+        "consciousness_states",
+        "body_subtle",
+        "philosophical",
+        "tantric_practice",
+        "mantra_vidya"
+      ]
+    }
+  }
+}

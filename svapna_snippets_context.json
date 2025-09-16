@@ -1,0 +1,925 @@
+{
+  "timestamp": "2025-09-15T21:51:41.236185",
+  "total_texts": 307,
+  "total_occurrences": 6469,
+  "categories": {
+    "diksha_initiation": {
+      "count": 243,
+      "percentage": 3.76,
+      "snippets": [
+        {
+          "text": "Agamakalpalata",
+          "tradition": "Ritual/Puja",
+          "author": "Unknown",
+          "line_number": 81,
+          "context": "(line 75 ): tamaṃtrastyaktavyaḥsādhakenasadaivahi arigehasthitomaṃtrohyanuccāryaścayomanuḥ saṃskā\n(line 76 ): rarahitomaṃtrovidhidīkṣāvivarjitaḥ tyaktvāsarvaṃprayatnenapunargrāhyaṃyathāvidhi vrahmavai\n(line 77 ): varte piturdīkṣāyaterdīkṣācanavāsinaḥ viraktasyacayādīkṣānasākalyāṇadāyinī\n(line 78 ): skaṃdapurāṇe sādhyaṃsādhyaṃcayanmaṃtraṃmahariṃvāmaheśvari svapnalavdhopiyomaṃtrastanmaṃtraṃyatna\n(line 79 ): tastyajet nīcavarṇādgṛhītaṃyattathāvaikhānasādapi viviktāścayateścaivapiturdīkṣāṃviva\n(line 80 ): rjayet vṛhanmatsyasūkte piturmaṃtraṃnagṛhṇīyāttathāmātāmahādapi kaniṣṭātsodarādvāpi",
+          "highlight_line": 3
+        },
+        {
+          "text": "Agamakalpalata",
+          "tradition": "Ritual/Puja",
+          "author": "Unknown",
+          "line_number": 95,
+          "context": "(line 89 ): yasvacchaḥpitāmekaruṇānidhiḥ kurukṣetremahātīrthesūryaparvaṇiṭattavān ityādivaiśa-\n(line 90 ): mpāyanasaṃhitāyāṃśaunakaṃprativyāsakyam viṣṇumaṃtramapipiturgṛhṇīyāditibhāvaḥprā\n(line 91 ): yaścittaṃtvayutagāyatrījapaḥ sarvatratathādarśanāt yoginītaṃtre nivīryaṃcapiturmaṃtraṃta\n(line 92 ): thāmātāmahasyaca svapnalavdhaṃstriyadatuṃsaṃskāreṇaivaśuddhyati svapnalavdhecakalaśeguroḥprā\n(line 93 ): ṇaṃniveśayet vaṭapattrekuṃkumenalikhitvāgrahaṇaṃśubham tataḥsaphalamāpnotianyathā\n(line 94 ): viphalaṃbhavet idaṃtusadgurorabhāvetatsatvetasmādekamaṃtraṃgṛhṇīyāditisvapnetukāla",
+          "highlight_line": 3
+        },
+        {
+          "text": "Agamakalpalata",
+          "tradition": "Ritual/Puja",
+          "author": "Unknown",
+          "line_number": 97,
+          "context": "(line 91 ): yaścittaṃtvayutagāyatrījapaḥ sarvatratathādarśanāt yoginītaṃtre nivīryaṃcapiturmaṃtraṃta\n(line 92 ): thāmātāmahasyaca svapnalavdhaṃstriyadatuṃsaṃskāreṇaivaśuddhyati svapnalavdhecakalaśeguroḥprā\n(line 93 ): ṇaṃniveśayet vaṭapattrekuṃkumenalikhitvāgrahaṇaṃśubham tataḥsaphalamāpnotianyathā\n(line 94 ): viphalaṃbhavet idaṃtusadgurorabhāvetatsatvetasmādekamaṃtraṃgṛhṇīyāditisvapnetukāla\n(line 95 ): niyamaḥsvapnetuniyamonahītināradavacanāt varjanīyaguruṃvakṣyemaṃtriṇāṃhitakāmyayā\n(line 96 ):",
+          "highlight_line": 3
+        },
+        {
+          "text": "Agamakalpalata",
+          "tradition": "Ritual/Puja",
+          "author": "Unknown",
+          "line_number": 98,
+          "context": "(line 92 ): thāmātāmahasyaca svapnalavdhaṃstriyadatuṃsaṃskāreṇaivaśuddhyati svapnalavdhecakalaśeguroḥprā\n(line 93 ): ṇaṃniveśayet vaṭapattrekuṃkumenalikhitvāgrahaṇaṃśubham tataḥsaphalamāpnotianyathā\n(line 94 ): viphalaṃbhavet idaṃtusadgurorabhāvetatsatvetasmādekamaṃtraṃgṛhṇīyāditisvapnetukāla\n(line 95 ): niyamaḥsvapnetuniyamonahītināradavacanāt varjanīyaguruṃvakṣyemaṃtriṇāṃhitakāmyayā\n(line 96 ):\n(line 97 ): pṛ0 4a) tathācavṛhanmatsyasūkte aputromṛtaputraścaccakuṣṭīcavāmanastathā kunakhīśyāmadaṃtaśca",
+          "highlight_line": 3
+        },
+        {
+          "text": "Bhavachudamani",
+          "tradition": "Unknown",
+          "author": "Unknown",
+          "line_number": 259,
+          "context": "(line 263 ):\n(line 264 ): śrībhairava uvāca |\n(line 265 ):\n(line 266 ): tvatprasādānmayādevi vidyā svapnavirodhinī |\n(line 267 ): sarvamāyā prapannānāṃ dīkṣā dakṣāmamāgraṇī ||\n(line 268 ):",
+          "highlight_line": 3
+        },
+        {
+          "text": "Bhogakarika",
+          "tradition": "Kashmir Shaivism",
+          "author": "Abhinavagupta",
+          "line_number": 552,
+          "context": "(line 580 ): teṣāmātmasaṃskārakatvāyogāt | tathāhi- jyotiṣṭomādikarmasaṃskārastāvannātmani\n(line 581 ): saṃbhavati, avikāritvāt, karmaṇāṃ ca kṛṣyādīnāmātmasaṃskāratvādṛṣṭeḥ, api tu jaḍa\n(line 582 ): eva | yatra tāni saṃskāraṃ kurvanti sā buddhiḥ | evaṃ jñānādisaṃskāre'pi vācyam,\n(line 583 ): tadbalādeva svapnasmṛtipratibhādāvasatyapyarthe ullekho dṛśyate yataḥ, ataśca-\n(line 584 ):\n(line 585 ):  antarbahiśca karaṇaṃ sākṣād bhogasya sādhanam |",
+          "highlight_line": 3
+        },
+        {
+          "text": "Bhogakarika",
+          "tradition": "Kashmir Shaivism",
+          "author": "Abhinavagupta",
+          "line_number": 612,
+          "context": "(line 640 ): sāṃsiddhikā vainayikāḥ prākṛtāśca bhavantyaṇoḥ ||\n(line 641 ): viśiṣṭadharmasaṃskārasamuddīpitacetasām | guṇaḥ sāṃsiddhiko bhāti dehāpāye'pi pūrvavat\n(line 642 ):\n(line 643 ): prākṛto dehasaṃyoge vyaktaḥ svapnādibodhavat | (vi0 10|26-29) iti\n(line 644 ):\n(line 645 ):  ataścaivaṃ trividhebhyo dharmādibhyaḥ phalabhedānāha-",
+          "highlight_line": 3
+        },
+        {
+          "text": "Brhattantrasaara",
+          "tradition": "Natya/Arts",
+          "author": "Unknown",
+          "line_number": 217,
+          "context": "(line 223 ): mahātīrthaṃ sūryaparvaṇi dattavān | ityādi\n(line 224 ): vaiśampāyanasaṃhitāyāṃ śaunakaṃ prati vyasavacanām\n(line 225 ):  yoginītantre : nirvīryañca piturmantraṃ tathā mātāmahasya ca\n(line 226 ): | svapnalabdhaṃ striyādattaṃ saṃskāreṇaiva śudhyati\n(line 227 ):  yattu : sādhvī caiva sadācārā gurubhaktā jitendriyā |\n(line 228 ): sarvamantrārthatattvajñā suśīlā pūjate ratā | guruyogyā bhavet sā",
+          "highlight_line": 3
+        },
+        {
+          "text": "Brhattantrasaara",
+          "tradition": "Natya/Arts",
+          "author": "Unknown",
+          "line_number": 231,
+          "context": "(line 237 ): svātantryeṇādhikārasya  strīṇāṃ garbhavatīnāñca\n(line 238 ): dīkṣāyāṃ naiva dūṣaṇam | na kuryāddaśame māsi kṛtvā ca\n(line 239 ): nārakī bhave\n(line 240 ):  svapnalabdhamantre yadi sadguruṃ prāpnoti tadā tata eva\n(line 241 ): tanmantraṃ gṛhṇīyāt, nacet jalapūrṇakalase guroḥ\n(line 242 ): prāṇapratiṣṭhāṃ vidhāya vaṭapatre kuṃkumena likhitaṃ mantraṃ",
+          "highlight_line": 3
+        },
+        {
+          "text": "Diiksaadarsa",
+          "tradition": "Unknown",
+          "author": "Unknown",
+          "line_number": 7383,
+          "context": "(line 7406 ):\n(line 7407 ): iti vāmadevātmaja vedajñānaviracita dīkṣādarśe nirvāna\n(line 7408 ): dīkṣādhivāsana vidhiḥ | athotthāya gurutyakta pratisaraṃ snātaṃ\n(line 7409 ): sandhyādvayaṃ nirvartitaṃ śiṣyamāhūyaśubhāśubhasvapna śrutvā\n(line 7410 ): sa śubhe śāntiṃ kuryāt | kāraṇe -\n(line 7411 ):",
+          "highlight_line": 3
+        }
+      ]
+    },
+    "visualization": {
+      "count": 1843,
+      "percentage": 28.49,
+      "snippets": [
+        {
+          "text": "Acintyavisvasadakhya",
+          "tradition": "Saiva Agama",
+          "author": "Unknown",
+          "line_number": 7267,
+          "context": "(line 7298 ):\n(line 7299 ): p. 423)\n(line 7300 ):\n(line 7301 ): yathā dṛṣṭaṃ tu svapnaṃ hi pṛcchecchiṣyāṃstathā guruḥ |\n(line 7302 ): ramaṃ dhvajaṃ chatraṃ ca gajaṃ vṛṣabhamuttamam\n(line 7303 ):",
+          "highlight_line": 3
+        },
+        {
+          "text": "Acintyavisvasadakhya",
+          "tradition": "Saiva Agama",
+          "author": "Unknown",
+          "line_number": 7277,
+          "context": "(line 7308 ): sumālāṃ ca vadhūṃ vāpi veśyāṃ sarvāṃgalakṣaṇam\n(line 7309 ):\n(line 7310 ): pitrośca darśanaṃ vāpi gurordarśanamuttamam |\n(line 7311 ): ratnahemāṃgulīyādibhūṣaṇaṃ svapnamuttamam\n(line 7312 ):\n(line 7313 ): arkādibimbatapanaṃ patanaṃ cāndhakūpake |",
+          "highlight_line": 3
+        },
+        {
+          "text": "Acintyavisvasadakhya",
+          "tradition": "Saiva Agama",
+          "author": "Unknown",
+          "line_number": 9421,
+          "context": "(line 9452 ): p. 546)\n(line 9453 ):\n(line 9454 ): yadyatpaśyati yuktātmā tatsarvaṃ tasya jāyate |\n(line 9455 ): svapne'pi yogayuktasya yoganidrāprabhāvataḥ\n(line 9456 ):\n(line 9457 ): abhyarthitosyakenāpi svayaṃ vā sandhyayānvitaḥ |",
+          "highlight_line": 3
+        },
+        {
+          "text": "Agamakalpalata",
+          "tradition": "Ritual/Puja",
+          "author": "Unknown",
+          "line_number": 95,
+          "context": "(line 89 ): yasvacchaḥpitāmekaruṇānidhiḥ kurukṣetremahātīrthesūryaparvaṇiṭattavān ityādivaiśa-\n(line 90 ): mpāyanasaṃhitāyāṃśaunakaṃprativyāsakyam viṣṇumaṃtramapipiturgṛhṇīyāditibhāvaḥprā\n(line 91 ): yaścittaṃtvayutagāyatrījapaḥ sarvatratathādarśanāt yoginītaṃtre nivīryaṃcapiturmaṃtraṃta\n(line 92 ): thāmātāmahasyaca svapnalavdhaṃstriyadatuṃsaṃskāreṇaivaśuddhyati svapnalavdhecakalaśeguroḥprā\n(line 93 ): ṇaṃniveśayet vaṭapattrekuṃkumenalikhitvāgrahaṇaṃśubham tataḥsaphalamāpnotianyathā\n(line 94 ): viphalaṃbhavet idaṃtusadgurorabhāvetatsatvetasmādekamaṃtraṃgṛhṇīyāditisvapnetukāla",
+          "highlight_line": 3
+        },
+        {
+          "text": "Agamakalpalata",
+          "tradition": "Ritual/Puja",
+          "author": "Unknown",
+          "line_number": 97,
+          "context": "(line 91 ): yaścittaṃtvayutagāyatrījapaḥ sarvatratathādarśanāt yoginītaṃtre nivīryaṃcapiturmaṃtraṃta\n(line 92 ): thāmātāmahasyaca svapnalavdhaṃstriyadatuṃsaṃskāreṇaivaśuddhyati svapnalavdhecakalaśeguroḥprā\n(line 93 ): ṇaṃniveśayet vaṭapattrekuṃkumenalikhitvāgrahaṇaṃśubham tataḥsaphalamāpnotianyathā\n(line 94 ): viphalaṃbhavet idaṃtusadgurorabhāvetatsatvetasmādekamaṃtraṃgṛhṇīyāditisvapnetukāla\n(line 95 ): niyamaḥsvapnetuniyamonahītināradavacanāt varjanīyaguruṃvakṣyemaṃtriṇāṃhitakāmyayā\n(line 96 ):",
+          "highlight_line": 3
+        },
+        {
+          "text": "Agamakalpalata",
+          "tradition": "Ritual/Puja",
+          "author": "Unknown",
+          "line_number": 3730,
+          "context": "(line 3724 ): sāśirasādṛṣṭyāmanasāvacasātathā padbhyāṃkarābhyāṃjānubhyāṃpraṇāmoṣṭāṃdī\n(line 3725 ): ritaḥ atha padbhyāṃkarābhyāṃśirasāpaṃcāganatapaḥsmṛtāḥ aṣṭāṃgāuttamāproktāḥ\n(line 3726 ): paṃcāṃgāmadhyamāsmṛtāḥ nadevaṃpṛṣṭataḥkṛtvāprāṇāmaṃkvacidācaret tatupavi\n(line 3727 ): śyajalagaṃḍūṣaṃgṛhītvā itaḥpūrvaṃprāṇavuddhirdehadharmādhikārataḥ jāgratsvapnasuṣu\n(line 3728 ):\n(line 3729 ): pṛ0 127a) ptāvasthāsumanasāvācākarmaṇāhastābhyāṃpadbhyāmudareṇaśiśnāyatsmṛtaṃyaduktaṃta",
+          "highlight_line": 3
+        },
+        {
+          "text": "Agamakalpalata",
+          "tradition": "Ritual/Puja",
+          "author": "Unknown",
+          "line_number": 5478,
+          "context": "(line 5472 ): ktiṃsādhakoyāṃcavāṃchati khecarīṃbhūcarīṃvāpisvalpasādhyāṃcamānuṣīm ḍākinīṃ\n(line 5473 ): cayoginīṃcaivānīyudīyatesadā athavānirmitāṃkanyāṃmanasācāruhāsinīm\n(line 5474 ): adṛṣṭapūrvāṃyuvatiṃtatkṣaṇāṃtāṃsamānayet yadyadvāṃchayatikāmaṃtatkāmaṃprayaccha\n(line 5475 ): ti evaṃmadhumatīsiddhirvidhinātasyajāyate vidyāṃsvapnāvatīṃnāmnīṃtriṣulokeṣu\n(line 5476 ): durlabhām jñātvāpisādhakaḥśreṣṭhaugaṃdharvojāyate eṣāgaṃdharvavidyācaguptācātīva\n(line 5477 ): durlabhā mahābhogakarīvidyāmahadeśvaryyadāyinī vṛddhatvaṃlaghutvaṃcadarśanādarśanaṃta",
+          "highlight_line": 3
+        },
+        {
+          "text": "Agamakalpalata",
+          "tradition": "Ritual/Puja",
+          "author": "Unknown",
+          "line_number": 6153,
+          "context": "(line 6147 ): modarasanirbhaṃra duḥkhatrayaparimlānaṃkaripāhimāṃśive 10 śavdavrahmamaye\n(line 6148 ): devinityetripurasuṃdari yathāśaktikṛtāṃpūjāṃgahāṇaparameśvari 11 dravyahī\n(line 6149 ): naṃkriyāhīnaṃmaṃtraṃhīnaṃcayadbhavet tatsarvaṃkṛpayādaivikṣamasvaparameśvari 12\n(line 6150 ): yanmayākriyatekarmajāvatsvapnasuṣuptiṣu tatsarvaṃtāvakīpūjābhūthādbhūtyainamaḥ\n(line 6151 ): śive 13 yanmayoktamihājñājāntanmahatsvalpamevavā haṃtasarvaṃjagaddhyānnakṣaṃtadya\n(line 6152 ): mayamaṃjaliḥ 14 jpāstomyanaṃtavibhavāṃbhuvanādhipatyāyakṣādhipehṛdayamohanadakṣa",
+          "highlight_line": 3
+        },
+        {
+          "text": "Agamakalpalata",
+          "tradition": "Ritual/Puja",
+          "author": "Unknown",
+          "line_number": 8527,
+          "context": "(line 8521 ): maṃḍalākāramityarthaḥ tridhāyasyetiprāṇāyāmaṃtriḥsakṛdvetyarthaḥ svāheti svāhākāri\n(line 8522 ): tyarthaḥ hṛdivaṣaṭ svāhānamaścetyarthaḥ tathā nityaṃhimāṃdhyānaparomamāgrejapetsahasraṃ\n(line 8523 ): triśataṃśataṃvā aṣṭottaraṃmaṃtravidapramattolabhetalakṣmīmacireṇabahvīm cittaprasādoma\n(line 8524 ): nasaścatuṣṭirudāratāsvapnaparāṅmukhatvam svapnaipiyānādyupalaṃvanaṃtusiddheścihnānibhavaṃ-\n(line 8525 ):\n(line 8526 ): pṛ0 289a) tisadyaḥ vravīmimadbhaktiparāyaśuddhomahānidhiprāptikarābhyupāyaṃ siddhaudanenatriśataṃtrimā",
+          "highlight_line": 3
+        },
+        {
+          "text": "Agastya Samhita",
+          "tradition": "Vaishnava Tantra",
+          "author": "Unknown",
+          "line_number": 41,
+          "context": "(line 35 ): nādirānaṃdavigrahaḥ ajaḥsmaraṇamātreṇajanmādikleśabhaṃjanaḥ tasyātmanādhīḥsarveṣāṃpunarāvartikartinī niyamenaivava\n(line 36 ): rṇānāṃsvāśramoktenasaprabhuḥ dhyeyaḥsaṃsāranāśāyanacaivāvartatepunaḥ svāśramoktaṃparityajyātmānamupāsate tadrūpe\n(line 37 ): ṇanatedevimucyaṃtebhavabaṃdhanāt śrutismṛtipurāṇeṣuyoyoniyamucyate yasyayasyāśramepālyo namuktavyomumukṣubhiḥ\n(line 38 ): atoniyamamādṛtyakuryāddhyānamananyadhīḥ etaccarācaraṃviśvaṃsvapnapratyayavatsudhīḥ mithyādṛgvyatiriktaṃyaddṛśyatvā-\n(line 39 ): vāyathāpriye dṛgrūpeṇātmanātmānaṃvijñānaparikalpitaṃ etatsvavyatiriktaṃyatsatyānaṃdātmanaḥsvayaṃ ekākīyatacittātmā\n(line 40 ): ciṃtayettadananyadhīḥ sohamityātmanātmānasvājñānaparikalpitaṃ etatsvavyatiriktaṃyadyataḥsvenaivakalpayet napāramārthi",
+          "highlight_line": 3
+        }
+      ]
+    },
+    "yoga": {
+      "count": 868,
+      "percentage": 13.42,
+      "snippets": [
+        {
+          "text": "Acarasaratantram",
+          "tradition": "Natya/Arts",
+          "author": "Unknown",
+          "line_number": 2281,
+          "context": "(line 2285 ): jīvaṃti narayogīndrāstatra tatra guhāṃtare |\n(line 2286 ): devīnātra bhavet sākṣāt pīṃḍīṃ jāpyā tadanaṃtaraṃ ||\n(line 2287 ):\n(line 2288 ): svapne vadati sā devī ciraṃjīvī bhaveti hi |\n(line 2289 ): maṃtriṇaṃ kṛtasaṃjāpyaṃ tato mṛtyu dinaṃ dhruvaṃ ||\n(line 2290 ):",
+          "highlight_line": 3
+        },
+        {
+          "text": "Acintyavisvasadakhya",
+          "tradition": "Saiva Agama",
+          "author": "Unknown",
+          "line_number": 2165,
+          "context": "(line 2196 ): jalasnānaṃ prakartavyaṃ sarvapāpaharaṃ śubham |\n(line 2197 ): bahirantarviśuddhyarthaṃ śivejyāyogakāraṇam\n(line 2198 ):\n(line 2199 ): sarvācārapradhānatvaṃ sarvaduḥsvapnanāśanam |\n(line 2200 ): ālasyādau haridrānāṃ śūdrāṇāṃ ca kṣayaṃkaram\n(line 2201 ):",
+          "highlight_line": 3
+        },
+        {
+          "text": "Acintyavisvasadakhya",
+          "tradition": "Saiva Agama",
+          "author": "Unknown",
+          "line_number": 5652,
+          "context": "(line 5683 ):\n(line 5684 ): p. 330)\n(line 5685 ):\n(line 5686 ): svapne ca dṛśyate sarvaṃ tatkāryaṃ ca vimarśayet |\n(line 5687 ): kukkuṭāsana saṃsthopi lokayettu śanaiḥ śanaiḥ\n(line 5688 ):",
+          "highlight_line": 3
+        },
+        {
+          "text": "Acintyavisvasadakhya",
+          "tradition": "Saiva Agama",
+          "author": "Unknown",
+          "line_number": 9421,
+          "context": "(line 9452 ): p. 546)\n(line 9453 ):\n(line 9454 ): yadyatpaśyati yuktātmā tatsarvaṃ tasya jāyate |\n(line 9455 ): svapne'pi yogayuktasya yoganidrāprabhāvataḥ\n(line 9456 ):\n(line 9457 ): abhyarthitosyakenāpi svayaṃ vā sandhyayānvitaḥ |",
+          "highlight_line": 3
+        },
+        {
+          "text": "Acintyavisvasadakhya",
+          "tradition": "Saiva Agama",
+          "author": "Unknown",
+          "line_number": 10443,
+          "context": "(line 10474 ): samādhirvakṣyate sūkṣme sarvadvandva vivarjitaḥ |\n(line 10475 ): jñānameva samādhiḥ syāt tadviśuddhastathocyate\n(line 10476 ):\n(line 10477 ): jāgratsvapnasuṣuptānte tatsambandhamanityatām |\n(line 10478 ): etatturīyānītaṃ tu ātmano nityameva tu\n(line 10479 ):",
+          "highlight_line": 3
+        },
+        {
+          "text": "Acintyavisvasadakhya",
+          "tradition": "Saiva Agama",
+          "author": "Unknown",
+          "line_number": 10481,
+          "context": "(line 10512 ): rā * * kāmatparyantaṃ ekatriṃśacca svapnake\n(line 10513 ):\n(line 10514 ): saṃjñataistaireva * * * pratisañca svapnakam |\n(line 10515 ): jāgre viṣayabhuktiśca svapno na styāgatistakam\n(line 10516 ):\n(line 10517 ): ayasāgni samāyogādvāyogniścavadāyasam |",
+          "highlight_line": 3
+        },
+        {
+          "text": "Acintyavisvasadakhya",
+          "tradition": "Saiva Agama",
+          "author": "Unknown",
+          "line_number": 10518,
+          "context": "(line 10549 ): suṣuptistu susūkṣmaṃ syāditi sūkṣmaṃ turīyakam\n(line 10550 ):\n(line 10551 ): tatodhikaṃ turyātītaṃ evaṃ pañcavidhaṃ smṛtam |\n(line 10552 ): svapnaścaiva suṣuptiśca * * * tadadhiṃ ca vai\n(line 10553 ):\n(line 10554 ): jāgrasthānaṃ pradṛśyeta yogamahyastamakramāt |",
+          "highlight_line": 3
+        },
+        {
+          "text": "Acintyavisvasadakhya",
+          "tradition": "Saiva Agama",
+          "author": "Unknown",
+          "line_number": 10525,
+          "context": "(line 10556 ):\n(line 10557 ): p. 610)\n(line 10558 ):\n(line 10559 ): dhāraṇāya jayetsvapna randhranenai suṣuptikam |\n(line 10560 ): samādhinā turyatītaṃ turīyaṃ tu śivena tu\n(line 10561 ):",
+          "highlight_line": 3
+        },
+        {
+          "text": "Agamakalpalata",
+          "tradition": "Ritual/Puja",
+          "author": "Unknown",
+          "line_number": 95,
+          "context": "(line 89 ): yasvacchaḥpitāmekaruṇānidhiḥ kurukṣetremahātīrthesūryaparvaṇiṭattavān ityādivaiśa-\n(line 90 ): mpāyanasaṃhitāyāṃśaunakaṃprativyāsakyam viṣṇumaṃtramapipiturgṛhṇīyāditibhāvaḥprā\n(line 91 ): yaścittaṃtvayutagāyatrījapaḥ sarvatratathādarśanāt yoginītaṃtre nivīryaṃcapiturmaṃtraṃta\n(line 92 ): thāmātāmahasyaca svapnalavdhaṃstriyadatuṃsaṃskāreṇaivaśuddhyati svapnalavdhecakalaśeguroḥprā\n(line 93 ): ṇaṃniveśayet vaṭapattrekuṃkumenalikhitvāgrahaṇaṃśubham tataḥsaphalamāpnotianyathā\n(line 94 ): viphalaṃbhavet idaṃtusadgurorabhāvetatsatvetasmādekamaṃtraṃgṛhṇīyāditisvapnetukāla",
+          "highlight_line": 3
+        },
+        {
+          "text": "Agamakalpalata",
+          "tradition": "Ritual/Puja",
+          "author": "Unknown",
+          "line_number": 97,
+          "context": "(line 91 ): yaścittaṃtvayutagāyatrījapaḥ sarvatratathādarśanāt yoginītaṃtre nivīryaṃcapiturmaṃtraṃta\n(line 92 ): thāmātāmahasyaca svapnalavdhaṃstriyadatuṃsaṃskāreṇaivaśuddhyati svapnalavdhecakalaśeguroḥprā\n(line 93 ): ṇaṃniveśayet vaṭapattrekuṃkumenalikhitvāgrahaṇaṃśubham tataḥsaphalamāpnotianyathā\n(line 94 ): viphalaṃbhavet idaṃtusadgurorabhāvetatsatvetasmādekamaṃtraṃgṛhṇīyāditisvapnetukāla\n(line 95 ): niyamaḥsvapnetuniyamonahītināradavacanāt varjanīyaguruṃvakṣyemaṃtriṇāṃhitakāmyayā\n(line 96 ):",
+          "highlight_line": 3
+        }
+      ]
+    },
+    "mantra": {
+      "count": 903,
+      "percentage": 13.96,
+      "snippets": [
+        {
+          "text": "Acintyavisvasadakhya",
+          "tradition": "Saiva Agama",
+          "author": "Unknown",
+          "line_number": 5744,
+          "context": "(line 5775 ): durnimitta vihīnaścet samaṃ hutvā samācaret\n(line 5776 ):\n(line 5777 ): mantranyāsādikaṃ kṛtvā cāmṛtākṣarakaṃ japet |\n(line 5778 ): śuddhadeśe śayānasya svapne sarva prakāśyate\n(line 5779 ):\n(line 5780 ): svapnaṃ sakalamāvedya gurave kāryamācaret |",
+          "highlight_line": 3
+        },
+        {
+          "text": "Acintyavisvasadakhya",
+          "tradition": "Saiva Agama",
+          "author": "Unknown",
+          "line_number": 5746,
+          "context": "(line 5777 ): mantranyāsādikaṃ kṛtvā cāmṛtākṣarakaṃ japet |\n(line 5778 ): śuddhadeśe śayānasya svapne sarva prakāśyate\n(line 5779 ):\n(line 5780 ): svapnaṃ sakalamāvedya gurave kāryamācaret |\n(line 5781 ): tadājñā sarvakāryāṇāṃ saphalāṃśaṃ prakalpyate\n(line 5782 ):",
+          "highlight_line": 3
+        },
+        {
+          "text": "Acintyavisvasadakhya",
+          "tradition": "Saiva Agama",
+          "author": "Unknown",
+          "line_number": 7253,
+          "context": "(line 7284 ): bhautikāndarbhaśayyāyāṃ pūrvamaulyastrarakṣitān |\n(line 7285 ): śikhābaddhaśikhānsarvān hetinā rakṣitānpunaḥ\n(line 7286 ):\n(line 7287 ): svapnādhipannimantraṃ ca gurustatropadeśayet |\n(line 7288 ): oṃ hili hili śūlapāṇaye svāhā taṃ cāpi paścimām\n(line 7289 ):",
+          "highlight_line": 3
+        },
+        {
+          "text": "Acintyavisvasadakhya",
+          "tradition": "Saiva Agama",
+          "author": "Unknown",
+          "line_number": 7307,
+          "context": "(line 7338 ): sthaṇḍile maṇḍale vāpi pūjayecchivamavyayam |\n(line 7339 ): pāvakaṃ pūjayetpaścād darpaṇaṃ pūrvakāvadhi\n(line 7340 ):\n(line 7341 ): duḥsvapnaśāntaye paścān mūlamantrāṃśakaṃ hunet |\n(line 7342 ): huṃkāraṃ saṃpuṭenaiva hutvā mantrasya dīpanam\n(line 7343 ):",
+          "highlight_line": 3
+        },
+        {
+          "text": "Acintyavisvasadakhya",
+          "tradition": "Saiva Agama",
+          "author": "Unknown",
+          "line_number": 10478,
+          "context": "(line 10509 ): rāgamāyākalāvidyā niyatiḥ kāla eva ca\n(line 10510 ):\n(line 10511 ): śabdāditvaca dīrghaśca ghrāṇādīṃśca manādikam |\n(line 10512 ): rā * * kāmatparyantaṃ ekatriṃśacca svapnake\n(line 10513 ):\n(line 10514 ): saṃjñataistaireva * * * pratisañca svapnakam |",
+          "highlight_line": 3
+        },
+        {
+          "text": "Agamakalpalata",
+          "tradition": "Ritual/Puja",
+          "author": "Unknown",
+          "line_number": 95,
+          "context": "(line 89 ): yasvacchaḥpitāmekaruṇānidhiḥ kurukṣetremahātīrthesūryaparvaṇiṭattavān ityādivaiśa-\n(line 90 ): mpāyanasaṃhitāyāṃśaunakaṃprativyāsakyam viṣṇumaṃtramapipiturgṛhṇīyāditibhāvaḥprā\n(line 91 ): yaścittaṃtvayutagāyatrījapaḥ sarvatratathādarśanāt yoginītaṃtre nivīryaṃcapiturmaṃtraṃta\n(line 92 ): thāmātāmahasyaca svapnalavdhaṃstriyadatuṃsaṃskāreṇaivaśuddhyati svapnalavdhecakalaśeguroḥprā\n(line 93 ): ṇaṃniveśayet vaṭapattrekuṃkumenalikhitvāgrahaṇaṃśubham tataḥsaphalamāpnotianyathā\n(line 94 ): viphalaṃbhavet idaṃtusadgurorabhāvetatsatvetasmādekamaṃtraṃgṛhṇīyāditisvapnetukāla",
+          "highlight_line": 3
+        },
+        {
+          "text": "Agamakalpalata",
+          "tradition": "Ritual/Puja",
+          "author": "Unknown",
+          "line_number": 97,
+          "context": "(line 91 ): yaścittaṃtvayutagāyatrījapaḥ sarvatratathādarśanāt yoginītaṃtre nivīryaṃcapiturmaṃtraṃta\n(line 92 ): thāmātāmahasyaca svapnalavdhaṃstriyadatuṃsaṃskāreṇaivaśuddhyati svapnalavdhecakalaśeguroḥprā\n(line 93 ): ṇaṃniveśayet vaṭapattrekuṃkumenalikhitvāgrahaṇaṃśubham tataḥsaphalamāpnotianyathā\n(line 94 ): viphalaṃbhavet idaṃtusadgurorabhāvetatsatvetasmādekamaṃtraṃgṛhṇīyāditisvapnetukāla\n(line 95 ): niyamaḥsvapnetuniyamonahītināradavacanāt varjanīyaguruṃvakṣyemaṃtriṇāṃhitakāmyayā\n(line 96 ):",
+          "highlight_line": 3
+        },
+        {
+          "text": "Agamakalpalata",
+          "tradition": "Ritual/Puja",
+          "author": "Unknown",
+          "line_number": 5466,
+          "context": "(line 5460 ): ṇakāmarājaṃmahatparama evaṃkūṭatrayeṇaivavidyāsaubhāgyasuṃdarī ekatrapaṃcakūṭenamahāsau\n(line 5461 ): bhāgyasuṃhī eṣātupaṃcakṛtenanityaṃkūṭatrayātmikā durlabhāsarvalokeṣumahāsaubhāgyasuṃ\n(line 5462 ): darī etasyāevavidyāyāmadhyakūṭasyamadhyamam madhyakūṭasyamadhyakūṭatrayasya japtvānaṃdamayo\n(line 5463 ): bhūtvāsarvakāmamupālabhet iyaṃsvapnāvatīnāmnīvidyātrailokyadurlabhā ākarṣaṇakarī\n(line 5464 ): vidyācittvāhvādanakāriṇī sādhakaṃcapravakṣyāmiyasmādākarṣaṇaṃbhavet svargemanyeṃcapā\n(line 5465 ): tālenārīṇāṃpuruṣasyaca nāryyovaśyāviśeṣeṇabhavaṃtiyenakarmaṇā tāmāmākarṣaṇaṃvai",
+          "highlight_line": 3
+        },
+        {
+          "text": "Agamakalpalata",
+          "tradition": "Ritual/Puja",
+          "author": "Unknown",
+          "line_number": 5478,
+          "context": "(line 5472 ): ktiṃsādhakoyāṃcavāṃchati khecarīṃbhūcarīṃvāpisvalpasādhyāṃcamānuṣīm ḍākinīṃ\n(line 5473 ): cayoginīṃcaivānīyudīyatesadā athavānirmitāṃkanyāṃmanasācāruhāsinīm\n(line 5474 ): adṛṣṭapūrvāṃyuvatiṃtatkṣaṇāṃtāṃsamānayet yadyadvāṃchayatikāmaṃtatkāmaṃprayaccha\n(line 5475 ): ti evaṃmadhumatīsiddhirvidhinātasyajāyate vidyāṃsvapnāvatīṃnāmnīṃtriṣulokeṣu\n(line 5476 ): durlabhām jñātvāpisādhakaḥśreṣṭhaugaṃdharvojāyate eṣāgaṃdharvavidyācaguptācātīva\n(line 5477 ): durlabhā mahābhogakarīvidyāmahadeśvaryyadāyinī vṛddhatvaṃlaghutvaṃcadarśanādarśanaṃta",
+          "highlight_line": 3
+        },
+        {
+          "text": "Agamakalpalata",
+          "tradition": "Ritual/Puja",
+          "author": "Unknown",
+          "line_number": 5484,
+          "context": "(line 5478 ): thā praveśaṃparakāyasyakāmarūpobhaveddhravam aṃjanaṃguṭikādīṃścayāyāvidyāḥsudurla\n(line 5479 ): bhāḥ viditaṃjāyatetasyasādhakaḥkhecarobhavet ādhīnāḥsiddhayaḥsaṃtivaśyābhava\n(line 5480 ): tidevatā jīvanmuktobhavetsāpikartāhartābhavedbhuvi trailokyedurlabhāvidyāpaṃca-\n(line 5481 ): mīmadhyagā eṣāsvapnāvatīdevīmuktidābhogadāparā śakyatenahividyāyāgadituṃmahi\n(line 5482 ): māmaham ekākṣareṇakathitaṃvrahmavidyaivakevalam yāśaktiḥsarvabhūteṣujagaccaita\n(line 5483 ): nyakāriṇī sāevapaṃcamīvidyāsarvādhārasvarūpiṇī jyotīrūpeṇasādevīparatejaḥ",
+          "highlight_line": 3
+        }
+      ]
+    },
+    "consciousness": {
+      "count": 2137,
+      "percentage": 33.03,
+      "snippets": [
+        {
+          "text": "Acarasaratantram",
+          "tradition": "Natya/Arts",
+          "author": "Unknown",
+          "line_number": 5466,
+          "context": "(line 5470 ): nānā vyādhi bhavāṃ *? kāra haraṇaṃ janmādi nirnāśanaṃ śrīmatsuṃdari\n(line 5471 ): tarpaṇādravarasaṃpātraṃ bhaje ṣaṣṭhamaṃ\n(line 5472 ):\n(line 5473 ): jāgratsvapnasuṣupti tūryapurato caitanya sākṣīpradaṃ\n(line 5474 ): vidyudbhāskaracaṃdrasendra dhanuṣo jyotiḥ kalāvyādhitam |\n(line 5475 ): īḍā piṃgala madhyamādi calayā satkuṇḍalī cordhagaṃ pātraṃ saptama",
+          "highlight_line": 3
+        },
+        {
+          "text": "Acintyavisvasadakhya",
+          "tradition": "Saiva Agama",
+          "author": "Unknown",
+          "line_number": 9421,
+          "context": "(line 9452 ): p. 546)\n(line 9453 ):\n(line 9454 ): yadyatpaśyati yuktātmā tatsarvaṃ tasya jāyate |\n(line 9455 ): svapne'pi yogayuktasya yoganidrāprabhāvataḥ\n(line 9456 ):\n(line 9457 ): abhyarthitosyakenāpi svayaṃ vā sandhyayānvitaḥ |",
+          "highlight_line": 3
+        },
+        {
+          "text": "Acintyavisvasadakhya",
+          "tradition": "Saiva Agama",
+          "author": "Unknown",
+          "line_number": 10443,
+          "context": "(line 10474 ): samādhirvakṣyate sūkṣme sarvadvandva vivarjitaḥ |\n(line 10475 ): jñānameva samādhiḥ syāt tadviśuddhastathocyate\n(line 10476 ):\n(line 10477 ): jāgratsvapnasuṣuptānte tatsambandhamanityatām |\n(line 10478 ): etatturīyānītaṃ tu ātmano nityameva tu\n(line 10479 ):",
+          "highlight_line": 3
+        },
+        {
+          "text": "Acintyavisvasadakhya",
+          "tradition": "Saiva Agama",
+          "author": "Unknown",
+          "line_number": 10450,
+          "context": "(line 10481 ): samārgamadhyamaṃ jñeyaṃ bhavamārgamathocyate\n(line 10482 ):\n(line 10483 ): tattatkarmānusāreṇa jarā sādhomukhaṃ bhavet |\n(line 10484 ): mukhe jāgramiti jñeyaṃ tasmātsvapnakṛtāntukam\n(line 10485 ):\n(line 10486 ): hṛdayādi samārabhya nābhyantaṃ tu suṣuptamam |",
+          "highlight_line": 3
+        },
+        {
+          "text": "Acintyavisvasadakhya",
+          "tradition": "Saiva Agama",
+          "author": "Unknown",
+          "line_number": 10458,
+          "context": "(line 10489 ): p. 606)\n(line 10490 ):\n(line 10491 ): jāgrādisthānamevaṃ hi pravartaka mihocyate |\n(line 10492 ): jāgratkāle tvaco vyapti svapne vaktraṃ tathaiva ca\n(line 10493 ):\n(line 10494 ): suṣupte māṃsadāvyāptisturye medasi sthitaḥ |",
+          "highlight_line": 3
+        },
+        {
+          "text": "Acintyavisvasadakhya",
+          "tradition": "Saiva Agama",
+          "author": "Unknown",
+          "line_number": 10480,
+          "context": "(line 10511 ): śabdāditvaca dīrghaśca ghrāṇādīṃśca manādikam |\n(line 10512 ): rā * * kāmatparyantaṃ ekatriṃśacca svapnake\n(line 10513 ):\n(line 10514 ): saṃjñataistaireva * * * pratisañca svapnakam |\n(line 10515 ): jāgre viṣayabhuktiśca svapno na styāgatistakam\n(line 10516 ):",
+          "highlight_line": 3
+        },
+        {
+          "text": "Acintyavisvasadakhya",
+          "tradition": "Saiva Agama",
+          "author": "Unknown",
+          "line_number": 10481,
+          "context": "(line 10512 ): rā * * kāmatparyantaṃ ekatriṃśacca svapnake\n(line 10513 ):\n(line 10514 ): saṃjñataistaireva * * * pratisañca svapnakam |\n(line 10515 ): jāgre viṣayabhuktiśca svapno na styāgatistakam\n(line 10516 ):\n(line 10517 ): ayasāgni samāyogādvāyogniścavadāyasam |",
+          "highlight_line": 3
+        },
+        {
+          "text": "Acintyavisvasadakhya",
+          "tradition": "Saiva Agama",
+          "author": "Unknown",
+          "line_number": 10514,
+          "context": "(line 10545 ): svayaṃ vedyoparaṃ jyoti jñānarūpo mahatprabhuḥ |\n(line 10546 ): sthūlaṃ sūkṣmaṃ ca susūkṣmaṃ ca ativṛttiṃ tathāntikam\n(line 10547 ):\n(line 10548 ): sthūlaṃ jāgṛ saṃjñeyaṃ sūkṣmaṃ svapna mihocyate |\n(line 10549 ): suṣuptistu susūkṣmaṃ syāditi sūkṣmaṃ turīyakam\n(line 10550 ):",
+          "highlight_line": 3
+        },
+        {
+          "text": "Acintyavisvasadakhya",
+          "tradition": "Saiva Agama",
+          "author": "Unknown",
+          "line_number": 10518,
+          "context": "(line 10549 ): suṣuptistu susūkṣmaṃ syāditi sūkṣmaṃ turīyakam\n(line 10550 ):\n(line 10551 ): tatodhikaṃ turyātītaṃ evaṃ pañcavidhaṃ smṛtam |\n(line 10552 ): svapnaścaiva suṣuptiśca * * * tadadhiṃ ca vai\n(line 10553 ):\n(line 10554 ): jāgrasthānaṃ pradṛśyeta yogamahyastamakramāt |",
+          "highlight_line": 3
+        },
+        {
+          "text": "Acintyavisvasadakhya",
+          "tradition": "Saiva Agama",
+          "author": "Unknown",
+          "line_number": 10525,
+          "context": "(line 10556 ):\n(line 10557 ): p. 610)\n(line 10558 ):\n(line 10559 ): dhāraṇāya jayetsvapna randhranenai suṣuptikam |\n(line 10560 ): samādhinā turyatītaṃ turīyaṃ tu śivena tu\n(line 10561 ):",
+          "highlight_line": 3
+        }
+      ]
+    },
+    "deity": {
+      "count": 2104,
+      "percentage": 32.52,
+      "snippets": [
+        {
+          "text": "Acarasaratantram",
+          "tradition": "Natya/Arts",
+          "author": "Unknown",
+          "line_number": 2281,
+          "context": "(line 2285 ): jīvaṃti narayogīndrāstatra tatra guhāṃtare |\n(line 2286 ): devīnātra bhavet sākṣāt pīṃḍīṃ jāpyā tadanaṃtaraṃ ||\n(line 2287 ):\n(line 2288 ): svapne vadati sā devī ciraṃjīvī bhaveti hi |\n(line 2289 ): maṃtriṇaṃ kṛtasaṃjāpyaṃ tato mṛtyu dinaṃ dhruvaṃ ||\n(line 2290 ):",
+          "highlight_line": 3
+        },
+        {
+          "text": "Acarasaratantram",
+          "tradition": "Natya/Arts",
+          "author": "Unknown",
+          "line_number": 2381,
+          "context": "(line 2385 ):\n(line 2386 ): 57a)\n(line 2387 ):\n(line 2388 ): tato devī tarhi sādhya svapnāṃte vadati sphuṭaṃ |\n(line 2389 ): ayaṃ rājan devadattastesti pūjyo na saṃśayaḥ ||\n(line 2390 ):",
+          "highlight_line": 3
+        },
+        {
+          "text": "Acarasaratantram",
+          "tradition": "Natya/Arts",
+          "author": "Unknown",
+          "line_number": 2385,
+          "context": "(line 2389 ): ayaṃ rājan devadattastesti pūjyo na saṃśayaḥ ||\n(line 2390 ):\n(line 2391 ): nocettava bhaveddhāniriti sāsphuṭabhāṣiṇī |\n(line 2392 ): iti svapnāṃtare sādhyaṃ sāvadatpatha devatā ||\n(line 2393 ):\n(line 2394 ): maṃtraḥ ||",
+          "highlight_line": 3
+        },
+        {
+          "text": "Acarasaratantram",
+          "tradition": "Natya/Arts",
+          "author": "Unknown",
+          "line_number": 2442,
+          "context": "(line 2446 ):\n(line 2447 ): atrāpi kālaḥ ṣaṣṭhī syānna ca vāravidhirmataḥ ||\n(line 2448 ):\n(line 2449 ): yaṃtravaktrānna ceddevī svapne vāpi vadet tadā |\n(line 2450 ):\n(line 2451 ): atha maṃtharā devyā maṃtraḥ || rasaniḥsaraṇayaṃtrarasapākayaṃtra",
+          "highlight_line": 3
+        },
+        {
+          "text": "Acarasaratantram",
+          "tradition": "Natya/Arts",
+          "author": "Unknown",
+          "line_number": 2461,
+          "context": "(line 2465 ): kasmiṃścidvāsarepi sā ṣaṣṭhī bhavatu tathāpi tatra bhāṣā maṃtro vaśyaṃ\n(line 2466 ): jāpyaḥ || tato devī rasayaṃtramukhānmaṃtriṇaḥ śubhāśubhaṃ vadati tata idaṃ\n(line 2467 ): vidhānaṃ maṃtriṇā prativarṣaṃ kartavyaṃ | tathā ca svaparasya abhilaṣitaṃ\n(line 2468 ): vadati || na vadati cettathā tadā svapne vā samāgatya vadatīti tātparyaṃ |\n(line 2469 ):\n(line 2470 ): maṃtraḥ ||",
+          "highlight_line": 3
+        },
+        {
+          "text": "Acintyavisvasadakhya",
+          "tradition": "Saiva Agama",
+          "author": "Unknown",
+          "line_number": 2165,
+          "context": "(line 2196 ): jalasnānaṃ prakartavyaṃ sarvapāpaharaṃ śubham |\n(line 2197 ): bahirantarviśuddhyarthaṃ śivejyāyogakāraṇam\n(line 2198 ):\n(line 2199 ): sarvācārapradhānatvaṃ sarvaduḥsvapnanāśanam |\n(line 2200 ): ālasyādau haridrānāṃ śūdrāṇāṃ ca kṣayaṃkaram\n(line 2201 ):",
+          "highlight_line": 3
+        },
+        {
+          "text": "Acintyavisvasadakhya",
+          "tradition": "Saiva Agama",
+          "author": "Unknown",
+          "line_number": 7259,
+          "context": "(line 7290 ): oṃ hili hili pāṇaye svāhā | oṃ namaḥ śivaḥ |\n(line 7291 ): śambho triṇetrāya piṃgalāya mahātmane\n(line 7292 ):\n(line 7293 ): vāmāya śambhave viśva svapnādhipataye namaḥ |\n(line 7294 ): oṃ hili hili nigine śūlapāṇaye namaḥ\n(line 7295 ):",
+          "highlight_line": 3
+        },
+        {
+          "text": "Acintyavisvasadakhya",
+          "tradition": "Saiva Agama",
+          "author": "Unknown",
+          "line_number": 7609,
+          "context": "(line 7640 ): rasastu viṣayo rūpaḥ sparśaśśabdarasā guṇāḥ |\n(line 7641 ): abjopetārdhacandraṃ ca maṇḍalaṃ vāruṇaṃ tathā\n(line 7642 ):\n(line 7643 ): svapnāvasthā pratiṣṭhāyāṃ kāraṇaṃ viṣṇurucyate |\n(line 7644 ): bhuvanāmā jagatsarvaṃ bhuvānāntargataṃ smaret\n(line 7645 ):",
+          "highlight_line": 3
+        },
+        {
+          "text": "Acintyavisvasadakhya",
+          "tradition": "Saiva Agama",
+          "author": "Unknown",
+          "line_number": 10458,
+          "context": "(line 10489 ): p. 606)\n(line 10490 ):\n(line 10491 ): jāgrādisthānamevaṃ hi pravartaka mihocyate |\n(line 10492 ): jāgratkāle tvaco vyapti svapne vaktraṃ tathaiva ca\n(line 10493 ):\n(line 10494 ): suṣupte māṃsadāvyāptisturye medasi sthitaḥ |",
+          "highlight_line": 3
+        },
+        {
+          "text": "Acintyavisvasadakhya",
+          "tradition": "Saiva Agama",
+          "author": "Unknown",
+          "line_number": 10478,
+          "context": "(line 10509 ): rāgamāyākalāvidyā niyatiḥ kāla eva ca\n(line 10510 ):\n(line 10511 ): śabdāditvaca dīrghaśca ghrāṇādīṃśca manādikam |\n(line 10512 ): rā * * kāmatparyantaṃ ekatriṃśacca svapnake\n(line 10513 ):\n(line 10514 ): saṃjñataistaireva * * * pratisañca svapnakam |",
+          "highlight_line": 3
+        }
+      ]
+    }
+  },
+  "sample_snippets": [
+    {
+      "text": "Acarasaratantram",
+      "tradition": "Natya/Arts",
+      "author": "Unknown",
+      "line_number": 2281,
+      "context": "(line 2285 ): jīvaṃti narayogīndrāstatra tatra guhāṃtare |\n(line 2286 ): devīnātra bhavet sākṣāt pīṃḍīṃ jāpyā tadanaṃtaraṃ ||\n(line 2287 ):\n(line 2288 ): svapne vadati sā devī ciraṃjīvī bhaveti hi |\n(line 2289 ): maṃtriṇaṃ kṛtasaṃjāpyaṃ tato mṛtyu dinaṃ dhruvaṃ ||\n(line 2290 ):",
+      "highlight_line": 3
+    },
+    {
+      "text": "Acarasaratantram",
+      "tradition": "Natya/Arts",
+      "author": "Unknown",
+      "line_number": 2381,
+      "context": "(line 2385 ):\n(line 2386 ): 57a)\n(line 2387 ):\n(line 2388 ): tato devī tarhi sādhya svapnāṃte vadati sphuṭaṃ |\n(line 2389 ): ayaṃ rājan devadattastesti pūjyo na saṃśayaḥ ||\n(line 2390 ):",
+      "highlight_line": 3
+    },
+    {
+      "text": "Acarasaratantram",
+      "tradition": "Natya/Arts",
+      "author": "Unknown",
+      "line_number": 2385,
+      "context": "(line 2389 ): ayaṃ rājan devadattastesti pūjyo na saṃśayaḥ ||\n(line 2390 ):\n(line 2391 ): nocettava bhaveddhāniriti sāsphuṭabhāṣiṇī |\n(line 2392 ): iti svapnāṃtare sādhyaṃ sāvadatpatha devatā ||\n(line 2393 ):\n(line 2394 ): maṃtraḥ ||",
+      "highlight_line": 3
+    },
+    {
+      "text": "Acarasaratantram",
+      "tradition": "Natya/Arts",
+      "author": "Unknown",
+      "line_number": 2442,
+      "context": "(line 2446 ):\n(line 2447 ): atrāpi kālaḥ ṣaṣṭhī syānna ca vāravidhirmataḥ ||\n(line 2448 ):\n(line 2449 ): yaṃtravaktrānna ceddevī svapne vāpi vadet tadā |\n(line 2450 ):\n(line 2451 ): atha maṃtharā devyā maṃtraḥ || rasaniḥsaraṇayaṃtrarasapākayaṃtra",
+      "highlight_line": 3
+    },
+    {
+      "text": "Acarasaratantram",
+      "tradition": "Natya/Arts",
+      "author": "Unknown",
+      "line_number": 2461,
+      "context": "(line 2465 ): kasmiṃścidvāsarepi sā ṣaṣṭhī bhavatu tathāpi tatra bhāṣā maṃtro vaśyaṃ\n(line 2466 ): jāpyaḥ || tato devī rasayaṃtramukhānmaṃtriṇaḥ śubhāśubhaṃ vadati tata idaṃ\n(line 2467 ): vidhānaṃ maṃtriṇā prativarṣaṃ kartavyaṃ | tathā ca svaparasya abhilaṣitaṃ\n(line 2468 ): vadati || na vadati cettathā tadā svapne vā samāgatya vadatīti tātparyaṃ |\n(line 2469 ):\n(line 2470 ): maṃtraḥ ||",
+      "highlight_line": 3
+    },
+    {
+      "text": "Acarasaratantram",
+      "tradition": "Natya/Arts",
+      "author": "Unknown",
+      "line_number": 5466,
+      "context": "(line 5470 ): nānā vyādhi bhavāṃ *? kāra haraṇaṃ janmādi nirnāśanaṃ śrīmatsuṃdari\n(line 5471 ): tarpaṇādravarasaṃpātraṃ bhaje ṣaṣṭhamaṃ\n(line 5472 ):\n(line 5473 ): jāgratsvapnasuṣupti tūryapurato caitanya sākṣīpradaṃ\n(line 5474 ): vidyudbhāskaracaṃdrasendra dhanuṣo jyotiḥ kalāvyādhitam |\n(line 5475 ): īḍā piṃgala madhyamādi calayā satkuṇḍalī cordhagaṃ pātraṃ saptama",
+      "highlight_line": 3
+    },
+    {
+      "text": "Acintyavisvasadakhya",
+      "tradition": "Saiva Agama",
+      "author": "Unknown",
+      "line_number": 2165,
+      "context": "(line 2196 ): jalasnānaṃ prakartavyaṃ sarvapāpaharaṃ śubham |\n(line 2197 ): bahirantarviśuddhyarthaṃ śivejyāyogakāraṇam\n(line 2198 ):\n(line 2199 ): sarvācārapradhānatvaṃ sarvaduḥsvapnanāśanam |\n(line 2200 ): ālasyādau haridrānāṃ śūdrāṇāṃ ca kṣayaṃkaram\n(line 2201 ):",
+      "highlight_line": 3
+    },
+    {
+      "text": "Acintyavisvasadakhya",
+      "tradition": "Saiva Agama",
+      "author": "Unknown",
+      "line_number": 5652,
+      "context": "(line 5683 ):\n(line 5684 ): p. 330)\n(line 5685 ):\n(line 5686 ): svapne ca dṛśyate sarvaṃ tatkāryaṃ ca vimarśayet |\n(line 5687 ): kukkuṭāsana saṃsthopi lokayettu śanaiḥ śanaiḥ\n(line 5688 ):",
+      "highlight_line": 3
+    },
+    {
+      "text": "Acintyavisvasadakhya",
+      "tradition": "Saiva Agama",
+      "author": "Unknown",
+      "line_number": 5744,
+      "context": "(line 5775 ): durnimitta vihīnaścet samaṃ hutvā samācaret\n(line 5776 ):\n(line 5777 ): mantranyāsādikaṃ kṛtvā cāmṛtākṣarakaṃ japet |\n(line 5778 ): śuddhadeśe śayānasya svapne sarva prakāśyate\n(line 5779 ):\n(line 5780 ): svapnaṃ sakalamāvedya gurave kāryamācaret |",
+      "highlight_line": 3
+    },
+    {
+      "text": "Acintyavisvasadakhya",
+      "tradition": "Saiva Agama",
+      "author": "Unknown",
+      "line_number": 5746,
+      "context": "(line 5777 ): mantranyāsādikaṃ kṛtvā cāmṛtākṣarakaṃ japet |\n(line 5778 ): śuddhadeśe śayānasya svapne sarva prakāśyate\n(line 5779 ):\n(line 5780 ): svapnaṃ sakalamāvedya gurave kāryamācaret |\n(line 5781 ): tadājñā sarvakāryāṇāṃ saphalāṃśaṃ prakalpyate\n(line 5782 ):",
+      "highlight_line": 3
+    },
+    {
+      "text": "Acintyavisvasadakhya",
+      "tradition": "Saiva Agama",
+      "author": "Unknown",
+      "line_number": 7253,
+      "context": "(line 7284 ): bhautikāndarbhaśayyāyāṃ pūrvamaulyastrarakṣitān |\n(line 7285 ): śikhābaddhaśikhānsarvān hetinā rakṣitānpunaḥ\n(line 7286 ):\n(line 7287 ): svapnādhipannimantraṃ ca gurustatropadeśayet |\n(line 7288 ): oṃ hili hili śūlapāṇaye svāhā taṃ cāpi paścimām\n(line 7289 ):",
+      "highlight_line": 3
+    },
+    {
+      "text": "Acintyavisvasadakhya",
+      "tradition": "Saiva Agama",
+      "author": "Unknown",
+      "line_number": 7259,
+      "context": "(line 7290 ): oṃ hili hili pāṇaye svāhā | oṃ namaḥ śivaḥ |\n(line 7291 ): śambho triṇetrāya piṃgalāya mahātmane\n(line 7292 ):\n(line 7293 ): vāmāya śambhave viśva svapnādhipataye namaḥ |\n(line 7294 ): oṃ hili hili nigine śūlapāṇaye namaḥ\n(line 7295 ):",
+      "highlight_line": 3
+    },
+    {
+      "text": "Acintyavisvasadakhya",
+      "tradition": "Saiva Agama",
+      "author": "Unknown",
+      "line_number": 7267,
+      "context": "(line 7298 ):\n(line 7299 ): p. 423)\n(line 7300 ):\n(line 7301 ): yathā dṛṣṭaṃ tu svapnaṃ hi pṛcchecchiṣyāṃstathā guruḥ |\n(line 7302 ): ramaṃ dhvajaṃ chatraṃ ca gajaṃ vṛṣabhamuttamam\n(line 7303 ):",
+      "highlight_line": 3
+    },
+    {
+      "text": "Acintyavisvasadakhya",
+      "tradition": "Saiva Agama",
+      "author": "Unknown",
+      "line_number": 7277,
+      "context": "(line 7308 ): sumālāṃ ca vadhūṃ vāpi veśyāṃ sarvāṃgalakṣaṇam\n(line 7309 ):\n(line 7310 ): pitrośca darśanaṃ vāpi gurordarśanamuttamam |\n(line 7311 ): ratnahemāṃgulīyādibhūṣaṇaṃ svapnamuttamam\n(line 7312 ):\n(line 7313 ): arkādibimbatapanaṃ patanaṃ cāndhakūpake |",
+      "highlight_line": 3
+    },
+    {
+      "text": "Acintyavisvasadakhya",
+      "tradition": "Saiva Agama",
+      "author": "Unknown",
+      "line_number": 7307,
+      "context": "(line 7338 ): sthaṇḍile maṇḍale vāpi pūjayecchivamavyayam |\n(line 7339 ): pāvakaṃ pūjayetpaścād darpaṇaṃ pūrvakāvadhi\n(line 7340 ):\n(line 7341 ): duḥsvapnaśāntaye paścān mūlamantrāṃśakaṃ hunet |\n(line 7342 ): huṃkāraṃ saṃpuṭenaiva hutvā mantrasya dīpanam\n(line 7343 ):",
+      "highlight_line": 3
+    },
+    {
+      "text": "Acintyavisvasadakhya",
+      "tradition": "Saiva Agama",
+      "author": "Unknown",
+      "line_number": 7609,
+      "context": "(line 7640 ): rasastu viṣayo rūpaḥ sparśaśśabdarasā guṇāḥ |\n(line 7641 ): abjopetārdhacandraṃ ca maṇḍalaṃ vāruṇaṃ tathā\n(line 7642 ):\n(line 7643 ): svapnāvasthā pratiṣṭhāyāṃ kāraṇaṃ viṣṇurucyate |\n(line 7644 ): bhuvanāmā jagatsarvaṃ bhuvānāntargataṃ smaret\n(line 7645 ):",
+      "highlight_line": 3
+    },
+    {
+      "text": "Acintyavisvasadakhya",
+      "tradition": "Saiva Agama",
+      "author": "Unknown",
+      "line_number": 9421,
+      "context": "(line 9452 ): p. 546)\n(line 9453 ):\n(line 9454 ): yadyatpaśyati yuktātmā tatsarvaṃ tasya jāyate |\n(line 9455 ): svapne'pi yogayuktasya yoganidrāprabhāvataḥ\n(line 9456 ):\n(line 9457 ): abhyarthitosyakenāpi svayaṃ vā sandhyayānvitaḥ |",
+      "highlight_line": 3
+    },
+    {
+      "text": "Acintyavisvasadakhya",
+      "tradition": "Saiva Agama",
+      "author": "Unknown",
+      "line_number": 10443,
+      "context": "(line 10474 ): samādhirvakṣyate sūkṣme sarvadvandva vivarjitaḥ |\n(line 10475 ): jñānameva samādhiḥ syāt tadviśuddhastathocyate\n(line 10476 ):\n(line 10477 ): jāgratsvapnasuṣuptānte tatsambandhamanityatām |\n(line 10478 ): etatturīyānītaṃ tu ātmano nityameva tu\n(line 10479 ):",
+      "highlight_line": 3
+    },
+    {
+      "text": "Acintyavisvasadakhya",
+      "tradition": "Saiva Agama",
+      "author": "Unknown",
+      "line_number": 10450,
+      "context": "(line 10481 ): samārgamadhyamaṃ jñeyaṃ bhavamārgamathocyate\n(line 10482 ):\n(line 10483 ): tattatkarmānusāreṇa jarā sādhomukhaṃ bhavet |\n(line 10484 ): mukhe jāgramiti jñeyaṃ tasmātsvapnakṛtāntukam\n(line 10485 ):\n(line 10486 ): hṛdayādi samārabhya nābhyantaṃ tu suṣuptamam |",
+      "highlight_line": 3
+    },
+    {
+      "text": "Acintyavisvasadakhya",
+      "tradition": "Saiva Agama",
+      "author": "Unknown",
+      "line_number": 10458,
+      "context": "(line 10489 ): p. 606)\n(line 10490 ):\n(line 10491 ): jāgrādisthānamevaṃ hi pravartaka mihocyate |\n(line 10492 ): jāgratkāle tvaco vyapti svapne vaktraṃ tathaiva ca\n(line 10493 ):\n(line 10494 ): suṣupte māṃsadāvyāptisturye medasi sthitaḥ |",
+      "highlight_line": 3
+    },
+    {
+      "text": "Acintyavisvasadakhya",
+      "tradition": "Saiva Agama",
+      "author": "Unknown",
+      "line_number": 10478,
+      "context": "(line 10509 ): rāgamāyākalāvidyā niyatiḥ kāla eva ca\n(line 10510 ):\n(line 10511 ): śabdāditvaca dīrghaśca ghrāṇādīṃśca manādikam |\n(line 10512 ): rā * * kāmatparyantaṃ ekatriṃśacca svapnake\n(line 10513 ):\n(line 10514 ): saṃjñataistaireva * * * pratisañca svapnakam |",
+      "highlight_line": 3
+    },
+    {
+      "text": "Acintyavisvasadakhya",
+      "tradition": "Saiva Agama",
+      "author": "Unknown",
+      "line_number": 10480,
+      "context": "(line 10511 ): śabdāditvaca dīrghaśca ghrāṇādīṃśca manādikam |\n(line 10512 ): rā * * kāmatparyantaṃ ekatriṃśacca svapnake\n(line 10513 ):\n(line 10514 ): saṃjñataistaireva * * * pratisañca svapnakam |\n(line 10515 ): jāgre viṣayabhuktiśca svapno na styāgatistakam\n(line 10516 ):",
+      "highlight_line": 3
+    },
+    {
+      "text": "Acintyavisvasadakhya",
+      "tradition": "Saiva Agama",
+      "author": "Unknown",
+      "line_number": 10481,
+      "context": "(line 10512 ): rā * * kāmatparyantaṃ ekatriṃśacca svapnake\n(line 10513 ):\n(line 10514 ): saṃjñataistaireva * * * pratisañca svapnakam |\n(line 10515 ): jāgre viṣayabhuktiśca svapno na styāgatistakam\n(line 10516 ):\n(line 10517 ): ayasāgni samāyogādvāyogniścavadāyasam |",
+      "highlight_line": 3
+    },
+    {
+      "text": "Acintyavisvasadakhya",
+      "tradition": "Saiva Agama",
+      "author": "Unknown",
+      "line_number": 10500,
+      "context": "(line 10531 ): prakṛtāni yadrāni syāt sāvasthā sāgra ucyate |\n(line 10532 ): vinākaraṇa dehānāṃ vyāparairātmanaḥ kṛtiḥ\n(line 10533 ):\n(line 10534 ): vṛttirmānasasvapno vasthābhāveṣu kevalam |\n(line 10535 ): svasthaṃ viṣayasaṃgośca khedalīnneyamātmani\n(line 10536 ):",
+      "highlight_line": 3
+    },
+    {
+      "text": "Acintyavisvasadakhya",
+      "tradition": "Saiva Agama",
+      "author": "Unknown",
+      "line_number": 10514,
+      "context": "(line 10545 ): svayaṃ vedyoparaṃ jyoti jñānarūpo mahatprabhuḥ |\n(line 10546 ): sthūlaṃ sūkṣmaṃ ca susūkṣmaṃ ca ativṛttiṃ tathāntikam\n(line 10547 ):\n(line 10548 ): sthūlaṃ jāgṛ saṃjñeyaṃ sūkṣmaṃ svapna mihocyate |\n(line 10549 ): suṣuptistu susūkṣmaṃ syāditi sūkṣmaṃ turīyakam\n(line 10550 ):",
+      "highlight_line": 3
+    },
+    {
+      "text": "Acintyavisvasadakhya",
+      "tradition": "Saiva Agama",
+      "author": "Unknown",
+      "line_number": 10518,
+      "context": "(line 10549 ): suṣuptistu susūkṣmaṃ syāditi sūkṣmaṃ turīyakam\n(line 10550 ):\n(line 10551 ): tatodhikaṃ turyātītaṃ evaṃ pañcavidhaṃ smṛtam |\n(line 10552 ): svapnaścaiva suṣuptiśca * * * tadadhiṃ ca vai\n(line 10553 ):\n(line 10554 ): jāgrasthānaṃ pradṛśyeta yogamahyastamakramāt |",
+      "highlight_line": 3
+    },
+    {
+      "text": "Acintyavisvasadakhya",
+      "tradition": "Saiva Agama",
+      "author": "Unknown",
+      "line_number": 10525,
+      "context": "(line 10556 ):\n(line 10557 ): p. 610)\n(line 10558 ):\n(line 10559 ): dhāraṇāya jayetsvapna randhranenai suṣuptikam |\n(line 10560 ): samādhinā turyatītaṃ turīyaṃ tu śivena tu\n(line 10561 ):",
+      "highlight_line": 3
+    },
+    {
+      "text": "Acintyavisvasadakhya",
+      "tradition": "Saiva Agama",
+      "author": "Unknown",
+      "line_number": 15686,
+      "context": "(line 15717 ): tridvaikamāṣikādyāśca kramājjyeṣṭhādiṣu triṣu\n(line 15718 ):\n(line 15719 ): vardhanī pūrṇa kumbhaṃ ca lokapālaghaṭānapi |\n(line 15720 ): svapnārthameka kumbhaṃ ca śāntyarthaṃ kuṇḍasaṃkhyayā\n(line 15721 ):\n(line 15722 ): dikpālakumbhakāścāpi taddharmastu viśeṣataḥ |",
+      "highlight_line": 3
+    },
+    {
+      "text": "Advayavajrasamgraha",
+      "tradition": "Buddhist Tantra",
+      "author": "Unknown",
+      "line_number": 332,
+      "context": "(line 336 ): p. 11)\n(line 337 ):\n(line 338 ): akṣaracatuṣṭayānvito'yamupāsakaḥ parihṛtākuśalakarmā\n(line 339 ): upacitapuṇyasambhāro'bhyāsavaśāt jāgraddaśāvat svapne'pi kuśalānyeva\n(line 340 ): karoti |\n(line 341 ):",
+      "highlight_line": 3
+    },
+    {
+      "text": "Advayavajrasamgraha",
+      "tradition": "Buddhist Tantra",
+      "author": "Unknown",
+      "line_number": 1477,
+      "context": "(line 1481 ):\n(line 1482 ): p. 45)\n(line 1483 ):\n(line 1484 ): 10. svapnaniruktiḥ |\n(line 1485 ):\n(line 1486 ): namaḥ sarvajñāya |",
+      "highlight_line": 3
+    },
+    {
+      "text": "Advayavajrasamgraha",
+      "tradition": "Buddhist Tantra",
+      "author": "Unknown",
+      "line_number": 1482,
+      "context": "(line 1486 ): namaḥ sarvajñāya |\n(line 1487 ):\n(line 1488 ): vinayeṣvabhi(suvā)dharmeṣu sūtreṣu jinapuṅgavaiḥ |\n(line 1489 ): dharmā(ḥ) svapnopamā(ḥ) khyātā vispaṣṭārthaṃ tat kathyate ||\n(line 1490 ):\n(line 1491 ): svapnaṃ satyamasatyaṃ vā (* * * *) videva vā |",
+      "highlight_line": 3
+    },
+    {
+      "text": "Advayavajrasamgraha",
+      "tradition": "Buddhist Tantra",
+      "author": "Unknown",
+      "line_number": 1484,
+      "context": "(line 1488 ): vinayeṣvabhi(suvā)dharmeṣu sūtreṣu jinapuṅgavaiḥ |\n(line 1489 ): dharmā(ḥ) svapnopamā(ḥ) khyātā vispaṣṭārthaṃ tat kathyate ||\n(line 1490 ):\n(line 1491 ): svapnaṃ satyamasatyaṃ vā (* * * *) videva vā |\n(line 1492 ): māyā yathā pratiṣṭhānaṃ satāṃ kimiha sammatam ||\n(line 1493 ):",
+      "highlight_line": 3
+    },
+    {
+      "text": "Advayavajrasamgraha",
+      "tradition": "Buddhist Tantra",
+      "author": "Unknown",
+      "line_number": 1487,
+      "context": "(line 1491 ): svapnaṃ satyamasatyaṃ vā (* * * *) videva vā |\n(line 1492 ): māyā yathā pratiṣṭhānaṃ satāṃ kimiha sammatam ||\n(line 1493 ):\n(line 1494 ): svapna(ḥ) satyamabodhena tadbodhe yā(va)tyalīkatām |\n(line 1495 ): prathame (tu) svata(ḥ) jñānaṃ dvitīye nāstitā bhavet ||\n(line 1496 ):",
+      "highlight_line": 3
+    },
+    {
+      "text": "Advayavajrasamgraha",
+      "tradition": "Buddhist Tantra",
+      "author": "Unknown",
+      "line_number": 1496,
+      "context": "(line 1500 ): kṣaṇadhvaṃsyālayāt maulāt pravṛttibhyo vicitratā |\n(line 1501 ): tāśca tatra tadākārā ciddeśitaṃ tadiṣyate ||\n(line 1502 ):\n(line 1503 ): svapnāt svapnaṃ yadeva syāt ciccitrālīkatā tadā |\n(line 1504 ): naiva satyaṃ asadvitterna cocchedaḥ prakāśataḥ ||\n(line 1505 ):",
+      "highlight_line": 3
+    },
+    {
+      "text": "Advayavajrasamgraha",
+      "tradition": "Buddhist Tantra",
+      "author": "Unknown",
+      "line_number": 1503,
+      "context": "(line 1507 ): nāmni na yujyate nāma apratiṣṭhā tvanāmani ||\n(line 1508 ):\n(line 1509 ): paṭnivahadvitayaṃ (ca) catvāro bodhaye matāḥ |\n(line 1510 ): svapnatulyamidaṃ viśvamitthamuktaṃ jinottamaiḥ ||\n(line 1511 ):\n(line 1512 ): kiṃ cāsthānamato viddhi buddhasarvasvamuttamam |",
+      "highlight_line": 3
+    },
+    {
+      "text": "Advayavajrasamgraha",
+      "tradition": "Buddhist Tantra",
+      "author": "Unknown",
+      "line_number": 1508,
+      "context": "(line 1512 ): kiṃ cāsthānamato viddhi buddhasarvasvamuttamam |\n(line 1513 ): sambittyā sadguroryatnāt caryayā ca viśeṣataḥ ||\n(line 1514 ):\n(line 1515 ):\n(line 1516 ):\n(line 1517 ):",
+      "highlight_line": 3
+    },
+    {
+      "text": "Advayavajrasamgraha",
+      "tradition": "Buddhist Tantra",
+      "author": "Unknown",
+      "line_number": 1747,
+      "context": "(line 1751 ): tadevedaṃ jagad yasmāt tasmāt sarvamanāvilam\n(line 1752 ):\n(line 1753 ): bāhyaṃ vastu manogrāhyaṃ bhrāntaṃ na bhāsate yataḥ |\n(line 1754 ): svapnāṅganeva viṣpaṣṭaṃ cinmātramarthakāri tat\n(line 1755 ):\n(line 1756 ): cittamātraṃ bhaved bodhermataṃ cittamacittakam |",
+      "highlight_line": 3
+    },
+    {
+      "text": "Agamakalpalata",
+      "tradition": "Ritual/Puja",
+      "author": "Unknown",
+      "line_number": 81,
+      "context": "(line 75 ): tamaṃtrastyaktavyaḥsādhakenasadaivahi arigehasthitomaṃtrohyanuccāryaścayomanuḥ saṃskā\n(line 76 ): rarahitomaṃtrovidhidīkṣāvivarjitaḥ tyaktvāsarvaṃprayatnenapunargrāhyaṃyathāvidhi vrahmavai\n(line 77 ): varte piturdīkṣāyaterdīkṣācanavāsinaḥ viraktasyacayādīkṣānasākalyāṇadāyinī\n(line 78 ): skaṃdapurāṇe sādhyaṃsādhyaṃcayanmaṃtraṃmahariṃvāmaheśvari svapnalavdhopiyomaṃtrastanmaṃtraṃyatna\n(line 79 ): tastyajet nīcavarṇādgṛhītaṃyattathāvaikhānasādapi viviktāścayateścaivapiturdīkṣāṃviva\n(line 80 ): rjayet vṛhanmatsyasūkte piturmaṃtraṃnagṛhṇīyāttathāmātāmahādapi kaniṣṭātsodarādvāpi",
+      "highlight_line": 3
+    },
+    {
+      "text": "Agamakalpalata",
+      "tradition": "Ritual/Puja",
+      "author": "Unknown",
+      "line_number": 95,
+      "context": "(line 89 ): yasvacchaḥpitāmekaruṇānidhiḥ kurukṣetremahātīrthesūryaparvaṇiṭattavān ityādivaiśa-\n(line 90 ): mpāyanasaṃhitāyāṃśaunakaṃprativyāsakyam viṣṇumaṃtramapipiturgṛhṇīyāditibhāvaḥprā\n(line 91 ): yaścittaṃtvayutagāyatrījapaḥ sarvatratathādarśanāt yoginītaṃtre nivīryaṃcapiturmaṃtraṃta\n(line 92 ): thāmātāmahasyaca svapnalavdhaṃstriyadatuṃsaṃskāreṇaivaśuddhyati svapnalavdhecakalaśeguroḥprā\n(line 93 ): ṇaṃniveśayet vaṭapattrekuṃkumenalikhitvāgrahaṇaṃśubham tataḥsaphalamāpnotianyathā\n(line 94 ): viphalaṃbhavet idaṃtusadgurorabhāvetatsatvetasmādekamaṃtraṃgṛhṇīyāditisvapnetukāla",
+      "highlight_line": 3
+    },
+    {
+      "text": "Agamakalpalata",
+      "tradition": "Ritual/Puja",
+      "author": "Unknown",
+      "line_number": 97,
+      "context": "(line 91 ): yaścittaṃtvayutagāyatrījapaḥ sarvatratathādarśanāt yoginītaṃtre nivīryaṃcapiturmaṃtraṃta\n(line 92 ): thāmātāmahasyaca svapnalavdhaṃstriyadatuṃsaṃskāreṇaivaśuddhyati svapnalavdhecakalaśeguroḥprā\n(line 93 ): ṇaṃniveśayet vaṭapattrekuṃkumenalikhitvāgrahaṇaṃśubham tataḥsaphalamāpnotianyathā\n(line 94 ): viphalaṃbhavet idaṃtusadgurorabhāvetatsatvetasmādekamaṃtraṃgṛhṇīyāditisvapnetukāla\n(line 95 ): niyamaḥsvapnetuniyamonahītināradavacanāt varjanīyaguruṃvakṣyemaṃtriṇāṃhitakāmyayā\n(line 96 ):",
+      "highlight_line": 3
+    },
+    {
+      "text": "Agamakalpalata",
+      "tradition": "Ritual/Puja",
+      "author": "Unknown",
+      "line_number": 98,
+      "context": "(line 92 ): thāmātāmahasyaca svapnalavdhaṃstriyadatuṃsaṃskāreṇaivaśuddhyati svapnalavdhecakalaśeguroḥprā\n(line 93 ): ṇaṃniveśayet vaṭapattrekuṃkumenalikhitvāgrahaṇaṃśubham tataḥsaphalamāpnotianyathā\n(line 94 ): viphalaṃbhavet idaṃtusadgurorabhāvetatsatvetasmādekamaṃtraṃgṛhṇīyāditisvapnetukāla\n(line 95 ): niyamaḥsvapnetuniyamonahītināradavacanāt varjanīyaguruṃvakṣyemaṃtriṇāṃhitakāmyayā\n(line 96 ):\n(line 97 ): pṛ0 4a) tathācavṛhanmatsyasūkte aputromṛtaputraścaccakuṣṭīcavāmanastathā kunakhīśyāmadaṃtaśca",
+      "highlight_line": 3
+    },
+    {
+      "text": "Agamakalpalata",
+      "tradition": "Ritual/Puja",
+      "author": "Unknown",
+      "line_number": 344,
+      "context": "(line 338 ): ritāḥ puṃmaṃtrāhuṃphaḍaṃtāḥsyudvivāṃtāḥsyustrīyomatāḥ napuṃsakānamontāḥsyuḥrbhidyaṃtema\n(line 339 ): navatridhā śastāstetrividhāmaṃtrāvaśyaśāṃtyavicārakevicāryaniyataṃmaṃtrīgṛhṇīyātsa\n(line 340 ): rvasiddhakṣaramaṃtrāṇāṃsiddhādīrnaivaśodhayat piṃḍitākṣaramaṃtrāṇāṃsaṃyuktākṣaramaṃtrāṇaṃ ta\n(line 341 ): thācoktaṃsāgarasaṃhitāyāṃ tathaikākṣaretathākūṭemālāmaṃtretrivījake svapnalavdhestri-\n(line 342 ): yādattesiddhādīrnaivaśodhayet viṃśatyārṇādhikāmaṃtrāmālāmaṃtrāḥprakīrttitāḥ\n(line 343 ): devīpurāṇe kālikāyāṃcatārāyāṃkullukāyāṃtrikūṭake tatraikākṣarakū-",
+      "highlight_line": 3
+    },
+    {
+      "text": "Agamakalpalata",
+      "tradition": "Ritual/Puja",
+      "author": "Unknown",
+      "line_number": 2195,
+      "context": "(line 2189 ): pṛ0 74ba) tāṃbūlakamabhisamarpyasravādyagītanṛttaiḥsutṛptamabhipūjayatātpureva gaṃdhādibhiṣṇupa\n(line 2190 ): rivāramathārghamasmaidattvāvidhāyakusumāṃjalimādareṇastutvāpraṇamyaśirasāculako\n(line 2191 ): dakenātmānamarpayaṃtu taccaraṇāṃvjamūle iteḥpūrvaṃprāṇavuddhidehadharmādikārataḥ jā\n(line 2192 ): gratsvapnaṣuptyavasthāsumanasāvācākarmaṇāhastābhyāṃpadbhyāmudareṇaśiśnāyatkṛtaṃyadu\n(line 2193 ): ktaṃyatsmṛtaṃtatsarvaṃvrahmārpaṇebhavatusvāhā māṃmadīyaṃcasakalaṃharayecasamarpaye punaḥpū\n(line 2194 ): jācagaṃdhādibhirdīpāṃterupacāraiḥpunaryajediti śāradāyāṃtupaṃcopacārainityuktagaṃdhā",
+      "highlight_line": 3
+    },
+    {
+      "text": "Agamakalpalata",
+      "tradition": "Ritual/Puja",
+      "author": "Unknown",
+      "line_number": 2594,
+      "context": "(line 2588 ): mahāsiddhiranuttamā raktacaṃdanavilvādijayākuṃmavajjalaiḥ arghaṃdadyānmaheśānisarva\n(line 2589 ): kāmārthasiddhaye jayākumārī suśītalajalaiḥvāpikastūrīkuṃkumānvitaiḥ mūla\n(line 2590 ): maṃtreṇadeveśiākṛṣyanirmayaḥśuciḥ arghaṃdatvāviśeṣeṇacarkravātenapūjitaṃ kumārī\n(line 2591 ): pūjanaṃśaktonārīsvapnepinasmaret tāprapātrekapālīvāśmaśānekāṣṭanirmite śa\n(line 2592 ): nibhaumadinevāpiśarāvemṛtsumudbhave svarṇeropyethalehivācakramarcyevidhānataḥ yu\n(line 2593 ):",
+      "highlight_line": 3
+    },
+    {
+      "text": "Agamakalpalata",
+      "tradition": "Ritual/Puja",
+      "author": "Unknown",
+      "line_number": 3253,
+      "context": "(line 3247 ): sthānaṃ ḍaḍhaṇa tathadadhana daśavarṇayuktadaśadalaṃmaṇipūrakasyoparihṛdayeanāha\n(line 3248 ):\n(line 3249 ): pṛ0 111a) tacakraṃvāyusthānaṃsuṣuptisthānaṃ kakhagaghaṅa cachajajhaña ṭaṭha dvādaśavarṇayuktadvā\n(line 3250 ): daśadalaṃ anāhatapadmasyoparigaleviśuddhacakraṃsvapnasthānaṃmākāśasthānaṃca ā\n(line 3251 ): iī uūṝ ḷḹeai oauaṃaḥ ṣoḍaśasvarayuktaṣoḍaśadalaṃviśuddhacakrasyopari\n(line 3252 ): bhrūmadhyeājñācakraṃjāgratsthānamākāśasthānaṃca hakṣayuktadaladvayamiticiṃtayet ta",
+      "highlight_line": 3
+    },
+    {
+      "text": "Agamakalpalata",
+      "tradition": "Ritual/Puja",
+      "author": "Unknown",
+      "line_number": 3730,
+      "context": "(line 3724 ): sāśirasādṛṣṭyāmanasāvacasātathā padbhyāṃkarābhyāṃjānubhyāṃpraṇāmoṣṭāṃdī\n(line 3725 ): ritaḥ atha padbhyāṃkarābhyāṃśirasāpaṃcāganatapaḥsmṛtāḥ aṣṭāṃgāuttamāproktāḥ\n(line 3726 ): paṃcāṃgāmadhyamāsmṛtāḥ nadevaṃpṛṣṭataḥkṛtvāprāṇāmaṃkvacidācaret tatupavi\n(line 3727 ): śyajalagaṃḍūṣaṃgṛhītvā itaḥpūrvaṃprāṇavuddhirdehadharmādhikārataḥ jāgratsvapnasuṣu\n(line 3728 ):\n(line 3729 ): pṛ0 127a) ptāvasthāsumanasāvācākarmaṇāhastābhyāṃpadbhyāmudareṇaśiśnāyatsmṛtaṃyaduktaṃta",
+      "highlight_line": 3
+    },
+    {
+      "text": "Agamakalpalata",
+      "tradition": "Ritual/Puja",
+      "author": "Unknown",
+      "line_number": 5466,
+      "context": "(line 5460 ): ṇakāmarājaṃmahatparama evaṃkūṭatrayeṇaivavidyāsaubhāgyasuṃdarī ekatrapaṃcakūṭenamahāsau\n(line 5461 ): bhāgyasuṃhī eṣātupaṃcakṛtenanityaṃkūṭatrayātmikā durlabhāsarvalokeṣumahāsaubhāgyasuṃ\n(line 5462 ): darī etasyāevavidyāyāmadhyakūṭasyamadhyamam madhyakūṭasyamadhyakūṭatrayasya japtvānaṃdamayo\n(line 5463 ): bhūtvāsarvakāmamupālabhet iyaṃsvapnāvatīnāmnīvidyātrailokyadurlabhā ākarṣaṇakarī\n(line 5464 ): vidyācittvāhvādanakāriṇī sādhakaṃcapravakṣyāmiyasmādākarṣaṇaṃbhavet svargemanyeṃcapā\n(line 5465 ): tālenārīṇāṃpuruṣasyaca nāryyovaśyāviśeṣeṇabhavaṃtiyenakarmaṇā tāmāmākarṣaṇaṃvai",
+      "highlight_line": 3
+    },
+    {
+      "text": "Agamakalpalata",
+      "tradition": "Ritual/Puja",
+      "author": "Unknown",
+      "line_number": 5478,
+      "context": "(line 5472 ): ktiṃsādhakoyāṃcavāṃchati khecarīṃbhūcarīṃvāpisvalpasādhyāṃcamānuṣīm ḍākinīṃ\n(line 5473 ): cayoginīṃcaivānīyudīyatesadā athavānirmitāṃkanyāṃmanasācāruhāsinīm\n(line 5474 ): adṛṣṭapūrvāṃyuvatiṃtatkṣaṇāṃtāṃsamānayet yadyadvāṃchayatikāmaṃtatkāmaṃprayaccha\n(line 5475 ): ti evaṃmadhumatīsiddhirvidhinātasyajāyate vidyāṃsvapnāvatīṃnāmnīṃtriṣulokeṣu\n(line 5476 ): durlabhām jñātvāpisādhakaḥśreṣṭhaugaṃdharvojāyate eṣāgaṃdharvavidyācaguptācātīva\n(line 5477 ): durlabhā mahābhogakarīvidyāmahadeśvaryyadāyinī vṛddhatvaṃlaghutvaṃcadarśanādarśanaṃta",
+      "highlight_line": 3
+    },
+    {
+      "text": "Agamakalpalata",
+      "tradition": "Ritual/Puja",
+      "author": "Unknown",
+      "line_number": 5484,
+      "context": "(line 5478 ): thā praveśaṃparakāyasyakāmarūpobhaveddhravam aṃjanaṃguṭikādīṃścayāyāvidyāḥsudurla\n(line 5479 ): bhāḥ viditaṃjāyatetasyasādhakaḥkhecarobhavet ādhīnāḥsiddhayaḥsaṃtivaśyābhava\n(line 5480 ): tidevatā jīvanmuktobhavetsāpikartāhartābhavedbhuvi trailokyedurlabhāvidyāpaṃca-\n(line 5481 ): mīmadhyagā eṣāsvapnāvatīdevīmuktidābhogadāparā śakyatenahividyāyāgadituṃmahi\n(line 5482 ): māmaham ekākṣareṇakathitaṃvrahmavidyaivakevalam yāśaktiḥsarvabhūteṣujagaccaita\n(line 5483 ): nyakāriṇī sāevapaṃcamīvidyāsarvādhārasvarūpiṇī jyotīrūpeṇasādevīparatejaḥ",
+      "highlight_line": 3
+    },
+    {
+      "text": "Agamakalpalata",
+      "tradition": "Ritual/Puja",
+      "author": "Unknown",
+      "line_number": 6153,
+      "context": "(line 6147 ): modarasanirbhaṃra duḥkhatrayaparimlānaṃkaripāhimāṃśive 10 śavdavrahmamaye\n(line 6148 ): devinityetripurasuṃdari yathāśaktikṛtāṃpūjāṃgahāṇaparameśvari 11 dravyahī\n(line 6149 ): naṃkriyāhīnaṃmaṃtraṃhīnaṃcayadbhavet tatsarvaṃkṛpayādaivikṣamasvaparameśvari 12\n(line 6150 ): yanmayākriyatekarmajāvatsvapnasuṣuptiṣu tatsarvaṃtāvakīpūjābhūthādbhūtyainamaḥ\n(line 6151 ): śive 13 yanmayoktamihājñājāntanmahatsvalpamevavā haṃtasarvaṃjagaddhyānnakṣaṃtadya\n(line 6152 ): mayamaṃjaliḥ 14 jpāstomyanaṃtavibhavāṃbhuvanādhipatyāyakṣādhipehṛdayamohanadakṣa",
+      "highlight_line": 3
+    }
+  ]
+}
