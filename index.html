@@ -546,6 +546,20 @@
                         <button class="search-button" onclick="performSearch()">Search</button>
                     </div>
                     
+                    <div class="filter-container" style="margin: 15px 0; display: flex; gap: 10px; align-items: center;">
+                        <label style="font-weight: 600; color: var(--text-primary);">Filter by Text:</label>
+                        <select id="textFilter" class="text-filter-dropdown" onchange="filterByText()" 
+                                style="padding: 8px 12px; border-radius: 8px; border: 1px solid var(--border); 
+                                       background: white; font-size: 14px; min-width: 250px; cursor: pointer;">
+                            <option value="">All Texts</option>
+                        </select>
+                        <button class="clear-filter-btn" onclick="clearTextFilter()" 
+                                style="padding: 8px 15px; border-radius: 8px; border: 1px solid var(--border);
+                                       background: white; font-size: 14px; cursor: pointer; display: none;">
+                            Clear Filter
+                        </button>
+                    </div>
+                    
                     <div class="shortcuts">
                         <button class="shortcut-btn" onclick="quickSearch('svapna')">svapna</button>
                         <button class="shortcut-btn" onclick="quickSearch('svapnasvapna')">svapnasvapna</button>
@@ -613,6 +627,8 @@
         let searchIndex = null;
         let fullTextDatabase = null;
         let currentResults = [];
+        let allResults = [];  // Store unfiltered results
+        let currentTextFilter = '';  // Current text filter
         let favorites = JSON.parse(localStorage.getItem('svapna_favorites') || '[]');
         let charts = {};
         
@@ -855,7 +871,11 @@
             }
             
             // Store results globally
+            allResults = results;
             currentResults = results;
+            
+            // Populate text filter dropdown
+            populateTextFilter(results);
             
             // Update counts
             const filteredMatches = results.reduce((sum, r) => sum + r.count, 0);
@@ -1168,6 +1188,118 @@
                 </div>
             `;
             btn.textContent = 'Less Context';
+        }
+        
+        function populateTextFilter(results) {
+            // Get unique text names
+            const textNames = [...new Set(results.map(r => r.display_name || r.text || 'Unknown'))];
+            textNames.sort();
+            
+            // Clear and repopulate dropdown
+            const dropdown = document.getElementById('textFilter');
+            dropdown.innerHTML = '<option value="">All Texts (' + results.length + ')</option>';
+            
+            textNames.forEach(name => {
+                const count = results.filter(r => (r.display_name || r.text || 'Unknown') === name).length;
+                const option = document.createElement('option');
+                option.value = name;
+                option.textContent = `${name} (${count})`;
+                dropdown.appendChild(option);
+            });
+        }
+        
+        function filterByText() {
+            const filterValue = document.getElementById('textFilter').value;
+            currentTextFilter = filterValue;
+            
+            if (filterValue === '') {
+                // Show all results
+                currentResults = allResults;
+                document.querySelector('.clear-filter-btn').style.display = 'none';
+            } else {
+                // Filter results
+                currentResults = allResults.filter(r => 
+                    (r.display_name || r.text || 'Unknown') === filterValue
+                );
+                document.querySelector('.clear-filter-btn').style.display = 'inline-block';
+            }
+            
+            // Re-display filtered results
+            const searchTerm = document.getElementById('searchInput').value;
+            displayFilteredResults(searchTerm);
+        }
+        
+        function clearTextFilter() {
+            document.getElementById('textFilter').value = '';
+            currentTextFilter = '';
+            currentResults = allResults;
+            document.querySelector('.clear-filter-btn').style.display = 'none';
+            
+            const searchTerm = document.getElementById('searchInput').value;
+            displayFilteredResults(searchTerm);
+        }
+        
+        function displayFilteredResults(searchTerm) {
+            // Update counts
+            const filteredMatches = currentResults.reduce((sum, r) => sum + r.count || 0, 0);
+            document.getElementById('results-count').textContent = currentResults.length;
+            document.getElementById('search-badge').textContent = currentResults.length;
+            document.getElementById('matches-count').textContent = filteredMatches;
+            
+            // Clear and redisplay results
+            const resultsDiv = document.getElementById('searchResults');
+            resultsDiv.innerHTML = `<div class="search-info">
+                Found ${currentResults.length} text${currentResults.length !== 1 ? 's' : ''} containing "${searchTerm}" 
+                ${currentTextFilter ? `in "${currentTextFilter}"` : ''} • 
+                ${filteredMatches} occurrence${filteredMatches !== 1 ? 's' : ''}
+            </div>`;
+            
+            // Re-render results
+            currentResults.forEach((result, idx) => {
+                const isFavorite = favorites.includes(result.filename);
+                resultsDiv.innerHTML += `
+                    <div class="result-card">
+                        <div class="result-header">
+                            <div>
+                                <div class="result-title">
+                                    ${result.display_name || result.text || 'Unknown'}
+                                    <button class="favorite-btn ${isFavorite ? 'active' : ''}" 
+                                            onclick="toggleFavorite('${result.filename}', this)">
+                                        ${isFavorite ? '★' : '☆'}
+                                    </button>
+                                </div>
+                                <div class="result-meta">
+                                    ${result.author ? `<span class="author">Author: ${result.author}</span>` : ''}
+                                    ${result.tradition ? `<span class="tradition">Tradition: ${result.tradition}</span>` : ''}
+                                </div>
+                            </div>
+                            <div class="result-count">
+                                ${result.count} occurrence${result.count !== 1 ? 's' : ''}
+                            </div>
+                        </div>
+                        ${result.snippets && result.snippets.length > 0 ? `
+                            <div class="snippets">
+                                <div class="snippets-header">Text Excerpts:</div>
+                                ${result.snippets.map((snippet, sIdx) => `
+                                    <div class="snippet">
+                                        <div class="snippet-text" id="snippet-text-${idx}-${sIdx}">
+                                            ${highlightTerm(snippet, searchTerm)}
+                                        </div>
+                                        <div class="snippet-actions">
+                                            <button class="more-context-btn" onclick="toggleMoreContext(${idx}, ${sIdx})">More Context</button>
+                                            <button class="copy-snippet-btn" onclick="copySnippet(${idx}, ${sIdx})">Copy</button>
+                                        </div>
+                                    </div>
+                                `).join('')}
+                            </div>
+                        ` : ''}
+                    </div>
+                `;
+            });
+            
+            if (currentResults.length === 0) {
+                resultsDiv.innerHTML += '<div class="no-results">No matching texts found</div>';
+            }
         }
         
         function toggleFavorite(filename, btn) {
