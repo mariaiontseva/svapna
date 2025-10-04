@@ -984,7 +984,7 @@
                                     <div class="snippet-container" id="snippet-${idx}-${sIdx}">
                                         <div class="snippet" id="snippet-text-${idx}-${sIdx}">${highlightTerm(snippet, searchTerm)}</div>
                                         <div class="snippet-actions">
-                                            <button class="more-context-btn" onclick="toggleMoreContext(${idx}, ${sIdx})">More Context</button>
+                                            <button class="more-context-btn" onclick="toggleMoreContext(${idx}, ${sIdx}, this)">More Context</button>
                                             <button class="copy-snippet-btn" onclick="copySnippet(${idx}, ${sIdx})">Copy</button>
                                         </div>
                                     </div>
@@ -1016,20 +1016,56 @@
             });
         }
         
-        async function toggleMoreContext(resultIdx, snippetIdx) {
-            const btn = event.target;
+        async function toggleMoreContext(resultIdx, snippetIdx, btn) {
+            console.log('toggleMoreContext called:', { resultIdx, snippetIdx, btn });
+
+            // btn is now the button element directly
             const snippetDiv = document.getElementById(`snippet-text-${resultIdx}-${snippetIdx}`);
+
+            if (!snippetDiv) {
+                console.error('Snippet div not found:', `snippet-text-${resultIdx}-${snippetIdx}`);
+                alert(`Error: Could not find snippet element snippet-text-${resultIdx}-${snippetIdx}`);
+                return;
+            }
+
             const result = currentResults[resultIdx];
-            
+
+            if (!result) {
+                console.error('Result not found at index:', resultIdx);
+                console.error('currentResults:', currentResults);
+                alert(`Error: No result at index ${resultIdx}. Total results: ${currentResults.length}`);
+                return;
+            }
+
             if (snippetDiv.classList.contains('expanded')) {
                 // Collapse back to original
                 snippetDiv.classList.remove('expanded');
                 snippetDiv.innerHTML = highlightTerm(result.snippets[snippetIdx], document.getElementById('searchInput').value);
                 btn.textContent = 'More Context';
+                console.log('Collapsed context');
             } else {
                 // Expand to show more context
                 btn.textContent = 'Loading...';
-                
+                console.log('Expanding context...');
+
+                // Immediately show expanded view with formatted snippet
+                snippetDiv.classList.add('expanded');
+
+                const originalSnippet = result.snippets[snippetIdx];
+                const searchTerm = document.getElementById('searchInput').value;
+
+                // Create a nice expanded view
+                let expandedContent = `
+                    <div style="background: #f8f9fa; padding: 15px; border-radius: 5px;">
+                        <div style="color: #666; font-size: 0.9em; margin-bottom: 10px;">
+                            📖 Extended Context from: <strong>${result.display_name || 'Unknown Text'}</strong>
+                        </div>
+                        <div style="padding: 10px; border-left: 3px solid #007bff; margin: 10px 0;">
+                            ${highlightTerm(originalSnippet, searchTerm)}
+                        </div>
+                `;
+
+                // Try to load more context asynchronously
                 try {
                     // Extract line number from snippet if available
                     let lineNumber = null;
@@ -1039,108 +1075,205 @@
                         lineNumber = parseInt(lineMatch[1]);
                     }
                     
-                    // FIRST TRY LOCAL API - it has the full database!
-                    const localResponse = await fetch('http://localhost:5001/extended_context', {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json',
-                        },
-                        body: JSON.stringify({
-                            filename: result.filename || null,
-                            display_name: result.display_name || result.text || null,
-                            search_term: document.getElementById('searchInput').value,
-                            line_number: lineNumber,
-                            context_lines: 20
-                        })
-                    });
-                    
-                    if (localResponse.ok) {
-                        const data = await localResponse.json();
-                        if (data.extended_context) {
-                            // We got real extended context from local database!
-                            snippetDiv.classList.add('expanded');
-                            snippetDiv.innerHTML = `
-                                <div style="font-family: monospace; line-height: 1.8; white-space: pre-wrap; padding: 15px; background: #f8f9fa; border-radius: 5px;">
-                                    ${highlightTerm(data.extended_context, document.getElementById('searchInput').value)}
-                                </div>
-                            `;
-                            btn.textContent = 'Less Context';
-                            return;
+                    // FIRST TRY LOCAL API - it has the full database with correct context!
+                    console.log('Trying local API for extended context...');
+                    try {
+                        const localResponse = await fetch('http://localhost:5001/extended_context', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                            },
+                            body: JSON.stringify({
+                                filename: result.filename || null,
+                                display_name: result.display_name || result.text || null,
+                                search_term: document.getElementById('searchInput').value,
+                                line_number: lineNumber,
+                                context_lines: 4  // 4 lines before and after
+                            })
+                        });
+
+                        if (localResponse.ok) {
+                            const data = await localResponse.json();
+                            if (data.extended_context) {
+                                console.log('Got extended context from local database!');
+                                // We got real extended context from local database!
+                                expandedContent = `
+                                    <div style="background: #f8f9fa; padding: 15px; border-radius: 5px;">
+                                        <div style="color: #28a745; font-size: 0.9em; margin-bottom: 10px;">
+                                            ✅ Extended Context from Local Database (4 lines before/after)
+                                        </div>
+                                        <div style="font-family: monospace; line-height: 1.8; white-space: pre-wrap;">
+                                            ${highlightTerm(data.extended_context, document.getElementById('searchInput').value)}
+                                        </div>
+                                    </div>
+                                `;
+                                snippetDiv.innerHTML = expandedContent;
+                                btn.textContent = 'Less Context';
+                                return;
+                            }
+                        } else {
+                            console.log('Local API returned status:', localResponse.status);
                         }
+                    } catch (localError) {
+                        console.log('Local API error:', localError);
+                        // Continue to other methods
                     }
                     
                     // If local API fails, check if we have full text database in browser
+                    console.log('Checking fullTextDatabase:', fullTextDatabase ? fullTextDatabase.length + ' texts loaded' : 'Not loaded');
                     if (fullTextDatabase && fullTextDatabase.length > 0) {
+                        console.log('Looking for filename:', result.filename);
                         const fullText = fullTextDatabase.find(t => t.filename === result.filename);
+                        console.log('Found text:', fullText ? 'Yes' : 'No');
+
                         if (fullText && fullText.content) {
+                            console.log('Content length:', fullText.content.length);
                             const extendedContext = extractExtendedContext(
-                                fullText.content, 
+                                fullText.content,
                                 document.getElementById('searchInput').value,
                                 snippetIdx
                             );
-                            
+
                             if (extendedContext) {
-                                snippetDiv.classList.add('expanded');
-                                snippetDiv.innerHTML = `
-                                    <div style="font-family: monospace; line-height: 1.8; white-space: pre-wrap; padding: 15px; background: #f8f9fa; border-radius: 5px;">
-                                        ${highlightTerm(extendedContext, document.getElementById('searchInput').value)}
+                                console.log('Extended context extracted successfully from local data');
+                                // Update the already shown expanded content with real data
+                                expandedContent = `
+                                    <div style="background: #f8f9fa; padding: 15px; border-radius: 5px;">
+                                        <div style="color: #28a745; font-size: 0.9em; margin-bottom: 10px;">
+                                            ✅ Extended Context (from local database)
+                                        </div>
+                                        <div style="font-family: monospace; line-height: 1.8; white-space: pre-wrap;">
+                                            ${highlightTerm(extendedContext, document.getElementById('searchInput').value)}
+                                        </div>
                                     </div>
                                 `;
+                                snippetDiv.innerHTML = expandedContent;
                                 btn.textContent = 'Less Context';
                                 return;
+                            } else {
+                                console.log('Could not extract extended context');
                             }
                         }
                     }
                     
-                    // Last resort: Railway API (which only gives same snippet)
-                    const response = await fetch('https://web-production-7d2a2.up.railway.app/search', {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json',
-                        },
-                        body: JSON.stringify({ 
-                            search_term: document.getElementById('searchInput').value
-                        })
-                    });
-                    
-                    if (response.ok) {
-                        const data = await response.json();
-                        const textResult = data.results ? data.results.find(r => r.display_name === result.display_name) : null;
-                        
-                        if (textResult && textResult.snippets && textResult.snippets.length > snippetIdx) {
-                            const railwaySnippet = textResult.snippets[snippetIdx];
-                            
-                            // Format the Railway snippet nicely
-                            let formattedSnippet = railwaySnippet
-                                .replace(/\(line (\d+)\):/g, '\n[$1]')
-                                .replace(/^\.\.\./, '')
-                                .replace(/\.\.\.$/, '')
-                                .trim();
-                            
-                            snippetDiv.classList.add('expanded');
-                            snippetDiv.innerHTML = `
-                                <div style="font-family: monospace; line-height: 1.8; white-space: pre-wrap; padding: 15px; background: #f8f9fa; border-radius: 5px;">
-                                    ${highlightTerm(formattedSnippet, document.getElementById('searchInput').value)}
-                                </div>
-                            `;
-                            btn.textContent = 'Less Context';
-                            return;
+                    // Try Railway API for full text context
+                    console.log('Trying Railway API for extended context...');
+                    try {
+                        const response = await fetch('https://web-production-7d2a2.up.railway.app/search', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                            },
+                            body: JSON.stringify({
+                                search_term: document.getElementById('searchInput').value
+                            })
+                        });
+
+                        if (response.ok) {
+                            const data = await response.json();
+                            console.log('Railway API response received:', data.results ? data.results.length + ' results' : 'no results');
+
+                            const textResult = data.results ? data.results.find(r =>
+                                r.display_name === result.display_name ||
+                                r.text === result.display_name ||
+                                r.filename === result.filename
+                            ) : null;
+
+                            if (textResult && textResult.snippets) {
+                                console.log('Found text in Railway results with', textResult.snippets.length, 'snippets');
+
+                                // Get ALL snippets for more context, not just the one
+                                let allSnippets = textResult.snippets;
+
+                                // Find the current snippet and nearby ones for context
+                                let contextSnippets = [];
+
+                                // Include snippet before current one if it exists
+                                if (snippetIdx > 0 && allSnippets[snippetIdx - 1]) {
+                                    contextSnippets.push(allSnippets[snippetIdx - 1]);
+                                }
+
+                                // Include current snippet
+                                if (allSnippets[snippetIdx]) {
+                                    contextSnippets.push(allSnippets[snippetIdx]);
+                                } else if (allSnippets[0]) {
+                                    // Fallback to first snippet if index doesn't match
+                                    contextSnippets.push(allSnippets[0]);
+                                }
+
+                                // Include snippet after current one if it exists
+                                if (snippetIdx < allSnippets.length - 1 && allSnippets[snippetIdx + 1]) {
+                                    contextSnippets.push(allSnippets[snippetIdx + 1]);
+                                }
+
+                                // If we still don't have much context, add more snippets
+                                if (contextSnippets.length < 3) {
+                                    for (let i = 0; i < Math.min(3, allSnippets.length); i++) {
+                                        if (!contextSnippets.includes(allSnippets[i])) {
+                                            contextSnippets.push(allSnippets[i]);
+                                        }
+                                    }
+                                }
+
+                                // Format the combined snippets nicely
+                                let formattedContext = contextSnippets.map(snippet => {
+                                    return snippet
+                                        .replace(/\(line (\d+)\s*\):/g, '\n[Line $1] ')
+                                        .replace(/^\.\.\./, '')
+                                        .replace(/\.\.\.$/, '')
+                                        .trim();
+                                }).join('\n\n... ... ...\n\n');
+
+                                // Update the expanded content with Railway data
+                                expandedContent = `
+                                    <div style="background: #f8f9fa; padding: 15px; border-radius: 5px;">
+                                        <div style="color: #28a745; font-size: 0.9em; margin-bottom: 10px;">
+                                            ✅ Extended Context from Railway API (${contextSnippets.length} segments)
+                                        </div>
+                                        <div style="font-family: monospace; line-height: 1.8; white-space: pre-wrap;">
+                                            ${highlightTerm(formattedContext, document.getElementById('searchInput').value)}
+                                        </div>
+                                        <div style="color: #666; font-size: 0.85em; margin-top: 10px;">
+                                            Total occurrences in this text: ${textResult.count || 'unknown'}
+                                        </div>
+                                    </div>
+                                `;
+                                snippetDiv.innerHTML = expandedContent;
+                                btn.textContent = 'Less Context';
+                                return;
+                            } else {
+                                console.log('No matching text found in Railway results');
+                            }
+                        } else {
+                            console.log('Railway API returned status:', response.status);
                         }
+                    } catch (railwayError) {
+                        console.log('Railway API error:', railwayError);
+                        // Continue to fallback
                     }
                     
-                    // If all else fails, show original
-                    snippetDiv.classList.add('expanded');
-                    snippetDiv.innerHTML = `
-                        <div style="font-family: monospace; line-height: 1.8; padding: 15px; background: #f8f9fa; border-radius: 5px;">
-                            ${highlightTerm(result.snippets[snippetIdx], document.getElementById('searchInput').value)}
+                    // Already shown basic expanded view above, just close it
+                    expandedContent += `
+                        <div style="color: #999; font-size: 0.85em; margin-top: 10px;">
+                            Note: Extended context unavailable. Showing original snippet.
                         </div>
-                    `;
+                    </div>`;
+
+                    snippetDiv.innerHTML = expandedContent;
                     btn.textContent = 'Less Context';
+                    console.log('Showing fallback expanded view');
                     
                 } catch (error) {
-                    console.log('Error fetching extended context:', error);
-                    snippetDiv.classList.add('expanded');
-                    snippetDiv.innerHTML = highlightTerm(result.snippets[snippetIdx], document.getElementById('searchInput').value);
+                    console.log('Error in toggleMoreContext:', error);
+
+                    // Show the basic expanded content we prepared above
+                    expandedContent += `
+                        <div style="color: #ff6b6b; font-size: 0.85em; margin-top: 10px;">
+                            Error: ${error.message}
+                        </div>
+                    </div>`;
+
+                    snippetDiv.innerHTML = expandedContent;
                     btn.textContent = 'Less Context';
                 }
             }
