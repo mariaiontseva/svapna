@@ -1074,7 +1074,16 @@
                     if (lineMatch) {
                         lineNumber = parseInt(lineMatch[1]);
                     }
-                    
+
+                    console.log('=== MORE CONTEXT DEBUG ===');
+                    console.log('Result:', {
+                        filename: result.filename,
+                        display_name: result.display_name,
+                        snippetIdx: snippetIdx,
+                        lineNumber: lineNumber
+                    });
+                    console.log('Snippet text:', snippetText.substring(0, 100));
+
                     // FIRST TRY LOCAL API - it has the full database with correct context!
                     console.log('Trying local API for extended context...');
                     try {
@@ -1123,8 +1132,17 @@
                     console.log('Checking fullTextDatabase:', fullTextDatabase ? fullTextDatabase.length + ' texts loaded' : 'Not loaded');
                     if (fullTextDatabase && fullTextDatabase.length > 0) {
                         console.log('Looking for filename:', result.filename);
-                        const fullText = fullTextDatabase.find(t => t.filename === result.filename);
-                        console.log('Found text:', fullText ? 'Yes' : 'No');
+                        let fullText = fullTextDatabase.find(t => t.filename === result.filename);
+                        console.log('Found text in fullTextDatabase by filename:', fullText ? 'Yes' : 'No');
+
+                        if (!fullText) {
+                            // Try matching by display_name instead
+                            fullText = fullTextDatabase.find(t =>
+                                t.display_name === result.display_name ||
+                                t.display_name === result.text
+                            );
+                            console.log('Tried matching by display_name:', fullText ? 'Found!' : 'Not found');
+                        }
 
                         if (fullText && fullText.content) {
                             console.log('Content length:', fullText.content.length);
@@ -1175,47 +1193,90 @@
                             const data = await response.json();
                             console.log('Railway API response received:', data.results ? data.results.length + ' results' : 'no results');
 
+                            console.log('Looking for text matching:', {
+                                display_name: result.display_name,
+                                text: result.text,
+                                filename: result.filename
+                            });
+
                             const textResult = data.results ? data.results.find(r =>
                                 r.display_name === result.display_name ||
                                 r.text === result.display_name ||
                                 r.filename === result.filename
                             ) : null;
 
-                            if (textResult && textResult.snippets) {
-                                console.log('Found text in Railway results with', textResult.snippets.length, 'snippets');
+                            console.log('Found text in Railway results:', textResult ? 'Yes' : 'No');
 
-                                // Get ALL snippets for more context, not just the one
+                            if (textResult && textResult.snippets) {
+                                console.log('Railway text has', textResult.snippets.length, 'snippets');
+
+                                // Get ALL snippets from Railway
                                 let allSnippets = textResult.snippets;
 
-                                // Find the current snippet and nearby ones for context
+                                // Don't use snippetIdx - it doesn't correspond!
+                                // Instead, find the snippet that matches our line number or content
+                                let matchedSnippetIdx = -1;
+
+                                if (lineNumber !== null) {
+                                    // Try to find snippet with matching line number
+                                    console.log('Searching for snippet with line', lineNumber);
+                                    matchedSnippetIdx = allSnippets.findIndex(s => {
+                                        const match = s.match(/\(line (\d+)\s*\)/);
+                                        if (match) {
+                                            const snippetLine = parseInt(match[1]);
+                                            // Match if within 5 lines (since snippets might start/end at different points)
+                                            return Math.abs(snippetLine - lineNumber) <= 5;
+                                        }
+                                        return false;
+                                    });
+                                    console.log('Found snippet at index:', matchedSnippetIdx);
+                                }
+
+                                if (matchedSnippetIdx === -1 && originalSnippet) {
+                                    // Fallback: try to match by content
+                                    console.log('Trying to match by content');
+                                    const cleanOriginal = originalSnippet
+                                        .replace(/^\.\.\.+\s*/g, '')
+                                        .replace(/\s*\.\.\.+$/g, '')
+                                        .replace(/\(line \d+\)\s*:?\s*/g, '')
+                                        .replace(/\s+/g, ' ')
+                                        .trim()
+                                        .substring(0, 50); // First 50 chars
+
+                                    matchedSnippetIdx = allSnippets.findIndex(s => {
+                                        const cleanSnippet = s
+                                            .replace(/^\.\.\.+\s*/g, '')
+                                            .replace(/\s*\.\.\.+$/g, '')
+                                            .replace(/\(line \d+\)\s*:?\s*/g, '')
+                                            .replace(/\s+/g, ' ')
+                                            .trim();
+                                        return cleanSnippet.includes(cleanOriginal) || cleanOriginal.includes(cleanSnippet.substring(0, 50));
+                                    });
+                                    console.log('Matched by content at index:', matchedSnippetIdx);
+                                }
+
+                                if (matchedSnippetIdx === -1) {
+                                    console.warn('Could not match snippet, using first one as fallback');
+                                    matchedSnippetIdx = 0;
+                                }
+
+                                // Build context snippets around the matched one
                                 let contextSnippets = [];
 
-                                // Include snippet before current one if it exists
-                                if (snippetIdx > 0 && allSnippets[snippetIdx - 1]) {
-                                    contextSnippets.push(allSnippets[snippetIdx - 1]);
+                                // Include snippet before if it exists
+                                if (matchedSnippetIdx > 0) {
+                                    contextSnippets.push(allSnippets[matchedSnippetIdx - 1]);
                                 }
 
-                                // Include current snippet
-                                if (allSnippets[snippetIdx]) {
-                                    contextSnippets.push(allSnippets[snippetIdx]);
-                                } else if (allSnippets[0]) {
-                                    // Fallback to first snippet if index doesn't match
-                                    contextSnippets.push(allSnippets[0]);
+                                // Include matched snippet
+                                contextSnippets.push(allSnippets[matchedSnippetIdx]);
+
+                                // Include snippet after matched one if it exists
+                                if (matchedSnippetIdx < allSnippets.length - 1) {
+                                    contextSnippets.push(allSnippets[matchedSnippetIdx + 1]);
                                 }
 
-                                // Include snippet after current one if it exists
-                                if (snippetIdx < allSnippets.length - 1 && allSnippets[snippetIdx + 1]) {
-                                    contextSnippets.push(allSnippets[snippetIdx + 1]);
-                                }
-
-                                // If we still don't have much context, add more snippets
-                                if (contextSnippets.length < 3) {
-                                    for (let i = 0; i < Math.min(3, allSnippets.length); i++) {
-                                        if (!contextSnippets.includes(allSnippets[i])) {
-                                            contextSnippets.push(allSnippets[i]);
-                                        }
-                                    }
-                                }
+                                console.log('Using', contextSnippets.length, 'snippets for context');
 
                                 // Format the combined snippets nicely
                                 let formattedContext = contextSnippets.map(snippet => {
