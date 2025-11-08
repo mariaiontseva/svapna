@@ -1324,19 +1324,31 @@
         }
         
         function populateTextFilter(results) {
-            // Get unique text names
-            const textNames = [...new Set(results.map(r => r.display_name || r.text || 'Unknown'))];
-            textNames.sort();
-            
+            // Get unique text names and their occurrence counts
+            const textMap = new Map();
+            results.forEach(r => {
+                const name = r.display_name || r.text || 'Unknown';
+                if (!textMap.has(name)) {
+                    textMap.set(name, {
+                        count: r.count || 0,
+                        result: r
+                    });
+                }
+            });
+
+            // Sort by text name
+            const sortedNames = Array.from(textMap.keys()).sort();
+
             // Clear and repopulate dropdown
             const dropdown = document.getElementById('textFilter');
-            dropdown.innerHTML = '<option value="">All Texts (' + results.length + ')</option>';
-            
-            textNames.forEach(name => {
-                const count = results.filter(r => (r.display_name || r.text || 'Unknown') === name).length;
+            const uniqueTexts = textMap.size;
+            dropdown.innerHTML = `<option value="">All Texts (${uniqueTexts})</option>`;
+
+            sortedNames.forEach(name => {
+                const info = textMap.get(name);
                 const option = document.createElement('option');
                 option.value = name;
-                option.textContent = `${name} (${count})`;
+                option.textContent = `${name}${info.count > 0 ? ' (' + info.count + ' matches)' : ''}`;
                 dropdown.appendChild(option);
             });
         }
