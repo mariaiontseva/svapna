@@ -1131,7 +1131,7 @@
                             const extendedContext = extractExtendedContext(
                                 fullText.content,
                                 document.getElementById('searchInput').value,
-                                snippetIdx
+                                originalSnippet  // Pass the actual snippet text to match
                             );
 
                             if (extendedContext) {
@@ -1279,33 +1279,102 @@
             }
         }
         
-        function extractExtendedContext(fullContent, searchTerm, occurrenceIndex) {
-            const lines = fullContent.split('\n');
-            const termLower = searchTerm.toLowerCase();
-            let foundCount = 0;
-            
-            // Find the nth occurrence
-            for (let i = 0; i < lines.length; i++) {
-                if (lines[i].toLowerCase().includes(termLower)) {
-                    if (foundCount === occurrenceIndex) {
-                        // Found the target occurrence, extract 10 lines around it
+        function extractExtendedContext(fullContent, searchTerm, snippetText) {
+            // Clean the snippet text to match against full content
+            let cleanSnippet = snippetText
+                .replace(/^\.\.\.+\s*/g, '')  // Remove leading ellipsis
+                .replace(/\s*\.\.\.+$/g, '')  // Remove trailing ellipsis
+                .replace(/\(line \d+\)\s*:?\s*/g, '')  // Remove line numbers
+                .replace(/\s+/g, ' ')  // Normalize whitespace
+                .trim();
+
+            // If the cleaned snippet is too short, use a minimum length
+            if (cleanSnippet.length < 20) {
+                console.log('Snippet too short after cleaning:', cleanSnippet);
+                return null;
+            }
+
+            // Take a central portion of the snippet for matching (avoid edges that might be truncated)
+            const snippetLength = cleanSnippet.length;
+            const matchStart = Math.floor(snippetLength * 0.2);  // Skip first 20%
+            const matchEnd = Math.ceil(snippetLength * 0.8);     // Skip last 20%
+            const matchText = cleanSnippet.substring(matchStart, matchEnd).trim();
+
+            if (matchText.length < 15) {
+                console.log('Match text too short:', matchText);
+                return null;
+            }
+
+            console.log('Looking for match text in full content:', matchText.substring(0, 50) + '...');
+
+            // Normalize the full content for matching
+            const normalizedContent = fullContent.replace(/\s+/g, ' ');
+            const normalizedMatch = matchText.replace(/\s+/g, ' ');
+
+            // Find the position in normalized content
+            const matchPos = normalizedContent.toLowerCase().indexOf(normalizedMatch.toLowerCase());
+
+            if (matchPos === -1) {
+                console.log('Could not find match text in full content');
+                // Try a more aggressive match with just the search term context
+                const lines = fullContent.split('\n');
+                const termLower = searchTerm.toLowerCase();
+
+                // Find line containing a substantial part of the snippet
+                for (let i = 0; i < lines.length; i++) {
+                    const lineLower = lines[i].toLowerCase().replace(/\s+/g, ' ');
+                    // Check if this line contains a good chunk of our snippet
+                    if (lineLower.includes(normalizedMatch.toLowerCase().substring(0, 30))) {
                         const start = Math.max(0, i - 5);
                         const end = Math.min(lines.length, i + 6);
                         const contextLines = lines.slice(start, end);
-                        
-                        // Add line markers if truncated
+
                         let result = '';
                         if (start > 0) result += '... [Previous lines omitted] ...\n\n';
                         result += contextLines.join('\n');
                         if (end < lines.length) result += '\n\n... [Following lines omitted] ...';
-                        
+
                         return result;
                     }
-                    foundCount++;
                 }
+                return null;
             }
-            
-            return null;
+
+            console.log('Found match at position:', matchPos);
+
+            // Now we need to convert that position back to line numbers
+            const lines = fullContent.split('\n');
+            let charCount = 0;
+            let targetLine = -1;
+
+            for (let i = 0; i < lines.length; i++) {
+                const lineLength = lines[i].length + 1; // +1 for newline
+                if (charCount + lineLength > matchPos) {
+                    targetLine = i;
+                    break;
+                }
+                charCount += lineLength;
+            }
+
+            if (targetLine === -1) {
+                console.log('Could not determine target line');
+                return null;
+            }
+
+            console.log('Match found at line:', targetLine);
+
+            // Extract 5 lines before and 5 lines after
+            const start = Math.max(0, targetLine - 5);
+            const end = Math.min(lines.length, targetLine + 6);
+            const contextLines = lines.slice(start, end);
+
+            // Build result with markers
+            let result = '';
+            if (start > 0) result += '... [Previous lines omitted] ...\n\n';
+            result += contextLines.join('\n');
+            if (end < lines.length) result += '\n\n... [Following lines omitted] ...';
+
+            return result;
         }
         
         function showExpandedWithMessage(snippetDiv, originalSnippet, btn) {
