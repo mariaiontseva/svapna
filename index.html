@@ -1224,7 +1224,7 @@
                     }
                     
                     // Try Railway API for extended context - use dedicated endpoint
-                    console.log('Trying Railway API extended_context endpoint...');
+                    console.log('🔍 STEP 3: Trying Railway API extended_context endpoint...');
                     try {
                         const extContextResponse = await fetch('https://web-production-7d2a2.up.railway.app/extended_context', {
                             method: 'POST',
@@ -1240,10 +1240,13 @@
                             })
                         });
 
+                        console.log('Railway extended_context response status:', extContextResponse.status);
+
                         if (extContextResponse.ok) {
                             const extData = await extContextResponse.json();
+                            console.log('Railway extended_context response:', extData);
                             if (extData.extended_context) {
-                                console.log('Got extended context from Railway!');
+                                console.log('✅ SUCCESS: Got extended context from Railway!');
                                 expandedContent = `
                                     <div style="background: #f8f9fa; padding: 15px; border-radius: 5px;">
                                         <div style="color: #28a745; font-size: 0.9em; margin-bottom: 10px;">
@@ -1256,16 +1259,54 @@
                                 `;
                                 snippetDiv.innerHTML = expandedContent;
                                 btn.textContent = 'Less Context';
+                                console.log('RETURNING from extended_context success');
                                 return;
+                            } else {
+                                console.log('⚠️ Railway response OK but no extended_context field');
                             }
                         } else {
-                            console.log('Railway extended_context returned:', extContextResponse.status);
+                            console.log('❌ Railway extended_context returned error status:', extContextResponse.status);
                         }
                     } catch (extError) {
-                        console.log('Railway extended_context error:', extError);
+                        console.log('❌ Railway extended_context error:', extError);
                     }
 
-                    // Fallback: Try Railway API search for snippets
+                    console.log('⚠️ Railway extended_context failed, continuing to next fallback...');
+
+                    // DISABLE Railway search fallback - it always matches the wrong text!
+                    console.log('❌ SKIPPING Railway API search fallback (always returns wrong text)');
+                    console.log('⚠️ Showing error message instead of wrong content');
+
+                    // Show error message
+                    expandedContent = `
+                        <div style="background: #fff3cd; padding: 15px; border-radius: 5px; border-left: 4px solid #ffc107;">
+                            <div style="color: #856404; font-size: 0.9em; margin-bottom: 10px;">
+                                ⚠️ Extended Context Not Available
+                            </div>
+                            <div style="color: #856404; font-size: 0.85em; line-height: 1.6;">
+                                <strong>Text:</strong> ${result.display_name}<br>
+                                <strong>Line:</strong> ${lineNumber || 'unknown'}<br>
+                                <br>
+                                <strong>Why it's not working:</strong><br>
+                                • Railway API has CORS issues (blocked by browser)<br>
+                                • Full text not found in local database<br>
+                                • Filename is undefined, cannot match reliably<br>
+                                <br>
+                                <strong>What you can do:</strong><br>
+                                1. Use the <strong>"📄 View Full Text"</strong> button above to see the complete text<br>
+                                2. Navigate to line ${lineNumber || '(unknown)'} manually<br>
+                                <br>
+                                <em>Note: We're not showing content from a different text to avoid confusion.</em>
+                            </div>
+                        </div>
+                    `;
+
+                    snippetDiv.innerHTML = expandedContent;
+                    btn.textContent = 'Close';
+                    console.log('✅ Showing error message instead of wrong content');
+                    return; // STOP HERE
+
+                    // Fallback: Try Railway API search for snippets (DISABLED)
                     console.log('Falling back to Railway API search...');
                     try {
                         const response = await fetch('https://web-production-7d2a2.up.railway.app/search', {
