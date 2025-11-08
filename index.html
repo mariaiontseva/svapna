@@ -831,6 +831,17 @@
                     const data = await response.json();
                     results = data.results || [];
                     totalMatches = data.total_matches || 0;
+
+                    // Debug: log what fields Railway results actually have
+                    if (results.length > 0) {
+                        console.log('Railway search result fields:', Object.keys(results[0]));
+                        console.log('First result sample:', {
+                            filename: results[0].filename,
+                            display_name: results[0].display_name,
+                            text: results[0].text,
+                            author: results[0].author
+                        });
+                    }
                 } else {
                     throw new Error('Railway API unavailable');
                 }
@@ -1165,7 +1176,14 @@
                                 t.display_name === result.text
                             );
                             if (fullText) {
-                                console.log('Matched text by display_name:', fullText.display_name, '(' + fullText.content.split('\n').length + ' lines)');
+                                const numLines = fullText.content.split('\n').length;
+                                console.log('Matched text by display_name:', fullText.display_name, '(' + numLines + ' lines)');
+
+                                // IMPORTANT: Check if this text actually has enough lines!
+                                if (lineNumber && lineNumber > numLines) {
+                                    console.warn(`WARNING: Line number ${lineNumber} is out of range for this text (only ${numLines} lines). This is the WRONG text!`);
+                                    fullText = null; // Reject this match
+                                }
                             } else {
                                 console.log('No match by display_name');
                             }
@@ -1198,8 +1216,10 @@
                                 btn.textContent = 'Less Context';
                                 return;
                             } else {
-                                console.log('Could not extract extended context');
+                                console.log('Could not extract extended context from local database');
                             }
+                        } else {
+                            console.log('No valid full text found in local database');
                         }
                     }
                     
@@ -1414,16 +1434,29 @@
                         // Continue to fallback
                     }
                     
-                    // Already shown basic expanded view above, just close it
-                    expandedContent += `
-                        <div style="color: #999; font-size: 0.85em; margin-top: 10px;">
-                            Note: Extended context unavailable. Showing original snippet.
+                    // Show error message instead of wrong content
+                    expandedContent = `
+                        <div style="background: #fff3cd; padding: 15px; border-radius: 5px; border-left: 4px solid #ffc107;">
+                            <div style="color: #856404; font-size: 0.9em; margin-bottom: 10px;">
+                                ⚠️ Extended Context Not Available
+                            </div>
+                            <div style="color: #856404; font-size: 0.85em; line-height: 1.6;">
+                                <strong>Text:</strong> ${result.display_name}<br>
+                                <strong>Line:</strong> ${lineNumber || 'unknown'}<br>
+                                <br>
+                                <strong>Reasons:</strong><br>
+                                • Full text not found in local database (${fullTextDatabase ? fullTextDatabase.length + ' texts loaded' : 'not loaded'})<br>
+                                • Filename: ${result.filename || 'undefined - cannot match by filename'}<br>
+                                • Railway API extended_context endpoint not responding<br>
+                                <br>
+                                <strong>Try:</strong> Use the "📄 View Full Text" button to see the complete text and navigate to line ${lineNumber}.
+                            </div>
                         </div>
-                    </div>`;
+                    `;
 
                     snippetDiv.innerHTML = expandedContent;
-                    btn.textContent = 'Less Context';
-                    console.log('Showing fallback expanded view');
+                    btn.textContent = 'Close';
+                    console.log('Showing error: Extended context unavailable');
                     
                 } catch (error) {
                     console.log('Error in toggleMoreContext:', error);
