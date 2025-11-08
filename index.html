@@ -1128,10 +1128,12 @@
 
                         if (fullText && fullText.content) {
                             console.log('Content length:', fullText.content.length);
+                            console.log('Using line number:', lineNumber);
                             const extendedContext = extractExtendedContext(
                                 fullText.content,
                                 document.getElementById('searchInput').value,
-                                originalSnippet  // Pass the actual snippet text to match
+                                originalSnippet,  // Pass the actual snippet text to match
+                                lineNumber  // Pass the line number if available
                             );
 
                             if (extendedContext) {
@@ -1140,7 +1142,7 @@
                                 expandedContent = `
                                     <div style="background: #f8f9fa; padding: 15px; border-radius: 5px;">
                                         <div style="color: #28a745; font-size: 0.9em; margin-bottom: 10px;">
-                                            ✅ Extended Context (from local database)
+                                            ✅ Extended Context (from local database${lineNumber ? ', line ' + lineNumber : ''})
                                         </div>
                                         <div style="font-family: monospace; line-height: 1.8; white-space: pre-wrap;">
                                             ${highlightTerm(extendedContext, document.getElementById('searchInput').value)}
@@ -1279,7 +1281,40 @@
             }
         }
         
-        function extractExtendedContext(fullContent, searchTerm, snippetText) {
+        function extractExtendedContext(fullContent, searchTerm, snippetText, lineNumber = null) {
+            const lines = fullContent.split('\n');
+
+            // If we have an explicit line number from the snippet, use it directly!
+            if (lineNumber !== null && lineNumber > 0) {
+                console.log('Using explicit line number:', lineNumber);
+                // Line numbers are 1-indexed in the display, but array is 0-indexed
+                const targetLine = lineNumber - 1;
+
+                if (targetLine >= 0 && targetLine < lines.length) {
+                    const start = Math.max(0, targetLine - 5);
+                    const end = Math.min(lines.length, targetLine + 6);
+                    const contextLines = lines.slice(start, end);
+
+                    let result = '';
+                    if (start > 0) result += `... [Lines 1-${start} omitted] ...\n\n`;
+
+                    // Add line numbers to each line for clarity
+                    result += contextLines.map((line, idx) => {
+                        const lineNum = start + idx + 1;
+                        return `[Line ${lineNum}] ${line}`;
+                    }).join('\n');
+
+                    if (end < lines.length) result += `\n\n... [Lines ${end + 1}-${lines.length} omitted] ...`;
+
+                    return result;
+                } else {
+                    console.log('Line number out of range:', lineNumber, 'Total lines:', lines.length);
+                }
+            }
+
+            // Fallback: try to match by snippet content
+            console.log('No valid line number, falling back to text matching');
+
             // Clean the snippet text to match against full content
             let cleanSnippet = snippetText
                 .replace(/^\.\.\.+\s*/g, '')  // Remove leading ellipsis
@@ -1307,74 +1342,36 @@
 
             console.log('Looking for match text in full content:', matchText.substring(0, 50) + '...');
 
-            // Normalize the full content for matching
-            const normalizedContent = fullContent.replace(/\s+/g, ' ');
-            const normalizedMatch = matchText.replace(/\s+/g, ' ');
+            // Try to find the snippet text in the full content
+            const termLower = searchTerm.toLowerCase();
+            const matchLower = matchText.toLowerCase().replace(/\s+/g, ' ');
 
-            // Find the position in normalized content
-            const matchPos = normalizedContent.toLowerCase().indexOf(normalizedMatch.toLowerCase());
-
-            if (matchPos === -1) {
-                console.log('Could not find match text in full content');
-                // Try a more aggressive match with just the search term context
-                const lines = fullContent.split('\n');
-                const termLower = searchTerm.toLowerCase();
-
-                // Find line containing a substantial part of the snippet
-                for (let i = 0; i < lines.length; i++) {
-                    const lineLower = lines[i].toLowerCase().replace(/\s+/g, ' ');
-                    // Check if this line contains a good chunk of our snippet
-                    if (lineLower.includes(normalizedMatch.toLowerCase().substring(0, 30))) {
-                        const start = Math.max(0, i - 5);
-                        const end = Math.min(lines.length, i + 6);
-                        const contextLines = lines.slice(start, end);
-
-                        let result = '';
-                        if (start > 0) result += '... [Previous lines omitted] ...\n\n';
-                        result += contextLines.join('\n');
-                        if (end < lines.length) result += '\n\n... [Following lines omitted] ...';
-
-                        return result;
-                    }
-                }
-                return null;
-            }
-
-            console.log('Found match at position:', matchPos);
-
-            // Now we need to convert that position back to line numbers
-            const lines = fullContent.split('\n');
-            let charCount = 0;
-            let targetLine = -1;
-
+            // Find line containing a substantial part of the snippet
             for (let i = 0; i < lines.length; i++) {
-                const lineLength = lines[i].length + 1; // +1 for newline
-                if (charCount + lineLength > matchPos) {
-                    targetLine = i;
-                    break;
+                const lineLower = lines[i].toLowerCase().replace(/\s+/g, ' ');
+                // Check if this line contains a good chunk of our snippet
+                if (lineLower.includes(matchLower.substring(0, Math.min(30, matchLower.length)))) {
+                    const start = Math.max(0, i - 5);
+                    const end = Math.min(lines.length, i + 6);
+                    const contextLines = lines.slice(start, end);
+
+                    let result = '';
+                    if (start > 0) result += `... [Lines 1-${start} omitted] ...\n\n`;
+
+                    // Add line numbers to each line for clarity
+                    result += contextLines.map((line, idx) => {
+                        const lineNum = start + idx + 1;
+                        return `[Line ${lineNum}] ${line}`;
+                    }).join('\n');
+
+                    if (end < lines.length) result += `\n\n... [Lines ${end + 1}-${lines.length} omitted] ...`;
+
+                    return result;
                 }
-                charCount += lineLength;
             }
 
-            if (targetLine === -1) {
-                console.log('Could not determine target line');
-                return null;
-            }
-
-            console.log('Match found at line:', targetLine);
-
-            // Extract 5 lines before and 5 lines after
-            const start = Math.max(0, targetLine - 5);
-            const end = Math.min(lines.length, targetLine + 6);
-            const contextLines = lines.slice(start, end);
-
-            // Build result with markers
-            let result = '';
-            if (start > 0) result += '... [Previous lines omitted] ...\n\n';
-            result += contextLines.join('\n');
-            if (end < lines.length) result += '\n\n... [Following lines omitted] ...';
-
-            return result;
+            console.log('Could not find matching text in content');
+            return null;
         }
         
         function showExpandedWithMessage(snippetDiv, originalSnippet, btn) {
