@@ -415,7 +415,24 @@
         .copy-snippet-btn:hover, .more-context-btn:hover {
             background: var(--primary-dark);
         }
-        
+
+        .view-full-text-btn {
+            padding: 8px 16px;
+            background: var(--success);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+
+        .view-full-text-btn:hover {
+            background: #059669;
+            box-shadow: var(--shadow-sm);
+        }
+
         .snippet.expanded {
             background: #f0f8ff;
             padding: 16px;
@@ -975,6 +992,11 @@
                                     <span>Period: ${result.period}</span>
                                     ${result.count > 0 ? `<span>Occurrences: ${result.count}</span>` : ''}
                                 </div>
+                                <div style="margin-top: 8px;">
+                                    <button class="view-full-text-btn" onclick="viewFullText('${result.filename}', '${result.display_name.replace(/'/g, "\\'")}')">
+                                        📄 View Full Text
+                                    </button>
+                                </div>
                             </div>
                             <div class="tradition-badge ${traditionClass}">${result.tradition}</div>
                         </div>
@@ -1199,11 +1221,26 @@
                                 filename: result.filename
                             });
 
-                            const textResult = data.results ? data.results.find(r =>
-                                r.display_name === result.display_name ||
-                                r.text === result.display_name ||
-                                r.filename === result.filename
-                            ) : null;
+                            console.log('Available Railway results:');
+                            if (data.results) {
+                                data.results.slice(0, 5).forEach((r, idx) => {
+                                    console.log(`  ${idx}: ${r.display_name || r.text || r.filename}`);
+                                });
+                            }
+
+                            const textResult = data.results ? data.results.find(r => {
+                                const match = r.display_name === result.display_name ||
+                                    r.text === result.display_name ||
+                                    r.filename === result.filename;
+                                if (match) {
+                                    console.log('Matched Railway result:', {
+                                        display_name: r.display_name,
+                                        text: r.text,
+                                        filename: r.filename
+                                    });
+                                }
+                                return match;
+                            }) : null;
 
                             console.log('Found text in Railway results:', textResult ? 'Yes' : 'No');
 
@@ -1212,6 +1249,17 @@
 
                                 // Get ALL snippets from Railway
                                 let allSnippets = textResult.snippets;
+
+                                // Log all Railway snippet line numbers for debugging
+                                console.log('Railway snippet line numbers:');
+                                allSnippets.forEach((s, idx) => {
+                                    const match = s.match(/\(line (\d+)\s*\)/);
+                                    if (match) {
+                                        console.log(`  Snippet ${idx}: line ${match[1]}`);
+                                    } else {
+                                        console.log(`  Snippet ${idx}: no line number, content: ${s.substring(0, 50)}...`);
+                                    }
+                                });
 
                                 // Don't use snippetIdx - it doesn't correspond!
                                 // Instead, find the snippet that matches our line number or content
@@ -1225,7 +1273,11 @@
                                         if (match) {
                                             const snippetLine = parseInt(match[1]);
                                             // Match if within 5 lines (since snippets might start/end at different points)
-                                            return Math.abs(snippetLine - lineNumber) <= 5;
+                                            const isMatch = Math.abs(snippetLine - lineNumber) <= 5;
+                                            if (isMatch) {
+                                                console.log(`  Found match! Railway line ${snippetLine} matches requested line ${lineNumber}`);
+                                            }
+                                            return isMatch;
                                         }
                                         return false;
                                     });
@@ -1538,7 +1590,134 @@
         function updateFavoritesBadge() {
             document.getElementById('favorites-badge').textContent = favorites.length;
         }
-        
+
+        async function viewFullText(filename, displayName) {
+            console.log('Opening full text for:', { filename, displayName });
+
+            // Try to get full text from Railway API
+            try {
+                const response = await fetch('https://web-production-7d2a2.up.railway.app/full_text', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        filename: filename,
+                        display_name: displayName
+                    })
+                });
+
+                if (response.ok) {
+                    const data = await response.json();
+                    if (data.full_text) {
+                        // Open in new tab with formatted content
+                        const newWindow = window.open('', '_blank');
+                        newWindow.document.write(`
+                            <!DOCTYPE html>
+                            <html>
+                            <head>
+                                <title>${displayName} - Full Text</title>
+                                <style>
+                                    body {
+                                        font-family: 'Noto Sans Devanagari', 'Inter', sans-serif;
+                                        max-width: 900px;
+                                        margin: 0 auto;
+                                        padding: 40px 20px;
+                                        line-height: 1.8;
+                                        background: #f8fafc;
+                                    }
+                                    h1 {
+                                        color: #1e40af;
+                                        border-bottom: 3px solid #1e40af;
+                                        padding-bottom: 10px;
+                                    }
+                                    .content {
+                                        background: white;
+                                        padding: 30px;
+                                        border-radius: 8px;
+                                        box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+                                    }
+                                    .line {
+                                        margin: 8px 0;
+                                        padding: 4px 0;
+                                    }
+                                    .line-number {
+                                        color: #64748b;
+                                        margin-right: 12px;
+                                        user-select: none;
+                                        font-size: 0.9em;
+                                    }
+                                </style>
+                            </head>
+                            <body>
+                                <h1>${displayName}</h1>
+                                <div class="content">
+                                    <pre style="white-space: pre-wrap; font-family: inherit;">${data.full_text}</pre>
+                                </div>
+                            </body>
+                            </html>
+                        `);
+                        newWindow.document.close();
+                        return;
+                    }
+                }
+            } catch (error) {
+                console.error('Error fetching full text from Railway:', error);
+            }
+
+            // Fallback: try local fullTextDatabase
+            if (fullTextDatabase && fullTextDatabase.length > 0) {
+                let fullText = fullTextDatabase.find(t => t.filename === filename);
+                if (!fullText) {
+                    fullText = fullTextDatabase.find(t => t.display_name === displayName);
+                }
+
+                if (fullText && fullText.content) {
+                    const newWindow = window.open('', '_blank');
+                    newWindow.document.write(`
+                        <!DOCTYPE html>
+                        <html>
+                        <head>
+                            <title>${displayName} - Full Text</title>
+                            <style>
+                                body {
+                                    font-family: 'Noto Sans Devanagari', 'Inter', sans-serif;
+                                    max-width: 900px;
+                                    margin: 0 auto;
+                                    padding: 40px 20px;
+                                    line-height: 1.8;
+                                    background: #f8fafc;
+                                }
+                                h1 {
+                                    color: #1e40af;
+                                    border-bottom: 3px solid #1e40af;
+                                    padding-bottom: 10px;
+                                }
+                                .content {
+                                    background: white;
+                                    padding: 30px;
+                                    border-radius: 8px;
+                                    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+                                }
+                            </style>
+                        </head>
+                        <body>
+                            <h1>${displayName}</h1>
+                            <div class="content">
+                                <pre style="white-space: pre-wrap; font-family: inherit;">${fullText.content}</pre>
+                            </div>
+                        </body>
+                        </html>
+                    `);
+                    newWindow.document.close();
+                    return;
+                }
+            }
+
+            // If all else fails, show an error
+            alert(`Full text not available for "${displayName}". The text may need to be loaded from the server.`);
+        }
+
         function switchTab(tabName) {
             // Update active tab button
             document.querySelectorAll('.tab-button').forEach(btn => {
