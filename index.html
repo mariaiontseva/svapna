@@ -1561,19 +1561,59 @@
                 .replace(/\s+/g, ' ')  // Normalize whitespace
                 .trim();
 
-            console.log('Cleaned snippet:', cleanSnippet.substring(0, 100) + '...');
+            console.log('Cleaned snippet (first 150 chars):', cleanSnippet.substring(0, 150));
 
             if (cleanSnippet.length < 10) {
                 console.log('❌ Snippet too short after cleaning');
                 return null;
             }
 
-            // Try multiple matching strategies
-            console.log('Strategy 1: Looking for search term occurrence in full text...');
-
-            // Strategy 1: Find lines containing the search term, then check if snippet matches
             const termLower = searchTerm.toLowerCase();
             const cleanSnippetLower = cleanSnippet.toLowerCase();
+
+            // Strategy 1: Try direct substring matching (most aggressive)
+            console.log('Strategy 1: Direct substring search...');
+            const fullContentLower = fullContent.toLowerCase();
+
+            // Try to find at least 30 chars from the snippet directly
+            const substringToMatch = cleanSnippetLower.length > 30 ? cleanSnippetLower.substring(0, 30) : cleanSnippetLower;
+            const directMatchPos = fullContentLower.indexOf(substringToMatch);
+
+            if (directMatchPos !== -1) {
+                console.log('✅ Found direct substring match at position', directMatchPos);
+
+                // Find which line this is
+                let charCount = 0;
+                for (let i = 0; i < lines.length; i++) {
+                    if (charCount + lines[i].length >= directMatchPos) {
+                        console.log(`✅ Match is at line ${i + 1}`);
+
+                        const start = Math.max(0, i - 5);
+                        const end = Math.min(lines.length, i + 6);
+                        const contextLines = lines.slice(start, end);
+
+                        let result = '';
+                        if (start > 0) result += `... [Lines 1-${start} omitted] ...\n\n`;
+
+                        result += contextLines.map((line, idx) => {
+                            const lineNum = start + idx + 1;
+                            return `[Line ${lineNum}] ${line}`;
+                        }).join('\n');
+
+                        if (end < lines.length) result += `\n\n... [Lines ${end + 1}-${lines.length} omitted] ...`;
+
+                        return result;
+                    }
+                    charCount += lines[i].length + 1; // +1 for newline
+                }
+            }
+
+            // Strategy 2: Find all occurrences of search term and match nearby content
+            console.log('Strategy 2: Search term + context matching...');
+            console.log(`Looking for "${termLower}" occurrences...`);
+
+            let bestMatch = null;
+            let bestMatchScore = 0;
 
             for (let i = 0; i < lines.length; i++) {
                 const lineLower = lines[i].toLowerCase();
@@ -1581,7 +1621,7 @@
                 // Does this line contain the search term?
                 if (lineLower.includes(termLower)) {
                     // Check if snippet text appears around this line
-                    const contextWindow = 20; // Look 20 lines before and after
+                    const contextWindow = 15; // Look 15 lines before and after
                     const contextStart = Math.max(0, i - contextWindow);
                     const contextEnd = Math.min(lines.length, i + contextWindow + 1);
                     const contextText = lines.slice(contextStart, contextEnd).join(' ').toLowerCase().replace(/\s+/g, ' ');
@@ -1589,18 +1629,28 @@
                     // Try to find a significant portion of the snippet in this context
                     const snippetParts = cleanSnippetLower.split(' ').filter(w => w.length > 3); // Words longer than 3 chars
                     let matchCount = 0;
-                    for (const part of snippetParts.slice(0, 10)) { // Check first 10 significant words
+
+                    for (const part of snippetParts) {
                         if (contextText.includes(part)) {
                             matchCount++;
                         }
                     }
 
-                    const matchRatio = matchCount / Math.min(10, snippetParts.length);
-                    console.log(`  Line ${i + 1}: ${matchCount}/${Math.min(10, snippetParts.length)} words match (${Math.round(matchRatio * 100)}%)`);
+                    const matchRatio = matchCount / Math.max(1, snippetParts.length);
 
-                    // If at least 60% of words match, this is probably the right location
-                    if (matchRatio >= 0.6) {
-                        console.log(`✅ Found match at line ${i + 1} with ${Math.round(matchRatio * 100)}% confidence`);
+                    if (matchCount > 0) {
+                        console.log(`  Line ${i + 1}: ${matchCount}/${snippetParts.length} words match (${Math.round(matchRatio * 100)}%)`);
+                    }
+
+                    // Track best match even if below threshold
+                    if (matchRatio > bestMatchScore) {
+                        bestMatchScore = matchRatio;
+                        bestMatch = i;
+                    }
+
+                    // If at least 30% of words match, accept it
+                    if (matchRatio >= 0.3) {
+                        console.log(`✅ Found good match at line ${i + 1} with ${Math.round(matchRatio * 100)}% confidence`);
 
                         const start = Math.max(0, i - 5);
                         const end = Math.min(lines.length, i + 6);
@@ -1621,7 +1671,30 @@
                 }
             }
 
+            // If we found any match at all, use the best one
+            if (bestMatch !== null && bestMatchScore > 0.15) {
+                console.log(`⚠️ Using best available match at line ${bestMatch + 1} with ${Math.round(bestMatchScore * 100)}% confidence`);
+
+                const i = bestMatch;
+                const start = Math.max(0, i - 5);
+                const end = Math.min(lines.length, i + 6);
+                const contextLines = lines.slice(start, end);
+
+                let result = '';
+                if (start > 0) result += `... [Lines 1-${start} omitted] ...\n\n`;
+
+                result += contextLines.map((line, idx) => {
+                    const lineNum = start + idx + 1;
+                    return `[Line ${lineNum}] ${line}`;
+                }).join('\n');
+
+                if (end < lines.length) result += `\n\n... [Lines ${end + 1}-${lines.length} omitted] ...`;
+
+                return result;
+            }
+
             console.log('❌ Could not find matching text in content with any strategy');
+            console.log('Snippet parts searched for:', cleanSnippetLower.split(' ').filter(w => w.length > 3).slice(0, 5).join(', '));
             return null;
         }
         
