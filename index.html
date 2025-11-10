@@ -1161,9 +1161,17 @@
                         // Continue to other methods
                     }
                     
+                    // Check if we should even TRY local database (avoid wasting time on known mismatches)
+                    const shouldTryLocalDB = !lineNumber || lineNumber <= 2000; // Skip if line number is huge (likely mismatch)
+
+                    if (!shouldTryLocalDB) {
+                        console.log(`⚠️ Skipping local database: line ${lineNumber} is too high, likely a version mismatch`);
+                        console.log('Local database has older/different versions with fewer lines');
+                    }
+
                     // If local API fails, check if we have full text database in browser
-                    console.log('Checking fullTextDatabase:', fullTextDatabase ? fullTextDatabase.length + ' texts loaded' : 'Not loaded');
-                    if (fullTextDatabase && fullTextDatabase.length > 0) {
+                    if (shouldTryLocalDB && fullTextDatabase && fullTextDatabase.length > 0) {
+                        console.log('Checking fullTextDatabase:', fullTextDatabase.length, 'texts loaded');
                         console.log('Looking for filename:', result.filename);
                         console.log('Looking for display_name:', result.display_name);
                         let fullText = fullTextDatabase.find(t => t.filename === result.filename);
@@ -1302,27 +1310,36 @@
                     console.log('⚠️ Showing error message instead of wrong content');
 
                     // Show error message
+                    const isHighLineNumber = lineNumber && lineNumber > 2000;
                     expandedContent = `
-                        <div style="background: #fff3cd; padding: 15px; border-radius: 5px; border-left: 4px solid #dc3545;">
-                            <div style="color: #721c24; font-size: 0.9em; margin-bottom: 10px; font-weight: 600;">
-                                🚫 Refusing to Show Wrong Content
+                        <div style="background: ${isHighLineNumber ? '#e7f3ff' : '#fff3cd'}; padding: 15px; border-radius: 5px; border-left: 4px solid ${isHighLineNumber ? '#0066cc' : '#dc3545'};">
+                            <div style="color: ${isHighLineNumber ? '#004085' : '#721c24'}; font-size: 0.9em; margin-bottom: 10px; font-weight: 600;">
+                                ${isHighLineNumber ? 'ℹ️ Context Not Available (Version Mismatch)' : '🚫 Refusing to Show Wrong Content'}
                             </div>
-                            <div style="color: #721c24; font-size: 0.85em; line-height: 1.6;">
-                                <strong>Requested:</strong> ${result.display_name}, line ${lineNumber || 'unknown'}<br>
+                            <div style="color: ${isHighLineNumber ? '#004085' : '#721c24'}; font-size: 0.85em; line-height: 1.6;">
+                                <strong>Text:</strong> ${result.display_name}<br>
+                                <strong>Requested Line:</strong> ${lineNumber || 'unknown'}<br>
                                 <br>
-                                <strong>Problem:</strong><br>
-                                • Local database has a text named "${result.display_name}" but it's the WRONG version<br>
-                                • That text only has ~382 lines, but snippet says line ${lineNumber}<br>
-                                • Railway API blocked by CORS (can't access correct version)<br>
+                                <strong>Situation:</strong><br>
+                                • Railway database has the complete version of this text (${lineNumber}+ lines)<br>
+                                • Local browser database has an older/different version with fewer lines<br>
+                                • Railway API is blocked by CORS policy (browser security)<br>
                                 <br>
-                                <strong style="color: #dc3545;">⚠️ We REFUSE to show context from the wrong text - that would be misleading!</strong><br>
+                                ${isHighLineNumber ?
+                                    `<strong style="color: #0066cc;">💡 This text exists but needs the full version from Railway to show context.</strong>` :
+                                    `<strong style="color: #dc3545;">⚠️ We refuse to show context from a different version - that would be misleading!</strong>`
+                                }<br>
                                 <br>
-                                <strong>Solutions:</strong><br>
-                                1. The correct text with ${lineNumber}+ lines is not in the local database<br>
-                                2. Try the <strong>"📄 View Full Text"</strong> button (may also fail if wrong version)<br>
-                                3. Railway database has the correct version but CORS blocks browser access<br>
+                                <strong>What works:</strong><br>
+                                • Searching and viewing snippets ✅<br>
+                                • Texts with line numbers under ~2000 (older texts in local DB) ✅<br>
+                                • "View Full Text" for some texts ⚠️<br>
                                 <br>
-                                <em style="font-size: 0.9em;">This is a data version mismatch between Railway (correct) and local database (outdated/different).</em>
+                                <strong>What doesn't work:</strong><br>
+                                • "More Context" for large texts (line 2000+) ❌<br>
+                                • This requires Railway API with CORS enabled<br>
+                                <br>
+                                <em style="font-size: 0.85em;">Note: Many texts DO work with More Context - try texts with lower line numbers!</em>
                             </div>
                         </div>
                     `;
