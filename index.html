@@ -1100,12 +1100,40 @@
 
                 // Try to load more context asynchronously
                 try {
-                    // Extract line number from snippet if available
+                    // Extract line number from snippet - find the line that contains the search term
                     let lineNumber = null;
                     const snippetText = result.snippets[snippetIdx];
-                    const lineMatch = snippetText.match(/\(line (\d+)\s*\)/);
-                    if (lineMatch) {
-                        lineNumber = parseInt(lineMatch[1]);
+                    const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+
+                    // Find all line numbers and their associated text
+                    const linePattern = /\(line (\d+)\s*\):\s*([^\(]*?)(?=\(line \d+\)|$)/g;
+                    let matches = [];
+                    let match;
+
+                    while ((match = linePattern.exec(snippetText)) !== null) {
+                        matches.push({
+                            lineNum: parseInt(match[1]),
+                            text: match[2]
+                        });
+                    }
+
+                    // If we found line segments, find which one contains the search term
+                    if (matches.length > 0) {
+                        const matchingLine = matches.find(m => m.text.toLowerCase().includes(searchTerm));
+                        if (matchingLine) {
+                            lineNumber = matchingLine.lineNum;
+                            console.log(`✅ Found search term "${searchTerm}" in line ${lineNumber}`);
+                        } else {
+                            // Fallback: use first line if no exact match
+                            lineNumber = matches[0].lineNum;
+                            console.log(`⚠️ Search term not found in parsed lines, using first line ${lineNumber}`);
+                        }
+                    } else {
+                        // Fallback to old method if parsing failed
+                        const lineMatch = snippetText.match(/\(line (\d+)\s*\)/);
+                        if (lineMatch) {
+                            lineNumber = parseInt(lineMatch[1]);
+                        }
                     }
 
                     console.log('=== MORE CONTEXT DEBUG ===');
@@ -1113,7 +1141,8 @@
                         filename: result.filename,
                         display_name: result.display_name,
                         snippetIdx: snippetIdx,
-                        lineNumber: lineNumber
+                        lineNumber: lineNumber,
+                        searchTerm: searchTerm
                     });
                     console.log('Snippet text:', snippetText.substring(0, 100));
 
