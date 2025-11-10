@@ -1171,57 +1171,78 @@
 
                         if (!fullText) {
                             // Try matching by display_name instead
-                            fullText = fullTextDatabase.find(t =>
+                            const candidates = fullTextDatabase.filter(t =>
                                 t.display_name === result.display_name ||
                                 t.display_name === result.text
                             );
-                            if (fullText) {
-                                const numLines = fullText.content.split('\n').length;
-                                console.log('Matched text by display_name:', fullText.display_name, '(' + numLines + ' lines)');
 
-                                // Check if line number is in range
-                                if (lineNumber && lineNumber > numLines) {
-                                    console.warn(`⚠️ Line number ${lineNumber} > ${numLines} lines. Will try content-based matching instead.`);
-                                    // Don't reject - we'll try content matching
+                            console.log(`Found ${candidates.length} text(s) with display_name "${result.display_name}"`);
+
+                            // If we have a line number, ONLY accept texts that actually have that many lines
+                            if (lineNumber && candidates.length > 0) {
+                                for (const candidate of candidates) {
+                                    const numLines = candidate.content.split('\n').length;
+                                    console.log(`  Checking candidate: ${candidate.display_name} (${numLines} lines)`);
+
+                                    // STRICT: Line number must be within text bounds
+                                    if (lineNumber <= numLines) {
+                                        console.log(`  ✅ ACCEPTED: Line ${lineNumber} exists in this text`);
+                                        fullText = candidate;
+                                        break;
+                                    } else {
+                                        console.log(`  ❌ REJECTED: Line ${lineNumber} > ${numLines} lines (WRONG TEXT)`);
+                                    }
                                 }
-                            } else {
-                                console.log('No match by display_name');
+
+                                if (!fullText) {
+                                    console.error(`❌ NO VALID TEXT FOUND: Need text with ${lineNumber}+ lines, but all candidates too short`);
+                                }
+                            } else if (candidates.length > 0) {
+                                fullText = candidates[0];
+                                console.log('No line number to validate, using first match');
                             }
                         }
 
                         if (fullText && fullText.content) {
-                            console.log('Content length:', fullText.content.length);
-                            console.log('Using line number:', lineNumber);
-                            const extendedContext = extractExtendedContext(
-                                fullText.content,
-                                document.getElementById('searchInput').value,
-                                originalSnippet,  // Pass the actual snippet text to match
-                                lineNumber  // Pass the line number if available
-                            );
+                            const numLines = fullText.content.split('\n').length;
+                            console.log('Using text:', fullText.display_name, '(' + numLines + ' lines)');
+                            console.log('Requested line number:', lineNumber);
 
-                            if (extendedContext) {
-                                console.log('✅ Extended context extracted successfully from local database!');
-                                // Update the already shown expanded content with real data
-                                expandedContent = `
-                                    <div style="background: #f8f9fa; padding: 15px; border-radius: 5px;">
-                                        <div style="color: #28a745; font-size: 0.9em; margin-bottom: 10px;">
-                                            ✅ Extended Context from Local Database (${fullText.display_name})
-                                        </div>
-                                        <div style="font-family: monospace; line-height: 1.8; white-space: pre-wrap;">
-                                            ${highlightTerm(extendedContext, document.getElementById('searchInput').value)}
-                                        </div>
-                                    </div>
-                                `;
-                                snippetDiv.innerHTML = expandedContent;
-                                btn.textContent = 'Less Context';
-                                console.log('SUCCESS - returning with context');
-                                return;
+                            // FINAL VALIDATION: Refuse to proceed if line number is impossible
+                            if (lineNumber && lineNumber > numLines) {
+                                console.error(`❌ REFUSING TO SHOW WRONG CONTENT: Line ${lineNumber} does not exist in this ${numLines}-line text!`);
+                                fullText = null; // Force error message
                             } else {
-                                console.log('❌ Could not extract extended context from local database');
+                                const extendedContext = extractExtendedContext(
+                                    fullText.content,
+                                    document.getElementById('searchInput').value,
+                                    originalSnippet,
+                                    lineNumber
+                                );
+
+                                if (extendedContext) {
+                                    console.log('✅ Extended context extracted successfully from CORRECT text!');
+                                    expandedContent = `
+                                        <div style="background: #f8f9fa; padding: 15px; border-radius: 5px;">
+                                            <div style="color: #28a745; font-size: 0.9em; margin-bottom: 10px;">
+                                                ✅ Extended Context from Local Database (${fullText.display_name}, ${numLines} lines)
+                                            </div>
+                                            <div style="font-family: monospace; line-height: 1.8; white-space: pre-wrap;">
+                                                ${highlightTerm(extendedContext, document.getElementById('searchInput').value)}
+                                            </div>
+                                        </div>
+                                    `;
+                                    snippetDiv.innerHTML = expandedContent;
+                                    btn.textContent = 'Less Context';
+                                    console.log('SUCCESS - returning with context from CORRECT text');
+                                    return;
+                                } else {
+                                    console.log('❌ Could not extract extended context');
+                                }
                             }
-                        } else {
-                            console.log('❌ No valid full text found in local database');
                         }
+
+                        console.log('❌ No valid full text found in local database');
                     } else {
                         console.log('❌ fullTextDatabase not available or empty');
                     }
@@ -1282,24 +1303,26 @@
 
                     // Show error message
                     expandedContent = `
-                        <div style="background: #fff3cd; padding: 15px; border-radius: 5px; border-left: 4px solid #ffc107;">
-                            <div style="color: #856404; font-size: 0.9em; margin-bottom: 10px;">
-                                ⚠️ Extended Context Not Available
+                        <div style="background: #fff3cd; padding: 15px; border-radius: 5px; border-left: 4px solid #dc3545;">
+                            <div style="color: #721c24; font-size: 0.9em; margin-bottom: 10px; font-weight: 600;">
+                                🚫 Refusing to Show Wrong Content
                             </div>
-                            <div style="color: #856404; font-size: 0.85em; line-height: 1.6;">
-                                <strong>Text:</strong> ${result.display_name}<br>
-                                <strong>Line:</strong> ${lineNumber || 'unknown'}<br>
+                            <div style="color: #721c24; font-size: 0.85em; line-height: 1.6;">
+                                <strong>Requested:</strong> ${result.display_name}, line ${lineNumber || 'unknown'}<br>
                                 <br>
-                                <strong>Why it's not working:</strong><br>
-                                • Railway API has CORS issues (blocked by browser)<br>
-                                • Full text not found in local database<br>
-                                • Filename is undefined, cannot match reliably<br>
+                                <strong>Problem:</strong><br>
+                                • Local database has a text named "${result.display_name}" but it's the WRONG version<br>
+                                • That text only has ~382 lines, but snippet says line ${lineNumber}<br>
+                                • Railway API blocked by CORS (can't access correct version)<br>
                                 <br>
-                                <strong>What you can do:</strong><br>
-                                1. Use the <strong>"📄 View Full Text"</strong> button above to see the complete text<br>
-                                2. Navigate to line ${lineNumber || '(unknown)'} manually<br>
+                                <strong style="color: #dc3545;">⚠️ We REFUSE to show context from the wrong text - that would be misleading!</strong><br>
                                 <br>
-                                <em>Note: We're not showing content from a different text to avoid confusion.</em>
+                                <strong>Solutions:</strong><br>
+                                1. The correct text with ${lineNumber}+ lines is not in the local database<br>
+                                2. Try the <strong>"📄 View Full Text"</strong> button (may also fail if wrong version)<br>
+                                3. Railway database has the correct version but CORS blocks browser access<br>
+                                <br>
+                                <em style="font-size: 0.9em;">This is a data version mismatch between Railway (correct) and local database (outdated/different).</em>
                             </div>
                         </div>
                     `;
