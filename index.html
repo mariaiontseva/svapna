@@ -1161,16 +1161,8 @@
                         // Continue to other methods
                     }
                     
-                    // Check if we should even TRY local database (avoid wasting time on known mismatches)
-                    const shouldTryLocalDB = !lineNumber || lineNumber <= 2000; // Skip if line number is huge (likely mismatch)
-
-                    if (!shouldTryLocalDB) {
-                        console.log(`⚠️ Skipping local database: line ${lineNumber} is too high, likely a version mismatch`);
-                        console.log('Local database has older/different versions with fewer lines');
-                    }
-
-                    // If local API fails, check if we have full text database in browser
-                    if (shouldTryLocalDB && fullTextDatabase && fullTextDatabase.length > 0) {
+                    // Try local database first (for fast response on smaller texts)
+                    if (fullTextDatabase && fullTextDatabase.length > 0) {
                         console.log('Checking fullTextDatabase:', fullTextDatabase.length, 'texts loaded');
                         console.log('Looking for filename:', result.filename);
                         console.log('Looking for display_name:', result.display_name);
@@ -1310,36 +1302,24 @@
                     console.log('⚠️ Showing error message instead of wrong content');
 
                     // Show error message
-                    const isHighLineNumber = lineNumber && lineNumber > 2000;
                     expandedContent = `
-                        <div style="background: ${isHighLineNumber ? '#e7f3ff' : '#fff3cd'}; padding: 15px; border-radius: 5px; border-left: 4px solid ${isHighLineNumber ? '#0066cc' : '#dc3545'};">
-                            <div style="color: ${isHighLineNumber ? '#004085' : '#721c24'}; font-size: 0.9em; margin-bottom: 10px; font-weight: 600;">
-                                ${isHighLineNumber ? 'ℹ️ Context Not Available (Version Mismatch)' : '🚫 Refusing to Show Wrong Content'}
+                        <div style="background: #fff3cd; padding: 15px; border-radius: 5px; border-left: 4px solid #dc3545;">
+                            <div style="color: #721c24; font-size: 0.9em; margin-bottom: 10px; font-weight: 600;">
+                                ⚠️ Context Not Available
                             </div>
-                            <div style="color: ${isHighLineNumber ? '#004085' : '#721c24'}; font-size: 0.85em; line-height: 1.6;">
+                            <div style="color: #721c24; font-size: 0.85em; line-height: 1.6;">
                                 <strong>Text:</strong> ${result.display_name}<br>
                                 <strong>Requested Line:</strong> ${lineNumber || 'unknown'}<br>
                                 <br>
-                                <strong>Situation:</strong><br>
-                                • Railway database has the complete version of this text (${lineNumber}+ lines)<br>
-                                • Local browser database has an older/different version with fewer lines<br>
-                                • Railway API is blocked by CORS policy (browser security)<br>
+                                <strong>Issue:</strong><br>
+                                The Railway API is still deploying or has an issue.<br>
                                 <br>
-                                ${isHighLineNumber ?
-                                    `<strong style="color: #0066cc;">💡 This text exists but needs the full version from Railway to show context.</strong>` :
-                                    `<strong style="color: #dc3545;">⚠️ We refuse to show context from a different version - that would be misleading!</strong>`
-                                }<br>
+                                <strong>What to try:</strong><br>
+                                • Wait a minute and try again (Railway may be deploying)<br>
+                                • Refresh the page completely<br>
+                                • Check browser console (F12) for errors<br>
                                 <br>
-                                <strong>What works:</strong><br>
-                                • Searching and viewing snippets ✅<br>
-                                • Texts with line numbers under ~2000 (older texts in local DB) ✅<br>
-                                • "View Full Text" for some texts ⚠️<br>
-                                <br>
-                                <strong>What doesn't work:</strong><br>
-                                • "More Context" for large texts (line 2000+) ❌<br>
-                                • This requires Railway API with CORS enabled<br>
-                                <br>
-                                <em style="font-size: 0.85em;">Note: Many texts DO work with More Context - try texts with lower line numbers!</em>
+                                <em style="font-size: 0.85em;">The backend has been updated with new endpoints. If this message persists after 2-3 minutes, Railway deployment may have failed.</em>
                             </div>
                         </div>
                     `;
