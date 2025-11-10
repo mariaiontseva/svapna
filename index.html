@@ -1105,16 +1105,17 @@
                     const snippetText = result.snippets[snippetIdx];
                     const searchTerm = document.getElementById('searchInput').value.toLowerCase();
 
-                    // Find all line numbers and their associated text
-                    const linePattern = /\(line (\d+)\s*\):\s*([^\(]*?)(?=\(line \d+\)|$)/g;
+                    // Parse line numbers and their associated text by splitting
+                    const parts = snippetText.split(/(\(line \d+\s*\):)/);
                     let matches = [];
-                    let match;
 
-                    while ((match = linePattern.exec(snippetText)) !== null) {
-                        matches.push({
-                            lineNum: parseInt(match[1]),
-                            text: match[2]
-                        });
+                    for (let i = 0; i < parts.length; i++) {
+                        const lineMatch = parts[i].match(/\(line (\d+)\s*\):/);
+                        if (lineMatch && i + 1 < parts.length) {
+                            const lineNum = parseInt(lineMatch[1]);
+                            const text = parts[i + 1].trim();
+                            matches.push({ lineNum, text });
+                        }
                     }
 
                     // If we found line segments, find which one contains the search term
@@ -1124,9 +1125,10 @@
                             lineNumber = matchingLine.lineNum;
                             console.log(`✅ Found search term "${searchTerm}" in line ${lineNumber}`);
                         } else {
-                            // Fallback: use first line if no exact match
-                            lineNumber = matches[0].lineNum;
-                            console.log(`⚠️ Search term not found in parsed lines, using first line ${lineNumber}`);
+                            // Fallback: use first non-empty line if no exact match
+                            const firstNonEmpty = matches.find(m => m.text.length > 0);
+                            lineNumber = firstNonEmpty ? firstNonEmpty.lineNum : matches[0].lineNum;
+                            console.log(`⚠️ Search term not found in parsed lines, using line ${lineNumber}`);
                         }
                     } else {
                         // Fallback to old method if parsing failed
