@@ -1570,13 +1570,58 @@
 
             const termLower = searchTerm.toLowerCase();
             const cleanSnippetLower = cleanSnippet.toLowerCase();
-
-            // Strategy 1: Try direct substring matching (most aggressive)
-            console.log('Strategy 1: Direct substring search...');
             const fullContentLower = fullContent.toLowerCase();
 
-            // Try to find at least 30 chars from the snippet directly
-            const substringToMatch = cleanSnippetLower.length > 30 ? cleanSnippetLower.substring(0, 30) : cleanSnippetLower;
+            // Strategy 1: Find unique long words in snippet (BEST strategy)
+            console.log('Strategy 1: Matching unique long words from snippet...');
+
+            // Extract very long words (15+ chars) - these are almost certainly unique
+            const allWords = cleanSnippetLower.split(/\s+/);
+            const uniqueWords = allWords.filter(w => w.length >= 15);
+
+            if (uniqueWords.length > 0) {
+                console.log(`Found ${uniqueWords.length} unique long words (15+ chars):`, uniqueWords.slice(0, 3).join(', '));
+
+                // Try to find each unique word
+                for (const uniqueWord of uniqueWords) {
+                    const pos = fullContentLower.indexOf(uniqueWord);
+                    if (pos !== -1) {
+                        console.log(`✅ Found unique word "${uniqueWord.substring(0, 30)}..." at position ${pos}`);
+
+                        // Find which line this is
+                        let charCount = 0;
+                        for (let i = 0; i < lines.length; i++) {
+                            if (charCount + lines[i].length >= pos) {
+                                console.log(`✅ Match is at line ${i + 1}`);
+
+                                const start = Math.max(0, i - 5);
+                                const end = Math.min(lines.length, i + 6);
+                                const contextLines = lines.slice(start, end);
+
+                                let result = '';
+                                if (start > 0) result += `... [Lines 1-${start} omitted] ...\n\n`;
+
+                                result += contextLines.map((line, idx) => {
+                                    const lineNum = start + idx + 1;
+                                    return `[Line ${lineNum}] ${line}`;
+                                }).join('\n');
+
+                                if (end < lines.length) result += `\n\n... [Lines ${end + 1}-${lines.length} omitted] ...`;
+
+                                return result;
+                            }
+                            charCount += lines[i].length + 1; // +1 for newline
+                        }
+                    }
+                }
+                console.log('⚠️ None of the unique long words found in text');
+            }
+
+            // Strategy 2: Try direct substring matching with longer substring (50+ chars)
+            console.log('Strategy 2: Direct substring search (50+ chars)...');
+
+            // Try to find at least 50 chars from the snippet directly
+            const substringToMatch = cleanSnippetLower.length > 50 ? cleanSnippetLower.substring(0, 50) : cleanSnippetLower;
             const directMatchPos = fullContentLower.indexOf(substringToMatch);
 
             if (directMatchPos !== -1) {
@@ -1608,8 +1653,8 @@
                 }
             }
 
-            // Strategy 2: Find all occurrences of search term and match nearby content
-            console.log('Strategy 2: Search term + context matching...');
+            // Strategy 3: Find all occurrences of search term and match nearby content
+            console.log('Strategy 3: Search term + context matching...');
             console.log(`Looking for "${termLower}" occurrences...`);
 
             let bestMatch = null;
