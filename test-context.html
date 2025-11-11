@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test More Context</title>
+</head>
+<body>
+    <h1>Debug More Context Button</h1>
+    <div id="test-snippet">Original snippet text here</div>
+    <button onclick="testToggle(event)">Test More Context</button>
+
+    <script>
+        function testToggle(event) {
+            console.log('Button clicked!');
+            console.log('Event:', event);
+            console.log('Target:', event.target);
+            alert('Button works! Check console for details');
+        }
+    </script>
+</body>
+</html>

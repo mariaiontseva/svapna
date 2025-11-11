@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test More Context Button</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .result-card {
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+        .snippet {
+            padding: 10px;
+            background: #f5f5f5;
+            margin: 10px 0;
+            border-left: 3px solid #007bff;
+        }
+        .snippet.expanded {
+            background: #e8f4f8;
+            padding: 15px;
+        }
+        button {
+            padding: 8px 15px;
+            margin: 5px;
+            cursor: pointer;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 3px;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Test More Context Functionality</h1>
+
+    <div class="result-card">
+        <h3>Test Result</h3>
+        <div class="snippet" id="snippet-text-0-0">
+            This is the original snippet text. Line 1 of the content.
+        </div>
+        <div>
+            <button onclick="testToggleContext(0, 0, this)">More Context</button>
+        </div>
+    </div>
+
+    <div class="result-card">
+        <h3>Another Test Result</h3>
+        <div class="snippet" id="snippet-text-1-0">
+            Another snippet here. Line 42 of some other content.
+        </div>
+        <div>
+            <button onclick="testToggleContext(1, 0, this)">More Context</button>
+        </div>
+    </div>
+
+    <script>
+        // Simulate the currentResults array
+        const currentResults = [
+            {
+                display_name: "Test Text 1",
+                filename: "test1.txt",
+                snippets: ["This is the original snippet text. Line 1 of the content."]
+            },
+            {
+                display_name: "Test Text 2",
+                filename: "test2.txt",
+                snippets: ["Another snippet here. Line 42 of some other content."]
+            }
+        ];
+
+        function testToggleContext(resultIdx, snippetIdx, btn) {
+            console.log('Button clicked!', { resultIdx, snippetIdx, btn });
+
+            const snippetDiv = document.getElementById(`snippet-text-${resultIdx}-${snippetIdx}`);
+
+            if (!snippetDiv) {
+                alert('Error: Snippet div not found!');
+                return;
+            }
+
+            const result = currentResults[resultIdx];
+
+            if (!result) {
+                alert('Error: Result not found!');
+                return;
+            }
+
+            if (snippetDiv.classList.contains('expanded')) {
+                // Collapse
+                snippetDiv.classList.remove('expanded');
+                snippetDiv.innerHTML = result.snippets[snippetIdx];
+                btn.textContent = 'More Context';
+            } else {
+                // Expand
+                snippetDiv.classList.add('expanded');
+                snippetDiv.innerHTML = `
+                    <div style="color: #666; margin-bottom: 10px;">📖 Extended Context</div>
+                    <div>... [Previous context would be here] ...</div>
+                    <div style="font-weight: bold; margin: 10px 0; padding: 10px; background: yellow;">
+                        ${result.snippets[snippetIdx]}
+                    </div>
+                    <div>... [Following context would be here] ...</div>
+                `;
+                btn.textContent = 'Less Context';
+            }
+        }
+    </script>
+</body>
+</html>
