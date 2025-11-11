@@ -1148,8 +1148,8 @@
                     });
                     console.log('Snippet text:', snippetText.substring(0, 100));
 
-                    // FIRST TRY RAILWAY API - it has the authoritative, up-to-date database
-                    console.log('🔍 STEP 1: Trying Railway API extended_context endpoint...');
+                    // ONLY USE RAILWAY API - it has the authoritative, up-to-date database
+                    console.log('🔍 Using Railway API extended_context endpoint...');
                     try {
                         const extContextResponse = await fetch('https://web-production-7d2a2.up.railway.app/extended_context', {
                             method: 'POST',
@@ -1196,139 +1196,8 @@
                         console.log('❌ Railway extended_context error:', extError);
                     }
 
-                    // FALLBACK: Try local API
-                    console.log('🔍 STEP 2: Trying local API for extended context...');
-                    try {
-                        const localResponse = await fetch('http://localhost:5001/extended_context', {
-                            method: 'POST',
-                            headers: {
-                                'Content-Type': 'application/json',
-                            },
-                            body: JSON.stringify({
-                                filename: result.filename || null,
-                                display_name: result.display_name || result.text || null,
-                                search_term: document.getElementById('searchInput').value,
-                                line_number: lineNumber,
-                                context_lines: 4  // 4 lines before and after
-                            })
-                        });
-
-                        if (localResponse.ok) {
-                            const data = await localResponse.json();
-                            if (data.extended_context) {
-                                console.log('Got extended context from local database!');
-                                // We got real extended context from local database!
-                                expandedContent = `
-                                    <div style="background: #f8f9fa; padding: 15px; border-radius: 5px;">
-                                        <div style="color: #28a745; font-size: 0.9em; margin-bottom: 10px;">
-                                            ✅ Extended Context from Local Database (4 lines before/after)
-                                        </div>
-                                        <div style="font-family: monospace; line-height: 1.8; white-space: pre-wrap;">
-                                            ${highlightTerm(data.extended_context, document.getElementById('searchInput').value)}
-                                        </div>
-                                    </div>
-                                `;
-                                snippetDiv.innerHTML = expandedContent;
-                                btn.textContent = 'Less Context';
-                                return;
-                            }
-                        } else {
-                            console.log('Local API returned status:', localResponse.status);
-                        }
-                    } catch (localError) {
-                        console.log('Local API error:', localError);
-                        // Continue to other methods
-                    }
-                    
-                    // STEP 3: Try local browser database as last resort
-                    console.log('🔍 STEP 3: Trying local browser database...');
-                    if (fullTextDatabase && fullTextDatabase.length > 0) {
-                        console.log('Checking fullTextDatabase:', fullTextDatabase.length, 'texts loaded');
-                        console.log('Looking for filename:', result.filename);
-                        console.log('Looking for display_name:', result.display_name);
-                        let fullText = fullTextDatabase.find(t => t.filename === result.filename);
-                        console.log('Found text in fullTextDatabase by filename:', fullText ? 'Yes' : 'No');
-
-                        if (!fullText) {
-                            // Try matching by display_name instead
-                            const candidates = fullTextDatabase.filter(t =>
-                                t.display_name === result.display_name ||
-                                t.display_name === result.text
-                            );
-
-                            console.log(`Found ${candidates.length} text(s) with display_name "${result.display_name}"`);
-
-                            // If we have a line number, ONLY accept texts that actually have that many lines
-                            if (lineNumber && candidates.length > 0) {
-                                for (const candidate of candidates) {
-                                    const numLines = candidate.content.split('\n').length;
-                                    console.log(`  Checking candidate: ${candidate.display_name} (${numLines} lines)`);
-
-                                    // STRICT: Line number must be within text bounds
-                                    if (lineNumber <= numLines) {
-                                        console.log(`  ✅ ACCEPTED: Line ${lineNumber} exists in this text`);
-                                        fullText = candidate;
-                                        break;
-                                    } else {
-                                        console.log(`  ❌ REJECTED: Line ${lineNumber} > ${numLines} lines (WRONG TEXT)`);
-                                    }
-                                }
-
-                                if (!fullText) {
-                                    console.error(`❌ NO VALID TEXT FOUND: Need text with ${lineNumber}+ lines, but all candidates too short`);
-                                }
-                            } else if (candidates.length > 0) {
-                                fullText = candidates[0];
-                                console.log('No line number to validate, using first match');
-                            }
-                        }
-
-                        if (fullText && fullText.content) {
-                            const numLines = fullText.content.split('\n').length;
-                            console.log('Using text:', fullText.display_name, '(' + numLines + ' lines)');
-                            console.log('Requested line number:', lineNumber);
-
-                            // FINAL VALIDATION: Refuse to proceed if line number is impossible
-                            if (lineNumber && lineNumber > numLines) {
-                                console.error(`❌ REFUSING TO SHOW WRONG CONTENT: Line ${lineNumber} does not exist in this ${numLines}-line text!`);
-                                fullText = null; // Force error message
-                            } else {
-                                const extendedContext = extractExtendedContext(
-                                    fullText.content,
-                                    document.getElementById('searchInput').value,
-                                    originalSnippet,
-                                    lineNumber
-                                );
-
-                                if (extendedContext) {
-                                    console.log('✅ Extended context extracted successfully from CORRECT text!');
-                                    expandedContent = `
-                                        <div style="background: #f8f9fa; padding: 15px; border-radius: 5px;">
-                                            <div style="color: #28a745; font-size: 0.9em; margin-bottom: 10px;">
-                                                ✅ Extended Context from Local Database (${fullText.display_name}, ${numLines} lines)
-                                            </div>
-                                            <div style="font-family: monospace; line-height: 1.8; white-space: pre-wrap;">
-                                                ${highlightTerm(extendedContext, document.getElementById('searchInput').value)}
-                                            </div>
-                                        </div>
-                                    `;
-                                    snippetDiv.innerHTML = expandedContent;
-                                    btn.textContent = 'Less Context';
-                                    console.log('SUCCESS - returning with context from CORRECT text');
-                                    return;
-                                } else {
-                                    console.log('❌ Could not extract extended context');
-                                }
-                            }
-                        }
-
-                        console.log('❌ No valid full text found in local database');
-                    } else {
-                        console.log('❌ fullTextDatabase not available or empty');
-                    }
-
-                    // All methods failed - show error message
-                    console.log('❌ All context extraction methods failed');
+                    // Railway API failed - show error message
+                    console.log('❌ Railway API failed to provide context');
 
                     // Show error message
                     expandedContent = `
