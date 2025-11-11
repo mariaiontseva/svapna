@@ -1148,8 +1148,56 @@
                     });
                     console.log('Snippet text:', snippetText.substring(0, 100));
 
-                    // FIRST TRY LOCAL API - it has the full database with correct context!
-                    console.log('Trying local API for extended context...');
+                    // FIRST TRY RAILWAY API - it has the authoritative, up-to-date database
+                    console.log('🔍 STEP 1: Trying Railway API extended_context endpoint...');
+                    try {
+                        const extContextResponse = await fetch('https://web-production-7d2a2.up.railway.app/extended_context', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                            },
+                            body: JSON.stringify({
+                                filename: result.filename || null,
+                                display_name: result.display_name || result.text || null,
+                                search_term: document.getElementById('searchInput').value,
+                                line_number: lineNumber,
+                                context_lines: 5  // 5 lines before and after
+                            })
+                        });
+
+                        console.log('Railway extended_context response status:', extContextResponse.status);
+
+                        if (extContextResponse.ok) {
+                            const extData = await extContextResponse.json();
+                            console.log('Railway extended_context response:', extData);
+                            if (extData.extended_context) {
+                                console.log('✅ SUCCESS: Got extended context from Railway!');
+                                expandedContent = `
+                                    <div style="background: #f8f9fa; padding: 15px; border-radius: 5px;">
+                                        <div style="color: #28a745; font-size: 0.9em; margin-bottom: 10px;">
+                                            ✅ Extended Context from Railway (line ${lineNumber})
+                                        </div>
+                                        <div style="font-family: monospace; line-height: 1.8; white-space: pre-wrap;">
+                                            ${highlightTerm(extData.extended_context, document.getElementById('searchInput').value)}
+                                        </div>
+                                    </div>
+                                `;
+                                snippetDiv.innerHTML = expandedContent;
+                                btn.textContent = 'Less Context';
+                                console.log('RETURNING from Railway extended_context success');
+                                return;
+                            } else {
+                                console.log('⚠️ Railway response OK but no extended_context field');
+                            }
+                        } else {
+                            console.log('❌ Railway extended_context returned error status:', extContextResponse.status);
+                        }
+                    } catch (extError) {
+                        console.log('❌ Railway extended_context error:', extError);
+                    }
+
+                    // FALLBACK: Try local API
+                    console.log('🔍 STEP 2: Trying local API for extended context...');
                     try {
                         const localResponse = await fetch('http://localhost:5001/extended_context', {
                             method: 'POST',
@@ -1192,7 +1240,8 @@
                         // Continue to other methods
                     }
                     
-                    // Try local database first (for fast response on smaller texts)
+                    // STEP 3: Try local browser database as last resort
+                    console.log('🔍 STEP 3: Trying local browser database...');
                     if (fullTextDatabase && fullTextDatabase.length > 0) {
                         console.log('Checking fullTextDatabase:', fullTextDatabase.length, 'texts loaded');
                         console.log('Looking for filename:', result.filename);
@@ -1277,60 +1326,9 @@
                     } else {
                         console.log('❌ fullTextDatabase not available or empty');
                     }
-                    
-                    // Try Railway API for extended context - use dedicated endpoint
-                    console.log('🔍 STEP 3: Trying Railway API extended_context endpoint...');
-                    try {
-                        const extContextResponse = await fetch('https://web-production-7d2a2.up.railway.app/extended_context', {
-                            method: 'POST',
-                            headers: {
-                                'Content-Type': 'application/json',
-                            },
-                            body: JSON.stringify({
-                                filename: result.filename || null,
-                                display_name: result.display_name || result.text || null,
-                                search_term: document.getElementById('searchInput').value,
-                                line_number: lineNumber,
-                                context_lines: 5  // 5 lines before and after
-                            })
-                        });
 
-                        console.log('Railway extended_context response status:', extContextResponse.status);
-
-                        if (extContextResponse.ok) {
-                            const extData = await extContextResponse.json();
-                            console.log('Railway extended_context response:', extData);
-                            if (extData.extended_context) {
-                                console.log('✅ SUCCESS: Got extended context from Railway!');
-                                expandedContent = `
-                                    <div style="background: #f8f9fa; padding: 15px; border-radius: 5px;">
-                                        <div style="color: #28a745; font-size: 0.9em; margin-bottom: 10px;">
-                                            ✅ Extended Context from Railway (line ${lineNumber})
-                                        </div>
-                                        <div style="font-family: monospace; line-height: 1.8; white-space: pre-wrap;">
-                                            ${highlightTerm(extData.extended_context, document.getElementById('searchInput').value)}
-                                        </div>
-                                    </div>
-                                `;
-                                snippetDiv.innerHTML = expandedContent;
-                                btn.textContent = 'Less Context';
-                                console.log('RETURNING from extended_context success');
-                                return;
-                            } else {
-                                console.log('⚠️ Railway response OK but no extended_context field');
-                            }
-                        } else {
-                            console.log('❌ Railway extended_context returned error status:', extContextResponse.status);
-                        }
-                    } catch (extError) {
-                        console.log('❌ Railway extended_context error:', extError);
-                    }
-
-                    console.log('⚠️ Railway extended_context failed, continuing to next fallback...');
-
-                    // DISABLE Railway search fallback - it always matches the wrong text!
-                    console.log('❌ SKIPPING Railway API search fallback (always returns wrong text)');
-                    console.log('⚠️ Showing error message instead of wrong content');
+                    // All methods failed - show error message
+                    console.log('❌ All context extraction methods failed');
 
                     // Show error message
                     expandedContent = `
