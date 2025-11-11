@@ -559,6 +559,32 @@
         .toggle-icon.rotated {
             transform: rotate(90deg);
         }
+
+        /* Green tick for available texts */
+        .has-texts {
+            color: #22c55e;
+            font-weight: 600;
+        }
+
+        /* Red cross for missing texts */
+        .no-texts {
+            color: #ef4444;
+            font-weight: 600;
+        }
+
+        /* Green container for texts we have */
+        .text-available {
+            background: #f0fdf4;
+            border-left: 3px solid #22c55e;
+            padding: 4px 8px;
+            margin: 3px 0;
+            border-radius: 3px;
+        }
+
+        /* No special styling for missing texts */
+        .text-missing {
+            color: #999;
+        }
     </style>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.12.2/lottie.min.js"></script>
 </head>
@@ -689,45 +715,45 @@
 
                                 <!-- Atimārga -->
                                 <div class="tree-node" onclick="toggleNode(this)">
-                                    <div class="node-title"><span class="toggle-icon">►</span> Atimārga</div>
-                                    <div class="node-content">
+                                    <div class="node-title"><span class="toggle-icon rotated">►</span> Atimārga <span class="no-texts">✗</span></div>
+                                    <div class="node-content expanded">
                                         <div class="tree-node">
-                                            <div class="node-title">Pāśupata</div>
+                                            <div class="node-title text-missing">Pāśupata (no svapna texts)</div>
                                         </div>
                                         <div class="tree-node">
-                                            <div class="node-title">Lākula</div>
+                                            <div class="node-title text-missing">Lākula (no svapna texts)</div>
                                         </div>
                                     </div>
                                 </div>
 
                                 <!-- Mantramārga -->
                                 <div class="tree-node" onclick="toggleNode(this)">
-                                    <div class="node-title"><span class="toggle-icon">►</span> Mantramārga</div>
-                                    <div class="node-content">
+                                    <div class="node-title"><span class="toggle-icon rotated">►</span> Mantramārga <span class="has-texts">✓</span></div>
+                                    <div class="node-content expanded">
 
                                         <!-- Śaiva Siddhānta -->
                                         <div class="tree-node" onclick="toggleNode(this); event.stopPropagation();">
-                                            <div class="node-title"><span class="toggle-icon">►</span> Śaiva Siddhānta (dualist)</div>
-                                            <div class="node-content">
+                                            <div class="node-title"><span class="toggle-icon rotated">►</span> Śaiva Siddhānta (dualist) <span class="no-texts">✗</span></div>
+                                            <div class="node-content expanded">
                                                 <div class="tree-node">
-                                                    <div class="node-title">Śaivasiddhānta Śāstras (no svapna texts)</div>
+                                                    <div class="node-title text-missing">Śaivasiddhānta Śāstras (no svapna texts)</div>
                                                 </div>
                                             </div>
                                         </div>
 
                                         <!-- Non-Saiddhāntika -->
                                         <div class="tree-node" onclick="toggleNode(this); event.stopPropagation();">
-                                            <div class="node-title"><span class="toggle-icon">►</span> Non-Saiddhāntika (non-dualist)</div>
-                                            <div class="node-content">
+                                            <div class="node-title"><span class="toggle-icon rotated">►</span> Non-Saiddhāntika (non-dualist) <span class="has-texts">✓</span></div>
+                                            <div class="node-content expanded">
 
                                                 <!-- Bhairava Tantras (Mantrapīṭha) -->
                                                 <div class="tree-node" onclick="toggleNode(this); event.stopPropagation();">
-                                                    <div class="node-title"><span class="toggle-icon">►</span> Bhairava Tantras - Mantrapīṭha ✓</div>
-                                                    <div class="node-content">
-                                                        <div class="tree-node">
+                                                    <div class="node-title"><span class="toggle-icon rotated">►</span> Bhairava Tantras - Mantrapīṭha <span class="has-texts">✓</span></div>
+                                                    <div class="node-content expanded">
+                                                        <div class="tree-node text-available">
                                                             <div class="node-title">• Svacchandatantra (7th-10th c.)</div>
                                                         </div>
-                                                        <div class="tree-node">
+                                                        <div class="tree-node text-available">
                                                             <div class="node-title">• Netratantra (700-850 CE)</div>
                                                         </div>
                                                     </div>
@@ -735,29 +761,29 @@
 
                                                 <!-- Vidyāpīṭha Tantras -->
                                                 <div class="tree-node" onclick="toggleNode(this); event.stopPropagation();">
-                                                    <div class="node-title"><span class="toggle-icon">►</span> Vidyāpīṭha Tantras ✓</div>
-                                                    <div class="node-content">
+                                                    <div class="node-title"><span class="toggle-icon rotated">►</span> Vidyāpīṭha Tantras <span class="has-texts">✓</span></div>
+                                                    <div class="node-content expanded">
                                                         <div class="tree-node" onclick="toggleNode(this); event.stopPropagation();">
-                                                            <div class="node-title"><span class="toggle-icon">►</span> Trika ✓</div>
-                                                            <div class="node-content">
-                                                                <div class="tree-node">
+                                                            <div class="node-title"><span class="toggle-icon rotated">►</span> Trika <span class="has-texts">✓</span></div>
+                                                            <div class="node-content expanded">
+                                                                <div class="tree-node text-available">
                                                                     <div class="node-title">• Mālinīvijayottaratantra (7th-8th c.)</div>
                                                                 </div>
-                                                                <div class="tree-node">
+                                                                <div class="tree-node text-available">
                                                                     <div class="node-title">• Vijñānabhairavatantra (c. 850)</div>
                                                                 </div>
-                                                                <div class="tree-node">
+                                                                <div class="tree-node text-available">
                                                                     <div class="node-title">• Tantrasadbhāvatantra (8th-9th c.)</div>
                                                                 </div>
-                                                                <div class="tree-node">
+                                                                <div class="tree-node text-available">
                                                                     <div class="node-title">• Parātrīśikā</div>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                         <div class="tree-node" onclick="toggleNode(this); event.stopPropagation();">
-                                                            <div class="node-title"><span class="toggle-icon">►</span> Yāmala-tantras ✓</div>
-                                                            <div class="node-content">
-                                                                <div class="tree-node">
+                                                            <div class="node-title"><span class="toggle-icon rotated">►</span> Yāmala-tantras <span class="has-texts">✓</span></div>
+                                                            <div class="node-content expanded">
+                                                                <div class="tree-node text-available">
                                                                     <div class="node-title">• Brahmayāmala (c. 650-750)</div>
                                                                 </div>
                                                             </div>
@@ -767,40 +793,40 @@
 
                                                 <!-- Yoginī Tantras -->
                                                 <div class="tree-node" onclick="toggleNode(this); event.stopPropagation();">
-                                                    <div class="node-title"><span class="toggle-icon">►</span> Yoginī Tantras ✓</div>
-                                                    <div class="node-content">
+                                                    <div class="node-title"><span class="toggle-icon rotated">►</span> Yoginī Tantras <span class="has-texts">✓</span></div>
+                                                    <div class="node-content expanded">
                                                         <div class="tree-node" onclick="toggleNode(this); event.stopPropagation();">
-                                                            <div class="node-title"><span class="toggle-icon">►</span> Kālīkula ✓</div>
-                                                            <div class="node-content">
-                                                                <div class="tree-node">
+                                                            <div class="node-title"><span class="toggle-icon rotated">►</span> Kālīkula <span class="has-texts">✓</span></div>
+                                                            <div class="node-content expanded">
+                                                                <div class="tree-node text-available">
                                                                     <div class="node-title">• Brahmayāmala (c. 650-750)</div>
                                                                 </div>
-                                                                <div class="tree-node">
+                                                                <div class="tree-node text-available">
                                                                     <div class="node-title">• Yoginī Tantra (16th-17th c.)</div>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                         <div class="tree-node" onclick="toggleNode(this); event.stopPropagation();">
-                                                            <div class="node-title"><span class="toggle-icon">►</span> Krama</div>
-                                                            <div class="node-content">
+                                                            <div class="node-title"><span class="toggle-icon rotated">►</span> Krama <span class="no-texts">✗</span></div>
+                                                            <div class="node-content expanded">
                                                                 <div class="tree-node">
-                                                                    <div class="node-title">Devīpañcaśataka (missing)</div>
+                                                                    <div class="node-title text-missing">Devīpañcaśataka (missing)</div>
                                                                 </div>
                                                                 <div class="tree-node">
-                                                                    <div class="node-title">Kramasadbhāva (missing)</div>
+                                                                    <div class="node-title text-missing">Kramasadbhāva (missing)</div>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                         <div class="tree-node" onclick="toggleNode(this); event.stopPropagation();">
-                                                            <div class="node-title"><span class="toggle-icon">►</span> Kaula ✓</div>
-                                                            <div class="node-content">
+                                                            <div class="node-title"><span class="toggle-icon rotated">►</span> Kaula <span class="has-texts">✓</span></div>
+                                                            <div class="node-content expanded">
                                                                 <div class="tree-node">
-                                                                    <div class="node-title">• Jayadrathayāmala (missing - foundational!)</div>
+                                                                    <div class="node-title text-missing">• Jayadrathayāmala (missing - foundational!)</div>
                                                                 </div>
-                                                                <div class="tree-node">
+                                                                <div class="tree-node text-available">
                                                                     <div class="node-title">• Brahmayāmala (c. 650-750)</div>
                                                                 </div>
-                                                                <div class="tree-node">
+                                                                <div class="tree-node text-available">
                                                                     <div class="node-title">• Kubjikāmatatantra (10th-11th c.)</div>
                                                                 </div>
                                                             </div>
@@ -824,12 +850,12 @@
 
                                 <!-- Pūrvāmnāya (Eastern) -->
                                 <div class="tree-node" onclick="toggleNode(this)">
-                                    <div class="node-title"><span class="toggle-icon">►</span> Pūrvāmnāya (Eastern Transmission) ✓</div>
-                                    <div class="node-content">
-                                        <div class="tree-node">
+                                    <div class="node-title"><span class="toggle-icon rotated">►</span> Pūrvāmnāya (Eastern Transmission) <span class="has-texts">✓</span></div>
+                                    <div class="node-content expanded">
+                                        <div class="tree-node text-available">
                                             <div class="node-title">• Kulārṇavatantra (11th-14th c.)</div>
                                         </div>
-                                        <div class="tree-node">
+                                        <div class="tree-node text-available">
                                             <div class="node-title">• Tantrāloka (c. 1000-1020) - Abhinavagupta</div>
                                         </div>
                                     </div>
@@ -837,12 +863,12 @@
 
                                 <!-- Paścimāmnāya (Western) -->
                                 <div class="tree-node" onclick="toggleNode(this)">
-                                    <div class="node-title"><span class="toggle-icon">►</span> Paścimāmnāya (Western Transmission) ✓</div>
-                                    <div class="node-content">
-                                        <div class="tree-node">
+                                    <div class="node-title"><span class="toggle-icon rotated">►</span> Paścimāmnāya (Western Transmission) <span class="has-texts">✓</span></div>
+                                    <div class="node-content expanded">
+                                        <div class="tree-node text-available">
                                             <div class="node-title">• Kubjikāmatatantra (10th-11th c.)</div>
                                         </div>
-                                        <div class="tree-node">
+                                        <div class="tree-node text-available">
                                             <div class="node-title">• Manthānabhairavatantra (10th-12th c.)</div>
                                         </div>
                                     </div>
@@ -850,32 +876,32 @@
 
                                 <!-- Uttarāmnāya (Northern) -->
                                 <div class="tree-node" onclick="toggleNode(this)">
-                                    <div class="node-title"><span class="toggle-icon">►</span> Uttarāmnāya (Northern Transmission)</div>
-                                    <div class="node-content">
+                                    <div class="node-title"><span class="toggle-icon rotated">►</span> Uttarāmnāya (Northern Transmission) <span class="no-texts">✗</span></div>
+                                    <div class="node-content expanded">
                                         <div class="tree-node">
-                                            <div class="node-title">Devīpañcaśataka (missing)</div>
+                                            <div class="node-title text-missing">Devīpañcaśataka (missing)</div>
                                         </div>
                                         <div class="tree-node">
-                                            <div class="node-title">Kramasadbhāva (missing)</div>
+                                            <div class="node-title text-missing">Kramasadbhāva (missing)</div>
                                         </div>
                                         <div class="tree-node">
-                                            <div class="node-title">Guhyakālī texts (missing)</div>
+                                            <div class="node-title text-missing">Guhyakālī texts (missing)</div>
                                         </div>
                                     </div>
                                 </div>
 
                                 <!-- Dakṣiṇāmnāya (Southern) -->
                                 <div class="tree-node" onclick="toggleNode(this)">
-                                    <div class="node-title"><span class="toggle-icon">►</span> Dakṣiṇāmnāya (Southern Transmission)</div>
-                                    <div class="node-content">
+                                    <div class="node-title"><span class="toggle-icon rotated">►</span> Dakṣiṇāmnāya (Southern Transmission) <span class="no-texts">✗</span></div>
+                                    <div class="node-content expanded">
                                         <div class="tree-node">
-                                            <div class="node-title">Nityāṣoḍaśikārṇava (missing)</div>
+                                            <div class="node-title text-missing">Nityāṣoḍaśikārṇava (missing)</div>
                                         </div>
                                         <div class="tree-node">
-                                            <div class="node-title">Yoginīhṛdaya (missing)</div>
+                                            <div class="node-title text-missing">Yoginīhṛdaya (missing)</div>
                                         </div>
                                         <div class="tree-node">
-                                            <div class="node-title">Śrīvidyā texts (missing)</div>
+                                            <div class="node-title text-missing">Śrīvidyā texts (missing)</div>
                                         </div>
                                     </div>
                                 </div>
@@ -885,18 +911,18 @@
 
                         <!-- Post-scriptural Kashmir Śaivism -->
                         <div class="tree-node root" style="margin-top: 40px;">
-                            <div class="node-title">KASHMIR ŚAIVISM (Post-scriptural) ✓</div>
+                            <div class="node-title">KASHMIR ŚAIVISM (Post-scriptural) <span class="has-texts">✓</span></div>
                             <div class="node-content expanded">
-                                <div class="tree-node">
+                                <div class="tree-node text-available">
                                     <div class="node-title">• Śivasūtra (c. 800-850)</div>
                                 </div>
-                                <div class="tree-node">
+                                <div class="tree-node text-available">
                                     <div class="node-title">• Spandakārikā (c. 850-900)</div>
                                 </div>
-                                <div class="tree-node">
+                                <div class="tree-node text-available">
                                     <div class="node-title">• Vijñānabhairavatantra (c. 850)</div>
                                 </div>
-                                <div class="tree-node">
+                                <div class="tree-node text-available">
                                     <div class="node-title">• Tantrāloka (c. 1000-1020) - Abhinavagupta's synthesis</div>
                                 </div>
                             </div>
