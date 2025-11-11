@@ -505,122 +505,44 @@
             margin-bottom: 20px;
         }
 
-        /* Śaiva Tradition Tree Styles */
+        /* Śaiva Tradition Tree Styles - Minimal */
         .shaiva-tree {
             font-family: 'Noto Sans', sans-serif;
-            line-height: 1.6;
+            line-height: 1.8;
+            color: #333;
         }
 
         .tree-node {
-            margin: 10px 0;
-            padding: 15px;
-            border-radius: 8px;
-            transition: all 0.3s ease;
-        }
-
-        .tree-node.root {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            text-align: center;
-            padding: 25px;
-            margin-bottom: 30px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-
-        .tree-node.root .node-title {
-            font-size: 28px;
-            font-weight: 700;
-            letter-spacing: 2px;
-        }
-
-        .tree-node.level-1 {
-            background: #f8f9fa;
-            border-left: 4px solid #667eea;
-            cursor: pointer;
-            margin: 20px 0;
-        }
-
-        .tree-node.level-1:hover {
-            background: #e9ecef;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        }
-
-        .tree-node.level-2 {
-            background: white;
-            border-left: 4px solid #764ba2;
-            margin: 15px 0 15px 30px;
-            cursor: pointer;
-        }
-
-        .tree-node.level-2:hover {
-            background: #f8f9fa;
-        }
-
-        .tree-node.level-3 {
-            background: #fefefe;
-            border-left: 3px solid #48bb78;
-            margin: 10px 0 10px 30px;
-            cursor: pointer;
-        }
-
-        .tree-node.level-3:hover {
-            background: #f7fafc;
-        }
-
-        .tree-node.level-4 {
-            background: #fafafa;
-            border-left: 2px solid #ed8936;
-            margin: 8px 0 8px 30px;
-            padding: 10px;
-        }
-
-        .node-title {
-            font-weight: 600;
-            font-size: 16px;
-            color: #2d3748;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .tree-node.level-1 .node-title {
-            font-size: 20px;
-            color: #667eea;
-        }
-
-        .tree-node.level-2 .node-title {
-            font-size: 18px;
-            color: #764ba2;
-        }
-
-        .tree-node.level-3 .node-title {
-            font-size: 16px;
-            color: #48bb78;
-        }
-
-        .tree-node.level-4 .node-title {
-            font-size: 14px;
-            color: #ed8936;
-        }
-
-        .node-subtitle {
-            font-size: 0.85em;
-            font-weight: 400;
-            color: #718096;
-            font-style: italic;
-        }
-
-        .node-description {
-            font-size: 0.9em;
-            color: #718096;
-            margin-top: 5px;
+            margin: 5px 0;
             padding-left: 20px;
         }
 
+        .tree-node.root {
+            padding-left: 0;
+            margin-bottom: 15px;
+        }
+
+        .tree-node.root .node-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #000;
+        }
+
+        .node-title {
+            font-weight: 500;
+            font-size: 14px;
+            color: #333;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .node-title:hover {
+            color: #667eea;
+        }
+
         .node-content {
-            margin-top: 15px;
-            padding-left: 10px;
             display: none;
+            padding-left: 20px;
         }
 
         .node-content.expanded {
@@ -628,29 +550,14 @@
         }
 
         .toggle-icon {
-            font-size: 0.8em;
-            transition: transform 0.3s ease;
             display: inline-block;
-            min-width: 15px;
+            width: 12px;
+            font-size: 10px;
+            transition: transform 0.2s;
         }
 
         .toggle-icon.rotated {
             transform: rotate(-90deg);
-        }
-
-        .tree-branch {
-            position: relative;
-            padding-left: 20px;
-        }
-
-        .branch-line {
-            position: absolute;
-            left: 0;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background: linear-gradient(to bottom, #667eea, #764ba2);
-            opacity: 0.3;
         }
     </style>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.12.2/lottie.min.js"></script>
@@ -767,195 +674,125 @@
             
             <!-- Śaiva Tradition Tree Tab -->
             <div id="visualization-tab" class="tab-content">
-                <div style="padding: 30px; max-width: 1200px; margin: 0 auto;">
-                    <div style="background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); margin-bottom: 20px;">
-                        <h3 style="margin: 0 0 10px 0; color: #333;">Śaiva Tradition Classification</h3>
-                        <p style="margin: 0; color: #666; font-size: 0.9em;">
-                            Based on Alexis Sanderson's classification in <em>"The Śaiva Age"</em> (2009) and
-                            <em>"Śaivism and the Tantric Traditions"</em> (1988)
+                <div style="padding: 20px; max-width: 900px;">
+                    <div style="margin-bottom: 30px;">
+                        <p style="margin: 0 0 5px 0; color: #666; font-size: 13px;">
+                            Based on Alexis Sanderson's classification
                         </p>
                     </div>
 
                     <div class="shaiva-tree">
+                        <!-- First Tree: ŚAIVA TRADITIONS -->
                         <div class="tree-node root">
-                            <div class="node-title">ŚAIVISM</div>
+                            <div class="node-title">ŚAIVA TRADITIONS</div>
+                            <div class="node-content expanded">
 
-                            <div class="tree-branch">
-                                <div class="branch-line"></div>
-
-                                <!-- Atimārga Branch -->
-                                <div class="tree-node level-1" onclick="toggleNode(this)">
-                                    <div class="node-title">
-                                        <span class="toggle-icon">▼</span> ATIMĀRGA
-                                        <span class="node-subtitle">(Path of the Outsider)</span>
-                                    </div>
+                                <!-- Atimārga -->
+                                <div class="tree-node" onclick="toggleNode(this)">
+                                    <div class="node-title"><span class="toggle-icon">▼</span> Atimārga</div>
                                     <div class="node-content">
-                                        <div class="tree-node level-2">
-                                            <div class="node-title">Pāśupata</div>
-                                            <div class="node-description">Original Śaiva ascetic tradition</div>
+                                        <div class="tree-node">
+                                            <div class="node-title">• Pāśupata</div>
                                         </div>
-                                        <div class="tree-node level-2">
-                                            <div class="node-title">Lākula / Kālamukha</div>
-                                            <div class="node-description">Extreme ascetic observances</div>
-                                        </div>
-                                        <div class="tree-node level-2">
-                                            <div class="node-title">Somasiddhānta</div>
-                                            <div class="node-description">Scriptural tradition</div>
+                                        <div class="tree-node">
+                                            <div class="node-title">• Lākula</div>
                                         </div>
                                     </div>
                                 </div>
 
-                                <!-- Mantramārga Branch -->
-                                <div class="tree-node level-1" onclick="toggleNode(this)">
-                                    <div class="node-title">
-                                        <span class="toggle-icon">▼</span> MANTRAMĀRGA
-                                        <span class="node-subtitle">(Path of Mantras)</span>
-                                    </div>
+                                <!-- Mantramārga -->
+                                <div class="tree-node" onclick="toggleNode(this)">
+                                    <div class="node-title"><span class="toggle-icon">▼</span> Mantramārga</div>
                                     <div class="node-content">
 
                                         <!-- Śaiva Siddhānta -->
-                                        <div class="tree-node level-2" onclick="toggleNode(this); event.stopPropagation();">
-                                            <div class="node-title">
-                                                <span class="toggle-icon">▼</span> ŚAIVA SIDDHĀNTA
-                                                <span class="node-subtitle">(Dualistic)</span>
-                                            </div>
+                                        <div class="tree-node" onclick="toggleNode(this); event.stopPropagation();">
+                                            <div class="node-title"><span class="toggle-icon">▼</span> Śaiva Siddhānta (dualist)</div>
                                             <div class="node-content">
-                                                <div class="tree-node level-3">
-                                                    <div class="node-title">Śaiva Āgamas</div>
-                                                    <div class="node-description">10 pure Tantras (e.g., Kāmika, Yogaja)</div>
-                                                </div>
-                                                <div class="tree-node level-3">
-                                                    <div class="node-title">Raurava Āgamas</div>
-                                                    <div class="node-description">5 Tantras including Raurava</div>
-                                                </div>
-                                                <div class="tree-node level-3">
-                                                    <div class="node-title">Bhūta Tantras</div>
-                                                    <div class="node-description">5 Tantras</div>
-                                                </div>
-                                                <div class="tree-node level-3">
-                                                    <div class="node-title">Garuḍa Tantras</div>
-                                                    <div class="node-description">5 Tantras (magical protection)</div>
-                                                </div>
-                                                <div class="tree-node level-3">
-                                                    <div class="node-title">Vāma Tantras</div>
-                                                    <div class="node-description">5 Tantras (left-hand practices)</div>
+                                                <div class="tree-node">
+                                                    <div class="node-title">• Śaivasiddhānta Śāstras</div>
                                                 </div>
                                             </div>
                                         </div>
 
-                                        <!-- Bhairava Tantras -->
-                                        <div class="tree-node level-2" onclick="toggleNode(this); event.stopPropagation();">
-                                            <div class="node-title">
-                                                <span class="toggle-icon">▼</span> BHAIRAVA TANTRAS
-                                                <span class="node-subtitle">(Non-dualistic)</span>
-                                            </div>
+                                        <!-- Non-Saiddhāntika -->
+                                        <div class="tree-node" onclick="toggleNode(this); event.stopPropagation();">
+                                            <div class="node-title"><span class="toggle-icon">▼</span> Non-Saiddhāntika (non-dualist)</div>
                                             <div class="node-content">
 
-                                                <!-- Vidyāpīṭha -->
-                                                <div class="tree-node level-3" onclick="toggleNode(this); event.stopPropagation();">
-                                                    <div class="node-title">
-                                                        <span class="toggle-icon">▼</span> Vidyāpīṭha
-                                                        <span class="node-subtitle">(Seat of Knowledge)</span>
-                                                    </div>
+                                                <!-- Bhairava Tantras -->
+                                                <div class="tree-node" onclick="toggleNode(this); event.stopPropagation();">
+                                                    <div class="node-title"><span class="toggle-icon">▼</span> Bhairava Tantras</div>
                                                     <div class="node-content">
-                                                        <div class="tree-node level-4">
-                                                            <div class="node-title">Mālinīvijayottara Tantra</div>
+                                                        <div class="tree-node">
+                                                            <div class="node-title">• Kapālikas</div>
                                                         </div>
-                                                        <div class="tree-node level-4">
-                                                            <div class="node-title">Svacchandabhairava Tantra</div>
+                                                        <div class="tree-node">
+                                                            <div class="node-title">• Somasiddhānta</div>
                                                         </div>
-                                                        <div class="tree-node level-4">
-                                                            <div class="node-title">Netra Tantra</div>
-                                                        </div>
-                                                        <div class="tree-node level-4">
-                                                            <div class="node-title">Mṛgendra Tantra</div>
+                                                        <div class="tree-node">
+                                                            <div class="node-title">• Lākula Tantras</div>
                                                         </div>
                                                     </div>
                                                 </div>
 
-                                                <!-- Trika -->
-                                                <div class="tree-node level-3" onclick="toggleNode(this); event.stopPropagation();">
-                                                    <div class="node-title">
-                                                        <span class="toggle-icon">▼</span> Trika
-                                                        <span class="node-subtitle">(Three Goddesses)</span>
-                                                    </div>
+                                                <!-- Vidyāpīṭha Tantras -->
+                                                <div class="tree-node" onclick="toggleNode(this); event.stopPropagation();">
+                                                    <div class="node-title"><span class="toggle-icon">▼</span> Vidyāpīṭha Tantras</div>
                                                     <div class="node-content">
-                                                        <div class="tree-node level-4">
-                                                            <div class="node-title">Mālinīvijaya</div>
-                                                            <div class="node-description">Kashmir Śaivism core text</div>
-                                                        </div>
-                                                        <div class="tree-node level-4">
-                                                            <div class="node-title">Vijñānabhairava</div>
-                                                            <div class="node-description">112 meditation techniques</div>
-                                                        </div>
-                                                        <div class="tree-node level-4">
-                                                            <div class="node-title">Parātrīśikā</div>
-                                                            <div class="node-description">Supreme goddess teachings</div>
+                                                        <div class="tree-node" onclick="toggleNode(this); event.stopPropagation();">
+                                                            <div class="node-title"><span class="toggle-icon">▼</span> Trika</div>
+                                                            <div class="node-content">
+                                                                <div class="tree-node">
+                                                                    <div class="node-title">• Mālinīvijayottara Tantra</div>
+                                                                </div>
+                                                                <div class="tree-node">
+                                                                    <div class="node-title">• Vijñānabhairava Tantra</div>
+                                                                </div>
+                                                                <div class="tree-node">
+                                                                    <div class="node-title">• Parātrīśikā</div>
+                                                                </div>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
 
-                                                <!-- Krama -->
-                                                <div class="tree-node level-3" onclick="toggleNode(this); event.stopPropagation();">
-                                                    <div class="node-title">
-                                                        <span class="toggle-icon">▼</span> Krama
-                                                        <span class="node-subtitle">(Sequential)</span>
-                                                    </div>
+                                                <!-- Yoginī Tantras -->
+                                                <div class="tree-node" onclick="toggleNode(this); event.stopPropagation();">
+                                                    <div class="node-title"><span class="toggle-icon">▼</span> Yoginī Tantras</div>
                                                     <div class="node-content">
-                                                        <div class="tree-node level-4">
-                                                            <div class="node-title">Kālīkrama</div>
-                                                            <div class="node-description">Sequence of Kālī</div>
+                                                        <div class="tree-node" onclick="toggleNode(this); event.stopPropagation();">
+                                                            <div class="node-title"><span class="toggle-icon">▼</span> Kālīkula</div>
+                                                            <div class="node-content">
+                                                                <div class="tree-node">
+                                                                    <div class="node-title">• Kālī texts</div>
+                                                                </div>
+                                                            </div>
                                                         </div>
-                                                        <div class="tree-node level-4">
-                                                            <div class="node-title">Kālīkula</div>
-                                                            <div class="node-description">Kālī family traditions</div>
+                                                        <div class="tree-node" onclick="toggleNode(this); event.stopPropagation();">
+                                                            <div class="node-title"><span class="toggle-icon">▼</span> Krama</div>
+                                                            <div class="node-content">
+                                                                <div class="tree-node">
+                                                                    <div class="node-title">• Devīpañcaśataka</div>
+                                                                </div>
+                                                                <div class="tree-node">
+                                                                    <div class="node-title">• Kramasadbhāva</div>
+                                                                </div>
+                                                            </div>
                                                         </div>
-                                                        <div class="tree-node level-4">
-                                                            <div class="node-title">Kramasadbhāva</div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <!-- Kaula -->
-                                                <div class="tree-node level-3" onclick="toggleNode(this); event.stopPropagation();">
-                                                    <div class="node-title">
-                                                        <span class="toggle-icon">▼</span> Kaula
-                                                        <span class="node-subtitle">(Family/Clan)</span>
-                                                    </div>
-                                                    <div class="node-content">
-                                                        <div class="tree-node level-4">
-                                                            <div class="node-title">Kubjikā Traditions</div>
-                                                            <div class="node-description">Nepalese Kaula</div>
-                                                        </div>
-                                                        <div class="tree-node level-4">
-                                                            <div class="node-title">Tripurā Traditions</div>
-                                                            <div class="node-description">Śrīvidyā, Tripurasundarī</div>
-                                                        </div>
-                                                        <div class="tree-node level-4">
-                                                            <div class="node-title">Kāpālika Traditions</div>
-                                                            <div class="node-description">Skull-bearing ascetics</div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <!-- Yoginī Traditions -->
-                                                <div class="tree-node level-3" onclick="toggleNode(this); event.stopPropagation();">
-                                                    <div class="node-title">
-                                                        <span class="toggle-icon">▼</span> Yoginī Cults
-                                                        <span class="node-subtitle">(64 Yoginīs)</span>
-                                                    </div>
-                                                    <div class="node-content">
-                                                        <div class="tree-node level-4">
-                                                            <div class="node-title">Brahmayāmala</div>
-                                                            <div class="node-description">Early Yoginī scripture</div>
-                                                        </div>
-                                                        <div class="tree-node level-4">
-                                                            <div class="node-title">Jayadrathayāmala</div>
-                                                            <div class="node-description">24,000 verses, 4 ṣaṭkas</div>
-                                                        </div>
-                                                        <div class="tree-node level-4">
-                                                            <div class="node-title">Ṭantrāloka</div>
-                                                            <div class="node-description">Abhinavagupta's synthesis</div>
+                                                        <div class="tree-node" onclick="toggleNode(this); event.stopPropagation();">
+                                                            <div class="node-title"><span class="toggle-icon">▼</span> Kaula</div>
+                                                            <div class="node-content">
+                                                                <div class="tree-node">
+                                                                    <div class="node-title">• Jayadrathayāmala</div>
+                                                                </div>
+                                                                <div class="tree-node">
+                                                                    <div class="node-title">• Brahmayāmala</div>
+                                                                </div>
+                                                                <div class="tree-node">
+                                                                    <div class="node-title">• Kubjikāmata Tantra</div>
+                                                                </div>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -968,13 +805,70 @@
 
                             </div>
                         </div>
-                    </div>
 
-                    <div style="background: #f8f9fa; padding: 15px; border-radius: 8px; margin-top: 30px; font-size: 0.9em; color: #555;">
-                        <strong>Note:</strong> This classification represents the scholarly consensus based on Sanderson's research.
-                        Click on nodes with ▼ to expand/collapse branches. The tradition is divided into the Atimārga (outer path for ascetics)
-                        and Mantramārga (inner path using mantras), with the latter further split into the dualistic Śaiva Siddhānta
-                        and non-dualistic Bhairava Tantras.
+                        <!-- Second Tree: KAULA TRADITIONS -->
+                        <div class="tree-node root" style="margin-top: 40px;">
+                            <div class="node-title">KAULA TRADITIONS</div>
+                            <div class="node-content expanded">
+
+                                <!-- Pūrvāmnāya (Eastern) -->
+                                <div class="tree-node" onclick="toggleNode(this)">
+                                    <div class="node-title"><span class="toggle-icon">▼</span> Pūrvāmnāya (Eastern Transmission)</div>
+                                    <div class="node-content">
+                                        <div class="tree-node">
+                                            <div class="node-title">• Kāmakalākula</div>
+                                        </div>
+                                        <div class="tree-node">
+                                            <div class="node-title">• Yoginīkaula</div>
+                                        </div>
+                                        <div class="tree-node">
+                                            <div class="node-title">• Tumburu traditions</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Paścimāmnāya (Western) -->
+                                <div class="tree-node" onclick="toggleNode(this)">
+                                    <div class="node-title"><span class="toggle-icon">▼</span> Paścimāmnāya (Western Transmission)</div>
+                                    <div class="node-content">
+                                        <div class="tree-node">
+                                            <div class="node-title">• Kubjikāmata</div>
+                                        </div>
+                                        <div class="tree-node">
+                                            <div class="node-title">• Nepalese Kaula</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Uttarāmnāya (Northern) -->
+                                <div class="tree-node" onclick="toggleNode(this)">
+                                    <div class="node-title"><span class="toggle-icon">▼</span> Uttarāmnāya (Northern Transmission)</div>
+                                    <div class="node-content">
+                                        <div class="tree-node">
+                                            <div class="node-title">• Kālīkrama</div>
+                                        </div>
+                                        <div class="tree-node">
+                                            <div class="node-title">• Kālīkula</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Dakṣiṇāmnāya (Southern) -->
+                                <div class="tree-node" onclick="toggleNode(this)">
+                                    <div class="node-title"><span class="toggle-icon">▼</span> Dakṣiṇāmnāya (Southern Transmission)</div>
+                                    <div class="node-content">
+                                        <div class="tree-node">
+                                            <div class="node-title">• Śrīkula (Tripurasundarī)</div>
+                                        </div>
+                                        <div class="tree-node">
+                                            <div class="node-title">• Śrīvidyā traditions</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>
