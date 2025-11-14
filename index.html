@@ -6,6 +6,7 @@
     <title>SVAPNA Research Dashboard</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="passage-styles-light-final.css">
     <style>
         :root {
             /* Professional Color Scheme */
@@ -735,9 +736,120 @@
                                         <div class="tree-node" onclick="toggleNode(this); event.stopPropagation();">
                                             <div class="node-title"><span class="toggle-icon rotated">►</span> Śaiva Siddhānta (dualist) <span class="has-texts">✓</span></div>
                                             <div class="node-content expanded">
-                                                <div class="tree-node text-available">
-                                                    <div class="node-title">• Niśvāsatattvasaṃhitā (c. 450-550)</div>
+                                                <!-- Niśvāsatattvasaṃhitā with Passages - CLICKABLE -->
+                                                <div class="text-node-with-passages">
+                                                    <div class="text-header" onclick="togglePassages(this)">
+                                                        <div class="text-header-left">
+                                                            <div class="text-title-main">• Niśvāsatattvasaṃhitā (c. 450-550 CE)</div>
+                                                            <div class="text-translator-tags">
+                                                                <span class="tag untranslated">Untranslated</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="text-meta-info">
+                                                            <span class="passage-count">1 passage</span>
+                                                            <span class="toggle-passages">▼</span>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="passages-container">
+                                                        <!-- Guhyasūtra 3.54-60 -->
+                                                        <div class="passage-card">
+                                                            <div class="passage-header">
+                                                                <div class="passage-reference">Guhyasūtra 3.54-60</div>
+                                                                <div class="tags">
+                                                                    <span class="tag revelation">revelation</span>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="passage-content">
+                                                                <!-- Sanskrit Column -->
+                                                                <div class="sanskrit-column">
+                                                                    <div class="column-header">Sanskrit (Transliterated)</div>
+
+                                                                    <div class="verse">
+                                                                        <span class="verse-number">3.54</span>
+                                                                        <span class="verse-text">deva devaṃ samabhyarcya vijñāpyārghaṃ pradāpayet | etan mantravaran deva [***] īvarado bhava ||</span>
+                                                                    </div>
+
+                                                                    <div class="verse">
+                                                                        <span class="verse-number">3.55</span>
+                                                                        <span class="verse-text">evannivedya mantraṃ tu tataḥ sādha[ka] | sugandhagandaliptāṅgā puṣpasragdāma bhūṣitaḥ ||</span>
+                                                                    </div>
+
+                                                                    <div class="verse">
+                                                                        <span class="verse-number">3.56</span>
+                                                                        <span class="verse-text">sudhūpito sutāmbūlaḥ sitavastradharaḥ śuciḥ | śrāvayitvā tato devaṃ svaped dakṣiṇamūrtiṣu ||</span>
+                                                                    </div>
+
+                                                                    <div class="verse">
+                                                                        <span class="verse-number">3.57</span>
+                                                                        <span class="verse-text">kusupustara[sayyāyāṃ] svapramāṇakaṃ japet | datvā guggulu dhūpaṃ tu sahasraikaṃ japed budhaḥ ||</span>
+                                                                    </div>
+
+                                                                    <div class="verse">
+                                                                        <span class="verse-number">3.58</span>
+                                                                        <span class="verse-text">svapnamāṇaṃ ca ko devaḥ kathet siddhivalāvalam | lābhā lābhaṃ śu[***]ccānyaṃ jñātum icchati ||</span>
+                                                                    </div>
+
+                                                                    <div class="verse">
+                                                                        <span class="verse-number">3.59</span>
+                                                                        <span class="verse-text">unnidhanapadāntikāya [***] siddhimantro'yam | amoghamantrārājaṃ tu na mithyaṃ asya bhāṣitaḥ ||</span>
+                                                                    </div>
+
+                                                                    <div class="verse">
+                                                                        <span class="verse-number">3.60</span>
+                                                                        <span class="verse-text">yaṃ dṛṣṭvā svapnakālai tu tat tathā na tad anyathā | śubhāśubhaṃ na dṛṣṭaṃ tu svapnenai sādhakena tu ||</span>
+                                                                    </div>
+                                                                </div>
+
+                                                                <!-- Translation Column -->
+                                                                <div class="translation-column">
+                                                                    <div class="column-header">Translation (AI Generated)</div>
+
+                                                                    <div class="verse">
+                                                                        <span class="verse-number">3.54</span>
+                                                                        <span class="verse-text">The practitioner should worship the supreme deity and request Him to accept the ritual offering while declaring these mantras sovereign.</span>
+                                                                    </div>
+
+                                                                    <div class="verse">
+                                                                        <span class="verse-number">3.55</span>
+                                                                        <span class="verse-text">The sādhaka should offer the mantra while adorned with sandalwood paste, flowers, and garlands.</span>
+                                                                    </div>
+
+                                                                    <div class="verse">
+                                                                        <span class="verse-number">3.56</span>
+                                                                        <span class="verse-text">After ritual preparations with incense, betel, and white clothes, the practitioner should recite mantras to the deity and sleep facing south.</span>
+                                                                    </div>
+
+                                                                    <div class="verse">
+                                                                        <span class="verse-number">3.57</span>
+                                                                        <span class="verse-text">The practitioner should recite mantras on a flower-strewn bed and perform one thousand recitations with guggulu incense.</span>
+                                                                    </div>
+
+                                                                    <div class="verse">
+                                                                        <span class="verse-number">3.58</span>
+                                                                        <span class="verse-text">Which deity will reveal through dreams the knowledge of success, failure, gains, losses, and other desired information?</span>
+                                                                    </div>
+
+                                                                    <div class="verse">
+                                                                        <span class="verse-number">3.59</span>
+                                                                        <span class="verse-text">This unfailing magical formula grants true knowledge about life's transitions, death, and final liberation, and its pronouncements are never false.</span>
+                                                                    </div>
+
+                                                                    <div class="verse">
+                                                                        <span class="verse-number">3.60</span>
+                                                                        <span class="verse-text">Whatever the sādhaka sees in dreams through this practice is true and reveals otherwise hidden auspicious and inauspicious realities.</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="passage-summary">
+                                                                <strong>Context:</strong> Svapnamāṇavaka practice - ritual protocol for consulting deity in dreams to prognosticate success in siddhi. Involves specific sleeping direction (south-facing), flower bed, 1000 mantra recitations, and guggulu incense.
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                 </div>
+                                                <!-- END Niśvāsatattvasaṃhitā -->
                                             </div>
                                         </div>
 
@@ -2395,5 +2507,9 @@
             document.getElementById('favoritesContent').innerHTML = html;
         }
     </script>
+
+    <!-- Passage Display JavaScript -->
+    <script src="nisvasa-passages-data.js"></script>
+    <script src="passage-display.js"></script>
 </body>
 </html>
