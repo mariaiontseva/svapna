@@ -1,0 +1,503 @@
+// All Śaiva Traditions Tree Passages Data
+// Organized by text in tree order
+
+const all_saiva_passages = {
+
+    // ========================================
+    // BRAHMAYĀMALA (c. 650-750 CE)
+    // Yāmala-tantras branch
+    // ========================================
+
+    brahmayamala: {
+        name: "Brahmayāmala",
+        period: "c. 650-750 CE",
+        branch: "Vidyāpīṭha → Yāmala-tantras",
+        passages: {
+
+            chapter_34: {
+                reference: "Chapter 34",
+                categories: [],
+                translator: null,
+                translated: false,
+                verses: [
+                    {
+                        number: "34.210",
+                        sanskrit: "pādayoḥ patitotthāya tataḥ svapnāṃniveśayet",
+                        translation: "Having risen and fallen at the feet, then one should engage in dreams."
+                    },
+                    {
+                        number: "34.216",
+                        sanskrit: "svapnānāṃ nirṇayaṃ vakṣye śiṣyasya tu mahāmati",
+                        translation: "I shall explain the determination of dreams for the disciple, O great mind."
+                    },
+                    {
+                        number: "34.227",
+                        sanskrit: "divya-svapnā samākhyātā yathāvat tava śobhate | madhyamānāṃ tu svapnānāṃ phalaṃ svapnāś ca me śṛṇu",
+                        translation: "Divine dreams have been explained properly to you, O beautiful one. Now hear from me the fruits of medium dreams and [their characteristics]."
+                    },
+                    {
+                        number: "34.233",
+                        sanskrit: "ete svapnā mahādevi kṣudra-siddhiḥ pradā smṛtāḥ",
+                        translation: "These dreams, O great goddess, are remembered as bestowing minor siddhis."
+                    }
+                ],
+                context: "Dream classification system: divya-svapna (divine dreams) lead to major siddhis, madhyama-svapna (medium dreams) lead to minor siddhis. Establishes hierarchy of dream-based supernatural attainments."
+            },
+
+            chapter_45: {
+                reference: "Chapter 45",
+                categories: ["revelation"],
+                translator: "Csaba Kiss",
+                translated: true,
+                verses: [
+                    {
+                        number: "45.552-558",
+                        sanskrit: "Three-day ritual protocol for accessing past-life memory (svayonidarśana)",
+                        translation: "The textual sequence establishes: 1) Sexual-ritual and collection of sexual fluid (dravyam) (v. 552). 2) Sleep prescription (vv. 553-554): The sādhaka receives an injunction to sleep (svapna samācaret). The text presents a binary conditional: yā nidrā bhavet tasya nidrābhāve tathaiva ca — 'whatever dream may arise for him, or in the absence of dreaming.' 3) Three-day intensive (vv. 555-557): Continuous ritual without bathing, with the explicit marker: evaṃ dinatrayaṃ pūrṇe ātmānaṃ paśyate tataḥ — 'when three days are thus completed, then he sees the Self.' 4) Visionary culmination (v. 558): svarūpaṃ paśyate tatra nijayoniṣu darśane — 'he sees [his] true form there, in the vision (darśane) of his own births.'"
+                    }
+                ],
+                context: "Three-day ritual protocol for accessing past-life memory through dream-vision or waking meditation. The text does not specify whether the darśana occurs within the dream-state or during waking meditation after the three-day completion."
+            },
+
+            chapter_55: {
+                reference: "Chapter 55.81-82",
+                categories: ["revelation"],
+                translator: null,
+                translated: false,
+                verses: [
+                    {
+                        number: "55.81-82",
+                        sanskrit: "mahāparve mahārambhe vīrabhojye śubhāgame || 81 || prārthite vātha deveśi devataiḥ svapna-darśanaiḥ | iṣṭa-vīrāgame caiva proktaṃ tat miśra-vṛttinā || 82 ||",
+                        translation: "This passage lists auspicious times to perform the rite; being requested in a dream by the gods is one of them: at great festivals, great undertakings, feasting of heroes, auspicious occasions, or when requested by deities through dream-visions, or when the desired hero arrives."
+                    }
+                ],
+                context: "Dream-requests from deities establish authorization for performing rituals, treating divine dream-communications as equivalent to waking instructions."
+            },
+
+            chapter_64: {
+                reference: "Chapter 64",
+                categories: ["revelation", "yoga&consciousness"],
+                translator: null,
+                translated: false,
+                verses: [
+                    {
+                        number: "64.62",
+                        sanskrit: "jāgrat-svapna-suṣupta-sthaṃ bhuñjānasya ca bhairava | maithune krīḍayānyatra hāsyādiṣu pracoditam || 62 ||",
+                        translation: "References to waking, dream, and deep sleep states in various contexts including eating, sexual union, play, laughter and other activities, O Bhairava."
+                    },
+                    {
+                        number: "64.71-72",
+                        sanskrit: "tad ādhātmika-gatiṃ prāptaṃ rañjitaṃ bhāgavatsanam | svapnavat paśyate jñānaṃ tatra līnaṃ śivātmakam || 71 || tad-vāsanānusāreṇa japet svapna-lakṣaṇam | jāgrat-svapnānta-kaṃ sphoṭaṃ śivānta-sthāna-yojanāt || 72 ||",
+                        translation: "Having attained inner spiritual movement, colored by devotion, one sees knowledge absorbed there like a dream, of Śiva's nature. Following those impressions, one should recite the dream-characteristics, the sphoṭa at the junction of waking and dream, through connection with Śiva's final state."
+                    },
+                    {
+                        number: "64.76",
+                        sanskrit: "akāraṃ brahmam ity uktaṃ jāgrasya padam uttamam | ukāras tu tathā viṣṇuḥ svapna-rūpa-vibhāvitaḥ || 76 ||",
+                        translation: "The letter A is said to be Brahma, the supreme state of waking. The letter U is Viṣṇu, manifested as the dream-form. [Reference to Māṇḍūkya Upaniṣad - ukāra 'U' from OṂ is linked to the dream state]"
+                    },
+                    {
+                        number: "64.80",
+                        sanskrit: "tyaktvā sphoṭādikāvasthāṃ jāgrat-svapna-suṣuptikām | haṃsa-chāyānurūpeṇa gatvā śiva-maṇḍiram || 80 ||",
+                        translation: "Having abandoned the states of sphoṭa and so forth - waking, dream, and deep sleep - going in the form of the haṃsa shadow to Śiva's temple."
+                    }
+                ],
+                context: "Integrates dream-state consciousness with OṂ syllable practice and states of consciousness, drawing on Māṇḍūkya Upaniṣad framework within tantric ritual context."
+            }
+        }
+    },
+
+    // ========================================
+    // MĀLINĪVIJAYOTTARATANTRA (7th-8th century)
+    // Vidyāpīṭha → Trika branch
+    // ========================================
+
+    malinivijayottaratantra: {
+        name: "Mālinīvijayottaratantra",
+        period: "7th-8th c.",
+        branch: "Vidyāpīṭha → Trika",
+        passages: {
+
+            chapter_8: {
+                reference: "Chapter 8.128-130",
+                categories: [],
+                translator: null,
+                translated: false,
+                verses: [
+                    {
+                        number: "8.128-129",
+                        sanskrit: "madyapānaṃ śiraśchedam amamāṃsasya bhakṣaṇam || 128 || devatā-darśanaṃ sākṣāt tathā viṣṭhānulepanam | evaṃ vidhaṃ śubhaṃ dṛṣṭvā siddhiṃ prāpnoty abhīpsitām || 129 ||",
+                        translation: "Drinking liquor, beheading, eating one's own flesh, directly seeing deities, and smearing with feces - having seen such auspicious [dreams], one obtains the desired siddhi."
+                    },
+                    {
+                        number: "8.130",
+                        sanskrit: "etad eva anyathā-bhūtaṃ duḥsvapna iti kīrtyate | pakva-māṃsa-āśana-abhyaṅga-garta-ādi-patana-ādikam || 130 ||",
+                        translation: "The opposite of this is declared to be a bad dream (duḥsvapna): eating cooked meat, anointing, falling into pits and such."
+                    }
+                ],
+                context: "Dream omen catalog distinguishing auspicious symbols (transgressive consumption, deity visions, impurities) from inauspicious ones. Auspicious dreams predict success in obtaining siddhis."
+            },
+
+            chapter_23: {
+                reference: "Chapter 23.33-38",
+                categories: ["empowerment", "yoga&consciousness", "magic"],
+                translator: null,
+                translated: false,
+                verses: [
+                    {
+                        number: "23.33-34",
+                        sanskrit: "athānyat saṃpravakṣyāmi svapnajñānam anuttamam ||33|| hṛccakre tanmayo bhūtvā rātrau rātrāv ananyadhīḥ | māsād ūrdhvaṃ mahādevi svapne yat kiṃcid īkṣate ||34||",
+                        translation: "Now I shall explain another supreme dream-knowledge. Having become absorbed in the heart-cakra, every night with undivided mind, after a month, O great Goddess, whatever one sees in dreams..."
+                    },
+                    {
+                        number: "23.35-36",
+                        sanskrit: "tat tathyaṃ jāyate tasya dhyānayuktasya yoginaḥ | tatraiva yadi kālasya niyamena rato bhavet ||35|| tadā prathamayāme tu vatsareṇa śubhāśubham | ṣaṭtrimāsena kramaśo dvitīyādiṣv anukramāt || 36 ||",
+                        translation: "That becomes true for that yogin engaged in meditation. If one practices at regulated times in that [manner], then in the first watch [dreams come true] after one year; auspicious and inauspicious [events are foreseen]. In six months, three months, progressively in the second [watch] and so forth in sequence."
+                    },
+                    {
+                        number: "23.37-38",
+                        sanskrit: "aruṇodaya-velāyāṃ daśāhena phalaṃ labhet | aṃkalpa-pūrvake 'py evaṃ pareṣām ātmano 'pi vā || 37 || kvacit kārye samutpanne supta-jñānam upākramet | iti etat kathitaṃ devi siddha-yogīśvarī-matam || 38 ||",
+                        translation: "At dawn time, one obtains the result in ten days. With prior intention/resolve, in this same way for others or for oneself, when some task arises, one should engage dream-knowledge. Thus this has been explained, O Goddess, the view of accomplished yogīśvarīs."
+                    }
+                ],
+                context: "Heart-cakra meditation practice makes dreams become true after one month. With time-regulation, progressively shorter periods needed. Can be used for divination targeting oneself or others."
+            }
+        }
+    },
+
+    // ========================================
+    // SVACCHANDATANTRA (7th-10th century)
+    // Mantrapīṭha branch
+    // ========================================
+
+    svacchandatantra: {
+        name: "Svacchandatantra",
+        period: "7th-10th c.",
+        branch: "Mantrapīṭha (early Bhairava Tantras)",
+        passages: {
+
+            chapter_7: {
+                reference: "Chapter 7.150-151",
+                categories: ["yoga&consciousness"],
+                translator: null,
+                translated: false,
+                verses: [
+                    {
+                        number: "7.150-151",
+                        sanskrit: "dakṣine sattvajāgratsthaḥ svapnastho vāmato rajaḥ || 150 madhye tamastu vijñeyaṃ suṣuptāvastha eva ca || 151",
+                        translation: "In the right [nostril], sattva abides in the waking state; the dream state abides in the left as rajas. In the center, tamas should be known as the deep sleep state."
+                    }
+                ],
+                context: "Nāḍī-State correspondence - the dream state (svapnastha) correlates with the left nostril (vāmataḥ) and rajas. Commentary explains: rajas is in the left due to consisting of kriyā-śakti (action-power)."
+            }
+        }
+    },
+
+    // ========================================
+    // NETRATANTRA (700-850 CE)
+    // Mantrapīṭha branch
+    // ========================================
+
+    netratantra: {
+        name: "Netratantra",
+        period: "700-850 CE",
+        branch: "Mantrapīṭha (early Bhairava Tantras)",
+        passages: {
+
+            chapter_19: {
+                reference: "Chapter 19.94-101",
+                categories: [],
+                translator: "Sauthoff 2022",
+                translated: true,
+                verses: [
+                    {
+                        number: "19.94-97",
+                        sanskrit: "tataḥ suptasya nṛpate rakṣārthaṃ kalaśaṃ yajet || 19-94 || raupyaṃ cauṣadhisaṃyuktaṃ candanāgurulepitam | kṣīreṇa cāmbhasā pūrṇaṃ ... yajen mṛtyujitaṃ param || 19-95 || sarvśvetopacāreṇa puṣpadhūpārghapāyasaiḥ | agre sthitā mahānidrā jagatsaṃmohakāriṇī || 19-96 || sukhārthaṃ nṛpate rātrau jīrṇārthaṃ bhojanādike | ārabdhā devadevenā ājñāṃ dattveti bhāvayet || 19-97 ||",
+                        translation: "Then the mantrin should venerate the water pot in order to protect the sleeping king. The water pot is made of silver and contains herbs, smeared with sandalwood and aloewood, filled with milk and water. He should worship Mṛtyujit with an all-white offering, with rice boiled in milk, guest water, incense, and flowers. Great sleep (Mahānidrā), who bewilders the world, is there. For the king's well-being at night and for his digestion when he eats, etc., this worship should continue by the order of the God of Gods."
+                    },
+                    {
+                        number: "19.98-101",
+                        sanskrit: "yakṣarakṣaḥpiśācādyair duḥsvapnair mātṛsambhavaiḥ || 19-98 || bhayais santrāsaduḥkhais tu muktas tiṣṭhed yathāsukham | lokapāleṣu śāstreṣu rakṣārthaṃ nṛpasaṃnidhau || 19-99 || pūjanaṃ cārgha puṣpādyaiḥ kalaśe pūjite sati | yasyaivaṃ satataṃ kuryāj jñānavān daiśikottamaḥ || 19-100 || nimitteṣu ca sarveṣu amṛteśaṃ yajeta ca || 19-101 ||",
+                        translation: "He should remain at ease, free of the dangers of yakṣas, rakṣas, pisācas, fear of disrupted sleep which bring about mātṛs, and trembling from those afflictions. Once he has venerated the water pot, the mantrin should worship the Lokapālas and their weapons with flowers, guest water, and other ritual offerings before the king. The king whose learned teachers constantly perform these acts obtains protection."
+                    }
+                ],
+                context: "Nīrājana (lustration) rites performed by a mantrin to protect the sleeping king from yakṣas, rakṣas, pisācas, and bad dreams (duḥsvapna) that summon mātṛs. Kṣemarāja's commentary notes this is for kings purified by śaktipāta."
+            }
+        }
+    },
+
+    // ========================================
+    // TANTRASADBHĀVATANTRA (8th-9th century)
+    // Vidyāpīṭha → Trika branch
+    // ========================================
+
+    tantrasadbhavatantra: {
+        name: "Tantrasadbhāvatantra",
+        period: "8th-9th c.",
+        branch: "Vidyāpīṭha → Trika",
+        passages: {
+
+            chapter_9: {
+                reference: "Chapter 9.68-76",
+                categories: [],
+                translator: "Bang (year TBC)",
+                translated: true,
+                verses: [
+                    {
+                        number: "9.68-71",
+                        sanskrit: "Ritual protocol: mantrin sleeps with female attendants, performs morning sandhyā and ancestral offerings, reports dreams to guru for evaluation",
+                        translation: "The mantrin sleeps with female attendants, performs morning sandhyā worship and ancestral offerings, then reports his dream to the guru. The guru evaluates whether it's auspicious (indicating siddhi) or inauspicious. If auspicious, the guru prescribes homa ritual for pacification and obstacle removal, enabling the practitioner to discriminate between dream types."
+                    },
+                    {
+                        number: "9.72-76",
+                        sanskrit: "Auspicious dream catalog: transgressive consumption (liquor, fish, meat, blood), bodily impurities (worms, feces), purity symbols (white cloth, white garland/parasol), royal insignia (lion-seat, chariot, king's consecration, gold/coral ornaments), spiritual encounters",
+                        translation: "Dreams indicating success in initiation include: transgressive consumption (liquor, fish, meat, blood), bodily impurities (worms, feces), purity symbols (white cloth, white garland/parasol), royal insignia (lion-seat, chariot, king's consecration, gold/coral ornaments), and spiritual encounters (seeing Śrīsarasvati, embracing noble man, conversing with kings, ṛṣis, gods, Siddhas, vidyādharas, gaṇas, or ācāryas)."
+                    }
+                ],
+                context: "Borrows dream-omen material from Svacchandatantra 4.3-29b. Appears in svapnaparīkṣā section of Dikṣāpaddhati (IFP M245). Ritual protocol for dream evaluation and pacification to ensure successful initiation."
+            }
+        }
+    },
+
+    // ========================================
+    // VIJÑĀNABHAIRAVATANTRA (c. 850 CE)
+    // Vidyāpīṭha → Trika branch
+    // ========================================
+
+    vijnanabhairavatantra: {
+        name: "Vijñānabhairavatantra",
+        period: "c. 850 CE",
+        branch: "Vidyāpīṭha → Trika",
+        passages: {
+
+            dharana_55: {
+                reference: "Verse 55",
+                categories: ["yoga&consciousness"],
+                translator: "Bäumer",
+                translated: true,
+                verses: [
+                    {
+                        number: "55",
+                        sanskrit: "pīnāṃ ca durbalāṃ śaktiṃ dhyātvā dvādaśagocare | praviśya hṛdaye dhyāyan svapna-svātantryam āpnuyāt || 55 ||",
+                        translation: "If the energy of breath is meditated upon as gross and feeble at dvādaśānta, and entering the heart (at the time of sleeping), then one will attain mastery over one's dreams."
+                    }
+                ],
+                context: "Dhāraṇā technique for attaining svapna-svātantrya (freedom/mastery in dreams) through breath meditation at sleep onset, focusing on dvādaśānta and heart-cakra."
+            },
+
+            dharana_75: {
+                reference: "Verse 75",
+                categories: ["yoga&consciousness"],
+                translator: "Bäumer",
+                translated: true,
+                verses: [
+                    {
+                        number: "75",
+                        sanskrit: "anāgatāyāṃ nidrāyāṃ praṇaṣṭe bāhya-gocare | sāvasthā manasā gamyā parā devī prakāśate || 75 ||",
+                        translation: "One should concentrate on the state when sleep has not yet come, but the external awareness has disappeared (between waking and sleep) – there the supreme Goddess reveals itself."
+                    }
+                ],
+                context: "Meditation on the liminal state between waking and sleep (hypnagogic state) as a gateway to recognizing supreme consciousness (parā devī)."
+            }
+        }
+    },
+
+    // ========================================
+    // MANTHĀNABHAIRAVATANTRA (10th-12th century)
+    // Kaula → Paścimāmnāya branch
+    // ========================================
+
+    manthanabhairavatantra: {
+        name: "Manthānabhairavatantra",
+        period: "10th-12th c.",
+        branch: "Kaula → Paścimāmnāya (Western Transmission)",
+        passages: {
+
+            chapter_23_omens: {
+                reference: "Chapter 23.17-29",
+                categories: [],
+                translator: null,
+                translated: false,
+                verses: [
+                    {
+                        number: "23.17",
+                        sanskrit: "svapne vā yadi pratyakṣaṃ samādhi-guṇa-yogataḥ | vivarṇāṃ paśyate chāyāṃ jīved varṣatrayaṃ tu saḥ || 23.17 ||",
+                        translation: "In dream OR in direct perception through samādhi powers, if one sees a colorless shadow, he lives only three years."
+                    }
+                ],
+                context: "Death omens accessible through dreams or samādhi-induced visions are treated as equally valid for prognostication."
+            },
+
+            chapter_23_mantra: {
+                reference: "Chapter 23.154-157",
+                categories: ["revelation"],
+                translator: null,
+                translated: false,
+                verses: [
+                    {
+                        number: "23.154-156",
+                        sanskrit: "athātaḥ sampravakṣyāmi svapna-māṇavakāmbikām | prāṇaṃ vahnisamārūḍhaṃ mātrādvādaśabheditam || 23.154 || akṣarāntaritaṃ kṛtvā saṣaḍaṅgā bhaved ume | hrasvā tyājyā prayatnena dīrghā grāhyā sulocane || 23.155 || ayutaṃ pūrvasevāyāṃ pañcapraṇavasaṃpuṭe | raktāśvamārakusumaiḥ sidhyate nātra saṃśayaḥ || 23.156 ||",
+                        translation: "Now I shall explain the Svapnamāṇavakāmbikā mantra - the vital breath mounted on fire, divided by twelve mātṛkās. Having made it with intervening syllables, it becomes a mantra with six limbs, O Umā. Short vowels should be carefully rejected, long vowels should be taken, O beautiful-eyed one. Ten thousand recitations in preliminary practice, enclosed with five praṇavas [OṂ], with red aśvamāra flowers - it will be accomplished, there is no doubt."
+                    },
+                    {
+                        number: "23.157",
+                        sanskrit: "aṣṭottaraśataṃ japtvā śayyārūḍho niśāsu ca | śubhāśubhaṃ vaded rātrau siddhavidyāṃ tu kaulikīm || 23.157 ||",
+                        translation: "Having recited 108 times, and having mounted the bed at night, it speaks of auspicious and inauspicious events during the night - this is the accomplished kaulikī vidyā."
+                    }
+                ],
+                context: "Svapnamāṇavakāmbikā mantra practice: recite before bed (108 times after preliminary 10,000), induces revelatory dreams showing auspicious/inauspicious omens. Dream divination/incubation technique."
+            }
+        }
+    },
+
+    // ========================================
+    // KUBJIKĀMATATANTRA (10th-11th century)
+    // Kaula → Paścimāmnāya branch
+    // ========================================
+
+    kubjikamatatantra: {
+        name: "Kubjikāmatatantra",
+        period: "10th-11th c.",
+        branch: "Kaula → Paścimāmnāya (Western Transmission)",
+        passages: {
+
+            chapter_8: {
+                reference: "Chapter 8.96",
+                categories: [],
+                translator: null,
+                translated: false,
+                verses: [
+                    {
+                        number: "8.96",
+                        sanskrit: "duḥsvapne dviguṇaṃ jāpyaṃ vraṇe caiva caturguṇam",
+                        translation: "In case of a bad dream, mantra recitation should be doubled; in case of a wound, quadrupled."
+                    }
+                ],
+                context: "Prescribes intensified mantra recitation as remedy to counteract inauspicious dreams. Protection ritual for neutralizing negative dream effects."
+            },
+
+            chapter_22: {
+                reference: "Chapter 22.48",
+                categories: ["yoga&consciousness"],
+                translator: null,
+                translated: false,
+                verses: [
+                    {
+                        number: "22.48",
+                        sanskrit: "prātarutthāya mantrajñaḥ svapnakāle athavā sudhīḥ yukto 'pi pātakair ghorair mātṝṇāṃ sammato bhavet || 48",
+                        translation: "The knower of mantras, rising in the morning, or the wise one at the time of dreaming - even one engaged in terrible sins - becomes approved by the Mothers."
+                    }
+                ],
+                context: "Establishes svapnakāla (dream-time) as one of two optimal times for spiritual practice, equal to dawn. Conscious practice during liminal sleep states has special purificatory power, capable of absolving even terrible sins."
+            },
+
+            chapter_23_omens: {
+                reference: "Chapter 23.17-27",
+                categories: [],
+                translator: null,
+                translated: false,
+                verses: [
+                    {
+                        number: "23.17",
+                        sanskrit: "svapne vā yadi pratyakṣaṃ samādhiguṇayogataḥ | vivarṇāṃ paśyate chāyāṃ jīved varṣatrayaṃ tu saḥ || 17",
+                        translation: "In dream OR in direct perception through samādhi powers, if one sees a colorless shadow, he lives only three years."
+                    },
+                    {
+                        number: "23.25",
+                        sanskrit: "raktamālyānulepāni raktakṛṣṇaṃ ca vāsasam | labhate svapnayogena ṣaṇmāsāṃs tu sa jīvati || 25",
+                        translation: "If one obtains red garlands, ointments, red and black garments through dream-yoga, he lives six months."
+                    },
+                    {
+                        number: "23.27",
+                        sanskrit: "puruṣo lohadaṇḍena kṛṣṇo yasya paricchadaḥ | paśyate svapnayogena caturmāsān sa jīvati || 27",
+                        translation: "If one sees a person with an iron staff, whose accoutrements are black, through dream-yoga, he lives four months."
+                    }
+                ],
+                context: "Death omens accessed through dreams or meditative states (samādhi) are treated as equally valid as waking perception for prognostication. Svapnayoga allows access to prophetic knowledge about lifespan."
+            },
+
+            chapter_23_svapnamanavaka: {
+                reference: "Chapter 23.154-157",
+                categories: ["revelation"],
+                translator: null,
+                translated: false,
+                verses: [
+                    {
+                        number: "23.154-157",
+                        sanskrit: "athātaḥ saṃpravakṣyāmi svapnamānavakāmbikām prāṇaṃ vahnisamārūḍhaṃ mātrādvādaśabheditam || 154 akṣarāntaritaṃ kṛtvā saṣaḍaṅgā bhaved ume hrasvā tyājyā prayatnena dīrghā grāhyā sulocane || 155 ayutaṃ pūrvasevāyāṃ pañcapraṇavasampute raktāśvamārakusumaiḥ sidhyate nātra saṃśayaḥ || 156 aṣṭottaraśataṃ japtvā śayyārūḍho niśāsu ca śubhāśubhaṃ vaded rātrau siddhavidyāṃ tu kaulikīm || 157",
+                        translation: "Now, hereafter I shall explain the Svapnamānavakāmbikā mantra/practice - the vital breath mounted on fire, divided by twelve mātṛkās. Having made it with intervening syllables, it becomes a mantra with six limbs, O Umā. Short vowels should be carefully rejected, long vowels should be taken, O beautiful-eyed one. Ten thousand recitations in preliminary practice, enclosed with five praṇavas [OṂ], with red aśvamāra flowers - it will be accomplished, there is no doubt. Having recited 108 times, and having mounted the bed at night, it speaks of auspicious and inauspicious events during the night - this is the accomplished kaulikī vidyā."
+                    }
+                ],
+                context: "Identical Svapnamāṇavakāmbikā practice as in Manthānabhairavatantra - dream incubation mantra for receiving revelatory dreams about future events."
+            }
+        }
+    },
+
+    // ========================================
+    // KULĀRṆAVATANTRA (11th-14th century)
+    // Kaula → Pūrvāmnāya branch
+    // ========================================
+
+    kularnavatantra: {
+        name: "Kulārṇavatantra",
+        period: "11th-14th c.",
+        branch: "Kaula → Pūrvāmnāya (Eastern Transmission)",
+        passages: {
+
+            verse_11_97: {
+                reference: "Verse 11.97",
+                categories: ["empowerment"],
+                translator: null,
+                translated: false,
+                verses: [
+                    {
+                        number: "11.97",
+                        sanskrit: "ekākṣare tathā kūṭe traipure mantranāyike | strīdatte svapnalabdhe ca siddhādīn na eva śodhayet || 97 ||",
+                        translation: "In the case of a single-syllable mantra, a kūṭa mantra, the Tripura mantra-queen, one given by a woman, or one obtained in a dream, one should not perform purification of siddhas and so forth."
+                    }
+                ],
+                context: "Mantras received in dreams (svapnalabdha) have inherent authorization and do not require the standard purification rituals - they are self-validating empowerments from the deity."
+            },
+
+            verse_9_11: {
+                reference: "Verse 9.11",
+                categories: ["yoga&consciousness"],
+                translator: null,
+                translated: false,
+                verses: [
+                    {
+                        number: "9.11",
+                        sanskrit: "svapnajāgradavasthāyāṃ suptavat yo'vatiṣṭhate | niśvāsocchvāsahīnaśca niścitaṃ mukta eva saḥ || 11 ||",
+                        translation: "One who remains like one asleep in the waking-dream state, and is without inhalation and exhalation - he is certainly liberated."
+                    }
+                ],
+                context: "Yogic state description: maintaining sleep-like awareness during waking and dream states while breath becomes imperceptible indicates liberation."
+            }
+        }
+    },
+
+    // ========================================
+    // TANTRĀLOKA (c. 1000-1020 CE)
+    // Kaula → Pūrvāmnāya branch
+    // ========================================
+
+    tantraloka: {
+        name: "Tantrāloka",
+        period: "c. 1000-1020 CE",
+        branch: "Kaula → Pūrvāmnāya (Eastern Transmission)",
+        passages: {
+
+            // Note: The PDF mentions this text has TRANSLATED dream material
+            // but doesn't provide specific verses in the excerpt shown.
+            // This would need to be filled in from other sources or more PDF pages
+
+            general_note: {
+                reference: "Various chapters",
+                categories: ["revelation"],
+                translator: "Multiple translators",
+                translated: true,
+                verses: [],
+                context: "Abhinavagupta's encyclopedic work contains dream material, particularly on precognitive dreams. Analyzed in Surabhi Verma's 'Precognitive Dreams in Kashmir Śaivism' (2019)."
+            }
+        }
+    }
+};

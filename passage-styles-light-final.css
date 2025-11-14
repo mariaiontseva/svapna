@@ -30,8 +30,9 @@
 .text-header {
     padding: 16px 20px;
     cursor: pointer;
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 20px;
     align-items: center;
     border-bottom: 1px solid var(--border);
     background: var(--bg-tertiary);
@@ -46,26 +47,35 @@
     display: flex;
     align-items: center;
     gap: 12px;
-    flex-wrap: wrap;
+    min-width: 0;
+    flex: 1;
 }
 
 .text-title-main {
     font-size: 16px;
     font-weight: 600;
     color: var(--primary);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    flex-shrink: 1;
+    min-width: 0;
 }
 
-/* Translator tags - NOW on left side after title */
+/* Translator tags - after title */
 .text-translator-tags {
     display: flex;
     gap: 6px;
     align-items: center;
+    flex-shrink: 0;
 }
 
 .text-meta-info {
     display: flex;
-    gap: 12px;
+    gap: 8px;
     align-items: center;
+    flex-shrink: 0;
+    white-space: nowrap;
 }
 
 .passage-count {
@@ -79,13 +89,23 @@
 }
 
 .toggle-passages {
-    font-size: 16px;
+    font-size: 18px;
     color: var(--text-muted);
-    transition: transform 0.3s;
+    transition: transform 0.3s ease;
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    text-align: center;
 }
 
-.toggle-passages.rotated {
-    transform: rotate(180deg);
+.toggle-passages::before {
+    content: '›';
+    font-weight: 600;
+}
+
+.toggle-passages.rotated::before {
+    content: '⌄';
 }
 
 /* Passage Cards Container */
@@ -156,10 +176,11 @@
     border-color: #e9d5ff;
 }
 
-.tag.yoga {
-    background: #eff6ff;
-    color: #1e40af;
-    border-color: #bfdbfe;
+.tag.yoga,
+.tag[class*="yoga&consciousness"] {
+    background: #f5f3ff;
+    color: #6b21a8;
+    border-color: #ddd6fe;
 }
 
 .tag.omens {
@@ -173,16 +194,18 @@
     background: #f8fafc;
     color: #475569;
     border-color: #cbd5e1;
-    font-size: 10px;
-    padding: 2px 8px;
+    font-size: 11px;
+    padding: 4px 10px;
+    line-height: 1;
 }
 
 .tag.untranslated {
     background: #fef2f2;
     color: #991b1b;
     border-color: #fecaca;
-    font-size: 10px;
-    padding: 2px 8px;
+    font-size: 11px;
+    padding: 4px 10px;
+    line-height: 1;
 }
 
 /* Two Column Layout */
@@ -216,6 +239,8 @@
 .verse {
     margin-bottom: 16px;
     line-height: 1.7;
+    display: flex;
+    gap: 8px;
 }
 
 .verse:last-child {
@@ -223,17 +248,19 @@
 }
 
 .verse-number {
-    display: inline-block;
-    width: 40px;
     color: var(--text-muted);
     font-size: 11px;
     font-weight: 600;
+    flex-shrink: 0;
+    white-space: nowrap;
 }
 
 .verse-text {
     color: var(--text-primary);
     font-size: 14px;
     white-space: pre-line;
+    flex: 1;
+    min-width: 0;
 }
 
 .sanskrit-column .verse-text {
@@ -286,4 +313,40 @@
 /* Ensure proper nesting in tree structure */
 .tree-node .text-node-with-passages .text-header {
     padding-left: 20px;
+}
+
+/* Tooltip for tags with [title] attribute */
+.tag[title] {
+    cursor: help;
+    position: relative;
+}
+
+.tag[title]:hover::after {
+    content: attr(title);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 6px 10px;
+    background: #1e293b;
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 500;
+    white-space: nowrap;
+    border-radius: 4px;
+    margin-bottom: 5px;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.tag[title]:hover::before {
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 5px solid transparent;
+    border-top-color: #1e293b;
+    margin-bottom: -5px;
+    z-index: 1000;
 }
