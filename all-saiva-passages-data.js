@@ -591,8 +591,8 @@ const all_saiva_passages = {
         branch: "Late Bengali & Assamese Śākta Traditions → Assam",
         passages: {
 
-            svapnavati_primary: {
-                reference: "Chapter 7.3-9: Core Svāpnavatī Cycle",
+            chapter_7_svapnavati_mantra: {
+                reference: "Chapter 7.3-9: Svāpnavatī Mantra Revelation",
                 categories: ["revelation"],
                 translator: null,
                 translated: false,
@@ -613,34 +613,7 @@ const all_saiva_passages = {
                         translation: "This Svāpnavatī vidyā is exceedingly rare in the three worlds, miraculous and wonder-working, spoken by Mahākāla... In dreams it shows everything that is conceived in the mind."
                     }
                 ],
-                context: "Foundational dream-mantra cycle revealing the Svāpnavatī vidyā—a dream-goddess practice for inducing revelatory dreams. Śiva declares the mantra rare, miraculous (mahācamatkārakarī), and capable of manifesting anything conceived in the mind. This represents an explicit tantric theory of dream as creative-epistemic field where mental conception directly manifests as dream vision."
-            },
-
-            svapnavati_secondary: {
-                reference: "Chapter 7.23-27: Dream-Oracle Practice",
-                categories: ["revelation"],
-                translator: null,
-                translated: false,
-                verses: [],
-                context: "Secondary cluster detailing dream-oracle procedures using the Svāpnavatī mantra for obtaining specific knowledge through dream divination."
-            },
-
-            svapnavati_tertiary: {
-                reference: "Chapter 7.50-57: Dream-Awakening Techniques",
-                categories: ["revelation", "yoga&consciousness"],
-                translator: null,
-                translated: false,
-                verses: [],
-                context: "Tertiary cluster on dream-awakening practices, potentially relating to maintaining awareness within the dream state or techniques for conscious dreaming."
-            },
-
-            svapnavati_secrecy: {
-                reference: "Chapter 7.58-64: Framing Secrecy Injunctions",
-                categories: [],
-                translator: null,
-                translated: false,
-                verses: [],
-                context: "Concluding verses establishing the secret nature of the Svāpnavatī vidyā and restrictions on its transmission, typical of tantric esoteric practices."
+                context: "Foundational dream-mantra cycle revealing the Svāpnavatī vidyā for inducing revelatory dreams. The goddess Svāpnavatī (Dream-Lady) is invoked through the mantra 'oṃ hrīṃ svapurāvāhi kālī...' to appear in dreams and reveal whatever the practitioner wishes to know. Śiva declares this vidyā exceedingly rare (atidurlabhā) in the three worlds, miraculous and wonder-working (mahācamatkārakarī), capable of showing in dreams 'everything conceived in the mind' (svapne darśayate sarvaṃ yad manasi kalpyate). This represents an explicit tantric theory of dream as creative-epistemic field where mental intention directly manifests as visionary revelation. Chapter 7 also includes secondary passages on dream-oracle procedures (7.23-27), dream-awakening techniques (7.50-57), and secrecy injunctions (7.58-64), not yet translated."
             }
 
         }
