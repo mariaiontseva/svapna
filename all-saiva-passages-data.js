@@ -210,34 +210,6 @@ const all_saiva_passages = {
     // Vidyāpīṭha → Trika branch
     // ========================================
 
-    tantrasadbhavatantra: {
-        name: "Tantrasadbhāvatantra",
-        period: "8th-9th c.",
-        branch: "Vidyāpīṭha → Trika",
-        passages: {
-
-            chapter_9: {
-                reference: "Chapter 9.68-76",
-                categories: [],
-                translator: "Bang (year TBC)",
-                translated: true,
-                verses: [
-                    {
-                        number: "9.68-71",
-                        sanskrit: "Ritual protocol: mantrin sleeps with female attendants, performs morning sandhyā and ancestral offerings, reports dreams to guru for evaluation",
-                        translation: "The mantrin sleeps with female attendants, performs morning sandhyā worship and ancestral offerings, then reports his dream to the guru. The guru evaluates whether it's auspicious (indicating siddhi) or inauspicious. If auspicious, the guru prescribes homa ritual for pacification and obstacle removal, enabling the practitioner to discriminate between dream types."
-                    },
-                    {
-                        number: "9.72-76",
-                        sanskrit: "Auspicious dream catalog: transgressive consumption (liquor, fish, meat, blood), bodily impurities (worms, feces), purity symbols (white cloth, white garland/parasol), royal insignia (lion-seat, chariot, king's consecration, gold/coral ornaments), spiritual encounters",
-                        translation: "Dreams indicating success in initiation include: transgressive consumption (liquor, fish, meat, blood), bodily impurities (worms, feces), purity symbols (white cloth, white garland/parasol), royal insignia (lion-seat, chariot, king's consecration, gold/coral ornaments), and spiritual encounters (seeing Śrīsarasvati, embracing noble man, conversing with kings, ṛṣis, gods, Siddhas, vidyādharas, gaṇas, or ācāryas)."
-                    }
-                ],
-                context: "Borrows dream-omen material from Svacchandatantra 4.3-29b. Appears in svapnaparīkṣā section of Dikṣāpaddhati (IFP M245). Ritual protocol for dream evaluation and pacification to ensure successful initiation."
-            }
-        }
-    },
-
     // ========================================
     // VIJÑĀNABHAIRAVATANTRA (c. 850 CE)
     // Vidyāpīṭha → Trika branch
