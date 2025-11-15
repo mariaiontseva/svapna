@@ -117,26 +117,6 @@ const all_saiva_passages = {
         branch: "Vidyāpīṭha → Trika",
         passages: {
 
-            chapter_8: {
-                reference: "Chapter 8.128-130",
-                categories: [],
-                translator: null,
-                translated: false,
-                verses: [
-                    {
-                        number: "8.128-129",
-                        sanskrit: "madyapānaṃ śiraśchedam amamāṃsasya bhakṣaṇam || 128 || devatā-darśanaṃ sākṣāt tathā viṣṭhānulepanam | evaṃ vidhaṃ śubhaṃ dṛṣṭvā siddhiṃ prāpnoty abhīpsitām || 129 ||",
-                        translation: "Drinking liquor, beheading, eating one's own flesh, directly seeing deities, and smearing with feces - having seen such auspicious [dreams], one obtains the desired siddhi."
-                    },
-                    {
-                        number: "8.130",
-                        sanskrit: "etad eva anyathā-bhūtaṃ duḥsvapna iti kīrtyate | pakva-māṃsa-āśana-abhyaṅga-garta-ādi-patana-ādikam || 130 ||",
-                        translation: "The opposite of this is declared to be a bad dream (duḥsvapna): eating cooked meat, anointing, falling into pits and such."
-                    }
-                ],
-                context: "Dream omen catalog distinguishing auspicious symbols (transgressive consumption, deity visions, impurities) from inauspicious ones. Auspicious dreams predict success in obtaining siddhis."
-            },
-
             chapter_23: {
                 reference: "Chapter 23.33-38",
                 categories: ["empowerment", "yoga&consciousness", "magic"],
