@@ -765,13 +765,13 @@ const all_saiva_passages = {
 
     // ========================================
     // ŚAKTISAMGAMA SUNDARĪKHAṆḌA
-    // Dakṣiṇāmnāya (Southern Śrīvidyā) tradition
+    // Mahāvidyā Syncretic Compilation
     // ========================================
 
     saktisamgama: {
         name: "Śaktisamgama Sundarīkhaṇḍa",
         period: "c. 16th-17th century",
-        branch: "Dakṣiṇāmnāya (Śrīvidyā - Southern Transmission)",
+        branch: "Late Syncretic Śākta → Mahāvidyā Syncretic Compilations",
         passages: {
 
             no_cakra_verification: {
@@ -822,6 +822,31 @@ const all_saiva_passages = {
                     }
                 ],
                 context: "Provides ritual technology for validating dream-obtained mantras without physical guru. The procedure: (1) Draw aṣṭadala (eight-petal) diagram, (2) Place kalaśa (vessel) at center with vaṭapatra (banyan leaf), (3) Write dream-received mantra in kuṃkuma on the leaf, (4) Install guru's prāṇa into vessel through prāṇapratiṣṭhā, (5) Ritually receive mantra 'from guru's presence' (guroḥ sakāśāt). This removes jāta-sūtaka defect. Exact parallel to Bṛhattantrasāra 1.79-80 vessel ritual, showing cross-textual standardization. The vessel becomes guru-substitute through prāṇa-installation, creating legitimate transmission without human intermediary. Demonstrates institutional accommodation of dream-revelation: rather than rejecting guru-less transmission, tradition develops alternative validation procedures that maintain ritual structure while accepting dream as authentic source."
+            },
+
+            regional_puraścarya_comparison: {
+                reference: "Chapter 3.148-150: Regional Puraścarya Systems vs Dream-Mantra Simplification",
+                categories: ["empowerment"],
+                translator: null,
+                translated: false,
+                verses: [
+                    {
+                        number: "3.148",
+                        sanskrit: "kerale tu puraścaryā daśāṅgā parikīrttitā | aṣṭāṅgā tu puraścaryā kāśmīre kathitā mayā",
+                        translation: "In Kerala, puraścarya with ten components is proclaimed. Puraścarya with eight components is told by me in Kashmir"
+                    },
+                    {
+                        number: "3.149",
+                        sanskrit: "paṃcāṅgā tu puraścaryā gauḍamārge prakīrttitā | svapnalabdhe maheśāni aṅge puraskriyā matā",
+                        translation: "Five-component puraścarya is proclaimed in the Gauḍa path. For dream-obtained [mantras], O Great Goddess, [with fewer] components the preparatory ritual is considered"
+                    },
+                    {
+                        number: "3.150",
+                        sanskrit: "japo homo brāhmaṇānāṃ bhojanaṃ tritayaṃ matam | svapnalabdhe puraścaryā doṣadvayanivāraṇam",
+                        translation: "Japa, homa, feeding of brāhmaṇas - this triad (tritayaṃ) is prescribed. For dream-obtained [mantras], puraścarya removes the two defects"
+                    }
+                ],
+                context: "Systematic comparison of regional puraścarya requirements demonstrates dream-transmission as privileged channel requiring minimal ritual preparation. Standard mantra-practice varies by region: Kerala tradition requires 10 components, Kāśmīra 8, Gauḍa/Bengal 5. Dream-obtained mantras require only 3 (tritayam): japa (mantra repetition), homa (fire offering), brāhmaṇa-bhojana (feeding brahmins). This dramatic simplification (3 vs 5-10 components) positions dream-revelation as more direct divine access, bypassing regional complexity and institutional barriers. The comparison is pan-regional: rather than privileging one tradition over others, the text presents dream-mantras as transcending ALL regional systems through inherent siddha-status. The 'two defects' (doṣadvaya) removed are jāta-sūtaka (birth-pollution) and mṛta-sūtaka (death-pollution/lifeless mantra) - next verses explain vessel ritual removes the former. This passage demonstrates Śaktisamgama's syncretic methodology: acknowledging regional diversity (Kerala/Kāśmīra/Gauḍa/Draviḍa) while establishing universal dream-protocols that work across all Śākta traditions."
             },
 
             dakshinamurti_lineage: {
