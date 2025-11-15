@@ -761,5 +761,89 @@ const all_saiva_passages = {
             }
 
         }
+    },
+
+    // ========================================
+    // ŚAKTISAMGAMA SUNDARĪKHAṆḌA
+    // Dakṣiṇāmnāya (Southern Śrīvidyā) tradition
+    // ========================================
+
+    saktisamgama: {
+        name: "Śaktisamgama Sundarīkhaṇḍa",
+        period: "c. 16th-17th century",
+        branch: "Dakṣiṇāmnāya (Śrīvidyā - Southern Transmission)",
+        passages: {
+
+            no_cakra_verification: {
+                reference: "Chapter 3.130-134: Dream-Mantras Exempt from Cakra Verification",
+                categories: ["empowerment"],
+                translator: null,
+                translated: false,
+                verses: [
+                    {
+                        number: "3.130",
+                        sanskrit: "svapnamadhye tu saṃprāptaścamatkāro na vidyate | śodhyamāne mahācakre na ṛṇī dṛśyate sphuṭam",
+                        translation: "That which is obtained in the midst of a dream has no doubt/wonder [about its status]. When examined in the great cakra, no ṛṇa (karmic debt) is seen clearly"
+                    },
+                    {
+                        number: "3.131-132",
+                        sanskrit: "pūrvaṃ proktaṃ tvayā deva svapnalabdhādayaḥ prabho || svapnalabdhā striyā dattā mālāmaṃtrādikāḥ priya | siddhamaṃtrā iti proktāstvanyathā pratipāditam",
+                        translation: "O Lord, you previously said that dream-obtained [mantras] and others [are special]. Dream-obtained, woman-given, garland-mantras, etc., O beloved, are called siddha-mantras - but now you teach otherwise"
+                    },
+                    {
+                        number: "3.133-134",
+                        sanskrit: "satyametanmaheśāni siddhatvaṃ vartate sphuṭam || yatrāsti pratyayo devi sa siddhaḥ parikīrttitaḥ | pratyayo nāsti deveśi sa dhanī parikīrttitaḥ",
+                        translation: "This is true, O Great Goddess, siddha-status is clearly present. Where there is pratyaya (direct verification/experiential evidence), O Goddess, that is called siddha. Where there is no pratyaya, O Goddess, that is called dhanī (wealth-status, ready for use)"
+                    }
+                ],
+                context: "Establishes epistemological foundation for dream-obtained mantras in Śrīvidyā tradition. Standard mantra-initiation requires ṛṇa-dhana-cakra verification (checking karmic debt/credit status through divinatory cakras). Dream-mantras are explicitly exempt: 'na ṛṇī dṛśyate sphuṭam' (no debt is seen clearly). They automatically possess 'dhanī' (wealth) status rather than 'ṛṇī' (debt), meaning they are pre-accomplished and ready for immediate use. The criterion is 'pratyaya' - direct experiential confirmation, self-authenticating knowledge. This positions dream-knowledge as superior epistemically: it bypasses institutional verification because the dream itself provides pratyaya. Critical for understanding how Dakṣiṇāmnāya tradition authorized guru-independent dream-transmission as legitimate source of mantra-śakti."
+            },
+
+            vessel_validation_ritual: {
+                reference: "Chapter 3.152-154: Vessel Ritual for Dream-Mantra Validation",
+                categories: ["empowerment"],
+                translator: null,
+                translated: false,
+                verses: [
+                    {
+                        number: "3.152",
+                        sanskrit: "likhedaṣṭadalaṃ śubham",
+                        translation: "One should draw an auspicious eight-petaled [diagram]"
+                    },
+                    {
+                        number: "3.153",
+                        sanskrit: "tanmadhye kalaśaṃ sthāpya tatra vai vaṭapatrakam | vaṭapatre kuṃkumena likhitvā maṃtrameva tu",
+                        translation: "In its center, place a vessel (kalaśa), and there a banyan leaf. Having written the mantra with kuṃkuma (vermillion) on the banyan leaf"
+                    },
+                    {
+                        number: "3.154",
+                        sanskrit: "kalaśaṃ purataḥ sthāpya guroḥ prāṇānniveśayet | guroḥ sakāśādgrahaṇaṃ jātasūtakavāraṇam",
+                        translation: "Place the vessel in front and install life-breath (prāṇa) from the guru. Receiving [the mantra] from the guru's presence removes jāta-sūtaka (birth-related ritual impurity)"
+                    }
+                ],
+                context: "Provides ritual technology for validating dream-obtained mantras without physical guru. The procedure: (1) Draw aṣṭadala (eight-petal) diagram, (2) Place kalaśa (vessel) at center with vaṭapatra (banyan leaf), (3) Write dream-received mantra in kuṃkuma on the leaf, (4) Install guru's prāṇa into vessel through prāṇapratiṣṭhā, (5) Ritually receive mantra 'from guru's presence' (guroḥ sakāśāt). This removes jāta-sūtaka defect. Exact parallel to Bṛhattantrasāra 1.79-80 vessel ritual, showing cross-textual standardization. The vessel becomes guru-substitute through prāṇa-installation, creating legitimate transmission without human intermediary. Demonstrates institutional accommodation of dream-revelation: rather than rejecting guru-less transmission, tradition develops alternative validation procedures that maintain ritual structure while accepting dream as authentic source."
+            },
+
+            dakshinamurti_lineage: {
+                reference: "Chapter 3.180-181: Dakṣiṇāmūrti as Guru-Lineage for Dream-Mantras",
+                categories: ["revelation"],
+                translator: null,
+                translated: false,
+                verses: [
+                    {
+                        number: "3.180",
+                        sanskrit: "strīlabdhe devadeveśi śrīmaddevīparaṃparā | svapnalabdhe mahādevi dakṣamūrttiparaṃparā",
+                        translation: "For woman-obtained [mantras], O God of Gods, the lineage (paraṃparā) is Śrīmad-Devī. For dream-obtained [mantras], O Great Goddess, the lineage is Dakṣiṇāmūrti"
+                    },
+                    {
+                        number: "3.181",
+                        sanskrit: "pūjayeddakṣiṇāmūrttiṃ gurutvena maheśvari | catuṣkaṃ pūjayedādau kimanyacchrotumicchasi",
+                        translation: "One should worship Dakṣiṇāmūrti as guru, O Great Goddess. First one should worship the four [forms]. Do you wish to hear anything else?"
+                    }
+                ],
+                context: "Establishes theological legitimation for guru-independent dream-transmission in Dakṣiṇāmnāya. Creates parallel paramparās: woman-given mantras trace to Śrīmad-Devī lineage, dream-obtained mantras trace to Dakṣiṇāmūrti lineage. Dakṣiṇāmūrti is Śiva's form as 'south-facing' silent teacher who transmits jñāna through silence and intuition - perfect theological correlate for dream-transmission (non-verbal, interior revelation). This is NOT guru-less initiation but ALTERNATIVE guru-lineage: Dakṣiṇāmūrti himself becomes the guru in dream-space. Practitioner worships Dakṣiṇāmūrti 'as guru' (gurutvena), maintaining guru-paramparā structure while accepting dream as valid transmission medium. Critical for Dakṣiṇāmnāya self-understanding: dream-revelation is not antinomian but represents distinct, legitimate lineage-branch through Śiva's wisdom-teaching aspect. Resolves tension between institutional authority and visionary experience."
+            }
+
+        }
     }
 };
