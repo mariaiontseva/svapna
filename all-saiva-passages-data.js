@@ -600,7 +600,7 @@ const all_saiva_passages = {
                     {
                         number: "7.4",
                         sanskrit: "śṛṇu devi pravakṣyāmi yanmāṃ tvaṃ paripṛcchasi | oṃ hrīṃ svapurāvāhi kāli svapne kathayāmukasyāmukaṃ dehi krīṃ svāhā",
-                        translation: "Listen, Goddess, I shall tell you what you ask of me: OṂ HRĪṂ Svapurāvāhi Kālī, speak in dreams, show [such-and-such] to [so-and-so], KRĪṂ SVĀHĀ"
+                        translation: "Listen, Goddess, I shall tell you what you ask of me: oṃ hrīṃ svapurāvāhi kālī svapne kathaya amukasya amukaṃ dehi krīṃ svāhā"
                     },
                     {
                         number: "7.5-6",
