@@ -677,5 +677,89 @@ const all_saiva_passages = {
             }
 
         }
+    },
+
+    // ========================================
+    // BṚHATTANTRASĀRA (18th century)
+    // Tantric Compendium - Pan-Indian Śākta Traditions
+    // ========================================
+
+    brhattantrasara: {
+        name: "Bṛhattantrasāra",
+        period: "18th c.",
+        branch: "Tantric Compendium - Pan-Indian Śākta Traditions",
+        passages: {
+
+            no_time_rules_in_dreams: {
+                reference: "Chapter 1.35-36: No Time Rules in Dreams",
+                categories: ["revelation"],
+                translator: null,
+                translated: false,
+                verses: [
+                    {
+                        number: "1.35",
+                        sanskrit: "sadguruḥ svāśritaṃ śiṣyaṃ varṣamekaṃ parīkṣayet (pratīkṣayet)",
+                        translation: "A true guru should test (or wait for) a disciple who has taken refuge for one year"
+                    },
+                    {
+                        number: "1.36",
+                        sanskrit: "svapne tu na kālaniyamaḥ | svapne tū niyamo na hīti nāradavacanāt",
+                        translation: "But in dreams there is no time restriction. 'In dreams there is no rule' - thus [is] the statement of Nārada"
+                    }
+                ],
+                context: "Establishes an important exception to guru-disciple protocols. While initiation typically requires a one-year testing period, Nārada's authoritative statement 'svapne tū niyamo na hī' (in dreams there is no rule) removes temporal restrictions when revelation occurs through dreams. This legitimates dream-transmission as an immediate, non-gradual path that bypasses ordinary ritual timelines."
+            },
+
+            dream_obtained_mantra_ritual: {
+                reference: "Chapter 1.79-80: Dream-Obtained Mantra Validation Ritual",
+                categories: ["revelation"],
+                translator: null,
+                translated: false,
+                verses: [
+                    {
+                        number: "1.79",
+                        sanskrit: "svapnalabdhamantre yadi sadguruṃ prāpnoti tadā tata eva tanmantraṃ gṛhṇīyāt, nacet jalapūrṇakalase guroḥ prāṇapratiṣṭhāṃ vidhāya vaṭapatre kuṃkumena likhitaṃ mantraṃ tatkalase prakṣipya uttolya mantraṃ gṛhṇīyādityarthaḥ",
+                        translation: "Regarding a mantra obtained in a dream: if one subsequently obtains a true guru, then one should receive that mantra from him [for confirmation]. If not, having performed prāṇa-pratiṣṭhā (life-installation) of the guru in a water-filled vessel, having written the mantra with vermillion on a banyan leaf and thrown it into that vessel, one should draw [the leaf] out and receive the mantra - this is the meaning"
+                    },
+                    {
+                        number: "1.80",
+                        sanskrit: "tathā hi: svapnalabdhe ca kalase guroḥ prāṇāna niveśayet | vaṭapatre kuṃkumena likhitvā grahaṇe śubham | tataḥ siddhimavāpnoti cānyathā viphalaṃ bhavet | idandu sadgurorābhāve tasmādeva mantraṃ gṛhṇīyāt | svapne tu niyamo na hīti nāradavacanāt | tatra siddhādiniyamo nāsti",
+                        translation: "Thus: 'In the case of a dream-obtained [mantra], one should install the guru's prāṇa in a vessel. Having written [it] with vermillion on a banyan leaf, [this is] auspicious for reception. Then one obtains siddhi; otherwise it becomes fruitless.' When a true guru is absent, one should receive the mantra from that [ritual vessel] itself. 'In dreams there is no rule' - [this is] the statement of Nārada. There, rules about siddhi and such do not apply"
+                    }
+                ],
+                context: "Provides ritual technology for validating dream-obtained mantras when no physical guru is available. The procedure involves: (1) Installing the guru's prāṇa (life-force) into a water-filled vessel through prāṇapratiṣṭhā, (2) Writing the dream-received mantra with kuṃkuma (vermillion) on a vaṭapatra (banyan leaf), (3) Casting the leaf into the vessel and ritually drawing it out to 'receive' the mantra. The text warns this ritual is essential—without it the mantra becomes 'fruitless' (viphalam). The verse again cites Nārada's principle that dream-transmission bypasses normal initiation protocols (siddhādiniyamo nāsti - rules about siddhi do not apply). This represents sophisticated dream hermeneutics: dreams can transmit authentic power, but require ritual confirmation when lacking guru verification."
+            },
+
+            svapnadhipati_revelation_mantra: {
+                reference: "Chapter 5: Svapnādhipati Revelation Mantra",
+                categories: ["revelation"],
+                translator: null,
+                translated: false,
+                verses: [
+                    {
+                        number: "Mantra",
+                        sanskrit: "svapamānasya mantro'yaṃ śambhunā parikīrtitaḥ | namo jaya trinetrāya piṅgalāya mahātmane | rāmāya viśvarūpāya svapnādhipataye namaḥ | svapne kathaya me tathyaṃ sarvakāryeṣvaśeṣataḥ | kriyāsiddhiṃ vidhāsyāmi tvatprasādānmaheśvara",
+                        translation: "This is the mantra for the sleeping one, proclaimed by Śambhu: 'Salutations, victory to the Three-Eyed One, tawny-haired, great soul, to Rāma, universal form, to the Lord of Dreams (Svapnādhipati), salutations! Tell me truth in dreams about all tasks without exception. I shall accomplish ritual success by your grace, O Maheśvara.'"
+                    }
+                ],
+                context: "Direct parallel to Yoginī Tantra 7.55's Svapnādhipati mantra with variant epithets. Both texts invoke Śiva as Svapnādhipati (Lord of Dreams) using nearly identical structure: 'namo...trinetrāya piṅgalāya mahātmane...svapnādhipataye namaḥ | svapne kathaya me...' The key difference: Bṛhattantrasāra uses 'rāmāya viśvarūpāya' (to Rāma, universal form) while Yoginī Tantra uses 'vāmadevasurūpāya' (who has the form of Vāmadeva). Both request dream-revelation of truth about 'all tasks' (sarvakāryeṣu). The mantra's cross-textual stability demonstrates a shared North Indian Śaiva tradition of dream-divination through Svapnādhipati invocation, functioning as a standardized technique for accessing prophetic dreams through Śiva's dream-governing aspect."
+            },
+
+            dream_form_enemy_destruction: {
+                reference: "Chapter 2.8: Dream-Form Enemy Destruction (Abhicāra)",
+                categories: ["magic"],
+                translator: null,
+                translated: false,
+                verses: [
+                    {
+                        number: "2.8",
+                        sanskrit: "śmaśānabhasmanā kṛtvā śivaṃ tasyopari nyaset | virodhināmasaṃruddhaṃ kṛṣṇapakṣe samarcayet | mahiṣīkṣīradhūpañca yadyacchakravipatkaram | mahiṣīrūpamāsādya svapne śatruṃ vināśayet | mantreṇānena vikhanettadbhasma ripumandire | śatrūnuccāṭayennūnaṃ nātra kāryā vicāraṇā",
+                        translation: "Having made [a liṅga] with cremation ground ash, one should place Śiva upon it. One should worship [it] with the enemy's name written/attached in the dark fortnight. [Offering] incense of buffalo-female milk and whatever causes cakra-harm, having assumed buffalo-female form in a dream, one destroys the enemy. With this mantra one should scatter that ash in the enemy's temple/house. One certainly expels the enemies; in this matter no doubt should be held"
+                    }
+                ],
+                context: "Rare example of abhicāra (destructive magic) operating through dream-state transformation. The ritual establishes physical preparations (cremation-ground ash liṅga, enemy's name, dark fortnight worship, buffalo-milk incense, cakra-disrupting substances), then requires the practitioner to 'assume buffalo-female form in a dream' (mahiṣīrūpam āsādya svapne) to destroy the enemy (śatruṃ vināśayet). The dream-transformation into mahiṣī-rūpa (buffalo-cow form) likely draws on Durgā's mahiṣāsuramardinī mythology, weaponizing the goddess's buffalo-slaying power through dream-body assumption. After dream-destruction, the ritual ash is physically scattered at the enemy's residence for material-plane effect. This represents dream as operative magical field: the practitioner's dream-form acts as instrument of real-world destruction, bridging subtle and gross causation."
+            }
+
+        }
     }
 };
