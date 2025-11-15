@@ -1,0 +1,1012 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SVAPNA Research Dashboard - Local</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Light Theme Passage Styles -->
+    <link rel="stylesheet" href="passage-styles-light-final.css">
+
+    <style>
+        :root {
+            /* Professional Color Scheme */
+            --primary: #1e40af;
+            --primary-light: #3b82f6;
+            --primary-dark: #1e3a8a;
+            --bg-main: #ffffff;
+            --bg-secondary: #f8fafc;
+            --bg-tertiary: #f1f5f9;
+            --border: #e2e8f0;
+            --border-light: #f1f5f9;
+            --text-primary: #0f172a;
+            --text-secondary: #475569;
+            --text-muted: #64748b;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+            --purple: #8b5cf6;
+            --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-secondary);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            padding: 40px 0;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .header-title {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        #lottie-logo {
+            width: 50px;
+            height: 50px;
+            background: transparent;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+
+        h1 {
+            font-size: 32px;
+            font-weight: 700;
+            color: white;
+            letter-spacing: -0.5px;
+            margin: 0;
+        }
+
+        .subtitle {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 16px;
+            text-align: center;
+            margin-top: 8px;
+        }
+
+        .stats-bar {
+            display: flex;
+            gap: 40px;
+            margin-top: 30px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .stat-item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .stat-value {
+            font-size: 28px;
+            font-weight: 700;
+            color: white;
+        }
+
+        .stat-label {
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.8);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 500;
+            margin-top: 4px;
+        }
+
+        /* Main Content */
+        .main-content {
+            padding: 30px 0;
+        }
+
+        /* Tabs */
+        .tabs-header {
+            display: flex;
+            gap: 8px;
+            border-bottom: 2px solid var(--border);
+            margin-bottom: 30px;
+            background: white;
+            padding: 0 20px;
+            border-radius: 12px 12px 0 0;
+        }
+
+        .tab-button {
+            padding: 16px 24px;
+            background: transparent;
+            color: var(--text-secondary);
+            border: none;
+            border-bottom: 3px solid transparent;
+            cursor: pointer;
+            font-size: 15px;
+            font-weight: 600;
+            transition: all 0.2s;
+            position: relative;
+        }
+
+        .tab-button:hover {
+            color: var(--text-primary);
+        }
+
+        .tab-button.active {
+            color: var(--primary);
+            border-bottom-color: var(--primary);
+        }
+
+        .tab-badge {
+            display: inline-block;
+            margin-left: 8px;
+            background: var(--primary-light);
+            color: white;
+            border-radius: 12px;
+            padding: 2px 8px;
+            font-size: 12px;
+            font-weight: 600;
+            min-width: 24px;
+            text-align: center;
+        }
+
+        .tab-content {
+            display: none;
+            background: white;
+            border-radius: 0 0 12px 12px;
+            padding: 30px;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        /* Search Section */
+        .search-section {
+            background: var(--bg-tertiary);
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 30px;
+            border: 1px solid var(--border);
+        }
+
+        .search-container {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 14px 120px 14px 20px;
+            font-size: 16px;
+            border: 2px solid var(--border);
+            border-radius: 10px;
+            background: white;
+            transition: all 0.2s;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: var(--primary-light);
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+        }
+
+        .search-button {
+            position: absolute;
+            right: 6px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 10px 28px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 15px;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+
+        .search-button:hover {
+            background: var(--primary-dark);
+        }
+
+        /* Quick Search Tags */
+        .shortcuts {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
+        .shortcut-btn {
+            padding: 8px 16px;
+            border: 2px solid var(--border);
+            background: white;
+            color: var(--text-secondary);
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+
+        .shortcut-btn:hover {
+            border-color: var(--primary-light);
+            color: var(--primary);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .shortcut-btn.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        /* Filters */
+        .filters {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .filter-select {
+            padding: 10px 16px;
+            border: 2px solid var(--border);
+            border-radius: 8px;
+            background: white;
+            font-size: 14px;
+            color: var(--text-primary);
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .filter-select:focus {
+            outline: none;
+            border-color: var(--primary-light);
+        }
+
+        /* Śaiva Tradition Tree Styles */
+        .shaiva-tree {
+            font-family: 'Noto Sans', sans-serif;
+            line-height: 1.8;
+            color: #333;
+        }
+
+        .tree-node {
+            margin: 5px 0;
+            padding-left: 20px;
+        }
+
+        .tree-node.root {
+            padding-left: 0;
+            margin-bottom: 15px;
+        }
+
+        .tree-node.root .node-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #000;
+        }
+
+        .node-title {
+            font-weight: 500;
+            font-size: 14px;
+            color: #333;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .node-title:hover {
+            color: #667eea;
+        }
+
+        .node-content {
+            display: none;
+            padding-left: 20px;
+        }
+
+        .node-content.expanded {
+            display: block;
+        }
+
+        .toggle-icon {
+            display: inline-block;
+            width: 12px;
+            font-size: 10px;
+            transition: transform 0.2s;
+        }
+
+        .toggle-icon.rotated {
+            transform: rotate(90deg);
+        }
+
+        /* Green tick for available texts */
+        .has-texts {
+            color: #22c55e;
+            font-weight: 600;
+        }
+
+        /* Red cross for missing texts */
+        .no-texts {
+            color: #ef4444;
+            font-weight: 600;
+        }
+
+        /* Green container for texts we have */
+        .text-available {
+            background: #f0fdf4;
+            border-left: 3px solid #22c55e;
+            padding: 4px 8px;
+            margin: 3px 0;
+            border-radius: 3px;
+        }
+
+        /* No special styling for missing texts */
+        .text-missing {
+            color: #999;
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.12.2/lottie.min.js"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-title">
+                <div id="lottie-logo"></div>
+                <h1>SVAPNA Research Dashboard</h1>
+            </div>
+            <div class="subtitle">Sanskrit Text Analysis & Search Interface - Local Version</div>
+            <div class="stats-bar">
+                <div class="stat-item">
+                    <span class="stat-value" id="unique-sources">303</span>
+                    <span class="stat-label">Unique Sources</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-value" id="total-texts">311</span>
+                    <span class="stat-label">Total Texts</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-value" id="results-count">0</span>
+                    <span class="stat-label">Search Results</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-value" id="matches-count">0</span>
+                    <span class="stat-label">Total Matches</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container main-content">
+        <div class="tabs-container">
+            <div class="tabs-header">
+                <button class="tab-button" onclick="switchTab('search')">
+                    Search Results<span class="tab-badge" id="search-badge">0</span>
+                </button>
+                <button class="tab-button" onclick="switchTab('catalog')">
+                    Texts Catalog<span class="tab-badge" id="catalog-badge">311</span>
+                </button>
+                <button class="tab-button active" onclick="switchTab('visualization')">
+                    Śaiva Tradition Tree
+                </button>
+                <button class="tab-button" onclick="switchTab('favorites')">
+                    Favorites<span class="tab-badge" id="favorites-badge">0</span>
+                </button>
+            </div>
+
+            <!-- Search Tab -->
+            <div id="search-tab" class="tab-content">
+                <div class="search-section">
+                    <div class="search-container">
+                        <input type="text" class="search-input" id="searchInput"
+                               placeholder="Enter any Sanskrit term or text name..."
+                               value="svapna">
+                        <button class="search-button" onclick="performSearch()">Search</button>
+                    </div>
+
+                    <div class="shortcuts">
+                        <button class="shortcut-btn" onclick="quickSearch('svapna')">svapna</button>
+                        <button class="shortcut-btn" onclick="quickSearch('svapnasvapna')">svapnasvapna</button>
+                        <button class="shortcut-btn" onclick="quickSearch('svapnayoga')">svapnayoga</button>
+                        <button class="shortcut-btn" onclick="quickSearch('svapnajāgrat')">svapnajāgrat</button>
+                        <button class="shortcut-btn" onclick="quickSearch('svapnalabdha')">svapnalabdha</button>
+                        <button class="shortcut-btn" onclick="quickSearch('nidrā')">nidrā</button>
+                        <button class="shortcut-btn" onclick="quickSearch('suṣupti')">suṣupti</button>
+                    </div>
+
+                    <div class="filters">
+                        <select id="traditionFilter" class="filter-select">
+                            <option value="">All Traditions</option>
+                        </select>
+                        <select id="periodFilter" class="filter-select">
+                            <option value="">All Periods</option>
+                        </select>
+                        <select id="authorFilter" class="filter-select">
+                            <option value="">All Authors</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div id="searchResults" class="results-container">
+                    <div class="loader">
+                        <div>Connect to svapna.space database for search functionality</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Catalog Tab -->
+            <div id="catalog-tab" class="tab-content">
+                <div class="search-section">
+                    <input type="text" class="search-input" id="catalogSearch"
+                           placeholder="Filter texts by name...">
+                </div>
+                <div id="catalogContent" class="results-container"></div>
+            </div>
+
+            <!-- Śaiva Tradition Tree Tab -->
+            <div id="visualization-tab" class="tab-content active">
+                <div style="padding: 20px; max-width: 900px;">
+                    <div style="margin-bottom: 30px;">
+                        <p style="margin: 0 0 5px 0; color: #666; font-size: 13px;">
+                            Based on Alexis Sanderson's classification
+                        </p>
+                    </div>
+
+                    <div class="shaiva-tree">
+                        <!-- First Tree: ŚAIVA TRADITIONS -->
+                        <div class="tree-node root">
+                            <div class="node-title">ŚAIVA TRADITIONS</div>
+                            <div class="node-content expanded">
+
+                                <!-- Atimārga -->
+                                <div class="tree-node" onclick="toggleNode(this)">
+                                    <div class="node-title"><span class="toggle-icon rotated">►</span> Atimārga <span class="no-texts">✗</span></div>
+                                    <div class="node-content expanded">
+                                        <div class="tree-node">
+                                            <div class="node-title text-missing">Pāśupata <span class="no-texts">✗</span> (no svapna text)</div>
+                                        </div>
+                                        <div class="tree-node">
+                                            <div class="node-title text-missing">Lākula <span class="no-texts">✗</span> (no svapna text)</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Mantramārga -->
+                                <div class="tree-node" onclick="toggleNode(this)">
+                                    <div class="node-title"><span class="toggle-icon rotated">►</span> Mantramārga <span class="has-texts">✓</span></div>
+                                    <div class="node-content expanded">
+
+                                        <!-- Niśvāsatattvasaṃhitā with Passages - CLICKABLE -->
+                                        <!-- Early Mantramārga text (predates Siddhānta formulation) -->
+                                        <div class="text-node-with-passages">
+                                            <div class="text-header" onclick="togglePassages(this)">
+                                                <div class="text-header-left">
+                                                    <div class="text-title-main">• Niśvāsatattvasaṃhitā (c. 450-550 CE) – Early Mantramārga</div>
+                                                    <div class="text-translator-tags">
+                                                        <span class="tag untranslated">Untranslated</span>
+                                                    </div>
+                                                </div>
+                                                <div class="text-meta-info">
+                                                    <span class="tag revelation">revelation</span>
+                                                    <span class="passage-count">1 passage</span>
+                                                    <span class="toggle-passages"></span>
+                                                </div>
+                                            </div>
+
+                                            <div class="passages-container">
+
+                                                <!-- Guhyasūtra 3.54-60 -->
+                                                <div class="passage-card">
+                                                    <div class="passage-header">
+                                                        <div class="passage-reference">Guhyasūtra 3.54-60</div>
+                                                        <div class="tags">
+                                                            <span class="tag revelation">revelation</span>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="passage-content">
+                                                        <!-- Sanskrit Column -->
+                                                        <div class="sanskrit-column">
+                                                            <div class="column-header">Sanskrit (Transliterated)</div>
+
+                                                            <div class="verse">
+                                                                <span class="verse-number">3.54</span>
+                                                                <span class="verse-text">deva devaṃ samabhyarcya vijñāpyārghaṃ pradāpayet | etan mantravaran deva [***] īvarado bhava ||</span>
+                                                            </div>
+
+                                                            <div class="verse">
+                                                                <span class="verse-number">3.55</span>
+                                                                <span class="verse-text">evannivedya mantraṃ tu tataḥ sādha[ka] | sugandhagandaliptāṅgā puṣpasragdāma bhūṣitaḥ ||</span>
+                                                            </div>
+
+                                                            <div class="verse">
+                                                                <span class="verse-number">3.56</span>
+                                                                <span class="verse-text">sudhūpito sutāmbūlaḥ sitavastradharaḥ śuciḥ | śrāvayitvā tato devaṃ svaped dakṣiṇamūrtiṣu ||</span>
+                                                            </div>
+
+                                                            <div class="verse">
+                                                                <span class="verse-number">3.57</span>
+                                                                <span class="verse-text">kusupustara[sayyāyāṃ] svapramāṇakaṃ japet | datvā guggulu dhūpaṃ tu sahasraikaṃ japed budhaḥ ||</span>
+                                                            </div>
+
+                                                            <div class="verse">
+                                                                <span class="verse-number">3.58</span>
+                                                                <span class="verse-text">svapnamāṇaṃ ca ko devaḥ kathet siddhivalāvalam | lābhā lābhaṃ śu[***]ccānyaṃ jñātum icchati ||</span>
+                                                            </div>
+
+                                                            <div class="verse">
+                                                                <span class="verse-number">3.59</span>
+                                                                <span class="verse-text">unnidhanapadāntikāya [***] siddhimantro'yam | amoghamantrārājaṃ tu na mithyaṃ asya bhāṣitaḥ ||</span>
+                                                            </div>
+
+                                                            <div class="verse">
+                                                                <span class="verse-number">3.60</span>
+                                                                <span class="verse-text">yaṃ dṛṣṭvā svapnakālai tu tat tathā na tad anyathā | śubhāśubhaṃ na dṛṣṭaṃ tu svapnenai sādhakena tu ||</span>
+                                                            </div>
+                                                        </div>
+
+                                                        <!-- Translation Column -->
+                                                        <div class="translation-column">
+                                                            <div class="column-header">Translation (AI Generated)</div>
+
+                                                            <div class="verse">
+                                                                <span class="verse-number">3.54</span>
+                                                                <span class="verse-text">The practitioner should worship the supreme deity and request Him to accept the ritual offering while declaring these mantras sovereign.</span>
+                                                            </div>
+
+                                                            <div class="verse">
+                                                                <span class="verse-number">3.55</span>
+                                                                <span class="verse-text">The sādhaka should offer the mantra while adorned with sandalwood paste, flowers, and garlands.</span>
+                                                            </div>
+
+                                                            <div class="verse">
+                                                                <span class="verse-number">3.56</span>
+                                                                <span class="verse-text">After ritual preparations with incense, betel, and white clothes, the practitioner should recite mantras to the deity and sleep facing south.</span>
+                                                            </div>
+
+                                                            <div class="verse">
+                                                                <span class="verse-number">3.57</span>
+                                                                <span class="verse-text">The practitioner should recite mantras on a flower-strewn bed and perform one thousand recitations with guggulu incense.</span>
+                                                            </div>
+
+                                                            <div class="verse">
+                                                                <span class="verse-number">3.58</span>
+                                                                <span class="verse-text">Which deity will reveal through dreams the knowledge of success, failure, gains, losses, and other desired information?</span>
+                                                            </div>
+
+                                                            <div class="verse">
+                                                                <span class="verse-number">3.59</span>
+                                                                <span class="verse-text">This unfailing magical formula grants true knowledge about life's transitions, death, and final liberation, and its pronouncements are never false.</span>
+                                                            </div>
+
+                                                            <div class="verse">
+                                                                <span class="verse-number">3.60</span>
+                                                                <span class="verse-text">Whatever the sādhaka sees in dreams through this practice is true and reveals otherwise hidden auspicious and inauspicious realities.</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="passage-summary">
+                                                        <strong>Context:</strong> Svapnamāṇavaka practice - ritual protocol for consulting deity in dreams to prognosticate success in siddhi. Involves specific sleeping direction (south-facing), flower bed, 1000 mantra recitations, and guggulu incense.
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <!-- END Niśvāsatattvasaṃhitā -->
+
+                                        <!-- Śaiva Siddhānta -->
+                                        <div class="tree-node" onclick="toggleNode(this); event.stopPropagation();">
+                                            <div class="node-title"><span class="toggle-icon rotated">►</span> Śaiva Siddhānta <span class="has-texts">✓</span></div>
+                                            <div class="node-content expanded">
+
+                                                <!-- Mṛgendravṛtti with Passages - CLICKABLE -->
+                                                <div class="text-node-with-passages">
+                                                    <div class="text-header" onclick="togglePassages(this)">
+                                                        <div class="text-header-left">
+                                                            <div class="text-title-main">• Mṛgendravṛtti (c. 950-1000 CE) – Commentary on Mṛgendratantra</div>
+                                                            <div class="text-translator-tags">
+                                                                <span class="tag untranslated">Untranslated</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="text-meta-info">
+                                                            <span class="tag empowerment">empowerment</span>
+                                                            <span class="passage-count">1 passage</span>
+                                                            <span class="toggle-passages"></span>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="passages-container">
+
+                                                        <!-- Dream-Obtained Mantras → Siddhi -->
+                                                        <div class="passage-card">
+                                                            <div class="passage-header">
+                                                                <div class="passage-reference">Dream-Obtained Mantras Achieve Siddhi (Vidyāpāda-vṛtti, citing Yoginītantra & Phetkāriṇītantra, MS lines 400-453)</div>
+                                                                <div class="tags">
+                                                                    <span class="tag empowerment">empowerment</span>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="passage-content">
+                                                                <div class="sanskrit-column">
+                                                                    <div class="column-header">Sanskrit (IAST)</div>
+
+                                                                    <div class="verse">
+                                                                        <span class="verse-number">(400-401)</span>
+                                                                        <span class="verse-text">yoginītantramālokya svapnalabdhamanorvidhiṃ |
+pravakṣyāmi hitārthāya sādhakānāṃ viśeṣataḥ ||</span>
+                                                                    </div>
+
+                                                                    <div class="verse">
+                                                                        <span class="verse-number">(402-405)</span>
+                                                                        <span class="verse-text">svapnalabdhaṃ strīdattañca saṃskāreṇaiva siddhyati |
+svapnalabdhe ca kaluṣe guroḥ sthāne nivaśayet ||
+vaṭapatre kuṃkume vā likhitvā grahaṇaṃ kṛtaṃ |
+tataḥ siddhimavāpnoti anyathā viphalaṃ bhavet ||</span>
+                                                                    </div>
+
+                                                                    <div class="verse">
+                                                                        <span class="verse-number">(407-412)</span>
+                                                                        <span class="verse-text">evaṃ svapnādinā mantralābhe dīkṣoktakrameṇa kalasaṃ saṃsthāpya vaṭapatreṇa kuṃkumena likhitvā daśasaṃskāraṃ vidhāya gurormantra grahaṇaṃ kuryāt | athavā taddevatākasarvacakravicāritamantrāntaraṃ gṛhnīyāt upāsyasyaikamantratvāt svapnepi mantracchalena upāsyopadeśāttanmantramapi japet vahumantravataḥ puṃsaḥ kā kathā śiva eva saḥ | ityādi puraskāra śravaṇāditi saṃkṣepaḥ ||</span>
+                                                                    </div>
+
+                                                                    <div class="verse">
+                                                                        <span class="verse-number">(414-424)</span>
+                                                                        <span class="verse-text">atha mantrasaṃskāraḥ || phetkāriṇītantre ||
+jananaṃ jīvanaṃ caiva tāḍanaṃ bodhanaṃ tathā |
+athābhiṣeko vimalīkaraṇāpyāyanaṃ tataḥ ||
+tarpanaṃ dīpanaṃ caiva gopanaṃ daśamaḥ smṛtaṃ |</span>
+                                                                    </div>
+
+                                                                    <div class="verse">
+                                                                        <span class="verse-number">(451-453)</span>
+                                                                        <span class="verse-text">mantrāṇāṃ kathito hyete saṃskārāḥ śīghra siddhidāḥ |
+evaṃ krameṇa mantre gṛhīte svapnalabdhādi mantrāḥ siddhyantīti saṃkṣepaḥ</span>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="translation-column">
+                                                                    <div class="column-header">English Translation</div>
+
+                                                                    <div class="verse">
+                                                                        <span class="verse-number">(400-401)</span>
+                                                                        <span class="verse-text">Having consulted the Yoginītantra, I shall proclaim the procedure for dream-obtained mantras, especially for the benefit of sādhakas.</span>
+                                                                    </div>
+
+                                                                    <div class="verse">
+                                                                        <span class="verse-number">(402-405)</span>
+                                                                        <span class="verse-text">Mantras obtained in dreams or given by women achieve siddhi only through purification ritual (saṃskāra). If the dream-obtained [mantra] is impure, place it at the guru's seat. Having written [it] on a banyan leaf or with kuṅkuma, perform the reception ritual. Then one attains siddhi; otherwise it becomes fruitless.</span>
+                                                                    </div>
+
+                                                                    <div class="verse">
+                                                                        <span class="verse-number">(407-412)</span>
+                                                                        <span class="verse-text">Thus when obtaining a mantra through dreams etc., one should set up a vessel according to the dīkṣā procedure, write with kuṅkuma on banyan leaf, perform the ten purifications (daśasaṃskāra), and receive the mantra from the guru. Or one should take another mantra from the deity's complete cakra system. Since the object of worship has one mantra, even in dreams through the mantra's form, from the teaching of the object of worship, one may also recite that mantra. "For a person with many mantras, what to say—he is Śiva himself" etc.—this is the summary from hearing the preliminaries.</span>
+                                                                    </div>
+
+                                                                    <div class="verse">
+                                                                        <span class="verse-number">(414-424)</span>
+                                                                        <span class="verse-text"><strong>Now the mantra purifications:</strong> In the Phetkāriṇītantra: "Janana (birth), jīvana (enlivening), tāḍana (striking), bodhana (awakening), then abhiṣeka (consecration), vimalīkaraṇa (purification), āpyāyana (nourishing), tarpana (satisfaction), dīpana (illumination), and gopana (concealment) is the tenth—thus known."</span>
+                                                                    </div>
+
+                                                                    <div class="verse">
+                                                                        <span class="verse-number">(451-453)</span>
+                                                                        <span class="verse-text">These purifications of mantras have been declared—they grant quick success (śīghra siddhi). Thus, when the mantra is received in this manner, dream-obtained and similar mantras become perfected (siddhyanti)—this is the summary.</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="passage-summary">
+                                                                <strong>KEY TEACHING:</strong> Mantras received IN DREAMS (svapnalabdha) are VALID and achieve SIDDHI when properly purified through 10 purifications (daśasaṃskāra). Teaching cited from Yoginītantra; purification list from Phetkāriṇītantra. Without purification → viphala (fruitless). With purification → śīghra siddhi (quick success).
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                                <!-- END Mṛgendravṛtti -->
+
+                                            </div>
+                                        </div>
+
+                                        <!-- Non-Saiddhāntika = Bhairava Tantras -->
+                                        <div class="tree-node" onclick="toggleNode(this); event.stopPropagation();">
+                                            <div class="node-title"><span class="toggle-icon rotated">►</span> Non-Saiddhāntika = Bhairava Tantras <span class="has-texts">✓</span></div>
+                                            <div class="node-content expanded">
+
+                                                <!-- Mantrapīṭha -->
+                                                <div class="tree-node" onclick="toggleNode(this); event.stopPropagation();">
+                                                    <div class="node-title"><span class="toggle-icon rotated">►</span> Mantrapīṭha (early Bhairava Tantras) <span class="has-texts">✓</span></div>
+                                                    <div class="node-content expanded">
+                                                        <div class="tree-node text-available">
+                                                            <div class="node-title">• Svacchandatantra (7th-10th c.)</div>
+                                                        </div>
+                                                        <div class="tree-node text-available">
+                                                            <div class="node-title">• Netratantra (700-850 CE)</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Vidyāpīṭha -->
+                                                <div class="tree-node" onclick="toggleNode(this); event.stopPropagation();">
+                                                    <div class="node-title"><span class="toggle-icon rotated">►</span> Vidyāpīṭha <span class="has-texts">✓</span></div>
+                                                    <div class="node-content expanded">
+
+                                                        <!-- Trika -->
+                                                        <div class="tree-node" onclick="toggleNode(this); event.stopPropagation();">
+                                                            <div class="node-title"><span class="toggle-icon rotated">►</span> Trika <span class="has-texts">✓</span></div>
+                                                            <div class="node-content expanded">
+                                                                <div class="tree-node text-available">
+                                                                    <div class="node-title">• Mālinīvijayottaratantra (7th-8th c.)</div>
+                                                                </div>
+                                                                <div class="tree-node text-available">
+                                                                    <div class="node-title">• Vijñānabhairavatantra (c. 850)</div>
+                                                                </div>
+                                                                <div class="tree-node text-available">
+                                                                    <div class="node-title">• Tantrasadbhāvatantra (8th-9th c.)</div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <!-- Yāmala-tantras -->
+                                                        <div class="tree-node" onclick="toggleNode(this); event.stopPropagation();">
+                                                            <div class="node-title"><span class="toggle-icon rotated">►</span> Yāmala-tantras <span class="has-texts">✓</span></div>
+                                                            <div class="node-content expanded">
+                                                                <div class="tree-node text-available">
+                                                                    <div class="node-title">• Brahmayāmala (c. 650-750)</div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <!-- Yoginī Tantras / Kālīkula / Krama -->
+                                                        <div class="tree-node" onclick="toggleNode(this); event.stopPropagation();">
+                                                            <div class="node-title"><span class="toggle-icon rotated">►</span> Yoginī Tantras <span class="no-texts">✗</span></div>
+                                                            <div class="node-content expanded">
+                                                                <div class="tree-node" onclick="toggleNode(this); event.stopPropagation();">
+                                                                    <div class="node-title"><span class="toggle-icon rotated">►</span> Kālīkula <span class="no-texts">✗</span></div>
+                                                                    <div class="node-content expanded">
+                                                                        <div class="tree-node">
+                                                                            <div class="node-title text-missing">Classical Kālīkula texts <span class="no-texts">✗</span> (no svapna text)</div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="tree-node" onclick="toggleNode(this); event.stopPropagation();">
+                                                                    <div class="node-title"><span class="toggle-icon rotated">►</span> Krama <span class="no-texts">✗</span></div>
+                                                                    <div class="node-content expanded">
+                                                                        <div class="tree-node">
+                                                                            <div class="node-title text-missing">Devīpañcaśataka <span class="no-texts">✗</span> (no svapna text)</div>
+                                                                        </div>
+                                                                        <div class="tree-node">
+                                                                            <div class="node-title text-missing">Kramasadbhāva <span class="no-texts">✗</span> (no svapna text)</div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <!-- Kaula (grows from Vidyāpīṭha) -->
+                                                        <div class="tree-node" onclick="toggleNode(this); event.stopPropagation();">
+                                                            <div class="node-title"><span class="toggle-icon rotated">►</span> Kaula (grew from Vidyāpīṭha) <span class="has-texts">✓</span></div>
+                                                            <div class="node-content expanded">
+
+                                                                <!-- Foundational text -->
+                                                                <div class="tree-node">
+                                                                    <div class="node-title text-missing">• Jayadrathayāmala <span class="no-texts">✗</span> (no svapna text)</div>
+                                                                </div>
+
+                                                                <!-- Four Āmnāyas -->
+                                                                <div class="tree-node" onclick="toggleNode(this); event.stopPropagation();">
+                                                                    <div class="node-title"><span class="toggle-icon rotated">►</span> Pūrvāmnāya (Eastern Transmission) <span class="has-texts">✓</span></div>
+                                                                    <div class="node-content expanded">
+                                                                        <div class="tree-node text-available">
+                                                                            <div class="node-title">• Kulārṇavatantra (11th-14th c.)</div>
+                                                                        </div>
+                                                                        <div class="tree-node text-available">
+                                                                            <div class="node-title">• Tantrāloka (c. 1000-1020) - Abhinavagupta</div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="tree-node" onclick="toggleNode(this); event.stopPropagation();">
+                                                                    <div class="node-title"><span class="toggle-icon rotated">►</span> Paścimāmnāya (Western Transmission) <span class="has-texts">✓</span></div>
+                                                                    <div class="node-content expanded">
+                                                                        <div class="tree-node text-available">
+                                                                            <div class="node-title">• Kubjikāmatatantra (10th-11th c.)</div>
+                                                                        </div>
+                                                                        <div class="tree-node text-available">
+                                                                            <div class="node-title">• Manthānabhairavatantra (10th-12th c.)</div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="tree-node" onclick="toggleNode(this); event.stopPropagation();">
+                                                                    <div class="node-title"><span class="toggle-icon rotated">►</span> Uttarāmnāya (Northern Transmission) <span class="no-texts">✗</span></div>
+                                                                    <div class="node-content expanded">
+                                                                        <div class="tree-node">
+                                                                            <div class="node-title text-missing">Devīpañcaśataka <span class="no-texts">✗</span> (no svapna text)</div>
+                                                                        </div>
+                                                                        <div class="tree-node">
+                                                                            <div class="node-title text-missing">Kramasadbhāva <span class="no-texts">✗</span> (no svapna text)</div>
+                                                                        </div>
+                                                                        <div class="tree-node">
+                                                                            <div class="node-title text-missing">Guhyakālī texts <span class="no-texts">✗</span> (no svapna text)</div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="tree-node" onclick="toggleNode(this); event.stopPropagation();">
+                                                                    <div class="node-title"><span class="toggle-icon rotated">►</span> Dakṣiṇāmnāya (Southern Transmission) <span class="no-texts">✗</span></div>
+                                                                    <div class="node-content expanded">
+                                                                        <div class="tree-node">
+                                                                            <div class="node-title text-missing">Nityāṣoḍaśikārṇava <span class="no-texts">✗</span> (no svapna text)</div>
+                                                                        </div>
+                                                                        <div class="tree-node">
+                                                                            <div class="node-title text-missing">Yoginīhṛdaya <span class="no-texts">✗</span> (no svapna text)</div>
+                                                                        </div>
+                                                                        <div class="tree-node">
+                                                                            <div class="node-title text-missing">Śrīvidyā texts <span class="no-texts">✗</span> (no svapna text)</div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <!-- Post-scriptural Kashmir Śaivism -->
+                        <div class="tree-node root" style="margin-top: 40px;">
+                            <div class="node-title">KASHMIR ŚAIVISM (Post-scriptural) <span class="has-texts">✓</span></div>
+                            <div class="node-content expanded">
+                                <div class="tree-node text-available">
+                                    <div class="node-title">• Śivasūtra (c. 800-850)</div>
+                                </div>
+                                <div class="tree-node text-available">
+                                    <div class="node-title">• Spandakārikā (c. 850-900)</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Bengal Śākta Traditions -->
+                        <div class="tree-node root" style="margin-top: 40px;">
+                            <div class="node-title">BENGAL ŚĀKTA TRADITIONS <span class="has-texts">✓</span></div>
+                            <div class="node-content expanded">
+                                <div class="tree-node text-available">
+                                    <div class="node-title">• Bṛhaantrasāra (18th c.)</div>
+                                </div>
+                                <div class="tree-node text-available">
+                                    <div class="node-title">• Mahānirvāṇatantra (18th-19th c.)</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Assamese Śākta Traditions -->
+                        <div class="tree-node root" style="margin-top: 40px;">
+                            <div class="node-title">ASSAMESE ŚĀKTA TRADITIONS <span class="has-texts">✓</span></div>
+                            <div class="node-content expanded">
+                                <div class="tree-node text-available">
+                                    <div class="node-title">• Yoginī Tantra (16th-17th c.)</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Yoga and Haṭha Texts -->
+                        <div class="tree-node root" style="margin-top: 40px;">
+                            <div class="node-title">YOGA & HAṬHA TEXTS <span class="has-texts">✓</span></div>
+                            <div class="node-content expanded">
+                                <div class="tree-node text-available">
+                                    <div class="node-title">• Śiva Saṃhitā (14th-15th c.)</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Dream Manuals -->
+                        <div class="tree-node root" style="margin-top: 40px;">
+                            <div class="node-title">DREAM MANUALS <span class="has-texts">✓</span></div>
+                            <div class="node-content expanded">
+                                <div class="tree-node text-available">
+                                    <div class="node-title">• Svapnacintāmaṇi (c. 1175)</div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Favorites Tab -->
+            <div id="favorites-tab" class="tab-content">
+                <div id="favoritesContent" class="results-container">
+                    <div style="text-align: center; padding: 40px; color: #64748b;">
+                        No favorites yet. This is a local demo version.
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Tree Node Toggle Script -->
+    <script>
+        function toggleNode(element) {
+            event.stopPropagation();
+            const nodeContent = element.querySelector('.node-content');
+            const toggleIcon = element.querySelector('.toggle-icon');
+
+            if (nodeContent) {
+                nodeContent.classList.toggle('expanded');
+                if (toggleIcon) {
+                    toggleIcon.classList.toggle('rotated');
+                }
+            }
+        }
+
+        function switchTab(tabName) {
+            // Hide all tabs
+            document.querySelectorAll('.tab-content').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            document.querySelectorAll('.tab-button').forEach(btn => {
+                btn.classList.remove('active');
+            });
+
+            // Show selected tab
+            document.getElementById(tabName + '-tab').classList.add('active');
+            event.target.classList.add('active');
+        }
+
+        // Placeholder functions for compatibility
+        function performSearch() {
+            alert('Connect to svapna.space database for search functionality');
+        }
+
+        function quickSearch(term) {
+            alert('Connect to svapna.space database for search functionality');
+        }
+
+        // Lottie animation
+        if (typeof lottie !== 'undefined') {
+            lottie.loadAnimation({
+                container: document.getElementById('lottie-logo'),
+                renderer: 'svg',
+                loop: true,
+                autoplay: true,
+                path: 'https://assets2.lottiefiles.com/packages/lf20_jtbfg2nb.json'
+            });
+        }
+    </script>
+
+    <!-- Passage Display JavaScript -->
+    <script src="nisvasa-passages-data.js"></script>
+    <script src="all-saiva-passages-data.js"></script>
+    <script src="passage-display.js"></script>
+    <script src="render-all-passages.js"></script>
+</body>
+</html>
