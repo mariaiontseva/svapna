@@ -206,6 +206,78 @@ const all_saiva_passages = {
     },
 
     // ========================================
+    // ŚIVASŪTRA (c. 800-850 CE)
+    // Kashmir Śaivism Exegesis
+    // ========================================
+
+    shivasutra: {
+        name: "Śivasūtra",
+        period: "c. 800-850 CE",
+        branch: "Kashmir Śaivism Exegesis",
+        passages: {
+
+            sutra_2_9: {
+                reference: "Sūtra 2.9",
+                categories: ["yoga & consciousness"],
+                translator: "Jaideva Singh",
+                translated: true,
+                verses: [
+                    {
+                        number: "2.9",
+                        sanskrit: "svapno vikalpaḥ",
+                        translation: "Dream is vikalpa (a mind-made construction)."
+                    }
+                ],
+                context: "For ordinary people: dreams are cognitions produced by mind alone, with no contact with external objects. For a yogi, this hints at power: mind crafts a world. Kṣemarāja's yogic upgrade: svapna is a practitioner's state - the uninterrupted flow of one ideation (vikalpa-pravāha), an inward stream you can stabilize and recognize. This isn't dullness; it's a controllable, non-sensorial mode of awareness."
+            },
+
+            four_dream_modes: {
+                reference: "Kṣemarāja's Vimarśinī commentary citing Malinīvijayatantra II.43",
+                categories: ["yoga & consciousness"],
+                translator: "Jaideva Singh",
+                translated: true,
+                verses: [
+                    {
+                        number: "Commentary on 2.9",
+                        sanskrit: "svapna-jāgrat, svapna-svapna, svapna-suṣupti, svapna-turya",
+                        translation: "Kṣemarāja quotes Malinīvijaya-tantra to map four flavors within svapna: (1) svapna-jāgrat - 'waking in the dream': crisp, steady scenes; also called gata-gata because prāṇa-apāna movement makes imagery vivid (≈ vivid dreaming; energy-body angle built in). (2) svapna-svapna - 'dream within dream': hazy, restless, suvikṣipta; the chaotic pole of dreamcraft. (3) svapna-suṣupti - peaceful, internally coherent dream; saṃgata ('congruent'): plot-like, stable narratives you can ride. (4) svapna-turya - you remain self-aware (susamāhita), knowing 'this is a dream' (≈ lucid dreaming; the yogin's agency shows—recognition in the image-stream)."
+                    }
+                ],
+                context: "Altered-state tech: (1) svapna-jāgrat says prāṇa dynamics (gata-gata) amplify dream-forms—an energy lever for 'making' clarity in the dream field. (2) svapna-turya explicitly preserves self-awareness (susamāhita)—a doctrinal anchor for lucid agency (choose, test mantra, observe śakti). (3) Kṣemarāja's practitioner reading turns dream from passive fiction into a laboratory of recognition—a controllable, mind-cast reality stream."
+            }
+        }
+    },
+
+    // ========================================
+    // SPANDAKĀRIKĀ (c. 850-900 CE)
+    // Kashmir Śaivism Exegesis
+    // ========================================
+
+    spandakarika: {
+        name: "Spandakārikā",
+        period: "c. 850-900 CE",
+        branch: "Kashmir Śaivism Exegesis",
+        author: "Vasugupta or Bhatta Kallata",
+        passages: {
+
+            waking_dream_continuity: {
+                reference: "Verses (specific number TBD from PDF)",
+                categories: ["yoga & consciousness"],
+                translator: null,
+                translated: true,
+                verses: [
+                    {
+                        number: "TBD",
+                        sanskrit: "yathēcchābhyarthitō dhātā jāgratō'rthān hṛdi sthitān | sōmasūryōdayaṁ kṛtvā saṁpādayati dēhinaḥ || tathā svapnē'pyabhīṣṭārthān praṇayasyānatikramāt | nityaṁ sphuṭataraṁ madhyē sthitō'vaçyaṁ prakāçayēt ||",
+                        translation: "Just as the Creator, when petitioned by will, brings forth for the embodied being the objects that abide in the heart during waking, having made the rising of moon and sun; So too in dream, the beloved objects, through the non-transgression of cosmic pulsation (spanda), He who abides eternally and ever more clearly in the center, must necessarily manifest them."
+                    }
+                ],
+                context: "The text focuses on spanda (cosmic pulsation), the dynamic aspect of consciousness (vimarśa). This passage demonstrates how the same consciousness that manifests waking reality also crafts dream experiences, both arising from the practitioner's heart-center through the non-dual pulsation of awareness."
+            }
+        }
+    },
+
+    // ========================================
     // TANTRASADBHĀVATANTRA (8th-9th century)
     // Vidyāpīṭha → Trika branch
     // ========================================
