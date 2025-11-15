@@ -591,29 +591,89 @@ const all_saiva_passages = {
         branch: "Late Bengali & Assamese Śākta Traditions → Assam",
         passages: {
 
-            chapter_7_svapnavati_mantra: {
-                reference: "Chapter 7.3-9: Svāpnavatī Mantra Revelation",
+            svapnavati_mantra_core: {
+                reference: "Chapter 7.4-9: Svāpnavatī Mantra Core Revelation",
                 categories: ["revelation"],
                 translator: null,
                 translated: false,
                 verses: [
                     {
-                        number: "7.3",
-                        sanskrit: "idānīṃ śrotum icchāmi vidyāṃ svāpnavatīṃ śubhām",
-                        translation: "Now I wish to hear the auspicious Svāpnavatī vidyā"
+                        number: "7.4",
+                        sanskrit: "śṛṇu devi pravakṣyāmi yanmāṃ tvaṃ paripṛcchasi | oṃ hrīṃ svapurāvāhi kāli svapne kathayāmukasyāmukaṃ dehi krīṃ svāhā",
+                        translation: "Listen, Goddess, I shall tell you what you ask of me: OṂ HRĪṂ Svapurāvāhi Kālī, speak in dreams, show [such-and-such] to [so-and-so], KRĪṂ SVĀHĀ"
                     },
                     {
-                        number: "7.4-6",
-                        sanskrit: "oṃ hrīṃ svapurāvāhi kālī svapne kathaya amukasya amukaṃ dehi krīṃ svāhā",
-                        translation: "OṂ HRĪṂ Svapurāvāhi Kālī, speak in dreams, show [such-and-such] to [so-and-so], KRĪṂ SVĀHĀ"
+                        number: "7.5-6",
+                        sanskrit: "praṇavaṃ pūrvamuddhṛtya māyābījaṃ tadantaram | tadante svapurāvāhi kāli sambodhanadvayam || svapne kathaya tat paścādamukasyāmaukaṃ tataḥ | dehi padāt kālībījamante vahnivadhūntathā",
+                        translation: "First pronounce the praṇava (OṂ), then the seed of māyā (HRĪṂ), then 'Svapurāvāhi Kālī' as double invocation. After that 'speak in dreams', then '[such-and-such to so-and-so]', after 'show' the seed of Kālī (KRĪṂ), at the end the fire-woman [mantra] (SVĀHĀ)"
                     },
                     {
-                        number: "7.7-9",
-                        sanskrit: "iyaṃ svāpnavatī vidyā trailokye cātidurlabhā / mahācamatkārakarī mahākālena bhāṣitā // … svapne darśayate sarvaṃ yad manasi kalpyate //",
-                        translation: "This Svāpnavatī vidyā is exceedingly rare in the three worlds, miraculous and wonder-working, spoken by Mahākāla... In dreams it shows everything that is conceived in the mind."
+                        number: "7.7",
+                        sanskrit: "iyaṃ svāpnavatī vidyā trailokye cātidurlabhā | mahācamatkārakarī mahākālena bhāṣitā",
+                        translation: "This Svāpnavatī vidyā is exceedingly rare in the three worlds, miraculous and wonder-working, proclaimed by Mahākāla"
+                    },
+                    {
+                        number: "7.8",
+                        sanskrit: "aṣṭottaraśataṃ nityaṃ japedvarṣacatuṣṭayam | tataḥ siddhā bhaved vidyā svapne tiṣṭhati nityaśaḥ",
+                        translation: "One should recite [the mantra] 108 times daily for four years. Then the vidyā becomes perfected, it abides constantly in dreams"
+                    },
+                    {
+                        number: "7.9",
+                        sanskrit: "svapne darśayate sarvaṃ yadmanmanasi kalpyate | mṛtasañjīvanīṃ vidyāmataḥ śṛṇu nagātmaje",
+                        translation: "In dreams it shows everything that is conceived in the mind. Now hear about the Mṛtasañjīvanī vidyā, O daughter of the mountains"
                     }
                 ],
-                context: "Foundational dream-mantra cycle revealing the Svāpnavatī vidyā for inducing revelatory dreams. The goddess Svāpnavatī (Dream-Lady) is invoked through the mantra 'oṃ hrīṃ svapurāvāhi kālī...' to appear in dreams and reveal whatever the practitioner wishes to know. Śiva declares this vidyā exceedingly rare (atidurlabhā) in the three worlds, miraculous and wonder-working (mahācamatkārakarī), capable of showing in dreams 'everything conceived in the mind' (svapne darśayate sarvaṃ yad manasi kalpyate). This represents an explicit tantric theory of dream as creative-epistemic field where mental intention directly manifests as visionary revelation. Chapter 7 also includes secondary passages on dream-oracle procedures (7.23-27), dream-awakening techniques (7.50-57), and secrecy injunctions (7.58-64), not yet translated."
+                context: "Core revelation of the Svāpnavatī mantra for inducing prophetic dreams. The goddess Svāpnavatī (Dream-Lady) is invoked to appear in dreams and reveal specific knowledge requested by the practitioner. Śiva provides the complete mantra structure (verses 5-6) and declares this vidyā 'exceedingly rare in the three worlds' (trailokye cātidurlabhā) and 'wonder-working' (mahācamatkārakarī). The practice requires 108 daily recitations for four years until the vidyā becomes siddha and 'constantly abides in dreams' (svapne tiṣṭhati nityaśaḥ). Verse 9 presents an explicit tantric theory of dream as creative-epistemic field: 'in dreams it shows everything conceived in the mind' (svapne darśayate sarvaṃ yad manasi kalpyate), establishing that mental intention directly manifests as visionary revelation."
+            },
+
+            dream_manifestation_practice: {
+                reference: "Chapter 7.51-52: Simple Dream Manifestation Technique",
+                categories: ["yoga&consciousness"],
+                translator: null,
+                translated: false,
+                verses: [
+                    {
+                        number: "7.51",
+                        sanskrit: "divā bhuktvā haviṣyānnaṃ rātrau japtvā sahasrakam",
+                        translation: "Having eaten pure food (haviṣya) during the day, having done one thousand recitations at night"
+                    },
+                    {
+                        number: "7.52",
+                        sanskrit: "tataḥ śuddhāyāṃ śayyāyāṃ tadā svapne hi paśyati | manasā cintitaṃ yadyat tat sarvaṃ parameśvari",
+                        translation: "Then on a pure bed, one sees in dreams whatever was thought in the mind—all of it, O Supreme Goddess"
+                    }
+                ],
+                context: "A simplified dream manifestation practice requiring only one night of preparation (versus four years for the Svāpnavatī siddhi). The practitioner maintains ritual purity through haviṣya food during the day, performs 1000 mantra recitations at night, and sleeps on a pure bed. Through this practice, the verb paśyati (sees) indicates that whatever is mentally conceived (manasā cintitam) directly manifests as dream vision. This represents an accessible consciousness technique demonstrating immediate mental control over dream content, where focused intention (manasā) during waking preparation translates into corresponding dream manifestation. The practice emphasizes the direct link between waking mental states and dream phenomenology."
+            },
+
+            svapnaprabodha_awakening: {
+                reference: "Chapter 7.53-57: Svapnaprabodha - Dream-Awakening Practice",
+                categories: ["revelation", "yoga&consciousness"],
+                translator: null,
+                translated: false,
+                verses: [
+                    {
+                        number: "7.53",
+                        sanskrit: "athāparaṃ pravakṣyāmi svapnaprabodhamuttamam | yena vijñānamātreṇa sarvaṃ jānāti niścitam",
+                        translation: "Now I shall explain the supreme svapnaprabodha (dream-awakening), by means of which knowledge alone one knows everything with certainty"
+                    },
+                    {
+                        number: "7.55",
+                        sanskrit: "oṃ namo jagattrinetrāya piṅgalāya mahātmane | vāmadevasurūpāya svapnādhipataye namaḥ",
+                        translation: "OṂ, salutations to the three-eyed Lord of the world, the tawny one, the great soul, who has the form of Vāmadeva, to the Lord of Dreams (Svapnādhipati), salutations"
+                    },
+                    {
+                        number: "7.56",
+                        sanskrit: "svapne kathaya me tattvaṃ sarvaṃ kāryaṃ śubhāśubham | iti mantreṇa saṃprārthya sarvaṃ jānāti bhāvataḥ",
+                        translation: "Tell me in dreams the truth about all matters, auspicious and inauspicious—having prayed with this mantra, one truly knows everything"
+                    },
+                    {
+                        number: "7.57",
+                        sanskrit: "etatte kathitaṃ devi svapnabodhamanuttamam | rahasyaṃ paramaṃ ramyaṃ vaśīkaraṇamuttamam",
+                        translation: "This has been told to you, O Goddess, the supreme dream-knowledge (svapnabodha), the highest secret, beautiful, the supreme power"
+                    }
+                ],
+                context: "The Svapnaprabodha practice combines dream revelation with consciousness transformation. The term prabodha (awakening) suggests both awakening TO knowledge in dreams and awakening WITHIN the dream state itself. The practitioner invokes Śiva as Svapnādhipati (Lord of Dreams), requesting revelation of truth about all matters (sarvaṃ kāryaṃ śubhāśubham) through the prayer 'svapne kathaya me tattvam' (tell me truth in dreams). Verse 57 describes this as 'supreme dream-knowledge' (svapnabodham anuttamam) and 'the highest secret' (rahasyaṃ paramam). The term vaśīkaraṇam uttamam (supreme subjugation/power) likely refers either to mastery over the dream state itself or to the power gained through complete dream-knowledge. This practice bridges revelation (receiving truth in dreams) and yogic consciousness transformation (awakening within dreams)."
             }
 
         }
