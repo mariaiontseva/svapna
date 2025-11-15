@@ -479,5 +479,60 @@ const all_saiva_passages = {
                 context: "Abhinavagupta's encyclopedic work contains dream material, particularly on precognitive dreams. Analyzed in Surabhi Verma's 'Precognitive Dreams in Kashmir Śaivism' (2019)."
             }
         }
+    },
+
+    // ========================================
+    // MAHĀRTHAMAÑJARĪ (14th century)
+    // Krama tradition
+    // ========================================
+
+    maharthamanjari: {
+        name: "Mahārthamañjarī",
+        author: "Maheśvarānanda",
+        period: "14th c.",
+        branch: "Vidyāpīṭha → Krama tradition",
+        passages: {
+
+            hypnagogic_state: {
+                reference: "Parimala commentary (lines 5708-5730)",
+                categories: ["yoga & consciousness"],
+                translator: "Lilian Silburn (French 1968); Singh & Maheshvarananda (English)",
+                translated: true,
+                verses: [
+                    {
+                        number: "Parimala commentary",
+                        sanskrit: "athaikadā niśīthinyāmāsīno yāgamaṇḍape | tarpayitvā parāṃ devīṃ gandha-puṣpa-akṣata-āsavaiḥ || āsvādyānandapātrāṇi trīṇi tīvrāṇi tanmanāḥ | svasaṃrambhaparāmarśabhavyāmanubhavan prathām || jāgarāsvapnayormadhyamadhyasya mahatīṃ daśām | dūtyāḥ stanataṭotsaṅgam-aparāṅgena pīḍayan || pradīpaiḥ kuśalaireva pradīptairaparokṣitaḥ | āste sma vismayākrāntaḥ kahlārotphullalocanaḥ || atrāntare striyaṃ kāñcit kaṇṭhā-śūla-kapālinīm | sa dadarśa kilollokāṃ sindūra-alaṅkṛta-ālikām || ālokya ca sa tāṃ siddhāṃ kurvannāsanna-māsanam | upāharadudāraśrīḥ pūjopakaraṇaṃ kramāt || dakṣiṇāṃ ca yathāśakti dātuṃ dūtīṃ samādiśat | kruddheva yoginī sā ca kimebhiriti niḥspṛhā || mahārāṣṭrabhuvāṃ bhāṣāṃ prayuñjānā smitottaram | saptasaṃkhyocitāṃ mudrāṃ badhnatī hastapallave ||",
+                        translation: "Once at midnight, seated in the ritual space (yāgamaṇḍapa), having satisfied the Supreme Goddess with fragrances, flowers, rice, and wine, having drunk three intense vessels of bliss (ānandapātrāṇi), mind concentrated, experiencing the first arising of self-aware presence (svasaṃrambhaparāmarśa)— He entered THE GREAT STATE IN THE MIDDLE BETWEEN WAKING AND DREAMING (jāgarāsvapnayormadhya), pressing against the body of the dūtī, her breast and lap, illuminated by skillfully kindled lamps. He sat overwhelmed with wonder, eyes brimming with ecstasy. At that moment he saw a certain woman bearing kaṇṭhā, śūla, and kapāla [yoginī symbols], radiant, her face adorned with vermillion. Seeing that Siddha [yoginī], he immediately offered her a seat, brought forth excellent worship materials in sequence, and ordered the dūtī to give dakṣiṇā according to his capacity. But the yoginī, as if angry, said 'Why these things?' with detachment, speaking in Mahārāṣṭra language with a smiling response, binding the mudrā of the number seven with her lotus hands."
+                    }
+                ],
+                context: "Entry into the hypnagogic threshold state (jāgarāsvapnayormadhya) for visionary experience. After ritual worship, consumption of intoxicating beverages (ānandapātrāṇi), and sexual ritual with dūtī, the practitioner enters the borderland between waking and dreaming where a Siddha Yoginī manifests. This is deliberate cultivation of the liminal consciousness state for receiving tantric transmission."
+            },
+
+            consciousness_substates: {
+                reference: "Parimala commentary (lines 4778-4810) citing Tantrāloka 10.253-296",
+                categories: ["yoga & consciousness"],
+                translator: "Lilian Silburn (French 1968); Singh & Maheshvarananda (English)",
+                translated: true,
+                verses: [
+                    {
+                        number: "Parimala citing TA 10.253ab",
+                        sanskrit: "gataāgataṃ suvikṣiptaṃ saṃgataṃ susamāhitam",
+                        translation: "Svapna [dream] has four substates: gone-and-come (gataāgata), well-dispersed (suvikṣipta), gathered (saṃgata), well-collected (susamāhita)"
+                    },
+                    {
+                        number: "Parimala - Suṣupti substates",
+                        sanskrit: "uditaṃ vipulaṃ śāntaṃ suprasannam",
+                        translation: "Suṣupti [deep sleep] has four substates: arisen (udita), vast (vipula), peaceful (śānta), supremely clear (suprasanna)"
+                    },
+                    {
+                        number: "Parimala citing TA 10.294cd-296",
+                        sanskrit: "yasya yad yat sphuṭaṃ rūpaṃ tajjāgraditi manyatām | yadevaāsthiramābhāti svarūpaṃ svapna īdṛśaḥ || asphuṭaṃ tu yadābhāti suṣuptaṃ tat puro'pi yat | srakṣūtrakalpaṃ tat tūrya sarvabhedeṣu gṛhyatām",
+                        translation: "Whatever appears clearly (sphuṭa) - consider that waking; Whatever appears unstable - such is dream; Whatever appears unclearly (asphuṭa) - that is deep sleep; Consider turya like a thread-string in all divisions."
+                    }
+                ],
+                context: "This passage extensively cites Tantrāloka's classification system. The four substates of dream (svapna) and deep sleep (suṣupti) provide a sophisticated phenomenological map for yogic practice of consciousness states. Mahārthamañjarī contextualizes these within Krama tradition's understanding of vimarśa (reflective awareness) as the thread unifying all states."
+            }
+
+        }
     }
 };
