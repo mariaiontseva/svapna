@@ -20,6 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
         'brhattantrasara': 'Bṛhattantrasāra',
         'saktisamgama': 'Śaktisamgama Sundarīkhaṇḍa',
         'jnanarnavatantra': 'Jñānārṇavatantra',
+        'pingalamata': 'Piṅgalamata',
         'cidgaganacandrika': 'Cidgaganacandrikā'
     };
 

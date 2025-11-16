@@ -943,5 +943,52 @@ const all_saiva_passages = {
             }
 
         }
+    },
+
+    pingalamata: {
+        name: "Piṅgalamata",
+        period: "c. 8th-10th century CE (early Yāmala stratum)",
+        branch: "Uttarāmnāya (Northern Transmission - Kālīkula/Matāṣṭaka)",
+        passages: {
+            dream_revelation_ritual: {
+                reference: "Dream Revelation Ritual: Prayer, Śrāvaṇavidyā Mantra, and Remedial Homa",
+                categories: ["prophecy", "empowerment"],
+                translator: null,
+                translated: false,
+                verses: [
+                    {
+                        number: "Prayer (lines 621-625)",
+                        sanskrit: "oṃ namaḥ śaṃbhotrinetrāya piṅgalāya mahātmane | vāmāya viśvarūpāya namobhairavarūpine | svapnaṃ kathaya me śambho sarvakārye sureśvara",
+                        translation: "Om, salutation to Śambhu three-eyed, to Piṅgala the great-souled, to Vāma of universal form, salutation to Bhairava-formed. Tell me in dreams (svapnaṃ kathaya me), O Śambhu, regarding all matters (sarvakārye), O lord of gods."
+                    },
+                    {
+                        number: "Śrāvaṇavidyā Mantra (lines 628-630)",
+                        sanskrit: "oṃ huṃ hili hili sadeśvaraśūlapāṇaye dusvapnaṃ hana hana śubhaṃ dalaya dalaya svāhā",
+                        translation: "[The Śrāvaṇavidyā:] Om huṃ hili hili, to Sadeśvara Śūlapāṇi (lord of the trident), destroy destroy bad dreams (dusvapnaṃ hana hana), reveal reveal the auspicious (śubhaṃ dalaya dalaya), svāhā."
+                    },
+                    {
+                        number: "Ritual Practice (lines 634-638)",
+                        sanskrit: "māṇavakaṃ japitvādau mantranyāsātmanopi vā | paramvā cārthasaṃsiddhau svapetkāryaṃ svakaṃ smaran || prabhāte tu śucirbhūtvā gurauḥ svapnān nivedayet",
+                        translation: "Having first recited the mantra (māṇavakaṃ japitvā), or [having done] nyāsa of the mantra in oneself, or for the accomplishment of a desired purpose (arthasaṃsiddhi), one should sleep remembering one's own task/question (svapetkāryaṃ svakaṃ smaran). In the morning, having purified oneself (śucirbhūtvā), one should report the dreams to the guru (gurauḥ svapnān nivedayet)."
+                    },
+                    {
+                        number: "Auspicious Signs (lines 640-648)",
+                        sanskrit: "dṛṣṭvā cāryaṃ dvijān gāśca narendraṃ svetavāśasam | ... yoginīvṛndamadhyataḥ | ākāśe cotpataṃtaṃ ca nāgārūḍhaṃ ... samudrataraṇaṃ tathā | jñānalāṃbhantu śāstrañca chatrākṣasūtrakaṃbukam || evamādyāḥ śubhāḥ proktāḥ śubhārthe siddhimādiśet",
+                        translation: "Having seen the ācārya, brāhmaṇas, cows, the king in white garments, ... in the midst of a host of yoginīs, flying in the sky, riding a nāga, ... crossing the ocean, obtaining knowledge and śāstras, umbrella/rosary/conch - these and similar are declared auspicious (śubha); for auspicious purpose they indicate success (siddhi)."
+                    },
+                    {
+                        number: "Inauspicious Signs (lines 653-656)",
+                        sanskrit: "kharoṣṭrārohaṇaṃ yastu ... tailābhyaṅgañca nirgrathaṃbhikṣubhagavameva ca | svinamāṃsapayaḥ pānamevādyā'śubhasiddhidā",
+                        translation: "Riding a donkey or camel, ... oil massage, mendicant monks, drinking pig blood/milk - these and similar produce inauspicious results (aśubhasiddhidā)."
+                    },
+                    {
+                        number: "Dream Reporting Protocol (lines 661-664)",
+                        sanskrit: "śubhasvapnaṃ kathetprājña yatotkarṣāvadhāraṇā | duḥsvapnaṃ vā prakāśyaṃ tu homārthañca svake kathet || tenāṣṭottaraśataṃ hutvā kriyāḥ karttaṃ samācaret",
+                        translation: "The wise one (prājña) should tell auspicious dreams (śubhasvapna) for confirmation of excellence. But bad dreams (duḥsvapna) must be disclosed (prakāśya) for the purpose of homa (homārtha), tell [them] to one's own [guru]. Having offered 108 oblations (aṣṭottaraśataṃ hutvā), one should perform the [remedial] rites (kriyāḥ samācaret)."
+                    }
+                ],
+                context: "Complete system for obtaining prophetic dream-revelations through deity invocation in Kālīkula/Uttarāmnāya tradition. Piṅgalamata, classified as supplement to Jayadrathayāmala (the 'King of Tantras' for Uttarāmnāya) and member of Matāṣṭaka (eight Mata texts), presents structured three-phase dream-operation: (1) INVOCATION: Prayer to Piṅgala-Bhairava requesting dream-communication 'sarvakārye' (regarding all matters) + Śrāvaṇavidyā mantra with dual function - destroy inauspicious dream-content AND reveal auspicious content; (2) PRACTICE: Recite mantra before sleep while holding specific question/task in mind (kāryaṃ svakaṃ smaran) - this intentional focus (saṃkalpa) directs dream-content toward desired information; report dreams to guru in morning after purification; (3) INTERPRETATION & REMEDIATION: Extensive catalogs distinguish śubha (auspicious) vs. aśubha/duḥ (inauspicious) dream-signs. Auspicious dreams indicate siddhi and may be shared publicly for 'confirmation of excellence' (utkarṣāvadhāraṇā). Inauspicious dreams MUST be disclosed to guru specifically 'for homa' (homārtha) - remedial fire-ritual with 108 oblations neutralizes negative predictions. This distinguishes dream-OPERATION (active technique to obtain information) from passive dream-OMEN interpretation. Unlike Yoginītantra's svāpnavatī-vidyā (which makes dreams occur) or Jñānārṇavatantra's institutional exemption for svapnalabdha mantras, Piṅgalamata provides complete prophetic system: mantra to REQUEST specific information, protocol to RECEIVE it (intentional sleep), method to VALIDATE it (guru consultation), and mechanism to CORRECT unwanted content (homa). The 'svapetkāryaṃ svakaṃ smaran' instruction is critical - practitioner doesn't passively wait for dreams but actively QUERIES through dream-state, treating svapna as communication channel with deity. Text attributes to Bhagavat Śrīkaṇṭhanātha, preserved in Nepal manuscripts. As Yāmala-class literature and part of Matāṣṭaka, represents early stratum of Uttarāmnāya Kālīkula doctrine, predating later compilations."
+            }
+        }
     }
 };
