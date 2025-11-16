@@ -904,5 +904,44 @@ const all_saiva_passages = {
             }
 
         }
+    },
+
+    // ========================================
+    // CIDGAGANACANDRIKĀ (c. 9th-10th century)
+    // Uttarāmnāya (Kālīkrama) branch
+    // ========================================
+
+    cidgaganacandrika: {
+        name: "Cidgaganacandrikā",
+        period: "c. 9th-10th century CE",
+        branch: "Uttarāmnāya (Northern Transmission - Kālīkrama)",
+        passages: {
+
+            dream_as_pramana: {
+                reference: "Verses 196-197, 200: Dream-Vision as Valid Pramāṇa (Means of Knowledge)",
+                categories: ["empowerment"],
+                translator: null,
+                translated: false,
+                verses: [
+                    {
+                        number: "196",
+                        sanskrit: "yatsmṛtau sphurati vastu bimbitaṃ svapnasaṃprathanakalpayośca yat | bimbavarjamiha tannidarśanāt tvannimagnamuditaṃ jagat tvayā",
+                        translation: "That which manifests in memory as a reflected object, and that which [manifests] in the unfolding of dreams (svapnasaṃprathana) and imagination - without [external] reflection here, through contemplation of this, the world is immersed in You [the Goddess]"
+                    },
+                    {
+                        number: "197",
+                        sanskrit: "svapnadṛṣṭamasadityasadvaco divya eṣa yadiha pramāṇitaḥ | kalpanāpi na mṛṣā phalaṃ śive yat sthitaṃ garuḍabhāvanādijam",
+                        translation: "What is seen in dreams (svapnadṛṣṭa) is unreal - so say [opponents]. But if this divine [vision] is accepted here as a valid means of knowledge (pramāṇa), then even imagination (kalpanā) is not false (na mṛṣā), O Śiva, [for] the fruit that arises from meditation on Garuḍa and such [is real]"
+                    },
+                    {
+                        number: "200",
+                        sanskrit: "kalpanā yadi mṛṣeti bhāṣitā dhāraṇā phalati kena hetunā | devi saṃkalanabodhajīvitā devatā kimiti kairna hīyase",
+                        translation: "If imagination (kalpanā) is declared false (mṛṣā), by what cause does dhāraṇā bear fruit (phalati)? O Devi! The deity that lives through conceptualization-and-cognition (saṃkalanarūpa) - why are You not diminished?"
+                    }
+                ],
+                context: "Epistemological defense of dream-vision and visualization as valid pramāṇa (means of knowledge) in Kālīkrama/Uttarāmnāya tradition. Responds to objection 'svapnadṛṣṭa asat' (what is seen in dreams is unreal) with sophisticated argument: IF divine vision is accepted as pramāṇa, THEN kalpanā (imagination/visualization) cannot be mṛṣā (false), because dhāraṇā and bhāvanā produce REAL fruits (phala). This establishes theoretical foundation for tantric visualization practices and dream-operations. Verse 200's argument is particularly powerful: deities 'born' through saṃkalana-bodha (conceptualization-cognition) demonstrably produce effects - therefore the cognitive processes that generate them (including svapna) must have ontological validity. Unlike Jñānārṇavatantra's institutional exemption or Śaktisamgama's ritual validation, Cidgaganacandrikā offers PHILOSOPHICAL justification: dream-experience is not epistemologically inferior to waking perception when the content is 'divya' (divine). The bimbatā (reflection) framework in v.196 positions all experience - waking, dream, memory, imagination - as equally 'reflected' in consciousness; none has privileged access to 'original' (bimba). Therefore svapna-derived knowledge can be as valid as any other mode. Critical for Krama's emphasis on internal yogic experience and goddess-visualization as primary practice rather than external ritual. This passage legitimates entire edifice of tantric sādhana based on mental cultivation: if kalpanā were truly false, dhāraṇā would not work - but it does, therefore consciousness-created reality has causal efficacy."
+            }
+
+        }
     }
 };
