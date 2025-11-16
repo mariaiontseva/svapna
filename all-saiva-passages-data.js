@@ -870,5 +870,39 @@ const all_saiva_passages = {
             }
 
         }
+    },
+
+    // ========================================
+    // JÑĀNĀRṆAVATANTRA (date uncertain)
+    // Dakṣiṇāmnāya (Śrīvidyā) branch
+    // ========================================
+
+    jnanarnavatantra: {
+        name: "Jñānārṇavatantra",
+        period: "Date uncertain, likely 12th-17th century",
+        branch: "Dakṣiṇāmnāya (Śrīvidyā - Southern Transmission)",
+        passages: {
+
+            dream_mantra_exemption: {
+                reference: "Chapter 16.127-128: Dream-Obtained Mantras Exempt from Siddhi Verification",
+                categories: ["empowerment"],
+                translator: null,
+                translated: false,
+                verses: [
+                    {
+                        number: "16.127",
+                        sanskrit: "etaduktaṃ maheśāni tyaktvā'nyamatamuttamam | svapnalabdhe striyā datte mālamantre tribījake",
+                        translation: "This has been explained, O Maheśānī. Setting aside [the above], [I teach] another supreme doctrine. [Mantras] obtained in dreams (svapnalabdhe), given by a woman (striyā datte), mālā-mantras, [and those] with three bījas"
+                    },
+                    {
+                        number: "16.128",
+                        sanskrit: "siddhādiśodhanaṃ devī na vai teṣāṃ tu vidyate | śrīvidyāpūjanasthāne cakrarāje maheśvari",
+                        translation: "O Goddess, for these there is certainly no purification/examination regarding siddhas (siddhādiśodhanaṃ na vidyate). In the place of Śrīvidyā worship, in the king of cakras, O Maheśvarī"
+                    }
+                ],
+                context: "Establishes dream-obtained mantras as epistemologically privileged category exempt from siddhi-verification system. After extensive classification of mantras by siddhi-status (16.118-126), text explicitly sets aside (tyaktvā) previous doctrine to introduce 'supreme teaching' (uttamam): certain mantra-types require NO siddhādi-śodhana (purification/examination of siddhi-status). Dream-obtained mantras (svapnalabdha) are listed alongside woman-given (strīdatta), mālā-mantras, and tribījaka mantras as self-authenticating categories. This exemption is specifically Śrīvidyā context ('śrīvidyāpūjanasthāne cakrarāje') - establishes dream-transmission as legitimate channel within Dakṣiṇāmnāya cakra-worship. Unlike Śaktisamgama's vessel-ritual validation, Jñānārṇava presents categorical exemption: dream-mantras bypass entire verification apparatus because dream-space itself is recognized as valid revelation-medium. Parallels Śaktisamgama's ṛṇa-dhana-cakra exemption but with specifically Śrīvidyā theological frame (cakrarāja as locus). This positions dream-revelation as interior correlate to woman-transmission (both Śakti-mediated) and mālā-practice (continuous japa). Key for Dakṣiṇāmnāya epistemology: dream is not secondary verification needing ritual correction, but primary pratyaya (self-evident knowledge) requiring no external śodhana."
+            }
+
+        }
     }
 };

@@ -18,7 +18,8 @@ document.addEventListener('DOMContentLoaded', function() {
         'tantraloka': 'Tantrāloka',
         'yoginitantra': 'Yoginī Tantra',
         'brhattantrasara': 'Bṛhattantrasāra',
-        'saktisamgama': 'Śaktisamgama Sundarīkhaṇḍa'
+        'saktisamgama': 'Śaktisamgama Sundarīkhaṇḍa',
+        'jnanarnavatantra': 'Jñānārṇavatantra'
     };
 
     // Function to count total passages for a text
