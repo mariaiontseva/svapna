@@ -452,6 +452,155 @@
             font-size: 0.9em;
             text-align: center;
         }
+
+        /* Result Cards */
+        .result-card {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 16px;
+            transition: all 0.2s;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .result-card:hover {
+            box-shadow: var(--shadow-md);
+            border-color: var(--primary-light);
+        }
+
+        .result-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 16px;
+        }
+
+        .result-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .result-meta {
+            display: flex;
+            gap: 16px;
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        .tradition-badge {
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            background: var(--bg-tertiary);
+            color: var(--text-secondary);
+            white-space: nowrap;
+        }
+
+        /* Snippets */
+        .snippets {
+            margin-top: 16px;
+            padding-top: 16px;
+            border-top: 1px solid var(--border-light);
+        }
+
+        .snippet-container {
+            margin-bottom: 12px;
+            padding: 12px;
+            background: var(--bg-tertiary);
+            border-radius: 8px;
+            border-left: 3px solid var(--primary-light);
+        }
+
+        .snippet {
+            font-size: 14px;
+            line-height: 1.6;
+            color: var(--text-primary);
+            font-family: 'Noto Sans Devanagari', sans-serif;
+        }
+
+        .snippet mark {
+            background: #fef08a;
+            color: var(--text-primary);
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-weight: 600;
+        }
+
+        .snippet-actions {
+            margin-top: 8px;
+            display: flex;
+            gap: 8px;
+        }
+
+        .copy-snippet-btn, .more-context-btn {
+            padding: 6px 14px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 13px;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+
+        .copy-snippet-btn:hover, .more-context-btn:hover {
+            background: var(--primary-dark);
+        }
+
+        .snippet.expanded {
+            background: #f0f8ff;
+            padding: 16px;
+            border-radius: 8px;
+        }
+
+        /* Favorites */
+        .favorite-btn {
+            background: none;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+            color: var(--text-muted);
+            margin-left: 12px;
+            transition: all 0.2s;
+        }
+
+        .favorite-btn:hover {
+            color: var(--warning);
+            transform: scale(1.2);
+        }
+
+        .favorite-btn.active {
+            color: var(--warning);
+        }
+
+        /* Loading */
+        .loader, .loading {
+            text-align: center;
+            padding: 40px;
+            color: var(--text-muted);
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 40px;
+            color: var(--text-muted);
+            font-size: 16px;
+        }
+
+        .search-info {
+            padding: 16px;
+            background: var(--bg-tertiary);
+            border-left: 4px solid var(--primary);
+            border-radius: 8px;
+            margin-bottom: 20px;
+            font-size: 15px;
+            color: var(--text-primary);
+        }
     </style>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.12.2/lottie.min.js"></script>
 </head>
@@ -1913,8 +2062,9 @@ evaṃ krameṇa mantre gṛhīte svapnalabdhādi mantrāḥ siddhyantīti saṃ
                             <div class="snippets">
                                 ${result.snippets.slice(0, 3).map((snippet, sIdx) => `
                                     <div class="snippet-container">
-                                        <div class="snippet">${highlightTerm(snippet, searchTerm)}</div>
+                                        <div class="snippet" id="snippet-text-${idx}-${sIdx}">${highlightTerm(snippet, searchTerm)}</div>
                                         <div class="snippet-actions">
+                                            <button class="more-context-btn" onclick="toggleMoreContext(${idx}, ${sIdx}, this)">More Context</button>
                                             <button class="copy-snippet-btn" onclick="copySnippet(${idx}, ${sIdx})">Copy</button>
                                         </div>
                                     </div>
@@ -1944,6 +2094,70 @@ evaṃ krameṇa mantre gṛhīte svapnalabdhādi mantrāḥ siddhyantīti saṃ
                 btn.textContent = 'Copied!';
                 setTimeout(() => btn.textContent = originalText, 2000);
             });
+        }
+
+        async function toggleMoreContext(resultIdx, snippetIdx, btn) {
+            const snippetDiv = document.getElementById(`snippet-text-${resultIdx}-${snippetIdx}`);
+            if (!snippetDiv) return;
+
+            const result = currentResults[resultIdx];
+            if (!result) return;
+
+            if (snippetDiv.classList.contains('expanded')) {
+                // Collapse
+                snippetDiv.classList.remove('expanded');
+                snippetDiv.innerHTML = highlightTerm(result.snippets[snippetIdx], document.getElementById('searchInput').value);
+                btn.textContent = 'More Context';
+            } else {
+                // Expand
+                btn.textContent = 'Loading...';
+                snippetDiv.classList.add('expanded');
+
+                const searchTerm = document.getElementById('searchInput').value;
+                const originalSnippet = result.snippets[snippetIdx];
+
+                // Try to get extended context from fullTextDatabase
+                let extendedContent = `<div style="padding: 10px; border-left: 3px solid var(--primary); margin: 10px 0;">
+                    ${highlightTerm(originalSnippet, searchTerm)}
+                </div>`;
+
+                if (fullTextDatabase && fullTextDatabase.length > 0) {
+                    const fullText = fullTextDatabase.find(t =>
+                        t.filename === result.filename ||
+                        t.display_name === result.display_name
+                    );
+
+                    if (fullText && fullText.content) {
+                        // Find the snippet in content and get surrounding context
+                        const content = fullText.content;
+                        const lines = content.split('\\n');
+                        const searchLower = searchTerm.toLowerCase();
+
+                        for (let i = 0; i < lines.length; i++) {
+                            if (lines[i].toLowerCase().includes(searchLower)) {
+                                const start = Math.max(0, i - 3);
+                                const end = Math.min(lines.length, i + 4);
+                                const contextLines = lines.slice(start, end).join('\\n');
+
+                                extendedContent = `
+                                    <div style="background: #f8f9fa; padding: 15px; border-radius: 5px;">
+                                        <div style="color: #28a745; font-size: 0.9em; margin-bottom: 10px;">
+                                            ✅ Extended Context (3 lines before/after)
+                                        </div>
+                                        <div style="font-family: monospace; line-height: 1.8; white-space: pre-wrap;">
+                                            ${highlightTerm(contextLines, searchTerm)}
+                                        </div>
+                                    </div>
+                                `;
+                                break;
+                            }
+                        }
+                    }
+                }
+
+                snippetDiv.innerHTML = extendedContent;
+                btn.textContent = 'Less Context';
+            }
         }
 
         function toggleFavorite(filename, btn) {
