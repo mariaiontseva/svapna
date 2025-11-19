@@ -1601,130 +1601,369 @@ evaṃ krameṇa mantre gṛhīte svapnalabdhādi mantrāḥ siddhyantīti saṃ
             event.target.classList.add('active');
         }
 
-        // Search database
-        let searchData = null;
-        let allSnippets = [];
+        // Global variables
+        let database = null;
+        let searchIndex = null;
+        let fullTextDatabase = null;
+        let currentResults = [];
+        let favorites = JSON.parse(localStorage.getItem('svapna_favorites') || '[]');
 
-        // Load search database
-        fetch('svapna_all_snippets.json')
-            .then(response => response.json())
-            .then(data => {
-                searchData = data;
-                allSnippets = data.all_snippets || [];
-                console.log('Loaded', allSnippets.length, 'snippets from', data.total_texts, 'texts');
-                document.getElementById('searchResults').innerHTML = '<div class="results-info">Database loaded: ' + allSnippets.length + ' passages from ' + data.total_texts + ' texts. Enter a search term above.</div>';
-            })
-            .catch(err => {
-                console.error('Failed to load search database:', err);
-                document.getElementById('searchResults').innerHTML = '<div class="error">Failed to load database. Please refresh the page.</div>';
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            loadData();
+
+            // Setup enter key for search
+            document.getElementById('searchInput').addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') {
+                    performSearch();
+                }
             });
+        });
 
-        function performSearch() {
-            const query = document.getElementById('searchInput').value.trim().toLowerCase();
-            if (!query) {
-                alert('Please enter a search term');
-                return;
+        // Load database and search index
+        async function loadData() {
+            try {
+                // Load main database
+                const dbResponse = await fetch('data.json');
+                if (!dbResponse.ok) throw new Error('Failed to load database');
+                database = await dbResponse.json();
+
+                // Load search index
+                const indexResponse = await fetch('search_index.json');
+                if (!indexResponse.ok) throw new Error('Failed to load search index');
+                searchIndex = await indexResponse.json();
+
+                // Load full-text database (optimized version)
+                try {
+                    const fullTextResponse = await fetch('texts_optimized.json');
+                    if (fullTextResponse.ok) {
+                        fullTextDatabase = await fullTextResponse.json();
+                        console.log('Optimized full-text search enabled for', fullTextDatabase.length, 'texts');
+                    } else {
+                        const fallbackResponse = await fetch('texts_compressed.json');
+                        if (fallbackResponse.ok) {
+                            fullTextDatabase = await fallbackResponse.json();
+                            console.log('Full-text search enabled for', fullTextDatabase.length, 'texts (fallback)');
+                        }
+                    }
+                } catch (e) {
+                    console.warn('Full-text database not available:', e);
+                }
+
+                console.log('Data loaded:', {
+                    texts: database.stats.total_texts,
+                    searchTerms: Object.keys(searchIndex).length,
+                    fullTextEnabled: !!fullTextDatabase
+                });
+
+                // Update stats
+                updateStats();
+
+                // Populate filters
+                populateFilters();
+
+                // Update favorites badge
+                updateFavoritesBadge();
+
+                // Load initial search
+                performSearch();
+
+            } catch (error) {
+                console.error('Error loading data:', error);
+                document.getElementById('searchResults').innerHTML =
+                    `<div class="no-results">Error loading database: ${error.message}</div>`;
             }
-            executeSearch(query);
+        }
+
+        function updateStats() {
+            if (database && database.stats) {
+                document.getElementById('unique-sources').textContent = database.stats.unique_sources || '303';
+                document.getElementById('total-texts').textContent = database.stats.total_texts || '311';
+                document.getElementById('catalog-badge').textContent = database.stats.total_texts || '311';
+            }
+        }
+
+        function populateFilters() {
+            if (!database || !database.filters) return;
+
+            const traditionFilter = document.getElementById('traditionFilter');
+            if (database.filters.traditions) {
+                database.filters.traditions.forEach(tradition => {
+                    const option = document.createElement('option');
+                    option.value = tradition;
+                    option.textContent = tradition;
+                    traditionFilter.appendChild(option);
+                });
+            }
+
+            const periodFilter = document.getElementById('periodFilter');
+            if (database.filters.periods) {
+                database.filters.periods.forEach(period => {
+                    const option = document.createElement('option');
+                    option.value = period;
+                    option.textContent = period;
+                    periodFilter.appendChild(option);
+                });
+            }
+
+            const authorFilter = document.getElementById('authorFilter');
+            if (database.filters.authors) {
+                database.filters.authors.forEach(author => {
+                    const option = document.createElement('option');
+                    option.value = author;
+                    option.textContent = author;
+                    authorFilter.appendChild(option);
+                });
+            }
         }
 
         function quickSearch(term) {
             document.getElementById('searchInput').value = term;
-            executeSearch(term.toLowerCase());
+
+            document.querySelectorAll('.shortcut-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.textContent === term) {
+                    btn.classList.add('active');
+                }
+            });
+
+            performSearch();
         }
 
-        function executeSearch(query) {
-            if (!allSnippets.length) {
-                alert('Database not loaded yet. Please wait...');
+        async function performSearch() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase().trim();
+
+            if (!searchTerm) {
+                document.getElementById('searchResults').innerHTML =
+                    '<div class="no-results">Please enter a search term</div>';
+                document.getElementById('results-count').textContent = '0';
+                document.getElementById('matches-count').textContent = '0';
+                document.getElementById('search-badge').textContent = '0';
                 return;
+            }
+
+            document.getElementById('searchResults').innerHTML =
+                '<div class="loading">Searching full 149MB database...</div>';
+
+            let results = [];
+            let totalMatches = 0;
+            let dataSource = 'Railway (Full Database)';
+
+            try {
+                const response = await fetch('https://web-production-7d2a2.up.railway.app/search', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ search_term: searchTerm })
+                });
+
+                if (response.ok) {
+                    const data = await response.json();
+                    results = data.results || [];
+                    totalMatches = data.total_matches || 0;
+                } else {
+                    throw new Error('Railway API unavailable');
+                }
+            } catch (error) {
+                console.log('Railway unavailable, using local search:', error);
+                dataSource = 'Local (Limited)';
+
+                if (!database) {
+                    document.getElementById('searchResults').innerHTML =
+                        '<div class="no-results">Database not loaded. Please wait...</div>';
+                    return;
+                }
+
+                if (fullTextDatabase) {
+                    results = searchFullText(searchTerm);
+                    totalMatches = results.reduce((sum, r) => sum + r.count, 0);
+                } else if (searchIndex && searchIndex[searchTerm]) {
+                    results = searchIndex[searchTerm].results;
+                    totalMatches = searchIndex[searchTerm].total_matches;
+                } else {
+                    results = database.texts.filter(text => {
+                        const nameMatch = text.display_name && text.display_name.toLowerCase().includes(searchTerm);
+                        const authorMatch = text.author && text.author.toLowerCase().includes(searchTerm);
+                        const traditionMatch = text.tradition && text.tradition.toLowerCase().includes(searchTerm);
+                        return nameMatch || authorMatch || traditionMatch;
+                    }).map(text => ({
+                        ...text,
+                        snippets: [],
+                        count: 0
+                    }));
+                }
             }
 
             const traditionFilter = document.getElementById('traditionFilter').value;
-            const resultsContainer = document.getElementById('searchResults');
+            const periodFilter = document.getElementById('periodFilter').value;
+            const authorFilter = document.getElementById('authorFilter').value;
 
-            // Show loading
-            resultsContainer.innerHTML = '<div class="loader">Searching...</div>';
-
-            // Search through snippets
-            const results = allSnippets.filter(snippet => {
-                // Check if query matches context or text name
-                const matchesQuery = snippet.context.toLowerCase().includes(query) ||
-                                     snippet.text.toLowerCase().includes(query);
-
-                // Apply tradition filter if set
-                const matchesTradition = !traditionFilter ||
-                                         snippet.tradition.toLowerCase().includes(traditionFilter.toLowerCase());
-
-                return matchesQuery && matchesTradition;
-            });
-
-            // Display results
-            if (results.length === 0) {
-                resultsContainer.innerHTML = '<div class="no-results">No results found for "' + query + '"</div>';
-                return;
+            if (traditionFilter) {
+                results = results.filter(r => r.tradition === traditionFilter);
+            }
+            if (periodFilter) {
+                results = results.filter(r => r.period === periodFilter);
+            }
+            if (authorFilter) {
+                results = results.filter(r => r.author === authorFilter);
             }
 
-            // Group by text
-            const groupedResults = {};
-            results.forEach(r => {
-                if (!groupedResults[r.text]) {
-                    groupedResults[r.text] = {
-                        text: r.text,
-                        tradition: r.tradition,
-                        author: r.author,
-                        snippets: []
-                    };
-                }
-                groupedResults[r.text].snippets.push(r);
-            });
+            currentResults = results;
 
-            // Render results
-            let html = '<div class="results-info">Found ' + results.length + ' passages in ' + Object.keys(groupedResults).length + ' texts</div>';
+            const filteredMatches = results.reduce((sum, r) => sum + r.count, 0);
+            document.getElementById('results-count').textContent = results.length;
+            document.getElementById('search-badge').textContent = results.length;
+            document.getElementById('matches-count').textContent = filteredMatches || totalMatches || 0;
 
-            Object.values(groupedResults).forEach(group => {
-                html += '<div class="result-group">';
-                html += '<div class="result-header">';
-                html += '<strong>' + group.text + '</strong>';
-                html += '<span class="result-meta"> (' + group.tradition + ') - ' + group.snippets.length + ' passage(s)</span>';
-                html += '</div>';
+            const sourceIndicator = dataSource === 'Railway (Full Database)'
+                ? '<div style="padding: 8px; background: #10b981; color: white; border-radius: 6px; margin-bottom: 10px; text-align: center;">🚀 Results from full 149MB database</div>'
+                : '<div style="padding: 8px; background: #f59e0b; color: white; border-radius: 6px; margin-bottom: 10px; text-align: center;">⚠️ Limited local search (Railway unavailable)</div>';
 
-                group.snippets.slice(0, 5).forEach(snippet => {
-                    // Highlight query in context
-                    const highlightedContext = snippet.context.replace(
-                        new RegExp('(' + query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'gi'),
-                        '<mark>$1</mark>'
-                    );
+            document.getElementById('searchResults').innerHTML = sourceIndicator;
 
-                    html += '<div class="result-snippet">';
-                    html += '<div class="snippet-line">Line ' + snippet.line_number + '</div>';
-                    html += '<pre class="snippet-context">' + highlightedContext + '</pre>';
-                    if (snippet.categories && snippet.categories.length) {
-                        html += '<div class="snippet-categories">Categories: ' + snippet.categories.join(', ') + '</div>';
-                    }
-                    html += '</div>';
-                });
-
-                if (group.snippets.length > 5) {
-                    html += '<div class="more-results">... and ' + (group.snippets.length - 5) + ' more passages</div>';
-                }
-
-                html += '</div>';
-            });
-
-            resultsContainer.innerHTML = html;
+            displayResults(results, searchTerm);
         }
 
-        // Allow Enter key to search
-        document.addEventListener('DOMContentLoaded', function() {
-            const searchInput = document.getElementById('searchInput');
-            if (searchInput) {
-                searchInput.addEventListener('keypress', function(e) {
-                    if (e.key === 'Enter') {
-                        performSearch();
+        function searchFullText(searchTerm) {
+            const termLower = searchTerm.toLowerCase();
+            const results = [];
+
+            for (const text of fullTextDatabase) {
+                const contentLower = (text.content || '').toLowerCase();
+                const nameLower = text.display_name.toLowerCase();
+                const authorLower = text.author.toLowerCase();
+
+                const contentMatches = (contentLower.match(new RegExp(termLower, 'g')) || []).length;
+                const nameMatches = nameLower.includes(termLower) ? 1 : 0;
+                const authorMatches = authorLower.includes(termLower) ? 1 : 0;
+
+                const totalCount = contentMatches + nameMatches + authorMatches;
+
+                if (totalCount > 0) {
+                    const snippets = [];
+                    if (contentMatches > 0) {
+                        let pos = 0;
+                        for (let i = 0; i < Math.min(5, contentMatches); i++) {
+                            pos = contentLower.indexOf(termLower, pos);
+                            if (pos === -1) break;
+
+                            const start = Math.max(0, pos - 80);
+                            const end = Math.min(text.content.length, pos + termLower.length + 80);
+                            let snippet = text.content.substring(start, end);
+
+                            snippet = snippet.replace(/\s+/g, ' ').trim();
+                            if (start > 0) snippet = '...' + snippet;
+                            if (end < text.content.length) snippet += '...';
+
+                            snippets.push(snippet);
+                            pos = pos + termLower.length;
+                        }
                     }
-                });
+
+                    results.push({
+                        filename: text.filename,
+                        display_name: text.display_name,
+                        tradition: text.tradition,
+                        author: text.author,
+                        period: text.period || 'Unknown',
+                        count: totalCount,
+                        snippets: snippets
+                    });
+                }
             }
-        });
+
+            return results.sort((a, b) => b.count - a.count);
+        }
+
+        function displayResults(results, searchTerm) {
+            const isFullText = fullTextDatabase || (searchIndex && searchIndex[searchTerm]);
+            const resultsDiv = document.getElementById('searchResults');
+
+            let html = resultsDiv.innerHTML + `<div class="search-info">
+                Found ${results.length} texts containing "${searchTerm}"
+                ${fullTextDatabase ? '<br><small style="color: #10b981;">✓ Full-text search active across all ' + fullTextDatabase.length + ' texts</small>' :
+                  !isFullText ? '<br><small style="color: #64748b;">Showing metadata matches. Full-text data loading...</small>' : ''}
+            </div>`;
+
+            results.forEach((result, idx) => {
+                const isFavorite = favorites.includes(result.filename);
+                const traditionClass = `tradition-${(result.tradition || '').replace(/\s+/g, '')}`;
+
+                html += `
+                    <div class="result-card">
+                        <div class="result-header">
+                            <div>
+                                <div class="result-title">
+                                    ${result.display_name}
+                                    <button class="favorite-btn ${isFavorite ? 'active' : ''}"
+                                            onclick="toggleFavorite('${result.filename}', this)">
+                                        ${isFavorite ? '★' : '☆'}
+                                    </button>
+                                </div>
+                                <div class="result-meta">
+                                    <span>Author: ${result.author}</span>
+                                    <span>Period: ${result.period}</span>
+                                    ${result.count > 0 ? `<span>Occurrences: ${result.count}</span>` : ''}
+                                </div>
+                            </div>
+                            <div class="tradition-badge ${traditionClass}">${result.tradition}</div>
+                        </div>
+                        ${result.snippets && result.snippets.length > 0 ? `
+                            <div class="snippets">
+                                ${result.snippets.slice(0, 3).map((snippet, sIdx) => `
+                                    <div class="snippet-container">
+                                        <div class="snippet">${highlightTerm(snippet, searchTerm)}</div>
+                                        <div class="snippet-actions">
+                                            <button class="copy-snippet-btn" onclick="copySnippet(${idx}, ${sIdx})">Copy</button>
+                                        </div>
+                                    </div>
+                                `).join('')}
+                            </div>
+                        ` : ''}
+                    </div>
+                `;
+            });
+
+            resultsDiv.innerHTML = html || '<div class="no-results">No results found</div>';
+        }
+
+        function highlightTerm(text, term) {
+            const regex = new RegExp(`(${term})`, 'gi');
+            return text.replace(regex, '<mark>$1</mark>');
+        }
+
+        function copySnippet(resultIdx, snippetIdx) {
+            const result = currentResults[resultIdx];
+            const snippet = result.snippets[snippetIdx];
+            const cleanText = snippet.replace(/<[^>]*>/g, '');
+
+            navigator.clipboard.writeText(cleanText).then(() => {
+                const btn = event.target;
+                const originalText = btn.textContent;
+                btn.textContent = 'Copied!';
+                setTimeout(() => btn.textContent = originalText, 2000);
+            });
+        }
+
+        function toggleFavorite(filename, btn) {
+            const index = favorites.indexOf(filename);
+            if (index > -1) {
+                favorites.splice(index, 1);
+                btn.classList.remove('active');
+                btn.textContent = '☆';
+            } else {
+                favorites.push(filename);
+                btn.classList.add('active');
+                btn.textContent = '★';
+            }
+            localStorage.setItem('svapna_favorites', JSON.stringify(favorites));
+            updateFavoritesBadge();
+        }
+
+        function updateFavoritesBadge() {
+            document.getElementById('favorites-badge').textContent = favorites.length;
+        }
 
         // Lottie animation
         if (typeof lottie !== 'undefined') {
