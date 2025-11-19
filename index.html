@@ -2130,14 +2130,14 @@ evaṃ krameṇa mantre gṛhīte svapnalabdhādi mantrāḥ siddhyantīti saṃ
                     if (fullText && fullText.content) {
                         // Find the snippet in content and get surrounding context
                         const content = fullText.content;
-                        const lines = content.split('\\n');
+                        const lines = content.split('\n');
                         const searchLower = searchTerm.toLowerCase();
 
                         for (let i = 0; i < lines.length; i++) {
                             if (lines[i].toLowerCase().includes(searchLower)) {
                                 const start = Math.max(0, i - 3);
                                 const end = Math.min(lines.length, i + 4);
-                                const contextLines = lines.slice(start, end).join('\\n');
+                                const contextLines = lines.slice(start, end).join('\n');
 
                                 extendedContent = `
                                     <div style="background: #f8f9fa; padding: 15px; border-radius: 5px;">
