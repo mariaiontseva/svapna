@@ -2135,14 +2135,14 @@ evaṃ krameṇa mantre gṛhīte svapnalabdhādi mantrāḥ siddhyantīti saṃ
 
                         for (let i = 0; i < lines.length; i++) {
                             if (lines[i].toLowerCase().includes(searchLower)) {
-                                const start = Math.max(0, i - 3);
-                                const end = Math.min(lines.length, i + 4);
+                                const start = Math.max(0, i - 8);
+                                const end = Math.min(lines.length, i + 9);
                                 const contextLines = lines.slice(start, end).join('\n');
 
                                 extendedContent = `
                                     <div style="background: #f8f9fa; padding: 15px; border-radius: 5px;">
                                         <div style="color: #28a745; font-size: 0.9em; margin-bottom: 10px;">
-                                            ✅ Extended Context (3 lines before/after)
+                                            ✅ Extended Context (8 lines before/after)
                                         </div>
                                         <div style="font-family: monospace; line-height: 1.8; white-space: pre-wrap;">
                                             ${highlightTerm(contextLines, searchTerm)}
