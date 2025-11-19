@@ -364,6 +364,94 @@
         .text-missing {
             color: #999;
         }
+
+        /* Search results styles */
+        .results-info {
+            padding: 15px;
+            background: #f0f9ff;
+            border-left: 3px solid #3b82f6;
+            margin-bottom: 15px;
+            color: #1e40af;
+        }
+
+        .no-results {
+            padding: 20px;
+            text-align: center;
+            color: #6b7280;
+        }
+
+        .error {
+            padding: 15px;
+            background: #fef2f2;
+            border-left: 3px solid #ef4444;
+            color: #dc2626;
+        }
+
+        .result-group {
+            margin-bottom: 20px;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .result-header {
+            background: #f9fafb;
+            padding: 12px 15px;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .result-meta {
+            color: #6b7280;
+            font-size: 0.9em;
+        }
+
+        .result-snippet {
+            padding: 12px 15px;
+            border-bottom: 1px solid #f3f4f6;
+        }
+
+        .result-snippet:last-child {
+            border-bottom: none;
+        }
+
+        .snippet-line {
+            font-size: 0.8em;
+            color: #9ca3af;
+            margin-bottom: 8px;
+        }
+
+        .snippet-context {
+            font-family: monospace;
+            font-size: 0.85em;
+            white-space: pre-wrap;
+            word-break: break-word;
+            background: #f9fafb;
+            padding: 10px;
+            border-radius: 4px;
+            margin: 0;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+
+        .snippet-context mark {
+            background: #fef08a;
+            padding: 1px 2px;
+            border-radius: 2px;
+        }
+
+        .snippet-categories {
+            font-size: 0.8em;
+            color: #6b7280;
+            margin-top: 8px;
+        }
+
+        .more-results {
+            padding: 10px 15px;
+            background: #f3f4f6;
+            color: #6b7280;
+            font-size: 0.9em;
+            text-align: center;
+        }
     </style>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.12.2/lottie.min.js"></script>
 </head>
@@ -448,7 +536,7 @@
 
                 <div id="searchResults" class="results-container">
                     <div class="loader">
-                        <div>Connect to svapna.space database for search functionality</div>
+                        <div>Loading database...</div>
                     </div>
                 </div>
             </div>
@@ -1331,10 +1419,10 @@ evaṃ krameṇa mantre gṛhīte svapnalabdhādi mantrāḥ siddhyantīti saṃ
 
                                 <!-- Pūrvāmnāya (Eastern Transmission) -->
                                 <div class="tree-node" onclick="toggleNode(this); event.stopPropagation();">
-                                    <div class="node-title"><span class="toggle-icon">►</span> Pūrvāmnāya (Eastern Transmission) <span class="no-texts">✗</span></div>
+                                    <div class="node-title"><span class="toggle-icon">►</span> Pūrvāmnāya (Eastern Transmission) <span class="has-texts">✓</span></div>
                                     <div class="node-content">
-                                        <div class="tree-node">
-                                            <div class="node-title text-missing">No texts with svapna content <span class="no-texts">✗</span></div>
+                                        <div class="tree-node text-available">
+                                            <div class="node-title">• Kulamuktikallolini (12th-15th c.)</div>
                                         </div>
                                     </div>
                                 </div>
@@ -1513,14 +1601,130 @@ evaṃ krameṇa mantre gṛhīte svapnalabdhādi mantrāḥ siddhyantīti saṃ
             event.target.classList.add('active');
         }
 
-        // Placeholder functions for compatibility
+        // Search database
+        let searchData = null;
+        let allSnippets = [];
+
+        // Load search database
+        fetch('svapna_all_snippets.json')
+            .then(response => response.json())
+            .then(data => {
+                searchData = data;
+                allSnippets = data.all_snippets || [];
+                console.log('Loaded', allSnippets.length, 'snippets from', data.total_texts, 'texts');
+                document.getElementById('searchResults').innerHTML = '<div class="results-info">Database loaded: ' + allSnippets.length + ' passages from ' + data.total_texts + ' texts. Enter a search term above.</div>';
+            })
+            .catch(err => {
+                console.error('Failed to load search database:', err);
+                document.getElementById('searchResults').innerHTML = '<div class="error">Failed to load database. Please refresh the page.</div>';
+            });
+
         function performSearch() {
-            alert('Connect to svapna.space database for search functionality');
+            const query = document.getElementById('searchInput').value.trim().toLowerCase();
+            if (!query) {
+                alert('Please enter a search term');
+                return;
+            }
+            executeSearch(query);
         }
 
         function quickSearch(term) {
-            alert('Connect to svapna.space database for search functionality');
+            document.getElementById('searchInput').value = term;
+            executeSearch(term.toLowerCase());
         }
+
+        function executeSearch(query) {
+            if (!allSnippets.length) {
+                alert('Database not loaded yet. Please wait...');
+                return;
+            }
+
+            const traditionFilter = document.getElementById('traditionFilter').value;
+            const resultsContainer = document.getElementById('searchResults');
+
+            // Show loading
+            resultsContainer.innerHTML = '<div class="loader">Searching...</div>';
+
+            // Search through snippets
+            const results = allSnippets.filter(snippet => {
+                // Check if query matches context or text name
+                const matchesQuery = snippet.context.toLowerCase().includes(query) ||
+                                     snippet.text.toLowerCase().includes(query);
+
+                // Apply tradition filter if set
+                const matchesTradition = !traditionFilter ||
+                                         snippet.tradition.toLowerCase().includes(traditionFilter.toLowerCase());
+
+                return matchesQuery && matchesTradition;
+            });
+
+            // Display results
+            if (results.length === 0) {
+                resultsContainer.innerHTML = '<div class="no-results">No results found for "' + query + '"</div>';
+                return;
+            }
+
+            // Group by text
+            const groupedResults = {};
+            results.forEach(r => {
+                if (!groupedResults[r.text]) {
+                    groupedResults[r.text] = {
+                        text: r.text,
+                        tradition: r.tradition,
+                        author: r.author,
+                        snippets: []
+                    };
+                }
+                groupedResults[r.text].snippets.push(r);
+            });
+
+            // Render results
+            let html = '<div class="results-info">Found ' + results.length + ' passages in ' + Object.keys(groupedResults).length + ' texts</div>';
+
+            Object.values(groupedResults).forEach(group => {
+                html += '<div class="result-group">';
+                html += '<div class="result-header">';
+                html += '<strong>' + group.text + '</strong>';
+                html += '<span class="result-meta"> (' + group.tradition + ') - ' + group.snippets.length + ' passage(s)</span>';
+                html += '</div>';
+
+                group.snippets.slice(0, 5).forEach(snippet => {
+                    // Highlight query in context
+                    const highlightedContext = snippet.context.replace(
+                        new RegExp('(' + query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'gi'),
+                        '<mark>$1</mark>'
+                    );
+
+                    html += '<div class="result-snippet">';
+                    html += '<div class="snippet-line">Line ' + snippet.line_number + '</div>';
+                    html += '<pre class="snippet-context">' + highlightedContext + '</pre>';
+                    if (snippet.categories && snippet.categories.length) {
+                        html += '<div class="snippet-categories">Categories: ' + snippet.categories.join(', ') + '</div>';
+                    }
+                    html += '</div>';
+                });
+
+                if (group.snippets.length > 5) {
+                    html += '<div class="more-results">... and ' + (group.snippets.length - 5) + ' more passages</div>';
+                }
+
+                html += '</div>';
+            });
+
+            resultsContainer.innerHTML = html;
+        }
+
+        // Allow Enter key to search
+        document.addEventListener('DOMContentLoaded', function() {
+            const searchInput = document.getElementById('searchInput');
+            if (searchInput) {
+                searchInput.addEventListener('keypress', function(e) {
+                    if (e.key === 'Enter') {
+                        performSearch();
+                    }
+                });
+            }
+        });
 
         // Lottie animation
         if (typeof lottie !== 'undefined') {
