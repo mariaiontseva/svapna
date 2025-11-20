@@ -339,8 +339,8 @@ const all_saiva_passages = {
             chapter_23_omens: {
                 reference: "Chapter 23.17-29",
                 categories: [],
-                translator: null,
-                translated: false,
+                translator: "Maria Iontseva",
+                translated: true,
                 verses: [
                     {
                         number: "23.17",
@@ -354,8 +354,8 @@ const all_saiva_passages = {
             chapter_23_mantra: {
                 reference: "Chapter 23.154-157",
                 categories: ["revelation"],
-                translator: null,
-                translated: false,
+                translator: "Maria Iontseva",
+                translated: true,
                 verses: [
                     {
                         number: "23.154-156",
@@ -387,8 +387,8 @@ const all_saiva_passages = {
             chapter_8: {
                 reference: "Chapter 8.96",
                 categories: [],
-                translator: null,
-                translated: false,
+                translator: "Unpublished translation",
+                translated: true,
                 verses: [
                     {
                         number: "8.96",
@@ -402,8 +402,8 @@ const all_saiva_passages = {
             chapter_22: {
                 reference: "Chapter 22.48",
                 categories: ["yoga&consciousness"],
-                translator: null,
-                translated: false,
+                translator: "Unpublished translation",
+                translated: true,
                 verses: [
                     {
                         number: "22.48",
@@ -417,8 +417,8 @@ const all_saiva_passages = {
             chapter_23_omens: {
                 reference: "Chapter 23.17-27",
                 categories: [],
-                translator: null,
-                translated: false,
+                translator: "Unpublished translation",
+                translated: true,
                 verses: [
                     {
                         number: "23.17",
@@ -442,8 +442,8 @@ const all_saiva_passages = {
             chapter_23_svapnamanavaka: {
                 reference: "Chapter 23.154-157",
                 categories: ["revelation"],
-                translator: null,
-                translated: false,
+                translator: "Unpublished translation",
+                translated: true,
                 verses: [
                     {
                         number: "23.154-157",
