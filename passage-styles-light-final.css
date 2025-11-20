@@ -183,10 +183,11 @@
     border-color: #a5b4fc;
 }
 
-.tag.omens {
-    background: #f5f3ff;
-    color: #6b21a8;
-    border-color: #ddd6fe;
+.tag.omens,
+.tag[class*="omens&protection"] {
+    background: #f8fafc;
+    color: #64748b;
+    border-color: #cbd5e1;
 }
 
 /* Translator tags - small, compact style for LEFT placement */
