@@ -680,14 +680,58 @@ const all_saiva_passages = {
     },
 
     // ========================================
-    // BṚHATTANTRASĀRA (18th century)
-    // Tantric Compendium - Pan-Indian Śākta Traditions
+    // UDDĀMAREŚVARATANTRA (14th-16th century)
+    // Late Bengali & Assamese Śākta Traditions → Bengal
+    // ========================================
+
+    uddamaresvaratantra: {
+        name: "Uddāmareśvaratantra",
+        period: "14th-16th c.",
+        branch: "Late Bengali & Assamese Śākta Traditions → Bengal (extracted from Vīrabhadreśvaratantra)",
+        passages: {
+
+            kamapisaca_dream_invasion: {
+                reference: "Chapter 10: Kāmapiśāca Dream-Body Invasion",
+                categories: ["magic"],
+                translator: null,
+                translated: false,
+                verses: [
+                    {
+                        number: "10 (lines 1866-1868)",
+                        sanskrit: "oṃ aiṃ skīṃ klīṃ klīṃ sahavallari klīṃ kāmapiśāca klīṃ hrīṃ kāmapiśāca amukīṃ kāminīṃ kāmayāmyahaṃ tāṃ kāmena grāhaya 2 svapne mama rūpe nakhairvidāraya 2 drāvaya 2 astreṇa bandhaya 2 śrīṃ phaṭ svāhā",
+                        translation: "OṂ AIṂ SKĪṂ KLĪṂ KLĪṂ sahavallari KLĪṂ kāmapiśāca KLĪṂ HRĪṂ kāmapiśāca—[such-and-such] woman I desire, seize her with desire (x2), in dreams in my form (svapne mama rūpe), tear with nails (x2), make flow [with desire] (x2), bind with weapon (x2) ŚRĪṂ PHAṬ SVĀHĀ"
+                    }
+                ],
+                context: "Abhicāra technique using kāmapiśāca (lust-demon) to invade victim's dreams in practitioner's physical form (svapne mama rūpe). The piśāca appears to the victim in dreams wearing the practitioner's appearance, inflicting erotic torment: tearing with nails (nakhairvidāraya), inducing sexual arousal (drāvaya = make flow), binding with obsessive desire (kāmena grāhaya), and magically constraining (astreṇa bandhaya). The dream-experience creates waking obsession—victim awakens compulsively fixated on the practitioner. Represents sophisticated dream-magic technology: using dream-body as instrument of vaśīkaraṇa (subjugation), bridging subtle-plane attack (dream invasion) with gross-plane effect (waking obsession). Unique because piśāca functions as practitioner's avatar within victim's dream-consciousness rather than appearing in its own demonic form."
+            },
+
+            svapnasiddhi_death_oracle: {
+                reference: "Chapter 10: Svapnasiddhi Death Prediction Mantra",
+                categories: ["revelation"],
+                translator: null,
+                translated: false,
+                verses: [
+                    {
+                        number: "10 (lines 1891-1896)",
+                        sanskrit: "sahasraṃ hi japennityaṃ yāvat svapnaṃ prajāyate || prāṇināṃ mṛtyusamayaṃ vadatyeva na saṃśayaḥ | oṃ namo bhagavate rudrāya dehi me vacanasiddhividhānaṃ pārvatīpate hrāṃ hrīṃ hrūṃ hreṃ hrauṃ hraḥ",
+                        translation: "One should recite [the mantra] one thousand times nightly until sleep arises. It speaks of the time of death of living beings, without doubt. OṂ, salutations to Lord Rudra, grant me vacanasiddhi (siddhi of [divine] speech/revelation), O Lord of Pārvatī, HRĀṂ HRĪṂ HRŪṂ HREṂ HRAUṂ HRAḤ"
+                    }
+                ],
+                context: "Dream-oracle practice for obtaining knowledge of death-time (mṛtyusamaya) through divine speech revelation. Practitioner recites Rudra mantra 1000 times nightly until sleep state arises (yāvat svapnaṃ prajāyate). In dreams, the deity/mantra speaks (vadati)—not through symbolic imagery requiring interpretation, but through direct verbal communication revealing exact time of death for self or others. The term vacanasiddhividhāna (siddhi of divine speech/proclamation) indicates this is revelatory speech from Rudra himself, guaranteed accurate (na saṃśayaḥ = without doubt). Parallel to Yoginī Tantra's 'svapne kathaya' (speak in dreams) tradition but operating through Śaiva Rudra framework rather than Śākta goddess invocation. Represents dream as epistemic field for receiving oracular knowledge inaccessible through waking consciousness."
+            }
+
+        }
+    },
+
+    // ========================================
+    // BṚHATTANTRASĀRA (late 16th century)
+    // Late Bengali Śākta Traditions → Bengal
     // ========================================
 
     brhattantrasara: {
         name: "Bṛhattantrasāra",
-        period: "18th c.",
-        branch: "Tantric Compendium - Pan-Indian Śākta Traditions",
+        period: "late 16th c.",
+        branch: "Late Bengali Śākta Traditions → Bengal (Kṛṣṇānanda Āgamavāgīśa)",
         passages: {
 
             no_time_rules_in_dreams: {
