@@ -470,8 +470,8 @@ const all_saiva_passages = {
             verse_11_97: {
                 reference: "Verse 11.97",
                 categories: ["empowerment"],
-                translator: null,
-                translated: false,
+                translator: "Mark Dyczkowski",
+                translated: true,
                 verses: [
                     {
                         number: "11.97",
@@ -485,8 +485,8 @@ const all_saiva_passages = {
             verse_9_11: {
                 reference: "Verse 9.11",
                 categories: ["yoga&consciousness"],
-                translator: null,
-                translated: false,
+                translator: "Mark Dyczkowski",
+                translated: true,
                 verses: [
                     {
                         number: "9.11",
