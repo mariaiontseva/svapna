@@ -582,13 +582,13 @@ const all_saiva_passages = {
 
     // ========================================
     // YOGINĪ TANTRA (16th-17th century CE)
-    // Late Bengali & Assamese Śākta Traditions → Assam
+    // Late Syncretic Śākta Traditions → Assam
     // ========================================
 
     yoginitantra: {
         name: "Yoginī Tantra",
         period: "16th-17th c.",
-        branch: "Late Bengali & Assamese Śākta Traditions → Assam",
+        branch: "Late Syncretic Śākta Traditions → Assam",
         passages: {
 
             svapnavati_mantra_core: {
@@ -681,13 +681,13 @@ const all_saiva_passages = {
 
     // ========================================
     // UDDĀMAREŚVARATANTRA (14th-16th century)
-    // Late Bengali & Assamese Śākta Traditions → Bengal
+    // Late Syncretic Śākta Traditions → Bengal
     // ========================================
 
     uddamaresvaratantra: {
         name: "Uddāmareśvaratantra",
         period: "14th-16th c.",
-        branch: "Late Bengali & Assamese Śākta Traditions → Bengal (extracted from Vīrabhadreśvaratantra)",
+        branch: "Late Syncretic Śākta Traditions → Bengal (extracted from Vīrabhadreśvaratantra)",
         passages: {
 
             kamapisaca_dream_invasion: {
@@ -725,13 +725,13 @@ const all_saiva_passages = {
 
     // ========================================
     // BṚHATTANTRASĀRA (late 16th century)
-    // Late Bengali Śākta Traditions → Bengal
+    // Late Syncretic Śākta Traditions → Bengal
     // ========================================
 
     brhattantrasara: {
         name: "Bṛhattantrasāra",
         period: "late 16th c.",
-        branch: "Late Bengali Śākta Traditions → Bengal (Kṛṣṇānanda Āgamavāgīśa)",
+        branch: "Late Syncretic Śākta Traditions → Bengal (Kṛṣṇānanda Āgamavāgīśa)",
         passages: {
 
             no_time_rules_in_dreams: {
