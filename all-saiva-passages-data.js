@@ -339,7 +339,7 @@ const all_saiva_passages = {
             chapter_23_omens: {
                 reference: "Chapter 23.17-29",
                 categories: [],
-                translator: "Maria Iontseva",
+                translator: "Mark Dyczkowski",
                 translated: true,
                 verses: [
                     {
@@ -354,7 +354,7 @@ const all_saiva_passages = {
             chapter_23_mantra: {
                 reference: "Chapter 23.154-157",
                 categories: ["revelation"],
-                translator: "Maria Iontseva",
+                translator: "Mark Dyczkowski",
                 translated: true,
                 verses: [
                     {
@@ -470,7 +470,7 @@ const all_saiva_passages = {
             verse_11_97: {
                 reference: "Verse 11.97",
                 categories: ["empowerment"],
-                translator: "Mark Dyczkowski",
+                translator: "Translated",
                 translated: true,
                 verses: [
                     {
@@ -485,7 +485,7 @@ const all_saiva_passages = {
             verse_9_11: {
                 reference: "Verse 9.11",
                 categories: ["yoga&consciousness"],
-                translator: "Mark Dyczkowski",
+                translator: "Translated",
                 translated: true,
                 verses: [
                     {
