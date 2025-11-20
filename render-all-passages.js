@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
         'kularnavatantra': 'Kulārṇavatantra',
         'tantraloka': 'Tantrāloka',
         'yoginitantra': 'Yoginī Tantra',
+        'uddamaresvaratantra': 'Uddāmareśvaratantra',
         'brhattantrasara': 'Bṛhattantrasāra',
         'saktisamgama': 'Śaktisamgama Sundarīkhaṇḍa',
         'jnanarnavatantra': 'Jñānārṇavatantra',
