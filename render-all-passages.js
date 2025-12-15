@@ -22,7 +22,8 @@ document.addEventListener('DOMContentLoaded', function() {
         'saktisamgama': 'Śaktisamgama Sundarīkhaṇḍa',
         'jnanarnavatantra': 'Jñānārṇavatantra',
         'pingalamata': 'Piṅgalamata',
-        'cidgaganacandrika': 'Cidgaganacandrikā'
+        'cidgaganacandrika': 'Cidgaganacandrikā',
+        'kamika_agama': 'Kāmika Agama'
     };
 
     // Function to count total passages for a text

@@ -4,6 +4,18 @@
 const all_saiva_passages = {
 
     // ========================================
+    // KĀMIKA AGAMA (c. 500-700 CE)
+    // Canonical Śaiva Siddhānta - Root Text #1
+    // ========================================
+
+    kamika_agama: {
+        name: "Kāmika Agama",
+        period: "c. 500-700 CE", 
+        branch: "Śaiva Siddhānta → Canonical 28 Agamas → #1",
+        passages: kamika_agama_passages
+    },
+
+    // ========================================
     // BRAHMAYĀMALA (c. 650-750 CE)
     // Yāmala-tantras branch
     // ========================================
