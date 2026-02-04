@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Newa Script — 𑐣𑐾𑐰𑐵𑑅 𑐁𑐏𑐮</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Newa&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --burgundy: #722F37;
+            --gold: #C9A227;
+            --cream: #FDF8F0;
+            --dark: #2C1810;
+            --light-gold: #F5E6C8;
+            --table-alt: #FAF6F0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        @page {
+            size: A4;
+            margin: 15mm;
+        }
+
+        body {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            background: var(--cream);
+            color: var(--dark);
+            line-height: 1.6;
+            padding: 0;
+        }
+
+        .page {
+            width: 210mm;
+            min-height: 297mm;
+            margin: 0 auto 20px;
+            background: white;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            padding: 20mm;
+            page-break-after: always;
+        }
+
+        @media print {
+            body {
+                background: white;
+            }
+            .page {
+                box-shadow: none;
+                margin: 0;
+                padding: 15mm;
+            }
+        }
+
+        .newa {
+            font-family: 'Noto Sans Newa', sans-serif;
+        }
+
+        /* Header */
+        header {
+            text-align: center;
+            margin-bottom: 8mm;
+            padding-bottom: 6mm;
+            border-bottom: 3px solid var(--burgundy);
+            position: relative;
+        }
+
+        header::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60%;
+            height: 1px;
+            background: var(--gold);
+        }
+
+        h1 {
+            font-size: 28pt;
+            font-weight: 700;
+            color: var(--burgundy);
+            margin-bottom: 2mm;
+            letter-spacing: 1px;
+        }
+
+        h1 .newa {
+            font-size: 24pt;
+            color: var(--dark);
+        }
+
+        .subtitle {
+            font-size: 11pt;
+            color: #666;
+            font-style: italic;
+        }
+
+        /* Section titles */
+        h2 {
+            font-size: 14pt;
+            font-weight: 600;
+            color: var(--burgundy);
+            margin: 8mm 0 4mm;
+            padding-bottom: 2mm;
+            border-bottom: 2px solid var(--gold);
+            display: inline-block;
+        }
+
+        h3 {
+            font-size: 11pt;
+            font-weight: 600;
+            color: var(--burgundy);
+            margin: 5mm 0 3mm;
+        }
+
+        /* Character tables */
+        .char-grid {
+            display: grid;
+            gap: 0;
+            margin-bottom: 6mm;
+            border: 1px solid var(--burgundy);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .grid-4 { grid-template-columns: repeat(4, 1fr); }
+        .grid-5 { grid-template-columns: repeat(5, 1fr); }
+        .grid-6 { grid-template-columns: repeat(6, 1fr); }
+        .grid-7 { grid-template-columns: 1.2fr repeat(6, 1fr); }
+
+        .char-cell {
+            padding: 4mm 2mm;
+            text-align: center;
+            border-right: 1px solid #e0d5c5;
+            border-bottom: 1px solid #e0d5c5;
+            background: white;
+            transition: background 0.2s;
+        }
+
+        .char-cell:hover {
+            background: var(--light-gold);
+        }
+
+        .char-cell:nth-child(even) {
+            background: var(--table-alt);
+        }
+
+        .char-cell:nth-child(even):hover {
+            background: var(--light-gold);
+        }
+
+        .char-cell .newa {
+            font-size: 28pt;
+            display: block;
+            line-height: 1.2;
+            color: var(--dark);
+        }
+
+        .char-cell .roman {
+            font-size: 10pt;
+            color: var(--burgundy);
+            font-weight: 600;
+            margin-top: 1mm;
+            display: block;
+        }
+
+        .char-cell.empty {
+            background: #f5f5f5;
+        }
+
+        /* Varga table */
+        .varga-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 6mm;
+            font-size: 10pt;
+        }
+
+        .varga-table th {
+            background: var(--burgundy);
+            color: white;
+            padding: 3mm 2mm;
+            font-weight: 600;
+            font-size: 9pt;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .varga-table td {
+            padding: 3mm 2mm;
+            text-align: center;
+            border: 1px solid #e0d5c5;
+            vertical-align: middle;
+        }
+
+        .varga-table tr:nth-child(even) td {
+            background: var(--table-alt);
+        }
+
+        .varga-table tr:hover td {
+            background: var(--light-gold);
+        }
+
+        .varga-table td.varga-name {
+            background: var(--burgundy) !important;
+            color: white;
+            font-weight: 600;
+            text-align: left;
+            padding-left: 4mm;
+        }
+
+        .varga-table .newa {
+            font-size: 22pt;
+            display: block;
+        }
+
+        .varga-table .roman {
+            font-size: 9pt;
+            color: var(--burgundy);
+            font-weight: 600;
+        }
+
+        .varga-table td.empty-cell {
+            background: #f0f0f0 !important;
+            color: #ccc;
+        }
+
+        /* Inline groups */
+        .inline-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4mm;
+            margin-bottom: 4mm;
+        }
+
+        .inline-char {
+            display: flex;
+            align-items: center;
+            gap: 2mm;
+            padding: 2mm 4mm;
+            background: var(--table-alt);
+            border-radius: 4px;
+            border: 1px solid #e0d5c5;
+        }
+
+        .inline-char .newa {
+            font-size: 20pt;
+        }
+
+        .inline-char .roman {
+            font-size: 10pt;
+            color: var(--burgundy);
+            font-weight: 600;
+        }
+
+        /* Notes */
+        .notes {
+            margin-top: 8mm;
+            padding: 4mm;
+            background: var(--table-alt);
+            border-left: 3px solid var(--burgundy);
+            font-size: 10pt;
+        }
+
+        .notes h4 {
+            color: var(--burgundy);
+            margin-bottom: 2mm;
+            font-size: 11pt;
+        }
+
+        .notes ul {
+            margin-left: 5mm;
+        }
+
+        .notes li {
+            margin-bottom: 1mm;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 10mm;
+            padding-top: 4mm;
+            border-top: 1px solid var(--burgundy);
+            display: flex;
+            justify-content: space-between;
+            font-size: 9pt;
+            color: #888;
+        }
+
+        /* Compact grid for signs */
+        .signs-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0;
+            border: 1px solid var(--burgundy);
+            border-radius: 4px;
+            overflow: hidden;
+            margin-bottom: 6mm;
+        }
+
+        .sign-cell {
+            padding: 3mm;
+            border-right: 1px solid #e0d5c5;
+            border-bottom: 1px solid #e0d5c5;
+            display: flex;
+            align-items: center;
+            gap: 3mm;
+        }
+
+        .sign-cell:nth-child(odd) {
+            background: var(--table-alt);
+        }
+
+        .sign-cell .newa {
+            font-size: 24pt;
+            min-width: 15mm;
+            text-align: center;
+        }
+
+        .sign-cell .label {
+            font-size: 10pt;
+            color: var(--dark);
+        }
+
+        /* Numerals row */
+        .numerals-row {
+            display: grid;
+            grid-template-columns: repeat(10, 1fr);
+            gap: 0;
+            border: 1px solid var(--burgundy);
+            border-radius: 4px;
+            overflow: hidden;
+            margin-bottom: 6mm;
+        }
+
+        .num-cell {
+            padding: 4mm 2mm;
+            text-align: center;
+            border-right: 1px solid #e0d5c5;
+        }
+
+        .num-cell:nth-child(even) {
+            background: var(--table-alt);
+        }
+
+        .num-cell .newa {
+            font-size: 26pt;
+            display: block;
+        }
+
+        .num-cell .value {
+            font-size: 12pt;
+            font-weight: 700;
+            color: var(--burgundy);
+        }
+
+        /* Page number */
+        .page-num {
+            text-align: center;
+            font-size: 10pt;
+            color: var(--burgundy);
+            margin-top: 6mm;
+        }
+    </style>
+</head>
+<body>
+
+<!-- PAGE 1: Vowels -->
+<div class="page">
+    <header>
+        <h1>Newa Script <span class="newa">𑐣𑐾𑐰𑐵𑑅 𑐁𑐏𑐮</span></h1>
+        <p class="subtitle">Prachalit Nepal Lipi — Unicode Block U+11400–U+1147F</p>
+    </header>
+
+    <h2>Independent Vowels (स्वर)</h2>
+    <div class="char-grid grid-4">
+        <div class="char-cell"><span class="newa">𑐀</span><span class="roman">a</span></div>
+        <div class="char-cell"><span class="newa">𑐁</span><span class="roman">ā</span></div>
+        <div class="char-cell"><span class="newa">𑐂</span><span class="roman">i</span></div>
+        <div class="char-cell"><span class="newa">𑐃</span><span class="roman">ī</span></div>
+        <div class="char-cell"><span class="newa">𑐄</span><span class="roman">u</span></div>
+        <div class="char-cell"><span class="newa">𑐅</span><span class="roman">ū</span></div>
+        <div class="char-cell"><span class="newa">𑐆</span><span class="roman">ṛ</span></div>
+        <div class="char-cell"><span class="newa">𑐇</span><span class="roman">ṝ</span></div>
+        <div class="char-cell"><span class="newa">𑐈</span><span class="roman">ḷ</span></div>
+        <div class="char-cell"><span class="newa">𑐉</span><span class="roman">ḹ</span></div>
+        <div class="char-cell"><span class="newa">𑐊</span><span class="roman">e</span></div>
+        <div class="char-cell"><span class="newa">𑐋</span><span class="roman">ai</span></div>
+        <div class="char-cell"><span class="newa">𑐌</span><span class="roman">o</span></div>
+        <div class="char-cell"><span class="newa">𑐍</span><span class="roman">au</span></div>
+        <div class="char-cell empty"></div>
+        <div class="char-cell empty"></div>
+    </div>
+
+    <h2>Dependent Vowel Signs (मात्रा)</h2>
+    <div class="char-grid grid-4">
+        <div class="char-cell"><span class="newa">𑐎𑐵</span><span class="roman">kā</span></div>
+        <div class="char-cell"><span class="newa">𑐎𑐶</span><span class="roman">ki</span></div>
+        <div class="char-cell"><span class="newa">𑐎𑐷</span><span class="roman">kī</span></div>
+        <div class="char-cell"><span class="newa">𑐎𑐸</span><span class="roman">ku</span></div>
+        <div class="char-cell"><span class="newa">𑐎𑐹</span><span class="roman">kū</span></div>
+        <div class="char-cell"><span class="newa">𑐎𑐺</span><span class="roman">kṛ</span></div>
+        <div class="char-cell"><span class="newa">𑐎𑐻</span><span class="roman">kṝ</span></div>
+        <div class="char-cell"><span class="newa">𑐎𑐼</span><span class="roman">kḷ</span></div>
+        <div class="char-cell"><span class="newa">𑐎𑐽</span><span class="roman">kḹ</span></div>
+        <div class="char-cell"><span class="newa">𑐎𑐾</span><span class="roman">ke</span></div>
+        <div class="char-cell"><span class="newa">𑐎𑐿</span><span class="roman">kai</span></div>
+        <div class="char-cell"><span class="newa">𑐎𑑀</span><span class="roman">ko</span></div>
+        <div class="char-cell"><span class="newa">𑐎𑑁</span><span class="roman">kau</span></div>
+        <div class="char-cell empty"></div>
+        <div class="char-cell empty"></div>
+        <div class="char-cell empty"></div>
+    </div>
+
+    <h2>Vowel Signs (Isolated)</h2>
+    <div class="char-grid grid-4">
+        <div class="char-cell"><span class="newa">𑐵</span><span class="roman">ā</span></div>
+        <div class="char-cell"><span class="newa">𑐶</span><span class="roman">i</span></div>
+        <div class="char-cell"><span class="newa">𑐷</span><span class="roman">ī</span></div>
+        <div class="char-cell"><span class="newa">𑐸</span><span class="roman">u</span></div>
+        <div class="char-cell"><span class="newa">𑐹</span><span class="roman">ū</span></div>
+        <div class="char-cell"><span class="newa">𑐺</span><span class="roman">ṛ</span></div>
+        <div class="char-cell"><span class="newa">𑐻</span><span class="roman">ṝ</span></div>
+        <div class="char-cell"><span class="newa">𑐼</span><span class="roman">ḷ</span></div>
+        <div class="char-cell"><span class="newa">𑐽</span><span class="roman">ḹ</span></div>
+        <div class="char-cell"><span class="newa">𑐾</span><span class="roman">e</span></div>
+        <div class="char-cell"><span class="newa">𑐿</span><span class="roman">ai</span></div>
+        <div class="char-cell"><span class="newa">𑑀</span><span class="roman">o</span></div>
+        <div class="char-cell"><span class="newa">𑑁</span><span class="roman">au</span></div>
+        <div class="char-cell empty"></div>
+        <div class="char-cell empty"></div>
+        <div class="char-cell empty"></div>
+    </div>
+
+    <div class="page-num">1</div>
+</div>
+
+<!-- PAGE 2: Consonants -->
+<div class="page">
+    <header>
+        <h1>Consonants <span class="newa">𑐰𑑂𑐫𑐘𑑂𑐖𑐣</span></h1>
+        <p class="subtitle">Varga (Classified) & Avarga Consonants</p>
+    </header>
+
+    <table class="varga-table">
+        <thead>
+            <tr>
+                <th>Varga</th>
+                <th>Unvoiced</th>
+                <th>Unv. Asp.</th>
+                <th>Voiced</th>
+                <th>Voi. Asp.</th>
+                <th>Nasal</th>
+                <th>Nas. Asp.</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="varga-name">Velar<br><small>कण्ठ्य</small></td>
+                <td><span class="newa">𑐎</span><span class="roman">ka</span></td>
+                <td><span class="newa">𑐏</span><span class="roman">kha</span></td>
+                <td><span class="newa">𑐐</span><span class="roman">ga</span></td>
+                <td><span class="newa">𑐑</span><span class="roman">gha</span></td>
+                <td><span class="newa">𑐒</span><span class="roman">ṅa</span></td>
+                <td><span class="newa">𑐓</span><span class="roman">ṅha</span></td>
+            </tr>
+            <tr>
+                <td class="varga-name">Palatal<br><small>तालव्य</small></td>
+                <td><span class="newa">𑐔</span><span class="roman">ca</span></td>
+                <td><span class="newa">𑐕</span><span class="roman">cha</span></td>
+                <td><span class="newa">𑐖</span><span class="roman">ja</span></td>
+                <td><span class="newa">𑐗</span><span class="roman">jha</span></td>
+                <td><span class="newa">𑐘</span><span class="roman">ña</span></td>
+                <td><span class="newa">𑐙</span><span class="roman">ñha</span></td>
+            </tr>
+            <tr>
+                <td class="varga-name">Retroflex<br><small>मूर्धन्य</small></td>
+                <td><span class="newa">𑐚</span><span class="roman">ṭa</span></td>
+                <td><span class="newa">𑐛</span><span class="roman">ṭha</span></td>
+                <td><span class="newa">𑐜</span><span class="roman">ḍa</span></td>
+                <td><span class="newa">𑐝</span><span class="roman">ḍha</span></td>
+                <td><span class="newa">𑐞</span><span class="roman">ṇa</span></td>
+                <td class="empty-cell">—</td>
+            </tr>
+            <tr>
+                <td class="varga-name">Dental<br><small>दन्त्य</small></td>
+                <td><span class="newa">𑐟</span><span class="roman">ta</span></td>
+                <td><span class="newa">𑐠</span><span class="roman">tha</span></td>
+                <td><span class="newa">𑐡</span><span class="roman">da</span></td>
+                <td><span class="newa">𑐢</span><span class="roman">dha</span></td>
+                <td><span class="newa">𑐣</span><span class="roman">na</span></td>
+                <td><span class="newa">𑐤</span><span class="roman">nha</span></td>
+            </tr>
+            <tr>
+                <td class="varga-name">Labial<br><small>ओष्ठ्य</small></td>
+                <td><span class="newa">𑐥</span><span class="roman">pa</span></td>
+                <td><span class="newa">𑐦</span><span class="roman">pha</span></td>
+                <td><span class="newa">𑐧</span><span class="roman">ba</span></td>
+                <td><span class="newa">𑐨</span><span class="roman">bha</span></td>
+                <td><span class="newa">𑐩</span><span class="roman">ma</span></td>
+                <td><span class="newa">𑐪</span><span class="roman">mha</span></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>Semivowels (अन्तस्थ)</h2>
+    <div class="char-grid grid-6">
+        <div class="char-cell"><span class="newa">𑐫</span><span class="roman">ya</span></div>
+        <div class="char-cell"><span class="newa">𑐬</span><span class="roman">ra</span></div>
+        <div class="char-cell"><span class="newa">𑐭</span><span class="roman">rha</span></div>
+        <div class="char-cell"><span class="newa">𑐮</span><span class="roman">la</span></div>
+        <div class="char-cell"><span class="newa">𑐯</span><span class="roman">lha</span></div>
+        <div class="char-cell"><span class="newa">𑐰</span><span class="roman">wa</span></div>
+    </div>
+
+    <h2>Sibilants & Aspirate (ऊष्म)</h2>
+    <div class="char-grid grid-4">
+        <div class="char-cell"><span class="newa">𑐱</span><span class="roman">śa</span></div>
+        <div class="char-cell"><span class="newa">𑐲</span><span class="roman">ṣa</span></div>
+        <div class="char-cell"><span class="newa">𑐳</span><span class="roman">sa</span></div>
+        <div class="char-cell"><span class="newa">𑐴</span><span class="roman">ha</span></div>
+    </div>
+
+    <div class="notes">
+        <h4>Notes</h4>
+        <ul>
+            <li><strong>Breathy consonants</strong> (ṅha, ñha, nha, mha, rha, lha) are distinctive to Newar — not found in Devanagari.</li>
+            <li><strong>Retroflex sounds</strong> (ṭ, ṭh, ḍ, ḍh, ṇ) occur mainly in Sanskrit loanwords.</li>
+            <li>Each consonant carries an inherent <em>a</em> vowel.</li>
+        </ul>
+    </div>
+
+    <div class="page-num">2</div>
+</div>
+
+<!-- PAGE 3: Numerals & Signs -->
+<div class="page">
+    <header>
+        <h1>Numerals & Signs</h1>
+        <p class="subtitle">𑐀𑐒𑑂𑐎 — Digits, Diacritics, Punctuation</p>
+    </header>
+
+    <h2>Numerals (अंक)</h2>
+    <div class="numerals-row">
+        <div class="num-cell"><span class="newa">𑑐</span><span class="value">0</span></div>
+        <div class="num-cell"><span class="newa">𑑑</span><span class="value">1</span></div>
+        <div class="num-cell"><span class="newa">𑑒</span><span class="value">2</span></div>
+        <div class="num-cell"><span class="newa">𑑓</span><span class="value">3</span></div>
+        <div class="num-cell"><span class="newa">𑑔</span><span class="value">4</span></div>
+        <div class="num-cell"><span class="newa">𑑕</span><span class="value">5</span></div>
+        <div class="num-cell"><span class="newa">𑑖</span><span class="value">6</span></div>
+        <div class="num-cell"><span class="newa">𑑗</span><span class="value">7</span></div>
+        <div class="num-cell"><span class="newa">𑑘</span><span class="value">8</span></div>
+        <div class="num-cell"><span class="newa">𑑙</span><span class="value">9</span></div>
+    </div>
+
+    <h2>Diacritical Signs</h2>
+    <div class="signs-grid">
+        <div class="sign-cell"><span class="newa">𑑂</span><span class="label">Virama (halant)</span></div>
+        <div class="sign-cell"><span class="newa">𑑃</span><span class="label">Candrabindu</span></div>
+        <div class="sign-cell"><span class="newa">𑑄</span><span class="label">Anusvara</span></div>
+        <div class="sign-cell"><span class="newa">𑑅</span><span class="label">Visarga</span></div>
+        <div class="sign-cell"><span class="newa">𑑆</span><span class="label">Nukta</span></div>
+        <div class="sign-cell"><span class="newa">𑑇</span><span class="label">Avagraha</span></div>
+        <div class="sign-cell"><span class="newa">𑑈</span><span class="label">Final Anusvara</span></div>
+        <div class="sign-cell"><span class="newa">𑑟</span><span class="label">Vedic Anusvara</span></div>
+        <div class="sign-cell"><span class="newa">𑑞</span><span class="label">Sandhi Mark</span></div>
+    </div>
+
+    <h2>Punctuation</h2>
+    <div class="signs-grid">
+        <div class="sign-cell"><span class="newa">𑑋</span><span class="label">Danda (full stop)</span></div>
+        <div class="sign-cell"><span class="newa">𑑌</span><span class="label">Double Danda</span></div>
+        <div class="sign-cell"><span class="newa">𑑍</span><span class="label">Comma</span></div>
+        <div class="sign-cell"><span class="newa">𑑚</span><span class="label">Double Comma</span></div>
+        <div class="sign-cell"><span class="newa">𑑎</span><span class="label">Gap Filler</span></div>
+        <div class="sign-cell"><span class="newa">𑑏</span><span class="label">Abbreviation Sign</span></div>
+    </div>
+
+    <h2>Invocation Signs</h2>
+    <div class="char-grid grid-4">
+        <div class="char-cell"><span class="newa">𑑉</span><span class="roman">Oṃ</span></div>
+        <div class="char-cell"><span class="newa">𑑊</span><span class="roman">Siddhi</span></div>
+        <div class="char-cell empty"></div>
+        <div class="char-cell empty"></div>
+    </div>
+
+    <h2>Vedic Extensions</h2>
+    <div class="signs-grid">
+        <div class="sign-cell"><span class="newa">𑑠</span><span class="label">Jihvāmūlīya</span></div>
+        <div class="sign-cell"><span class="newa">𑑡</span><span class="label">Upadhmānīya</span></div>
+        <div class="sign-cell"><span class="newa">𑑛</span><span class="label">Placeholder Mark</span></div>
+    </div>
+
+    <div class="notes">
+        <h4>About Newa Script</h4>
+        <ul>
+            <li>Used from the 10th century in the Kathmandu Valley for Nepal Bhasa (Newari)</li>
+            <li>Derived from Brahmi via the Licchavi and later Nepalese scripts</li>
+            <li>Added to Unicode in 2016 (version 9.0)</li>
+            <li>Also used for Sanskrit, Pali, and Buddhist texts</li>
+        </ul>
+    </div>
+
+    <div class="page-num">3</div>
+</div>
+
+<!-- PAGE 4: Complete Reference -->
+<div class="page">
+    <header>
+        <h1>Complete Character Set</h1>
+        <p class="subtitle">All 92 Characters — U+11400 to U+11461</p>
+    </header>
+
+    <h2>Full Alphabet — Vowels</h2>
+    <div class="char-grid grid-5">
+        <div class="char-cell"><span class="newa">𑐀</span><span class="roman">U+11400</span></div>
+        <div class="char-cell"><span class="newa">𑐁</span><span class="roman">U+11401</span></div>
+        <div class="char-cell"><span class="newa">𑐂</span><span class="roman">U+11402</span></div>
+        <div class="char-cell"><span class="newa">𑐃</span><span class="roman">U+11403</span></div>
+        <div class="char-cell"><span class="newa">𑐄</span><span class="roman">U+11404</span></div>
+        <div class="char-cell"><span class="newa">𑐅</span><span class="roman">U+11405</span></div>
+        <div class="char-cell"><span class="newa">𑐆</span><span class="roman">U+11406</span></div>
+        <div class="char-cell"><span class="newa">𑐇</span><span class="roman">U+11407</span></div>
+        <div class="char-cell"><span class="newa">𑐈</span><span class="roman">U+11408</span></div>
+        <div class="char-cell"><span class="newa">𑐉</span><span class="roman">U+11409</span></div>
+        <div class="char-cell"><span class="newa">𑐊</span><span class="roman">U+1140A</span></div>
+        <div class="char-cell"><span class="newa">𑐋</span><span class="roman">U+1140B</span></div>
+        <div class="char-cell"><span class="newa">𑐌</span><span class="roman">U+1140C</span></div>
+        <div class="char-cell"><span class="newa">𑐍</span><span class="roman">U+1140D</span></div>
+        <div class="char-cell empty"></div>
+    </div>
+
+    <h2>Full Alphabet — Consonants</h2>
+    <div class="char-grid grid-5">
+        <div class="char-cell"><span class="newa">𑐎</span><span class="roman">U+1140E</span></div>
+        <div class="char-cell"><span class="newa">𑐏</span><span class="roman">U+1140F</span></div>
+        <div class="char-cell"><span class="newa">𑐐</span><span class="roman">U+11410</span></div>
+        <div class="char-cell"><span class="newa">𑐑</span><span class="roman">U+11411</span></div>
+        <div class="char-cell"><span class="newa">𑐒</span><span class="roman">U+11412</span></div>
+        <div class="char-cell"><span class="newa">𑐓</span><span class="roman">U+11413</span></div>
+        <div class="char-cell"><span class="newa">𑐔</span><span class="roman">U+11414</span></div>
+        <div class="char-cell"><span class="newa">𑐕</span><span class="roman">U+11415</span></div>
+        <div class="char-cell"><span class="newa">𑐖</span><span class="roman">U+11416</span></div>
+        <div class="char-cell"><span class="newa">𑐗</span><span class="roman">U+11417</span></div>
+        <div class="char-cell"><span class="newa">𑐘</span><span class="roman">U+11418</span></div>
+        <div class="char-cell"><span class="newa">𑐙</span><span class="roman">U+11419</span></div>
+        <div class="char-cell"><span class="newa">𑐚</span><span class="roman">U+1141A</span></div>
+        <div class="char-cell"><span class="newa">𑐛</span><span class="roman">U+1141B</span></div>
+        <div class="char-cell"><span class="newa">𑐜</span><span class="roman">U+1141C</span></div>
+        <div class="char-cell"><span class="newa">𑐝</span><span class="roman">U+1141D</span></div>
+        <div class="char-cell"><span class="newa">𑐞</span><span class="roman">U+1141E</span></div>
+        <div class="char-cell"><span class="newa">𑐟</span><span class="roman">U+1141F</span></div>
+        <div class="char-cell"><span class="newa">𑐠</span><span class="roman">U+11420</span></div>
+        <div class="char-cell"><span class="newa">𑐡</span><span class="roman">U+11421</span></div>
+        <div class="char-cell"><span class="newa">𑐢</span><span class="roman">U+11422</span></div>
+        <div class="char-cell"><span class="newa">𑐣</span><span class="roman">U+11423</span></div>
+        <div class="char-cell"><span class="newa">𑐤</span><span class="roman">U+11424</span></div>
+        <div class="char-cell"><span class="newa">𑐥</span><span class="roman">U+11425</span></div>
+        <div class="char-cell"><span class="newa">𑐦</span><span class="roman">U+11426</span></div>
+        <div class="char-cell"><span class="newa">𑐧</span><span class="roman">U+11427</span></div>
+        <div class="char-cell"><span class="newa">𑐨</span><span class="roman">U+11428</span></div>
+        <div class="char-cell"><span class="newa">𑐩</span><span class="roman">U+11429</span></div>
+        <div class="char-cell"><span class="newa">𑐪</span><span class="roman">U+1142A</span></div>
+        <div class="char-cell"><span class="newa">𑐫</span><span class="roman">U+1142B</span></div>
+        <div class="char-cell"><span class="newa">𑐬</span><span class="roman">U+1142C</span></div>
+        <div class="char-cell"><span class="newa">𑐭</span><span class="roman">U+1142D</span></div>
+        <div class="char-cell"><span class="newa">𑐮</span><span class="roman">U+1142E</span></div>
+        <div class="char-cell"><span class="newa">𑐯</span><span class="roman">U+1142F</span></div>
+        <div class="char-cell"><span class="newa">𑐰</span><span class="roman">U+11430</span></div>
+        <div class="char-cell"><span class="newa">𑐱</span><span class="roman">U+11431</span></div>
+        <div class="char-cell"><span class="newa">𑐲</span><span class="roman">U+11432</span></div>
+        <div class="char-cell"><span class="newa">𑐳</span><span class="roman">U+11433</span></div>
+        <div class="char-cell"><span class="newa">𑐴</span><span class="roman">U+11434</span></div>
+        <div class="char-cell empty"></div>
+    </div>
+
+    <footer>
+        <span>Newa Script Reference</span>
+        <span>Unicode 9.0+ (2016)</span>
+        <span>Font: Noto Sans Newa</span>
+    </footer>
+
+    <div class="page-num">4</div>
+</div>
+
+</body>
+</html>
