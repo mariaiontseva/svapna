@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="theme-color" content="#faf6ec" />
+  <title>Śaiva traditions — Svapna · Maria Iontseva</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gentium+Plus:ital,wght@0,400;0,700;1,400;1,700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/site.css" />
+</head>
+<body data-page="svapna-traditions" data-section="svapna">
+
+<div class="app">
+  <aside class="sidebar" id="sidebar" aria-label="Navigation"></aside>
+
+  <main class="content">
+
+    <div class="mobile-bar">
+      <button class="menu-toggle" id="sbOpen" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="m-brand">Svapna</div>
+      <div style="width:38px"></div>
+    </div>
+
+    <div class="wrap">
+
+      <div class="masthead">
+        <div class="L">Svapna · Traditions &amp; passages</div>
+        <div class="R">
+          <span><span data-count="texts">—</span> texts</span>
+          <span><span data-count="passages">—</span> passages</span>
+          <span>Śaiva-Śākta</span>
+        </div>
+      </div>
+
+      <header class="title left">
+        <div class="kicker">The corpus &nbsp;·&nbsp; passages arranged by tradition</div>
+        <h1><em>Śaiva</em> Traditions</h1>
+        <p class="dek" style="margin-left:0">
+          Every primary passage in my corpus, grouped by the tradition to which
+          its text belongs. Each passage is tagged with one of the four
+          operational categories — or with <em>Omens</em>, the excluded fifth.
+        </p>
+        <div class="rule" style="margin-left:0"></div>
+      </header>
+
+      <!-- Category legend -->
+      <div class="legend" style="margin-top:32px">
+        <div class="item"><span class="cat-tag tag-teal">I · Revelation</span></div>
+        <div class="item"><span class="cat-tag tag-amber">II · Empowerment</span></div>
+        <div class="item"><span class="cat-tag tag-rose">III · Dream Magic</span></div>
+        <div class="item"><span class="cat-tag tag-indigo">IV · Consciousness</span></div>
+        <div class="item"><span class="cat-tag tag-slate">V · Omens</span></div>
+      </div>
+
+      <!-- dynamic content mounts here -->
+      <div id="traditions-content">
+        <div class="loading">Loading corpus…</div>
+      </div>
+
+      <div class="colophon" style="margin-top:80px">
+        Corpus <span class="orn">·</span>
+        <span data-count="texts">—</span> texts <span class="orn">·</span>
+        <span data-count="passages">—</span> indexed passages <span class="orn">·</span>
+        MMXXVI
+      </div>
+
+    </div>
+  </main>
+
+  <div class="backdrop" id="backdrop"></div>
+</div>
+
+<!-- Passage data (lives at site root) -->
+<script src="../kamika-agama-passages-data.js"></script>
+<script src="../all-saiva-passages-data.js"></script>
+
+<!-- Our renderers -->
+<script src="../assets/svapna-passages.js"></script>
+<script src="../assets/site.js"></script>
+</body>
+</html>

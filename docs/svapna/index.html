@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="theme-color" content="#faf6ec" />
+  <title>Svapna · The Industry of Miracles — Maria Iontseva</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gentium+Plus:ital,wght@0,400;0,700;1,400;1,700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/site.css" />
+</head>
+<body data-page="svapna-home" data-section="svapna">
+
+<div class="app">
+  <aside class="sidebar" id="sidebar" aria-label="Navigation"></aside>
+
+  <main class="content">
+
+    <div class="mobile-bar">
+      <button class="menu-toggle" id="sbOpen" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="m-brand">Svapna</div>
+      <div style="width:38px"></div>
+    </div>
+
+    <div class="wrap">
+
+      <div class="masthead">
+        <div class="L">Svapna · The Industry of Miracles</div>
+        <div class="R">
+          <span><span data-count="texts">311</span> texts</span>
+          <span><span data-count="matches">3,680</span> hits</span>
+          <span>MMXXVI</span>
+        </div>
+      </div>
+
+      <header class="title left">
+        <div class="kicker">A dissertation &nbsp;·&nbsp; an archive &nbsp;·&nbsp; a searchable corpus</div>
+        <h1><em>The Industry</em> of <em>Miracles</em></h1>
+        <p class="dek" style="margin-left:0">
+          A typology of dream operations in Śaiva-Śākta tantra — organised not
+          by tradition or by mantra, but by the result the operation is meant
+          to produce. Search the full corpus below, or
+          <a class="link" href="traditions.html">browse by tradition</a>.
+        </p>
+        <div class="rule" style="margin-left:0"></div>
+      </header>
+
+      <!-- Search panel -->
+      <div class="search-panel">
+        <form id="search-form">
+          <div class="search-box">
+            <input id="search-input" type="text" placeholder="Type a term, a title, an author…" autocomplete="off" />
+            <button type="submit">Search</button>
+          </div>
+        </form>
+
+        <div class="quick-terms">
+          <span class="ql">Indexed terms —</span>
+          <button type="button" data-term="svapna"><em>svapna</em></button>
+          <button type="button" data-term="nidrā"><em>nidrā</em></button>
+          <button type="button" data-term="jāgrat"><em>jāgrat</em></button>
+          <button type="button" data-term="suṣupti"><em>suṣupti</em></button>
+          <button type="button" data-term="turīya"><em>turīya</em></button>
+        </div>
+
+        <div class="filters-row">
+          <select id="f-tradition"><option>Loading…</option></select>
+          <select id="f-period"><option>Loading…</option></select>
+          <select id="f-author"><option>Loading…</option></select>
+        </div>
+
+        <div style="margin-top:14px;text-align:right">
+          <button id="clear-filters" type="button" style="font-family:var(--mono);font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--dim);padding:4px 10px;border:1px solid var(--rule-hot);background:var(--paper)">Clear filters</button>
+        </div>
+      </div>
+
+      <!-- Results -->
+      <div id="result-summary" class="result-summary">
+        <div><b>Loading…</b></div>
+      </div>
+
+      <div id="search-results">
+        <div class="empty-state">Loading corpus…</div>
+      </div>
+
+      <!-- Secondary: link to traditions and typology -->
+      <section class="prose left" style="max-width:62ch;margin-top:72px">
+        <h2><span class="num">¶</span>Also on this site</h2>
+        <p>
+          <a class="link" href="traditions.html"><b>Śaiva traditions</b></a> —
+          the full corpus grouped by tradition (Siddhānta, Mantrapīṭha,
+          Vidyāpīṭha, the four Kaula āmnāyas, Kashmir, Late Śākta), with every
+          passage tagged by operational category and cross-referenced to its
+          branch of descent.
+        </p>
+        <p>
+          <em>Coming soon</em> — the long editorial typology of the four
+          operations (Revelation, Empowerment, Dream Magic, Consciousness),
+          argued out with primary passages, and individual readings of key
+          texts (Yoginītantra, Jayadrathayāmala, Brahmayāmala, Tantrāloka 10,
+          Spanda &amp; Pratyabhijñā).
+        </p>
+      </section>
+
+      <div class="colophon" style="margin-top:72px">
+        The Industry of Miracles <span class="orn">·</span>
+        <span data-count="texts">311</span> texts <span class="orn">·</span>
+        <span data-count="matches">3,680</span> indexed matches <span class="orn">·</span>
+        MMXXVI
+      </div>
+
+    </div>
+  </main>
+
+  <div class="backdrop" id="backdrop"></div>
+</div>
+
+<script src="../assets/svapna-search.js"></script>
+<script src="../assets/site.js"></script>
+</body>
+</html>
