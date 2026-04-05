@@ -1576,9 +1576,13 @@ body.home-page .home-lede{
   letter-spacing:-.025em;
   color:var(--ink);
 }
+body.home-page .home-lede,
 body.home-page .home-lede em{
-  font-style:normal;
-  font-weight:400;
+  font-weight:700 !important;
+  font-style:normal !important;
+  font-family:'Inter',sans-serif !important;
+}
+body.home-page .home-lede em{
   color:var(--crimson);
 }
 body.home-page .home-sub{
