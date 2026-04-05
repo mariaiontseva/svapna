@@ -5,6 +5,50 @@
 
 (function(){
 
+  // ---------- language toggle (EN / RU) ----------
+  const urlLang  = new URLSearchParams(location.search).get('lang');
+  const savedLang = localStorage.getItem('lang');
+  const initialLang = (urlLang === 'ru' || urlLang === 'en') ? urlLang
+                    : (savedLang === 'ru' || savedLang === 'en') ? savedLang
+                    : 'en';
+  if(initialLang === 'ru'){
+    document.documentElement.lang = 'ru';
+    // apply ASAP so content doesn't flash English
+    if(document.body) document.body.classList.add('lang-ru');
+    else document.addEventListener('DOMContentLoaded', () => document.body.classList.add('lang-ru'));
+  }
+
+  function switchLang(newLang){
+    document.body.classList.toggle('lang-ru', newLang === 'ru');
+    document.documentElement.lang = newLang;
+    localStorage.setItem('lang', newLang);
+    const url = new URL(location);
+    if(newLang === 'ru') url.searchParams.set('lang','ru');
+    else url.searchParams.delete('lang');
+    history.replaceState(null, '', url);
+    document.querySelectorAll('.lang-toggle button').forEach(b => {
+      b.classList.toggle('active', b.dataset.switch === newLang);
+    });
+  }
+
+  function mountLangToggle(){
+    if(document.querySelector('.lang-toggle')) return;
+    const toggle = document.createElement('div');
+    toggle.className = 'lang-toggle';
+    toggle.innerHTML = '<button data-switch="en">EN</button><button data-switch="ru">RU</button>';
+    document.body.appendChild(toggle);
+    const cur = document.body.classList.contains('lang-ru') ? 'ru' : 'en';
+    toggle.querySelectorAll('button').forEach(b => {
+      b.classList.toggle('active', b.dataset.switch === cur);
+      b.addEventListener('click', () => switchLang(b.dataset.switch));
+    });
+  }
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', mountLangToggle);
+  } else {
+    mountLangToggle();
+  }
+
   // ---------- compute base URL ----------
   const script = document.currentScript ||
     Array.from(document.scripts).find(s => /assets\/site\.js/.test(s.src));

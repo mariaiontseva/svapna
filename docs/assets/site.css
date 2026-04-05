@@ -1459,13 +1459,29 @@ body.home-page{
 .home-foot .cr{color:var(--crimson);font-weight:700}
 
 @media (max-width: 1100px){
-  .triptych{grid-template-columns:1fr;min-height:0;gap:2px}
-  .tile{min-height:340px;padding:36px 32px}
-  .tile h2{font-size:54px}
+  /* keep three columns — just tighten padding and type */
   .home-shell{padding:28px 24px}
+  .tile{padding:30px 24px}
+  .tile h2{font-size:44px}
+  .tile .tile-sub{font-size:14px}
+  .tile .tile-head{margin-bottom:20px}
 }
 
-@media (max-width: 640px){
+@media (max-width: 800px){
+  /* narrower screens — keep three columns, shrink further */
+  .home-shell{padding:22px 18px}
+  .tile{padding:22px 16px}
+  .tile h2{font-size:32px;line-height:1}
+  .tile .tile-sub{font-size:12.5px;line-height:1.45}
+  .tile .tile-head{margin-bottom:14px}
+  .tile .roman{font-size:11px}
+  .tile .kind{font-size:8.5px;letter-spacing:.14em}
+  .tile .tile-foot{font-size:9px}
+}
+
+@media (max-width: 600px){
+  /* mobile — stack to one column */
+  .triptych{grid-template-columns:1fr;min-height:0;gap:2px}
   .home-shell{padding:22px 18px}
   .home-brand{flex-direction:column;gap:22px;margin-bottom:32px;padding-bottom:20px}
   .byline{text-align:left}
@@ -1473,7 +1489,7 @@ body.home-page{
   .logo-lockup .glyph{font-size:64px}
   .home-lede{font-size:28px}
   .home-sub{font-size:15px;margin-bottom:32px}
-  .tile{min-height:300px;padding:30px 26px}
+  .tile{min-height:280px;padding:30px 26px}
   .tile h2{font-size:44px}
   .tile .tile-sub{font-size:15px}
   .home-foot{flex-direction:column;gap:4px;align-items:flex-start}
@@ -2522,3 +2538,449 @@ body.page-shell{
   font-style:normal;
 }
 .page-main .table-note em{color:#d64822;font-weight:600}
+
+/* ============================================================
+   TOC — readings sub-section + grammar label
+============================================================ */
+.page-toc .toc-section-label{
+  font-family:'Inter',sans-serif;
+  font-size:9px;
+  font-weight:700;
+  letter-spacing:.26em;
+  text-transform:uppercase;
+  color:#d64822;
+  margin:26px 0 14px;
+  padding-top:20px;
+  border-top:1px solid #d0c4a4;
+}
+.page-toc .toc-section-label:first-of-type{
+  margin-top:0;
+  padding-top:0;
+  border-top:none;
+}
+
+.page-toc .readings-list{
+  list-style:none;
+  padding:0;
+  margin:0;
+}
+.page-toc .readings-list li{
+  padding:13px 0;
+  border-top:1px solid #e4d9b8;
+}
+.page-toc .readings-list li:last-child{border-bottom:1px solid #e4d9b8}
+.page-toc .readings-list a,
+.page-toc .readings-list span.title{
+  display:block;
+  font-family:'Gentium Plus',Georgia,serif;
+  font-style:italic;
+  font-size:15px;
+  font-weight:500;
+  color:#0a0a0a;
+  text-decoration:none;
+  line-height:1.3;
+  letter-spacing:-.005em;
+  transition:color .15s;
+}
+.page-toc .readings-list a:hover{color:#d64822}
+.page-toc .readings-list .sub{
+  display:block;
+  font-family:'Inter',sans-serif;
+  font-style:normal;
+  font-size:9.5px;
+  font-weight:600;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:#7a5240;
+  margin-top:4px;
+}
+.page-toc .readings-list li.active a{color:#d64822;font-weight:700}
+.page-toc .readings-list li.active .sub{color:#d64822}
+
+/* ============================================================
+   READING PAGES — meta card + verse blocks
+============================================================ */
+.reading-meta{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(170px, 1fr));
+  gap:0;
+  margin:26px 0 0;
+  padding:22px 0;
+  border-top:2px solid #0a0a0a;
+  border-bottom:1px solid #d0c4a4;
+}
+.reading-meta > div{
+  padding-right:20px;
+  border-right:1px solid #e4d9b8;
+}
+.reading-meta > div:last-child{border-right:none}
+.reading-meta dt{
+  font-family:'Inter',sans-serif;
+  font-size:9px;
+  font-weight:700;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  color:#7a5240;
+  margin-bottom:6px;
+}
+.reading-meta dd{
+  font-family:'Gentium Plus',Georgia,serif;
+  font-size:16px;
+  line-height:1.4;
+  color:#0a0a0a;
+  font-style:italic;
+  margin:0;
+}
+
+.verse-block{
+  margin:20px 0;
+  padding:18px 22px;
+  background:#faf2e0;
+  border-left:3px solid #d64822;
+}
+.verse-block .verse-num{
+  font-family:'Inter',sans-serif;
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:#d64822;
+  margin-bottom:8px;
+}
+.verse-block .verse-skt{
+  font-family:'Gentium Plus',Georgia,serif;
+  font-style:italic;
+  font-size:18px;
+  line-height:1.6;
+  color:#0a0a0a;
+  white-space:pre-wrap;
+}
+.verse-block .verse-tr{
+  font-family:'Gentium Plus',Georgia,serif;
+  font-style:normal;
+  font-size:15.5px;
+  line-height:1.6;
+  color:#3a352b;
+  margin-top:10px;
+  padding-top:10px;
+  border-top:1px solid #e4d9b8;
+}
+.verse-block .verse-note{
+  font-family:'Inter',sans-serif;
+  font-size:12px;
+  font-style:italic;
+  color:#7a5240;
+  margin-top:10px;
+  line-height:1.5;
+}
+
+/* Reading-nav (horizontal, between reading pages) — reuses .paradigm-nav */
+
+/* ============================================================
+   SKT LANDING — three tiles with inline link lists
+============================================================ */
+.skt-triptych{
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:0;
+  margin-top:36px;
+}
+.skt-tile{
+  padding:40px 34px 38px;
+  display:flex;
+  flex-direction:column;
+  transition:filter .2s;
+}
+
+/* three pale warm colours — muted so long text reads easily */
+.skt-tile.t-readings{background:#f8ecd2}
+.skt-tile.t-grammar {background:#f3dcba}
+.skt-tile.t-tools   {background:#eec9a4}
+
+.skt-tile:hover{filter:brightness(.97)}
+
+.skt-tile .tile-head{
+  display:flex;align-items:baseline;gap:14px;
+  margin-bottom:34px;
+  padding-bottom:14px;
+  border-bottom:1px solid rgba(10,10,10,.18);
+}
+.skt-tile .tile-head .roman{
+  font-family:'Inter',sans-serif;
+  font-weight:800;
+  font-size:22px;
+  letter-spacing:-.02em;
+  color:#d64822;
+  line-height:1;
+}
+.skt-tile .tile-head .cat{
+  font-family:'Inter',sans-serif;
+  font-weight:800;
+  font-size:22px;
+  letter-spacing:-.01em;
+  color:#0a0a0a;
+  line-height:1;
+}
+
+.skt-tile ul{
+  list-style:none;
+  padding:0;
+  margin:0;
+  flex:1;
+}
+.skt-tile li{
+  padding:13px 0;
+  border-bottom:1px solid rgba(10,10,10,.12);
+}
+.skt-tile li:last-child{border-bottom:none}
+.skt-tile li a,
+.skt-tile li span.soon{
+  display:block;
+  font-family:'Inter',sans-serif;
+  font-size:15.5px;
+  font-weight:600;
+  line-height:1.35;
+  color:#0a0a0a;
+  text-decoration:none;
+  letter-spacing:-.005em;
+  transition:color .15s;
+}
+.skt-tile li a:hover{color:#d64822}
+.skt-tile li a .meta,
+.skt-tile li span.soon .meta{
+  display:block;
+  font-family:'Inter',sans-serif;
+  font-style:normal;
+  font-size:10px;
+  font-weight:600;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:#7a5240;
+  margin-top:4px;
+}
+.skt-tile li span.soon{color:#8a7a66}
+.skt-tile li span.soon .meta{color:#a68f74}
+
+@media (max-width: 1000px){
+  .skt-triptych{grid-template-columns:1fr 1fr}
+  .skt-tile{padding:32px 28px}
+}
+@media (max-width: 640px){
+  .skt-triptych{grid-template-columns:1fr}
+  .skt-tile{padding:28px 24px}
+}
+
+/* ============================================================
+   READING PAGES v2 — no sidebar, bigger translation, vocabulary
+============================================================ */
+
+/* Single-column layout (no left TOC) */
+.reading-layout{
+  margin-top:28px;
+}
+.reading-layout > .reading-main{
+  max-width:820px;
+  margin:0 auto;
+  font-family:'Inter',sans-serif;
+}
+
+/* Verse block v2 — bigger, clearer, with vocab */
+.reading-main .verse-block{
+  margin:36px 0;
+  padding:28px 32px 30px;
+  background:#faf2e0;
+  border-left:3px solid #d64822;
+}
+.reading-main .verse-block .verse-num{
+  font-family:'Inter',sans-serif;
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  color:#d64822;
+  margin-bottom:16px;
+}
+.reading-main .verse-block .verse-skt{
+  font-family:'Gentium Plus',Georgia,serif;
+  font-style:italic;
+  font-size:22px;
+  line-height:1.55;
+  color:#0a0a0a;
+  white-space:pre-wrap;
+  padding-bottom:18px;
+  border-bottom:1px solid #e4d9b8;
+}
+.reading-main .verse-block .verse-tr{
+  font-family:'Gentium Plus',Georgia,serif;
+  font-style:normal;
+  font-size:20px;
+  line-height:1.68;
+  color:#0a0a0a;
+  padding:18px 0 0;
+  font-weight:400;
+}
+.reading-main .verse-block .verse-tr .sk{
+  font-style:italic;
+  color:#b24a1f;
+  font-size:.86em;
+  font-weight:500;
+  white-space:nowrap;
+}
+.reading-main .verse-block .verse-tr b{
+  font-family:'Inter',sans-serif;
+  font-weight:800;
+  font-size:.65em;
+  text-transform:uppercase;
+  letter-spacing:.14em;
+  color:#7a5240;
+  display:inline-block;
+  margin-right:4px;
+}
+
+/* Vocabulary list under each verse */
+.reading-main .verse-vocab{
+  margin-top:22px;
+  padding-top:18px;
+  border-top:1px dashed #c8b68e;
+}
+.reading-main .verse-vocab .vocab-label{
+  font-family:'Inter',sans-serif;
+  font-size:9px;
+  font-weight:800;
+  letter-spacing:.24em;
+  text-transform:uppercase;
+  color:#d64822;
+  margin-bottom:14px;
+}
+.reading-main .verse-vocab ul{
+  list-style:none;
+  padding:0;
+  margin:0;
+  display:grid;
+  gap:10px;
+}
+.reading-main .verse-vocab li{
+  display:grid;
+  grid-template-columns:200px 1fr;
+  gap:18px;
+  padding:6px 0;
+  align-items:baseline;
+  border-bottom:1px solid rgba(212,194,154,.4);
+}
+.reading-main .verse-vocab li:last-child{border-bottom:none}
+.reading-main .verse-vocab .headword{
+  font-family:'Gentium Plus',Georgia,serif;
+  font-style:italic;
+  font-size:16px;
+  color:#0a0a0a;
+  font-weight:500;
+  line-height:1.4;
+}
+.reading-main .verse-vocab .pos{
+  display:block;
+  font-family:'Inter',sans-serif;
+  font-style:normal;
+  font-size:9px;
+  font-weight:700;
+  letter-spacing:.14em;
+  color:#7a5240;
+  text-transform:uppercase;
+  margin-top:2px;
+}
+.reading-main .verse-vocab .gloss{
+  font-family:'Gentium Plus',Georgia,serif;
+  font-size:15px;
+  color:#2a2218;
+  line-height:1.55;
+}
+.reading-main .verse-vocab .gloss em{
+  font-style:italic;
+  color:#7a5240;
+}
+
+.reading-main .verse-block .verse-note{
+  margin-top:18px;
+  padding-top:14px;
+  border-top:1px dashed #c8b68e;
+  font-family:'Gentium Plus',Georgia,serif;
+  font-size:14px;
+  font-style:italic;
+  color:#7a5240;
+  line-height:1.6;
+}
+
+/* Header & intro on reading pages */
+.reading-main header.title{padding:10px 0 14px}
+.reading-main header.title h1{font-family:'Gentium Plus',serif}
+.reading-main .reading-meta{margin-top:20px}
+.reading-main .prose{
+  max-width:none;
+  margin:40px 0 0;
+  font-family:'Gentium Plus',Georgia,serif;
+  font-size:17px;
+  line-height:1.72;
+  color:#2a2218;
+}
+.reading-main .prose h2{
+  font-family:'Inter',sans-serif;
+  font-style:normal;
+  font-size:22px;
+  font-weight:800;
+  color:#0a0a0a;
+  letter-spacing:-.015em;
+  margin:40px 0 14px;
+}
+
+@media (max-width: 720px){
+  .reading-main .verse-block{padding:22px 20px}
+  .reading-main .verse-block .verse-skt{font-size:19px}
+  .reading-main .verse-block .verse-tr{font-size:17.5px}
+  .reading-main .verse-vocab li{grid-template-columns:1fr;gap:4px}
+}
+
+/* ============================================================
+   LANGUAGE TOGGLE — EN / RU
+============================================================ */
+/* hide the inactive language on every page */
+body:not(.lang-ru) [data-lang="ru"],
+body:not(.lang-ru) .lang-ru{display:none !important}
+body.lang-ru [data-lang="en"],
+body.lang-ru .lang-en{display:none !important}
+
+.lang-toggle{
+  position:fixed;
+  bottom:22px;
+  right:22px;
+  z-index:60;
+  display:flex;
+  gap:0;
+  background:rgba(250,242,224,.96);
+  border:1px solid #0a0a0a;
+  font-family:'Inter',sans-serif;
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+  backdrop-filter:blur(10px);
+  box-shadow:0 4px 18px -4px rgba(10,10,10,.18);
+}
+.lang-toggle button{
+  padding:9px 14px;
+  color:#7a5240;
+  background:transparent;
+  border:none;
+  cursor:pointer;
+  font:inherit;
+  letter-spacing:.22em;
+  transition:color .15s, background .15s;
+}
+.lang-toggle button:hover{color:#0a0a0a}
+.lang-toggle button.active{
+  background:#0a0a0a;
+  color:#faf2e0;
+}
+
+@media (max-width: 600px){
+  .lang-toggle{bottom:14px;right:14px}
+  .lang-toggle button{padding:7px 11px;font-size:9px}
+}
