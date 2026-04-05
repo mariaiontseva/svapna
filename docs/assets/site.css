@@ -2084,7 +2084,7 @@ body.page-shell{
 .page-toc li .num{
   font-family:'Gentium Plus',Georgia,serif;
   font-size:16px;
-  font-style:italic;
+  font-style:normal;
   font-weight:600;
   color:#0a0a0a;
   line-height:1;
