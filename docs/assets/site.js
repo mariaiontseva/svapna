@@ -173,28 +173,33 @@
     </nav>
   `;
 
-  // ---------- mount the correct sidebar ----------
-  const sb = document.getElementById('sidebar');
-  if(sb){
-    if(section === 'skt')         sb.innerHTML = SB_SKT;
-    else if(section === 'svapna') sb.innerHTML = SB_SVAPNA;
-
-    if(key){
-      const li = sb.querySelector(`li[data-key="${key}"]`);
-      if(li) li.classList.add('active');
+  // ---------- universal top site-nav ----------
+  const SITE_NAV_HTML = `
+    <a class="brand" href="${U('index.html')}">svapna<span class="dot">·</span><span class="ext">space</span></a>
+    <div class="links">
+      <a href="${U('skt/s-stems.html')}" data-nav="skt">Sanskrit</a>
+      <a href="${U('svapna/index.html')}" data-nav="svapna">Svapna</a>
+      <a href="${U('about.html')}" data-nav="about">About</a>
+    </div>
+  `;
+  const sitenav = document.getElementById('sitenav');
+  if(sitenav){
+    sitenav.innerHTML = SITE_NAV_HTML;
+    const page = document.body.getAttribute('data-page') || '';
+    const navKey = section || (page === 'about' ? 'about' : null);
+    if(navKey){
+      const link = sitenav.querySelector(`[data-nav="${navKey}"]`);
+      if(link) link.classList.add('active');
     }
   }
 
-  // ---------- top-nav active marker (home/about) ----------
-  const topnav = document.querySelector('.topnav');
-  if(topnav){
-    const page = document.body.getAttribute('data-page') || '';
-    const match = {
-      home:   'home',
-      about:  'about'
-    }[page];
-    if(match){
-      topnav.querySelector(`[data-nav="${match}"]`)?.classList.add('active');
+  // ---------- mount sidebar (SKT only now) ----------
+  const sb = document.getElementById('sidebar');
+  if(sb && section === 'skt'){
+    sb.innerHTML = SB_SKT;
+    if(key){
+      const li = sb.querySelector(`li[data-key="${key}"]`);
+      if(li) li.classList.add('active');
     }
   }
 

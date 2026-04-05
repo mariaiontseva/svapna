@@ -1615,3 +1615,748 @@ body.home-page .home-foot{
   font-weight:500;
   letter-spacing:.12em;
 }
+
+/* ============================================================
+   UNIVERSAL SITE NAV — topnav on every internal page
+============================================================ */
+.site-nav{
+  position:sticky;top:0;z-index:40;
+  display:flex;align-items:center;justify-content:space-between;gap:24px;
+  padding:18px 44px;
+  background:rgba(250,242,224,.95);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid #0a0a0a;
+  font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+}
+.site-nav .brand{
+  font-size:20px;
+  font-weight:800;
+  color:#0a0a0a;
+  letter-spacing:-.015em;
+  line-height:1;
+  display:inline-block;
+}
+.site-nav .brand .dot{color:#d64822;padding:0 1px;font-weight:800}
+.site-nav .brand .ext{color:#d64822;font-weight:800}
+.site-nav .links{display:flex;gap:4px;align-items:center}
+.site-nav .links a{
+  font-family:'Inter',sans-serif;
+  font-size:11px;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+  color:#0a0a0a;
+  font-weight:600;
+  padding:10px 18px 9px;
+  border-bottom:2px solid transparent;
+  transition:border-color .15s, color .15s;
+}
+.site-nav .links a:hover{color:#d64822;border-bottom-color:#d64822}
+.site-nav .links a.active{color:#d64822;border-bottom-color:#d64822}
+
+@media (max-width: 720px){
+  .site-nav{padding:12px 18px;gap:10px;flex-wrap:wrap}
+  .site-nav .brand{font-size:18px}
+  .site-nav .links{width:100%;overflow-x:auto;gap:0}
+  .site-nav .links a{padding:8px 12px;font-size:10px;letter-spacing:.14em;flex-shrink:0}
+}
+
+/* ----- palette alignment to home style ----- */
+:root{
+  --paper:    #faf2e0;
+  --paper-2:  #f4e9cf;
+  --paper-3:  #ede0bf;
+  --paper-sel:#e5d3ad;
+  --ink:      #0a0a0a;
+  --ink-2:    #2a2218;
+  --dim:      #7a5240;
+  --rule:     #d0c4a4;
+  --rule-soft:#e4d9b8;
+  --rule-hot: #a89276;
+}
+
+/* Inter for chrome UI on all pages (masthead, labels, buttons),
+   Gentium stays for Sanskrit content (tables, verses, prose) */
+body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif}
+.masthead, .kicker, .tag, .title-sub, .sb-section-label,
+nav.sb-nav h3, nav.sb-nav a, nav.sb-nav .nolink,
+header.title .kicker, .legend, .colophon, .pagenav,
+.result-summary, .result .meta, .result .aside,
+.filters-row select, .search-box button, .quick-terms .ql,
+.stat .label, .roman, .tile-head, .tile-foot{
+  font-family:'Inter',sans-serif !important;
+}
+/* Sanskrit-heavy blocks use Gentium */
+.cell, .prose, header.title h1, .pullquote, .home-lede,
+.result .title, .result .snippet, .quick-terms button,
+.passage-ref, .verse-skt, .verse-tr, .passage-context,
+.text-name, .group-subtitle, .stat .num, .stat .sub,
+.search-box input, table.decl thead tr.grp th{
+  font-family:'Gentium Plus','Georgia',serif;
+}
+
+/* ============================================================
+   BREADCRUMBS — navigation context on internal pages
+============================================================ */
+.breadcrumbs{
+  font-family:'Inter',sans-serif;
+  font-size:11px;
+  font-weight:600;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+  color:#7a5240;
+  margin:36px 0 20px;
+  display:flex;
+  align-items:center;
+  gap:12px;
+  flex-wrap:wrap;
+}
+.breadcrumbs a{
+  color:#7a5240;
+  padding:2px 0;
+  border-bottom:1px solid transparent;
+  transition:color .15s, border-color .15s;
+}
+.breadcrumbs a:hover{color:#d64822;border-bottom-color:#d64822}
+.breadcrumbs .sep{color:#b0a080;font-size:10px}
+.breadcrumbs .here{color:#0a0a0a}
+
+/* Internal page within home-shell — drop triptych min-height constraint */
+.home-shell.internal{padding-bottom:36px}
+.home-shell.internal .home-brand{margin-bottom:0}
+
+/* Search panel restyle — match home aesthetic */
+.home-shell .search-panel{
+  margin:30px 0 0;
+  padding:0;
+  background:transparent;
+  border:none;
+}
+.home-shell .search-box{
+  border:2px solid #0a0a0a;
+  background:#fff;
+}
+.home-shell .search-box input{
+  font-family:'Inter',sans-serif;
+  font-size:18px;
+  font-weight:500;
+  font-style:normal;
+  padding:18px 20px;
+  color:#0a0a0a;
+}
+.home-shell .search-box input::placeholder{
+  color:#b0a080;
+  font-style:normal;
+  font-family:'Inter',sans-serif;
+}
+.home-shell .search-box button{
+  background:#0a0a0a;
+  color:#faf2e0;
+  padding:0 28px;
+  font-family:'Inter',sans-serif;
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:.2em;
+  transition:background .15s;
+}
+.home-shell .search-box button:hover{background:#d64822}
+
+.home-shell .quick-terms{margin-top:22px}
+.home-shell .quick-terms .ql{
+  font-family:'Inter',sans-serif;
+  font-size:10px;
+  font-weight:600;
+  letter-spacing:.22em;
+  color:#7a5240;
+}
+.home-shell .quick-terms button{
+  font-family:'Gentium Plus',serif;
+  font-size:18px;
+  font-style:italic;
+  background:#fff;
+  border:1px solid #d0c4a4;
+  padding:7px 16px 8px;
+  color:#0a0a0a;
+  transition:all .15s;
+}
+.home-shell .quick-terms button:hover{
+  background:#faf2e0;
+  border-color:#d64822;
+  color:#d64822;
+}
+.home-shell .quick-terms button.active{
+  background:#d64822;
+  border-color:#d64822;
+  color:#faf2e0;
+}
+
+.home-shell .filters-row{margin-top:22px}
+.home-shell .filters-row select{
+  font-family:'Inter',sans-serif;
+  font-size:10.5px;
+  font-weight:600;
+  letter-spacing:.1em;
+  padding:12px 36px 12px 14px;
+  border:1px solid #d0c4a4;
+  background-color:#fff;
+  color:#0a0a0a;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='6'><path d='M0 0l5 6 5-6z' fill='%23d64822'/></svg>");
+}
+.home-shell .filters-row select:focus{border-color:#d64822;outline:none}
+
+.home-shell #clear-filters{
+  font-family:'Inter',sans-serif !important;
+  font-size:10px;
+  font-weight:600;
+  letter-spacing:.18em;
+  color:#7a5240;
+  border:1px solid #d0c4a4;
+  background:#fff;
+  padding:7px 14px;
+  transition:all .15s;
+}
+.home-shell #clear-filters:hover{color:#d64822;border-color:#d64822}
+
+.home-shell .result-summary{
+  margin:36px 0 18px;
+  font-family:'Inter',sans-serif;
+  font-size:10.5px;
+  font-weight:600;
+  letter-spacing:.18em;
+  color:#7a5240;
+  border-bottom:1px solid #d0c4a4;
+  padding-bottom:16px;
+}
+.home-shell .result-summary b{color:#0a0a0a}
+.home-shell .result-summary .sort{color:#d64822}
+
+.home-shell .result{border-bottom:1px solid #e4d9b8}
+.home-shell .result .title{
+  font-family:'Gentium Plus',serif;
+  font-size:24px;
+  color:#0a0a0a;
+}
+.home-shell .result .meta{
+  font-family:'Inter',sans-serif;
+  color:#7a5240;
+}
+.home-shell .result .meta b{color:#0a0a0a}
+.home-shell .result .snippet{
+  font-family:'Gentium Plus',serif;
+  background:#f4e9cf;
+  border-left:2px solid #d64822;
+}
+.home-shell .result .snippet mark{
+  background:#d64822;color:#faf2e0;
+  padding:1px 4px;font-style:normal;font-weight:700;
+}
+.home-shell .result .count{
+  font-family:'Gentium Plus',serif;
+  color:#d64822;
+}
+.home-shell .result .aside{
+  font-family:'Inter',sans-serif;
+  color:#7a5240;
+}
+
+/* Svapna sub-nav (inline on page) */
+.subnav{
+  margin:26px 0 10px;
+  display:flex;gap:0;flex-wrap:wrap;
+  border-bottom:1px solid #d0c4a4;
+  font-family:'Inter',sans-serif;
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+}
+.subnav a, .subnav span{
+  padding:12px 20px;
+  color:#7a5240;
+  border-bottom:2px solid transparent;
+  margin-bottom:-1px;
+  transition:color .15s, border-color .15s;
+}
+.subnav a:hover{color:#d64822}
+.subnav a.active{color:#d64822;border-bottom-color:#d64822}
+
+/* Traditions legend spacing */
+.home-shell .legend{
+  margin-top:28px;
+  padding:16px 0;
+  border-top:1px solid #d0c4a4;
+  border-bottom:1px solid #d0c4a4;
+  font-family:'Inter',sans-serif;
+  color:#7a5240;
+}
+
+/* Prose headings use Inter chrome on internal pages */
+.home-shell .prose h2{
+  font-family:'Inter',sans-serif;
+  font-style:normal;
+  font-weight:700;
+  color:#0a0a0a;
+}
+.home-shell .prose h2 .num{
+  font-family:'Inter',sans-serif;
+  color:#d64822;
+}
+.home-shell .prose{color:#2a2218}
+.home-shell .prose p b{color:#0a0a0a}
+.home-shell .prose a.link{
+  color:#d64822;
+  border-bottom:1px solid #d64822;
+}
+
+/* Kicker and title H1 on internal pages — Inter, not serif */
+.home-shell header.title{padding:44px 0 24px}
+.home-shell header.title .kicker{
+  font-family:'Inter',sans-serif;
+  color:#d64822;
+  font-weight:700;
+}
+.home-shell header.title h1{
+  font-family:'Inter',sans-serif;
+  font-weight:800;
+  letter-spacing:-.025em;
+}
+.home-shell header.title h1 em{
+  font-style:normal;
+  color:#d64822;
+  font-weight:800;
+}
+.home-shell header.title .dek{
+  font-family:'Inter',sans-serif;
+  font-style:normal;
+  font-weight:400;
+  color:#7a5240;
+}
+.home-shell header.title .rule{background:#0a0a0a}
+
+/* Force home-shell padding on internal layouts */
+body.page-shell{
+  background:#faf2e0;
+  font-family:'Inter',sans-serif;
+  color:#0a0a0a;
+}
+
+/* ============================================================
+   SVAPNA layout — delicate left TOC column
+============================================================ */
+.svapna-layout{
+  display:grid;
+  grid-template-columns:200px 1fr;
+  gap:56px;
+  margin-top:36px;
+}
+.svapna-toc{
+  border-right:1px solid #d0c4a4;
+  padding-right:28px;
+  font-family:'Inter',sans-serif;
+  position:sticky;top:20px;
+  align-self:start;
+  max-height:calc(100vh - 40px);
+  overflow-y:auto;
+}
+.svapna-toc::-webkit-scrollbar{width:4px}
+.svapna-toc::-webkit-scrollbar-thumb{background:#d0c4a4}
+
+.svapna-toc .label{
+  font-size:9px;
+  font-weight:700;
+  letter-spacing:.24em;
+  text-transform:uppercase;
+  color:#d64822;
+  margin-bottom:14px;
+  padding-bottom:10px;
+  border-bottom:1px solid #e4d9b8;
+}
+.svapna-toc .label:not(:first-child){margin-top:24px}
+.svapna-toc ul{list-style:none;padding:0;margin:0}
+.svapna-toc li{margin-bottom:2px}
+.svapna-toc a, .svapna-toc .soon{
+  display:block;
+  padding:7px 0;
+  font-size:12.5px;
+  font-weight:500;
+  letter-spacing:-.005em;
+  color:#0a0a0a;
+  line-height:1.35;
+  border-left:2px solid transparent;
+  padding-left:10px;
+  margin-left:-10px;
+  transition:color .15s, border-color .15s;
+}
+.svapna-toc a:hover{color:#d64822;border-left-color:#d64822}
+.svapna-toc a.active{color:#d64822;border-left-color:#d64822;font-weight:700}
+.svapna-toc .soon{color:#b0a080;font-weight:400}
+.svapna-toc .soon::after{
+  content:"soon";
+  font-size:8px;letter-spacing:.14em;text-transform:uppercase;
+  color:#c0b090;
+  margin-left:8px;
+}
+.svapna-toc .italic{font-family:'Gentium Plus',serif;font-style:italic;font-size:13.5px;font-weight:500}
+
+@media (max-width: 900px){
+  .svapna-layout{grid-template-columns:1fr;gap:20px}
+  .svapna-toc{
+    position:static;
+    border-right:none;
+    border-bottom:1px solid #d0c4a4;
+    padding-right:0;
+    padding-bottom:20px;
+    max-height:none;
+  }
+  .svapna-toc .label{margin-top:0}
+  .svapna-toc ul{columns:2;column-gap:24px}
+  .svapna-toc li{break-inside:avoid}
+}
+
+/* ============================================================
+   PAGE TOC v3 — printed-book index column for Sanskrit
+============================================================ */
+.page-layout{
+  display:grid;
+  grid-template-columns:220px minmax(0, 1fr);
+  gap:64px;
+  margin-top:36px;
+  align-items:start;
+}
+.page-layout > .page-main{min-width:0}
+
+.page-toc{
+  position:sticky;top:32px;
+  font-family:'Inter',sans-serif;
+  max-height:calc(100vh - 64px);
+  overflow-y:auto;
+  padding-right:28px;
+  border-right:1px solid #d0c4a4;
+  scrollbar-width:none;
+}
+.page-toc::-webkit-scrollbar{width:0;display:none}
+
+.page-toc .toc-head{
+  font-family:'Inter',sans-serif;
+  font-size:9px;
+  font-weight:700;
+  letter-spacing:.28em;
+  text-transform:uppercase;
+  color:#7a5240;
+  margin-bottom:22px;
+}
+
+.page-toc ol{
+  list-style:none;
+  padding:0;
+  margin:0;
+  counter-reset:toc;
+}
+.page-toc li{
+  display:grid;
+  grid-template-columns:34px 1fr;
+  align-items:baseline;
+  gap:14px;
+  padding:16px 0;
+  border-top:1px solid #e4d9b8;
+  counter-increment:toc;
+}
+.page-toc li:last-child{border-bottom:1px solid #e4d9b8}
+.page-toc li .num{
+  font-family:'Gentium Plus',Georgia,serif;
+  font-size:15px;
+  font-style:italic;
+  font-weight:400;
+  color:#b8a88e;
+  line-height:1;
+}
+.page-toc li .body{min-width:0}
+.page-toc li a,
+.page-toc li span.title{
+  display:block;
+  font-family:'Inter',sans-serif;
+  font-size:13px;
+  font-weight:600;
+  line-height:1.3;
+  color:#0a0a0a;
+  text-decoration:none;
+  letter-spacing:-.003em;
+  transition:color .15s;
+}
+.page-toc li a:hover{color:#d64822}
+.page-toc li span.title{color:#b8a88e;font-weight:500}
+.page-toc li .sub{
+  display:block;
+  font-family:'Gentium Plus',Georgia,serif;
+  font-style:italic;
+  font-size:12px;
+  color:#7a5240;
+  line-height:1.4;
+  margin-top:4px;
+  font-weight:400;
+}
+.page-toc li.active .num{color:#d64822;font-weight:700}
+.page-toc li.active a{color:#d64822}
+.page-toc li.active .sub{color:#0a0a0a}
+
+@media (max-width: 1000px){
+  .page-layout{grid-template-columns:1fr;gap:28px}
+  .page-toc{
+    position:static;
+    border-right:none;
+    border-bottom:1px solid #d0c4a4;
+    padding-right:0;
+    padding-bottom:24px;
+    max-height:none;
+  }
+}
+
+/* ============================================================
+   SKT article content — editorial restyle to match home
+============================================================ */
+.page-main{font-family:'Inter',sans-serif}
+
+/* ----- title block ----- */
+.page-main header.title{padding:12px 0 28px}
+.page-main header.title .kicker{
+  font-family:'Inter',sans-serif;
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:.28em;
+  text-transform:uppercase;
+  color:#d64822;
+  margin-bottom:20px;
+}
+.page-main header.title h1{
+  font-family:'Gentium Plus',Georgia,serif !important;
+  font-weight:700;
+  font-size:clamp(44px, 5.2vw, 68px);
+  line-height:1.02;
+  letter-spacing:-.015em;
+  color:#0a0a0a;
+}
+.page-main header.title h1 em{
+  font-style:italic;
+  color:#d64822;
+  font-weight:700;
+}
+.page-main header.title h1 .x{
+  font-family:'Inter',sans-serif;
+  font-size:.36em;
+  color:#b8a88e;
+  vertical-align:.3em;
+  margin:0 .4em;
+  font-weight:400;
+  font-style:normal;
+}
+.page-main header.title .dek{
+  font-family:'Inter',sans-serif;
+  font-style:normal;
+  font-weight:400;
+  font-size:17px;
+  line-height:1.55;
+  color:#7a5240;
+  max-width:60ch;
+  margin:20px 0 0;
+}
+.page-main header.title .rule{
+  width:70px;height:2px;
+  background:#0a0a0a;
+  margin:26px 0 0;
+}
+
+/* ----- declension table v2 (compact, editorial) ----- */
+.page-main .table-wrap{
+  margin:28px 0 0;
+  border-top:1.5px solid #0a0a0a;
+  border-bottom:1.5px solid #0a0a0a;
+  overflow-x:auto;
+  -webkit-overflow-scrolling:touch;
+}
+.page-main table.decl{
+  width:100%;
+  min-width:580px;
+  border-collapse:collapse;
+  font-variant-numeric:tabular-nums;
+  table-layout:fixed;
+}
+.page-main table.decl col.ccase{width:56px}
+
+.page-main table.decl thead tr.grp th{
+  font-family:'Inter',sans-serif;
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+  padding:16px 8px 6px;
+  border-bottom:1px solid #d0c4a4;
+  color:#0a0a0a;
+  font-style:normal;
+}
+.page-main table.decl thead tr.grp th.g-n{color:#0a0a0a}
+.page-main table.decl thead tr.grp th.g-m{color:#d64822}
+.page-main table.decl thead tr.grp th em{
+  font-family:'Gentium Plus',serif;
+  font-style:italic;
+  font-size:15px;
+  font-weight:400;
+  display:block;
+  margin-bottom:4px;
+  letter-spacing:-.005em;
+  text-transform:none;
+}
+.page-main table.decl thead tr.grp th small{
+  display:block;
+  font-family:'Inter',sans-serif;
+  font-size:8.5px;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:#7a5240;
+  font-style:normal;
+  font-weight:500;
+}
+.page-main table.decl thead tr.num th{
+  font-family:'Inter',sans-serif;
+  font-size:8.5px;
+  font-weight:600;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+  color:#7a5240;
+  padding:7px 6px 9px;
+  border-bottom:1.5px solid #0a0a0a;
+}
+
+.page-main table.decl tbody th.case{
+  width:54px;
+  text-align:left;
+  padding:0 10px 0 2px;
+  font-family:'Inter',sans-serif;
+  font-size:9.5px;
+  font-weight:700;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:#d64822;
+  border-right:1px solid #d0c4a4;
+  border-bottom:1px solid #e4d9b8;
+  vertical-align:middle;
+  background:transparent;
+  position:sticky;left:0;
+}
+.page-main table.decl tbody td{
+  padding:0;
+  border-bottom:1px solid #e4d9b8;
+  border-right:1px solid #e4d9b8;
+  vertical-align:middle;
+  background:#fff;
+}
+.page-main table.decl tbody tr:last-child td,
+.page-main table.decl tbody tr:last-child th.case{border-bottom:none}
+.page-main table.decl td.split{border-right:1.5px solid #0a0a0a}
+.page-main table.decl td:last-child{border-right:none}
+
+.page-main .cell{
+  display:flex;
+  align-items:baseline;
+  justify-content:center;
+  padding:11px 6px 12px;
+  min-height:42px;
+  font-family:'Gentium Plus',Georgia,serif;
+  font-size:19px;
+  line-height:1;
+  color:#0a0a0a;
+  font-weight:400;
+  white-space:nowrap;
+}
+.page-main .cell .deg{color:#d64822;font-weight:400;margin-right:1px}
+.page-main .cell .ln{color:#d64822;font-weight:700}
+.page-main .cell.identical{color:#b8a88e}
+.page-main .cell.diff{background:#fae3d3}
+
+/* ----- legend ----- */
+.page-main .legend{
+  margin:32px 0 0;
+  display:flex;gap:28px;flex-wrap:wrap;justify-content:center;
+  font-family:'Inter',sans-serif;
+  font-size:10.5px;
+  font-weight:500;
+  letter-spacing:.08em;
+  color:#7a5240;
+  padding:16px 0;
+  border-top:1px solid #d0c4a4;
+  border-bottom:1px solid #d0c4a4;
+  text-transform:none;
+}
+.page-main .legend .item{display:flex;align-items:center;gap:10px}
+.page-main .legend .sw{display:inline-block;width:22px;height:14px;border:1px solid #d0c4a4}
+.page-main .legend .sw.rose{background:#fae3d3;border-color:#d64822}
+.page-main .legend .sw.plain{background:#fff}
+
+/* ----- prose ----- */
+.page-main .prose{
+  max-width:62ch;
+  margin:48px 0 0;
+  font-family:'Inter',sans-serif;
+  font-size:16px;
+  line-height:1.7;
+  color:#2a2218;
+}
+.page-main .prose h2{
+  font-family:'Inter',sans-serif;
+  font-weight:800;
+  font-style:normal;
+  font-size:22px;
+  color:#0a0a0a;
+  letter-spacing:-.015em;
+  margin:38px 0 12px;
+}
+.page-main .prose h2:first-child{margin-top:0}
+.page-main .prose h2 .num{
+  font-family:'Gentium Plus',serif;
+  font-style:italic;
+  font-size:16px;
+  font-weight:400;
+  color:#d64822;
+  margin-right:10px;
+  vertical-align:.06em;
+  letter-spacing:0;
+  text-transform:none;
+}
+.page-main .prose p{margin-bottom:16px}
+.page-main .prose p em{font-family:'Gentium Plus',serif;font-style:italic;color:#0a0a0a}
+.page-main .prose p b{font-weight:700;color:#0a0a0a}
+.page-main .prose .rose{color:#d64822;font-weight:700;font-family:'Gentium Plus',serif;font-style:italic}
+
+/* ----- pullquote ----- */
+.page-main .pullquote{
+  margin:26px 0;
+  padding:18px 24px;
+  border-left:3px solid #d64822;
+  background:#f4e9cf;
+  font-family:'Gentium Plus',serif;
+  font-style:italic;
+  font-size:18px;
+  line-height:1.55;
+  color:#0a0a0a;
+}
+
+/* ----- colophon (article footer) ----- */
+.page-main .colophon{
+  max-width:62ch;
+  margin:48px 0 0;
+  text-align:left;
+  font-family:'Inter',sans-serif;
+  font-size:10px;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:#7a5240;
+  padding-top:18px;
+  border-top:1px solid #d0c4a4;
+}
+.page-main .colophon .orn{margin:0 10px;color:#b8a88e}
+.page-main .colophon em{font-family:'Gentium Plus',serif;font-style:italic;color:#0a0a0a;text-transform:none;letter-spacing:0}
+
+@media (max-width: 640px){
+  .page-main .cell{font-size:16px;min-height:36px;padding:9px 4px}
+  .page-main table.decl{min-width:520px}
+  .page-main header.title h1{font-size:40px}
+  .page-main .prose h2{font-size:19px}
+}
