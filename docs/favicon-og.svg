@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#faf2e0"/>
+  <circle cx="600" cy="260" r="90" fill="#d64822"/>
+  <circle cx="600" cy="260" r="26" fill="#0a0a0a"/>
+  <text x="600" y="420" font-family="Inter, -apple-system, sans-serif" font-weight="800" font-size="84" fill="#0a0a0a" text-anchor="middle">svapna<tspan fill="#d64822">·</tspan>space</text>
+  <text x="600" y="490" font-family="Inter, sans-serif" font-weight="500" font-size="28" fill="#7a5240" text-anchor="middle" letter-spacing="4">SANSKRIT · TANTRIC DREAM PRACTICES</text>
+  <text x="600" y="560" font-family="Inter, sans-serif" font-weight="600" font-size="20" fill="#0a0a0a" text-anchor="middle" letter-spacing="3">MARIA IONTSEVA · OXFORD</text>
+</svg>

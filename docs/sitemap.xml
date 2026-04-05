@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://svapna.space/</loc><priority>1.0</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://svapna.space/about.html</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://svapna.space/skt/</loc><priority>0.9</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://svapna.space/skt/a-stems-m.html</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://svapna.space/skt/a-stems-f.html</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://svapna.space/skt/i-stems-f.html</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://svapna.space/skt/i-short.html</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://svapna.space/skt/u-short.html</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://svapna.space/skt/r-stems.html</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://svapna.space/skt/s-stems.html</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://svapna.space/skt/gita.html</loc><priority>0.8</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://svapna.space/skt/pasupata-sutra.html</loc><priority>0.8</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://svapna.space/skt/vijnana-bhairava.html</loc><priority>0.8</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://svapna.space/svapna/</loc><priority>0.9</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://svapna.space/svapna/traditions.html</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+</urlset>
