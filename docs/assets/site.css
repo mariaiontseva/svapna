@@ -2063,10 +2063,10 @@ body.page-shell{
 .page-toc li:last-child{border-bottom:1px solid #e4d9b8}
 .page-toc li .num{
   font-family:'Gentium Plus',Georgia,serif;
-  font-size:15px;
+  font-size:16px;
   font-style:italic;
-  font-weight:400;
-  color:#b8a88e;
+  font-weight:600;
+  color:#0a0a0a;
   line-height:1;
 }
 .page-toc li .body{min-width:0}
@@ -2074,16 +2074,16 @@ body.page-shell{
 .page-toc li span.title{
   display:block;
   font-family:'Inter',sans-serif;
-  font-size:13px;
-  font-weight:600;
+  font-size:13.5px;
+  font-weight:700;
   line-height:1.3;
   color:#0a0a0a;
   text-decoration:none;
-  letter-spacing:-.003em;
+  letter-spacing:-.005em;
   transition:color .15s;
 }
 .page-toc li a:hover{color:#d64822}
-.page-toc li span.title{color:#b8a88e;font-weight:500}
+.page-toc li span.title{color:#0a0a0a;font-weight:700}
 .page-toc li .sub{
   display:block;
   font-family:'Gentium Plus',Georgia,serif;
@@ -2094,9 +2094,9 @@ body.page-shell{
   margin-top:4px;
   font-weight:400;
 }
-.page-toc li.active .num{color:#d64822;font-weight:700}
+.page-toc li.active .num{color:#d64822}
 .page-toc li.active a{color:#d64822}
-.page-toc li.active .sub{color:#0a0a0a}
+.page-toc li.active .sub{color:#d64822;font-weight:500}
 
 @media (max-width: 1000px){
   .page-layout{grid-template-columns:1fr;gap:28px}
@@ -2174,12 +2174,10 @@ body.page-shell{
 }
 .page-main table.decl{
   width:100%;
-  min-width:580px;
+  min-width:720px;
   border-collapse:collapse;
   font-variant-numeric:tabular-nums;
-  table-layout:fixed;
 }
-.page-main table.decl col.ccase{width:56px}
 
 .page-main table.decl thead tr.grp th{
   font-family:'Inter',sans-serif;
@@ -2257,10 +2255,10 @@ body.page-shell{
   display:flex;
   align-items:baseline;
   justify-content:center;
-  padding:11px 6px 12px;
+  padding:11px 10px 12px;
   min-height:42px;
   font-family:'Gentium Plus',Georgia,serif;
-  font-size:19px;
+  font-size:18px;
   line-height:1;
   color:#0a0a0a;
   font-weight:400;
@@ -2271,24 +2269,101 @@ body.page-shell{
 .page-main .cell.identical{color:#b8a88e}
 .page-main .cell.diff{background:#fae3d3}
 
-/* ----- legend ----- */
-.page-main .legend{
-  margin:32px 0 0;
-  display:flex;gap:28px;flex-wrap:wrap;justify-content:center;
-  font-family:'Inter',sans-serif;
-  font-size:10.5px;
-  font-weight:500;
-  letter-spacing:.08em;
-  color:#7a5240;
-  padding:16px 0;
-  border-top:1px solid #d0c4a4;
-  border-bottom:1px solid #d0c4a4;
-  text-transform:none;
+/* ----- exercise table with live-validation inputs ----- */
+.page-main .exercise-table input{
+  width:100%;
+  min-width:90px;
+  border:none;
+  outline:none;
+  background:transparent;
+  font-family:'Gentium Plus',Georgia,serif;
+  font-size:18px;
+  font-weight:400;
+  color:#0a0a0a;
+  text-align:center;
+  padding:0;
+  font-feature-settings:"kern";
+  caret-color:#d64822;
 }
-.page-main .legend .item{display:flex;align-items:center;gap:10px}
-.page-main .legend .sw{display:inline-block;width:22px;height:14px;border:1px solid #d0c4a4}
-.page-main .legend .sw.rose{background:#fae3d3;border-color:#d64822}
-.page-main .legend .sw.plain{background:#fff}
+.page-main .exercise-table input::placeholder{color:#d0c4a4;font-style:italic;font-size:15px}
+.page-main .exercise-table .cell{position:relative;padding:11px 6px 12px}
+.page-main .exercise-table .cell.ok{background:#d8e8d4 !important}
+.page-main .exercise-table .cell.ok input{color:#1d6b56;font-weight:500}
+.page-main .exercise-table .cell.wrong{background:#fbe0d8 !important}
+.page-main .exercise-table .cell.wrong input{color:#d64822}
+.page-main .exercise-table .cell.ok::after,
+.page-main .exercise-table .cell.wrong::after{
+  content:"✓";
+  position:absolute;right:6px;top:50%;transform:translateY(-50%);
+  font-size:10px;
+  font-family:'Inter',sans-serif;
+  font-weight:700;
+  color:#1d6b56;
+}
+.page-main .exercise-table .cell.wrong::after{content:"✕";color:#d64822}
+
+.page-main .exercise-table table.decl{min-width:420px}
+.page-main .exercise-table .grp th .gloss{
+  display:block;
+  margin-top:8px;
+  font-family:'Gentium Plus',serif;
+  font-size:15px;
+  font-style:italic;
+  color:#2a2218;
+  letter-spacing:0;
+  text-transform:none;
+  font-weight:400;
+  line-height:1.45;
+}
+.page-main .exercise-table .grp th .gloss b{
+  font-family:'Inter',sans-serif;
+  font-style:normal;
+  font-weight:700;
+  font-size:10px;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:#d64822;
+  margin-right:5px;
+}
+.page-main .exercise-progress{
+  margin:20px 0 0;
+  padding:14px 18px;
+  background:#faf2e0;
+  border:1px solid #d0c4a4;
+  display:flex;justify-content:space-between;align-items:center;
+  font-family:'Inter',sans-serif;
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:#7a5240;
+}
+.page-main .exercise-progress .score{color:#0a0a0a;font-size:14px;letter-spacing:.08em}
+.page-main .exercise-progress .score b{color:#d64822;font-size:18px;margin-right:4px}
+.page-main .exercise-progress .reset{
+  font-family:'Inter',sans-serif;
+  font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;
+  color:#7a5240;
+  padding:6px 12px;
+  border:1px solid #d0c4a4;
+  background:#fff;
+  cursor:pointer;
+  transition:all .15s;
+}
+.page-main .exercise-progress .reset:hover{color:#d64822;border-color:#d64822}
+
+/* ----- table caption (replaces old legend block) ----- */
+.page-main .table-caption{
+  margin:14px 0 0;
+  font-family:'Gentium Plus',Georgia,serif;
+  font-style:italic;
+  font-size:14px;
+  line-height:1.55;
+  color:#7a5240;
+  max-width:62ch;
+}
+.page-main .table-caption em{font-style:italic;color:#d64822;font-weight:600}
+.page-main .table-caption b{font-weight:700;color:#0a0a0a;font-style:normal;font-family:'Inter',sans-serif;font-size:12px;padding:1px 6px;background:#fae3d3;letter-spacing:.02em}
 
 /* ----- prose ----- */
 .page-main .prose{
@@ -2360,3 +2435,90 @@ body.page-shell{
   .page-main header.title h1{font-size:40px}
   .page-main .prose h2{font-size:19px}
 }
+
+/* ============================================================
+   PARADIGM NAV — horizontal nav between paradigms in a group
+============================================================ */
+.paradigm-nav{
+  margin:28px 0 0;
+  padding:18px 0;
+  border-top:1px solid #d0c4a4;
+  border-bottom:1px solid #d0c4a4;
+  display:flex;
+  gap:6px;
+  align-items:center;
+  flex-wrap:wrap;
+}
+.paradigm-nav .pn-label{
+  font-family:'Inter',sans-serif;
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  color:#7a5240;
+  margin-right:16px;
+  padding:8px 0;
+}
+.paradigm-nav a,
+.paradigm-nav span.pn-soon{
+  font-family:'Inter',sans-serif;
+  font-size:13px;
+  font-weight:600;
+  color:#0a0a0a;
+  padding:8px 14px;
+  border:1px solid transparent;
+  transition:color .15s, background .15s, border-color .15s;
+  text-decoration:none;
+  letter-spacing:-.003em;
+  white-space:nowrap;
+}
+.paradigm-nav a em,
+.paradigm-nav span.pn-soon em{
+  font-family:'Gentium Plus',Georgia,serif;
+  font-style:italic;
+  font-size:15px;
+  margin-right:2px;
+}
+.paradigm-nav a:hover{color:#d64822;border-color:#d0c4a4}
+.paradigm-nav a.active{
+  background:#0a0a0a;
+  color:#faf2e0;
+  border-color:#0a0a0a;
+}
+.paradigm-nav a.active em{color:#faf2e0}
+.paradigm-nav span.pn-soon{color:#b8a88e;cursor:default}
+.paradigm-nav .pn-sep{color:#d0c4a4;font-size:10px;padding:0 2px}
+
+/* ----- tighten title spacing in SKT articles ----- */
+.page-main header.title .rule{display:none}
+.page-main header.title{padding:6px 0 10px}
+.page-main header.title h1{margin-bottom:0}
+.page-main header.title .dek{margin-top:14px}
+.page-main header.title + .table-wrap{margin-top:14px}
+
+/* table notes per-paradigm caption */
+.page-main .table-note{
+  margin:12px 0 0;
+  padding:10px 14px;
+  font-family:'Gentium Plus',Georgia,serif;
+  font-style:italic;
+  font-size:14px;
+  line-height:1.55;
+  color:#7a5240;
+  max-width:none;
+  background:#faf2e0;
+  border-left:2px solid #d64822;
+}
+.page-main .table-note b{
+  font-family:'Inter',sans-serif;
+  font-weight:700;
+  font-size:9.5px;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:#d64822;
+  background:#fae3d3;
+  padding:2px 6px;
+  margin-right:6px;
+  font-style:normal;
+}
+.page-main .table-note em{color:#d64822;font-weight:600}
