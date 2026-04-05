@@ -3016,3 +3016,60 @@ hr.reading-rule{
   margin:28px 0 8px !important;
   padding:0 !important;
 }
+
+/* ============================================================
+   TABS — for multi-paradigm pages (pronouns etc.)
+============================================================ */
+.tabs{
+  display:flex;
+  gap:2px;
+  margin:32px 0 0;
+  border-bottom:1px solid #d0c4a4;
+  flex-wrap:wrap;
+}
+.tab-btn{
+  font-family:'Inter',sans-serif;
+  font-size:13px;
+  font-weight:700;
+  letter-spacing:.02em;
+  color:#7a5240;
+  background:transparent;
+  border:none;
+  padding:14px 22px 13px;
+  cursor:pointer;
+  border-bottom:3px solid transparent;
+  margin-bottom:-1px;
+  transition:color .15s, border-color .15s;
+  text-align:left;
+}
+.tab-btn em{
+  font-family:'Gentium Plus',Georgia,serif;
+  font-style:italic;
+  font-size:17px;
+  font-weight:500;
+  color:#0a0a0a;
+  margin-right:8px;
+}
+.tab-btn .gloss{
+  font-family:'Gentium Plus',Georgia,serif;
+  font-style:italic;
+  font-size:13px;
+  color:#7a5240;
+  font-weight:400;
+  display:block;
+  margin-top:2px;
+}
+.tab-btn:hover{color:#d64822}
+.tab-btn:hover em{color:#d64822}
+.tab-btn.active{color:#d64822;border-bottom-color:#d64822}
+.tab-btn.active em{color:#d64822}
+.tab-btn.active .gloss{color:#d64822}
+
+.tab-panel{display:none;padding-top:28px}
+.tab-panel.active{display:block}
+
+@media (max-width: 720px){
+  .tab-btn{padding:11px 14px 10px;font-size:11px}
+  .tab-btn em{font-size:14px}
+  .tab-btn .gloss{display:none}
+}
