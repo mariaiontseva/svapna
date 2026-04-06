@@ -33,10 +33,18 @@
 
   function mountLangToggle(){
     if(document.querySelector('.lang-toggle')) return;
-    const toggle = document.createElement('div');
+    const toggle = document.createElement('span');
     toggle.className = 'lang-toggle';
     toggle.innerHTML = '<button data-switch="en">EN</button><button data-switch="ru">RU</button>';
-    document.body.appendChild(toggle);
+    // Insert into the footer (.home-foot) if it exists, else append to body
+    const foot = document.querySelector('.home-foot');
+    if(foot){
+      // append to the last div inside footer, or to the footer itself
+      const lastDiv = foot.querySelector('div:last-child') || foot;
+      lastDiv.appendChild(toggle);
+    } else {
+      document.body.appendChild(toggle);
+    }
     const cur = document.body.classList.contains('lang-ru') ? 'ru' : 'en';
     toggle.querySelectorAll('button').forEach(b => {
       b.classList.toggle('active', b.dataset.switch === cur);

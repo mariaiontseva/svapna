@@ -2951,42 +2951,35 @@ body:not(.lang-ru) .lang-ru{display:none !important}
 body.lang-ru [data-lang="en"],
 body.lang-ru .lang-en{display:none !important}
 
+/* Lang toggle — subtle, lives inside the footer */
 .lang-toggle{
-  position:fixed;
-  bottom:22px;
-  right:22px;
-  z-index:60;
-  display:flex;
+  position:static;
+  display:inline-flex;
   gap:0;
-  background:rgba(250,242,224,.96);
-  border:1px solid #0a0a0a;
+  background:transparent;
+  border:none;
   font-family:'Inter',sans-serif;
-  font-size:10px;
-  font-weight:700;
+  font-size:9px;
+  font-weight:600;
   letter-spacing:.2em;
   text-transform:uppercase;
-  backdrop-filter:blur(10px);
-  box-shadow:0 4px 18px -4px rgba(10,10,10,.18);
+  margin-left:16px;
+  vertical-align:middle;
 }
 .lang-toggle button{
-  padding:9px 14px;
-  color:#7a5240;
+  padding:3px 8px;
+  color:#b8a88e;
   background:transparent;
   border:none;
   cursor:pointer;
   font:inherit;
   letter-spacing:.22em;
-  transition:color .15s, background .15s;
+  transition:color .15s;
 }
 .lang-toggle button:hover{color:#0a0a0a}
 .lang-toggle button.active{
-  background:#0a0a0a;
-  color:#faf2e0;
-}
-
-@media (max-width: 600px){
-  .lang-toggle{bottom:14px;right:14px}
-  .lang-toggle button{padding:7px 11px;font-size:9px}
+  color:#0a0a0a;
+  font-weight:800;
 }
 
 /* Reading page h1 — black, normal weight, single-word title */
