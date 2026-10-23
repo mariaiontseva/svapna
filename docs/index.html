@@ -54,6 +54,18 @@ th, td { text-align:left; vertical-align:top; padding:7px 10px; border-bottom:1p
 th { font-weight:600; background:var(--paper-2); border-bottom:1px solid #cfcabf; white-space:nowrap; }
 td em { font-family:var(--serif); }
 tr:hover td { background:#fcfbf8; }
+.contents { font-family:var(--sans); border-top:1px solid var(--rule); margin:22px 0 0; }
+.contents details { border-bottom:1px solid var(--rule); }
+.contents summary { cursor:pointer; padding:11px 0; font-size:18px; font-weight:600; color:var(--ink); list-style:none; }
+.contents summary::-webkit-details-marker { display:none; }
+.contents summary::before { content:"▸"; display:inline-block; width:20px; color:var(--ink-3); font-size:13px; transition:transform .15s; }
+.contents details[open] summary::before { transform:rotate(90deg); }
+.contents details.leaf summary::before { content:""; }
+.contents summary a { color:var(--ink); border:0; }
+.contents ul { list-style:none; margin:0 0 12px 20px; padding:0; }
+.contents li { margin:0 0 6px; font-size:16px; }
+.contents li.all a { color:var(--ink-3); }
+.contents li a { border:0; }
 .foot { max-width:1220px; margin:0 auto; padding:24px 16px 60px; border-top:1px solid var(--rule); font-family:var(--sans); font-size:13px; color:var(--ink-3); }
 @media (max-width:900px) {
   .layout { grid-template-columns:minmax(0,1fr); gap:24px; padding-top:20px; }
@@ -121,7 +133,7 @@ tr:hover td { background:#fcfbf8; }
 <h1>Dream technologies in Śaiva-Śākta tantra</h1>
 <p class="byline">Maria Iontseva · DPhil, Oxford</p>
 <p>In the tantras a dream is not a sign to be read but a procedure to be performed. Five uses, about 290 passages from the 6th to the 19th century, the unedited ones edited from manuscripts.</p>
-<h2 id="dream-as-oracle">Dream as Oracle</h2>
+<div class="contents"><details><summary>Dream as Oracle</summary><ul><li><a href="#svapnamanavaka">Svapnamāṇavaka</a></li><li><a href="#yaksa-oracles">Yakṣa oracles</a></li><li><a href="#svapnavarahi">Svapnavārāhī</a></li><li><a href="#svapnavati-svapnesvari-svapnadurga">Svāpnavatī, Svapneśvarī, Svapnadurgā</a></li></ul></details><details><summary>Dream as Ordeal</summary><ul><li><a href="#adhivasana">Adhivāsana</a></li><li><a href="#silapariksa">Śilāparīkṣā</a></li><li><a href="#testing-the-mantra">Testing the mantra</a></li><li><a href="#ranadiksa">Raṇadīkṣā</a></li></ul></details><details><summary>Dream as Gift</summary><ul><li><a href="#svapnalabdhamantra">Svapnalabdhamantra</a></li><li><a href="#dreamt-scriptures">Dreamt scriptures</a></li><li><a href="#authors-and-gurus">Authors and gurus</a></li></ul></details><details><summary>Dream as Weapon</summary><ul><li><a href="#svapana">Svāpana</a></li><li><a href="#taking-sleep-away">Taking sleep away</a></li><li><a href="#sending-a-dream">Sending a dream</a></li></ul></details><details><summary>Dream as Discipline</summary><ul><li><a href="#svapnasvatantrya">Svapnasvātantrya</a></li><li><a href="#yoganidra">Yoganidrā</a></li><li><a href="#svapnasamkranti">Svapnasaṃkrānti</a></li></ul></details><details><summary>Manuscripts</summary><ul><li><a href="#kathmandu">Kathmandu</a></li><li><a href="#srinagar">Srinagar</a></li><li><a href="#pune">Pune</a></li><li><a href="#bengal">Bengal</a></li><li><a href="#rajasthan">Rajasthan</a></li><li><a href="#other-india">Other India</a></li><li><a href="#south-india">South India</a></li><li><a href="#uk">UK</a></li><li><a href="#europe">Europe</a></li><li><a href="#st-petersburg">St Petersburg</a></li><li><a href="#online">Online</a></li></ul></details></div><h2 id="dream-as-oracle">Dream as Oracle</h2>
 <p><em>Asking a deity for an answer.</em></p>
 <h3 id="svapnamanavaka">Svapnamāṇavaka</h3>
 <p><em>The dream boy, Svapnādhipati: a mantra, a kuśa bed, an answer by morning. At least 27 witnesses.</em></p>
