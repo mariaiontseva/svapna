@@ -32,6 +32,11 @@ nav.toc ul { list-style:none; margin:0; padding:0; }
 nav.toc > ul > li { margin:0 0 10px; }
 nav.toc > ul > li > a { font-weight:600; color:var(--ink); border:0; }
 nav.toc ul ul { margin:4px 0 0 12px; border-left:1px solid var(--rule); padding-left:10px; }
+nav.toc li.closed > ul { display:none; }
+nav.toc li { position:relative; }
+nav.toc .tg { position:absolute; left:-18px; top:0; width:16px; border:0; background:none; padding:0; cursor:pointer; color:var(--ink-3); font-size:11px; line-height:1.7; }
+nav.toc .tg:hover { color:var(--accent); }
+nav.toc > ul { padding-left:18px; }
 nav.toc ul ul li { margin:0 0 4px; }
 nav.toc ul ul a { color:var(--ink-2); border:0; }
 nav.toc a:hover { color:var(--accent); }
@@ -53,7 +58,6 @@ tr:hover td { background:#fcfbf8; }
 @media (max-width:900px) {
   .layout { grid-template-columns:minmax(0,1fr); gap:24px; padding-top:20px; }
   nav.toc { position:static; max-height:none; border:1px solid var(--rule); border-radius:6px; padding:12px 14px; background:var(--paper-2); }
-  nav.toc ul ul { display:none; }
   main h1 { font-size:1.7rem; }
   body { font-size:16px; }
 }
@@ -96,7 +100,20 @@ tr:hover td { background:#fcfbf8; }
 <li><a href="#svapnasamkranti">Svapnasaṃkrānti</a></li>
 </ul>
 </li>
-<li><a href="#manuscripts_6">Manuscripts</a></li>
+<li><a href="#manuscripts_6">Manuscripts</a><ul>
+<li><a href="#kathmandu">Kathmandu</a></li>
+<li><a href="#srinagar">Srinagar</a></li>
+<li><a href="#pune">Pune</a></li>
+<li><a href="#bengal">Bengal</a></li>
+<li><a href="#rajasthan">Rajasthan</a></li>
+<li><a href="#other-india">Other India</a></li>
+<li><a href="#south-india">South India</a></li>
+<li><a href="#uk">UK</a></li>
+<li><a href="#europe">Europe</a></li>
+<li><a href="#st-petersburg">St Petersburg</a></li>
+<li><a href="#online">Online</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </nav>
@@ -2271,7 +2288,7 @@ tr:hover td { background:#fcfbf8; }
 </ul>
 <h2 id="manuscripts_6">Manuscripts</h2>
 <p>★ = proposed for edition.</p>
-<h4 id="kathmandu">Kathmandu</h4>
+<h3 id="kathmandu">Kathmandu</h3>
 <div class="tablewrap"><table>
 <thead>
 <tr>
@@ -2915,7 +2932,7 @@ tr:hover td { background:#fcfbf8; }
 </tr>
 </tbody>
 </table></div>
-<h4 id="srinagar">Srinagar</h4>
+<h3 id="srinagar">Srinagar</h3>
 <div class="tablewrap"><table>
 <thead>
 <tr>
@@ -2970,7 +2987,7 @@ tr:hover td { background:#fcfbf8; }
 </tr>
 </tbody>
 </table></div>
-<h4 id="pune">Pune</h4>
+<h3 id="pune">Pune</h3>
 <div class="tablewrap"><table>
 <thead>
 <tr>
@@ -3012,7 +3029,7 @@ tr:hover td { background:#fcfbf8; }
 </tr>
 </tbody>
 </table></div>
-<h4 id="bengal">Bengal</h4>
+<h3 id="bengal">Bengal</h3>
 <div class="tablewrap"><table>
 <thead>
 <tr>
@@ -3064,7 +3081,7 @@ tr:hover td { background:#fcfbf8; }
 </tr>
 </tbody>
 </table></div>
-<h4 id="rajasthan">Rajasthan</h4>
+<h3 id="rajasthan">Rajasthan</h3>
 <div class="tablewrap"><table>
 <thead>
 <tr>
@@ -3211,7 +3228,7 @@ tr:hover td { background:#fcfbf8; }
 </tr>
 </tbody>
 </table></div>
-<h4 id="other-india">Other India</h4>
+<h3 id="other-india">Other India</h3>
 <div class="tablewrap"><table>
 <thead>
 <tr>
@@ -3278,7 +3295,7 @@ tr:hover td { background:#fcfbf8; }
 </tr>
 </tbody>
 </table></div>
-<h4 id="south-india">South India</h4>
+<h3 id="south-india">South India</h3>
 <div class="tablewrap"><table>
 <thead>
 <tr>
@@ -3380,7 +3397,7 @@ tr:hover td { background:#fcfbf8; }
 </tr>
 </tbody>
 </table></div>
-<h4 id="uk">UK</h4>
+<h3 id="uk">UK</h3>
 <div class="tablewrap"><table>
 <thead>
 <tr>
@@ -3477,7 +3494,7 @@ tr:hover td { background:#fcfbf8; }
 </tr>
 </tbody>
 </table></div>
-<h4 id="europe">Europe</h4>
+<h3 id="europe">Europe</h3>
 <div class="tablewrap"><table>
 <thead>
 <tr>
@@ -3534,7 +3551,7 @@ tr:hover td { background:#fcfbf8; }
 </tr>
 </tbody>
 </table></div>
-<h4 id="st-petersburg">St Petersburg</h4>
+<h3 id="st-petersburg">St Petersburg</h3>
 <div class="tablewrap"><table>
 <thead>
 <tr>
@@ -3561,7 +3578,7 @@ tr:hover td { background:#fcfbf8; }
 </tr>
 </tbody>
 </table></div>
-<h4 id="online">Online</h4>
+<h3 id="online">Online</h3>
 <div class="tablewrap"><table>
 <thead>
 <tr>
@@ -3590,6 +3607,17 @@ tr:hover td { background:#fcfbf8; }
 </table></div>
 </main>
 </div>
+<script>
+document.querySelectorAll('nav.toc li').forEach(function(li){
+  var sub=li.querySelector(':scope > ul'); if(!sub) return;
+  li.classList.add('closed');
+  var b=document.createElement('button'); b.className='tg'; b.type='button'; b.textContent='▸';
+  b.setAttribute('aria-label','Show subsections');
+  b.onclick=function(){ var c=li.classList.toggle('closed'); b.textContent=c?'▸':'▾'; };
+  li.insertBefore(b,li.firstChild);
+  li.querySelector(':scope > a').addEventListener('click',function(){ li.classList.remove('closed'); b.textContent='▾'; });
+});
+</script>
 <div class="foot">Maria Iontseva · DPhil in Asian and Middle Eastern Studies, University of Oxford. Working document.</div>
 </body>
 </html>
