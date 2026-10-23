@@ -26,7 +26,7 @@ a { color:var(--accent); text-decoration:none; border-bottom:1px solid #d9b8b8; 
 a:hover { border-bottom-color:var(--accent); }
 .masthead { border-bottom:1px solid var(--rule); padding:14px 16px; font-family:var(--sans); font-size:14px; color:var(--ink-3); display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap; }
 .masthead b { color:var(--ink); font-weight:600; letter-spacing:.02em; }
-.layout { display:grid; grid-template-columns:260px minmax(0,860px); gap:48px; max-width:1220px; margin:0 auto; padding:32px 16px 80px; }
+.layout { display:grid; grid-template-columns:minmax(0,1100px); justify-content:center; gap:48px; max-width:1220px; margin:0 auto; padding:32px 16px 80px; }
 nav.toc { position:sticky; top:24px; align-self:start; font-family:var(--sans); font-size:14px; line-height:1.4; max-height:calc(100vh - 48px); overflow:auto; padding-right:8px; }
 nav.toc ul { list-style:none; margin:0; padding:0; }
 nav.toc > ul > li { margin:0 0 10px; }
@@ -66,6 +66,19 @@ tr:hover td { background:#fcfbf8; }
 .contents li { margin:0 0 6px; font-size:16px; }
 .contents li.all a { color:var(--ink-3); }
 .contents li a { border:0; }
+details.ch { border-bottom:1px solid var(--rule); }
+main > details.ch:first-of-type { border-top:1px solid var(--rule); margin-top:22px; }
+details summary { cursor:pointer; list-style:none; font-family:var(--sans); }
+details summary::-webkit-details-marker { display:none; }
+details summary::before { content:"▸"; display:inline-block; width:20px; color:var(--ink-3); font-size:13px; transition:transform .15s; }
+details[open] > summary::before { transform:rotate(90deg); }
+details.ch > summary { padding:12px 0; }
+details.ch > summary .nm { font-size:19px; font-weight:600; }
+details.sub > summary { padding:7px 0; }
+details.sub > summary .nm { font-size:16.5px; font-weight:600; color:var(--accent); }
+summary .note { color:var(--ink-3); font-size:15px; margin-left:8px; }
+details.ch > .in { padding:0 0 14px 20px; }
+details.sub > .in { padding:2px 0 10px 20px; }
 .foot { max-width:1220px; margin:0 auto; padding:24px 16px 60px; border-top:1px solid var(--rule); font-family:var(--sans); font-size:13px; color:var(--ink-3); }
 @media (max-width:900px) {
   .layout { grid-template-columns:minmax(0,1fr); gap:24px; padding-top:20px; }
@@ -78,65 +91,12 @@ tr:hover td { background:#fcfbf8; }
 <body>
 <div class="masthead"><span><b>svapna.space</b> · dream technologies in Śaiva-Śākta tantra</span><span>working map · updated 23 October 2026</span></div>
 <div class="layout">
-<nav class="toc" aria-label="Contents"><div class="toc">
-<ul>
-<li><a href="#dream-as-oracle">Dream as Oracle</a><ul>
-<li><a href="#svapnamanavaka">Svapnamāṇavaka</a></li>
-<li><a href="#yaksa-oracles">Yakṣa oracles</a></li>
-<li><a href="#svapnavarahi">Svapnavārāhī</a></li>
-<li><a href="#svapnavati-svapnesvari-svapnadurga">Svāpnavatī, Svapneśvarī, Svapnadurgā</a></li>
-</ul>
-</li>
-<li><a href="#dream-as-ordeal">Dream as Ordeal</a><ul>
-<li><a href="#adhivasana">Adhivāsana</a></li>
-<li><a href="#silapariksa">Śilāparīkṣā</a></li>
-<li><a href="#testing-the-mantra">Testing the mantra</a></li>
-<li><a href="#ranadiksa">Raṇadīkṣā</a></li>
-</ul>
-</li>
-<li><a href="#dream-as-gift">Dream as Gift</a><ul>
-<li><a href="#svapnalabdhamantra">Svapnalabdhamantra</a></li>
-<li><a href="#dreamt-scriptures">Dreamt scriptures</a></li>
-<li><a href="#authors-and-gurus">Authors and gurus</a></li>
-</ul>
-</li>
-<li><a href="#dream-as-weapon">Dream as Weapon</a><ul>
-<li><a href="#svapana">Svāpana</a></li>
-<li><a href="#taking-sleep-away">Taking sleep away</a></li>
-<li><a href="#sending-a-dream">Sending a dream</a></li>
-</ul>
-</li>
-<li><a href="#dream-as-discipline">Dream as Discipline</a><ul>
-<li><a href="#svapnasvatantrya">Svapnasvātantrya</a></li>
-<li><a href="#yoganidra">Yoganidrā</a></li>
-<li><a href="#svapnasamkranti">Svapnasaṃkrānti</a></li>
-</ul>
-</li>
-<li><a href="#manuscripts_6">Manuscripts</a><ul>
-<li><a href="#kathmandu">Kathmandu</a></li>
-<li><a href="#srinagar">Srinagar</a></li>
-<li><a href="#pune">Pune</a></li>
-<li><a href="#bengal">Bengal</a></li>
-<li><a href="#rajasthan">Rajasthan</a></li>
-<li><a href="#other-india">Other India</a></li>
-<li><a href="#south-india">South India</a></li>
-<li><a href="#uk">UK</a></li>
-<li><a href="#europe">Europe</a></li>
-<li><a href="#st-petersburg">St Petersburg</a></li>
-<li><a href="#online">Online</a></li>
-</ul>
-</li>
-</ul>
-</div>
-</nav>
 <main>
 <h1>Dream technologies in Śaiva-Śākta tantra</h1>
 <p class="byline">Maria Iontseva · DPhil, Oxford</p>
 <p>In the tantras a dream is not a sign to be read but a procedure to be performed. Five uses, about 290 passages from the 6th to the 19th century, the unedited ones edited from manuscripts.</p>
-<div class="contents"><details><summary>Dream as Oracle</summary><ul><li><a href="#svapnamanavaka">Svapnamāṇavaka</a></li><li><a href="#yaksa-oracles">Yakṣa oracles</a></li><li><a href="#svapnavarahi">Svapnavārāhī</a></li><li><a href="#svapnavati-svapnesvari-svapnadurga">Svāpnavatī, Svapneśvarī, Svapnadurgā</a></li></ul></details><details><summary>Dream as Ordeal</summary><ul><li><a href="#adhivasana">Adhivāsana</a></li><li><a href="#silapariksa">Śilāparīkṣā</a></li><li><a href="#testing-the-mantra">Testing the mantra</a></li><li><a href="#ranadiksa">Raṇadīkṣā</a></li></ul></details><details><summary>Dream as Gift</summary><ul><li><a href="#svapnalabdhamantra">Svapnalabdhamantra</a></li><li><a href="#dreamt-scriptures">Dreamt scriptures</a></li><li><a href="#authors-and-gurus">Authors and gurus</a></li></ul></details><details><summary>Dream as Weapon</summary><ul><li><a href="#svapana">Svāpana</a></li><li><a href="#taking-sleep-away">Taking sleep away</a></li><li><a href="#sending-a-dream">Sending a dream</a></li></ul></details><details><summary>Dream as Discipline</summary><ul><li><a href="#svapnasvatantrya">Svapnasvātantrya</a></li><li><a href="#yoganidra">Yoganidrā</a></li><li><a href="#svapnasamkranti">Svapnasaṃkrānti</a></li></ul></details><details><summary>Manuscripts</summary><ul><li><a href="#kathmandu">Kathmandu</a></li><li><a href="#srinagar">Srinagar</a></li><li><a href="#pune">Pune</a></li><li><a href="#bengal">Bengal</a></li><li><a href="#rajasthan">Rajasthan</a></li><li><a href="#other-india">Other India</a></li><li><a href="#south-india">South India</a></li><li><a href="#uk">UK</a></li><li><a href="#europe">Europe</a></li><li><a href="#st-petersburg">St Petersburg</a></li><li><a href="#online">Online</a></li></ul></details></div><h2 id="dream-as-oracle">Dream as Oracle</h2>
-<p><em>Asking a deity for an answer.</em></p>
-<h3 id="svapnamanavaka">Svapnamāṇavaka</h3>
-<p><em>The dream boy, Svapnādhipati: a mantra, a kuśa bed, an answer by morning. At least 27 witnesses.</em></p>
+<details class="ch" id="dream-as-oracle"><summary><span class="nm">Dream as Oracle</span> <span class="note">Asking a deity for an answer.</span></summary><div class="in">
+<details class="sub" id="svapnamanavaka"><summary><span class="nm">Svapnamāṇavaka</span> <span class="note">The dream boy, Svapnādhipati: a mantra, a kuśa bed, an answer by morning. At least 27 witnesses.</span></summary><div class="in">
 <div class="tablewrap"><table>
 <thead>
 <tr>
@@ -332,8 +292,7 @@ tr:hover td { background:#fcfbf8; }
 </tr>
 </tbody>
 </table></div>
-<h3 id="yaksa-oracles">Yakṣa oracles</h3>
-<p><em>A yakṣa answers in the dream.</em></p>
+</div></details><details class="sub" id="yaksa-oracles"><summary><span class="nm">Yakṣa oracles</span> <span class="note">A yakṣa answers in the dream.</span></summary><div class="in">
 <div class="tablewrap"><table>
 <thead>
 <tr>
@@ -361,7 +320,7 @@ tr:hover td { background:#fcfbf8; }
 </tr>
 </tbody>
 </table></div>
-<h4 id="buddhist-and-jain-parallels">Buddhist and Jain parallels</h4>
+</div></details><details class="sub" id="buddhist-and-jain-parallels"><summary><span class="nm">Buddhist and Jain parallels</span></summary><div class="in">
 <div class="tablewrap"><table>
 <thead>
 <tr>
@@ -398,7 +357,7 @@ tr:hover td { background:#fcfbf8; }
 </tr>
 </tbody>
 </table></div>
-<h4 id="manuscripts">Manuscripts</h4>
+</div></details><details class="sub" id="manuscripts"><summary><span class="nm">Manuscripts</span></summary><div class="in">
 <div class="tablewrap"><table>
 <thead>
 <tr>
@@ -526,14 +485,13 @@ tr:hover td { background:#fcfbf8; }
 </tbody>
 </table></div>
 <p>Yoginītantra witnesses are listed under the Svāpnavatī rows of the case study and in the repository list below.</p>
-<h4 id="edition-candidates">Edition candidates</h4>
+</div></details><details class="sub" id="edition-candidates"><summary><span class="nm">Edition candidates</span></summary><div class="in">
 <ul>
 <li>Kulamuktikallolinī, paṭala 3, dream dossier (about 3½ folios, signed sources; at least three complete NGMPP witnesses).</li>
 <li>Gandharvatantra 26 from four witnesses; Jayadrathayāmala Ṣ3 76–79, 84–92.</li>
 <li>Niśvāsa Guhyasūtra 3.17–22 and Brahmayāmala 34, 55 (palm-leaf and single-codex witnesses).</li>
 </ul>
-<h3 id="svapnavarahi">Svapnavārāhī</h3>
-<p><em>The boar-faced goddess who tells &ldquo;what will be&rdquo; in a dream.</em></p>
+</div></details><details class="sub" id="svapnavarahi"><summary><span class="nm">Svapnavārāhī</span> <span class="note">The boar-faced goddess who tells &ldquo;what will be&rdquo; in a dream.</span></summary><div class="in">
 <div class="tablewrap"><table>
 <thead>
 <tr>
@@ -631,8 +589,7 @@ tr:hover td { background:#fcfbf8; }
 </tr>
 </tbody>
 </table></div>
-<h3 id="svapnavati-svapnesvari-svapnadurga">Svāpnavatī, Svapneśvarī, Svapnadurgā</h3>
-<p><em>The other dream goddesses.</em></p>
+</div></details><details class="sub" id="svapnavati-svapnesvari-svapnadurga"><summary><span class="nm">Svāpnavatī, Svapneśvarī, Svapnadurgā</span> <span class="note">The other dream goddesses.</span></summary><div class="in">
 <div class="tablewrap"><table>
 <thead>
 <tr>
@@ -702,7 +659,7 @@ tr:hover td { background:#fcfbf8; }
 </tr>
 </tbody>
 </table></div>
-<h4 id="the-svapna-x-deities-c-17th19th-c">The Svapna-X deities (c. 17th–19th c.)</h4>
+</div></details><details class="sub" id="the-svapna-x-deities-c-17th19th-c"><summary><span class="nm">The Svapna-X deities (c. 17th–19th c.)</span></summary><div class="in">
 <div class="tablewrap"><table>
 <thead>
 <tr>
@@ -741,7 +698,7 @@ tr:hover td { background:#fcfbf8; }
 </tr>
 </tbody>
 </table></div>
-<h4 id="a-dream-tara-in-three-traditions">A &ldquo;dream Tārā&rdquo; in three traditions</h4>
+</div></details><details class="sub" id="a-dream-tara-in-three-traditions"><summary><span class="nm">A &ldquo;dream Tārā&rdquo; in three traditions</span></summary><div class="in">
 <div class="tablewrap"><table>
 <thead>
 <tr>
@@ -758,7 +715,7 @@ tr:hover td { background:#fcfbf8; }
 </tr>
 </tbody>
 </table></div>
-<h4 id="manuscripts_1">Manuscripts</h4>
+</div></details><details class="sub" id="svapnavarahi-manuscripts"><summary><span class="nm">Svapnavārāhī: manuscripts</span></summary><div class="in">
 <div class="tablewrap"><table>
 <thead>
 <tr>
@@ -885,16 +842,14 @@ tr:hover td { background:#fcfbf8; }
 </tr>
 </tbody>
 </table></div>
-<h4 id="edition-candidates_1">Edition candidates</h4>
+</div></details><details class="sub" id="svapnavarahi-edition-candidates"><summary><span class="nm">Svapnavārāhī: edition candidates</span></summary><div class="in">
 <ul>
 <li>Ṣaṭśāmbhavarahasya, paṭala 13, edited against Śaktisaṅgama, Sundarīkhaṇḍa 19 (about 40–50 verses; six NGMPP witnesses, one dated 1725).</li>
 <li>Yoginītantra, paṭala 7 (Svāpnavatī), from the Dhaka, Calcutta, Rajshahi and London witnesses.</li>
 <li>Florence MS 410 <em>Svapnavārāhīpaṭala</em>; the Svapnavārāhīkalpa witnesses once their identity is checked.</li>
 </ul>
-<h2 id="dream-as-ordeal">Dream as Ordeal</h2>
-<p><em>The dream as a test before initiation, consecration and campaigns.</em></p>
-<h3 id="adhivasana">Adhivāsana</h3>
-<p><em>The candidate sleeps on a prepared bed the night before initiation; the dream decides.</em></p>
+</div></details></div></details><details class="ch" id="dream-as-ordeal"><summary><span class="nm">Dream as Ordeal</span> <span class="note">The dream as a test before initiation, consecration and campaigns.</span></summary><div class="in">
+<details class="sub" id="adhivasana"><summary><span class="nm">Adhivāsana</span> <span class="note">The candidate sleeps on a prepared bed the night before initiation; the dream decides.</span></summary><div class="in">
 <div class="tablewrap"><table>
 <thead>
 <tr>
@@ -1034,8 +989,7 @@ tr:hover td { background:#fcfbf8; }
 </tr>
 </tbody>
 </table></div>
-<h3 id="silapariksa">Śilāparīkṣā</h3>
-<p><em>The stone, tree or site for an image or temple is tested by a dream.</em></p>
+</div></details><details class="sub" id="silapariksa"><summary><span class="nm">Śilāparīkṣā</span> <span class="note">The stone, tree or site for an image or temple is tested by a dream.</span></summary><div class="in">
 <div class="tablewrap"><table>
 <thead>
 <tr>
@@ -1084,8 +1038,7 @@ tr:hover td { background:#fcfbf8; }
 </tr>
 </tbody>
 </table></div>
-<h3 id="testing-the-mantra">Testing the mantra</h3>
-<p><em>Three nights on the ground: the dream says whether the mantra is siddha.</em></p>
+</div></details><details class="sub" id="testing-the-mantra"><summary><span class="nm">Testing the mantra</span> <span class="note">Three nights on the ground: the dream says whether the mantra is siddha.</span></summary><div class="in">
 <div class="tablewrap"><table>
 <thead>
 <tr>
@@ -1106,8 +1059,7 @@ tr:hover td { background:#fcfbf8; }
 </tr>
 </tbody>
 </table></div>
-<h3 id="ranadiksa">Raṇadīkṣā</h3>
-<p><em>The king sleeps on the dream verse before battle.</em></p>
+</div></details><details class="sub" id="ranadiksa"><summary><span class="nm">Raṇadīkṣā</span> <span class="note">The king sleeps on the dream verse before battle.</span></summary><div class="in">
 <div class="tablewrap"><table>
 <thead>
 <tr>
@@ -1128,7 +1080,7 @@ tr:hover td { background:#fcfbf8; }
 </tr>
 </tbody>
 </table></div>
-<h4 id="buddhist-parallel">Buddhist parallel</h4>
+</div></details><details class="sub" id="buddhist-parallel"><summary><span class="nm">Buddhist parallel</span></summary><div class="in">
 <div class="tablewrap"><table>
 <thead>
 <tr>
@@ -1145,7 +1097,7 @@ tr:hover td { background:#fcfbf8; }
 </tr>
 </tbody>
 </table></div>
-<h4 id="manuscripts_2">Manuscripts</h4>
+</div></details><details class="sub" id="manuscripts_1"><summary><span class="nm">Manuscripts</span></summary><div class="in">
 <div class="tablewrap"><table>
 <thead>
 <tr>
@@ -1254,16 +1206,14 @@ tr:hover td { background:#fcfbf8; }
 </tr>
 </tbody>
 </table></div>
-<h4 id="edition-candidates_2">Edition candidates</h4>
+</div></details><details class="sub" id="edition-candidates_1"><summary><span class="nm">Edition candidates</span></summary><div class="in">
 <ul>
 <li>Dīkṣāpaddhati ORL 2379, dream block, collated with the Kalādīkṣāpaddhati witnesses (editio princeps).</li>
 <li>Sarvajñānottara dīkṣāṅga 13–51; Jayadrathayāmala Ṣ1 17–18; the Kubjikā dīkṣā dream rite.</li>
 <li>Short unedited manuals: Bhāvacūḍāmaṇi <em>śilāparīkṣā</em>, Amṛteśvaradīkṣāvidhi ff. 8b–9a, Samayadīkṣādhivāsanavidhi pp. 22a–22b.</li>
 </ul>
-<h2 id="dream-as-gift">Dream as Gift</h2>
-<p><em>Mantras and scriptures received in dreams, and whether they are valid.</em></p>
-<h3 id="svapnalabdhamantra">Svapnalabdhamantra</h3>
-<p><em>A mantra received in a dream: valid or not, and what rite it needs.</em></p>
+</div></details></div></details><details class="ch" id="dream-as-gift"><summary><span class="nm">Dream as Gift</span> <span class="note">Mantras and scriptures received in dreams.</span></summary><div class="in">
+<details class="sub" id="svapnalabdhamantra"><summary><span class="nm">Svapnalabdhamantra</span> <span class="note">A mantra received in a dream: valid or not, and what rite it needs.</span></summary><div class="in">
 <div class="tablewrap"><table>
 <thead>
 <tr>
@@ -1375,8 +1325,7 @@ tr:hover td { background:#fcfbf8; }
 </tr>
 </tbody>
 </table></div>
-<h3 id="dreamt-scriptures">Dreamt scriptures</h3>
-<p><em>Hymns and scriptures revealed in a dream.</em></p>
+</div></details><details class="sub" id="dreamt-scriptures"><summary><span class="nm">Dreamt scriptures</span> <span class="note">Hymns and scriptures revealed in a dream.</span></summary><div class="in">
 <div class="tablewrap"><table>
 <thead>
 <tr>
@@ -1425,8 +1374,7 @@ tr:hover td { background:#fcfbf8; }
 </tr>
 </tbody>
 </table></div>
-<h3 id="authors-and-gurus">Authors and gurus</h3>
-<p><em>A dream authorises a book, a teacher, a disciple.</em></p>
+</div></details><details class="sub" id="authors-and-gurus"><summary><span class="nm">Authors and gurus</span> <span class="note">A dream authorises a book, a teacher, a disciple.</span></summary><div class="in">
 <div class="tablewrap"><table>
 <thead>
 <tr>
@@ -1482,7 +1430,7 @@ tr:hover td { background:#fcfbf8; }
 </tr>
 </tbody>
 </table></div>
-<h4 id="buddhist-parallels">Buddhist parallels</h4>
+</div></details><details class="sub" id="buddhist-parallels"><summary><span class="nm">Buddhist parallels</span></summary><div class="in">
 <div class="tablewrap"><table>
 <thead>
 <tr>
@@ -1509,7 +1457,7 @@ tr:hover td { background:#fcfbf8; }
 </tr>
 </tbody>
 </table></div>
-<h4 id="manuscripts_3">Manuscripts</h4>
+</div></details><details class="sub" id="manuscripts_2"><summary><span class="nm">Manuscripts</span></summary><div class="in">
 <div class="tablewrap"><table>
 <thead>
 <tr>
@@ -1618,16 +1566,14 @@ tr:hover td { background:#fcfbf8; }
 </tr>
 </tbody>
 </table></div>
-<h4 id="edition-candidates_3">Edition candidates</h4>
+</div></details><details class="sub" id="edition-candidates_2"><summary><span class="nm">Edition candidates</span></summary><div class="in">
 <ul>
 <li>Nigamasāranirṇaya, opening section on mantras (= Dīkṣāvidhi A 238/25), from two Nepalese witnesses.</li>
 <li>Bhūtabhairava &ldquo;Mantrakośa&rdquo;, closing block: three witnesses, two of which reverse the formula.</li>
 <li>Tantrasaṃgrahadhātuvāda B 125/9 against Śaktisaṅgama 3.93–181 and Tantracintāmaṇi 10.</li>
 </ul>
-<h2 id="dream-as-weapon">Dream as Weapon</h2>
-<p><em>Acting on the dream or sleep of another person.</em></p>
-<h3 id="svapana">Svāpana</h3>
-<p><em>Putting a house, a village or a woman to sleep.</em></p>
+</div></details></div></details><details class="ch" id="dream-as-weapon"><summary><span class="nm">Dream as Weapon</span> <span class="note">Sorcery through another person&rsquo;s sleep.</span></summary><div class="in">
+<details class="sub" id="svapana"><summary><span class="nm">Svāpana</span> <span class="note">Putting a house, a village or a woman to sleep.</span></summary><div class="in">
 <div class="tablewrap"><table>
 <thead>
 <tr>
@@ -1683,8 +1629,7 @@ tr:hover td { background:#fcfbf8; }
 </tr>
 </tbody>
 </table></div>
-<h3 id="taking-sleep-away">Taking sleep away</h3>
-<p><em>Destroying, seizing or breaking the target&rsquo;s sleep.</em></p>
+</div></details><details class="sub" id="taking-sleep-away"><summary><span class="nm">Taking sleep away</span> <span class="note">Destroying, seizing or breaking the target&rsquo;s sleep.</span></summary><div class="in">
 <div class="tablewrap"><table>
 <thead>
 <tr>
@@ -1754,8 +1699,7 @@ tr:hover td { background:#fcfbf8; }
 </tr>
 </tbody>
 </table></div>
-<h3 id="sending-a-dream">Sending a dream</h3>
-<p><em>A deity enters the target&rsquo;s dream: to command, terrify or strike.</em></p>
+</div></details><details class="sub" id="sending-a-dream"><summary><span class="nm">Sending a dream</span> <span class="note">A deity enters the target&rsquo;s dream: to command, terrify or strike.</span></summary><div class="in">
 <div class="tablewrap"><table>
 <thead>
 <tr>
@@ -1839,7 +1783,7 @@ tr:hover td { background:#fcfbf8; }
 </tr>
 </tbody>
 </table></div>
-<h4 id="manuscripts_4">Manuscripts</h4>
+</div></details><details class="sub" id="manuscripts_3"><summary><span class="nm">Manuscripts</span></summary><div class="in">
 <div class="tablewrap"><table>
 <thead>
 <tr>
@@ -1918,16 +1862,14 @@ tr:hover td { background:#fcfbf8; }
 </tr>
 </tbody>
 </table></div>
-<h4 id="edition-candidates_4">Edition candidates</h4>
+</div></details><details class="sub" id="edition-candidates_3"><summary><span class="nm">Edition candidates</span></summary><div class="in">
 <ul>
 <li>Premanidhi, Śabdārthacintāmaṇi on Śāradātilaka 15, ff. 182a–185a (Svapnavārāhī as oracle and as weapon), checked against the Mantramahodadhi and Merutantra 23.</li>
 <li>The buffalo formula in six witnesses; the Āsurī formulary from the Atharvaveda to the Merutantra.</li>
 <li>Jayadrathayāmala Ṣ4, yakṣiṇī chapter (optional).</li>
 </ul>
-<h2 id="dream-as-discipline">Dream as Discipline</h2>
-<p><em>Yogic work on the dream state itself.</em></p>
-<h3 id="svapnasvatantrya">Svapnasvātantrya</h3>
-<p><em>Staying aware and free inside the dream.</em></p>
+</div></details></div></details><details class="ch" id="dream-as-discipline"><summary><span class="nm">Dream as Discipline</span> <span class="note">Yogic practice in dream and sleep.</span></summary><div class="in">
+<details class="sub" id="svapnasvatantrya"><summary><span class="nm">Svapnasvātantrya</span> <span class="note">Staying aware and free inside the dream.</span></summary><div class="in">
 <div class="tablewrap"><table>
 <thead>
 <tr>
@@ -2004,8 +1946,7 @@ tr:hover td { background:#fcfbf8; }
 </tr>
 </tbody>
 </table></div>
-<h3 id="yoganidra">Yoganidrā</h3>
-<p><em>Holding the mind at the onset of sleep; sleep as practice.</em></p>
+</div></details><details class="sub" id="yoganidra"><summary><span class="nm">Yoganidrā</span> <span class="note">Holding the mind at the onset of sleep; sleep as practice.</span></summary><div class="in">
 <div class="tablewrap"><table>
 <thead>
 <tr>
@@ -2089,8 +2030,7 @@ tr:hover td { background:#fcfbf8; }
 </tr>
 </tbody>
 </table></div>
-<h3 id="svapnasamkranti">Svapnasaṃkrānti</h3>
-<p><em>Entering another person&rsquo;s sleep.</em></p>
+</div></details><details class="sub" id="svapnasamkranti"><summary><span class="nm">Svapnasaṃkrānti</span> <span class="note">Entering another person&rsquo;s sleep.</span></summary><div class="in">
 <div class="tablewrap"><table>
 <thead>
 <tr>
@@ -2125,7 +2065,7 @@ tr:hover td { background:#fcfbf8; }
 </tr>
 </tbody>
 </table></div>
-<h4 id="dream-and-reality">Dream and reality</h4>
+</div></details><details class="sub" id="dream-and-reality"><summary><span class="nm">Dream and reality</span></summary><div class="in">
 <div class="tablewrap"><table>
 <thead>
 <tr>
@@ -2148,7 +2088,7 @@ tr:hover td { background:#fcfbf8; }
 </tr>
 </tbody>
 </table></div>
-<h4 id="buddhist-parallels_1">Buddhist parallels</h4>
+</div></details><details class="sub" id="buddhist-parallels_1"><summary><span class="nm">Buddhist parallels</span></summary><div class="in">
 <div class="tablewrap"><table>
 <thead>
 <tr>
@@ -2195,7 +2135,7 @@ tr:hover td { background:#fcfbf8; }
 </tr>
 </tbody>
 </table></div>
-<h4 id="manuscripts_5">Manuscripts</h4>
+</div></details><details class="sub" id="manuscripts_4"><summary><span class="nm">Manuscripts</span></summary><div class="in">
 <div class="tablewrap"><table>
 <thead>
 <tr>
@@ -2292,15 +2232,14 @@ tr:hover td { background:#fcfbf8; }
 </tr>
 </tbody>
 </table></div>
-<h4 id="edition-candidates_5">Edition candidates</h4>
+</div></details><details class="sub" id="edition-candidates_4"><summary><span class="nm">Edition candidates</span></summary><div class="in">
 <ul>
 <li>Dīkṣāpaddhati ORL 2379, <em>svapnasaṃkrānti</em> passage (the core of the chapter).</li>
 <li>Yogavāsiṣṭha 6b.137–141 (outside the Mokṣopāya edition); Mālinīvijayottara 16, 18, 21 and 23.33–38.</li>
 <li>Yoginīhṛdaya 3.174–181 with the Dīpikā, from the NGMPP reels.</li>
 </ul>
-<h2 id="manuscripts_6">Manuscripts</h2>
-<p>★ = proposed for edition.</p>
-<h3 id="kathmandu">Kathmandu</h3>
+</div></details></div></details><details class="ch" id="manuscripts_5"><summary><span class="nm">Manuscripts</span> <span class="note">By repository. ★ = proposed for edition.</span></summary><div class="in">
+<details class="sub" id="kathmandu"><summary><span class="nm">Kathmandu</span></summary><div class="in">
 <div class="tablewrap"><table>
 <thead>
 <tr>
@@ -2944,7 +2883,7 @@ tr:hover td { background:#fcfbf8; }
 </tr>
 </tbody>
 </table></div>
-<h3 id="srinagar">Srinagar</h3>
+</div></details><details class="sub" id="srinagar"><summary><span class="nm">Srinagar</span></summary><div class="in">
 <div class="tablewrap"><table>
 <thead>
 <tr>
@@ -2999,7 +2938,7 @@ tr:hover td { background:#fcfbf8; }
 </tr>
 </tbody>
 </table></div>
-<h3 id="pune">Pune</h3>
+</div></details><details class="sub" id="pune"><summary><span class="nm">Pune</span></summary><div class="in">
 <div class="tablewrap"><table>
 <thead>
 <tr>
@@ -3041,7 +2980,7 @@ tr:hover td { background:#fcfbf8; }
 </tr>
 </tbody>
 </table></div>
-<h3 id="bengal">Bengal</h3>
+</div></details><details class="sub" id="bengal"><summary><span class="nm">Bengal</span></summary><div class="in">
 <div class="tablewrap"><table>
 <thead>
 <tr>
@@ -3093,7 +3032,7 @@ tr:hover td { background:#fcfbf8; }
 </tr>
 </tbody>
 </table></div>
-<h3 id="rajasthan">Rajasthan</h3>
+</div></details><details class="sub" id="rajasthan"><summary><span class="nm">Rajasthan</span></summary><div class="in">
 <div class="tablewrap"><table>
 <thead>
 <tr>
@@ -3240,7 +3179,7 @@ tr:hover td { background:#fcfbf8; }
 </tr>
 </tbody>
 </table></div>
-<h3 id="other-india">Other India</h3>
+</div></details><details class="sub" id="other-india"><summary><span class="nm">Other India</span></summary><div class="in">
 <div class="tablewrap"><table>
 <thead>
 <tr>
@@ -3307,7 +3246,7 @@ tr:hover td { background:#fcfbf8; }
 </tr>
 </tbody>
 </table></div>
-<h3 id="south-india">South India</h3>
+</div></details><details class="sub" id="south-india"><summary><span class="nm">South India</span></summary><div class="in">
 <div class="tablewrap"><table>
 <thead>
 <tr>
@@ -3409,7 +3348,7 @@ tr:hover td { background:#fcfbf8; }
 </tr>
 </tbody>
 </table></div>
-<h3 id="uk">UK</h3>
+</div></details><details class="sub" id="uk"><summary><span class="nm">UK</span></summary><div class="in">
 <div class="tablewrap"><table>
 <thead>
 <tr>
@@ -3506,7 +3445,7 @@ tr:hover td { background:#fcfbf8; }
 </tr>
 </tbody>
 </table></div>
-<h3 id="europe">Europe</h3>
+</div></details><details class="sub" id="europe"><summary><span class="nm">Europe</span></summary><div class="in">
 <div class="tablewrap"><table>
 <thead>
 <tr>
@@ -3563,7 +3502,7 @@ tr:hover td { background:#fcfbf8; }
 </tr>
 </tbody>
 </table></div>
-<h3 id="st-petersburg">St Petersburg</h3>
+</div></details><details class="sub" id="st-petersburg"><summary><span class="nm">St Petersburg</span></summary><div class="in">
 <div class="tablewrap"><table>
 <thead>
 <tr>
@@ -3590,7 +3529,7 @@ tr:hover td { background:#fcfbf8; }
 </tr>
 </tbody>
 </table></div>
-<h3 id="online">Online</h3>
+</div></details><details class="sub" id="online"><summary><span class="nm">Online</span></summary><div class="in">
 <div class="tablewrap"><table>
 <thead>
 <tr>
@@ -3616,10 +3555,12 @@ tr:hover td { background:#fcfbf8; }
 <td>Kulamuktikallolinī and Tantracintāmaṇi, manuscript scans</td>
 </tr>
 </tbody>
-</table></div>
+</table></div></div></details></div></details>
 </main>
 </div>
 <script>
+function openHash(){ var e=location.hash&&document.getElementById(decodeURIComponent(location.hash.slice(1))); while(e){ if(e.tagName==='DETAILS') e.open=true; e=e.parentElement; } }
+window.addEventListener('hashchange',openHash); openHash();
 document.querySelectorAll('nav.toc li').forEach(function(li){
   var sub=li.querySelector(':scope > ul'); if(!sub) return;
   li.classList.add('closed');
