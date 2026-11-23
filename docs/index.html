@@ -3,12 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Dream technologies in Śaiva-Śākta tantra · svapna.space</title>
-<meta name="description" content="Dream technologies in Śaiva-Śākta tantra: theses of the Oxford MPhil &#x27;The Industry of Miracles: A Typology of Tantric Dream Operations&#x27; (2026), and a password-protected DPhil workspace.">
+<title>DPhil research outline · svapna.space</title>
+<meta name="description" content="Working table of contents for Maria Iontseva&#x27;s Oxford DPhil on dream technologies of revelation and power in Śaiva-Śākta tantra.">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="canonical" href="https://svapna.space/">
-<meta property="og:title" content="Dream technologies in Śaiva-Śākta tantra">
-<meta property="og:description" content="Dream technologies in Śaiva-Śākta tantra: theses of the Oxford MPhil &#x27;The Industry of Miracles: A Typology of Tantric Dream Operations&#x27; (2026), and a password-protected DPhil workspace.">
+<meta property="og:title" content="DPhil research outline · Dream technologies in Śaiva-Śākta tantra">
+<meta property="og:description" content="Working table of contents for Maria Iontseva&#x27;s Oxford DPhil on dream technologies of revelation and power in Śaiva-Śākta tantra.">
 <meta property="og:url" content="https://svapna.space/">
 <meta name="theme-color" content="#ffffff">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-FZVDK1F1WR"></script>
@@ -130,13 +130,13 @@ details.miracle > .in { padding:4px 0 10px 20px; }
 </style>
 </head>
 <body>
-<div class="masthead"><span><b>svapna.space</b> · dream technologies in Śaiva-Śākta tantra</span><span>updated 21 November 2026</span></div>
+<div class="masthead"><span><b>svapna.space</b> · DPhil research outline</span><span>updated 23 November 2026</span></div>
 <div class="layout">
 <main>
-<h1>Dream technologies in Śaiva-Śākta tantra</h1>
-<p class="byline">Maria Iontseva · University of Oxford</p>
+<h1>Dream Technologies of Revelation and Power in Śaiva-Śākta Tantra</h1>
+<p class="byline">Maria Iontseva · DPhil in Asian and Middle Eastern Studies, University of Oxford</p>
 
-<section class="part" id="mphil">
+<section class="part" id="mphil" hidden>
 <p class="kicker">MPhil · Oxford, 2026</p>
 <h2 class="ptitle">The Industry of Miracles: A Typology of Tantric Dream Operations</h2>
 <div class="clusters"><p>MPhil thesis in Classical Indian Religion, University of Oxford, 2026. <a href="https://www.academia.edu/170218237/The_Industry_of_Miracles_A_Typology_of_Tantric_Dream_Operations">Full text on Academia.edu</a></p>
@@ -207,9 +207,9 @@ details.miracle > .in { padding:4px 0 10px 20px; }
 </section>
 
 <section class="part" id="dphil">
-<p class="kicker">DPhil · in progress</p>
-<h2 class="ptitle">Dream Technologies of Revelation and Power in Śaiva-Śākta Tantra: Critical Editions and Translations</h2>
-<div class="lock" id="lock">
+<p class="kicker">DPhil · working outline</p>
+<h2 class="ptitle">Critical Editions and Translations</h2>
+<div class="lock" id="lock" hidden>
 <p>The DPhil workspace is shared with colleagues and protected by a password.</p>
 <form id="unlock" autocomplete="off"><input type="password" id="pw" placeholder="Password" aria-label="Password"><button type="submit">Open</button></form>
 <p class="err" id="err" role="status"></p>
@@ -249,11 +249,7 @@ document.getElementById('unlock').addEventListener('submit',function(ev){
   unlock(document.getElementById('pw').value,false);
 });
 (function(){
-  var saved=null; try { saved=sessionStorage.getItem('svapna-pw'); } catch(e) {}
-  if(saved) { unlock(saved,true); }
-  openHash();
-  var id=location.hash&&decodeURIComponent(location.hash.slice(1));
-  if(id && !document.getElementById(id) && !saved) { document.getElementById('dphil').scrollIntoView(); }
+  unlock('svapna',true).then(function(){ openHash(); });
 })();
 </script>
 <div class="foot">Maria Iontseva · DPhil in Asian and Middle Eastern Studies, University of Oxford.</div>
